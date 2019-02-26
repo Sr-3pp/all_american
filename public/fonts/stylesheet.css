@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'DIN Condensed';
+    src: url('DINCondensed-Bold.woff2') format('woff2'),
+        url('DINCondensed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Humger';
+    src: url('HumgerRegular.woff2') format('woff2'),
+        url('HumgerRegular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Humger';
+    src: url('HumgerRegular.woff2') format('woff2'),
+        url('HumgerRegular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Humger';
+    src: url('HumgerRegular.woff2') format('woff2'),
+        url('HumgerRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Humger';
+    src: url('HumgerRegular.woff2') format('woff2'),
+        url('HumgerRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

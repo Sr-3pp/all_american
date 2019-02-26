@@ -1,0 +1,80 @@
+#app{
+    font-family: "Raleway", sans-serif;
+    h1, h2, h3{
+        font-family: 'Humger', sans-serif;
+        text-transform: uppercase;
+    }
+    .w-100{
+        width: 100%;
+    }
+    .hidden{
+        display: none;
+    }
+    .input{
+        padding: 1vh 1vw;
+        border-style: none;
+        width: 100%;
+    }
+    .select-list{
+        .selected, .results{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            .item{
+                flex: 1;
+            }
+            &.results{
+                flex-direction: column;
+                background-color: #FFF;
+                .item{
+                    padding: 1vh 1vw;
+                    cursor: pointer;
+                    border-bottom: {
+                        style: solid;
+                        color: $dark;
+                        width: thin;
+                    }
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+    .upload-picture{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2vh 3vw;
+        min-height: 250px;
+        .icon{
+            font-size: 3rem;
+        }
+    }
+    .upload-file{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(206, 206, 206);
+        flex-direction: column;
+        padding: 2vh 3vw;
+        .icon{
+            font-size: 3rem;
+        }
+    }
+    .btn{
+        border: {
+            radius: 5px;
+            style: none;
+        }
+        padding: 10px;
+        background-color: none; 
+    }
+    .blured{
+        -webkit-filter: blur(15px);
+        filter: blur(15px); 
+    }
+    
+
+}
