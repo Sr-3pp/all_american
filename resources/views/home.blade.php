@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <carousel :slides="['first', 'seccond', 'third']"></carousel>
     <full-section background-img="/img/default.jpg"></full-section>
     <half-section></half-section>
     <section class="section">

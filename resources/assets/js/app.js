@@ -28,6 +28,10 @@ Vue.component('half-section', require('./components/containers/halfSection.vue')
  /*--------partials-----------*/
 Vue.component('navigation', require('./components/partials/navigation.vue'));
 
+Vue.component('carousel', require('./components/partials/carousel.vue'));
+
+
+
 const app = new Vue({
     el: '#app'
 });
