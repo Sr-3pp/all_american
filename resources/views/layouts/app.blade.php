@@ -20,6 +20,9 @@
         <navigation></navigation>
         @yield('content')
     </div>
+    <footer>
+        
+    </footer>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

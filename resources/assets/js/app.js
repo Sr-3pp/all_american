@@ -15,9 +15,6 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- /*--------containers-----------*/
-Vue.component('full-section', require('./components/containers/fullSection.vue'));
-Vue.component('half-section', require('./components/containers/halfSection.vue'));
 
  /*--------form-----------*/
  Vue.component('upload-picture', require('./components/form/uploadPicture.vue'));
@@ -27,6 +24,19 @@ Vue.component('half-section', require('./components/containers/halfSection.vue')
 
  /*--------partials-----------*/
 Vue.component('navigation', require('./components/partials/navigation.vue'));
+Vue.component('carousel', require('./components/partials/carousel.vue'));
+Vue.component('tabs', require('./components/partials/tabs/tabs.vue'));
+Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
+
+const EventBus = new Vue()
+
+Object.defineProperties(Vue.prototype, {
+  $bus: {
+    get: function () {
+      return EventBus
+    }
+  }
+})
 
 const app = new Vue({
     el: '#app'
