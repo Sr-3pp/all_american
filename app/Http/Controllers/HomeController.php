@@ -23,6 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $slides = [
+            [
+                'id' => 1,
+                'name' => 'slide 1'
+            ],
+            [
+                'id' => 2,
+                'name' => 'slide 2'
+            ],
+        ];
+        return view('home', compact('slides'));
     }
 }

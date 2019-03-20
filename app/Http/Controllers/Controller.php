@@ -10,4 +10,21 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    public function index()
+    {
+        $slides = [
+            [
+                'id' => 1,
+                'name' => 'slide 1',
+                'archivo' => '/img/slides/slide_1.jpg'
+            ],
+            [
+                'id' => 2,
+                'name' => 'slide 2',
+                'archivo' => '/img/slides/slide_1.jpg'
+            ],
+        ];
+        return view('home', compact('slides'));
+    }
 }

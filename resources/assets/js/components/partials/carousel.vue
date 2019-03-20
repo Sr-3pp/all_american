@@ -1,9 +1,9 @@
 <template>
-    <section class="carousel">
+    <div class="carousel">
         <button @click="prev()" class="control prev"> < </button>
         <transition-group class="slides" :class="{'reverse': transition === 'prev'}" :name="transition">
             <article :class="{'active': content === index}" :key="slide.id" class="slide" v-for="(slide, index) in slides" v-if="active === index">
-                <img src="/img/default.jpg" alt="slide 1">
+                <img :src="slide.archivo" alt="slide 1">
                 <div class="content">
                     <p class="title">{{slide.name}}</p>
                     <p class="text">
@@ -14,7 +14,7 @@
             </article>
         </transition-group>
         <button @click="next()" class="control next"> > </button>
-    </section>
+    </div>
 </template>
 <script>
     export default {

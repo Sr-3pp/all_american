@@ -1,15 +1,8 @@
-@import "fonts/fonts.scss";
+@import "fonts.scss";
 
 // Variables
 @import "variables";
 @import "functions";
 
 @import "general.scss";
-@import "grid.scss";
 @import "responsive.scss";
-
-//Components
-
-@import "components/navigation.scss";
-@import "components/carousel.scss";
-
