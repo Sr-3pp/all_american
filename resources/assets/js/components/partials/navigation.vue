@@ -1,7 +1,7 @@
 <template>
     <nav class="full-section" s-sec="navigation">
         <figure class="brand">
-            <img src="/img/svg/logo_bn.svg" alt="Site Brand">
+            <img :src="logo" alt="Site Brand">
         </figure>
         <ul class="item-list" :class="{'active': active}">
             <li class="item">
@@ -28,11 +28,30 @@
     export default {
         mounted() {
             var este = this
+            window.onscroll = function() {myFunction()};
+
+            // Get the navbar
+            var navbar = $("nav")[0];
+
+            // Get the offset position of the navbar
+            var sticky = navbar.offsetTop;
+
+            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("on-top")
+                    este.logo = '/img/svg/logo.svg'
+                } else {
+                    navbar.classList.remove("on-top");
+                    este.logo = '/img/svg/logo_bn.svg';
+                }
+            }
             
         },
         data(){
             return {
-                active: false
+                active: false,
+                logo: '/img/svg/logo_bn.svg'
             }
         }
     }

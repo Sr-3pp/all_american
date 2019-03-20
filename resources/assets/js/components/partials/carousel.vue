@@ -1,28 +1,36 @@
 <template>
     <div class="carousel">
-        <button @click="prev()" class="control prev"> < </button>
+        <button @click="prev()" class="control prev"> <icon name="chevron"></icon> </button>
         <transition-group class="slides" :class="{'reverse': transition === 'prev'}" :name="transition">
             <article :class="{'active': content === index}" :key="slide.id" class="slide" v-for="(slide, index) in slides" v-if="active === index">
                 <img :src="slide.archivo" alt="slide 1">
-                <div class="content">
+                <div v-if="name === 'main'"  class="content">
                     <p class="title">{{slide.name}}</p>
                     <p class="text">
                         Text
                     </p>
                     <button class="cta">Go to</button>
                 </div>
+                <div v-if="name === 'testimonials'" class="content testimonials">
+                    <article>
+                        <span class="title">Efficent Work</span>
+                        <hr>
+                        Quality in their work and good delivery time, they are fast and efficient.
+                        <h3>Testimonial</h3>
+                    </article>
+                </div>
             </article>
         </transition-group>
-        <button @click="next()" class="control next"> > </button>
+        <button @click="next()" class="control next"> <icon name="chevron"></icon> </button>
     </div>
 </template>
 <script>
     export default {
         mounted(){
-            console.log(this.slides);
+            
         },
         props: [
-            'slides'
+            'slides', 'name'
         ],
         data(){
             return {

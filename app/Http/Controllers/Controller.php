@@ -25,6 +25,18 @@ class Controller extends BaseController
                 'archivo' => '/img/slides/slide_1.jpg'
             ],
         ];
-        return view('home', compact('slides'));
+        $testimonials = [
+            [
+                'id' => 1,
+                'name' => 'slide 1',
+                'archivo' => '/img/default_slide.jpg'
+            ],
+            [
+                'id' => 2,
+                'name' => 'slide 2',
+                'archivo' => '/img/default_slide.jpg'
+            ],
+        ];
+            return view('home', compact('slides', 'testimonials'));
     }
 }

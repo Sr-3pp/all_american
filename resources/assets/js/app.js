@@ -41,6 +41,11 @@ Object.defineProperties(Vue.prototype, {
 import Icon from 'vue2-svg-icon/Icon.vue';
 Vue.component('icon', Icon);
 
+import Vue from 'vue'
+import VueAnimate from 'vue-animate-scroll'
+ 
+Vue.use(VueAnimate)
+
 const app = new Vue({
     el: '#app'
 });

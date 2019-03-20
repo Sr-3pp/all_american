@@ -2,7 +2,7 @@
 
 @section('content')
 <section s-sec="header">
-    <carousel :slides="{{json_encode($slides)}}"></carousel>
+    <carousel name="main" :slides="{{json_encode($slides)}}"></carousel>
     <tabs></tabs>
 </section>
 <section class="full-section">
@@ -10,10 +10,13 @@
 </section>
 <section s-sec="separator">
         <div class="full-section">
-            <p>
-                <span class="title">(702) 722 3197</span>
-                Ask for <b>free estimate</b>, No job is to big or small to us.                
-            </p>
+            <article>
+                <icon name="phone"></icon>
+                <p>
+                    <span class="title">(702) 722 3197</span>
+                    Ask for <b>free estimate</b>, No job<br>is to big or small to us.                
+                </p>
+            </article>
             <button class="cta" type="button">
                 Contact Us
             </button>
@@ -48,25 +51,25 @@
     </article>
 </section>
 <section s-sec="testimonial">
-    <carousel :slides="{{json_encode($slides)}}"></carousel>
+    <carousel name="testimonials" :slides="{{json_encode($testimonials)}}"></carousel>
 </section>
 <section s-sec="values" class="full-section">
-    <article>
-        <icon name="like"></icon>
+    <article v-animate.repeat="'slide-up'">
+        <icon name="efficiency"></icon>
         <p>
             <span class="title">Efficiency</span>
             We work in a professional and effective way, to meet the expectations of each project.
         </p>
     </article>
-    <article>
-        <icon name="like"></icon>
+    <article  v-animate.repeat="'slide-up'">
+        <icon name="quality"></icon>
         <p>
             <span class="title">Quality</span>
             We seek to satisfy the expectations of our clients by providing competent and functional services.
         </p>
     </article>
-    <article>
-        <icon name="like"></icon>
+    <article  v-animate.repeat="'slide-up'">
+        <icon name="integrity"></icon>
         <p>
             <span class="title">Integrity</span>
             We are driven by values that mantain a relationship of mutual trust with customers.
@@ -78,7 +81,7 @@
 </section>
 <section s-sec="projects" class="full-section">
     <h2 class="title">Projects</h2>
-    <carousel :slides="{{json_encode($slides)}}"></carousel>
+    <carousel name="projects" :slides="{{json_encode($slides)}}"></carousel>
 </section>
 <section s-sec="job" class="full-section">
     <img src="/img/welding_3.jpg" alt="no big or small jobs">
