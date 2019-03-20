@@ -1,7 +1,7 @@
 <template>
     <section class="carousel">
         <button @click="prev()" class="control prev"> < </button>
-        <transition-group class="slides" :name="transition">
+        <transition-group class="slides" :class="{'reverse': transition === 'prev'}" :name="transition">
             <article :class="{'active': content === index}" :key="slide.id" class="slide" v-for="(slide, index) in slides" v-if="active === index">
                 <img src="/img/default.jpg" alt="slide 1">
                 <div class="content">

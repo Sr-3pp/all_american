@@ -3,12 +3,15 @@
     margin-bottom: 50px;
     position: relative;
     .slides{
-        display: inline-flex;
+        display: flex;
         position: relative;
         align-items: center;
         height: 100%;
         width: 100%;
         overflow: hidden;
+        &.reverse{
+            flex-direction: row-reverse;
+        }
         .slide{
             min-width: 100%;
             position: relative;
@@ -78,13 +81,13 @@
     }
     
     .prev-enter{
-        transform: translateX(-100%)!important;
+        transform: translateX(0);
     }
     .prev-enter-to{
-        transform: translateX(0)!important;
+        transform: translateX(100%);
     }
     .prev-leave-to{
-        transform: translateX(100%)!important;
+        transform: translateX(100%);
     }
     .prev-leave{
         transform: translateX(0);

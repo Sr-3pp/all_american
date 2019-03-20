@@ -13,6 +13,7 @@
             ],
         ];
     ?>
+    <icon name="like" :w="24" :h="24"></icon>
     <carousel :slides="{{json_encode($slides)}}"></carousel>
     <full-section background-img="/img/default.jpg"></full-section>
     <half-section></half-section>

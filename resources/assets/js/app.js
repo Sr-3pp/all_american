@@ -30,7 +30,18 @@ Vue.component('navigation', require('./components/partials/navigation.vue'));
 
 Vue.component('carousel', require('./components/partials/carousel.vue'));
 
+const EventBus = new Vue()
 
+Object.defineProperties(Vue.prototype, {
+  $bus: {
+    get: function () {
+      return EventBus
+    }
+  }
+})
+
+import Icon from 'vue2-svg-icon/Icon.vue';
+Vue.component('icon', Icon);
 
 const app = new Vue({
     el: '#app'
