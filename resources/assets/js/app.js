@@ -37,12 +37,9 @@ Object.defineProperties(Vue.prototype, {
     }
   }
 })
-<<<<<<< HEAD
 
 import Icon from 'vue2-svg-icon/Icon.vue';
 Vue.component('icon', Icon);
-=======
->>>>>>> f15a84740be985d9c33ea8d2eb7af4391105f177
 
 const app = new Vue({
     el: '#app'
