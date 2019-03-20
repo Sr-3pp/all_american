@@ -15,9 +15,6 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- /*--------containers-----------*/
-Vue.component('full-section', require('./components/containers/fullSection.vue'));
-Vue.component('half-section', require('./components/containers/halfSection.vue'));
 
  /*--------form-----------*/
  Vue.component('upload-picture', require('./components/form/uploadPicture.vue'));
@@ -40,9 +37,12 @@ Object.defineProperties(Vue.prototype, {
     }
   }
 })
+<<<<<<< HEAD
 
 import Icon from 'vue2-svg-icon/Icon.vue';
 Vue.component('icon', Icon);
+=======
+>>>>>>> f15a84740be985d9c33ea8d2eb7af4391105f177
 
 const app = new Vue({
     el: '#app'
