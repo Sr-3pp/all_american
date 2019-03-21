@@ -22,7 +22,7 @@
             <ol :class="{'active': section === 4}" @click="setTab(4)">
                 <icon name="polish"></icon>
                 <p>
-                    Polish
+                    Finishes
                 </p>
             </ol>
             <ol :class="{'active': section === 5}" @click="setTab(5)">

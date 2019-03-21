@@ -4,10 +4,24 @@
     transition-timing-function: ease-in
   }
    
+
   .slide-up {
-    transform: translateY(100px)
+    transform: translateY(100px);
+    opacity: 0;
   }
    
   .slide-up.animate-active {
-    transform: translateY(0)
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+
+  .slide-left {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+   
+  .slide-left.animate-active {
+    transform: translateX(0);
+    opacity: 1;
   }
