@@ -27,7 +27,25 @@
 <script>
     export default {
         mounted(){
-            
+            var este = this;
+            setInterval(() => {
+                if (this.active !== (this.slides.length -1)) {
+                    this.content = false
+                    this.transition = 'next'
+                    this.active += 1;
+                    setTimeout(function(){ 
+                        este.content = este.active;
+                    }, 1000);
+                }else{
+                    this.content = false
+                    this.transition = 'next'
+                    this.active = 0;
+                    setTimeout(function(){ 
+                        este.content = este.active;
+                    }, 1000);
+                }
+                
+            }, 6000);
         },
         props: [
             'slides', 'name'

@@ -82,7 +82,7 @@
 </section>
 <section s-sec="projects" class="full-section">
     <h2 class="title">Projects</h2>
-    <carousel name="projects" :slides="{{json_encode($slides)}}"></carousel>
+    <slider name="projects" :slides="{{json_encode($slides)}}"></slider>
 </section>
 <section s-sec="job" class="full-section">
     <img src="/img/welding_3.jpg" alt="no big or small jobs">
