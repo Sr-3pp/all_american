@@ -4,14 +4,12 @@
   <div class="slider--inner" :class="{'prev': this.previus, 'fast': this.nexts}">
     <div class="slide-inner">
                 <article class="item" v-for="(slide, index) in slides">
-                    <img src="/img/default.jpg" alt="default slide">
-                    {{slide.name}}
+                    <img :src="slide.archivo" alt="default slide">
                 </article>
             </div>
             <div class="slide-inner">
                 <article class="item" v-for="(slide, index) in slides">
-                    <img src="/img/default.jpg" alt="default slide">
-                    {{slide.name}}
+                    <img :src="slide.archivo" alt="default slide">
                 </article>
             </div>
   </div>

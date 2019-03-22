@@ -4,19 +4,19 @@
         <transition-group class="slides" :class="{'reverse': transition === 'prev'}" :name="transition">
             <article :class="{'active': content === index}" :key="slide.id" class="slide" v-for="(slide, index) in slides" v-if="active === index">
                 <img :src="slide.archivo" alt="slide 1">
-                <div v-if="name === 'main'"  class="content">
-                    <p class="title">{{slide.name}}</p>
-                    <p class="text">
-                        Text
+                <div v-if="name === 'main'"  class="content" s-mode="right">
+                    <p class="text">{{slide.name}}</p>
+                    <p class="title">
+                        WE CUSTOMIZE YOUR<br>EXACT SPECIFICATIONS
                     </p>
-                    <button class="cta">Go to</button>
+                    <button class="btn cta">Read More</button>
                 </div>
                 <div v-if="name === 'testimonials'" class="content testimonials">
                     <article>
                         <span class="title">Efficent Work</span>
                         <hr>
-                        Quality in their work and good delivery time, they are fast and efficient.
-                        <h3>Testimonial</h3>
+                        <span class="text">Quality in their work and good delivery time, they are fast and efficient.</span>
+                        <h3 class="title">Testimonial</h3>
                     </article>
                 </div>
             </article>
@@ -28,7 +28,7 @@
     export default {
         mounted(){
             var este = this;
-            setInterval(() => {
+            /* setInterval(() => {
                 if (this.active !== (this.slides.length -1)) {
                     this.content = false
                     this.transition = 'next'
@@ -45,7 +45,7 @@
                     }, 1000);
                 }
                 
-            }, 6000);
+            }, 6000); */
         },
         props: [
             'slides', 'name'

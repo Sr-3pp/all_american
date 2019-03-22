@@ -5,12 +5,10 @@
     <carousel name="main" :slides="{{json_encode($slides)}}"></carousel>
     <tabs></tabs>
 </section>
-<section class="full-section">
-    <content-tabs></content-tabs>
-</section>
+<content-tabs></content-tabs>
 <section s-sec="separator">
         <div class="full-section">
-            <article>
+            <article v-animate.repeat="'slide-right'">
                 <icon name="phone"></icon>
                 <p>
                     <span class="title">(702) 722 3197</span>
@@ -82,12 +80,12 @@
 </section>
 <section s-sec="projects" class="full-section">
     <h2 class="title">Projects</h2>
-    <slider name="projects" :slides="{{json_encode($slides)}}"></slider>
+    <slider name="projects" :slides="{{json_encode($projects)}}"></slider>
 </section>
 <section s-sec="job" class="full-section">
     <img src="/img/welding_3.jpg" alt="no big or small jobs">
     <div class="section">
-        <h2 class="subtitle">No job is to big or to small for us</h2>
+        <h2 v-animate.repeat="'fade'" class="subtitle">No job is to big or to small for us</h2>
     </div>
 </section>
 <section s-sec="contact" class="full-section">
@@ -99,7 +97,7 @@
         <contact-form></contact-form>
     </div>
     <div>
-        <ul>
+        <ul v-animate.repeat="'slide-left'">
             <ol>
                 <icon name="address"></icon>
                 <p>

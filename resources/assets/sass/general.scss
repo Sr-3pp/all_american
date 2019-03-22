@@ -42,6 +42,52 @@ body{
         }
         .carousel{
             margin-bottom: 0;
+            .slides{
+                .slide{
+                    .content{
+                        color: #FFF;
+                        text-align: center;
+                        .text{
+                            font-size: 1.5rem
+                        }
+                        .title{
+                            font:{
+                                family: 'Aero Matics';
+                                weight: bold;
+                                style: italic;
+                                size: 2.5rem;
+                            }
+                            border-bottom: {
+                                style: solid;
+                                width: 1px;
+                                color: #FFF;
+                            }
+                            padding: {
+                                top: 3%;
+                                bottom: 3%;
+                            }
+                            margin-bottom: 5%;
+                        }
+                        .cta{
+                            background-color: transparent;
+                            width: 40%;
+                            color: #FFF;
+                            font: {
+                                size: 1.5rem;
+                            }
+                            border: {
+                                style: solid;
+                                width: 1px;
+                                color: #FFF;
+                            }
+                        }
+                        &[s-mode~=right]{
+                            right: 12%;
+                            left: inherit;
+                        }
+                    }
+                }
+            }
             .control{
                 background-color: rgba($Ablue, .5);
                 border: none;
@@ -266,6 +312,75 @@ body{
                 
             }
         }
+        [s-sec=services]{
+            &.full-section{
+                background-color: #FFF;
+                flex-direction: row;
+                padding: {
+                    top: 5%;
+                    bottom: 5%;
+                }
+                article{
+                    flex: 1;
+                    .service-list{
+                        width: 100%;
+                        list-style: none;
+                        padding-right: 6%;
+                        li{
+                            color: $gray;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding:{
+                                top: 2%;
+                                right: 0;
+                                bottom: 2%;
+                                left: 0;
+                            }
+                            p{
+                                width: 100%;
+                                font: {
+                                    family: 'Aero Matics';
+                                    size: 1.3rem;
+                                    style: italic;
+                                    weight: bold;
+                                }
+                                svg{
+                                    margin-right: 2%;
+                                    width: 15px;
+                                    height: 15px;
+                                    transform: inherit;
+                                    border: inherit;
+                                    background: inherit;
+                                    padding: inherit;
+                                    color: $gray;
+                                }
+                            }
+                            border-bottom: {
+                                style: solid;
+                                width: 1px;
+                                color: $gray;
+                            }
+                            svg{
+                                width: 20px;
+                                height: 20px;
+                                padding: 5px;
+                                background: $gray;
+                                color: #FFF;
+                                border-radius: 5px;
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
+                }
+                img{
+                    flex: 1;
+                    height: 50%;
+                    border-radius: 5px;
+                }
+            }
+        }
         [s-sec=separator]{
             background-color: $Ared;
             color: #FFF;
@@ -321,6 +436,42 @@ body{
             background: #EDEDED;
             .carousel{
                 height: 100%;
+                .slides{
+                    .slide{
+                        .testimonials{
+                            left: 0;
+                            width: 100%;
+                            color: $gray;
+                            article{
+                                width: 60%;
+                                margin: 0 auto;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                                .title{
+                                    margin-bottom: 0;
+                                    padding-top: 10%;
+                                    padding-bottom: 0;
+                                    border: none;
+                                    &:first-child{
+                                        padding-top: 0;
+                                        color: #000;
+                                    }
+                                }
+                                .text{
+                                    font-size: 1.2rem;
+                                    width: 60%;
+                                }
+                                hr{
+                                    margin-top: 2%;
+                                    margin-bottom: 5%;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         [s-sec=values]{

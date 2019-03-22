@@ -25,3 +25,23 @@
     transform: translateX(0);
     opacity: 1;
   }
+
+
+  .slide-right {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+   
+  .slide-right.animate-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+
+  .fade {
+    opacity: 0;
+  }
+   
+  .fade.animate-active {
+    opacity: 1;
+  }
