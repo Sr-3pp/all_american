@@ -55,7 +55,6 @@ body{
                                 family: 'Aero Matics';
                                 weight: bold;
                                 style: italic;
-                                size: 2.5rem;
                             }
                             border-bottom: {
                                 style: solid;
@@ -155,7 +154,7 @@ body{
                 }
             }
             .brand{
-                width: 150px;
+                width: 80px;
                 img{
                     width: 100%;
                 }
@@ -261,12 +260,14 @@ body{
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
+                width: auto;
+                height: 100%;
+                transform: translateX(-25%);
                 z-index: 0;
             }
             svg{
                 fill: $Ablue;
-                width: 59%;
+                width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0;
@@ -274,7 +275,7 @@ body{
                 z-index: 0;
             }
             article{
-                width: 50%;
+                width: 100%;
                 height: 100%;
                 position: relative;
                 color: #FFF;
@@ -315,7 +316,6 @@ body{
         [s-sec=services]{
             &.full-section{
                 background-color: #FFF;
-                flex-direction: row;
                 padding: {
                     top: 5%;
                     bottom: 5%;
@@ -434,6 +434,9 @@ body{
         [s-sec=testimonial]{
             height: 354px;
             background: #EDEDED;
+            &.full-section{
+                padding: 0;
+            }
             .carousel{
                 height: 100%;
                 .slides{
@@ -475,19 +478,15 @@ body{
             }
         }
         [s-sec=values]{
-            flex-direction: row;
             &.full-section{
                 padding: 5vw;
             }
             article{
                 flex: 1;
-                margin-right: 3%;
+                margin: 3%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                &:last-child{
-                    margin-right: 0;
-                }
                 svg{
                     padding-right: 20px;
                     flex: 1;
@@ -553,6 +552,7 @@ body{
         }
         [s-sec=contact]{
             flex-direction: row;
+            overflow: hidden;
             &.full-section{
                 padding-top: 0;
                 padding-right: 0;

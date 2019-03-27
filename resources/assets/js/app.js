@@ -26,6 +26,7 @@ window.Vue = require('vue');
 Vue.component('navigation', require('./components/partials/navigation.vue'));
 Vue.component('carousel', require('./components/partials/carousel.vue'));
 Vue.component('slider', require('./components/partials/slider.vue'));
+Vue.component('last-news', require('./components/partials/lastNews.vue'));
 Vue.component('tabs', require('./components/partials/tabs/tabs.vue'));
 Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
 

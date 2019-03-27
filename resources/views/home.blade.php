@@ -49,7 +49,7 @@
         </div>
     </article>
 </section>
-<section s-sec="testimonial">
+<section s-sec="testimonial" class="full-section">
     <carousel name="testimonials" :slides="{{json_encode($testimonials)}}"></carousel>
 </section>
 <section s-sec="values" class="full-section">
@@ -75,9 +75,7 @@
         </p>
     </article>
 </section>
-<section s-sec="last-news" class="full-section">
-    <last-news></last-news>
-</section>
+<last-news></last-news>
 <section s-sec="projects" class="full-section">
     <h2 class="title">Projects</h2>
     <slider name="projects" :slides="{{json_encode($projects)}}"></slider>

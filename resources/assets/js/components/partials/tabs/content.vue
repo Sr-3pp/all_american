@@ -4,42 +4,42 @@
             <ul class="service-list">
                 <li>
                     <p>
-                        <icon name="like"></icon>
+                        <icon name="star"></icon>
                         Concept
                     </p>
                     <icon name="chevron"></icon>
                 </li>
                 <li>
                     <p>
-                        <icon name="like"></icon>
+                        <icon name="star"></icon>
                         Planning
                     </p>
                     <icon name="chevron"></icon>
                 </li>
                 <li>
                     <p>
-                        <icon name="like"></icon>
+                        <icon name="star"></icon>
                         Material
                     </p>
                     <icon name="chevron"></icon>
                 </li>
                 <li>
                     <p>
-                        <icon name="like"></icon>
+                        <icon name="star"></icon>
                         Horientation
                     </p>
                     <icon name="chevron"></icon>
                 </li>
                 <li>
                     <p>
-                        <icon name="like"></icon>
+                        <icon name="star"></icon>
                         Original Designs
                     </p>
                     <icon name="chevron"></icon>
                 </li>
                 <li>
                     <p>
-                        <icon name="like"></icon>
+                        <icon name="star"></icon>
                         Estimate
                     </p>
                     <icon name="chevron"></icon>
