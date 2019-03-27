@@ -1,53 +1,10 @@
 <template>
     <transition-group s-sec="services" tag="section" class="tab-content full-section">
         <article :key="1" v-if="section === 1">
-            <ul class="service-list">
-                <li>
-                    <p>
-                        <icon name="star"></icon>
-                        Concept
-                    </p>
-                    <icon name="chevron"></icon>
-                </li>
-                <li>
-                    <p>
-                        <icon name="star"></icon>
-                        Planning
-                    </p>
-                    <icon name="chevron"></icon>
-                </li>
-                <li>
-                    <p>
-                        <icon name="star"></icon>
-                        Material
-                    </p>
-                    <icon name="chevron"></icon>
-                </li>
-                <li>
-                    <p>
-                        <icon name="star"></icon>
-                        Horientation
-                    </p>
-                    <icon name="chevron"></icon>
-                </li>
-                <li>
-                    <p>
-                        <icon name="star"></icon>
-                        Original Designs
-                    </p>
-                    <icon name="chevron"></icon>
-                </li>
-                <li>
-                    <p>
-                        <icon name="star"></icon>
-                        Estimate
-                    </p>
-                    <icon name="chevron"></icon>
-                </li>
-            </ul>
+            <drop-list :list="list"></drop-list>
         </article>
         <article :key="2" v-if="section === 2">
-            <ul class="service-list">
+            <ul class="service-list drop-list">
                 <li>
                     <icon name="like"></icon>
                         Concept
@@ -66,7 +23,7 @@
             </ul>
         </article>
         <article :key="3" v-if="section === 3">
-            <ul class="service-list">
+            <ul class="service-list drop-list">
                 <li>
                     <icon name="like"></icon>
                         Concept
@@ -80,7 +37,7 @@
             </ul>
         </article>
         <article :key="4" v-if="section === 4">
-            <ul class="service-list">
+            <ul class="service-list drop-list">
                 <li>
                     <icon name="like"></icon>
                         Concept
@@ -109,7 +66,7 @@
             </ul>
         </article>
         <article :key="5" v-if="section === 5">
-            <ul class="service-list">
+            <ul class="service-list drop-list">
                 <li>
                     <icon name="like"></icon>
                         Concept
@@ -118,7 +75,7 @@
             </ul>
         </article>
         <article :key="6" v-if="section === 6">
-            <ul class="service-list">
+            <ul class="service-list drop-list">
                 <li>
                     <icon name="like"></icon>
                         Concept
@@ -161,6 +118,9 @@ export default {
             this.section = $event.index
         });
     },
+    props: [
+        'list'
+    ],
     data(){
         return {
             section: 1

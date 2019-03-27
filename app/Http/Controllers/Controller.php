@@ -64,6 +64,18 @@ class Controller extends BaseController
                 'archivo' => '/img/slides/projects/slide_3.jpg'
             ],
         ];
-            return view('home', compact('slides', 'testimonials', 'projects'));
+        $list = [
+            [
+                'id' => 1,
+                'name' => 'Concept',
+                'content' => '/img/slides/projects/slide_4.jpg'
+            ],
+            [
+                'id' => 2,
+                'name' => 'Planning',
+                'content' => '/img/slides/projects/slide_3.jpg'
+            ],
+        ];
+            return view('home', compact('slides', 'testimonials', 'projects', 'list'));
     }
 }

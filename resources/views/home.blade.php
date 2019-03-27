@@ -5,7 +5,7 @@
     <carousel name="main" :slides="{{json_encode($slides)}}"></carousel>
     <tabs></tabs>
 </section>
-<content-tabs></content-tabs>
+<content-tabs :list="{{json_encode($list)}}"></content-tabs>
 <section s-sec="separator">
         <div class="full-section">
             <article v-animate.repeat="'slide-right'">
