@@ -918,5 +918,182 @@ body{
                 }
             }
         }
+
+        &[s-layout=general]{
+            header{
+                background-color: #FFF;
+                article{
+                    p{
+                        color: $gray;
+                    }
+                    span{
+                        svg{
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+            [s-sec=navigation]{
+                background-color: #FFF;
+                .item-list{
+                    .item{
+                        .link{
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+            [s-sec=services]{
+                &.full-section{
+                    flex-direction: column;
+                }
+                >.cont{
+                    display: flex;
+                    >div{
+                        &:first-child{
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex: {
+                                shrink: 1;
+                                basis: 100%;
+                            }
+                            padding-right:  5%;
+                            >article{
+                                overflow: hidden;
+                                border-radius: 15%;
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex:{
+                                    shrink: 1;
+                                    basis: 47%;
+                                }
+                                margin-bottom: 5%;
+                                &:nth-child(odd){
+                                    margin-right: 5%;
+                                }
+                                .img{
+                                    width: 100%;
+                                    img{
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                }
+                                .text{
+                                    color: $light-gray;
+                                    background-color: $gray;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    margin-bottom: 0;
+                                    padding: 10% 5%;
+                                    width: 100%;
+                                    font-weight: bold;
+                                    svg{
+                                        width: 20%;
+                                        height: 20%;
+                                        margin-right: 5%;
+                                    }
+                                    font: {
+                                        family: 'Helvetica';
+                                    }
+                                }
+                            }
+                        }
+                        &:last-child{
+                            flex: {
+                                shrink: 2;
+                                basis: 100%;
+                            }
+                            .tabs{
+                                border-bottom: {
+                                    style: solid;
+                                    width: 1px;
+                                    color: #000;
+                                }
+                                &.full-section{
+                                    padding: 0;
+                                }
+                                >ul{
+                                    background-color: $light-gray;
+                                    margin-bottom: 5%;
+                                    ol{
+                                        color: #FFF;
+                                        padding: {
+                                            top: 3%;
+                                            right: 8%;
+                                            bottom: 3%;
+                                            left: 8%;
+                                        }
+                                        font-size: 1.2rem;
+                                        border-bottom: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: #FFF; 
+                                        }
+                                        transition: all .2s ease;
+                                        &:hover{
+                                            background-color: $light-gray;
+                                            color: $gray;
+                                            border: {
+                                                style: none;
+                                            }
+                                        }
+                                        &.active{
+                                            background-color: #FFF;
+                                            color: $gray;
+                                            border: {
+                                                style: solid;
+                                                width: 1px;
+                                                color: $gray;
+                                            }
+                                        }
+                                        svg{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .subscribe{
+                                .form-group{
+                                    font-size: 1.3rem;
+                                    .input{
+                                        padding: 3%;
+                                        border: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: $gray;
+                                            radius: 5px;
+                                        }
+                                    }
+                                    .btn{
+                                        background-color: transparent;
+                                        color: $gray;
+                                        font-weight: bold;
+                                        max-width: 50%;
+                                        border: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: $gray;
+                                        }
+                                        &:hover{
+                                            color: #FFF;
+                                            background-color: $gray;
+                                        }
+                                    }
+                                }
+                            }
+                            >article{
+                                .category{
+                                    padding-top: 5%;
+                                    color: $gray;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

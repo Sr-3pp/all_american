@@ -21,6 +21,7 @@ window.Vue = require('vue');
  Vue.component('upload-file', require('./components/form/uploadFile.vue'));
  Vue.component('select-list', require('./components/form/selectList.vue'));
  Vue.component('contact-form', require('./components/form/contactForm.vue'));
+ Vue.component('subscribe', require('./components/form/subscribe.vue'));
 
  /*--------partials-----------*/
 Vue.component('navigation', require('./components/partials/navigation.vue'));

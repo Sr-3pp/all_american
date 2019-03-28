@@ -3,9 +3,9 @@
 @section('content')
 <section s-sec="header">
     <carousel name="main" :slides="{{json_encode($slides)}}"></carousel>
-    <tabs :services="{{json_encode($services)}}"></tabs>
+    <tabs name="home" :services="{{json_encode($services)}}"></tabs>
 </section>
-<content-tabs :services="{{json_encode($services)}}"></content-tabs>
+<content-tabs name="home" :services="{{json_encode($services)}}"></content-tabs>
 <section s-sec="separator">
         <div class="full-section">
             <article v-animate.repeat="'slide-right'">

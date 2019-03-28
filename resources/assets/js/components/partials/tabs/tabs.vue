@@ -16,7 +16,7 @@ export default {
 
     },
     props: [
-        'services'
+        'services', 'name'
     ],
     data(){
         return {

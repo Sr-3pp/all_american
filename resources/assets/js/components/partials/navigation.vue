@@ -5,10 +5,10 @@
         </figure>
         <ul class="item-list" :class="{'active': active}">
             <li class="item">
-                <a class="link" href="#">Home</a>
+                <a class="link" href="/">Home</a>
             </li>
             <li class="item">
-                <a class="link" href="#">Services</a>
+                <a class="link" href="/services">Services</a>
             </li>
             <li class="item">
                 <a class="link" href="#">Projects</a>

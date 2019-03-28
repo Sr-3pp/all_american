@@ -217,4 +217,142 @@ class Controller extends BaseController
         ];
             return view('home', compact('slides', 'testimonials', 'projects', 'services', 'news'));
     }
+
+    public function services(){
+        $services = [
+            [
+                'id' => 1,
+                'name' => 'Design and Planning',
+                'icon' => 'planning',
+                'list' => [
+                    [
+                        'id' => 1,
+                        'name' => 'Concept',
+                        'content' => 'I know your deepest secret fear, I know everything',
+                        'img' => '/img/slides/projects/slide_4.jpg'
+                    ],
+                    [
+                        'id' => 2,
+                        'name' => 'Planning',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg'
+                    ],
+                    [
+                        'id' => 3,
+                        'name' => 'SI que si',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_1.jpg'
+                    ]
+                ]
+            ],
+            [
+                'id' => 2,
+                'name' => 'Preparation',
+                'icon' => 'preparation',
+                'list' => [
+                    [
+                        'id' => 1,
+                        'name' => 'Concept',
+                        'content' => 'I know your deepest secret fear, I know everything',
+                        'img' => '/img/slides/projects/slide_4.jpg'
+                    ],
+                    [
+                        'id' => 2,
+                        'name' => 'Planning',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg'
+                    ]
+                ]
+            ],
+            [
+                'id' => 3,
+                'name' => 'Welding',
+                'icon' => 'welding',
+                'list' => [
+                    [
+                        'id' => 1,
+                        'name' => 'Concept',
+                        'content' => 'I know your deepest secret fear, I know everything',
+                        'img' => '/img/slides/projects/slide_4.jpg'
+                    ],
+                    [
+                        'id' => 2,
+                        'name' => 'Planning',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg'
+                    ],
+                    [
+                        'id' => 3,
+                        'name' => 'SI que si',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_1.jpg'
+                    ]
+                ]
+            ],
+            [
+                'id' => 4,
+                'name' => 'Finishes',
+                'icon' => 'polish',
+                'list' => [
+                    [
+                        'id' => 1,
+                        'name' => 'Concept',
+                        'content' => 'I know your deepest secret fear, I know everything',
+                        'img' => '/img/slides/projects/slide_4.jpg'
+                    ],
+                    [
+                        'id' => 2,
+                        'name' => 'Planning',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg'
+                    ]
+                ]
+            ],
+            [
+                'id' => 5,
+                'name' => 'Painting',
+                'icon' => 'painting',
+                'list' => [
+                    [
+                        'id' => 1,
+                        'name' => 'Concept',
+                        'content' => 'I know your deepest secret fear, I know everything',
+                        'img' => '/img/slides/projects/slide_4.jpg'
+                    ],
+                    [
+                        'id' => 2,
+                        'name' => 'Planning',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg'
+                    ],
+                    [
+                        'id' => 3,
+                        'name' => 'SI que si',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_1.jpg'
+                    ]
+                ]
+            ],
+            [
+                'id' => 6,
+                'name' => 'Delivery',
+                'icon' => 'delivery',
+                'list' => [
+                    [
+                        'id' => 1,
+                        'name' => 'Concept',
+                        'content' => 'I know your deepest secret fear, I know everything',
+                        'img' => '/img/slides/projects/slide_4.jpg'
+                    ],
+                    [
+                        'id' => 2,
+                        'name' => 'Planning',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg'
+                    ]
+                ]
+            ]
+        ];
+        return view('services', compact('services'));
+    }
 }

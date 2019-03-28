@@ -18,7 +18,7 @@ Route::get('/', 'Controller@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('services')->group(function(){
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'Controller@services');
   
 });
 Route::prefix('projects')->group(function(){
