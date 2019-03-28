@@ -1,12 +1,17 @@
 <template>
-    <ul class="service-list drop-list">
-        <li v-for="(item, index) in list">
-            <article>
+    <ul class="service-list drop-list" :class="{'content': content !== null}">
+        <li v-if="content == null || content == index" v-for="(item, index) in list">
+            <article @click="showContent(index, item.img)">
                 <icon name="star"></icon>
-                <span v-if="content != index">{{item.name}}</span>
-                <p v-if="content == index">{{item.content}}</p>
+                <p>
+                    <span class="category">{{item.name}}</span>
+                </p>
+            <button class="btn">
+                <icon v-if="content === null" name="chevron"></icon>
+                <icon v-else name="minus"></icon>
+            </button>       
             </article>
-            <button @click="showContent(index)"><icon name="chevron"></icon></button>            
+            <span v-if="content == index" class="text">{{item.content}}</span>     
         </li>
     </ul>
 </template>
@@ -24,8 +29,13 @@ export default{
         }
     },
     methods: {
-        showContent(index){
-            this.content == index ? this.content = null : this.content = index
+        showContent(index, img){
+            this.content == index ? this.content = null : this.content = index;
+            if(this.content !== null){
+                this.$bus.$emit('setImg', {img: img});
+            }else{
+                 this.$bus.$emit('setImg', {img: '/img/default.jpg'});
+            }
         }
     }
 }

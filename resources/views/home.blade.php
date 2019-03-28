@@ -3,9 +3,9 @@
 @section('content')
 <section s-sec="header">
     <carousel name="main" :slides="{{json_encode($slides)}}"></carousel>
-    <tabs></tabs>
+    <tabs :services="{{json_encode($services)}}"></tabs>
 </section>
-<content-tabs :list="{{json_encode($list)}}"></content-tabs>
+<content-tabs :services="{{json_encode($services)}}"></content-tabs>
 <section s-sec="separator">
         <div class="full-section">
             <article v-animate.repeat="'slide-right'">
@@ -75,7 +75,7 @@
         </p>
     </article>
 </section>
-<last-news></last-news>
+<last-news :news="{{json_encode($news)}}"></last-news>
 <section s-sec="projects" class="full-section">
     <h2 class="title">Projects</h2>
     <slider name="projects" :slides="{{json_encode($projects)}}"></slider>

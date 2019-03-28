@@ -87,6 +87,24 @@
                     width: 50%;
                 }
             }
+            [s-sec=testimonial]{
+                &.full-section{
+                    height: 500px;
+                }
+                .carousel{
+                    .slides{
+                        .slide{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                height: 100%;
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+            }
             [s-sec=values]{
                 flex-direction: row;
                 article{
@@ -119,6 +137,9 @@
                     }
                     .category{
                         font-size: 1.5rem
+                    }
+                    .s-text{
+                        font-size: .7rem
                     }
                 }
             }
@@ -165,7 +186,6 @@
                 }
                 .tabs{
                     width: 100%;
-                    padding: 1vh 5vh;
                     ul{
                         width: 100%;
                         ol{
@@ -387,12 +407,33 @@
 @media (min-width: 1440px){
     body{
         #app{
+            [s-sec=header]{
+                .tabs{
+                    ul{
+                        ol{
+                            height: 120px;
+                            &.active{
+                                height: 150px;
+                            }
+                            p{
+                                font-size: 1.2rem;
+                                max-width: 105px;
+                            }
+                        }
+                    }
+                }
+            }
             [s-sec=who]{
+                &.full-section{
+                    height: 450px;
+                }
                 svg{
-                    width: 48%;
+                    width: 36%;
+                    -webkit-transform: scale(1.4, 1.5);
+                    transform: scale(1.4, 1.5);
                 }
                 article{
-                    width: 40%;
+                    width: 35%;
                 }
             }
         }

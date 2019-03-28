@@ -1,40 +1,10 @@
 <template>
-    <article class="tabs">
+    <article class="tabs full-section">
         <ul>
-            <ol :class="{'active': section === 1}" @click="setTab(1)">
-                <icon name="planning"></icon>
+            <ol v-for="(s, index) in services" :class="{'active': section === index}" @click="setTab(index)">
+                <icon :name="s.icon"></icon>
                 <p>
-                    Design and Planning
-                </p>
-            </ol>
-            <ol :class="{'active': section === 2}" @click="setTab(2)">
-                <icon name="preparation"></icon>
-                <p>
-                    Preparation
-                </p>
-            </ol>
-            <ol :class="{'active': section === 3}" @click="setTab(3)">
-                <icon name="welding"></icon>
-                <p>
-                    Welding
-                </p>
-            </ol>
-            <ol :class="{'active': section === 4}" @click="setTab(4)">
-                <icon name="polish"></icon>
-                <p>
-                    Finishes
-                </p>
-            </ol>
-            <ol :class="{'active': section === 5}" @click="setTab(5)">
-                <icon name="painting"></icon>
-                <p>
-                    Painting
-                </p>
-            </ol>
-            <ol :class="{'active': section === 6}" @click="setTab(6)">
-                <icon name="delivery"></icon>
-                <p>
-                    Delivery
+                    {{s.name}}
                 </p>
             </ol>
         </ul>
@@ -45,9 +15,12 @@ export default {
     mounted(){
 
     },
+    props: [
+        'services'
+    ],
     data(){
         return {
-            section: 1
+            section: 0
         }
     },
     methods: {

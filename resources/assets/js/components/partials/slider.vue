@@ -3,15 +3,23 @@
 <button @mouseover="prev()" class="control prev"> < </button>
   <div class="slider--inner" :class="{'prev': this.previus, 'fast': this.nexts}">
     <div class="slide-inner">
-                <article class="item" v-for="(slide, index) in slides">
-                    <img :src="slide.archivo" alt="default slide">
-                </article>
-            </div>
-            <div class="slide-inner">
-                <article class="item" v-for="(slide, index) in slides">
-                    <img :src="slide.archivo" alt="default slide">
-                </article>
-            </div>
+        <article class="item" v-for="(slide, index) in slides">
+            <img :src="slide.archivo" alt="default slide">
+            <p>
+                <span class="category">{{slide.name}}</span>
+                <a href="#" class="btn">See More</a>
+            </p>
+        </article>
+    </div>
+    <div class="slide-inner">
+        <article class="item" v-for="(slide, index) in slides">
+            <img :src="slide.archivo" alt="default slide">
+            <p>
+                <span class="category">{{slide.name}}</span>
+                <a href="#" class="btn">See More</a>
+            </p>
+        </article>
+    </div>
   </div>
 <button @mouseover="next()" class="control next"> > </button>
 </div>
@@ -30,7 +38,6 @@
                 pictures: null,
                 previus: false,
                 nexts: false,
-                speed: 10000,
                 paused: false
             }
         },
@@ -42,12 +49,10 @@
             next(){
                 this.previus = false
                 this.nexts ? this.nexts = false : this.nexts = true;
-                this.speed = 2000
             },
             reset(){
                 this.previus = false;
                 this.nexts = false;
-                this.speed = 10000
             }
         }
     }
