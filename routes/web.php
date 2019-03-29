@@ -16,6 +16,7 @@ Auth::routes();
 
 Route::get('/', 'Controller@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/subscribe', 'Controller@subscribe');
 
 Route::prefix('services')->group(function(){
     Route::get('/', 'Controller@services');

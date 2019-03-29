@@ -38,7 +38,7 @@
                 </span>
             </article>
         </header>
-        <navigation></navigation>
+        <navigation name="general"></navigation>
         @yield('content')
     </div>
     <footer>

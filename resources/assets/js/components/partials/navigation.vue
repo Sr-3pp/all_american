@@ -27,31 +27,38 @@
 <script>
     export default {
         mounted() {
-            var este = this
-            window.onscroll = function() {myFunction()};
+            var este = this;
+            window.onscroll = function() {este.sticky()};
+            
+            if(this.name === 'general'){
+                this.logo = '/img/svg/logo.svg'
+            }
+            
+        },
+        props: [
+            'name'
+        ],
+        data(){
+            return {
+                active: false,
+                logo: '/img/svg/logo_bn.svg'
+            }
+        },
+        methods: {
+            sticky(){
+                var este = this,
+                navbar = $("nav")[0],
+                sticky = navbar.offsetTop;
 
-            // Get the navbar
-            var navbar = $("nav")[0];
-
-            // Get the offset position of the navbar
-            var sticky = navbar.offsetTop;
-
-            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-            function myFunction() {
                 if (window.pageYOffset >= sticky) {
                     navbar.classList.add("on-top")
                     este.logo = '/img/svg/logo.svg'
                 } else {
                     navbar.classList.remove("on-top");
-                    este.logo = '/img/svg/logo_bn.svg';
+                    if(this.name === 'home'){
+                        este.logo = '/img/svg/logo_bn.svg';
+                    }
                 }
-            }
-            
-        },
-        data(){
-            return {
-                active: false,
-                logo: '/img/svg/logo_bn.svg'
             }
         }
     }

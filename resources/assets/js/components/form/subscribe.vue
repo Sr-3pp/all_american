@@ -2,6 +2,7 @@
     <article class="subscribe form">
         <h2 class="category">Subscribe to our newsletter</h2>
         <div v-if="!done && !error.status" class="form-group">
+            <span v-if="alert" class="must">{{error.message}}</span>
             <input class="input" type="email" v-model="email" placeholder="Your Email">
             <button class="btn" @click="subscribe()">Subscribe</button>
         </div>
@@ -26,21 +27,26 @@ export default {
             error: {
                 status: false,
                 message: null
-            }
+            },
+            alert: false
         }
     },
     methods: {
         subscribe(){
             var este = this;
+            this.alert = false;
             if(this.re.test(this.email)){
-                axios.get('/subscribe', {email: this.email}).then(response => {
-                    este.done = true
+                axios.post('/subscribe', {email: this.email}).then(response => {
+                    if(response.data == 1){
+                        este.done = true
+                    }
                 }).catch(e => {
                     este.error.status = true;
                     este.error.message = e.message;
                 });
             }else{
-                alert('invalid');
+                this.error.message = 'Verify your email';
+                this.alert = true;
             }
         }
     }

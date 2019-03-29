@@ -970,8 +970,33 @@ body{
                                     basis: 47%;
                                 }
                                 margin-bottom: 5%;
+                                cursor: pointer;
                                 &:nth-child(odd){
                                     margin-right: 5%;
+                                }
+                                &:nth-child(1), &:nth-child(2){
+                                    &:hover{
+                                        .text{
+                                            background-color: $Ablue;
+                                            color: #FFF;
+                                        }
+                                    }
+                                }
+                                &:nth-child(3), &:nth-child(4){
+                                    &:hover{
+                                        .text{
+                                            background-color: $Ared;
+                                            color: #FFF;
+                                        }
+                                    }
+                                }
+                                &:nth-child(5), &:nth-child(6){
+                                    &:hover{
+                                        .text{
+                                            background-color: $light-gray;
+                                            color: #000;
+                                        }
+                                    }
                                 }
                                 .img{
                                     width: 100%;
@@ -990,6 +1015,7 @@ body{
                                     padding: 10% 5%;
                                     width: 100%;
                                     font-weight: bold;
+                                    transition: all .2s ease;
                                     svg{
                                         width: 20%;
                                         height: 20%;
@@ -1033,6 +1059,9 @@ body{
                                             color: #FFF; 
                                         }
                                         transition: all .2s ease;
+                                        &:last-child{
+                                            border: none;
+                                        }
                                         &:hover{
                                             background-color: $light-gray;
                                             color: $gray;
