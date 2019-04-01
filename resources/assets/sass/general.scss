@@ -332,20 +332,98 @@ body{
                     top: 3%;
                     bottom: 3%;
                 }
-                article{
-                    flex: 1;
-                    .service-list{
-                        width: 100%;
-                        height: 100%;
-                        list-style: none;
-                        padding-right: 6%;
-                        display: flex;
-                        justify-content: center;
-                        flex-direction: column;
-                        &.content{
+                >div{
+                    display: flex;
+                    width: 100%;
+                    article{
+                        flex: {
+                            grow: 1;
+                            shrink: 1;
+                            basis: 50%;
+                        }
+                        .service-list{
+                            width: 100%;
+                            height: 100%;
+                            list-style: none;
+                            padding-right: 6%;
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            &.content{
+                                li{
+                                    border: none;
+                                    flex-direction: column;
+                                    &:hover{
+                                        article{
+                                            color: $Ablue;
+                                            svg{
+                                                color: $Ablue;
+                                            }
+                                            .btn{
+                                                svg{
+                                                    color: $Ared;
+                                                    background-color: transparent;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    article{
+                                        color: $Ablue;
+                                        svg{
+                                            margin-bottom: auto;
+                                            margin-top: 8px;
+                                            color: $Ablue;
+                                        }
+                                        p{
+                                            display: flex;
+                                            flex-direction: column;
+                                            flex: 1;
+                                            .category{
+                                                margin-bottom: 3%;
+                                            }
+                                        }
+                                    }
+                                    .btn{
+                                        svg{
+                                            width: 20px;
+                                            height: 20px;
+                                            margin-top: inherit;
+                                            background-color: transparent;
+                                            color: $Ared;
+                                            transform: inherit;
+                                            padding: 0;
+                                        }
+                                    } 
+                                }
+                                .text{
+                                    color: $gray;
+                                    font-weight: normal;
+                                    width: 100%;
+                                    padding: {
+                                        top: 5%;
+                                        bottom: 5%;
+                                    }
+                                    border: {
+                                        top: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: $gray;
+                                        }
+                                        bottom: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: $gray;
+                                        }
+                                    }
+                                }
+                            }
                             li{
-                                border: none;
-                                flex-direction: column;
+                                color: $gray;
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 0;
                                 &:hover{
                                     article{
                                         color: $Ablue;
@@ -354,133 +432,67 @@ body{
                                         }
                                         .btn{
                                             svg{
-                                                color: $Ared;
-                                                background-color: transparent;
+                                                color: #FFF;
+                                                background-color: $Ablue;
                                             }
                                         }
                                     }
                                 }
                                 article{
-                                    color: $Ablue;
-                                    svg{
-                                        margin-bottom: auto;
-                                        margin-top: 8px;
-                                        color: $Ablue;
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    padding:{
+                                        top: 2%;
+                                        right: 0;
+                                        bottom: 2%;
+                                        left: 0;
                                     }
-                                    p{
-                                        display: flex;
-                                        flex-direction: column;
-                                        flex: 1;
-                                        .category{
-                                            margin-bottom: 3%;
-                                        }
+                                    .category{
+                                        margin: 0;
+                                    }
+                                    svg{
+                                        margin-right: 2%;
+                                        width: 15px;
+                                        height: 15px;
+                                        transform: inherit;
+                                        border: inherit;
+                                        background: inherit;
+                                        padding: 0;
+                                        color: $gray;
                                     }
                                 }
+                                border-bottom: {
+                                    style: solid;
+                                    width: 1px;
+                                    color: $gray;
+                                }
                                 .btn{
+                                    background-color: transparent;
+                                    border: none;
                                     svg{
                                         width: 20px;
                                         height: 20px;
-                                        margin-top: inherit;
-                                        background-color: transparent;
-                                        color: $Ared;
-                                        transform: inherit;
-                                        padding: 0;
+                                        padding: 5px;
+                                        background: $gray;
+                                        color: #FFF;
+                                        border-radius: 5px;
+                                        transform: rotate(-90deg);
                                     }
-                                } 
-                            }
-                            .text{
-                                color: $gray;
-                                font-weight: normal;
-                                width: 100%;
-                                padding: {
-                                    top: 5%;
-                                    bottom: 5%;
-                                }
-                                border: {
-                                    top: {
-                                        style: solid;
-                                        width: 1px;
-                                        color: $gray;
-                                    }
-                                    bottom: {
-                                        style: solid;
-                                        width: 1px;
-                                        color: $gray;
-                                    }
-                                }
-                            }
-                        }
-                        li{
-                            color: $gray;
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding: 0;
-                            &:hover{
-                                article{
-                                    color: $Ablue;
-                                    svg{
-                                        color: $Ablue;
-                                    }
-                                    .btn{
-                                        svg{
-                                            color: #FFF;
-                                            background-color: $Ablue;
-                                        }
-                                    }
-                                }
-                            }
-                            article{
-                                width: 100%;
-                                display: flex;
-                                align-items: center;
-                                cursor: pointer;
-                                padding:{
-                                    top: 2%;
-                                    right: 0;
-                                    bottom: 2%;
-                                    left: 0;
-                                }
-                                .category{
-                                    margin: 0;
-                                }
-                                svg{
-                                    margin-right: 2%;
-                                    width: 15px;
-                                    height: 15px;
-                                    transform: inherit;
-                                    border: inherit;
-                                    background: inherit;
-                                    padding: 0;
-                                    color: $gray;
-                                }
-                            }
-                            border-bottom: {
-                                style: solid;
-                                width: 1px;
-                                color: $gray;
-                            }
-                            .btn{
-                                background-color: transparent;
-                                border: none;
-                                svg{
-                                    width: 20px;
-                                    height: 20px;
-                                    padding: 5px;
-                                    background: $gray;
-                                    color: #FFF;
-                                    border-radius: 5px;
-                                    transform: rotate(-90deg);
                                 }
                             }
                         }
                     }
-                }
-                img{
-                    flex: 1;
-                    height: 50%;
-                    border-radius: 5px;
+                    img{
+                        flex: {
+                            grow: 1;
+                            shrink: 1;
+                            basis: 50%;
+                        }
+                        height: 100%;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
@@ -951,78 +963,238 @@ body{
                     display: flex;
                     >div{
                         &:first-child{
-                            display: flex;
-                            flex-wrap: wrap;
                             flex: {
                                 shrink: 1;
                                 basis: 100%;
                             }
-                            padding-right:  5%;
-                            >article{
-                                overflow: hidden;
-                                border-radius: 15%;
-                                position: relative;
+                            >div{
                                 display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex:{
-                                    shrink: 1;
-                                    basis: 47%;
-                                }
-                                margin-bottom: 5%;
-                                cursor: pointer;
-                                &:nth-child(odd){
-                                    margin-right: 5%;
-                                }
-                                &:nth-child(1), &:nth-child(2){
-                                    &:hover{
-                                        .text{
-                                            background-color: $Ablue;
-                                            color: #FFF;
+                                flex-wrap: wrap;
+                                padding-right:  5%;
+                                .sub{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: space-between;
+                                    flex: {
+                                        shrink: 1;
+                                        basis: 100%;
+                                    }
+                                    .headline{
+                                        flex:{
+                                            grow: 1;
+                                            shrink: 1;
+                                            basis: 100%;
+                                        }
+                                        display: flex;
+                                        align-items: center;
+                                        .subtitle{
+                                            margin-bottom: 0;
+                                        }
+                                        svg{
+                                            width: 50px;
+                                            height: 50px;
+                                            margin-right: 3%;
+                                            &:last-child{
+                                                margin-left: auto;
+                                                margin-right: inherit;
+                                                height: 100%;
+                                                width: 30%;
+                                                color: $Ablue;
+                                            }
                                         }
                                     }
-                                }
-                                &:nth-child(3), &:nth-child(4){
-                                    &:hover{
-                                        .text{
-                                            background-color: $Ared;
-                                            color: #FFF;
-                                        }
-                                    }
-                                }
-                                &:nth-child(5), &:nth-child(6){
-                                    &:hover{
-                                        .text{
-                                            background-color: $light-gray;
-                                            color: #000;
-                                        }
-                                    }
-                                }
-                                .img{
-                                    width: 100%;
-                                    img{
+                                    .text{
                                         width: 100%;
-                                        height: auto;
+                                        margin-bottom: 5%;
+                                    }
+                                    .card{
+                                        flex-basis: 47%;
                                     }
                                 }
-                                .text{
-                                    color: $light-gray;
-                                    background-color: $gray;
-                                    position: absolute;
-                                    bottom: 0;
-                                    left: 0;
-                                    margin-bottom: 0;
-                                    padding: 10% 5%;
+                                .detail{
                                     width: 100%;
-                                    font-weight: bold;
-                                    transition: all .2s ease;
-                                    svg{
-                                        width: 20%;
-                                        height: 20%;
+                                    >article{
+                                        width: 100%;
+                                        .header{
+                                            display: flex;
+                                            position: relative;
+                                            height: 300px;
+                                            overflow: hidden;
+                                            margin-bottom: 5%;
+                                            figure{
+                                                height: 100%;
+                                                width: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                z-index: 0;
+
+                                                img{
+                                                    width: 100%;
+                                                }
+                                            }
+                                            p{
+                                                width: 50%;
+                                                height: 100%;
+                                                position: relative;
+                                                z-index: 1;
+                                                color: #FFF;
+                                                &::after{
+                                                    content: '';
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    border: {
+                                                        top: {
+                                                            style: solid;
+                                                            width: 300px;
+                                                            color: $Ablue;
+                                                        }
+                                                        right: {
+                                                            style: solid;
+                                                            width: 150px;
+                                                            color: transparent;
+                                                        }
+                                                    }
+	                                                height: 100%;
+                                                    width: 25%;
+                                                    z-index: -1;      
+                                                }
+                                                svg{
+                                                    width: 40%;
+                                                    height: 50%;
+                                                    position: absolute;
+                                                    top: 30%;
+                                                    left: 5%;
+                                                    transform: translateY(-50%);
+
+                                                }
+                                            }
+                                        }
+                                        .subtitle{
+                                            position: relative;
+                                            padding-bottom: 3%;
+                                            &::after{
+                                                content: '';
+                                                width: 70%;
+                                                height: 2px;
+                                                position: absolute;
+                                                bottom: -5px;
+                                                left: 0;
+                                                background-color: $Ablue;
+                                            }
+                                        }
+                                        .text{
+                                            position: relative;
+                                            width: 70%;
+                                            &::before, &::after{
+                                                left: 100%;
+                                                top: 38px;
+                                                border: solid transparent;
+                                                content: " ";
+                                                height: 0;
+                                                width: 0;
+                                                position: absolute;
+                                                pointer-events: none;
+                                            }
+                                            &::before{
+                                                border-left-color: $Ablue;
+                                                border-width: 53px;
+                                                margin-top: -53px;
+                                            }
+                                            &::after{
+                                                border-left-color: #FFF;
+                                                border-width: 50px;
+                                                margin-top: -50px;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                                .card{
+                                    overflow: hidden;
+                                    border-radius: 15%;
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex:{
+                                        shrink: 1;
+                                        basis: 47%;
+                                    }
+                                    margin-bottom: 5%;
+                                    cursor: pointer;
+                                    &:nth-child(odd){
                                         margin-right: 5%;
                                     }
-                                    font: {
-                                        family: 'Helvetica';
+                                    &:nth-child(1), &:nth-child(2){
+                                        &:hover{
+                                            .text{
+                                                background-color: $Ablue;
+                                                color: #FFF;
+                                            }
+                                        }
+                                    }
+                                    &:nth-child(3), &:nth-child(4){
+                                        &:hover{
+                                            .text{
+                                                background-color: $Ared;
+                                                color: #FFF;
+                                            }
+                                        }
+                                    }
+                                    &:nth-child(5), &:nth-child(6){
+                                        &:hover{
+                                            .text{
+                                                background-color: $light-gray;
+                                                color: #000;
+                                            }
+                                        }
+                                    }
+                                    .img{
+                                        width: 100%;
+                                        img{
+                                            width: 100%;
+                                            height: auto;
+                                        }
+                                    }
+                                    .text, .card-content{
+                                        color: $light-gray;
+                                        background-color: $gray;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        margin-bottom: 0;
+                                        padding: 10% 5%;
+                                        width: 100%;
+                                        font-weight: bold;
+                                        transition: all .2s ease;
+                                        svg{
+                                            width: 20%;
+                                            height: 20%;
+                                            margin-right: 5%;
+                                        }
+                                        font: {
+                                            family: 'Helvetica';
+                                        }
+                                    }
+                                    .card-content{
+                                        padding-bottom: 10%;
+                                        >div{
+                                            display: flex;
+                                            justify-content: space-between;
+                                            p{
+                                                display: flex;
+                                                align-items: center;
+                                            }
+                                            svg{
+                                                border: {
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color: $light-gray;
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1045,6 +1217,7 @@ body{
                                     background-color: $light-gray;
                                     margin-bottom: 5%;
                                     ol{
+                                        cursor: pointer;
                                         color: #FFF;
                                         padding: {
                                             top: 3%;
@@ -1065,9 +1238,6 @@ body{
                                         &:hover{
                                             background-color: $light-gray;
                                             color: $gray;
-                                            border: {
-                                                style: none;
-                                            }
                                         }
                                         &.active{
                                             background-color: #FFF;

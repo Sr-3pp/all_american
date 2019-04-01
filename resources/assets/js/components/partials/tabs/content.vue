@@ -1,30 +1,16 @@
 <template>
     <transition-group s-sec="services" :tag="tag" class="tab-content full-section">
-        <article :key="s.id" v-if="section === index && name === 'home'" v-for="(s, index) in services">
-            <drop-list :list="s.list"></drop-list>
-        </article>
-        <img v-if="name === 'home'" :key="7" :src="image" width="20%" alt="">
-        <article :key="s.id" v-if="name === 'general'" v-for="(s, index) in services">
-            <figure class="img">
-                <img :src="s.list[0].img" alt="">
-            </figure>
-            <p class="text">
-                <icon :name="s.icon"></icon>
-                {{s.name}}
-            </p>
-        </article>
+        <tabs-content-home v-if="name === 'home'" :key="0" :services="services"></tabs-content-home>
+        <tabs-content-general v-if="name === 'general'" :key="1" :services="services"></tabs-content-general>
     </transition-group>
 </template>
 <script>
 export default {
     mounted(){
-        this.$bus.$on('setTab', ($event) => {
-            this.section = $event.index
-        }).$on('setImg', ($event) => {
-            this.image = $event.img
-        });
         if(this.name === 'general'){
             this.tag = 'div';
+        }else{
+            this.section = 0
         }
     },
     props: [
@@ -32,8 +18,6 @@ export default {
     ],
     data(){
         return {
-            section: 0,
-            image: '/img/default.jpg',
             tag: 'section'
         }
     },

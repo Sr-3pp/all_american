@@ -225,24 +225,31 @@ class Controller extends BaseController
                 'id' => 1,
                 'name' => 'Design and Planning',
                 'icon' => 'planning',
+                'description' => 'Lorem ipsum dolor amet',
                 'list' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/slides/projects/slide_4.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 3,
                         'name' => 'SI que si',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg'
+                        'img' => '/img/slides/projects/slide_1.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ]
                 ]
             ],
@@ -250,18 +257,23 @@ class Controller extends BaseController
                 'id' => 2,
                 'name' => 'Preparation',
                 'icon' => 'preparation',
+                'description' => 'Lorem ipsum dolor amet',
                 'list' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/slides/projects/slide_4.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ]
                 ]
             ],
@@ -269,24 +281,31 @@ class Controller extends BaseController
                 'id' => 3,
                 'name' => 'Welding',
                 'icon' => 'welding',
+                'description' => 'Lorem ipsum dolor amet',
                 'list' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/slides/projects/slide_4.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 3,
                         'name' => 'SI que si',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg'
+                        'img' => '/img/slides/projects/slide_1.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ]
                 ]
             ],
@@ -294,18 +313,23 @@ class Controller extends BaseController
                 'id' => 4,
                 'name' => 'Finishes',
                 'icon' => 'polish',
+                'description' => 'Lorem ipsum dolor amet',
                 'list' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/slides/projects/slide_4.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ]
                 ]
             ],
@@ -313,24 +337,31 @@ class Controller extends BaseController
                 'id' => 5,
                 'name' => 'Painting',
                 'icon' => 'painting',
+                'description' => 'Lorem ipsum dolor amet',
                 'list' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/slides/projects/slide_4.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 3,
                         'name' => 'SI que si',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg'
+                        'img' => '/img/slides/projects/slide_1.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ]
                 ]
             ],
@@ -338,18 +369,23 @@ class Controller extends BaseController
                 'id' => 6,
                 'name' => 'Delivery',
                 'icon' => 'delivery',
+                'description' => 'Lorem ipsum dolor amet',
                 'list' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/slides/projects/slide_4.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
                     ]
                 ]
             ]

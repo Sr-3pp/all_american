@@ -13,14 +13,20 @@
 <script>
 export default {
     mounted(){
-
+        if(this.name === 'home'){
+            this.section = 0
+        }
+        
+        this.$bus.$on('setTab', ($event) => {
+            this.section = $event.index
+        })
     },
     props: [
         'services', 'name'
     ],
     data(){
         return {
-            section: 0
+            section: false
         }
     },
     methods: {
