@@ -1,6 +1,6 @@
 <template>
     <ul class="service-list drop-list" :class="{'content': content !== null}">
-        <li v-if="content == null || content == index" v-for="(item, index) in list">
+        <li v-if="name !== 'design' && content == null || content == index" v-for="(item, index) in list">
             <article @click="showContent(index, item.img)">
                 <icon name="star"></icon>
                 <p>
@@ -13,15 +13,25 @@
             </article>
             <span v-if="content == index" class="text">{{item.content}}</span>     
         </li>
+        <li v-if="name === 'design' && content == null || content == index" v-for="(item, index) in list">
+            <p class="subtitle">
+                <icon name="-"></icon>
+                {{item.name}}
+            </p>
+            <p class="text">
+                {{item.content}}          
+            </p>
+        </li>
     </ul>
 </template>
 <script>
 export default{
     mounted(){
-
+        console.log(this.list[0]);
+        
     },
     props: [
-        'list'
+        'list', 'name'
     ],
     data(){
         return {

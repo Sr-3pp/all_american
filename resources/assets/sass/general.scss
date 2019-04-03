@@ -1020,7 +1020,7 @@ body{
                                             position: relative;
                                             height: 300px;
                                             overflow: hidden;
-                                            margin-bottom: 5%;
+                                            margin-bottom: 0;
                                             figure{
                                                 height: 100%;
                                                 width: 100%;
@@ -1073,13 +1073,22 @@ body{
                                         }
                                         .subtitle{
                                             position: relative;
-                                            padding-bottom: 3%;
+                                            padding-top: 5%;
+                                            padding-bottom: 5%;
+                                            margin-bottom: 5%;
+                                            svg{
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                color: $Ablue;
+                                                height: 100%;
+                                            }
                                             &::after{
                                                 content: '';
                                                 width: 70%;
                                                 height: 2px;
                                                 position: absolute;
-                                                bottom: -5px;
+                                                bottom: 0;
                                                 left: 0;
                                                 background-color: $Ablue;
                                             }
@@ -1087,25 +1096,60 @@ body{
                                         .text{
                                             position: relative;
                                             width: 70%;
-                                            &::before, &::after{
-                                                left: 100%;
-                                                top: 38px;
-                                                border: solid transparent;
-                                                content: " ";
-                                                height: 0;
-                                                width: 0;
-                                                position: absolute;
-                                                pointer-events: none;
-                                            }
-                                            &::before{
-                                                border-left-color: $Ablue;
-                                                border-width: 53px;
-                                                margin-top: -53px;
-                                            }
-                                            &::after{
-                                                border-left-color: #FFF;
-                                                border-width: 50px;
-                                                margin-top: -50px;
+                                        }
+                                        &.extra{
+                                            display: flex;
+                                            >div{
+                                                flex: {
+                                                    grow: 1;
+                                                    shrink: 1;
+                                                    basis: 50%;
+                                                }
+                                                >.subtitle{
+                                                    border: {
+                                                        style: solid;
+                                                        width: 1px;
+                                                        color: $Ablue;
+                                                        radius: 5%
+                                                    }
+                                                    color: $Ablue;
+                                                    display: inline-flex;
+                                                    text-align: center;
+                                                    padding: 3%;
+                                                    &::after{
+                                                        display: none;
+                                                    }
+                                                }
+                                                &:first-child{
+                                                    .text{
+                                                        width: 100%;
+                                                    }
+                                                }
+                                                &:last-child{
+                                                    padding-left: 10%;
+                                                    .service-list{
+                                                        li{
+                                                            flex-direction: column;
+                                                            color: $gray;
+                                                            .subtitle{
+                                                                font: {
+                                                                    family: 'Helvetica';
+                                                                    size: 1.2rem;
+                                                                    style: normal;
+                                                                }
+                                                                margin-bottom: 0;
+                                                                &::after{
+                                                                    display: none;
+                                                                }
+                                                                svg{
+                                                                    right: inherit;
+                                                                    left: -10%;
+                                                                    width: 20px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }

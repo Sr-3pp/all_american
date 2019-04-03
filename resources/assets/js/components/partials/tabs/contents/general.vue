@@ -50,10 +50,34 @@
                             <icon :name="detail.icon"></icon>
                         </p>
                     </div>
-                    <p class="subtitle">{{detail.name}}</p>  
+                    <p class="subtitle">
+                        {{detail.name}}
+                        <icon name="star_panel1"></icon>
+                    </p>  
                     <p class="text">
                         {{detail.description}}
                     </p>
+                </article>
+                <article class="extra">
+                    <div>
+                        <p class="subtitle">Fabrication</p>
+                        <p class="text">
+                            We offer fully customized guard rails
+                            and decorative railings to match any
+                            aesthetic. From hammered end caps to
+                            forged steel caps, pickets and tubing,
+                            we can create a railing that will last for
+                            years and look amazing. Don't settle
+                            on prefabricated pieces that barely fit
+                            your home, call the professionals at All
+                            American Finishing. We'll customize to
+                            your exact specifications.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="subtitle"> Process</p>
+                        <drop-list :list="list.design" name="design"></drop-list>
+                    </div>
                 </article>
             </div>
         </div>
@@ -79,7 +103,23 @@ export default {
         return {
             section: false,
             content: false,
-            detail: false
+            detail: false,
+            list: {
+                design: {
+                    0:{
+                        name: 'Additional Services',
+                        content: 'El contenido chilo'
+                    },
+                    1:{
+                        name: 'Additional Services',
+                        content: 'El contenido chilo'
+                    },
+                    2:{
+                        name: 'Additional Services',
+                        content: 'El contenido chilo'
+                    }
+                }
+            }
         }
     },
     props: ['services', 'name'],
