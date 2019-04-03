@@ -1,6 +1,6 @@
 <template>
     <ul class="service-list drop-list" :class="{'content': content !== null}">
-        <li v-if="name !== 'design' && content == null || content == index" v-for="(item, index) in list">
+        <li v-if="name === 'home' && content == null || content == index" v-for="(item, index) in list">
             <article @click="showContent(index, item.img)">
                 <icon name="star"></icon>
                 <p>
@@ -13,21 +13,23 @@
             </article>
             <span v-if="content == index" class="text">{{item.content}}</span>     
         </li>
-        <li v-if="name === 'design' && content == null || content == index" v-for="(item, index) in list">
-            <p class="subtitle">
-                <icon name="-"></icon>
+        <li v-if="name === 'general'" v-for="(item, index) in list">
+            <article  @click="showContent(index, item.img)">
+                <p class="subtitle">
+                <icon v-if="show === 'item_'+index" name="-"></icon>
+                <icon v-if="show !== 'item_'+index"  name="+"></icon>
                 {{item.name}}
-            </p>
-            <p class="text">
-                {{item.content}}          
-            </p>
+                </p>
+                <p v-if="show === 'item_'+index" class="text">
+                    {{item.content}}          
+                </p>
+            </article>
         </li>
     </ul>
 </template>
 <script>
 export default{
     mounted(){
-        console.log(this.list[0]);
         
     },
     props: [
@@ -35,16 +37,21 @@ export default{
     ],
     data(){
         return {
-            content: null
+            content: null,
+            show: 'item_0'
         }
     },
     methods: {
         showContent(index, img){
-            this.content == index ? this.content = null : this.content = index;
-            if(this.content !== null){
-                this.$bus.$emit('setImg', {img: img});
+            if (this.name === 'home') {
+                this.content == index ? this.content = null : this.content = index;
+                if(this.content !== null && this.name !== 'design'){
+                    this.$bus.$emit('setImg', {img: img});
+                }else{
+                    this.$bus.$emit('setImg', {img: '/img/default.jpg'});
+                }
             }else{
-                 this.$bus.$emit('setImg', {img: '/img/default.jpg'});
+                this.show = 'item_'+index
             }
         }
     }

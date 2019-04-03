@@ -1,7 +1,7 @@
 <template>
     <div>
         <article v-if="section === index" v-for="(s, index) in services">
-            <drop-list :list="s.list"></drop-list>
+            <drop-list :list="s.list" name="home"></drop-list>
         </article>
         <img :src="image" width="20%" alt="">
     </div>

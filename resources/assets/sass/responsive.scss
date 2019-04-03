@@ -197,7 +197,7 @@
                             &:nth-child(2){
                                 svg{
                                     width: 25%;
-                                    margin-right: 10px;
+                                    margin-right: 5px;
                                 }
                                 p{
                                     width: 90%;
@@ -275,9 +275,6 @@
                 height: 354px;
             }
             [s-sec=values]{
-                &.full-section{
-                    padding: 5vw;
-                }
                 article{
                     flex: 1;
                     margin-right: 3%;
@@ -370,7 +367,7 @@
                     ul{
                         ol{
                             p{
-                                width: 50%;
+                                width: 100%;
                             }
                         }
                     }

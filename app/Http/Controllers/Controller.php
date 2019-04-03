@@ -245,12 +245,34 @@ class Controller extends BaseController
                     ],
                     [
                         'id' => 3,
-                        'name' => 'SI que si',
+                        'name' => 'Material',
                         'content' => 'IM a spy, in the house of love',
                         'img' => '/img/slides/projects/slide_1.jpg',
                         'icon' => 'planning',
                         'description' => 'Lorem ipsum dolor amet',
-                    ]
+                        'list' => [
+                            [
+                                'name' => 'Material',
+                                'content' => 'full-content',
+                                'description' => 'Part of content...',
+                                'img' => '/img/slides/projects/slide_4.jpg',
+                            ],
+                            [
+                                'name' => 'Material',
+                                'content' => 'full-content',
+                                'description' => 'Part of content...',
+                                'img' => '/img/slides/projects/slide_3.jpg',
+                            ]
+                        ]
+                    ],
+                    [
+                        'id' => 4,
+                        'name' => 'estimate',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
+                    ],
                 ]
             ],
             [

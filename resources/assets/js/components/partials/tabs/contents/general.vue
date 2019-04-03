@@ -18,7 +18,7 @@
             <p v-if="!detail" class="text">
                 {{content.description}}
             </p>
-            <article v-if="!detail" class="card" v-for="(s, index) in content.list" @click="showContent(s)">
+            <article v-if="!detail" class="card" v-for="(s, i) in content.list" @click="showContent(s)">
                 <figure class="img">
                     <img :src="s.img" alt="">
                 </figure>
@@ -33,11 +33,56 @@
                 </div>
             </article>
             <div v-if="!detail && section == 0">
-                <article>
-
-                </article>
-                <article>
-
+                <article class="extra">
+                    <div>
+                        <p class="subtitle">Fabrication</p>
+                        <p class="text">
+                            We offer fully customized guard rails
+                            and decorative railings to match any
+                            aesthetic. From hammered end caps to
+                            forged steel caps, pickets and tubing,
+                            we can create a railing that will last for
+                            years and look amazing. Don't settle
+                            on prefabricated pieces that barely fit
+                            your home, call the professionals at All
+                            American Finishing. We'll customize to
+                            your exact specifications.
+                        </p>
+                        <ul class="list">
+                            <li>
+                                <icon name="ok"></icon>
+                                Decorative Places
+                            </li>
+                            <li>
+                                <icon name="ok"></icon>
+                                Custom Fabrication
+                            </li>
+                            <li>
+                                <icon name="ok"></icon>
+                                Rails
+                            </li>
+                            <li>
+                                <icon name="ok"></icon>
+                                Trims
+                            </li>
+                            <li>
+                                <icon name="ok"></icon>
+                                Gates
+                            </li>
+                            <li>
+                                <icon name="ok"></icon>
+                                Doors
+                            </li>
+                            <li>
+                                <icon name="ok"></icon>
+                                Fence
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="subtitle"> Process</p>
+                        <drop-list :list="list.design" name="general"></drop-list>
+                    </div>
                 </article>
             </div>
             <div class="detail" v-if="detail">
@@ -56,27 +101,24 @@
                     </p>  
                     <p class="text">
                         {{detail.description}}
+                        <icon name="star_panel2"></icon>
                     </p>
-                </article>
-                <article class="extra">
-                    <div>
-                        <p class="subtitle">Fabrication</p>
-                        <p class="text">
-                            We offer fully customized guard rails
-                            and decorative railings to match any
-                            aesthetic. From hammered end caps to
-                            forged steel caps, pickets and tubing,
-                            we can create a railing that will last for
-                            years and look amazing. Don't settle
-                            on prefabricated pieces that barely fit
-                            your home, call the professionals at All
-                            American Finishing. We'll customize to
-                            your exact specifications.
-                        </p>
-                    </div>
-                    <div>
-                        <p class="subtitle"> Process</p>
-                        <drop-list :list="list.design" name="design"></drop-list>
+                    <ul class="list" v-if="detail.list">
+                        <li v-for="(item, index) in detail.list">
+                            <p class="subtitle">
+                                <icon name="material"></icon>
+                                {{item.name}}
+                            </p>
+                            <p class="text">
+                                {{item.content}}
+                            </p>
+                            <figure>
+                                <img :src="item.img" alt="">
+                            </figure>
+                        </li>
+                    </ul>
+                    <div class="wizzard" v-if="detail.name == 'estimate'">
+                        el wizzard va aqui
                     </div>
                 </article>
             </div>
@@ -95,6 +137,7 @@
 export default {
      mounted(){
         this.$bus.$on('setTab', ($event) => {
+            this.detail = false
             this.section = $event.index
             this.content = this.services[this.section]
         })
@@ -125,11 +168,14 @@ export default {
     props: ['services', 'name'],
     methods: {
         showService(service, index){
+            this.detail = false
             this.content = service
             this.section = index
             this.$bus.$emit('setTab', {index: index});
         },
         showContent(service){
+            console.log(service);
+            
             this.detail = service
         }
     }
