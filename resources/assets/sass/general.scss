@@ -1236,6 +1236,37 @@ body{
                                                 }
                                             }
                                         }
+                                        .wizzard{
+                                            background-color: $Ablue;
+                                            color: #FFF;
+                                            border-radius: 15px;
+                                            padding: 5%;
+                                            .start{
+                                                align-items: center;
+                                                article{
+                                                    svg{
+                                                        width: 80px;
+                                                        height: 80px;
+                                                        margin-right: 5%;
+                                                    }
+                                                    .category{
+                                                        margin-right: 5%;
+                                                        margin-bottom: 0;
+                                                    }
+                                                }
+                                                .btn{
+                                                    background-color: transparent;
+                                                    color: #FFF;
+                                                    font-size: 1.2rem;
+                                                    font-weight: bold;
+                                                    border:{
+                                                        style: solid;
+                                                        width: 1px;
+                                                        color:#FFF;
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                     
                                 }

@@ -1,5 +1,5 @@
 <template>
-    <transition-group tag="section" class="form wizzard" name="fade">
+    <transition-group tag="div" class="form wizzard" name="fade">
         <ul v-if="file && !done.status" :key="0">
             <li>{{file.name}}</li>
             <li v-for="(field, index) in form" v-if="field.value">
@@ -9,7 +9,7 @@
         <div :key="1" v-if="step === 0 && !done.status" class="start">
             <article>
                 <icon name="file"></icon>
-                <p class="subtitle">
+                <p class="category">
                     SHARE WITH US YOUR PROJECT TO MAKE AN ESTIMATE
                 </p>
             </article>
