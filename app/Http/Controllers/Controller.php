@@ -267,7 +267,7 @@ class Controller extends BaseController
                     ],
                     [
                         'id' => 4,
-                        'name' => 'estimate',
+                        'name' => 'Estimate',
                         'content' => 'IM a spy, in the house of love',
                         'img' => '/img/slides/projects/slide_3.jpg',
                         'icon' => 'planning',

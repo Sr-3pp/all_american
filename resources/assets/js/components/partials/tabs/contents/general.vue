@@ -117,9 +117,7 @@
                             </figure>
                         </li>
                     </ul>
-                    <div class="wizzard" v-if="detail.name == 'estimate'">
-                        el wizzard va aqui
-                    </div>
+                    <wizzard v-if="detail.name.toLowerCase() == 'estimate'"></wizzard>
                 </article>
             </div>
         </div>
