@@ -994,6 +994,7 @@ body{
                                         }
                                         display: flex;
                                         align-items: center;
+                                        margin-bottom: 5%;
                                         .subtitle{
                                             margin-bottom: 0;
                                         }
@@ -1013,6 +1014,7 @@ body{
                                     .text{
                                         width: 100%;
                                         margin-bottom: 5%;
+                                        line-height: 1.3rem;
                                     }
                                     .card{
                                         flex-basis: 47%;
@@ -1070,6 +1072,16 @@ body{
                                                     li{
                                                         flex-direction: column;
                                                         color: $gray;
+                                                        cursor: pointer;
+                                                        padding: {
+                                                            top: 3%;
+                                                            bottom: 3%;
+                                                        }
+                                                        &:hover, .active{
+                                                            .subtitle{
+                                                                color: $Ablue;
+                                                            }
+                                                        }
                                                         .subtitle{
                                                             font: {
                                                                 family: 'Helvetica';
@@ -1237,32 +1249,147 @@ body{
                                             }
                                         }
                                         .wizzard{
+                                            position: relative;
                                             background-color: $Ablue;
                                             color: #FFF;
                                             border-radius: 15px;
                                             padding: 5%;
+                                            .btn{
+                                                background-color: transparent;
+                                                color: #FFF;
+                                                font-size: 1.2rem;
+                                                font-weight: bold;
+                                                border:{
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color:#FFF;
+                                                }
+                                            }
                                             .start{
                                                 align-items: center;
                                                 article{
+                                                    margin-right: 5%;
                                                     svg{
                                                         width: 80px;
                                                         height: 80px;
                                                         margin-right: 5%;
+                                                        path{
+                                                            stroke: #FFF;
+                                                        }
                                                     }
                                                     .category{
-                                                        margin-right: 5%;
                                                         margin-bottom: 0;
+                                                        font-size: 1rem;
+                                                        padding-right: 5%;
                                                     }
                                                 }
-                                                .btn{
+                                            }
+                                            ul{
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                justify-content: flex-end;
+                                                width: 100%;
+                                                transition: all .2s ease;
+                                                li{
+                                                    max-width: 30%;
+                                                    text-align: center;
+                                                    padding-top: 1%;
+                                                    font: {
+                                                        family: 'Aero Matics';
+                                                        weight: bold;
+                                                        style: italic;
+                                                        size: 1rem
+                                                    }
+                                                }
+                                            }
+                                            .group{
+                                                margin-top: 5%;
+                                                display: flex;
+                                                align-items: center;
+                                                flex-direction: row;
+                                                justify-content: space-between;
+                                                label, .btn{
+                                                    flex: {
+                                                        grow: 1;
+                                                        shrink: 1;
+                                                        basis: 20%
+                                                    }
+                                                }
+                                                label{
+                                                    text-align: right;
+                                                    font: {
+                                                        family: 'Aero Matics';
+                                                        weight: bold;
+                                                        style: italic;
+                                                        size: 2rem
+                                                    }
+                                                }
+                                                .input{
                                                     background-color: transparent;
                                                     color: #FFF;
-                                                    font-size: 1.2rem;
-                                                    font-weight: bold;
-                                                    border:{
+                                                    border-bottom: {
                                                         style: solid;
-                                                        width: 1px;
-                                                        color:#FFF;
+                                                        width: 1%;
+                                                        color: #FFF;
+                                                    }
+                                                    flex: {
+                                                        grow: 1;
+                                                        shrink: 1;
+                                                        basis: 60%
+                                                    }
+                                                    margin: {
+                                                        right: 3%;
+                                                        left: 3%;
+                                                    }
+                                                    &:focus{
+                                                        outline: none;
+                                                    }
+                                                    &::placeholder{
+                                                        color: rgb(199, 199, 199);
+                                                    }
+                                                }
+                                                .must{
+                                                    right: 25%;
+                                                    color: #FFF;
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                            .preview{
+                                                margin-bottom: 5%;
+                                                ul{
+                                                    position: static;
+                                                    margin-bottom: 0;
+                                                    justify-content: space-between;
+                                                    ol{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        align-items: center;
+                                                        justify-content: space-between;
+                                                        max-width: 25%;
+                                                        cursor: pointer;
+                                                        transition: all .2s ease;
+                                                        padding: 3%;
+                                                        flex: {
+                                                            grow: 1;
+                                                            shrink: 1;
+                                                            basis: 33.33%;
+                                                        }
+                                                        &:first-child{
+                                                            span{
+                                                                width: 100%;
+                                                            }
+                                                        }
+                                                        &:hover{
+                                                            background-color: rgba(#00a2ec, .2)
+                                                        }
+                                                        svg{
+                                                            width: 50%;
+                                                            height: 50%;
+                                                            path{
+                                                                stroke: currentColor;
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }

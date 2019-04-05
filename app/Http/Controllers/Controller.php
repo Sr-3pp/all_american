@@ -225,7 +225,11 @@ class Controller extends BaseController
                 'id' => 1,
                 'name' => 'Design and Planning',
                 'icon' => 'planning',
-                'description' => 'Lorem ipsum dolor amet',
+                'description' => 'We provide complete custom metal fabrication services, from planning to delivery
+                                in your business or home, we will work and trace from the beginning the best way
+                                to achieve the objectives of your project, anticipating any inconvenience that may
+                                arise, we distinguish ourselves by our reputation and that we are a committed and
+                                responsible company.',
                 'list' => [
                     [
                         'id' => 1,

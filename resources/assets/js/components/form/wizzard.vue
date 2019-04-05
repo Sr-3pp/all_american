@@ -1,8 +1,8 @@
 <template>
     <transition-group tag="div" class="form wizzard" name="fade">
-        <ul v-if="file && !done.status" :key="0">
-            <li>{{file.name}}</li>
-            <li v-for="(field, index) in form" v-if="field.value">
+        <ul v-if="file && !form.readyToSave" :key="0">
+            <li class="truncate">{{file.name}}</li>
+            <li class="truncate" v-for="(field, index) in form" v-if="field.value">
                 {{field.value}}
             </li>
         </ul>
@@ -17,11 +17,24 @@
             <button type="button" class="btn" @click="prevFile()">Upload</button>
         </div>
         <div :key="index+2" v-if="step !== 0 && field.visible && !done.status" class="group" v-for="(field, index) in form">
-            <label>{{field.name}}</label>
+            <label>{{field.name}}:</label>
             <span class="must" v-if="field.alert.status">{{field.alert.text}}</span>
-            <input :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value" @keyup.enter="nextStep(index)">
+            <input autofocus :ref="field.ref" :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value" @keyup.enter="nextStep(index)">
+            <button class="btn" type="button" @click="nextStep(index)">Next</button>
         </div>
-        <button v-if="form.readyToSave && !done.status" :key="99" type="button" class="btn" @click="create()">Send</button>
+        <div v-if="form.readyToSave && !done.status" :key="98" class="preview">
+            <ul>
+                <ol v-if="file" @click="backTo('file')">
+                    <icon name="file"></icon>
+                    <span class="truncate">{{file.name}}</span>
+                </ol>
+                <ol v-for="(field, index) in form" v-if="field.name" @click="backTo(index)">
+                    <span class="category">{{field.name}}:</span>
+                    {{field.value}}
+                </ol>
+            </ul>
+        </div>
+        <button v-if="form.readyToSave && !done.status" :key="99" type="button" class="btn" @click="create()">If all is OK, Send it</button>
         <div :key="100" class="thanks" v-if="done.status">
             <article v-if="!done.error.status">
                 thanks!
@@ -53,11 +66,12 @@ export default{
                     value: null,
                     type: 'text',
                     name: 'Name',
+                    ref: 'name',
                     alert: {
                         status: false,
                         text: 'You must fill this input'
                     },
-                    ph: 'Name',
+                    ph: 'Jhon Tittor',
                     visible: true,
                     required: true
                 },
@@ -65,11 +79,12 @@ export default{
                     value: null,
                     type: 'email',
                     name: 'E-mail',
+                    ref: 'email',
                     alert: {
                         status: false,
                         text: 'Verify your email'
                     },
-                    ph: 'Email',
+                    ph: 'tittor@mail.com',
                     visible: false,
                     required: true,
                 },
@@ -108,6 +123,8 @@ export default{
                                     next.visible = true
                                 }else{
                                     this.form,readyToSave = true;
+                                    console.log(this.form);
+                                    
                                 }
                         }
                     }else{
@@ -138,8 +155,22 @@ export default{
                 this.file = e.target.files[0]
                 if(this.file){
                     this.step = 1
+                    this.form[0].visible = true
                 }
             },
+            backTo(magic){
+                if (isNaN(magic)) {
+                    this.done.status = false
+                    this.form.readyToSave = false
+                    this.step = 0;
+                }else{
+                var field = this.form[magic];
+                    field.visible = true;
+                    this.done.status = false
+                    this.form.readyToSave = false
+                    this.step = parseInt(magic)+1
+                }
+            }
     }
 }
 </script>
