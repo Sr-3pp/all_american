@@ -2,7 +2,7 @@
     <div>
         <article class="card" :key="s.id" v-if="!content && section !== null" v-for="(s, index) in services" @click="showService(s, index)">
             <figure class="img">
-                <img :src="s.list[0].img" alt="">
+                <img :src="s.sections[0].img" alt="">
             </figure>
             <p class="text">
                 <icon :name="s.icon"></icon>
@@ -18,7 +18,7 @@
             <p v-if="!detail" class="text">
                 {{content.description}}
             </p>
-            <article v-if="!detail" class="card" v-for="(s, i) in content.list" @click="showContent(s)">
+            <article v-if="!detail" class="card" v-for="(s, i) in content.sections" @click="showContent(s)">
                 <figure class="img">
                     <img :src="s.img" alt="">
                 </figure>
@@ -32,6 +32,7 @@
                     </div>
                 </div>
             </article>
+            
             <div v-if="!detail && section == 0">
                 <article class="extra">
                     <div>
@@ -85,6 +86,7 @@
                     </div>
                 </article>
             </div>
+
             <div class="detail" v-if="detail">
                 <article>
                     <div class="header">
@@ -100,11 +102,11 @@
                         <icon name="star_panel1"></icon>
                     </p>  
                     <p class="text">
-                        {{detail.description}}
+                        {{detail.content}}
                         <icon name="star_panel2"></icon>
                     </p>
-                    <ul class="list" v-if="detail.list">
-                        <li v-for="(item, index) in detail.list">
+                    <ul class="list" v-if="detail.lists" v-for="(l, i) in detail.lists">
+                        <li v-for="(item, index) in l">
                             <p class="subtitle">
                                 <icon name="material"></icon>
                                 {{item.name}}

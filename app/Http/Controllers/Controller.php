@@ -225,19 +225,20 @@ class Controller extends BaseController
                 'id' => 1,
                 'name' => 'Design and Planning',
                 'icon' => 'planning',
+                'img' => '/img/slides/projects/slide_4.jpg',
                 'description' => 'We provide complete custom metal fabrication services, from planning to delivery
                                 in your business or home, we will work and trace from the beginning the best way
                                 to achieve the objectives of your project, anticipating any inconvenience that may
                                 arise, we distinguish ourselves by our reputation and that we are a committed and
                                 responsible company.',
-                'list' => [
+                'sections' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg',
                         'icon' => 'planning',
+                        'img' => '/img/slides/projects/slide_4.jpg',
                         'description' => 'Lorem ipsum dolor amet',
+                        'content' => 'I know your deepest secret fear, I know everything',
                     ],
                     [
                         'id' => 2,
@@ -254,18 +255,20 @@ class Controller extends BaseController
                         'img' => '/img/slides/projects/slide_1.jpg',
                         'icon' => 'planning',
                         'description' => 'Lorem ipsum dolor amet',
-                        'list' => [
-                            [
-                                'name' => 'Material',
-                                'content' => 'full-content',
-                                'description' => 'Part of content...',
-                                'img' => '/img/slides/projects/slide_4.jpg',
-                            ],
-                            [
-                                'name' => 'Material',
-                                'content' => 'full-content',
-                                'description' => 'Part of content...',
-                                'img' => '/img/slides/projects/slide_3.jpg',
+                        'lists' => [
+                            0 => [
+                                [
+                                    'name' => 'Material',
+                                    'content' => 'full-content',
+                                    'description' => 'Part of content...',
+                                    'img' => '/img/slides/projects/slide_4.jpg',
+                                ],
+                                [
+                                    'name' => 'Material',
+                                    'content' => 'full-content',
+                                    'description' => 'Part of content...',
+                                    'img' => '/img/slides/projects/slide_3.jpg',
+                                ]
                             ]
                         ]
                     ],
@@ -284,14 +287,45 @@ class Controller extends BaseController
                 'name' => 'Preparation',
                 'icon' => 'preparation',
                 'description' => 'Lorem ipsum dolor amet',
-                'list' => [
+                'sections' => [
                     [
                         'id' => 1,
-                        'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'name' => 'Shear',
+                        'content' => 'Material cutting service, adjusted to the
+                                        specific measures that you need. We offer
+                                        shearing services, since it is a fast and efficient
+                                        way to cut metal sheets, you can get
+                                        custom size cuts either for specific cut only
+                                        or future work of material forming, welding,
+                                        polishing or painting.',
                         'img' => '/img/slides/projects/slide_4.jpg',
                         'icon' => 'planning',
                         'description' => 'Lorem ipsum dolor amet',
+                        'subsections' => [
+                            0 => [
+                                'name' => 'sub name',
+                                'content' => 'I know your deepest secret fear, I know everything',
+                                'img' => '/img/slides/projects/slide_4.jpg',
+                                'icon' => 'planning',
+                                'description' => 'Lorem ipsum dolor amet',
+                            ],
+                            1 => [
+                                'name' => 'stainless',
+                                'content' => 'I know your deepest secret fear, I know everything',
+                                'img' => '/img/slides/projects/slide_4.jpg',
+                                'icon' => 'planning',
+                                'description' => 'Lorem ipsum dolor amet',
+                                'lists' => [
+                                    0 => [
+                                        'name' => 'steel',
+                                        'content' => 'I know your deepest secret fear, I know everything',
+                                        'img' => '/img/slides/projects/slide_4.jpg',
+                                        'icon' => 'planning',
+                                        'description' => 'Lorem ipsum dolor amet',
+                                    ]
+                                ]
+                            ],
+                        ]
                     ],
                     [
                         'id' => 2,
@@ -308,7 +342,7 @@ class Controller extends BaseController
                 'name' => 'Welding',
                 'icon' => 'welding',
                 'description' => 'Lorem ipsum dolor amet',
-                'list' => [
+                'sections' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
@@ -340,7 +374,7 @@ class Controller extends BaseController
                 'name' => 'Finishes',
                 'icon' => 'polish',
                 'description' => 'Lorem ipsum dolor amet',
-                'list' => [
+                'sections' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
@@ -364,7 +398,7 @@ class Controller extends BaseController
                 'name' => 'Painting',
                 'icon' => 'painting',
                 'description' => 'Lorem ipsum dolor amet',
-                'list' => [
+                'sections' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
@@ -396,7 +430,7 @@ class Controller extends BaseController
                 'name' => 'Delivery',
                 'icon' => 'delivery',
                 'description' => 'Lorem ipsum dolor amet',
-                'list' => [
+                'sections' => [
                     [
                         'id' => 1,
                         'name' => 'Concept',
