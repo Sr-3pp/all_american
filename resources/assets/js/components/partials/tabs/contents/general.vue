@@ -33,7 +33,7 @@
                 </div>
             </article>
             
-            <div v-if="!detail && section == 0">
+            <div v-if="!detail">
                 <article class="extra">
                     <div>
                         <p class="subtitle">Fabrication</p>
@@ -88,7 +88,6 @@
             </div>
 
             <div class="detail" v-if="detail">
-                <article>
                     <div class="header">
                         <figure>
                             <img :src="detail.img" alt="">
@@ -120,7 +119,37 @@
                         </li>
                     </ul>
                     <wizzard v-if="detail.name.toLowerCase() == 'estimate'"></wizzard>
-                </article>
+                    <article v-if="detail.subsections" v-for="(sub, index) in detail.subsections">
+                        <p class="title">
+                            {{sub.name}}
+                        </p>
+                        <p class="text">
+                            {{sub.content}}
+                        </p>
+                        <div v-if="sub.table" v-for="(t, ind) in sub.table">
+                            <p class="category">    
+                                {{t.material}}
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Gauge</td>
+                                        <td>Thikness</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(g) in  t.gauges">
+                                        <td>{{g.gauge}}</td>
+                                        <td>{{g.thick}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div v-if="sub.lists" v-for="(l, ind) in sub.lists">
+                            <p class="title">{{l.name}}</p>
+                            <p class="text">{{l.content}}</p>
+                        </div>
+                    </article>
             </div>
         </div>
         <div :key="99" v-else class="cont">

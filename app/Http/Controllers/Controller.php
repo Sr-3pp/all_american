@@ -315,8 +315,8 @@ class Controller extends BaseController
                                 'img' => '',
                                 'icon' => 'planning',
                                 'description' => 'Lorem ipsum dolor amet',
-                                'lists' => [
-                                    0 => [
+                                'table' => [
+                                    [
                                         'material' => 'STAINLESS STEEL',
                                         'gauges' => [
                                             0 => [
@@ -329,7 +329,7 @@ class Controller extends BaseController
                                             ],
                                         ] 
                                     ],
-                                    0 => [
+                                    [
                                         'material' => 'ALuminium',
                                         'gauges' => [
                                             0 => [
@@ -351,7 +351,7 @@ class Controller extends BaseController
                                 'icon' => 'planning',
                                 'description' => 'Lorem ipsum dolor amet',
                                 'lists' => [
-                                    0 => [
+                                    [
                                         'name' => 'PLasma',
                                         'content' => 'Plasma cutting is a process that uses a nozzle, with a hole for the circulation
                                                         of the ionized gas at high temperatures, in such a way that a beam is obtained
@@ -359,7 +359,7 @@ class Controller extends BaseController
                                                         steel, aluminum and other conductive metals of electricity. Through the use of
                                                         this technique, the plasma arc and the gas eliminate the molten material.',
                                     ],
-                                    1 => [
+                                    [
                                         'name' => 'WATERJET',
                                         'content' => 'Plasma cutting is a process that uses a nozzle, with a hole for the circulation
                                                         of the ionized gas at high temperatures, in such a way that a beam is obtained
