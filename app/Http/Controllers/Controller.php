@@ -310,26 +310,70 @@ class Controller extends BaseController
                                 'description' => 'Lorem ipsum dolor amet',
                             ],
                             1 => [
-                                'name' => 'stainless',
+                                'name' => 'HOW TO WORK WITH THE “GAUGES” SISTEM?',
+                                'content' => 'I know your deepest secret fear, I know everything',
+                                'img' => '',
+                                'icon' => 'planning',
+                                'description' => 'Lorem ipsum dolor amet',
+                                'lists' => [
+                                    0 => [
+                                        'material' => 'STAINLESS STEEL',
+                                        'gauges' => [
+                                            0 => [
+                                                'gauge' => '28',
+                                                'thick' => '0.015'
+                                            ],
+                                            0 => [
+                                                'gauge' => '26',
+                                                'thick' => '0.018'
+                                            ],
+                                        ] 
+                                    ],
+                                    0 => [
+                                        'material' => 'ALuminium',
+                                        'gauges' => [
+                                            0 => [
+                                                'gauge' => '22',
+                                                'thick' => '0.025'
+                                            ],
+                                            0 => [
+                                                'gauge' => '20',
+                                                'thick' => '0.032'
+                                            ],
+                                        ] 
+                                    ]
+                                ]
+                            ],
+                            2 => [
+                                'name' => 'MORE CUT SYSTEM SERVICE',
                                 'content' => 'I know your deepest secret fear, I know everything',
                                 'img' => '/img/slides/projects/slide_4.jpg',
                                 'icon' => 'planning',
                                 'description' => 'Lorem ipsum dolor amet',
                                 'lists' => [
                                     0 => [
-                                        'name' => 'steel',
-                                        'content' => 'I know your deepest secret fear, I know everything',
-                                        'img' => '/img/slides/projects/slide_4.jpg',
-                                        'icon' => 'planning',
-                                        'description' => 'Lorem ipsum dolor amet',
-                                    ]
+                                        'name' => 'PLasma',
+                                        'content' => 'Plasma cutting is a process that uses a nozzle, with a hole for the circulation
+                                                        of the ionized gas at high temperatures, in such a way that a beam is obtained
+                                                        that can be used to cut sections of metals such as carbon steel, steel stainless
+                                                        steel, aluminum and other conductive metals of electricity. Through the use of
+                                                        this technique, the plasma arc and the gas eliminate the molten material.',
+                                    ],
+                                    1 => [
+                                        'name' => 'WATERJET',
+                                        'content' => 'Plasma cutting is a process that uses a nozzle, with a hole for the circulation
+                                                        of the ionized gas at high temperatures, in such a way that a beam is obtained
+                                                        that can be used to cut sections of metals such as carbon steel, steel stainless
+                                                        steel, aluminum and other conductive metals of electricity. Through the use of
+                                                        this technique, the plasma arc and the gas eliminate the molten material.',
+                                    ],
                                 ]
-                            ],
+                            ]
                         ]
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Planning',
+                        'name' => 'Formin Break',
                         'content' => 'IM a spy, in the house of love',
                         'img' => '/img/slides/projects/slide_3.jpg',
                         'icon' => 'planning',
