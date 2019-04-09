@@ -126,26 +126,29 @@
                         <p class="text">
                             {{sub.content}}
                         </p>
-                        <div v-if="sub.table" v-for="(t, ind) in sub.table">
+                        <div class="tables" v-if="sub.table" v-for="(t, ind) in sub.table">
                             <p class="category">    
                                 {{t.material}}
                             </p>
-                            <table>
+                            <table class="gauges">
                                 <thead>
                                     <tr>
-                                        <td>Gauge</td>
-                                        <td>Thikness</td>
+                                        <th>Gauge</th>
+                                        <th>Thikness</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="(g) in  t.gauges">
                                         <td>{{g.gauge}}</td>
-                                        <td>{{g.thick}}</td>
+                                        <td>{{g.thick}}"</td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <p class="s-text">
+                                .125" is plate
+                            </p>
                         </div>
-                        <div v-if="sub.lists" v-for="(l, ind) in sub.lists">
+                        <div class="lists" v-if="sub.lists" v-for="(l, ind) in sub.lists">
                             <p class="title">{{l.name}}</p>
                             <p class="text">{{l.content}}</p>
                         </div>

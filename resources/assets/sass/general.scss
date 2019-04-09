@@ -1393,6 +1393,71 @@ body{
                                             }
                                         }
                                     }
+                                    .tables{
+                                        background-color: $Ablue;
+                                        border-radius: 20px;
+                                        width: 60%;
+                                        margin-bottom: 5%;
+                                        padding-bottom: 15%;
+                                        .category{
+                                            text-align: center;
+                                            color: #FFF;
+                                            padding: {
+                                                top: 3%;
+                                                bottom: 3%;
+                                            }
+                                        }
+                                        .gauges{
+                                            color: #FFF;
+                                            width: 100%;
+                                            thead{
+                                                tr{
+                                                    th{
+                                                        font-family: 'Aero Matics';
+                                                        font-weight: bold;
+                                                        width: 50%;
+                                                        padding: {
+                                                            top: 3%;
+                                                            bottom: 3%;
+                                                        }
+                                                        border: {
+                                                            top: {
+                                                                style: solid;
+                                                                width: 1px;
+                                                                color: #FFF;
+                                                            }
+                                                            bottom: {
+                                                                style: solid;
+                                                                width: 1px;
+                                                                color: #FFF;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            tbody{
+                                                tr{
+                                                    td{
+                                                        text-align: center;
+                                                        font-weight: bold;
+                                                        padding: {
+                                                            top: 3%;
+                                                            bottom: 3%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .s-text{
+                                            font-weight: bold;
+                                            color: #FFF;
+                                            margin-left: 5%;
+                                            margin-top: 10%;
+                                        }
+                                    }
+                                    .lists{
+
+                                    }
                                     
                                 }
                                 .card{
