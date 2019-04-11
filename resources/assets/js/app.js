@@ -33,7 +33,7 @@ Vue.component('last-news', require('./components/partials/lastNews.vue'));
 Vue.component('tabs', require('./components/partials/tabs/tabs.vue'));
 Vue.component('tabs-content-general', require('./components/partials/tabs/contents/general.vue'));
 Vue.component('tabs-content-home', require('./components/partials/tabs/contents/home.vue'));
-Vue.component('foaming-form', require('./components/partials/tabs/contents/partials/foaminfForm.vue'));
+Vue.component('foaming-form', require('./components/partials/tabs/contents/partials/foamingForm.vue'));
 Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
 
 const EventBus = new Vue()
