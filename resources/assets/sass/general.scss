@@ -50,7 +50,7 @@ body{
             margin-bottom: 0;
             .slides{
                 .slide{
-                    max-height: 90vh;
+                    max-height: 100vh;
                     .content{
                         color: #FFF;
                         text-align: center;
@@ -857,11 +857,17 @@ body{
                                 display: none;
                             }
                             .input{
+                                height: 35px;
                                 border: {
                                     style: solid;
                                     color: $gray;
                                     width: 1px;
                                     radius: 5px;
+                                }
+                            }
+                            textarea{
+                                &.input{
+                                    height: inherit;
                                 }
                             }
                             .btn{
@@ -965,6 +971,7 @@ body{
             [s-sec=services]{
                 &.full-section{
                     flex-direction: column;
+                    padding-left: 0;
                 }
                 >.cont{
                     display: flex;
@@ -978,6 +985,10 @@ body{
                                 display: flex;
                                 flex-wrap: wrap;
                                 padding-right:  5%;
+                                padding-left: 5vw;
+                                &.no-padd{
+                                    padding-left: 0;
+                                }
                                 .sub{
                                     display: flex;
                                     flex-wrap: wrap;
@@ -1110,7 +1121,7 @@ body{
                                     .header{
                                         display: flex;
                                         position: relative;
-                                        height: 300px;
+                                        height: 400px;
                                         overflow: hidden;
                                         margin-bottom: 0;
                                         figure{
@@ -1139,330 +1150,446 @@ body{
                                                 border: {
                                                     top: {
                                                         style: solid;
-                                                        width: 300px;
+                                                        width: 400px;
                                                         color: $Ablue;
                                                     }
                                                     right: {
                                                         style: solid;
-                                                        width: 150px;
+                                                        width: 300px;
                                                         color: transparent;
                                                     }
                                                 }
                                                 height: 100%;
-                                                width: 25%;
+                                                width: 20%;
                                                 z-index: -1;      
                                             }
                                             svg{
                                                 width: 40%;
                                                 height: 50%;
                                                 position: absolute;
-                                                top: 30%;
-                                                left: 5%;
+                                                top: 40%;
+                                                left: 10%;
                                                 transform: translateY(-50%);
 
                                             }
                                         }
                                     }
-                                    .subtitle{
-                                        position: relative;
-                                        padding-top: 5%;
-                                        padding-bottom: 5%;
-                                        margin-bottom: 0;
-                                        svg{
-                                            position: absolute;
-                                            top: 0;
-                                            right: 0;
-                                            color: $Ablue;
-                                            height: 100%;
-                                        }
-                                    }
-                                    .text{
-                                        position: relative;
-                                        width: 70%;
-                                        padding-top: 5%;
-                                        min-height: 150px;
-                                        &::before{
-                                            content: '';
-                                            width: 100%;
-                                            height: 2px;
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
-                                            background-color: $Ablue;
-                                        }
-                                        svg{
-                                            height: 150px;
-                                            color: $Ablue;
-                                            position: absolute;
-                                            top: 0;
-                                            right: 0;
-                                            transform: translateX(100%);
-                                        }
-                                    }
-                                    .list{
-                                        list-style: none;
-                                        li{
-                                            padding: 0;
+                                    >.content{
+                                        padding-left: 5vw;
+                                        .subtitle{
                                             position: relative;
-                                            border:{
-                                                top:{
-                                                    style: solid;
-                                                    width: 1px;
-                                                    color: $gray;
-                                                }
-                                            }
-                                            .subtitle{
-                                                color: $Ablue;
-                                                padding-bottom: 3%;
-                                                svg{
-                                                    position: static;
-                                                    width: 50px;
-                                                    height: 50px;
-                                                    margin-right: 5%;
-                                                }
-                                            }
-                                            .text{
-                                                padding-top: 0;
-                                                padding-bottom: 3%;
-                                                margin-bottom: 0;
-                                                width: 80%;
-                                                &::before{
-                                                    display: none;
-                                                }
-                                            }
-                                            figure{
+                                            padding-top: 5%;
+                                            padding-bottom: 5%;
+                                            margin-bottom: 0;
+                                            svg{
                                                 position: absolute;
                                                 top: 0;
                                                 right: 0;
+                                                color: $Ablue;
                                                 height: 100%;
-                                                width: 20%;
-                                                overflow: hidden;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                img{
-                                                    height: 100%;
-                                                    width: auto;
-                                                }
                                             }
                                         }
-                                    }
-                                    .wizzard{
-                                        position: relative;
-                                        background-color: $Ablue;
-                                        color: #FFF;
-                                        border-radius: 15px;
-                                        padding: 5%;
-                                        .btn{
-                                            background-color: transparent;
-                                            color: #FFF;
-                                            font-size: 1.2rem;
-                                            font-weight: bold;
-                                            border:{
-                                                style: solid;
-                                                width: 1px;
-                                                color:#FFF;
+                                        .text{
+                                            position: relative;
+                                            width: 70%;
+                                            padding-top: 5%;
+                                            min-height: 150px;
+                                            &::before{
+                                                content: '';
+                                                width: 100%;
+                                                height: 2px;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                background-color: $Ablue;
+                                            }
+                                            svg{
+                                                height: 150px;
+                                                color: $Ablue;
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                transform: translateX(100%);
                                             }
                                         }
-                                        .start{
-                                            align-items: center;
-                                            article{
-                                                margin-right: 5%;
-                                                svg{
-                                                    width: 80px;
-                                                    height: 80px;
-                                                    margin-right: 5%;
-                                                    path{
-                                                        stroke: #FFF;
+                                        .list{
+                                            list-style: none;
+                                            li{
+                                                padding: 0;
+                                                position: relative;
+                                                border:{
+                                                    top:{
+                                                        style: solid;
+                                                        width: 1px;
+                                                        color: $gray;
                                                     }
                                                 }
-                                                .category{
+                                                .subtitle{
+                                                    color: $Ablue;
+                                                    padding-bottom: 3%;
+                                                    svg{
+                                                        position: static;
+                                                        width: 50px;
+                                                        height: 50px;
+                                                        margin-right: 5%;
+                                                    }
+                                                }
+                                                .text{
+                                                    padding-top: 0;
+                                                    padding-bottom: 3%;
                                                     margin-bottom: 0;
-                                                    font-size: 1rem;
-                                                    padding-right: 5%;
+                                                    width: 80%;
+                                                    &::before{
+                                                        display: none;
+                                                    }
+                                                }
+                                                figure{
+                                                    position: absolute;
+                                                    top: 0;
+                                                    right: 0;
+                                                    height: 100%;
+                                                    width: 20%;
+                                                    overflow: hidden;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    img{
+                                                        height: 100%;
+                                                        width: auto;
+                                                    }
                                                 }
                                             }
                                         }
-                                        ul{
-                                            position: absolute;
-                                            top: 0;
-                                            right: 0;
-                                            justify-content: flex-end;
-                                            width: 100%;
-                                            transition: all .2s ease;
-                                            li{
-                                                max-width: 30%;
-                                                text-align: center;
-                                                padding-top: 1%;
-                                                font: {
-                                                    family: 'Aero Matics';
-                                                    weight: bold;
-                                                    style: italic;
-                                                    size: 1rem
-                                                }
-                                            }
-                                        }
-                                        .group{
-                                            margin-top: 5%;
-                                            display: flex;
-                                            align-items: center;
-                                            flex-direction: row;
-                                            justify-content: space-between;
-                                            label, .btn{
-                                                flex: {
-                                                    grow: 1;
-                                                    shrink: 1;
-                                                    basis: 20%
-                                                }
-                                            }
-                                            label{
-                                                text-align: right;
-                                                font: {
-                                                    family: 'Aero Matics';
-                                                    weight: bold;
-                                                    style: italic;
-                                                    size: 2rem
-                                                }
-                                            }
-                                            .input{
+                                        .wizzard{
+                                            position: relative;
+                                            background-color: $Ablue;
+                                            color: #FFF;
+                                            border-radius: 15px;
+                                            padding: 5%;
+                                            .btn{
                                                 background-color: transparent;
                                                 color: #FFF;
-                                                border-bottom: {
-                                                    style: solid;
-                                                    width: 1%;
-                                                    color: #FFF;
-                                                }
-                                                flex: {
-                                                    grow: 1;
-                                                    shrink: 1;
-                                                    basis: 60%
-                                                }
-                                                margin: {
-                                                    right: 3%;
-                                                    left: 3%;
-                                                }
-                                                &:focus{
-                                                    outline: none;
-                                                }
-                                                &::placeholder{
-                                                    color: rgb(199, 199, 199);
-                                                }
-                                            }
-                                            .must{
-                                                right: 25%;
-                                                color: #FFF;
+                                                font-size: 1.2rem;
                                                 font-weight: bold;
+                                                border:{
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color:#FFF;
+                                                }
                                             }
-                                        }
-                                        .preview{
-                                            margin-bottom: 5%;
+                                            .start{
+                                                align-items: center;
+                                                article{
+                                                    margin-right: 5%;
+                                                    svg{
+                                                        width: 80px;
+                                                        height: 80px;
+                                                        margin-right: 5%;
+                                                        path{
+                                                            stroke: #FFF;
+                                                        }
+                                                    }
+                                                    .category{
+                                                        margin-bottom: 0;
+                                                        font-size: 1rem;
+                                                        padding-right: 5%;
+                                                    }
+                                                }
+                                            }
                                             ul{
-                                                position: static;
-                                                margin-bottom: 0;
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                justify-content: flex-end;
+                                                width: 100%;
+                                                transition: all .2s ease;
+                                                li{
+                                                    max-width: 30%;
+                                                    text-align: center;
+                                                    padding-top: 1%;
+                                                    font: {
+                                                        family: 'Aero Matics';
+                                                        weight: bold;
+                                                        style: italic;
+                                                        size: 1rem
+                                                    }
+                                                }
+                                            }
+                                            .group{
+                                                margin-top: 5%;
+                                                display: flex;
+                                                align-items: center;
+                                                flex-direction: row;
                                                 justify-content: space-between;
-                                                ol{
-                                                    display: flex;
-                                                    flex-direction: column;
-                                                    align-items: center;
-                                                    justify-content: space-between;
-                                                    max-width: 25%;
-                                                    cursor: pointer;
-                                                    transition: all .2s ease;
-                                                    padding: 3%;
+                                                label, .btn{
                                                     flex: {
                                                         grow: 1;
                                                         shrink: 1;
-                                                        basis: 33.33%;
+                                                        basis: 20%
                                                     }
-                                                    &:first-child{
-                                                        span{
-                                                            width: 100%;
+                                                }
+                                                label{
+                                                    text-align: right;
+                                                    font: {
+                                                        family: 'Aero Matics';
+                                                        weight: bold;
+                                                        style: italic;
+                                                        size: 2rem
+                                                    }
+                                                }
+                                                .input{
+                                                    background-color: transparent;
+                                                    color: #FFF;
+                                                    border-bottom: {
+                                                        style: solid;
+                                                        width: 1%;
+                                                        color: #FFF;
+                                                    }
+                                                    flex: {
+                                                        grow: 1;
+                                                        shrink: 1;
+                                                        basis: 60%
+                                                    }
+                                                    margin: {
+                                                        right: 3%;
+                                                        left: 3%;
+                                                    }
+                                                    &:focus{
+                                                        outline: none;
+                                                    }
+                                                    &::placeholder{
+                                                        color: rgb(199, 199, 199);
+                                                    }
+                                                }
+                                                .must{
+                                                    right: 25%;
+                                                    color: #FFF;
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                            .preview{
+                                                margin-bottom: 5%;
+                                                ul{
+                                                    position: static;
+                                                    margin-bottom: 0;
+                                                    justify-content: space-between;
+                                                    ol{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        align-items: center;
+                                                        justify-content: space-between;
+                                                        max-width: 25%;
+                                                        cursor: pointer;
+                                                        transition: all .2s ease;
+                                                        padding: 3%;
+                                                        flex: {
+                                                            grow: 1;
+                                                            shrink: 1;
+                                                            basis: 33.33%;
+                                                        }
+                                                        &:first-child{
+                                                            span{
+                                                                width: 100%;
+                                                            }
+                                                        }
+                                                        &:hover{
+                                                            background-color: rgba(#00a2ec, .2)
+                                                        }
+                                                        svg{
+                                                            width: 50%;
+                                                            height: 50%;
+                                                            path{
+                                                                stroke: currentColor;
+                                                            }
                                                         }
                                                     }
-                                                    &:hover{
-                                                        background-color: rgba(#00a2ec, .2)
+                                                }
+                                            }
+                                        }
+                                        .tables{
+                                            background-color: $Ablue;
+                                            border-radius: 20px;
+                                            width: 60%;
+                                            margin-bottom: 5%;
+                                            padding-bottom: 15%;
+                                            .category{
+                                                text-align: center;
+                                                color: #FFF;
+                                                padding: {
+                                                    top: 3%;
+                                                    bottom: 3%;
+                                                }
+                                            }
+                                            .gauges{
+                                                color: #FFF;
+                                                width: 100%;
+                                                thead{
+                                                    tr{
+                                                        th{
+                                                            font-family: 'Aero Matics';
+                                                            font-weight: bold;
+                                                            width: 50%;
+                                                            padding: {
+                                                                top: 3%;
+                                                                bottom: 3%;
+                                                            }
+                                                            border: {
+                                                                top: {
+                                                                    style: solid;
+                                                                    width: 1px;
+                                                                    color: #FFF;
+                                                                }
+                                                                bottom: {
+                                                                    style: solid;
+                                                                    width: 1px;
+                                                                    color: #FFF;
+                                                                }
+                                                            }
+                                                        }
                                                     }
+                                                }
+                                                tbody{
+                                                    tr{
+                                                        td{
+                                                            text-align: center;
+                                                            font-weight: bold;
+                                                            padding: {
+                                                                top: 3%;
+                                                                bottom: 3%;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .s-text{
+                                                font-weight: bold;
+                                                color: #FFF;
+                                                margin-left: 5%;
+                                                margin-top: 10%;
+                                            }
+                                        }
+                                        .lists{
+    
+                                        }
+                                        .foaming-form{
+                                            .group{
+                                                .radio{
+                                                    margin-bottom: 5%;
+                                                    font-weight: bold;
+                                                    display: flex;
+                                                    align-items: center;
                                                     svg{
-                                                        width: 50%;
-                                                        height: 50%;
-                                                        path{
-                                                            stroke: currentColor;
-                                                        }
+                                                        width: auto;
+                                                        height: 25px;
+                                                        margin-right: 10%;
                                                     }
                                                 }
-                                            }
-                                        }
-                                    }
-                                    .tables{
-                                        background-color: $Ablue;
-                                        border-radius: 20px;
-                                        width: 60%;
-                                        margin-bottom: 5%;
-                                        padding-bottom: 15%;
-                                        .category{
-                                            text-align: center;
-                                            color: #FFF;
-                                            padding: {
-                                                top: 3%;
-                                                bottom: 3%;
-                                            }
-                                        }
-                                        .gauges{
-                                            color: #FFF;
-                                            width: 100%;
-                                            thead{
-                                                tr{
-                                                    th{
-                                                        font-family: 'Aero Matics';
-                                                        font-weight: bold;
-                                                        width: 50%;
-                                                        padding: {
-                                                            top: 3%;
-                                                            bottom: 3%;
-                                                        }
-                                                        border: {
-                                                            top: {
-                                                                style: solid;
-                                                                width: 1px;
-                                                                color: #FFF;
+                                                &.material{
+                                                    >div{
+                                                        display: flex;
+                                                        align-items: center;
+                                                        color: $Ablue;
+                                                        >p{
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                            font-weight: bold;
+                                                            flex: {
+                                                                grow: 1;
+                                                                shrink: 1;
+                                                                basis: 50%;
                                                             }
-                                                            bottom: {
-                                                                style: solid;
-                                                                width: 1px;
-                                                                color: #FFF;
+                                                        }
+                                                        >figure{
+                                                            flex: {
+                                                                grow: 1;
+                                                                shrink: 1;
+                                                                basis: 50%;
+                                                            }
+                                                            img{
+                                                                width: 100%;
                                                             }
                                                         }
                                                     }
                                                 }
-                                            }
-                                            tbody{
-                                                tr{
-                                                    td{
-                                                        text-align: center;
-                                                        font-weight: bold;
-                                                        padding: {
-                                                            top: 3%;
-                                                            bottom: 3%;
+                                                &.shape{
+                                                    >ul{
+                                                        list-style: none;
+                                                    }
+                                                    >.content{
+                                                        .angles{
+                                                            >ul{
+                                                                list-style: none;
+                                                                display: flex;
+                                                                justify-content: space-between;
+                                                                flex-wrap: wrap;
+                                                                li{
+                                                                    display: flex;
+                                                                    flex-direction: column;
+                                                                    align-items: center;
+                                                                    flex: {
+                                                                        grow: 1;
+                                                                        shrink: 1;
+                                                                        basis: 25%;
+                                                                    }
+                                                                    border-radius: 5%;
+                                                                    margin-bottom: 5%;
+                                                                    span{
+                                                                        &:first-child{
+                                                                            margin-bottom: 15%;
+                                                                            padding: 10%;
+                                                                            border-radius: 8%;
+                                                                            svg{
+                                                                                width: 80px;
+                                                                            }
+                                                                            
+                                                                        }
+                                                                    }
+                                                                    &.active{
+                                                                        span{
+                                                                            &:first-child{
+                                                                                background: $Ablue;
+                                                                                svg{
+                                                                                    path{
+                                                                                        fill: #FFF;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            >.text{
+                                                                width: 100%;
+                                                                background-color: $Ablue;
+                                                                color: #FFF;
+                                                                padding: 5%;
+                                                                margin-bottom: 0;
+                                                                display: flex;
+                                                                align-items: center;
+                                                                justify-content: space-between;
+                                                                span{
+                                                                    font-weight: bold;
+                                                                }
+                                                                svg{
+                                                                    position: static;
+                                                                    fill: #FFF;
+                                                                    transform: inherit;
+                                                                    margin-right: 5%;
+                                                                    width: 30px;
+                                                                    height: auto;
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
-                                        .s-text{
-                                            font-weight: bold;
-                                            color: #FFF;
-                                            margin-left: 5%;
-                                            margin-top: 10%;
-                                        }
-                                    }
-                                    .lists{
-
                                     }
                                     
                                 }
                                 .card{
                                     overflow: hidden;
-                                    border-radius: 15%;
+                                    border-radius: 10%;
                                     position: relative;
                                     display: flex;
                                     align-items: center;

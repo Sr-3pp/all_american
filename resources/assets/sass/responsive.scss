@@ -144,7 +144,7 @@
                 }
             }
             header{
-                padding: 20px 5vw;
+                padding: 20px 10vw;
                 article{
                     p{
                         margin-right: 25px;
@@ -234,7 +234,7 @@
                     width: 50%;
                     div{
                         width: 80%;
-                        height: 80%;
+                        height: 70%;
                         ul{
                             ol{
                                 &.category{
@@ -308,6 +308,11 @@
                 }
             }
             [s-sec=contact]{
+                &.full-section{
+                    &.full-section{
+                        padding-right: 0;
+                    }
+                }
                 >div{
                     flex: 1;
                     padding: 3%;
@@ -325,7 +330,12 @@
                         }
                     }
                     &:last-child{
-                        padding: 5%;
+                        padding:{
+                            top: 5%;
+                            right: 11%;
+                            bottom: 5%;
+                            left: 5%;
+                        }
                         ul{
                             ol{
                                 padding:{
@@ -423,6 +433,12 @@
                     padding-right: 10vw;
                 }
             }
+            .text{
+                line-height: 1.3rem;
+            }
+            .s-text{
+                line-height: 1.2rem;
+            }
             [s-sec=header]{
                 .tabs{
                     ul{
@@ -463,6 +479,27 @@
                 }
                 article{
                     width: 35%;
+                    div{
+                        width: 90%;
+                    }
+                }
+            }
+            &[s-layout=general]{
+                [s-sec=services]{
+                    >.cont{
+                        >div{
+                            &:first-child{
+                                >div{
+                                    padding-left: 10vw;
+                                    .detail{
+                                        >.content{
+                                            padding-left: 10vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

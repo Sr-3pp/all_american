@@ -29,7 +29,7 @@
     <article v-animate.repeat="'slide-up'"> 
         <div>
                 <h2 class="title">Who we are?</h2>
-                <p>
+                <p class="text">
                     We've built a reputation in Las Vegas and throughout the Henderson area for delivering striking and beautiful ornamental metal pieces and railings.
                 </p>
                 <ul>
@@ -57,21 +57,27 @@
         <icon name="efficiency"></icon>
         <p>
             <span class="subtitle">Efficiency</span>
-            We work in a professional and effective way, to meet the expectations of each project.
+            <span class="text">
+                We work in a professional and effective way, to meet the expectations of each project.
+            </span>
         </p>
     </article>
     <article  v-animate.repeat="'slide-up'">
         <icon name="quality"></icon>
         <p>
             <span class="subtitle">Quality</span>
-            We seek to satisfy the expectations of our clients by providing competent and functional services.
+            <span class="text">
+                We seek to satisfy the expectations of our clients by providing competent and functional services.
+            </span>
         </p>
     </article>
     <article  v-animate.repeat="'slide-up'">
         <icon name="integrity"></icon>
         <p>
             <span class="subtitle">Integrity</span>
-            We are driven by values that mantain a relationship of mutual trust with customers.
+            <span class="text">
+                We are driven by values that mantain a relationship of mutual trust with customers.
+            </span>
         </p>
     </article>
 </section>
@@ -89,7 +95,7 @@
 <section s-sec="contact" class="full-section">
     <div>
         <h2 class="title">Send us a message</h2>
-        <p>
+        <p class="text">
             Do you have questions, suggestions or comments? It is important for us to know your opinion, please write us, We'd love to hear from you.
         </p>
         <contact-form></contact-form>

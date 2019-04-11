@@ -373,7 +373,7 @@ class Controller extends BaseController
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Formin Break',
+                        'name' => 'Forming Break',
                         'content' => 'IM a spy, in the house of love',
                         'img' => '/img/slides/projects/slide_3.jpg',
                         'icon' => 'planning',

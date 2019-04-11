@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="{'no-padd': detail}">
         <article class="card" :key="s.id" v-if="!content && section !== null" v-for="(s, index) in services" @click="showService(s, index)">
             <figure class="img">
                 <img :src="s.sections[0].img" alt="">
@@ -88,14 +88,15 @@
             </div>
 
             <div class="detail" v-if="detail">
-                    <div class="header">
+                <div class="header">
                         <figure>
                             <img :src="detail.img" alt="">
                         </figure>
                         <p>
                             <icon :name="detail.icon"></icon>
                         </p>
-                    </div>
+                </div>
+                <div class="content">
                     <p class="subtitle">
                         {{detail.name}}
                         <icon name="star_panel1"></icon>
@@ -153,6 +154,8 @@
                             <p class="text">{{l.content}}</p>
                         </div>
                     </article>
+                    <foaming-form v-if="detail.name.toLowerCase() == 'forming break'"></foaming-form>
+                </div>
             </div>
         </div>
         <div :key="99" v-else class="cont">
@@ -167,7 +170,7 @@
 </template>
 <script>
 export default {
-     mounted(){
+     mounted(){        
         this.$bus.$on('setTab', ($event) => {
             this.detail = false
             this.section = $event.index

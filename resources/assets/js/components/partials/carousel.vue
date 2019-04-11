@@ -28,7 +28,7 @@
     export default {
         mounted(){
             var este = this;
-            setInterval(() => {
+            /* setInterval(() => {
                 if (this.active !== (this.slides.length -1)) {
                     this.content = false
                     this.transition = 'next'
@@ -45,7 +45,7 @@
                     }, 1000);
                 }
                 
-            }, 6000);
+            }, 6000); */
         },
         props: [
             'slides', 'name'
