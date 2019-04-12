@@ -172,14 +172,21 @@
                         </span>
                     </p>
                 </div>
-                <button :key="99" @click="validate()">test</button>
             </transition-group>
         </div>
         <div class="group sizes">
             <p class="subtitle">Sizes</p>
             <div>
-                <article>
-                    imagenes
+                <article class="prevs">
+                    <figure>
+                        <img :src="'/img/forming/angle_'+form.shape.value+'.jpg'" alt="">
+                    </figure>
+                    <figure>
+                        <img :src="'/img/forming/length_'+form.shape.value+'.jpg'" alt="">
+                    </figure>
+                    <figure>
+                        <img :src="'/img/forming/render_'+form.shape.value+'.jpg'" alt="">
+                    </figure>
                 </article>
                 <article>
                     <p class="text">Inch Measure</p>
@@ -217,48 +224,60 @@
         <div class="group finish">
             <p class="subtitle">Full finish</p>
             <div>
-                <span class="radio" @click="form.finish = 1">
-                    <icon v-if="form.finish == 1" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(1)">
+                    <icon v-if="form.finish.indexOf(1) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Machine Mill
                 </span>
-                <span class="radio" @click="form.finish = 2">
-                    <icon v-if="form.finish == 2" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(2)">
+                    <icon v-if="form.finish.indexOf(2) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Welding
                 </span>
-                <span class="radio" @click="form.finish = 3">
-                    <icon v-if="form.finish == 3" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(3)">
+                    <icon v-if="form.finish.indexOf(3) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Brush
                 </span>
-                <span class="radio" @click="form.finish = 4">
-                    <icon v-if="form.finish == 4" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(4)">
+                    <icon v-if="form.finish.indexOf(4) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Polish
                 </span>
-                <span class="radio" @click="form.finish = 5">
-                    <icon v-if="form.finish == 5" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(5)">
+                    <icon v-if="form.finish.indexOf(5) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Grained
                 </span>
-                <span class="radio" @click="form.finish = 6">
-                    <icon v-if="form.finish == 6" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(6)">
+                    <icon v-if="form.finish.indexOf(6) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Paint
                 </span>
-                <span class="radio" @click="form.finish = 7">
-                    <icon v-if="form.finish == 7" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(7)">
+                    <icon v-if="form.finish.indexOf(7) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Patina
                 </span>
-                <span class="radio" @click="form.finish = 8">
-                    <icon v-if="form.finish == 8" name="radio_on"></icon> 
+                <span class="check" @click="addFinish(8)">
+                    <icon v-if="form.finish.indexOf(8) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
                     Powder coat
                 </span>
             </div>
         </div>
+        <div class="group contact">
+            <p class="subtitle">Contact Information</p>
+            <div>
+                <div class="group" v-for="(field, index) in form.contact">
+                    <span class="must" v-if="field.alert.status">{{field.alert.text}}</span>
+                    <input v-if="field.type !== 'textarea'" autofocus :ref="field.ref" :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value" @keyup.enter="nextStep(index)">
+                    <textarea v-if="field.type === 'textarea'" :ref="field.ref" :placeholder="field.ph" rows="10" class="input"></textarea>
+                </div>
+            </div>
+        </div>        
+        <wizzard></wizzard>
+        <button class="btn" @click="validate()">Send</button>
     </article>
 </template>
 <script>
@@ -289,7 +308,62 @@ export default {
                     },
                     length: null
                 },
-                finish: 1,
+                finish: [1],
+                contact: {
+                    0: {
+                        value: null,
+                        type: 'text',
+                        name: 'Name',
+                        ref: 'name',
+                        alert: {
+                            status: false,
+                            text: 'You must fill this input'
+                        },
+                        ph: 'Name*',
+                        visible: true,
+                        required: true
+                    },
+                    1: {
+                        value: null,
+                        type: 'text',
+                        name: 'Phone',
+                        ref: 'phone',
+                        alert: {
+                            status: false,
+                            text: 'You must fill this input'
+                        },
+                        ph: 'Phone*',
+                        visible: false,
+                        required: true,
+                    },
+                    2: {
+                        value: null,
+                        type: 'email',
+                        name: 'E-mail',
+                        ref: 'email',
+                        alert: {
+                            status: false,
+                            text: 'Verify your email'
+                        },
+                        ph: 'E-mail*',
+                        visible: false,
+                        required: true,
+                    },
+                    3: {
+                        value: null,
+                        type: 'textarea',
+                        name: 'Instructions',
+                        ref: 'instructions',
+                        alert: {
+                            status: false,
+                            text: 'Verify your email'
+                        },
+                        ph: 'Instruction, direction and description of your project*',
+                        visible: false,
+                        required: false,
+                    },
+                   
+                }
 
             }
         }
@@ -298,6 +372,14 @@ export default {
         validate(){
             console.log(this.form.shape);
             
+        },
+        addFinish(index){
+            var pos = this.form.finish.indexOf(index);
+            if(pos != -1){
+                this.form.finish.splice(pos, 1);
+            }else{
+                this.form.finish.push(index);
+            }            
         }
     }
 }
