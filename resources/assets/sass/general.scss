@@ -1486,6 +1486,9 @@ body{
                                                         width: auto;
                                                         height: 25px;
                                                         margin-right: 10%;
+                                                        path{
+                                                            color: $Ablue;
+                                                        }
                                                     }
                                                 }
                                                 .subtitle{
@@ -1622,6 +1625,7 @@ body{
                                                                     border-radius: 5%;
                                                                     margin-bottom: 5%;
                                                                     span{
+                                                                        color: $Ablue;
                                                                         &:first-child{
                                                                             margin-bottom: 15%;
                                                                             padding: 10%;
@@ -1765,6 +1769,39 @@ body{
                                                         }
                                                     }
                                                 }
+                                            }
+                                            >.btn{
+                                                margin-top: 5%;
+                                                max-width: 150px;
+                                                background-color: transparent;
+                                                color: $Ablue;
+                                                border: {
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color: $Ablue;
+                                                }
+                                                font: {
+                                                    weight: bold;
+                                                    size: 1.3rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .machine-picture{
+                                        span{
+                                            background-color: $Ablue;
+                                            display: flex;
+                                            width: 100%;
+                                            margin-top: -5px;
+                                            color: #FFF;
+                                            padding: {
+                                                top: 3%;
+                                                bottom: 3%;
+                                                left: 5vw;
+                                            }
+                                            font: {
+                                                weight: bold;
+                                                size: 1.3rem;
                                             }
                                         }
                                     }

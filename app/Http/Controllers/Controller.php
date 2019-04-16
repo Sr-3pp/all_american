@@ -378,6 +378,34 @@ class Controller extends BaseController
                         'img' => '/img/slides/projects/slide_3.jpg',
                         'icon' => 'planning',
                         'description' => 'Lorem ipsum dolor amet',
+                    ],
+                    [
+                        'id' => 3,
+                        'name' => 'Machine Mill',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/slides/projects/slide_3.jpg',
+                        'icon' => 'planning',
+                        'description' => 'Lorem ipsum dolor amet',
+                        'subsections' => [
+                            [
+                                'name' => 'Benefits',
+                                'content' => 'A milling machine provides many advantages when doing drill or cut milling,
+                                as a computerized system allows cutting or drilling with precision in any
+                                direction, within three dimensions.',
+                                'img' => '/img/slides/projects/slide_4.jpg',
+                                'icon' => 'planning',
+                                'description' => 'Lorem ipsum dolor amet',
+                            ],
+                            [
+                                'name' => 'Categories / Examples',
+                                'content' => 'A milling machine provides many advantages when doing drill or cut milling,
+                                as a computerized system allows cutting or drilling with precision in any
+                                direction, within three dimensions.',
+                                'img' => '/img/slides/projects/slide_4.jpg',
+                                'icon' => 'planning',
+                                'description' => 'Lorem ipsum dolor amet',
+                            ],
+                        ]
                     ]
                 ]
             ],

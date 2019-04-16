@@ -85,7 +85,7 @@
                     <ul>
                         <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_1"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
@@ -95,7 +95,7 @@
                         </li>
                         <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_2"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
@@ -105,7 +105,7 @@
                         </li>
                         <li :class="{'active': form.shape.value == 3}"  @click="form.shape.value = 3">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_3"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 3" name="radio_on"></icon> 
@@ -115,7 +115,7 @@
                         </li>
                         <li :class="{'active': form.shape.value == 4}" @click="form.shape.value = 4">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_4"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 4" name="radio_on"></icon> 
@@ -125,7 +125,7 @@
                         </li>
                         <li :class="{'active': form.shape.value == 5}" @click="form.shape.value = 5">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_5"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 5" name="radio_on"></icon> 
@@ -145,7 +145,7 @@
                         </li>
                         <li :class="{'active': form.shape.value == 7}" @click="form.shape.value = 7">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_7"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 7" name="radio_on"></icon> 
@@ -155,7 +155,7 @@
                         </li>
                         <li :class="{'active': form.shape.value == 8}"  @click="form.shape.value = 8">
                             <span>
-                                <icon name="channel_6"></icon>
+                                <icon name="channel_8"></icon>
                             </span>
                             <span class="radio">
                                 <icon v-if="form.shape.value == 8" name="radio_on"></icon> 
@@ -271,13 +271,26 @@
             <div>
                 <div class="group" v-for="(field, index) in form.contact">
                     <span class="must" v-if="field.alert.status">{{field.alert.text}}</span>
-                    <input v-if="field.type !== 'textarea'" autofocus :ref="field.ref" :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value" @keyup.enter="nextStep(index)">
+                    <input v-if="field.type !== 'textarea'" :ref="field.ref" :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value" @keyup.enter="nextStep(index)">
                     <textarea v-if="field.type === 'textarea'" :ref="field.ref" :placeholder="field.ph" rows="10" class="input"></textarea>
                 </div>
             </div>
         </div>        
         <wizzard></wizzard>
         <button class="btn" @click="validate()">Send</button>
+        <div class="content">
+            <p class="subtitle">
+                        Roll Bending
+                        <icon name="star_panel1"></icon>
+                    </p>  
+                    <p class="text">
+                        Roll-bending or cuving belding, is the manufacture or development of metal sheets that are worked to acquire cylindrical shapes, curves or radios depending on the needs of the project.
+                        <icon name="star_panel2"></icon>
+            </p>
+            <figure>
+                <img width="100%" src="/img/default.jpg" alt="">
+            </figure>
+        </div>
     </article>
 </template>
 <script>

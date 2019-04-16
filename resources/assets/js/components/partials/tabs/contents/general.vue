@@ -156,6 +156,12 @@
                     </article>
                     <foaming-form v-if="detail.name.toLowerCase() == 'forming break'"></foaming-form>
                 </div>
+                <figure class="machine-picture" v-if="detail.name.toLowerCase() == 'forming break'">
+                    <img width="100%" src="/img/rolling_machine.jpg" alt="">
+                    <span>
+                        Rolling Machine
+                    </span>
+                </figure>
             </div>
         </div>
         <div :key="99" v-else class="cont">
