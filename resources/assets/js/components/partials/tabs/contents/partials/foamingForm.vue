@@ -80,146 +80,222 @@
                 <li :class="{'active': form.shape.section == 4}" @click="form.shape.section = 4">Panels</li>
             </ul>
             <transition-group tag="div" class="content">
-                <div :key="0" class="angles" v-if="form.shape.section == 2">
-                    <p class="subtitle">Channels and Angles</p>
-                    <ul>
-                        <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
+                <article :key="0" v-if="form.shape.section == 1">
+                    <div class="angles">
+                        <p class="subtitle">Sheet</p>
+                        <ul>
+                            <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
+                                <span>
+                                    <icon name="sheet_1"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Rectangle / Square
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
+                                <span>
+                                    <icon name="sheet_2"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Circle / Oval
+                                </span>
+                            </li>
+                        </ul>
+                        <p class="text"  @click="form.shape.value = 0">
+                            <icon v-if="form.shape.value == 0" name="radio_on"></icon> 
+                            <icon v-else name="radio_off"></icon> 
                             <span>
-                                <icon name="channel_1"></icon>
+                                Can’t fiand the shape that you need, no problem send us your exact specificationsn we can do it.
                             </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
+                        </p>
+                    </div>
+                    <div class="group sizes">
+                        <p class="subtitle">Sizes</p>
+                        <div>
+                            <article class="prevs">
+                                <figure>
+                                    <img :src="'/img/forming/sheet_angle_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                                <figure>
+                                    <img :src="'/img/forming/sheet_length_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                                <figure>
+                                    <img :src="'/img/forming/sheet_render_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                            </article>
+                            <article>
+                                <p class="text">Inch Measure</p>
+                                <div class="group">
+                                    <label>Side A)</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Side B)</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Side C)</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>side D)</label>
+                                    <input type="text" class="input">
+                                </div>
+                            </article>
+                        </div>
+                        <div class="group">
+                            <label>Amount of pieces</label>
+                            <input type="text" class="input">
+                        </div>
+                    </div>
+                </article>
+                <article :key="1" v-if="form.shape.section == 2">
+                    <div class="angles">
+                        <p class="subtitle">Channels and Angles</p>
+                        <ul>
+                            <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
+                                <span>
+                                    <icon name="channel_1"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
+                                <span>
+                                    <icon name="channel_2"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 3}"  @click="form.shape.value = 3">
+                                <span>
+                                    <icon name="channel_3"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 3" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 4}" @click="form.shape.value = 4">
+                                <span>
+                                    <icon name="channel_4"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 4" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 5}" @click="form.shape.value = 5">
+                                <span>
+                                    <icon name="channel_5"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 5" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 6}" @click="form.shape.value = 6">
+                                <span>
+                                    <icon name="channel_6"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 6" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 7}" @click="form.shape.value = 7">
+                                <span>
+                                    <icon name="channel_7"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 7" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 8}"  @click="form.shape.value = 8">
+                                <span>
+                                    <icon name="channel_8"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 8" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Channel w/ Hands
+                                </span>
+                            </li>
+                        </ul>
+                        <p class="text"  @click="form.shape.value = 0">
+                            <icon v-if="form.shape.value == 0" name="radio_on"></icon> 
+                            <icon v-else name="radio_off"></icon> 
                             <span>
-                                <icon name="channel_2"></icon>
+                                Can’t fiand the shape that you need, no problem send us your exact specificationsn we can do it.
                             </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 3}"  @click="form.shape.value = 3">
-                            <span>
-                                <icon name="channel_3"></icon>
-                            </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 3" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 4}" @click="form.shape.value = 4">
-                            <span>
-                                <icon name="channel_4"></icon>
-                            </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 4" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 5}" @click="form.shape.value = 5">
-                            <span>
-                                <icon name="channel_5"></icon>
-                            </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 5" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 6}" @click="form.shape.value = 6">
-                            <span>
-                                <icon name="channel_6"></icon>
-                            </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 6" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 7}" @click="form.shape.value = 7">
-                            <span>
-                                <icon name="channel_7"></icon>
-                            </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 7" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                        <li :class="{'active': form.shape.value == 8}"  @click="form.shape.value = 8">
-                            <span>
-                                <icon name="channel_8"></icon>
-                            </span>
-                            <span class="radio">
-                                <icon v-if="form.shape.value == 8" name="radio_on"></icon> 
-                                <icon v-else name="radio_off"></icon> 
-                                Channel w/ Hands
-                            </span>
-                        </li>
-                    </ul>
-                    <p class="text"  @click="form.shape.value = 0">
-                        <icon v-if="form.shape.value == 0" name="radio_on"></icon> 
-                        <icon v-else name="radio_off"></icon> 
-                        <span>
-                            Can’t fiand the shape that you need, no problem send us your exact specificationsn we can do it.
-                        </span>
-                    </p>
-                </div>
+                        </p>
+                    </div>
+                    <div class="group sizes">
+                        <p class="subtitle">Sizes</p>
+                        <div>
+                            <article class="prevs">
+                                <figure>
+                                    <img :src="'/img/forming/channel_angle_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                                <figure>
+                                    <img :src="'/img/forming/channel_length_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                                <figure>
+                                    <img :src="'/img/forming/channel_render_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                            </article>
+                            <article>
+                                <p class="text">Inch Measure</p>
+                                <div class="group">
+                                    <label>Side A</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Angle A</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Side B</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Angle B</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Side C</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Length</label>
+                                    <input type="text" class="input">
+                                </div>
+                            </article>
+                        </div>
+                        <div class="group">
+                            <label>Amount of pieces</label>
+                            <input type="text" class="input">
+                        </div>
+                    </div>
+                </article>
+                
             </transition-group>
-        </div>
-        <div class="group sizes">
-            <p class="subtitle">Sizes</p>
-            <div>
-                <article class="prevs">
-                    <figure>
-                        <img :src="'/img/forming/angle_'+form.shape.value+'.jpg'" alt="">
-                    </figure>
-                    <figure>
-                        <img :src="'/img/forming/length_'+form.shape.value+'.jpg'" alt="">
-                    </figure>
-                    <figure>
-                        <img :src="'/img/forming/render_'+form.shape.value+'.jpg'" alt="">
-                    </figure>
-                </article>
-                <article>
-                    <p class="text">Inch Measure</p>
-                    <div class="group">
-                        <label>Side A</label>
-                        <input type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label>Angle A</label>
-                        <input type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label>Side B</label>
-                        <input type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label>Angle B</label>
-                        <input type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label>Side C</label>
-                        <input type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label>Length</label>
-                        <input type="text" class="input">
-                    </div>
-                </article>
-            </div>
-            <div class="group">
-                <label>Amount of pieces</label>
-                <input type="text" class="input">
-            </div>
         </div>
         <div class="group finish">
             <p class="subtitle">Full finish</p>
@@ -304,7 +380,7 @@ export default {
                 material: 1,
                 gauge: '30',
                 shape: {
-                    section: 2,
+                    section: 1,
                     value: 1
                 },
                 sizes: {
