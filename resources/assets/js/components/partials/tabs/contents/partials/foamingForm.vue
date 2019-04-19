@@ -127,7 +127,7 @@
                                     <img :src="'/img/forming/sheet_render_'+form.shape.value+'.jpg'" alt="">
                                 </figure>
                             </article>
-                            <article>
+                            <article v-if="form.shape.value == 1">
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A)</label>
@@ -143,6 +143,17 @@
                                 </div>
                                 <div class="group">
                                     <label>side D)</label>
+                                    <input type="text" class="input">
+                                </div>
+                            </article>
+                            <article v-if="form.shape.value == 2">
+                                <p class="text">Inch Measure</p>
+                                <div class="group">
+                                    <label>Radius A)</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Radius B)</label>
                                     <input type="text" class="input">
                                 </div>
                             </article>
