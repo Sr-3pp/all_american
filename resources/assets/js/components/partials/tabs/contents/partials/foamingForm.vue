@@ -520,14 +520,6 @@
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                <label>Angle E</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                <label>Side F</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
                                 <label>Length</label>
                                     <input type="text" class="input">
                                 </div>
@@ -566,7 +558,7 @@
                         </div>
                     </div>
                 </article>
-                <article :key="2" v-if="form-shape.section == 3">
+                <article :key="2" v-if="form.shape.section == 3">
                     <div class="angles">
                         <p class="subtitle">Sheet</p>
                         <ul>
@@ -597,7 +589,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 3" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Sheet Frame
+                                    Sheet Ring
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 4}" @click="form.shape.value = 4">
@@ -640,19 +632,15 @@
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Angle A</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
                                     <label>Side B</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Angle B</label>
+                                    <label>Side C</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Side C</label>
+                                    <label>Side D</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
@@ -667,7 +655,7 @@
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Angle A</label>
+                                    <label>Inside A</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
@@ -675,7 +663,7 @@
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Angle B</label>
+                                    <label>Inside B</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
@@ -683,30 +671,26 @@
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Length</label>
+                                    <label>Inside C</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Side D</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label>Inside D</label>
                                     <input type="text" class="input">
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 3">
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
-                                    <label>Side A</label>
+                                    <label>Radius A</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Angle A</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label>Side B</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label>Angle B</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label>Side C</label>
+                                    <label>Radius B</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
@@ -717,23 +701,11 @@
                             <article v-if="form.shape.value == 4">
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
-                                    <label>Side A</label>
+                                    <label>Radius A</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <label>Angle A</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label>Side B</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label>Angle B</label>
-                                    <input type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label>Side C</label>
+                                    <label>Radius B</label>
                                     <input type="text" class="input">
                                 </div>
                                 <div class="group">
@@ -745,6 +717,94 @@
                         <div class="group">
                             <label>Amount of pieces</label>
                             <input type="text" class="input">
+                        </div>
+                    </div>
+                </article>
+                <article :key="3" v-if="form.shape.section == 4">
+                    <div class="angles">
+                        <p class="subtitle">Sheet</p>
+                        <ul>
+                            <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
+                                <span>
+                                    <icon name="panel_1"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Welded Frame
+                                </span>
+                            </li>
+                            <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
+                                <span>
+                                    <icon name="panel_2"></icon>
+                                </span>
+                                <span class="radio">
+                                    <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
+                                    <icon v-else name="radio_off"></icon> 
+                                    Sheet Frame
+                                </span>
+                            </li>
+                        </ul>
+                        <p class="text"  @click="form.shape.value = 0">
+                            <icon v-if="form.shape.value == 0" name="radio_on"></icon> 
+                            <icon v-else name="radio_off"></icon> 
+                            <span>
+                                Can’t fiand the shape that you need, no problem send us your exact specificationsn we can do it.
+                            </span>
+                        </p>
+                    </div>
+                    <div class="group sizes">
+                        <p class="subtitle">Sizs</p>
+                        <div>
+                            <article class="prevs">
+                                <figure>
+                                    <img :src="'/img/forming/panel_angle_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                                <figure>
+                                    <img :src="'/img/forming/panel_length_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                                <figure>
+                                    <img :src="'/img/forming/panel_render_'+form.shape.value+'.jpg'" alt="">
+                                </figure>
+                            </article>
+                            <article v-if="form.shape.value == 1">
+                                <p class="text">Inch Measure</p>
+                                <div class="group">
+                                <label>Side A</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                <label>Side B</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                <label>Side C</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                <label>Side D</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                <label>Length</label>
+                                    <input type="text" class="input">
+                                </div>
+                            </article>
+                            <article v-if="form.shape.value == 2">
+                                <p class="text">Inch Measure</p>
+                                <div class="group">
+                                <label>Radius A</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                <label>Radius B</label>
+                                    <input type="text" class="input">
+                                </div>
+                                <div class="group">
+                                <label>Length</label>
+                                    <input type="text" class="input">
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </article>

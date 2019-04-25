@@ -162,6 +162,12 @@
                         Rolling Machine
                     </span>
                 </figure>
+                <figure class="machine-picture" v-if="detail.name.toLowerCase() == 'shear'">
+                    <img width="100%" src="/img/shear_machine.jpg" alt="">
+                    <span>
+                        Shear Machine
+                    </span>
+                </figure>
             </div>
         </div>
         <div :key="99" v-else class="cont">

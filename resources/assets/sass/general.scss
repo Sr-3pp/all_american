@@ -1701,18 +1701,40 @@ body{
                                                                 justify-content: space-around;
                                                                 figure{
                                                                     width: 50%;
+                                                                    max-width: 130px;
+                                                                    margin-bottom: 5%;
                                                                     img{
                                                                         width: 100%;
                                                                     }
                                                                 }
                                                             }
                                                             &:last-child{
+                                                                display: flex;
+                                                                flex-wrap: wrap;
+                                                                align-items: center;
                                                                 .text{
                                                                     min-height: inherit;
                                                                     font-weight: bold;
                                                                     color: $Ablue;
+                                                                    margin-right: 0;
+                                                                    flex: {
+                                                                        grow: 1;
+                                                                        shrink: 1;
+                                                                        basis: 100%;
+                                                                    }
                                                                     &::before{
                                                                         display: none;
+                                                                    }
+                                                                }
+                                                                .group{
+                                                                    padding: {
+                                                                        right: 3%;
+                                                                        left: 3%;
+                                                                    }
+                                                                    flex: {
+                                                                        grow: 1;
+                                                                        shrink: 1;
+                                                                        basis: 50%;
                                                                     }
                                                                 }
                                                             }
