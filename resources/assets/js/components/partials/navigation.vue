@@ -11,7 +11,7 @@
                 <a class="link" href="/services">Services</a>
             </li>
             <li class="item">
-                <a class="link" href="#">Projects</a>
+                <a class="link" href="/projects">Projects</a>
             </li>
             <li class="item">
                 <a class="link" href="#">About us</a>

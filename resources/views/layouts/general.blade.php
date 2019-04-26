@@ -39,7 +39,12 @@
             </article>
         </header>
         <navigation name="general"></navigation>
-        @yield('content')
+        <div>
+            @yield('content')
+            <section class="section-menu">
+
+            </section>
+        </div>
     </div>
     <footer>
         
