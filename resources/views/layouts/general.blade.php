@@ -13,37 +13,37 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/presets.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
+    <header>
+        <article>
+            <p>
+                <icon name="phone"></icon> <b>(702)</b> 722 3197
+            </p>
+            <p>
+                <icon name="email"></icon> <b>lalo@allamericanfinishing.com</b>
+            </p>
+        </article>
+        <article>
+            <span>&nbsp;
+                <icon name="facebook"></icon>
+            </span>
+            <span>&nbsp;
+                <icon name="twitter"></icon>
+            </span>
+            <span>&nbsp;
+                <icon name="in"></icon>
+            </span>
+        </article>
+    </header>
     <div id="app" s-layout="general">
-        <header>
-            <article>
-                <p>
-                    <icon name="phone"></icon> <b>(702)</b> 722 3197
-                </p>
-                <p>
-                    <icon name="email"></icon> <b>lalo@allamericanfinishing.com</b>
-                </p>
-            </article>
-            <article>
-                <span>&nbsp;
-                    <icon name="facebook"></icon>
-                </span>
-                <span>&nbsp;
-                    <icon name="twitter"></icon>
-                </span>
-                <span>&nbsp;
-                    <icon name="in"></icon>
-                </span>
-            </article>
-        </header>
         <navigation name="general"></navigation>
-        <div>
-            @yield('content')
-            <section class="section-menu">
-
-            </section>
+        <div class="content">
+                @yield('content')
+                <section class="section-menu">
+                <submenu :submenu="{{json_encode($menu)}}"></submenu>
+                    <subscribe></subscribe>
+                </section>
         </div>
     </div>
     <footer>

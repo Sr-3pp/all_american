@@ -522,7 +522,8 @@ class Controller extends BaseController
                 ]
             ]
         ];
-        return view('services', compact('services'));
+        $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
+        return view('services', compact('services', 'menu'));
     }
 
     public function projects(){

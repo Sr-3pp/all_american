@@ -17,8 +17,19 @@ class ProjectController extends Controller
                         'archivo' => 'img/default.jpg'
                     ]
                 ]
-            ]
+            ],
+            [
+                'name' => 'El nombre',
+                'portada' => 'img/default.jpg',
+                'gallery' => [
+                    [
+                        'name' => 'Foto_ 1',
+                        'archivo' => 'img/default.jpg'
+                    ]
+                ]
+            ],
         ];
-        return view('projects', compact('projects'));
+        $menu = ['DECORATIVE PIECES', 'COUNTERTOPS', 'RAILS'];
+        return view('projects', compact('projects', 'menu'));
     }
 }

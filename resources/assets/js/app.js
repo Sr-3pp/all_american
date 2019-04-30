@@ -36,6 +36,15 @@ Vue.component('tabs-content-home', require('./components/partials/tabs/contents/
 Vue.component('foaming-form', require('./components/partials/tabs/contents/partials/foamingForm.vue'));
 Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
 
+Vue.component('submenu', require('./components/contents/submenu.vue'));
+Vue.component('projects', require('./components/contents/projects/projects.vue'));
+Vue.component('services', require('./components/contents/services/services.vue'));
+
+
+Vue.component('design-planning', require('./components/contents/services/design-planning/dessignPlanning.vue'));
+
+Vue.component('preparation', require('./components/contents/services/preparation/preparation.vue'));
+
 const EventBus = new Vue()
 
 Object.defineProperties(Vue.prototype, {
