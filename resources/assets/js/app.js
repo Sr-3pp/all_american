@@ -42,8 +42,22 @@ Vue.component('services', require('./components/contents/services/services.vue')
 
 
 Vue.component('design-planning', require('./components/contents/services/design-planning/dessignPlanning.vue'));
+Vue.component('concept', require('./components/contents/services/design-planning/partials/concept.vue'));
+Vue.component('planning', require('./components/contents/services/design-planning/partials/planning.vue'));
+Vue.component('material', require('./components/contents/services/design-planning/partials/material.vue'));
+Vue.component('horientation', require('./components/contents/services/design-planning/partials/horientation.vue'));
+Vue.component('original-designs', require('./components/contents/services/design-planning/partials/original.vue'));
+Vue.component('estimate', require('./components/contents/services/design-planning/partials/estimate.vue'));
 
 Vue.component('preparation', require('./components/contents/services/preparation/preparation.vue'));
+
+Vue.component('welding', require('./components/contents/services/welding/welding.vue'));
+
+Vue.component('finishes', require('./components/contents/services/finishes/finishes.vue'));
+
+Vue.component('painting', require('./components/contents/services/painting/painting.vue'));
+
+Vue.component('delivery', require('./components/contents/services/delivery/delivery.vue'));
 
 const EventBus = new Vue()
 

@@ -127,21 +127,17 @@
             .title, .subtitle, .category{
                 margin-bottom: 3%;
             }
-            .full-section{
-                &.full-section{
-                    .title{
-                        font-size: 2.5rem
-                    }
-                    .subtitle{
-                        font-size: 2rem
-                    }
-                    .category{
-                        font-size: 1.5rem
-                    }
-                    .s-text{
-                        font-size: .7rem
-                    }
-                }
+            .title{
+                font-size: 2.5rem
+            }
+            .subtitle{
+                font-size: 2rem
+            }
+            .category{
+                font-size: 1.5rem
+            }
+            .s-text{
+                font-size: .7rem
             }
             header{
                 padding: 20px 10vw;
@@ -485,6 +481,41 @@
                 }
             }
             &[s-layout=general]{
+                >.content{
+                    >.main{
+                        &[s-sec=services]{
+                            padding-left: 10vw;
+                            >.cont{
+                                width: 23vw;
+                                height: 23vw;
+                                >article{
+                                    >.text, >.title{
+                                        padding-left: 10vw;
+                                    }
+                                }
+                            }
+                            &.active{
+                                >.cont{
+                                    >.sub{
+                                        .headline{
+                                            padding-left: 10vw;
+                                        }
+                                        .cards{
+                                            padding-left: 10vw;
+                                        }
+                                        .content{
+                                            padding-left: 10vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                       
+                    }
+                    >.section-menu{
+                        padding-right: 10vw;
+                    }
+                }
                 [s-sec=services]{
                     >.cont{
                         >div{

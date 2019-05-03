@@ -1,18 +1,18 @@
 <template>
     <div class="cont">
-        <article v-if="!active" @click="setSection(2)">
+        <article v-if="!active" @click="setSection(5)">
             <figure>
-                <img src="/img/services/preparation_card.jpg" alt="">
+                <img src="/img/services/welding_card.jpg" alt="">
             </figure>
             <p class="label">
-                <icon name="preparation"></icon>
-                Preparation
+                <icon name="painting"></icon>
+                Painting
             </p>
         </article>
         <article class="sub" v-else>
             <div class="headline">
-                <icon name="preparation"></icon>
-                <h1 class="subtitle">Preparation</h1>
+                <icon name="painting"></icon>
+                <h1 class="subtitle">Painting</h1>
                 <icon name="star_bar"></icon>
             </div>
         </article>

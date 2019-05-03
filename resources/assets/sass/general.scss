@@ -35,35 +35,127 @@ body{
         b{
             font-weight: bold;
         }
+        .title{
+            font: {
+                size: 1.5rem;
+                style: italic;
+                weight: bold;
+            }
+        }
+        .subtitle{
+            font: {
+                size: 1rem;
+                weight: bold;
+                style: italic;
+            }
+        }
+        .category{
+            font: {
+                size: .5rem;
+                weight: bold;
+                style: italic;
+            }
+        }
+        .s-text{
+            font: {
+                size: .7rem;
+            }
+        }
         .full-section{
             &.full-section{
                 height: inherit;
                 margin-bottom: 0;
                 background-color: #FFF;
-                .title{
-                    font: {
-                        size: 1.5rem;
-                        style: italic;
-                        weight: bold;
+            }
+        }
+        .card{
+            overflow: hidden;
+            border-radius: 10%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex:{
+                shrink: 1;
+                basis: 47%;
+            }
+            margin-bottom: 5%;
+            cursor: pointer;
+            &:nth-child(odd){
+                margin-right: 5%;
+            }
+            &:nth-child(1), &:nth-child(2){
+                &:hover{
+                    .text{
+                        background-color: $Ablue;
+                        color: #FFF;
                     }
                 }
-                .subtitle{
-                    font: {
-                        size: 1rem;
-                        weight: bold;
-                        style: italic;
+            }
+            &:nth-child(3), &:nth-child(4){
+                &:hover{
+                    .text{
+                        background-color: $Ared;
+                        color: #FFF;
                     }
                 }
-                .category{
-                    font: {
-                        size: .5rem;
-                        weight: bold;
-                        style: italic;
+            }
+            &:nth-child(5), &:nth-child(6){
+                &:hover{
+                    .text{
+                        background-color: $light-gray;
+                        color: #000;
                     }
                 }
-                .s-text{
-                    font: {
-                        size: .7rem;
+            }
+            .img{
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .text, .card-content{
+                color: $light-gray;
+                background-color: $gray;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin-bottom: 0;
+                padding: 10% 5%;
+                width: 100%;
+                font-weight: bold;
+                transition: all .2s ease;
+                svg{
+                    width: 20%;
+                    height: 20%;
+                    margin-right: 5%;
+                }
+                font: {
+                    family: 'Helvetica';
+                }
+            }
+            .card-content{
+                padding-bottom: 10%;
+                padding-top: 5%;
+                >.subtitle{
+                    color: $light-gray;
+                }
+                >div{
+                    display: flex;
+                    justify-content: space-between;
+                    p{
+                        display: flex;
+                        align-items: center;
+                        width: 65%;
+                    }
+                    svg{
+                        border: {
+                            style: solid;
+                            width: 1px;
+                            color: $light-gray;
+                        }
                     }
                 }
             }
@@ -133,6 +225,117 @@ body{
                 &.next{
                     svg{
                         transform: rotateY(180deg);
+                    }
+                }
+            }
+        }
+        .subscribe{
+            .form-group{
+                font-size: 1.3rem;
+                .input{
+                    padding: 3%;
+                    border: {
+                        style: solid;
+                        width: 1px;
+                        color: $gray;
+                        radius: 5px;
+                    }
+                }
+                .btn{
+                    background-color: transparent;
+                    color: $gray;
+                    font-weight: bold;
+                    max-width: 50%;
+                    border: {
+                        style: solid;
+                        width: 1px;
+                        color: $gray;
+                    }
+                    &:hover{
+                        color: #FFF;
+                        background-color: $gray;
+                    }
+                }
+            }
+        }
+        .service-list{
+            li{
+                flex-direction: column;
+                color: $gray;
+                cursor: pointer;
+                padding: {
+                    top: 0;
+                    bottom: 3%;
+                }
+                &:hover, .active{
+                    .subtitle{
+                        color: $Ablue;
+                    }
+                }
+                .subtitle{
+                    font: {
+                        family: 'Helvetica';
+                        size: 1.2rem;
+                        style: normal;
+                    }
+                    &::after{
+                        display: none;
+                    }
+                    svg{
+                        right: inherit;
+                        left: 0;
+                        width: 20px;
+                        margin-right: 3%;
+                        fill: $Ablue;
+                    }
+                }
+            }
+        }
+        .separator{
+            &.full-section{
+                background-color: $Ared;
+                color: #FFF;
+                padding: {
+                    top: 3%;
+                    bottom: 3%;
+                }
+                margin-bottom: 0;
+                flex-direction: row;
+                align-items: center;
+                article{
+                    flex: 8;
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 30px;
+                        path{
+                            stroke: #FFF;
+                        }
+                    }
+                    p{
+                        font-size: 1rem;
+                        .title{
+                            display: flex;
+                        }
+                    }
+                }
+                .cta{
+                    flex: 2;
+                    background-color: transparent;
+                    color: #FFF;
+                    height: 50px;
+                    font-size: 1.5rem;
+                    border: {
+                        style: solid;
+                        width: 1px;
+                        color: #FFF;
+                        radius: 5px;
+                    } 
+                    &:hover{
+                        background-color: #FFF;
+                        color: $Ared;
                     }
                 }
             }
@@ -497,56 +700,7 @@ body{
                 }
             }
         }
-        [s-sec=separator]{
-            background-color: $Ared;
-            color: #FFF;
-            padding: {
-                top: 3%;
-                bottom: 3%;
-            }
-            .full-section{
-                margin-bottom: 0;
-                flex-direction: row;
-                align-items: center;
-                background-color: transparent;
-                article{
-                    flex: 8;
-                    display: flex;
-                    align-items: center;
-                    svg{
-                        width: 40px;
-                        height: 40px;
-                        margin-right: 30px;
-                        path{
-                            stroke: #FFF;
-                        }
-                    }
-                    p{
-                        font-size: 1rem;
-                        .title{
-                            display: flex;
-                        }
-                    }
-                }
-                .cta{
-                    flex: 2;
-                    background-color: transparent;
-                    color: #FFF;
-                    height: 50px;
-                    font-size: 1.5rem;
-                    border: {
-                        style: solid;
-                        width: 1px;
-                        color: #FFF;
-                        radius: 5px;
-                    } 
-                    &:hover{
-                        background-color: #FFF;
-                        color: $Ared;
-                    }
-                }
-            }
-        }
+        
         [s-sec=testimonial]{
             height: 354px;
             background: #EDEDED;
@@ -962,7 +1116,7 @@ body{
             >.content{
                 display: flex;
                 >.main{
-                    width: 70%;
+                    width: 62%;
                     &[s-sec=projects]{
                         display: flex;
                         flex-wrap: wrap;
@@ -980,8 +1134,8 @@ body{
                             }
 
                             >figure{
-                                width: 28vw;
-                                height: 28vw;
+                                width: 25vw;
+                                height: 25vw;
                                 border-radius: 15px;
                                 overflow: hidden;
                                 margin: {
@@ -1011,14 +1165,17 @@ body{
                         justify-content: space-between;
                         padding-left: 5vw;
                         padding-right: 3%;
-                        >div{
+                        >.cont{
                             position: relative;
-                                width: 29vw;
-                                height: 29vw;
+                                width: 25vw;
+                                height: 25vw;
                                 overflow: hidden;
                                 border-radius: 30px;
+                                margin-bottom: 5%;
                             >article{
                                 height: 100%;
+                                width: 100%;
+                                cursor: pointer;
                                 >figure{
                                     display: flex;
                                     align-items: center;
@@ -1030,7 +1187,7 @@ body{
                                         height: 100%;
                                     }
                                 }
-                                >p{
+                                >.label{
                                     position: absolute;
                                     width: 100%;
                                     bottom: 0;
@@ -1044,6 +1201,154 @@ body{
                                         width: 20%;
                                     }
                                 }
+                                >.text, >.title{
+                                    padding-left: 5vw;
+                                    margin-bottom: 2%;
+                                }
+                                
+                            }
+                            >.detail{
+                                .header{
+                                    position: relative;
+                                    color: #FFF;
+                                    overflow: hidden;
+                                    img{
+                                        width: 100%;
+                                    }
+                                    svg{
+                                        width: 20%;
+                                        position: absolute;
+                                        top: 50%;
+                                        transform: translateY(-90%);
+                                        left: 5%;
+                                        z-index: 1;
+                                        &:first-child{
+                                            width: auto;
+                                            height: 150%;
+                                            top: 0;
+                                            transform: inherit;
+                                            left: 0;
+                                            fill: $Ablue;
+                                        }
+                                    }
+                                }
+                                .title{
+                                    padding-left: 5vw;
+                                    padding-bottom: 3%;
+                                    margin-bottom: 0;
+                                    position: relative;
+                                    color: $Ablue;
+                                    height: 20%;
+                                    display: flex;
+                                    align-items: flex-end;
+                                    &::after{
+                                        content: '';
+                                        width: 65%;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 5vw;
+                                        height: 2%;
+                                        background-color: $Ablue;
+                                    }
+                                    svg{
+                                        width: auto;
+                                        height: 100%;
+                                        fill: currentColor;
+
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                    }
+                                }
+                                .text{
+                                    position: relative;
+                                    width: 80%;
+                                    padding-left: 5vw;
+                                    padding-right: 15%;
+                                    padding-top: 3%;
+                                    margin-bottom: 5%;
+                                    min-height: 200px;
+                                    svg{
+                                        position: absolute;
+                                        top: -2px;
+                                        right: -33px;
+                                        fill: $Ablue;
+                                        height: auto;
+                                        width: 85px;
+                                    }
+                                }
+                            }
+                        }
+                        &.active{
+                            padding-left: 0;
+                            >.cont{
+                                width: 100%;
+                                height: auto;
+                                border-radius: 0;
+                                overflow: visible;
+                                >.sub{
+                                    width: 100%;
+                                    cursor: inherit;
+                                    .headline{
+                                        display: flex;
+                                        align-items: center;
+                                        padding-left: 5vw;
+                                        margin-bottom: 3%;
+                                        .subtitle{
+                                            margin-bottom: 0;
+                                            font: {
+                                                weight: bold;
+
+                                            }
+                                        }
+                                        svg{
+                                            &:first-child{
+                                                width: 7%;
+                                                margin-right: 3%;
+                                            }
+                                            &:last-child{
+                                                width: 30%;
+                                                fill: $Ablue;
+                                                margin-left: auto;
+                                            }
+                                        }
+                                    }
+                                    .cards{
+                                        padding-left: 5vw;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-wrap: wrap;
+                                        .card{
+                                            flex: {
+                                                grow: 1;
+                                                shrink: 1;
+                                                basis: 40%;
+                                            }
+                                            
+                                        }
+                                    }
+                                    .content{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-wrap: wrap;
+                                        padding-left: 5vw;
+                                        >article{
+                                            flex: {
+                                                basis: 45%;
+                                            }
+                                            >.title{
+                                                display: inline-block;
+                                                padding: 1% 3%;
+                                                border: {
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color: #000;
+                                                    radius: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1051,7 +1356,7 @@ body{
                 >.section-menu{
                     position: fixed;
                     right: 0;
-                    width: 30%;
+                    width: 38%;
                     padding: {
                         top: 0;
                         right: 5vw;
@@ -1061,15 +1366,37 @@ body{
                     >ul{
                         list-style: none;
                         background-color: $light-gray;
+                        margin-bottom: 5%;
                         li{
+                            position: relative;
                             color: #FFF;
                             padding: 3% 8%;
                             font-size: 1.2rem;
                             cursor: pointer;
-                            margin-bottom: 5%;
+                            border-bottom: {
+                                style: solid;
+                                width: 1px;
+                                color: #FFF;
+                            }
                             transition: all .2s ease;
-                            &:hover, &.active{
+                            &:hover{
                                 background-color: $gray;
+                            }
+                            &.active{
+                                background-color: #FFF;
+                                color: $dark;
+                                border: {
+                                    style: solid;
+                                    width: 1px;
+                                    color: $dark;
+                                }
+                            }
+                            svg{
+                                width: 20px;
+                                position: absolute;
+                                left: 1%;
+                                top: 50%;
+                                transform: translateY(-50%);
                             }
                         }
                     }
@@ -1077,6 +1404,7 @@ body{
             }
             [s-sec=navigation]{
                 background-color: #FFF;
+                margin-bottom: 3%;
                 .item-list{
                     .item{
                         .link{
@@ -1196,38 +1524,7 @@ body{
                                             }
                                             &:last-child{
                                                 padding-left: 5%;
-                                                .service-list{
-                                                    li{
-                                                        flex-direction: column;
-                                                        color: $gray;
-                                                        cursor: pointer;
-                                                        padding: {
-                                                            top: 3%;
-                                                            bottom: 3%;
-                                                        }
-                                                        &:hover, .active{
-                                                            .subtitle{
-                                                                color: $Ablue;
-                                                            }
-                                                        }
-                                                        .subtitle{
-                                                            font: {
-                                                                family: 'Helvetica';
-                                                                size: 1.2rem;
-                                                                style: normal;
-                                                            }
-                                                            margin-bottom: 0;
-                                                            &::after{
-                                                                display: none;
-                                                            }
-                                                            svg{
-                                                                right: inherit;
-                                                                left: 0;
-                                                                width: 20px;
-                                                            }
-                                                        }
-                                                    }
-                                                }
+                                                
                                             }
                                         }
                                     }
@@ -1946,92 +2243,7 @@ body{
                                     }
                                     
                                 }
-                                .card{
-                                    overflow: hidden;
-                                    border-radius: 10%;
-                                    position: relative;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    flex:{
-                                        shrink: 1;
-                                        basis: 47%;
-                                    }
-                                    margin-bottom: 5%;
-                                    cursor: pointer;
-                                    &:nth-child(odd){
-                                        margin-right: 5%;
-                                    }
-                                    &:nth-child(1), &:nth-child(2){
-                                        &:hover{
-                                            .text{
-                                                background-color: $Ablue;
-                                                color: #FFF;
-                                            }
-                                        }
-                                    }
-                                    &:nth-child(3), &:nth-child(4){
-                                        &:hover{
-                                            .text{
-                                                background-color: $Ared;
-                                                color: #FFF;
-                                            }
-                                        }
-                                    }
-                                    &:nth-child(5), &:nth-child(6){
-                                        &:hover{
-                                            .text{
-                                                background-color: $light-gray;
-                                                color: #000;
-                                            }
-                                        }
-                                    }
-                                    .img{
-                                        width: 100%;
-                                        img{
-                                            width: 100%;
-                                            height: auto;
-                                        }
-                                    }
-                                    .text, .card-content{
-                                        color: $light-gray;
-                                        background-color: $gray;
-                                        position: absolute;
-                                        bottom: 0;
-                                        left: 0;
-                                        margin-bottom: 0;
-                                        padding: 10% 5%;
-                                        width: 100%;
-                                        font-weight: bold;
-                                        transition: all .2s ease;
-                                        svg{
-                                            width: 20%;
-                                            height: 20%;
-                                            margin-right: 5%;
-                                        }
-                                        font: {
-                                            family: 'Helvetica';
-                                        }
-                                    }
-                                    .card-content{
-                                        padding-bottom: 10%;
-                                        >div{
-                                            display: flex;
-                                            justify-content: space-between;
-                                            p{
-                                                display: flex;
-                                                align-items: center;
-                                            }
-                                            svg{
-                                                border: {
-                                                    style: solid;
-                                                    width: 1px;
-                                                    color: $light-gray;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                
                             }
                         }
                         &:last-child{
@@ -2085,35 +2297,6 @@ body{
                                         }
                                         svg{
                                             display: none;
-                                        }
-                                    }
-                                }
-                            }
-                            .subscribe{
-                                .form-group{
-                                    font-size: 1.3rem;
-                                    .input{
-                                        padding: 3%;
-                                        border: {
-                                            style: solid;
-                                            width: 1px;
-                                            color: $gray;
-                                            radius: 5px;
-                                        }
-                                    }
-                                    .btn{
-                                        background-color: transparent;
-                                        color: $gray;
-                                        font-weight: bold;
-                                        max-width: 50%;
-                                        border: {
-                                            style: solid;
-                                            width: 1px;
-                                            color: $gray;
-                                        }
-                                        &:hover{
-                                            color: #FFF;
-                                            background-color: $gray;
                                         }
                                     }
                                 }

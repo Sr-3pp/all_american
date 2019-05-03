@@ -1,6 +1,7 @@
 <template>
     <ul>
-        <li v-for="(item, index) in submenu">
+        <li v-for="(item, index) in submenu" :class="{'active': section == index}" @click="setTab(index)">
+            <icon v-if="section == index" name="chevron"></icon>
             {{item}}
         </li>
     </ul>
@@ -8,18 +9,25 @@
 <script>
 export default {
     mounted(){
-
+        this.$bus.$on('setTab', ($event) => {
+            this.section = $event.section-1
+        });
     },
     props: ['submenu'],
     data(){
         return {
-            section: 1
+            section: null
         }
     },
     methods: {
         setTab(index){
-            this.section = index
-            this,$bus.$emit('setTab', {index: index});
+            if(this.section == index){
+                this.section = null
+                this.$bus.$emit('setTab', {section: 0});
+            }else{
+                this.section = index
+                this.$bus.$emit('setTab', {section: index+1});
+            }
         }
     }
 }

@@ -20,9 +20,7 @@
                 <icon v-if="show !== 'item_'+index"  name="+"></icon>
                 {{item.name}}
                 </p>
-                <p v-if="show === 'item_'+index" class="text">
-                    {{item.content}}          
-                </p>
+                <p v-html="item.content" v-if="show === 'item_'+index" class="text"></p>
             </article>
         </li>
     </ul>
