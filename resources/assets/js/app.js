@@ -33,7 +33,6 @@ Vue.component('last-news', require('./components/partials/lastNews.vue'));
 Vue.component('tabs', require('./components/partials/tabs/tabs.vue'));
 Vue.component('tabs-content-general', require('./components/partials/tabs/contents/general.vue'));
 Vue.component('tabs-content-home', require('./components/partials/tabs/contents/home.vue'));
-Vue.component('foaming-form', require('./components/partials/tabs/contents/partials/foamingForm.vue'));
 Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));
@@ -50,6 +49,9 @@ Vue.component('original-designs', require('./components/contents/services/design
 Vue.component('estimate', require('./components/contents/services/design-planning/partials/estimate.vue'));
 
 Vue.component('preparation', require('./components/contents/services/preparation/preparation.vue'));
+Vue.component('shear', require('./components/contents/services/preparation/partials/shear.vue'));
+Vue.component('forming-break', require('./components/contents/services/preparation/partials/formingBreak.vue'));
+Vue.component('forming-form', require('./components/contents/services/preparation/form/formingForm.vue'));
 
 Vue.component('welding', require('./components/contents/services/welding/welding.vue'));
 

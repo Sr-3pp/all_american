@@ -559,4 +559,8 @@ class Controller extends BaseController
     public function subscribe(Request $r){
         return 1;
     }
+
+    public function about(){
+        return view('about');
+    }
 }

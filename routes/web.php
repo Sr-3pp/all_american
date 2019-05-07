@@ -26,8 +26,8 @@ Route::prefix('projects')->group(function(){
     Route::get('/', 'ProjectController@index');
   
 });
-Route::prefix('about')->group(function(){
-    Route::get('/', 'Controller@index');
+Route::prefix('about-us')->group(function(){
+    Route::get('/', 'Controller@about');
   
 });
 Route::get('/contact-us', 'Controller@contact');
