@@ -133,7 +133,7 @@
         </article>
         <concept :key="2" v-show="active && detail == 1"></concept>
         <planning :key="3" v-show="active && detail == 2"></planning>
-        <material :key="4" v-show="active && detail == 3"></material>
+        <material :materials="materials" :key="4" v-show="active && detail == 3"></material>
         <horientation :key="5" v-show="active && detail == 4"></horientation>
         <original-designs :key="6" v-show="active && detail == 5"></original-designs>
         <estimate :key="7" v-show="active && detail == 6"></estimate>
@@ -144,7 +144,7 @@ export default {
     mounted(){
 
     },
-    props: ['active'],
+    props: ['active', 'materials'],
     data(){
         return {
             detail: false,

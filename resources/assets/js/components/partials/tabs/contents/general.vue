@@ -220,9 +220,7 @@ export default {
             this.section = index
             this.$bus.$emit('setTab', {index: index});
         },
-        showContent(service){
-            console.log(service);
-            
+        showContent(service){            
             this.detail = service
         }
     }

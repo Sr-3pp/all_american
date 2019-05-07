@@ -291,6 +291,216 @@ body{
                 }
             }
         }
+        .material-list{
+            padding-left: 5vw;
+            .material{
+                position: relative;
+                height: 200px;
+                margin-bottom: 5%;
+                border-bottom: {
+                    style: solid;
+                    width: 1px;
+                    color: $dark;
+                }
+                .category{
+                    color: $Ablue;
+                    svg{
+                        color: $Ablue;
+                        width: 5%;
+                        margin-right: 3%;
+                    }
+                }
+                .text{
+                    margin-bottom: 0;
+                    color: $gray;
+                }
+                >figure{
+                    width: 20%;
+                    height: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    img{
+                        width: auto;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .estimate-list{
+            list-style: none;
+            margin-bottom: 5%;
+            width: 80%;
+            li{
+                color: $gray;
+                border-bottom: {
+                    style:solid;
+                    width: 1px;
+                    color: $light-gray;
+                }
+                text-transform: uppercase;
+                svg{
+                    color: $Ablue;
+                    width: 3%;
+                    height: 100%;
+                    margin-right: 2%;
+                    padding: 2% 0;
+                    &:last-child{
+                        margin-right: 5%;
+                    }
+                }
+            }
+        }
+        .wizzard{
+            position: relative;
+            background-color: $Ablue;
+            color: #FFF;
+            border-radius: 15px;
+            padding: 5%;
+            .btn{
+                background-color: transparent;
+                color: #FFF;
+                font-size: 1.2rem;
+                font-weight: bold;
+                border:{
+                    style: solid;
+                    width: 1px;
+                    color:#FFF;
+                }
+            }
+            .start{
+                align-items: center;
+                article{
+                    margin-right: 5%;
+                    svg{
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 5%;
+                        path{
+                            stroke: #FFF;
+                        }
+                    }
+                    .category{
+                        margin-bottom: 0;
+                        font-size: 1rem;
+                        padding-right: 5%;
+                    }
+                }
+            }
+            ul{
+                position: absolute;
+                top: 0;
+                right: 0;
+                justify-content: flex-end;
+                width: 100%;
+                transition: all .2s ease;
+                li{
+                    max-width: 30%;
+                    text-align: center;
+                    padding-top: 1%;
+                    font: {
+                        family: 'Aero Matics';
+                        weight: bold;
+                        style: italic;
+                        size: 1rem
+                    }
+                }
+            }
+            .group{
+                margin-top: 5%;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+                label, .btn{
+                    flex: {
+                        grow: 1;
+                        shrink: 1;
+                        basis: 20%
+                    }
+                }
+                label{
+                    text-align: right;
+                    font: {
+                        family: 'Aero Matics';
+                        weight: bold;
+                        style: italic;
+                        size: 2rem
+                    }
+                }
+                .input{
+                    background-color: transparent;
+                    color: #FFF;
+                    border-bottom: {
+                        style: solid;
+                        width: 1%;
+                        color: #FFF;
+                    }
+                    flex: {
+                        grow: 1;
+                        shrink: 1;
+                        basis: 60%
+                    }
+                    margin: {
+                        right: 3%;
+                        left: 3%;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                    &::placeholder{
+                        color: rgb(199, 199, 199);
+                    }
+                }
+                .must{
+                    right: 25%;
+                    color: #FFF;
+                    font-weight: bold;
+                }
+            }
+            .preview{
+                margin-bottom: 5%;
+                ul{
+                    position: static;
+                    margin-bottom: 0;
+                    justify-content: space-between;
+                    ol{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                        max-width: 25%;
+                        cursor: pointer;
+                        transition: all .2s ease;
+                        padding: 3%;
+                        flex: {
+                            grow: 1;
+                            shrink: 1;
+                            basis: 33.33%;
+                        }
+                        &:first-child{
+                            span{
+                                width: 100%;
+                            }
+                        }
+                        &:hover{
+                            background-color: rgba(#00a2ec, .2)
+                        }
+                        svg{
+                            width: 50%;
+                            height: 50%;
+                            path{
+                                stroke: currentColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .separator{
             &.full-section{
                 background-color: $Ared;
@@ -1113,295 +1323,7 @@ body{
                     }
                 }
             }
-            >.content{
-                display: flex;
-                >.main{
-                    width: 62%;
-                    &[s-sec=projects]{
-                        display: flex;
-                        flex-wrap: wrap;
-                        padding-left: 5vw;
-                        >article{
-                            display: flex;
-                            flex-direction: column;
-                            flex: {
-                                grow: 1;
-                                shrink: 1;
-                                basis: 50%;
-                            }
-                            &:nth-child(odd){
-                                padding-right: 5%;
-                            }
-
-                            >figure{
-                                width: 25vw;
-                                height: 25vw;
-                                border-radius: 15px;
-                                overflow: hidden;
-                                margin: {
-                                    top: 0;
-                                    right: auto;
-                                    bottom: 5%;
-                                    left: auto;
-                                }
-                                display: flex;
-                                justify-content: center;
-                                align-content: center;
-                                img{
-                                    width: auto;
-                                    height: 100%;
-                                }
-                            }
-                            >p{
-                                width: 28vw;
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-                    &[s-sec=services]{
-                        display: flex;
-                        flex-wrap: wrap;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding-left: 5vw;
-                        padding-right: 3%;
-                        >.cont{
-                            position: relative;
-                                width: 25vw;
-                                height: 25vw;
-                                overflow: hidden;
-                                border-radius: 30px;
-                                margin-bottom: 5%;
-                            >article{
-                                height: 100%;
-                                width: 100%;
-                                cursor: pointer;
-                                >figure{
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    width: 100%;
-                                    height: 100%;
-                                    img{
-                                        width: auto;
-                                        height: 100%;
-                                    }
-                                }
-                                >.label{
-                                    position: absolute;
-                                    width: 100%;
-                                    bottom: 0;
-                                    left: 0;
-                                    display: felx;
-                                    justify-content: space-between;
-                                    padding: 3%;
-                                    background-color: $gray;
-                                    color: #FFF;
-                                    svg{
-                                        width: 20%;
-                                    }
-                                }
-                                >.text, >.title{
-                                    padding-left: 5vw;
-                                    margin-bottom: 2%;
-                                }
-                                
-                            }
-                            >.detail{
-                                .header{
-                                    position: relative;
-                                    color: #FFF;
-                                    overflow: hidden;
-                                    img{
-                                        width: 100%;
-                                    }
-                                    svg{
-                                        width: 20%;
-                                        position: absolute;
-                                        top: 50%;
-                                        transform: translateY(-90%);
-                                        left: 5%;
-                                        z-index: 1;
-                                        &:first-child{
-                                            width: auto;
-                                            height: 150%;
-                                            top: 0;
-                                            transform: inherit;
-                                            left: 0;
-                                            fill: $Ablue;
-                                        }
-                                    }
-                                }
-                                .title{
-                                    padding-left: 5vw;
-                                    padding-bottom: 3%;
-                                    margin-bottom: 0;
-                                    position: relative;
-                                    color: $Ablue;
-                                    height: 20%;
-                                    display: flex;
-                                    align-items: flex-end;
-                                    &::after{
-                                        content: '';
-                                        width: 65%;
-                                        position: absolute;
-                                        bottom: 0;
-                                        left: 5vw;
-                                        height: 2%;
-                                        background-color: $Ablue;
-                                    }
-                                    svg{
-                                        width: auto;
-                                        height: 100%;
-                                        fill: currentColor;
-
-                                        position: absolute;
-                                        right: 0;
-                                        top: 0;
-                                    }
-                                }
-                                .text{
-                                    position: relative;
-                                    width: 80%;
-                                    padding-left: 5vw;
-                                    padding-right: 15%;
-                                    padding-top: 3%;
-                                    margin-bottom: 5%;
-                                    min-height: 200px;
-                                    svg{
-                                        position: absolute;
-                                        top: -2px;
-                                        right: -33px;
-                                        fill: $Ablue;
-                                        height: auto;
-                                        width: 85px;
-                                    }
-                                }
-                            }
-                        }
-                        &.active{
-                            padding-left: 0;
-                            >.cont{
-                                width: 100%;
-                                height: auto;
-                                border-radius: 0;
-                                overflow: visible;
-                                >.sub{
-                                    width: 100%;
-                                    cursor: inherit;
-                                    .headline{
-                                        display: flex;
-                                        align-items: center;
-                                        padding-left: 5vw;
-                                        margin-bottom: 3%;
-                                        .subtitle{
-                                            margin-bottom: 0;
-                                            font: {
-                                                weight: bold;
-
-                                            }
-                                        }
-                                        svg{
-                                            &:first-child{
-                                                width: 7%;
-                                                margin-right: 3%;
-                                            }
-                                            &:last-child{
-                                                width: 30%;
-                                                fill: $Ablue;
-                                                margin-left: auto;
-                                            }
-                                        }
-                                    }
-                                    .cards{
-                                        padding-left: 5vw;
-                                        display: flex;
-                                        justify-content: space-between;
-                                        flex-wrap: wrap;
-                                        .card{
-                                            flex: {
-                                                grow: 1;
-                                                shrink: 1;
-                                                basis: 40%;
-                                            }
-                                            
-                                        }
-                                    }
-                                    .content{
-                                        display: flex;
-                                        justify-content: space-between;
-                                        flex-wrap: wrap;
-                                        padding-left: 5vw;
-                                        >article{
-                                            flex: {
-                                                basis: 45%;
-                                            }
-                                            >.title{
-                                                display: inline-block;
-                                                padding: 1% 3%;
-                                                border: {
-                                                    style: solid;
-                                                    width: 1px;
-                                                    color: #000;
-                                                    radius: 10px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                >.section-menu{
-                    position: fixed;
-                    right: 0;
-                    width: 38%;
-                    padding: {
-                        top: 0;
-                        right: 5vw;
-                        bottom: 0;
-                        left: 1%;
-                    }
-                    >ul{
-                        list-style: none;
-                        background-color: $light-gray;
-                        margin-bottom: 5%;
-                        li{
-                            position: relative;
-                            color: #FFF;
-                            padding: 3% 8%;
-                            font-size: 1.2rem;
-                            cursor: pointer;
-                            border-bottom: {
-                                style: solid;
-                                width: 1px;
-                                color: #FFF;
-                            }
-                            transition: all .2s ease;
-                            &:hover{
-                                background-color: $gray;
-                            }
-                            &.active{
-                                background-color: #FFF;
-                                color: $dark;
-                                border: {
-                                    style: solid;
-                                    width: 1px;
-                                    color: $dark;
-                                }
-                            }
-                            svg{
-                                width: 20px;
-                                position: absolute;
-                                left: 1%;
-                                top: 50%;
-                                transform: translateY(-50%);
-                            }
-                        }
-                    }
-                }
-            }
+            
             [s-sec=navigation]{
                 background-color: #FFF;
                 margin-bottom: 3%;
@@ -1670,152 +1592,6 @@ body{
                                                     img{
                                                         height: 100%;
                                                         width: auto;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        .wizzard{
-                                            position: relative;
-                                            background-color: $Ablue;
-                                            color: #FFF;
-                                            border-radius: 15px;
-                                            padding: 5%;
-                                            .btn{
-                                                background-color: transparent;
-                                                color: #FFF;
-                                                font-size: 1.2rem;
-                                                font-weight: bold;
-                                                border:{
-                                                    style: solid;
-                                                    width: 1px;
-                                                    color:#FFF;
-                                                }
-                                            }
-                                            .start{
-                                                align-items: center;
-                                                article{
-                                                    margin-right: 5%;
-                                                    svg{
-                                                        width: 80px;
-                                                        height: 80px;
-                                                        margin-right: 5%;
-                                                        path{
-                                                            stroke: #FFF;
-                                                        }
-                                                    }
-                                                    .category{
-                                                        margin-bottom: 0;
-                                                        font-size: 1rem;
-                                                        padding-right: 5%;
-                                                    }
-                                                }
-                                            }
-                                            ul{
-                                                position: absolute;
-                                                top: 0;
-                                                right: 0;
-                                                justify-content: flex-end;
-                                                width: 100%;
-                                                transition: all .2s ease;
-                                                li{
-                                                    max-width: 30%;
-                                                    text-align: center;
-                                                    padding-top: 1%;
-                                                    font: {
-                                                        family: 'Aero Matics';
-                                                        weight: bold;
-                                                        style: italic;
-                                                        size: 1rem
-                                                    }
-                                                }
-                                            }
-                                            .group{
-                                                margin-top: 5%;
-                                                display: flex;
-                                                align-items: center;
-                                                flex-direction: row;
-                                                justify-content: space-between;
-                                                label, .btn{
-                                                    flex: {
-                                                        grow: 1;
-                                                        shrink: 1;
-                                                        basis: 20%
-                                                    }
-                                                }
-                                                label{
-                                                    text-align: right;
-                                                    font: {
-                                                        family: 'Aero Matics';
-                                                        weight: bold;
-                                                        style: italic;
-                                                        size: 2rem
-                                                    }
-                                                }
-                                                .input{
-                                                    background-color: transparent;
-                                                    color: #FFF;
-                                                    border-bottom: {
-                                                        style: solid;
-                                                        width: 1%;
-                                                        color: #FFF;
-                                                    }
-                                                    flex: {
-                                                        grow: 1;
-                                                        shrink: 1;
-                                                        basis: 60%
-                                                    }
-                                                    margin: {
-                                                        right: 3%;
-                                                        left: 3%;
-                                                    }
-                                                    &:focus{
-                                                        outline: none;
-                                                    }
-                                                    &::placeholder{
-                                                        color: rgb(199, 199, 199);
-                                                    }
-                                                }
-                                                .must{
-                                                    right: 25%;
-                                                    color: #FFF;
-                                                    font-weight: bold;
-                                                }
-                                            }
-                                            .preview{
-                                                margin-bottom: 5%;
-                                                ul{
-                                                    position: static;
-                                                    margin-bottom: 0;
-                                                    justify-content: space-between;
-                                                    ol{
-                                                        display: flex;
-                                                        flex-direction: column;
-                                                        align-items: center;
-                                                        justify-content: space-between;
-                                                        max-width: 25%;
-                                                        cursor: pointer;
-                                                        transition: all .2s ease;
-                                                        padding: 3%;
-                                                        flex: {
-                                                            grow: 1;
-                                                            shrink: 1;
-                                                            basis: 33.33%;
-                                                        }
-                                                        &:first-child{
-                                                            span{
-                                                                width: 100%;
-                                                            }
-                                                        }
-                                                        &:hover{
-                                                            background-color: rgba(#00a2ec, .2)
-                                                        }
-                                                        svg{
-                                                            width: 50%;
-                                                            height: 50%;
-                                                            path{
-                                                                stroke: currentColor;
-                                                            }
-                                                        }
                                                     }
                                                 }
                                             }
@@ -2251,6 +2027,7 @@ body{
                                 shrink: 2;
                                 basis: 100%;
                             }
+                            height: max-content;
                             .tabs{
                                 border-bottom: {
                                     style: solid;

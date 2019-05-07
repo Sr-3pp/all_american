@@ -522,8 +522,22 @@ class Controller extends BaseController
                 ]
             ]
         ];
+        $materials = [
+            [
+                'name' => 'Material',
+                'content' => 'full-content',
+                'description' => 'Part of content...',
+                'img' => '/img/slides/projects/slide_4.jpg',
+            ],
+            [
+                'name' => 'Material',
+                'content' => 'full-content',
+                'description' => 'Part of content...',
+                'img' => '/img/slides/projects/slide_3.jpg',
+            ]
+        ];
         $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
-        return view('services', compact('services', 'menu'));
+        return view('services', compact('services', 'menu', 'materials'));
     }
 
     public function projects(){

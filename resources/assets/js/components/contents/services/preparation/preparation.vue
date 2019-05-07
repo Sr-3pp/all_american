@@ -32,7 +32,6 @@ export default {
     methods: {
         setSection(index){
             this.$bus.$emit('setTab', {section: index});
-            this.active = true
         }
     }
 }

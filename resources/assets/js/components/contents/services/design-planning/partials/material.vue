@@ -19,8 +19,14 @@
         </p>
         <ul class="material-list">
             <ol class="material" v-for="(material, index) in materials">
-                <p class="category">{{material.name}}</p>
+                <p class="category">
+                    <icon name="material"></icon>
+                    {{material.name}}
+                </p>
                 <p class="text">{{material.description}}</p>   
+                <figure>
+                    <img :src="material.img" alt="">
+                </figure>
             </ol>
         </ul>
     </div>
@@ -28,7 +34,8 @@
 <script>
 export default {
     mounted(){
-
+     
+        
     },
     props: ['materials'],
     data(){

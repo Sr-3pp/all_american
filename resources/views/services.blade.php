@@ -1,5 +1,5 @@
 @extends('layouts.general')
 
 @section('content')
-    <services></services>
+<services :materials="{{json_encode($materials)}}"></services>
 @endsection

@@ -1,6 +1,6 @@
 <template>
     <section s-sec="services" class="main" :class="{'active': active}">
-        <design-planning v-if="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
+        <design-planning :materials="materials" v-if="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
         <preparation v-if="!active || active == 2" :active="active == 2 ? true : false"></preparation>
         <welding  v-if="!active || active == 3" :active="active == 3 ? true : false"></welding>
         <finishes  v-if="!active || active == 4" :active="active == 4 ? true : false"></finishes>
@@ -23,6 +23,7 @@ export default {
             this.active = $event.section
         });
     },
+    props: ['materials'],
     data(){
         return{
             active: false
