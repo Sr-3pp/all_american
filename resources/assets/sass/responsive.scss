@@ -533,6 +533,9 @@
                                     .info{
                                         padding-left: 5vw;
                                     }
+                                    .foaming-form{
+                                        padding-left: 5vw;
+                                    }
                                     .form{
                                         label{
                                             display: none;
@@ -801,7 +804,7 @@
                                 width: 23vw;
                                 height: 23vw;
                                 >article{
-                                    >.text, >.title{
+                                    >.text, >.title, >.foaming-form{
                                         padding-left: 10vw;
                                     }
                                 }

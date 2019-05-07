@@ -51,6 +51,7 @@ Vue.component('estimate', require('./components/contents/services/design-plannin
 Vue.component('preparation', require('./components/contents/services/preparation/preparation.vue'));
 Vue.component('shear', require('./components/contents/services/preparation/partials/shear.vue'));
 Vue.component('forming-break', require('./components/contents/services/preparation/partials/formingBreak.vue'));
+Vue.component('machine-mill', require('./components/contents/services/preparation/partials/machineMill.vue'));
 Vue.component('forming-form', require('./components/contents/services/preparation/form/formingForm.vue'));
 
 Vue.component('welding', require('./components/contents/services/welding/welding.vue'));

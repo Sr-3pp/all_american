@@ -37,9 +37,39 @@
                         </div>
                     </div>
                 </article>
+                <article class="card" @click="setDetail(2)">
+                    <figure class="img">
+                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                    </figure> 
+                    <div class="card-content">
+                        <p class="subtitle">Forming Break</p>
+                        <div>
+                            <p>
+                                Lorem ipsum
+                            </p>
+                            <icon name="concept"></icon>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" @click="setDetail(3)">
+                    <figure class="img">
+                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                    </figure> 
+                    <div class="card-content">
+                        <p class="subtitle">Machine Mill</p>
+                        <div>
+                            <p>
+                                Lorem ipsum
+                            </p>
+                            <icon name="concept"></icon>
+                        </div>
+                    </div>
+                </article>
             </div>
         </article>
         <shear :key="2" v-show="active && detail == 1"></shear>
+        <forming-break :key="3" v-show="active && detail == 2"></forming-break>
+        <machine-mill :key="4" v-show="active && detail == 3"></machine-mill>
     </transition-group>
 </template>
 <script>
@@ -50,7 +80,7 @@ export default {
     props: ['active'],
     data(){
         return {
-           
+           detail: false
         }
     },
     methods: {

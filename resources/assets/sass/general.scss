@@ -501,6 +501,344 @@ body{
                 }
             }
         }
+        .foaming-form{
+            .subtitle{
+                color: $Ablue;
+            }
+            .group{
+                .radio, .check{
+                    margin-bottom: 5%;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    svg{
+                        width: auto;
+                        height: 25px;
+                        margin-right: 10%;
+                        path{
+                            color: $Ablue;
+                        }
+                    }
+                }
+                
+                .subtitle{
+                    color: $Ablue;
+                    margin-bottom: 3%;
+                    border: {
+                        top: {
+                            style: solid;
+                            width: 1px;
+                            color: $Ablue;
+                        }
+                        bottom: {
+                            style: solid;
+                            width: 1px;
+                            color: $Ablue;
+                        }
+                    }
+                }
+                &.material{
+                    >div{
+                        display: flex;
+                        align-items: center;
+                        color: $Ablue;
+                        >p{
+                            display: flex;
+                            flex-direction: column;
+                            font-weight: bold;
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                        }
+                        >figure{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                &.gauges{
+                    >.text{
+                        min-height: inherit;
+                        &:before{
+                            display: none;
+                        }
+                    }
+                    >div{
+                        >table{
+                            width: 100%;
+                            color: $Ablue;
+                            thead{
+                                tr{
+                                    th{
+                                        font-weight: bold;
+                                        padding: 5%;
+                                    }
+                                }
+                            }
+                            tbody{
+                                tr{
+                                    td{
+                                        font-weight: bold;
+                                        text-align: center;
+                                        .radio{
+                                            display: block;
+                                            text-align: center;
+                                            svg{
+                                                margin-right: 1%;
+                                                height: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.shape{
+                    >ul{
+                        list-style: none;
+                        li{
+                            background-color: $Ablue;
+                            color: #FFF;
+                            cursor: pointer;
+                            padding: {
+                                top: 1%;
+                                right: 1%;
+                                bottom: 1%; 
+                                left: 10%;
+                            }
+                            border-bottom: {
+                                style: solid;
+                                width: 1px;
+                                color: #FFF;
+                            }
+                            transition: all .2s ease;
+                            &:hover, &.active{
+                                background-color: #FFF;
+                                color: $Ablue;
+                                border: {
+                                    style: solid;
+                                    width: 1px;
+                                    color: $Ablue;
+                                }
+                            }
+                            &.active{
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    >.content{
+                        .angles{
+                            >ul{
+                                list-style: none;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                li{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    flex: {
+                                        grow: 1;
+                                        shrink: 1;
+                                        basis: 25%;
+                                    }
+                                    border-radius: 5%;
+                                    margin-bottom: 5%;
+                                    span{
+                                        color: $Ablue;
+                                        &:first-child{
+                                            margin-bottom: 15%;
+                                            padding: 10%;
+                                            border-radius: 8%;
+                                            svg{
+                                                width: 80px;
+                                            }
+                                            
+                                        }
+                                    }
+                                    &.active{
+                                        span{
+                                            &:first-child{
+                                                background: $Ablue;
+                                                svg{
+                                                    path{
+                                                        fill: #FFF;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            >.text{
+                                width: 100%;
+                                background-color: $Ablue;
+                                color: #FFF;
+                                padding: 5%;
+                                margin-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                cursor: pointer;
+                                span{
+                                    font-weight: bold;
+                                }
+                                svg{
+                                    position: static;
+                                    fill: #FFF;
+                                    transform: inherit;
+                                    margin-right: 5%;
+                                    width: 30px;
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.sizes{
+                    >div{
+                        display: flex;
+                        label{
+                            font-weight: bold;
+                            color: $Ablue;
+                        }
+                        .input{
+                            border-style: solid;
+                            border-width: 1px;
+                            border-color: $gray;
+                            border-radius: 8px;
+                        }
+                        >article{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                            &.prevs{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-around;
+                                figure{
+                                    width: 50%;
+                                    max-width: 130px;
+                                    margin-bottom: 5%;
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            &:last-child{
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                .text{
+                                    min-height: inherit;
+                                    font-weight: bold;
+                                    color: $Ablue;
+                                    margin-right: 0;
+                                    flex: {
+                                        grow: 1;
+                                        shrink: 1;
+                                        basis: 100%;
+                                    }
+                                    &::before{
+                                        display: none;
+                                    }
+                                }
+                                .group{
+                                    padding: {
+                                        right: 3%;
+                                        left: 3%;
+                                    }
+                                    flex: {
+                                        grow: 1;
+                                        shrink: 1;
+                                        basis: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >.group{
+                        padding: 5%;
+                        background-color: $Ablue;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        label{
+                            color: #FFF;
+                            margin-bottom: 0;
+                            width: 50%;
+                            margin-right: 10%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                        }
+                        .input{
+                            flex: {
+                                grow: 0;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                        }
+                    }
+                }
+                &.finish{
+                    >div{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .check{
+                            color: $Ablue;
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 25%;
+                            }
+                        }
+                    }
+                }
+                &.contact{
+                    >div{
+                        width: 70%;
+                        .group{
+                            .input{
+                                border-style: solid;
+                                border-width: 1px;
+                                border-color: $gray;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            >.btn{
+                margin-top: 5%;
+                max-width: 150px;
+                background-color: transparent;
+                color: $Ablue;
+                border: {
+                    style: solid;
+                    width: 1px;
+                    color: $Ablue;
+                }
+                font: {
+                    weight: bold;
+                    size: 1.3rem;
+                }
+            }
+        }
         .separator{
             &.full-section{
                 background-color: $Ared;
@@ -1660,343 +1998,6 @@ body{
                                         }
                                         .lists{
     
-                                        }
-                                        .foaming-form{
-                                            .subtitle{
-                                                color: $Ablue;
-                                            }
-                                            .group{
-                                                .radio, .check{
-                                                    margin-bottom: 5%;
-                                                    font-weight: bold;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    cursor: pointer;
-                                                    svg{
-                                                        width: auto;
-                                                        height: 25px;
-                                                        margin-right: 10%;
-                                                        path{
-                                                            color: $Ablue;
-                                                        }
-                                                    }
-                                                }
-                                                .subtitle{
-                                                    color: $Ablue;
-                                                    margin-bottom: 3%;
-                                                    border: {
-                                                        top: {
-                                                            style: solid;
-                                                            width: 1px;
-                                                            color: $Ablue;
-                                                        }
-                                                        bottom: {
-                                                            style: solid;
-                                                            width: 1px;
-                                                            color: $Ablue;
-                                                        }
-                                                    }
-                                                }
-                                                &.material{
-                                                    >div{
-                                                        display: flex;
-                                                        align-items: center;
-                                                        color: $Ablue;
-                                                        >p{
-                                                            display: flex;
-                                                            flex-direction: column;
-                                                            font-weight: bold;
-                                                            flex: {
-                                                                grow: 1;
-                                                                shrink: 1;
-                                                                basis: 50%;
-                                                            }
-                                                        }
-                                                        >figure{
-                                                            flex: {
-                                                                grow: 1;
-                                                                shrink: 1;
-                                                                basis: 50%;
-                                                            }
-                                                            img{
-                                                                width: 100%;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                &.gauges{
-                                                    >.text{
-                                                        min-height: inherit;
-                                                        &:before{
-                                                            display: none;
-                                                        }
-                                                    }
-                                                    >div{
-                                                        >table{
-                                                            width: 100%;
-                                                            color: $Ablue;
-                                                            thead{
-                                                                tr{
-                                                                    th{
-                                                                        font-weight: bold;
-                                                                        padding: 5%;
-                                                                    }
-                                                                }
-                                                            }
-                                                            tbody{
-                                                                tr{
-                                                                    td{
-                                                                        font-weight: bold;
-                                                                        text-align: center;
-                                                                        .radio{
-                                                                            display: block;
-                                                                            text-align: center;
-                                                                            svg{
-                                                                                margin-right: 1%;
-                                                                                height: 20px;
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                &.shape{
-                                                    >ul{
-                                                        list-style: none;
-                                                        li{
-                                                            background-color: $Ablue;
-                                                            color: #FFF;
-                                                            cursor: pointer;
-                                                            padding: {
-                                                                top: 1%;
-                                                                right: 1%;
-                                                                bottom: 1%; 
-                                                                left: 10%;
-                                                            }
-                                                            border-bottom: {
-                                                                style: solid;
-                                                                width: 1px;
-                                                                color: #FFF;
-                                                            }
-                                                            transition: all .2s ease;
-                                                            &:hover, &.active{
-                                                                background-color: #FFF;
-                                                                color: $Ablue;
-                                                                border: {
-                                                                    style: solid;
-                                                                    width: 1px;
-                                                                    color: $Ablue;
-                                                                }
-                                                            }
-                                                            &.active{
-                                                                font-weight: bold;
-                                                            }
-                                                        }
-                                                    }
-                                                    >.content{
-                                                        .angles{
-                                                            >ul{
-                                                                list-style: none;
-                                                                display: flex;
-                                                                justify-content: space-between;
-                                                                flex-wrap: wrap;
-                                                                li{
-                                                                    display: flex;
-                                                                    flex-direction: column;
-                                                                    align-items: center;
-                                                                    cursor: pointer;
-                                                                    flex: {
-                                                                        grow: 1;
-                                                                        shrink: 1;
-                                                                        basis: 25%;
-                                                                    }
-                                                                    border-radius: 5%;
-                                                                    margin-bottom: 5%;
-                                                                    span{
-                                                                        color: $Ablue;
-                                                                        &:first-child{
-                                                                            margin-bottom: 15%;
-                                                                            padding: 10%;
-                                                                            border-radius: 8%;
-                                                                            svg{
-                                                                                width: 80px;
-                                                                            }
-                                                                            
-                                                                        }
-                                                                    }
-                                                                    &.active{
-                                                                        span{
-                                                                            &:first-child{
-                                                                                background: $Ablue;
-                                                                                svg{
-                                                                                    path{
-                                                                                        fill: #FFF;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                            >.text{
-                                                                width: 100%;
-                                                                background-color: $Ablue;
-                                                                color: #FFF;
-                                                                padding: 5%;
-                                                                margin-bottom: 0;
-                                                                display: flex;
-                                                                align-items: center;
-                                                                justify-content: space-between;
-                                                                cursor: pointer;
-                                                                span{
-                                                                    font-weight: bold;
-                                                                }
-                                                                svg{
-                                                                    position: static;
-                                                                    fill: #FFF;
-                                                                    transform: inherit;
-                                                                    margin-right: 5%;
-                                                                    width: 30px;
-                                                                    height: auto;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                &.sizes{
-                                                    >div{
-                                                        display: flex;
-                                                        label{
-                                                            font-weight: bold;
-                                                            color: $Ablue;
-                                                        }
-                                                        .input{
-                                                            border-style: solid;
-                                                            border-width: 1px;
-                                                            border-color: $gray;
-                                                            border-radius: 8px;
-                                                        }
-                                                        >article{
-                                                            flex: {
-                                                                grow: 1;
-                                                                shrink: 1;
-                                                                basis: 50%;
-                                                            }
-                                                            &.prevs{
-                                                                display: flex;
-                                                                flex-direction: column;
-                                                                align-items: center;
-                                                                justify-content: space-around;
-                                                                figure{
-                                                                    width: 50%;
-                                                                    max-width: 130px;
-                                                                    margin-bottom: 5%;
-                                                                    img{
-                                                                        width: 100%;
-                                                                    }
-                                                                }
-                                                            }
-                                                            &:last-child{
-                                                                display: flex;
-                                                                flex-wrap: wrap;
-                                                                align-items: center;
-                                                                .text{
-                                                                    min-height: inherit;
-                                                                    font-weight: bold;
-                                                                    color: $Ablue;
-                                                                    margin-right: 0;
-                                                                    flex: {
-                                                                        grow: 1;
-                                                                        shrink: 1;
-                                                                        basis: 100%;
-                                                                    }
-                                                                    &::before{
-                                                                        display: none;
-                                                                    }
-                                                                }
-                                                                .group{
-                                                                    padding: {
-                                                                        right: 3%;
-                                                                        left: 3%;
-                                                                    }
-                                                                    flex: {
-                                                                        grow: 1;
-                                                                        shrink: 1;
-                                                                        basis: 50%;
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                    >.group{
-                                                        padding: 5%;
-                                                        background-color: $Ablue;
-                                                        display: flex;
-                                                        justify-content: space-between;
-                                                        flex-direction: row;
-                                                        label{
-                                                            color: #FFF;
-                                                            margin-bottom: 0;
-                                                            width: 50%;
-                                                            margin-right: 10%;
-                                                            display: flex;
-                                                            align-items: center;
-                                                            justify-content: flex-end;
-                                                        }
-                                                        .input{
-                                                            flex: {
-                                                                grow: 0;
-                                                                shrink: 1;
-                                                                basis: 50%;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                &.finish{
-                                                    >div{
-                                                        display: flex;
-                                                        flex-wrap: wrap;
-                                                        .check{
-                                                            color: $Ablue;
-                                                            flex: {
-                                                                grow: 1;
-                                                                shrink: 1;
-                                                                basis: 25%;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                &.contact{
-                                                    >div{
-                                                        width: 70%;
-                                                        .group{
-                                                            .input{
-                                                                border-style: solid;
-                                                                border-width: 1px;
-                                                                border-color: $gray;
-                                                                border-radius: 5px;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            >.btn{
-                                                margin-top: 5%;
-                                                max-width: 150px;
-                                                background-color: transparent;
-                                                color: $Ablue;
-                                                border: {
-                                                    style: solid;
-                                                    width: 1px;
-                                                    color: $Ablue;
-                                                }
-                                                font: {
-                                                    weight: bold;
-                                                    size: 1.3rem;
-                                                }
-                                            }
                                         }
                                     }
                                     .machine-picture{
