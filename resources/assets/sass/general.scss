@@ -355,6 +355,11 @@ body{
                 }
             }
         }
+        .blue-table{
+            flex-direction: column;
+            background-color: $Ablue;
+            color: #FFF;
+        }
         .wizzard{
             position: relative;
             background-color: $Ablue;

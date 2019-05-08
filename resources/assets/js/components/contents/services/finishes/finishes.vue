@@ -4,10 +4,12 @@
             <figure>
                 <img src="/img/services/polish_cards.jpg" alt="">
             </figure>
-            <p class="label">
+            <div class="label">
                 <icon name="polish"></icon>
-                Finishes
-            </p>
+                <p class="text">
+                    Finishes
+                </p>
+            </div>
         </article>
         <article class="sub" v-else>
             <div class="headline">

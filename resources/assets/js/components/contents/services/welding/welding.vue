@@ -4,10 +4,12 @@
             <figure>
                 <img src="/img/services/welding_card.jpg" alt="">
             </figure>
-            <p class="label">
+            <div class="label">
                 <icon name="welding"></icon>
-                Welding
-            </p>
+                <p class="text">
+                    Welding
+                </p>
+            </div>
         </article>
         <article class="sub" v-else>
             <div class="headline">

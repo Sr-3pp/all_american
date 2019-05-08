@@ -4,10 +4,12 @@
             <figure>
                 <img src="/img/services/preparation_card.jpg" alt="">
             </figure>
-            <p class="label">
+            <div class="label">
                 <icon name="preparation"></icon>
-                Preparation
-            </p>
+                <p class="text">
+                    Preparation
+                </p>
+            </div>
         </article>
         <article class="sub" :key="1" v-if="active && !detail">
             <div class="headline">
@@ -45,7 +47,7 @@
                         <p class="subtitle">Forming Break</p>
                         <div>
                             <p>
-                                Lorem ipsum
+                                We adapt your material so that it fulfills its specific functions, we design, angles, U chanels, panels...
                             </p>
                             <icon name="concept"></icon>
                         </div>
@@ -59,13 +61,34 @@
                         <p class="subtitle">Machine Mill</p>
                         <div>
                             <p>
-                                Lorem ipsum
+                                Choosing the right material for each project is very important, we care about providing...
                             </p>
                             <icon name="concept"></icon>
                         </div>
                     </div>
                 </article>
             </div>
+            <div class="content">
+            <article>
+                <p class="title">Fabrication</p>
+                <p class="text">
+                    We offer fully customized <b>guard rails</b>
+                    and <b>decorative railings</b> to match any
+                    aesthetic. From hammered end caps to
+                    forged steel caps, pickets and tubing,
+                    we can create a railing that will last for
+                    years and look amazing. <b>Don't settle
+                    on prefabricated pieces</b> that barely fit
+                    your home, call the professionals at All
+                    American Finishing. We'll customize to
+                    your exact specifications.
+                </p>
+            </article>
+            <article>
+                <p class="title">Process</p>
+                <drop-list :list="list" name="general"></drop-list>
+            </article>
+        </div>
         </article>
         <shear :key="2" v-show="active && detail == 1"></shear>
         <forming-break :key="3" v-show="active && detail == 2"></forming-break>
@@ -80,7 +103,21 @@ export default {
     props: ['active'],
     data(){
         return {
-           detail: false
+           detail: false,
+           list: {
+               0:{
+                        name: 'Additional Services',
+                        content: 'In <b>All American Finishing</b> we know that in the industrial, custom metal fabrication, each project is a new challenge that brings with it, new ways to reach the desired objectives. So we are <b>constantly growing</b>, reinventing the way we work, we will make sure to deliver your project fulfilling the expectations you want.'
+                    },
+                    1:{
+                        name: 'Daily report',
+                        content: 'El contenido chilo'
+                    },
+                    2:{
+                        name: 'Prefabrication Inspection',
+                        content: 'El contenido chilo'
+                    }
+            }
         }
     },
     methods: {

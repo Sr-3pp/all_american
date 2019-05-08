@@ -23,10 +23,13 @@
                         Roll-bending or cuving belding, is the manufacture or development of metal sheets that are worked to acquire cylindrical shapes, curves or radios depending on the needs of the project.
                         <icon name="star_panel2"></icon>
             </p>
-            <figure>
-                <img width="100%" src="/img/default.jpg" alt="">
-            </figure>
         </div>
+        <figure class="image">
+                <img src="/img/rolling_machine.jpg" alt="">
+                <p class="category">
+                    Rolling Machine
+                </p>
+        </figure>
     </div>
 </template>
 <script>

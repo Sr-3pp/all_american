@@ -4,10 +4,12 @@
             <figure>
                 <img src="/img/services/planning_card.jpg" alt="">
             </figure>
-            <p class="label">
+            <div class="label">
                 <icon name="planning"></icon>
-                Dessign and Planning
-            </p>
+                <p class="text">
+                    Dessign and<br>Planning
+                </p>
+            </div>
         </article>
         <article :key="1" class="sub" v-if="active && !detail">
             <div class="headline">

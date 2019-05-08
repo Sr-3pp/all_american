@@ -4,10 +4,10 @@
             <figure>
                 <img src="/img/default.jpg" alt="">
             </figure>
-            <p class="label">
+            <div class="label">
                 <icon name="delivery"></icon>
-                Delivery
-            </p>
+                <p class="text">Delivery</p>
+            </div>
         </article>
         <article class="sub" v-else>
             <div class="headline">
