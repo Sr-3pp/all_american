@@ -69,26 +69,26 @@
                 </article>
             </div>
             <div class="content">
-            <article>
-                <p class="title">Fabrication</p>
-                <p class="text">
-                    We offer fully customized <b>guard rails</b>
-                    and <b>decorative railings</b> to match any
-                    aesthetic. From hammered end caps to
-                    forged steel caps, pickets and tubing,
-                    we can create a railing that will last for
-                    years and look amazing. <b>Don't settle
-                    on prefabricated pieces</b> that barely fit
-                    your home, call the professionals at All
-                    American Finishing. We'll customize to
-                    your exact specifications.
-                </p>
-            </article>
-            <article>
-                <p class="title">Process</p>
-                <drop-list :list="list" name="general"></drop-list>
-            </article>
-        </div>
+                <article>
+                    <p class="title">Fabrication</p>
+                    <p class="text">
+                        We offer fully customized <b>guard rails</b>
+                        and <b>decorative railings</b> to match any
+                        aesthetic. From hammered end caps to
+                        forged steel caps, pickets and tubing,
+                        we can create a railing that will last for
+                        years and look amazing. <b>Don't settle
+                        on prefabricated pieces</b> that barely fit
+                        your home, call the professionals at All
+                        American Finishing. We'll customize to
+                        your exact specifications.
+                    </p>
+                </article>
+                <article>
+                    <p class="title">Process</p>
+                    <drop-list :list="list" name="general"></drop-list>
+                </article>
+            </div>
         </article>
         <shear :key="2" v-show="active && detail == 1"></shear>
         <forming-break :key="3" v-show="active && detail == 2"></forming-break>

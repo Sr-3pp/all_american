@@ -55,6 +55,9 @@ Vue.component('machine-mill', require('./components/contents/services/preparatio
 Vue.component('forming-form', require('./components/contents/services/preparation/form/formingForm.vue'));
 
 Vue.component('welding', require('./components/contents/services/welding/welding.vue'));
+Vue.component('tig', require('./components/contents/services/welding/partials/tig.vue'));
+Vue.component('mig', require('./components/contents/services/welding/partials/mig.vue'));
+Vue.component('stick', require('./components/contents/services/welding/partials/stick.vue'));
 
 Vue.component('finishes', require('./components/contents/services/finishes/finishes.vue'));
 
