@@ -60,6 +60,13 @@ Vue.component('mig', require('./components/contents/services/welding/partials/mi
 Vue.component('stick', require('./components/contents/services/welding/partials/stick.vue'));
 
 Vue.component('finishes', require('./components/contents/services/finishes/finishes.vue'));
+Vue.component('mirror', require('./components/contents/services/finishes/partials/mirrorFinish.vue'));
+Vue.component('finish-seven', require('./components/contents/services/finishes/partials/finish7.vue'));
+Vue.component('finish-six', require('./components/contents/services/finishes/partials/finish6.vue'));
+Vue.component('brush', require('./components/contents/services/finishes/partials/brush.vue'));
+Vue.component('vibration', require('./components/contents/services/finishes/partials/vibration.vue'));
+Vue.component('sandblast', require('./components/contents/services/finishes/partials/sandblast.vue'));
+Vue.component('timesaver', require('./components/contents/services/finishes/partials/timesaver.vue'));
 
 Vue.component('painting', require('./components/contents/services/painting/painting.vue'));
 
