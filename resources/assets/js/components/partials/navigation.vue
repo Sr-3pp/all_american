@@ -4,6 +4,8 @@
             <img :src="logo" alt="Site Brand">
         </figure>
         <ul class="item-list" :class="{'active': active}">
+            <li class="close-menu item" @click="active ? active = false : active = true">
+                <a type="button" href="#" class="link"><icon name="chevron"></icon></a>
             <li class="item">
                 <a class="link" href="/">Home</a>
             </li>
@@ -20,7 +22,7 @@
                 <a class="link" href="#">Contact Us</a>
             </li>
         </ul>
-        <button @click="active ? active = false : active = true" class="show-menu"><i class="fas fa-bars"></i></button>
+        <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="+"></icon></button>
     </nav>
 </template>
 

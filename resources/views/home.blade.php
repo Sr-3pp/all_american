@@ -6,19 +6,17 @@
     <tabs name="home" :services="{{json_encode($services)}}"></tabs>
 </section>
 <content-tabs name="home" :services="{{json_encode($services)}}"></content-tabs>
-<section s-sec="separator">
-        <div class="full-section">
-            <article v-animate.repeat="'slide-right'">
-                <icon name="phone"></icon>
-                <p>
-                    <span class="title">(702) 722 3197</span>
-                    Ask for <b>free estimate</b>, No job<br>is to big or small to us.                
-                </p>
-            </article>
-            <button class="btn cta" type="button">
-                Contact Us
-            </button>
-        </div>
+<section s-sec="separator" class="full-section">
+    <article v-animate.repeat="'slide-right'">
+        <icon name="phone"></icon>
+        <p>
+            <span class="title">(702) 722 3197</span>
+            Ask for <b>free estimate</b>, No job<br>is to big or small to us.                
+        </p>
+    </article>
+    <button class="btn cta" type="button">
+        Contact Us
+    </button>
 </section>
 <section s-sec="who" class="full-section">
     <img src="/img/welding_2.jpg" alt="">

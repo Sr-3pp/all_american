@@ -1,5 +1,26 @@
 @media (min-width: 768px){
     body{
+        header{
+            padding: 20px 10vw;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        article{
+            display: flex;
+            color: #FFF;
+            p{
+                margin-right: 10px;
+                svg{
+                    width: 10px;
+                    margin-right: 10px;
+                }
+            }
+            svg{
+                width: 20px;
+            }
+        }
+        }
         #app{
             .title, .subtitle, .category{
                 margin-bottom: 3%;
@@ -17,8 +38,74 @@
                     }
                 }
             }
+            .separator, [s-sec=separator]{
+                padding: {
+                    top: 3%;
+                    bottom: 3%;
+                }
+                flex-direction: row;
+                &.full-section{
+                    article{
+                        flex: 8;
+                        justify-content: flex-start;
+                        margin-bottom: 0;
+                        svg{
+                            display: inline-block;
+                            width: 40px;
+                            height: 40px;
+                            margin-right: 30px;
+                        }
+                        p{
+                            font-size: 1rem;
+                        }
+                    }
+                    .cta{
+                        flex: 2;
+                        height: 50px;
+                    }
+                }
+            }
+            .carousel{
+                margin-bottom: 0;
+                .slides{
+                    .slide{
+                        height: auto;
+                        .content{
+                            color: #FFF;
+                            text-align: center;
+                            transform: translateY(-50%);
+                            width: auto;
+                            .text{
+                                font-size: 1.5rem
+                            }
+                            .title{
+                                padding: {
+                                    top: 3%;
+                                    bottom: 3%;
+                                }
+                                margin-bottom: 5%;
+                            }
+                            .cta{
+                                background-color: transparent;
+                                width: 40%;
+                                color: #FFF;
+                                font: {
+                                    size: 1.5rem;
+                                }
+                            }
+                            &[s-mode~=right]{
+                                right: 12%;
+                                left: inherit;
+                            }
+                        }
+                    }
+                }
+                .control{
+                    display: block;
+                }
+            }
             [s-sec=navigation]{
-                .show-menu{
+                .toggle-btn, .close-menu{
                     display: none;
                 }
                 .brand{
@@ -33,6 +120,8 @@
                     color: #FFF;
                     justify-content: space-between;
                     top: 0;
+                    left: inherit;
+                    background-color: transparent;
                     .item{
                         .link{
                             color: #FFF;
@@ -67,7 +156,16 @@
                 }
             }
             [s-sec=services]{
-                flex-direction: row;
+                &.full-section{
+                    >div{
+                        flex-direction: row;
+                        align-items: center;
+                        img{
+                            width: 50%;
+                            height: auto;
+                        }
+                    }
+                }
             }
             [s-sec=who]{
                 &.full-section{
@@ -97,9 +195,18 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
+                            height: 90vh;
                             img{
                                 height: 100%;
                                 width: auto;
+                            }
+                            .testimonials{
+                                article{
+                                    width: 60%;
+                                    .text{
+                                        width: 60%;
+                                    }
+                                }
                             }
                         }
                     }
@@ -143,27 +250,21 @@
             .s-text{
                 font-size: .7rem
             }
-            header{
-                padding: 20px 10vw;
-                article{
-                    p{
-                        margin-right: 25px;
-                        svg{
-                            width: 20px;
-                            margin-right: 10px;
-                        }
-                    }
-                    svg{
-                        width: 20px;
-                    }
-                }
-            }
             [s-sec=navigation]{
                 top: 0;
                 width: 100%;
                 height: 110px;
                 &.on-top{
+                    background: #FFF;
+                    color: $dark;
                     padding: 20px 5vw;
+                    .item-list{
+                        .item{
+                            a{
+                                color: $dark
+                            }
+                        }
+                    }
                 }
                 .brand{
                     width: 150px;
@@ -214,6 +315,7 @@
                             }
                             p{
                                 width: 70%;
+                                display: block;
                             }
                         }
                     }
@@ -235,6 +337,10 @@
                     div{
                         width: 80%;
                         height: 70%;
+                        margin-top: 0;
+                        >.title, >.text{
+                            margin-bottom: 0;
+                        }
                         ul{
                             ol{
                                 &.category{
@@ -246,29 +352,6 @@
                         }
                     }
                     
-                }
-            }
-            [s-sec=separator]{
-                padding: {
-                    top: 3%;
-                    bottom: 3%;
-                }
-                .full-section{
-                    article{
-                        flex: 8;
-                        svg{
-                            width: 40px;
-                            height: 40px;
-                            margin-right: 30px;
-                        }
-                        p{
-                            font-size: 1rem;
-                        }
-                    }
-                    .cta{
-                        flex: 2;
-                        height: 50px;
-                    }
                 }
             }
             [s-sec=testimonial]{
@@ -308,6 +391,7 @@
                 }
             }
             [s-sec=contact]{
+                flex-direction: row;
                 &.full-section{
                     &.full-section{
                         padding-right: 0;
