@@ -355,6 +355,104 @@ body{
                 }
             }
         }
+        .gallery{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(#000, .8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity .5s ease;
+            opacity: 0;
+            display: none;
+            &[s-active=true]{
+                opacity: 1;
+                display: flex;
+            }
+            .frame{
+                width: 80%;
+                height: 80%;
+                position: relative;
+                figure{
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+            .prev-btn, .next-btn{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 5vw;
+                height: 5vw;
+                z-index: 11;
+                padding: 1%;
+                background-color: rgba($Ablue, .8);
+                height: auto;
+                color: #FFF;
+            }
+            .prev-btn{
+                left: 5%;
+            }
+            .next-btn{
+                right: 5%;
+                svg{
+                    transform: rotate(180deg);
+                    color: currentColor;
+                }
+            }
+            .close-btn{
+                position: absolute;
+                top: 1.5vw;
+                right: 1.5vw;
+                width: 3vw;
+                height: 3vw;
+                background-color: transparent;
+                padding: 0;
+                border: {
+                    color: #FFF;
+                    style: solid;
+                    radius: 100%;
+                    width: 1px;
+                }
+                z-index: 12;
+                svg{
+                    transform: rotate(45deg);
+                    color: #FFF;
+                    width: 100%;
+                }
+            }
+            .social-btns{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 250px;
+                padding: 1%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .btn{
+                    background-color: transparent;
+                }
+                svg{
+                    width: 50%;
+                    color: #FFF;
+                }
+            }
+        }
         .blue-table{
             flex-direction: column;
             background-color: $Ablue;
@@ -1678,7 +1776,7 @@ body{
                     }
                 }
             }
-            [s-sec=services]{
+            [s-sec=services], [s-sec=projects]{
                 &.full-section{
                     flex-direction: column;
                     padding-left: 0;
@@ -2090,6 +2188,18 @@ body{
                                     color: $gray;
                                 }
                             }
+                        }
+                    }
+                }
+            }
+            [s-sec=projects]{
+                >.cont{
+                    border-radius: 0;
+                    >article{
+                        figure{
+                            height: 80%;
+                            border-radius: 10px;
+                            overflow: hidden;
                         }
                     }
                 }

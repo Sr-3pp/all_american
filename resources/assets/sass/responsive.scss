@@ -370,48 +370,7 @@
                     display: flex;
                     >.main{
                         width: 62%;
-                        &[s-sec=projects]{
-                            display: flex;
-                            flex-wrap: wrap;
-                            padding-left: 5vw;
-                            >article{
-                                display: flex;
-                                flex-direction: column;
-                                flex: {
-                                    grow: 1;
-                                    shrink: 1;
-                                    basis: 50%;
-                                }
-                                &:nth-child(odd){
-                                    padding-right: 5%;
-                                }
-    
-                                >figure{
-                                    width: 25vw;
-                                    height: 25vw;
-                                    border-radius: 15px;
-                                    overflow: hidden;
-                                    margin: {
-                                        top: 0;
-                                        right: auto;
-                                        bottom: 5%;
-                                        left: auto;
-                                    }
-                                    display: flex;
-                                    justify-content: center;
-                                    align-content: center;
-                                    img{
-                                        width: auto;
-                                        height: 100%;
-                                    }
-                                }
-                                >p{
-                                    width: 28vw;
-                                    margin: 0 auto;
-                                }
-                            }
-                        }
-                        &[s-sec=services]{
+                        &[s-sec=services],  &[s-sec=projects]{
                             display: flex;
                             flex-wrap: wrap;
                             align-items: center;
@@ -674,6 +633,19 @@
                                 }
                             }
                         }
+                        &[s-sec=projects]{
+                            >.cont{
+                                border-radius: 0;
+                                >article{
+                                    figure{
+                                        height: 80%;
+                                    }
+                                    .text{
+                                        padding-left: 0;
+                                    }
+                                }
+                            }
+                        }
                     }
                     >.section-menu{
                         position: fixed;
@@ -844,11 +816,6 @@
                     padding: 0;
                 }
             }
-            [s-sec=projects]{
-                &.full-section{
-                    padding: 0;
-                }
-            }
             [s-sec=job]{
                 min-height: 500px;
             }
@@ -870,35 +837,11 @@
             }
             &[s-layout=general]{
                 >.content{
-                    >.main{
-                        &[s-sec=services]{
-                            padding-left: 10vw;
-                            >.cont{
-                                width: 23vw;
-                                height: 23vw;
-                                >.detail{
-                                    >.text, >.title, >.foaming-form{
-                                        padding-left: 10vw;
-                                    }
-                                }
-                            }
-                            &.active{
-                                >.cont{
-                                    >.sub{
-                                        .headline, .cards, .content{
-                                            padding-left: 10vw;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                       
-                    }
                     >.section-menu{
                         padding-right: 10vw;
                     }
                 }
-                [s-sec=services]{
+                [s-sec=services],  &[s-sec=projects]{
                     >.cont{
                         >div{
                             &:first-child{

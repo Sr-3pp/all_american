@@ -13,6 +13,7 @@ class ProjectController extends Controller
                 'portada' => 'img/default.jpg',
                 'gallery' => [
                     [
+                        'id' => 1,
                         'name' => 'Foto_ 1',
                         'archivo' => 'img/default.jpg'
                     ]
@@ -23,6 +24,7 @@ class ProjectController extends Controller
                 'portada' => 'img/default.jpg',
                 'gallery' => [
                     [
+                        'id' => 1,
                         'name' => 'Foto_ 1',
                         'archivo' => 'img/default.jpg'
                     ]

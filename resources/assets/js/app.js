@@ -29,6 +29,7 @@ Vue.component('navigation', require('./components/partials/navigation.vue'));
 Vue.component('carousel', require('./components/partials/carousel.vue'));
 Vue.component('slider', require('./components/partials/slider.vue'));
 Vue.component('drop-list', require('./components/partials/dropList.vue'));
+Vue.component('gallery-overlay', require('./components/partials/gallery.vue'));
 Vue.component('last-news', require('./components/partials/lastNews.vue'));
 Vue.component('tabs', require('./components/partials/tabs/tabs.vue'));
 Vue.component('tabs-content-general', require('./components/partials/tabs/contents/general.vue'));
