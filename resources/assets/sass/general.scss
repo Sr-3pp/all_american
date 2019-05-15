@@ -2,6 +2,13 @@ body{
     background-color: #000;
     header{
         display: none;
+        font-family: 'Aero Matics';
+    }
+    svg{
+        path{
+            stroke: currentColor;
+            stroke-width: 1px;
+        }
     }
     #app{
         .title, .subtitle, .category{
@@ -367,6 +374,31 @@ body{
                 }
             }
         }
+        .address-list{
+            padding: 5%;
+            background-color: $Ared;
+            color: #FFF;
+            >ol{
+                display: flex;
+                align-items: center;
+                padding: 2% 0;
+                svg{
+                    width: 10%;
+                    height: 10%;
+                    margin-right: 8%;
+                    color: currentColor;
+                }
+                .text{
+                    margin-bottom: 0!important;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+        }
+        .schedule-list{
+            padding: 3%;
+        }
         .estimate-list{
             list-style: none;
             margin-bottom: 5%;
@@ -486,6 +518,27 @@ body{
                 svg{
                     width: 50%;
                     color: #FFF;
+                }
+            }
+        }
+        .contact-form{
+            .group{
+                .input{
+                    border-style: solid;
+                    border-width: 1px;
+                    border-color: $gray;
+                    border-radius: 5px;
+                }
+                .btn{
+                    background-color: transparent;
+                    color: $Ared;
+                    border: {
+                        style: solid;
+                        width: 1px;
+                        color: $Ared;
+                    }
+                    margin-left: inherit;
+                    margin-right: auto;
                 }
             }
         }
@@ -951,14 +1004,6 @@ body{
                 &.contact{
                     >div{
                         width: 70%;
-                        .group{
-                            .input{
-                                border-style: solid;
-                                border-width: 1px;
-                                border-color: $gray;
-                                border-radius: 5px;
-                            }
-                        }
                     }
                 }
             }
@@ -1645,6 +1690,7 @@ body{
         }
         [s-sec=contact]{
             overflow: hidden;
+            background-color: #FFF;
             &.full-section{
                 padding-top: 0;
                 padding-right: 0;
@@ -2191,6 +2237,44 @@ body{
                             height: 80%;
                             border-radius: 10px;
                             overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        &[s-layout=secondary]{
+            background-color: #FFF;
+            [s-sec=contact]{
+                >div{
+                    padding: {
+                        right: 0;
+                        left: 0;
+                    }
+                    background-color: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    >article{
+                        &:first-child{
+                            padding: {
+                                right: 5vw;
+                                left: 5vw;
+                            }
+                        }
+                    }
+                    &.map-cont{
+                        background-color: $dark;
+                        min-height: 90vh;
+                        >article{
+                            &:last-child{
+                                background-color: $Ared;
+                                position: absolute;
+                                bottom: 3%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: calc(100% - 10vw);
+                                padding: 3% 5%;
+                                border-radius: 10px;
+                            }
                         }
                     }
                 }

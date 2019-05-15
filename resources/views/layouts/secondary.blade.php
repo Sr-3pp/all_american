@@ -37,7 +37,7 @@
             </span>
         </article>
     </header>
-    <div id="app" s-layout="general">
+    <div id="app" s-layout="secondary">
         <navigation name="general"></navigation>
         @yield('content')
     </div>

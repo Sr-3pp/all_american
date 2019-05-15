@@ -1,11 +1,12 @@
 @media (min-width: 768px){
     body{
         header{
-            padding: 20px 10vw;
+            padding: 20px 5vw;
             display: flex;
             justify-content: space-between;
             position: relative;
             z-index: 1;
+            font-family: 'Aero Matics';
         article{
             display: flex;
             color: #FFF;
@@ -781,6 +782,43 @@
                     }
                 }
             }
+            &[s-layout=secondary]{
+                background-color: #FFF;
+                [s-sec=contact]{
+                    >div{
+                        padding: {
+                            right: 0;
+                            left: 0;
+                        }
+                        flex-direction: row;
+                        >article{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                            &:first-child{
+                                padding: {
+                                    right: 5vw;
+                                    left: 5vw;
+                                }
+                            }
+                        }
+                        &.map-cont{
+                            min-height: 1100px;
+                            >article{
+                                &:last-child{
+                                    width: 50%;
+                                    padding: 3% 5%;
+                                    border-radius: 10px;
+                                    left: 5vw;
+                                    transform: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -941,6 +979,30 @@
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                background-color: #FFF;
+                [s-sec=contact]{
+                    >div{
+                        >article{
+                            &:first-child{
+                                padding: {
+                                    right: 10vw;
+                                    left: 10vw;
+                                }
+                            }
+                        }
+                        &.map-cont{
+                            min-height: 1400px;
+                            >article{
+                                &:last-child{
+                                    padding: 3% 5%;
+                                    border-radius: 10px;
                                 }
                             }
                         }

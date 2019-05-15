@@ -1,5 +1,5 @@
 <template>
-        <transition-group tag="div" name="fade" class="row">
+        <transition-group tag="div" name="fade" class="row contact-form">
             <form :key="0" v-if="!sent" class="form">
                 <article class="group">
                     <label>Name</label>

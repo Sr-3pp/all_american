@@ -19,7 +19,7 @@
                 <a class="link" href="/about-us">About us</a>
             </li>
             <li class="item">
-                <a class="link" href="#">Contact Us</a>
+                <a class="link" href="/contact-us">Contact Us</a>
             </li>
         </ul>
         <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="+"></icon></button>
