@@ -889,6 +889,23 @@
                     }
                 }
             }
+            &[s-layout=secondary]{
+                [s-sec=contact]{
+                    >div{
+                        &.map-cont{
+                            >article{
+                                &:last-child{
+                                    width: 30%;
+                                    padding: 1%;
+                                    border-radius: 10px;
+                                    left: 5vw;
+                                    transform: inherit;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
         }
     }
 }
@@ -1001,7 +1018,7 @@
                             min-height: 1400px;
                             >article{
                                 &:last-child{
-                                    padding: 3% 5%;
+                                    padding: 2%;
                                     border-radius: 10px;
                                 }
                             }

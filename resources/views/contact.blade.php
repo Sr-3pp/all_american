@@ -55,7 +55,7 @@
             </article>
         </div>
         <div class="map-cont">
-            <article class="map">Insertar mapa aqui</article>
+            <article class="map" id="map">Insertar mapa aqui</article>
             <article v-animate.repeat="'slide-left'">
                 <ul class="schedule-list">
                     <ol>
