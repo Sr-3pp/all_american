@@ -145,4 +145,10 @@
             </ul>
         </div>
     </section>
+    <section class="separator">
+        <p class="title">
+            Request for a free estimate
+        </p>
+        <button class="btn cta">Contact us</button>
+    </section>
 @endsection
