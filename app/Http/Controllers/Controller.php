@@ -561,7 +561,30 @@ class Controller extends BaseController
     }
 
     public function about(){
-        return view('about');
+        $list=[
+            [
+                'name' => 'Our Mission',
+                'content' => 'Being a company committed to efficiently solve the needs of our
+                customers by providing quality services, with useful and effective
+                strategies, we work in a responsible manner, and we are proud of our
+                quality in each job, Our main commitment is with our customers.'
+            ],
+            [
+                'name' => 'Our Vission',
+                'content' => 'Being a company committed to efficiently solve the needs of our
+                customers by providing quality services, with useful and effective
+                strategies, we work in a responsible manner, and we are proud of our
+                quality in each job, Our main commitment is with our customers.'
+            ],
+            [
+                'name' => 'Our Philosophy',
+                'content' => 'Being a company committed to efficiently solve the needs of our
+                customers by providing quality services, with useful and effective
+                strategies, we work in a responsible manner, and we are proud of our
+                quality in each job, Our main commitment is with our customers.'
+            ]
+        ];
+        return view('about', compact('list'));
     }
 
     public function contact(){

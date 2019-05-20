@@ -258,6 +258,9 @@ body{
         }
         .separator, [s-sec=separator]{
             &.full-section{
+                &.blue{
+                    background-color: $Ablue;
+                }
                 background-color: $Ared;
                 color: #FFF;
                 padding: {
@@ -300,17 +303,111 @@ body{
                     }
                 }
             }
+            ul{
+                list-style: none;
+            }
         }
         .service-list{
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            padding-right: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            &.content{
+                li{
+                    border: none;
+                    flex-direction: column;
+                    &:hover{
+                        article{
+                            color: $Ablue;
+                            svg{
+                                color: $Ablue;
+                            }
+                            .btn{
+                                svg{
+                                    color: $Ared;
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                    article{
+                        color: $Ablue;
+                        svg{
+                            margin-bottom: auto;
+                            margin-top: 8px;
+                            color: $Ablue;
+                        }
+                        p{
+                            display: flex;
+                            flex-direction: column;
+                            flex: 1;
+                            .category{
+                                margin-bottom: 3%;
+                            }
+                        }
+                    }
+                    .btn{
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            margin-top: inherit;
+                            background-color: transparent;
+                            color: $Ared;
+                            transform: inherit;
+                            padding: 0;
+                        }
+                    } 
+                }
+                .text{
+                    color: $gray;
+                    font-weight: normal;
+                    width: 100%;
+                    padding: {
+                        top: 5%;
+                        bottom: 5%;
+                    }
+                    border: {
+                        top: {
+                            style: solid;
+                            width: 1px;
+                            color: $gray;
+                        }
+                        bottom: {
+                            style: solid;
+                            width: 1px;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
             li{
                 flex-direction: column;
                 color: $gray;
                 cursor: pointer;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 padding: {
                     top: 0;
                     bottom: 3%;
                 }
                 &:hover, .active{
+                    article{
+                        color: $Ablue;
+                        svg{
+                            color: $Ablue;
+                        }
+                        .btn{
+                            svg{
+                                color: #FFF;
+                                background-color: $Ablue;
+                            }
+                        }
+                    }
                     .subtitle{
                         color: $Ablue;
                     }
@@ -330,6 +427,49 @@ body{
                         width: 20px;
                         margin-right: 3%;
                         fill: $Ablue;
+                    }
+                }
+                article{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    padding:{
+                        top: 2%;
+                        right: 0;
+                        bottom: 2%;
+                        left: 0;
+                    }
+                    .category{
+                        margin: 0;
+                    }
+                    svg{
+                        margin-right: 2%;
+                        width: 15px;
+                        height: 15px;
+                        transform: inherit;
+                        border: inherit;
+                        background: inherit;
+                        padding: 0;
+                        color: $gray;
+                    }
+                }
+                border-bottom: {
+                    style: solid;
+                    width: 1px;
+                    color: $gray;
+                }
+                .btn{
+                    background-color: transparent;
+                    border: none;
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                        padding: 5px;
+                        background: $gray;
+                        color: #FFF;
+                        border-radius: 5px;
+                        transform: rotate(-90deg);
                     }
                 }
             }
@@ -420,6 +560,41 @@ body{
                     &:last-child{
                         margin-right: 5%;
                     }
+                }
+            }
+        }
+        .check-list{
+            list-style: none;
+            li{
+                display: flex;
+                position: relative;
+                padding: {
+                    top: 3%;
+                    right: 3%;
+                    bottom: 3%;
+                    left: 25%;
+                }
+                svg{
+                    width: 20;
+                    height: 20px;
+                    color: $Ablue;
+                    position: absolute;
+                    left: 10%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        .skill-list{
+            list-style: none;
+            li{
+                padding: 5% 0;
+                .text{
+                    padding: 0 5vw;
+                }
+                progress{
+                    width: 100%;
+                    background-color: $Ablue;
                 }
             }
         }
@@ -1245,148 +1420,6 @@ body{
                             grow: 1;
                             shrink: 1;
                             basis: 50%;
-                        }
-                        .service-list{
-                            width: 100%;
-                            height: 100%;
-                            list-style: none;
-                            padding-right: 0;
-                            display: flex;
-                            justify-content: center;
-                            flex-direction: column;
-                            &.content{
-                                li{
-                                    border: none;
-                                    flex-direction: column;
-                                    &:hover{
-                                        article{
-                                            color: $Ablue;
-                                            svg{
-                                                color: $Ablue;
-                                            }
-                                            .btn{
-                                                svg{
-                                                    color: $Ared;
-                                                    background-color: transparent;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    article{
-                                        color: $Ablue;
-                                        svg{
-                                            margin-bottom: auto;
-                                            margin-top: 8px;
-                                            color: $Ablue;
-                                        }
-                                        p{
-                                            display: flex;
-                                            flex-direction: column;
-                                            flex: 1;
-                                            .category{
-                                                margin-bottom: 3%;
-                                            }
-                                        }
-                                    }
-                                    .btn{
-                                        svg{
-                                            width: 20px;
-                                            height: 20px;
-                                            margin-top: inherit;
-                                            background-color: transparent;
-                                            color: $Ared;
-                                            transform: inherit;
-                                            padding: 0;
-                                        }
-                                    } 
-                                }
-                                .text{
-                                    color: $gray;
-                                    font-weight: normal;
-                                    width: 100%;
-                                    padding: {
-                                        top: 5%;
-                                        bottom: 5%;
-                                    }
-                                    border: {
-                                        top: {
-                                            style: solid;
-                                            width: 1px;
-                                            color: $gray;
-                                        }
-                                        bottom: {
-                                            style: solid;
-                                            width: 1px;
-                                            color: $gray;
-                                        }
-                                    }
-                                }
-                            }
-                            li{
-                                color: $gray;
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                padding: 0;
-                                &:hover{
-                                    article{
-                                        color: $Ablue;
-                                        svg{
-                                            color: $Ablue;
-                                        }
-                                        .btn{
-                                            svg{
-                                                color: #FFF;
-                                                background-color: $Ablue;
-                                            }
-                                        }
-                                    }
-                                }
-                                article{
-                                    width: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    cursor: pointer;
-                                    padding:{
-                                        top: 2%;
-                                        right: 0;
-                                        bottom: 2%;
-                                        left: 0;
-                                    }
-                                    .category{
-                                        margin: 0;
-                                    }
-                                    svg{
-                                        margin-right: 2%;
-                                        width: 15px;
-                                        height: 15px;
-                                        transform: inherit;
-                                        border: inherit;
-                                        background: inherit;
-                                        padding: 0;
-                                        color: $gray;
-                                    }
-                                }
-                                border-bottom: {
-                                    style: solid;
-                                    width: 1px;
-                                    color: $gray;
-                                }
-                                .btn{
-                                    background-color: transparent;
-                                    border: none;
-                                    svg{
-                                        width: 20px;
-                                        height: 20px;
-                                        padding: 5px;
-                                        background: $gray;
-                                        color: #FFF;
-                                        border-radius: 5px;
-                                        transform: rotate(-90deg);
-                                    }
-                                }
-                            }
                         }
                     }
                     img{
@@ -2244,6 +2277,9 @@ body{
         }
         &[s-layout=secondary]{
             background-color: #FFF;
+            [class*=section]{
+                margin-bottom: 5%;
+            }
             [s-sec=contact]{
                 >div{
                     padding: {
@@ -2283,6 +2319,81 @@ body{
                                 padding: 3% 5%;
                                 border-radius: 10px;
                             }
+                        }
+                    }
+                }
+            }
+            [s-sec=about]{
+                .head{
+                    position: relative;
+                    >figure{
+                        height: 350px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        overflow: hidden;
+                        img{
+                            width: auto;
+                            height: 100%;
+                        }
+                    }
+                    >div{
+                        position: absolute;
+                        width: 55%;
+                        padding-left: 5vw;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        
+                    }
+                }
+                >[class*=section]{
+                    .service-list{
+                        margin-bottom: 10%;
+                    }
+                    .text{
+                        margin-bottom: 5%;
+                    }
+                    &.separator{
+                        >*{
+                            margin-bottom: 10%;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                        .stars{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            svg{
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 10%;
+                                &:last-child{
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                        >ul{
+                            text-align: center;
+                        }
+                        .contact-form{
+                            width: 100%;
+                            label{
+                                display: none;
+                            }
+                            .btn{
+                                color: #FFF;
+                                border-color: #FFF;
+                                margin: auto;
+                            }
+                        }
+                    }
+                    &.skills{
+                        padding: 0;
+                        >.title{
+                            padding-left: 5vw;
                         }
                     }
                 }
