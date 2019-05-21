@@ -1,28 +1,22 @@
 <template>
-<div class="slider">
-<button @mouseover="prev()" class="control prev"> < </button>
-  <div class="slider--inner" :class="{'prev': this.previus, 'fast': this.nexts}">
-    <div class="slide-inner">
-        <article class="item" v-for="(slide, index) in slides">
+  <div class="slider" :class="{'prev': this.previus, 'fast': this.nexts}">
+    <div class="slide-track">
+        <figure class="slide" :class="{'first': index == 0}" v-for="(slide, index) in slides">
             <img :src="slide.archivo" alt="default slide">
             <p>
                 <span class="category">{{slide.name}}</span>
                 <a href="#" class="btn">See More</a>
             </p>
-        </article>
-    </div>
-    <div class="slide-inner">
-        <article class="item" v-for="(slide, index) in slides">
+        </figure>
+        <figure class="slide" v-for="(slide, index) in slides">
             <img :src="slide.archivo" alt="default slide">
             <p>
                 <span class="category">{{slide.name}}</span>
                 <a href="#" class="btn">See More</a>
             </p>
-        </article>
+        </figure>
     </div>
   </div>
-<button @mouseover="next()" class="control next"> > </button>
-</div>
 </template>
 <script>
     export default {
