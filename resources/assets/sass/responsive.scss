@@ -861,15 +861,62 @@
                             }
                         }
                     }
-                    .separator{
-                        &.blue{
-                            >ul{
-                                display: flex;
-                                justify-content: space-between;
-                                width: 100%;
+                    >[class*=section]{
+                        .service-list{
+                            margin-bottom: 10%;
+                        }
+                        .text{
+                            margin-bottom: 5%;
+                        }
+                        &.separator{
+                            flex-direction: column;
+                            >*{
+                                margin-bottom: 5%;
+                            }
+                            &.blue{
+                                >ul{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    >li{
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                            .stars{
+                                svg{
+                                    width: 10%;
+                                    height: auto;
+                                }
+                            }
+                            .contact-form{
+                                .form{
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    article{
+                                        height: 50px;
+                                        margin-bottom: 3%;
+                                        flex: {
+                                            grow: 1;
+                                            shrink: 1;
+                                            basis: 47%;
+                                        }
+                                        &:nth-child(odd){
+                                            margin-right: 1.5%;
+                                        }
+                                        &:nth-child(even){
+                                            margin-left: 1.5%;
+                                        }
+                                    }
+                                }
                             }
                         }
-                        flex-direction: column;
+                        &.skills{
+                            padding: 0;
+                            >.title{
+                                padding-left: 5vw;
+                            }
+                        }
                     }
                     [s-desk=history], [s-desk=why]{
                         &.full-section{
@@ -882,9 +929,6 @@
                                 align-items: center;
                                 justify-content: center;
                                 flex-direction: column;
-                            }
-                            .contact-form{
-
                             }
                         }
                     }

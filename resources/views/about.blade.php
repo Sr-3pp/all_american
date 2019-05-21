@@ -149,7 +149,7 @@
             </ul>
         </div>
     </section>
-    <section class="separator">
+    <section class="full-section separator">
         <p class="title">
             Request for a free estimate
         </p>
