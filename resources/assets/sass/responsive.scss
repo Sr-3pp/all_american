@@ -842,14 +842,14 @@
                                 bottom-right-radius: 20px;
                             }
                             img{
-                                width: auto;
-                                height: 100%;
+                                width: 100%;
+                                height: auto;
                             }
                          >div{
                              position: absolute;
                              top: 50%;
                              transform: translateY(-50%);
-                             left: 5%;
+                             left: 5vw;
                              color: #FFF;
                              width: 80%;
                          }
@@ -872,6 +872,9 @@
                             flex-direction: column;
                             >*{
                                 margin-bottom: 5%;
+                                &.title{
+                                    margin-bottom: 1%;
+                                }
                             }
                             &.blue{
                                 >ul{
@@ -884,7 +887,9 @@
                                 }
                             }
                             .stars{
+                                width: 50%;
                                 svg{
+                                    margin-right: 5%;
                                     width: 10%;
                                     height: auto;
                                 }
@@ -926,9 +931,12 @@
                                 flex-basis: 50%;
                                 flex-shrink: 1;
                                 display: flex;
-                                align-items: center;
+                                align-items: flex-start;
                                 justify-content: center;
                                 flex-direction: column;
+                            }
+                            >.check-list{
+                                padding-left: 5%;
                             }
                         }
                     }

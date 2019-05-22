@@ -68,7 +68,7 @@ body{
             display: flex;
             align-items: center;
             justify-content: center;
-            flex {
+            flex: {
                 shrink: 1;
                 basis: 47%;
             }
@@ -511,6 +511,7 @@ body{
                     width: 100%;
                     display: flex;
                     align-items: center;
+                    flex-direction: column;
                     cursor: pointer;
                     padding:{
                         top: 2%;
@@ -530,6 +531,9 @@ body{
                         background: inherit;
                         padding: 0;
                         color: $gray;
+                    }
+                    p{
+                        width: 100%;
                     }
                 }
                 border-bottom: {
@@ -654,14 +658,14 @@ body{
                     top: 3%;
                     right: 3%;
                     bottom: 3%;
-                    left: 25%;
+                    left: 5%;
                 }
                 svg{
                     width: 20;
                     height: 20px;
                     color: $Ablue;
                     position: absolute;
-                    left: 10%;
+                    left: 0;
                     top: 50%;
                     transform: translateY(-50%);
                 }
