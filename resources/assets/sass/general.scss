@@ -227,6 +227,38 @@ body{
                 }
             }
         }
+        .sidebar{
+            position: fixed;
+            z-index: 10;
+            height: 100vh;
+            width: auto;
+            left: 0;
+            top: 0;
+            color: #000;
+            max-width: 500px;
+            transition: all .2s ease;
+            ul{
+                height: 100%;            
+                ol{
+                    position: relative;
+                    padding: 10px;
+                    height: 50px;
+                    background-color: rgb(184, 184, 184);
+                    margin-bottom: 50%;
+                    button{
+                        position: absolute;
+                        height: 100%;
+                        width: 150px;
+                        transform: translateX(-80%);
+                        top: 0;
+                        transition: all .2s ease;
+                        &:hover{
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
+        }
         
     .slider {
         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
@@ -553,6 +585,13 @@ body{
                         border-radius: 5px;
                         transform: rotate(-90deg);
                     }
+                }
+            }
+        }
+        .drop-list{
+            >li{
+                >article{
+                    
                 }
             }
         }
@@ -2474,6 +2513,24 @@ body{
                             padding-left: 5vw;
                         }
                     }
+                }
+            }
+        }
+        &[s-layout=panel]{
+            background-color: #FFF;
+            header{
+                display: flex;
+                >figure, >article{
+                    flex: {
+                        grow: 1;
+                        shrink: 1;
+                        basis: 50%;
+                    }
+                }
+                >article{
+                    color: #000;
+                    display: flex;
+                    flex-direction: column;
                 }
             }
         }

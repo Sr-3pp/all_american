@@ -15,6 +15,7 @@
 Auth::routes();
 
 Route::get('/', 'Controller@index')->name('home');
+Route::get('/p', 'Controller@panel')->name('panel');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/subscribe', 'Controller@subscribe');
 

@@ -26,6 +26,7 @@ window.Vue = require('vue');
 
  /*--------partials-----------*/
 Vue.component('navigation', require('./components/partials/navigation.vue'));
+Vue.component('navigation-panel', require('./components/partials/sidebar.vue'));
 Vue.component('carousel', require('./components/partials/carousel.vue'));
 Vue.component('slider', require('./components/partials/slider.vue'));
 Vue.component('drop-list', require('./components/partials/dropList.vue'));
@@ -76,6 +77,9 @@ Vue.component('powder-coat', require('./components/contents/services/painting/pa
 Vue.component('patina', require('./components/contents/services/painting/partials/patina.vue'));
 
 Vue.component('delivery', require('./components/contents/services/delivery/delivery.vue'));
+
+Vue.component('panel', require('./components/panel/panel.vue'));
+Vue.component('slides', require('./components/panel/slides.vue'));
 
 const EventBus = new Vue()
 

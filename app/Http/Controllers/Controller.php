@@ -590,4 +590,7 @@ class Controller extends BaseController
     public function contact(){
         return view('contact');
     }
+    public function panel(){
+        return view('auth.panel');
+    }
 }
