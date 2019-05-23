@@ -80,6 +80,8 @@ Vue.component('delivery', require('./components/contents/services/delivery/deliv
 
 Vue.component('panel', require('./components/panel/panel.vue'));
 Vue.component('slides', require('./components/panel/slides.vue'));
+Vue.component('inbox', require('./components/panel/inbox.vue'));
+Vue.component('mills', require('./components/panel/mills.vue'));
 
 const EventBus = new Vue()
 

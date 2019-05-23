@@ -4,12 +4,6 @@ body{
         display: none;
         font-family: 'Aero Matics';
     }
-    svg{
-        path{
-            stroke: currentColor;
-            stroke-width: 1px;
-        }
-    }
     #app{
         .title, .subtitle, .category{
             font-family: 'Aero Matics';
@@ -252,6 +246,12 @@ body{
                         transform: translateX(-80%);
                         top: 0;
                         transition: all .2s ease;
+                        display: flex;
+                        svg{
+                            width: 25px;
+                            height: 25px;
+                            margin-left: auto;
+                        }
                         &:hover{
                             transform: translateX(0);
                         }
@@ -2531,6 +2531,55 @@ body{
                     color: #000;
                     display: flex;
                     flex-direction: column;
+                }
+            }
+            [s-desk=slides]{
+                >ul{
+                    >ol{
+                        display: flex;
+                        >figure, >article{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                        }
+                        >figure{
+                            position: relative;
+                            overflow: hidden;
+                            height: 300px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                width: auto;
+                                height: 100%;
+                            }
+                            .caption{
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                left: 3%;
+                                display: flex;
+                                flex-direction: column;
+                                .title{
+
+                                }
+                                .text{
+
+                                }
+                            }
+                        }
+                        >article{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: flex-end;
+                            >.btn{
+                                width: 90%;
+                            }
+                        }
+                    }
                 }
             }
         }
