@@ -19,7 +19,7 @@
     <div id="app" s-layout="panel">
         <navigation-panel></navigation-panel>
         <header>
-        <figure><img src="{{asset('img/svg/logo.svg')}}" width="150" alt=""></figure>
+        <figure><a href="/"><img src="{{asset('img/svg/logo.svg')}}" width="150" alt=""></a></figure>
             <article>
                 <h2>Bienvenido al Panel <span>Perro</span></h2>
                 <button type="button" class="btn">Logout</button>

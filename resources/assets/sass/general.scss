@@ -221,6 +221,27 @@ body{
                 }
             }
         }
+        .panel-tabs{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            >li{
+                cursor: pointer;
+                padding: 3%;
+                font-weight: bold;
+                background-color: $gray;
+                border: {
+                    top-right-radius: 10px;
+                    top-left-radius: 10px;
+                }
+                &.active{
+                    background-color: $Ared;
+                    color: #FFF;
+                }
+            }
+
+        }
         .sidebar{
             position: fixed;
             z-index: 10;
@@ -232,7 +253,10 @@ body{
             max-width: 500px;
             transition: all .2s ease;
             ul{
-                height: 100%;            
+                height: 100%;     
+                display: flex;
+                flex-direction: column;
+                justify-content: center; 
                 ol{
                     position: relative;
                     padding: 10px;
@@ -254,6 +278,11 @@ body{
                         }
                         &:hover{
                             transform: translateX(0);
+                        }
+                        &.active{
+                            background-color: $Ablue;
+                            color: #FFF;
+                            font-weight: bold;
                         }
                     }
                 }
@@ -2518,6 +2547,7 @@ body{
         }
         &[s-layout=panel]{
             background-color: #FFF;
+            min-height: 90vh;
             header{
                 display: flex;
                 >figure, >article{
@@ -2533,50 +2563,53 @@ body{
                     flex-direction: column;
                 }
             }
-            [s-desk=slides]{
-                >ul{
-                    >ol{
-                        display: flex;
-                        >figure, >article{
-                            flex: {
-                                grow: 1;
-                                shrink: 1;
-                                basis: 50%;
-                            }
-                        }
-                        >figure{
-                            position: relative;
-                            overflow: hidden;
-                            height: 300px;
+            .content{
+                padding-top: 5%;
+                [s-desk=slides]{
+                    >ul{
+                        >ol{
                             display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            img{
-                                width: auto;
-                                height: 100%;
+                            >figure, >article{
+                                flex: {
+                                    grow: 1;
+                                    shrink: 1;
+                                    basis: 50%;
+                                }
                             }
-                            .caption{
-                                position: absolute;
-                                top: 50%;
-                                transform: translateY(-50%);
-                                left: 3%;
+                            >figure{
+                                position: relative;
+                                overflow: hidden;
+                                height: 300px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                img{
+                                    width: auto;
+                                    height: 100%;
+                                }
+                                .caption{
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    left: 3%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    .title{
+
+                                    }
+                                    .text{
+
+                                    }
+                                }
+                            }
+                            >article{
                                 display: flex;
                                 flex-direction: column;
-                                .title{
-
+                                justify-content: space-between;
+                                align-items: flex-end;
+                                >.btn{
+                                    width: 90%;
                                 }
-                                .text{
-
-                                }
-                            }
-                        }
-                        >article{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            align-items: flex-end;
-                            >.btn{
-                                width: 90%;
                             }
                         }
                     }

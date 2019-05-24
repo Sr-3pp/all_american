@@ -1,25 +1,26 @@
 <template>
-    <div s-desk="slides">
-        <ul>
-            <ol>
-                <figure>
-                    <img src="/img/default.jpg" alt="">
-                    <p class="caption">
-                        <span class="title">
-                            Si que si
-                        </span>
-                        <span class="text">
-                            Vola volar
-                        </span>
-                    </p>
-                </figure>
-                <article>
-                    <button class="btn">Delete</button>
-                    <button class="btn">Edit</button>
-                    <button class="btn">Caption</button>
-                </article>
-            </ol>
-        </ul>
+    <div class="content">
+        <table class="inbox">
+            <thead>
+                <tr>
+                    <th>Sts</th>
+                    <th>Nombre</th>
+                    <th>Contenido</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ok</td>
+                    <td>Martin Ruiz<br><strong>martin@mail.com</strong></td>
+                    <td>Lorem ipsum dolor ammet</td>
+                    <td>
+                        <button class="btn">Rep</button>
+                        <button class="btn">Del</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 <script>

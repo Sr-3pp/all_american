@@ -79,9 +79,16 @@ Vue.component('patina', require('./components/contents/services/painting/partial
 Vue.component('delivery', require('./components/contents/services/delivery/delivery.vue'));
 
 Vue.component('panel', require('./components/panel/panel.vue'));
-Vue.component('slides', require('./components/panel/slides.vue'));
 Vue.component('inbox', require('./components/panel/inbox.vue'));
-Vue.component('mills', require('./components/panel/mills.vue'));
+Vue.component('categories', require('./components/panel/categories.vue'));
+Vue.component('categories', require('./components/panel/categories.vue'));
+Vue.component('votes', require('./components/panel/votes.vue'));
+
+Vue.component('sitio', require('./components/panel/sitio/sitio.vue'));
+Vue.component('slides', require('./components/panel/sitio/slides.vue'));
+Vue.component('mills', require('./components/panel/sitio/mills.vue'));
+
+Vue.component('news', require('./components/panel/news/news.vue'));
 
 const EventBus = new Vue()
 
