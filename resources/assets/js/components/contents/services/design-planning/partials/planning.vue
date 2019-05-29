@@ -3,7 +3,7 @@
         <figure class="header">
             <icon name="triangle"></icon>
             <img src="/img/services/planning_card.jpg" alt="">
-            <icon name="concept"></icon>
+            <icon name="planning"></icon>
         </figure>
         <p class="title">
             Planning

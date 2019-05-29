@@ -2,7 +2,7 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
+            <img src="/img/services/tig.jpg" alt="">
             <icon name="welding"></icon>
         </figure>
         <p class="title">

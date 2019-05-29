@@ -1,6 +1,19 @@
 <template>
     <div class="content">
-        Votes
+        <ul>
+            <li>
+                <article>
+                    <icon name="star"></icon>
+                </article>
+                <article>
+                    <p>Nombre</p>
+                    <p>Email</p>
+                </article>
+                <article>
+                    Comment
+                </article>
+            </li>
+        </ul>
     </div>
 </template>
 <script>

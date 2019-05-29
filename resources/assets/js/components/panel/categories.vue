@@ -1,6 +1,10 @@
 <template>
     <div class="content">
-        Categories
+        <ul>
+            <li>
+                Nombre
+            </li>
+        </ul>
     </div>
 </template>
 <script>

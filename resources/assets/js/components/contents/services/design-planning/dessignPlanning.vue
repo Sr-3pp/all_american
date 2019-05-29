@@ -27,7 +27,7 @@
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/concept.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Concept</p>
@@ -55,7 +55,7 @@
                 </article>
                 <article class="card" @click="setDetail(3)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/material.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Material</p>
@@ -69,7 +69,7 @@
                 </article>
                 <article class="card" @click="setDetail(4)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/horientation.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Horientation</p>
@@ -83,7 +83,7 @@
                 </article>
                 <article class="card" @click="setDetail(5)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/horientation.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Original design</p>
@@ -92,13 +92,13 @@
                                 Original designs, creative concepts, functional tools. When you look for Custom metal...
 
                             </p>
-                            <icon name="planning"></icon>
+                            <icon name="original"></icon>
                         </div>
                     </div>
                 </article>
                 <article class="card" @click="setDetail(6)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/estimate.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Estimate</p>

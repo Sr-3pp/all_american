@@ -2,7 +2,7 @@
     <transition-group tag="div" class="cont">
         <article :key="0" v-if="!active" @click="setSection(5)">
             <figure>
-                <img src="/img/services/planning_card.jpg" alt="">
+                <img src="/img/services/painting_card.jpg" alt="">
             </figure>
             <div class="label">
                 <icon name="painting"></icon>
@@ -23,7 +23,7 @@
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/wet_painting.jpg" alt="wet painting">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Wet Painting</p>
@@ -37,10 +37,10 @@
                 </article>
                 <article class="card" @click="setDetail(2)">
                     <figure class="img">
-                        <img src="/img/services/planning_card.jpg" alt="">
+                        <img src="/img/services/chart.jpg" alt="finish chart">
                     </figure> 
                     <div class="card-content">
-                        <p class="subtitle">Finish Cart</p>
+                        <p class="subtitle">Finish Chart</p>
                         <div>
                             <p>
                                 We devise and take the best path to reach your goals efficiently and as quickly as possible...
@@ -51,7 +51,7 @@
                 </article>
                 <article class="card" @click="setDetail(3)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/powder.jpg" alt="powder coat">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">POWDER COAT</p>
@@ -65,7 +65,7 @@
                 </article>
                 <article class="card" @click="setDetail(4)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/patina.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Patina</p>

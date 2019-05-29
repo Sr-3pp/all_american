@@ -2,8 +2,8 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/forming_break.jpg" alt="">
+            <icon name="break"></icon>
         </figure>
         <p class="title">
             Forming Break

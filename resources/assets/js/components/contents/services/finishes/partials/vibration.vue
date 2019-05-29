@@ -2,11 +2,11 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/vibration.jpg" alt="">
+            <icon name="polish"></icon>
         </figure>
         <p class="title">
-            Mirror Finish
+            Vibration
             <icon name="star_panel1"></icon>
         </p>  
         <p class="text">

@@ -2,7 +2,7 @@
     <transition-group tag="div" class="cont">
         <article :key="0" v-if="!active" @click="setSection(6)">
             <figure>
-                <img src="/img/services/planning_card.jpg" alt="">
+                <img src="/img/services/delivery_card.jpg" alt="">
             </figure>
             <div class="label">
                 <icon name="delivery"></icon>
@@ -23,7 +23,7 @@
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/delivery_card.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Mirror Finish #8</p>

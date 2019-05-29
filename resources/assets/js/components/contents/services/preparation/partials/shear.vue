@@ -2,8 +2,8 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/shear.jpg" alt="shear services">
+            <icon name="preparation"></icon>
         </figure>
         <p class="title">
             Shear

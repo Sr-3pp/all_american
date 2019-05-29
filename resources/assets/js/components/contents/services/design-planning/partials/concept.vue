@@ -2,7 +2,7 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
+            <img src="/img/services/concept.jpg" alt="">
             <icon name="concept"></icon>
         </figure>
         <p class="title">

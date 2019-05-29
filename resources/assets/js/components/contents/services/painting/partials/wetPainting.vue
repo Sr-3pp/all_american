@@ -2,8 +2,8 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/wet_painting.jpg" alt="">
+            <icon name="painting"></icon>
         </figure>
         <p class="title">
             Wet Painting

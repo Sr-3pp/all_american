@@ -2,8 +2,8 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/default.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/finish_7.jpg" alt="">
+            <icon name="polish"></icon>
         </figure>
         <p class="title">
             Finish #7

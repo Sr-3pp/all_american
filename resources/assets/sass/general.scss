@@ -55,6 +55,103 @@ body{
                 background-color: #FFF;
             }
         }
+        .inbox{
+            width: 100%;
+            thead{
+                th{
+                    background-color: $gray;
+                    color: #FFF;
+                    font-weight: bold;
+                }
+            }
+        }
+        .new{
+            margin:{
+                top: 3%;
+                right: 2%;
+                bottom: 2%;
+            }
+            background-color: #FFF;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 1vw 1vw 3vw rgba(#000, .8);
+            min-height: 400px;
+            max-height: 60vh;
+            max-width: 500px;
+            position: relative;
+            transition: all .2s ease;
+            &:last-child{
+                margin-right: 0;
+            }
+            &:hover{
+                background-color: $Ablue;
+                margin-top: 5%;
+                .s-text, .category{
+                    color: #FFF;
+                    &:after{
+                        background-color: #FFF;
+                    }
+                }
+                >.social{
+                    .btn{
+                        svg{
+                            color: #FFF;
+                        }
+                    }
+                }
+            }
+            >.cover{
+                height: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                img{
+                    width: auto;
+                    height: 100%;
+                }
+            }
+            >.s-text{
+                padding: 5%;
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: #000;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+            >.content{
+                padding: 5%;
+            }
+            >.social{
+                display: flex;
+                justify-content: flex-end;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                padding: 5%;
+                width: 100%;
+                .btn{
+                    width: 8%;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    margin-right: 5%;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    svg{
+                        path{
+                            stroke: currentColor;
+                        }
+                    }
+                }
+            }
+        }
         .card{
             overflow: hidden;
             border-radius: 10%;
@@ -1676,93 +1773,6 @@ body{
             .news{
                 display: flex;
                 justify-content: space-between;
-                .new{
-                    margin:{
-                        top: 3%;
-                        right: 2%;
-                        bottom: 2%;
-                    }
-                    background-color: #FFF;
-                    overflow: hidden;
-                    border-radius: 10px;
-                    box-shadow: 1vw 1vw 3vw rgba(#000, .8);
-                    min-height: 400px;
-                    max-height: 60vh;
-                    max-width: 500px;
-                    position: relative;
-                    transition: all .2s ease;
-                    &:last-child{
-                        margin-right: 0;
-                    }
-                    &:hover{
-                        background-color: $Ablue;
-                        margin-top: 5%;
-                        .s-text, .category{
-                            color: #FFF;
-                            &:after{
-                                background-color: #FFF;
-                            }
-                        }
-                        >.social{
-                            .btn{
-                                svg{
-                                    color: #FFF;
-                                }
-                            }
-                        }
-                    }
-                    >.cover{
-                        height: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        overflow: hidden;
-                        img{
-                            width: auto;
-                            height: 100%;
-                        }
-                    }
-                    >.s-text{
-                        padding: 5%;
-                        position: relative;
-                        &::after{
-                            content: '';
-                            width: 100%;
-                            height: 1px;
-                            background-color: #000;
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                        }
-                    }
-                    >.content{
-                        padding: 5%;
-                    }
-                    >.social{
-                        display: flex;
-                        justify-content: flex-end;
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        padding: 5%;
-                        width: 100%;
-                        .btn{
-                            width: 8%;
-                            background-color: transparent;
-                            border: none;
-                            padding: 0;
-                            margin-right: 5%;
-                            &:last-child{
-                                margin-right: 0;
-                            }
-                            svg{
-                                path{
-                                    stroke: currentColor;
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
         [s-sec=projects]{

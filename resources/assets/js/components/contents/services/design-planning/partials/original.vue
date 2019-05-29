@@ -2,8 +2,8 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/services/planning_card.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/horientation.jpg" alt="">
+            <icon name="original"></icon>
         </figure>
         <p class="title">
             Original Designs

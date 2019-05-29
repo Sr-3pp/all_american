@@ -27,7 +27,7 @@
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/shear.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Shear</p>
@@ -35,13 +35,13 @@
                             <p>
                                 Generating an idea and bringing it to reality is what we do, create and define concepts...
                             </p>
-                            <icon name="concept"></icon>
+                            <icon name="preparation"></icon>
                         </div>
                     </div>
                 </article>
                 <article class="card" @click="setDetail(2)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/forming_break.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Forming Break</p>
@@ -49,13 +49,13 @@
                             <p>
                                 We adapt your material so that it fulfills its specific functions, we design, angles, U chanels, panels...
                             </p>
-                            <icon name="concept"></icon>
+                            <icon name="break"></icon>
                         </div>
                     </div>
                 </article>
                 <article class="card" @click="setDetail(3)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/machine_mill.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Machine Mill</p>
@@ -63,7 +63,7 @@
                             <p>
                                 Choosing the right material for each project is very important, we care about providing...
                             </p>
-                            <icon name="concept"></icon>
+                            <icon name="machine_mill"></icon>
                         </div>
                     </div>
                 </article>

@@ -1,5 +1,5 @@
 <template>
-    <div s-desk="slides">
+    <div s-desk="mills">
         <ul>
             <ol>
                 <figure>

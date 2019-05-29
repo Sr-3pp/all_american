@@ -2,8 +2,8 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/services/planning_card.jpg" alt="">
-            <icon name="concept"></icon>
+            <img src="/img/services/estimate.jpg" alt="">
+            <icon name="estimate"></icon>
         </figure>
         <p class="title">
             Estimate

@@ -1,6 +1,9 @@
 <template>
     <section class="section">
-        <p class="title">Sitio</p>
+        <article>
+            <p class="title">{{activeSection}}</p>
+            <button class="btn">Add <icon name="+"></icon></button>
+        </article>
         <ul class="panel-tabs" v-if="active == 1">
             <li :class="{'active': section == 0}" @click="setSec(0)">Slides</li>
             <li :class="{'active': section == 1}" @click="setSec(1)">Projects</li>
@@ -24,6 +27,17 @@ export default{
     mounted(){
         this.$bus.$on('setPanel', ($event) => {
             this.active = $event.section;
+            if(this.active == 0){
+               this.activeSection = 'Inbox'
+           }else if(this.active == 1){
+               this.activeSection = 'Site'
+           }else if(this.active == 2){
+               this.activeSection = 'Categories'
+           }else if(this.active == 3){
+               this.activeSection = 'Votes'
+           }else if(this.active == 4){
+               this.activeSection = 'News'
+           }
         });
     },
     props: [
@@ -32,7 +46,8 @@ export default{
     data(){
         return {
            active: 1,
-           section: 0
+           section: 0,
+           activeSection: 'Site'
         }
     },
     methods: {

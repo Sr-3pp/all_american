@@ -2,7 +2,7 @@
     <div class="detail">
         <figure class="header">
             <icon name="triangle"></icon>
-            <img src="/img/services/planning_card.jpg" alt="">
+            <img src="/img/services/material.jpg" alt="">
             <icon name="material"></icon>
         </figure>
         <p class="title">

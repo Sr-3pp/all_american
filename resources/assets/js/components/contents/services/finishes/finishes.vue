@@ -23,7 +23,7 @@
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/finish_8.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">MIRROR FINISH #8</p>
@@ -40,7 +40,7 @@
                 </article>
                 <article class="card" @click="setDetail(2)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/finish_7.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">FINISH #7</p>
@@ -54,7 +54,7 @@
                 </article>
                 <article class="card" @click="setDetail(3)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/finish_6.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">FINISH #6</p>
@@ -70,7 +70,7 @@
                 </article>
                 <article class="card" @click="setDetail(4)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/finish_4.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">FINISH #4</p>
@@ -86,7 +86,7 @@
                 </article>
                 <article class="card" @click="setDetail(5)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/vibration.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Vibration</p>
@@ -102,7 +102,7 @@
                 </article>
                 <article class="card" @click="setDetail(6)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/sandblasted.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">Sand Blasted</p>
@@ -118,7 +118,7 @@
                 </article>
                 <article class="card" @click="setDetail(7)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/timesaver.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">TIMESAVER</p>

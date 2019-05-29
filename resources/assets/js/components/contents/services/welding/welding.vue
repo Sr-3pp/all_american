@@ -25,7 +25,7 @@
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/mig.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">MIG</p>
@@ -39,7 +39,7 @@
                 </article>
                 <article class="card" @click="setDetail(2)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/tig.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">TIG</p>
@@ -53,7 +53,7 @@
                 </article>
                 <article class="card" @click="setDetail(3)">
                     <figure class="img">
-                        <img src="/img/slides/projects/slide_4.jpg" alt="">
+                        <img src="/img/services/stick.jpg" alt="">
                     </figure> 
                     <div class="card-content">
                         <p class="subtitle">STICK</p>
