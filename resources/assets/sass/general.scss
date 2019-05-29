@@ -2625,6 +2625,25 @@ body{
                     }
                 }
             }
+            .section{
+                >article{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 3%;
+                    .title{
+                        margin-bottom: 0;
+                    }
+                    .btn{
+                        display: flex;
+                        align-items: center;
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
