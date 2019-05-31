@@ -15,7 +15,7 @@ class CreateFinishesTable extends Migration
     {
         Schema::create('finishes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('finish');
+            $table->string('category_id');
             $table->string('name');
             $table->string('archivo');
             $table->timestamps();

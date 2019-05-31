@@ -25,7 +25,10 @@
 <script>
 export default{
     mounted(){
-        
+        axios.get('7panel/get-slides').then((slides) => {
+            console.log(slides);
+            
+        });
     },
     props: [
        

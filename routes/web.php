@@ -34,5 +34,7 @@ Route::prefix('about-us')->group(function(){
 Route::get('/contact-us', 'Controller@contact');
 Route::prefix('panel')->group(function(){
     Route::get('/', 'AdminController@index');
+
+    Route::get('/get-slides', 'AdminController@getSlides');
   
  });
