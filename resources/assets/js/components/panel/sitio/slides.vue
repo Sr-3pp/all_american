@@ -1,6 +1,6 @@
 <template>
     <div s-desk="slides">
-        <ul>
+        <ul class="slide-list">
             <ol v-if="newSlide">
                 <upload-picture></upload-picture>
                 <article>
@@ -12,6 +12,11 @@
                         Save
                     </button>
                     <div v-if="nslide.caption" class="form-group">
+                        <p class="radio-group">
+                            <span @click="setPos('left')" :class="{'active': nslide.extra.position == 'left'}"><icon name="check"></icon><br>Left</span>
+                            <span @click="setPos('center')" :class="{'active': nslide.extra.position == 'center'}"><icon name="check"></icon><br>Center</span>
+                            <span @click="setPos('right')" :class="{'active': nslide.extra.position == 'right'}"><icon name="check"></icon><br>Right</span>
+                        </p>
                         <p>
                             <label>Title</label>
                             <input class="input" type="text" v-model="nslide.title">
@@ -23,23 +28,41 @@
                     </div>
                 </article>
             </ol>
-            <ol v-for="(slide, index) in slides">
-                <figure>
-                    <img src="/img/default.jpg" alt="">
-                    <p class="caption">
+            <ol v-if="slides.length" v-for="(slide, index) in slides">
+                <figure :class="'align-'+slide.extra.position">
+                    <img :src="'/storage/'+slide.archivo" alt="">
+                    <p v-if="slide.extra.caption" class="caption">
                         <span class="title">
-                            Si que si
+                            {{slide.extra.title}}
                         </span>
                         <span class="text">
-                            Vola volar
+                            {{slide.extra.description}}
                         </span>
                     </p>
                 </figure>
-                <article>
-                    <button class="btn">Delete</button>
-                    <button class="btn">Edit</button>
-                    <button class="btn">Caption</button>
+                <article v-if="editSlide !== 'editSlide_'+index">
+                    <button class="btn" @click="deleteSlide(index, slide.id)">Delete</button>
+                    <button class="btn" @click="editSlide = 'editSlide_'+index">Edit</button>
                 </article>
+                <div v-if="editSlide == 'editSlide_'+index" class="form-group">
+                        <p class="radio-group">
+                            <span @click="editPos('left', index)" :class="{'active': slide.extra.position == 'left'}"><icon name="check"></icon><br>Left</span>
+                            <span @click="editPos('center', index)" :class="{'active': slide.extra.position == 'center'}"><icon name="check"></icon><br>Center</span>
+                            <span @click="editPos('right', index)" :class="{'active': slide.extra.position == 'right'}"><icon name="check"></icon><br>Right</span>
+                        </p>
+                        <p>
+                            <label>Title</label>
+                            <input class="input" type="text" v-model="slide.extra.title">
+                        </p>
+                        <p>
+                            <label>Description</label>
+                            <textarea class="input" type="text" v-model="slide.extra.description"/>
+                        </p>
+                        <button class="btn" @click="updateSlide(index, slide.id)">Update</button>
+                </div>
+            </ol>
+            <ol  v-if="!slides.length">
+                No hay slides
             </ol>
         </ul>
     </div>
@@ -48,7 +71,7 @@
 export default{
     mounted(){
         axios.get('/panel/get-slides').then((slides) => {
-            this.slides = slides.data            
+            this.slides = slides.data                        
         });
         this.$bus.$on('new', ($event) => {
             if($event.section == 0){
@@ -63,33 +86,70 @@ export default{
     ],
     data(){
         return {
-           slides: null,
+           slides: false,
            newSlide: false,
+           editSlide: false,
            nslide: {
                caption: false,
                title: '',
                description: '',
-               archivo: null
+               archivo: null,
+               position: false
            }
         }
     },
     methods: {
        saveSlide(){
            var este = this,
-                extra = {},
                 formData = new FormData();
 
-                extra.title = this.nslide.title
-                extra.description = this.nslide.description
-
-                formData.append('extra', JSON.stringify(extra));
+                formData.append('extra', JSON.stringify(this.nslide));
                 formData.append('archivo', this.nslide.archivo);
+
            axios.post('/panel/save-slide', formData).then(function(response){
-               console.log(response);
-               
+               este.slides.push(response.data);
+               este.newSlide = false
+               este.nslide= {
+               caption: false,
+               title: '',
+               description: '',
+               archivo: null,
+               position: false
+           }
            }).catch( (e) => {
                console.log(e)
            });
+       },
+       setPos(align){
+           this.nslide.position = align;
+
+           console.log(this.nslide)
+       },
+       editPos(align, index){
+           this.slides[index].extra.position = align
+       },
+       updateSlide(index, id){
+           var este = this,
+                slide = this.slides[index],
+                formData = new FormData();
+
+                if(this.nslide.archivo){
+                     formData.append('archivo', this.nslide.archivo);
+                }
+                formData.append('extra', JSON.stringify(slide.extra));
+           axios.post('/panel/update-slide/'+id, formData).then(function(response){
+               este.editSlide = false               
+           }).catch( (e) => {
+               console.log(e)
+           });
+       },
+       deleteSlide(index, id){
+           if(confirm('Delete this slide?')){
+               var este = this;
+               axios.get('/panel/delete-slide/'+id).then((response) => {
+                   este.slides.splice(index, 1);
+               });
+           }
        }
     }
 }

@@ -8,24 +8,18 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
+use App\Slides;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
     public function index()
     {
-        $slides = [
-            [
-                'id' => 1,
-                'name' => 'Build with us',
-                'archivo' => '/img/slides/slide_1.jpg'
-            ],
-            [
-                'id' => 2,
-                'name' => 'slide 2',
-                'archivo' => '/img/slides/slide_1.jpg'
-            ],
-        ];
+        $slides = Slides::all();
+        foreach ($slides as $key => $value) {
+            $value->extra = json_decode($value->extra);
+        }
         $testimonials = [
             [
                 'id' => 1,
@@ -593,4 +587,5 @@ class Controller extends BaseController
     public function panel(){
         return view('auth.panel');
     }
+    
 }

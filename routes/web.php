@@ -39,5 +39,7 @@ Route::prefix('panel')->group(function(){
 
 
     Route::post('/save-slide', 'AdminController@saveSlides');
+    Route::post('/update-slide/{id}', 'AdminController@updateSlide');
+    Route::get('/delete-slide/{id}', 'AdminController@deleteSlide');
   
  });

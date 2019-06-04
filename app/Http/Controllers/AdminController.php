@@ -19,6 +19,9 @@ class AdminController extends Controller
 
     public function getSlides(){
         $slides = Slides::all();
+        foreach ($slides as $key => $value) {
+            $value->extra = json_decode($value->extra);
+        }
         return $slides;
     }
 
@@ -28,7 +31,28 @@ class AdminController extends Controller
             $data['archivo'] = $r->archivo->store('slides');
         }
         $slide = Slides::create($data);
+        $slide->extra = json_decode($slide->extra);
         
         return $slide;
+    }
+
+    public function updateSlide(Request $r, $id){
+        $slide = Slides::find($id);
+        $data = $r->all();
+        if ($r->hasFile('archivo')) {
+            Storage::delete($slide->archivo);
+            $data['archivo'] = $r->archivo->store('slides');
+        }
+        $slide->update($data);
+        
+        return $slide;
+
+    }
+
+    public function deleteSlide($id){
+        $slide = Slides::find($id);
+        $slide->delete();
+
+        return 1;
     }
 }

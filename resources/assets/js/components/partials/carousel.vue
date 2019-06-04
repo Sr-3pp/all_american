@@ -3,11 +3,11 @@
         <button @click="prev()" class="control prev"> <icon name="chevron"></icon> </button>
         <transition-group class="slides" :class="{'reverse': transition === 'prev'}" :name="transition">
             <article :class="{'active': content === index}" :key="slide.id" class="slide" v-for="(slide, index) in slides" v-if="active === index">
-                <img :src="slide.archivo" alt="slide 1">
-                <div v-if="name === 'main'"  class="content" s-mode="right">
-                    <p class="text">{{slide.name}}</p>
+                <img :src="'/storage/'+slide.archivo" alt="slide 1">
+                <div v-if="name === 'main'"  class="content" :s-mode="slide.extra.position">
+                    <p class="text">{{slide.extra.title}}</p>
                     <p class="title">
-                        WE CUSTOMIZE YOUR<br>EXACT SPECIFICATIONS
+                        {{slide.extra.description}}
                     </p>
                     <button class="btn cta">Read More</button>
                 </div>

@@ -55,6 +55,16 @@ body{
                 background-color: #FFF;
             }
         }
+        label{
+            font-weight: bold;
+        }
+        .input{
+            border-bottom: {
+                style: solid;
+                width: 1px;
+                color: $light-gray;
+            }
+        }
         .inbox{
             width: 100%;
             thead{
@@ -259,7 +269,11 @@ body{
                         min-width: 0;
                         width: 80%;
                         transform: translateY(-20%);
+                        .text{
+                            white-space: pre-line;
+                        }
                         .title{
+                            white-space: pre-line;
                             font:{
                                 family: 'Aero Matics';
                                 weight: bold;
@@ -718,6 +732,85 @@ body{
             >li{
                 >article{
                     
+                }
+            }
+        }
+        .slide-list{
+            >ol{
+                display: flex;
+                >figure, >article, >div{
+                    flex: {
+                        grow: 1;
+                        shrink: 1;
+                        basis: 50%;
+                    }
+                }
+                >figure{
+                    position: relative;
+                    overflow: hidden;
+                    height: 300px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &.align-center{
+                       .caption{
+                           left: 50%;
+                           transform: translateX(-50%);
+                           text-align: center;
+                           width: 80%;
+                           top: inherit;
+                       } 
+                    }
+                    &.align-right{
+                        .caption{
+                            left: inherit;
+                            right: 3%;
+                            text-align: right;
+                        }
+                    }
+                    img{
+                        width: auto;
+                        height: 100%;
+                    }
+                    .caption{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 3%;
+                        display: flex;
+                        flex-direction: column;
+                        .title{
+
+                        }
+                        .text{
+
+                        }
+                    }
+                }
+                >article{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    >.btn{
+                        width: 90%;
+                    }
+                }
+                >.form-group{
+                    span{
+                        cursor: pointer;
+                        svg{
+                            width: 30px;
+                            height: 30px;
+                        }
+                        &.active{
+                            color: $Ablue;
+                        }
+                    }
+                    >.radio-group{
+                        display: flex;
+                        justify-content: space-between;
+                    }
                 }
             }
         }
@@ -2576,53 +2669,7 @@ body{
             .content{
                 padding-top: 5%;
                 [s-desk=slides]{
-                    >ul{
-                        >ol{
-                            display: flex;
-                            >figure, >article{
-                                flex: {
-                                    grow: 1;
-                                    shrink: 1;
-                                    basis: 50%;
-                                }
-                            }
-                            >figure{
-                                position: relative;
-                                overflow: hidden;
-                                height: 300px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                img{
-                                    width: auto;
-                                    height: 100%;
-                                }
-                                .caption{
-                                    position: absolute;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    left: 3%;
-                                    display: flex;
-                                    flex-direction: column;
-                                    .title{
-
-                                    }
-                                    .text{
-
-                                    }
-                                }
-                            }
-                            >article{
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                                align-items: flex-end;
-                                >.btn{
-                                    width: 90%;
-                                }
-                            }
-                        }
-                    }
+                    
                 }
             }
             .section{
