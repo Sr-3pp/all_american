@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slides extends Model
 {
-    //
+    protected $fillable = [
+        'archivo', 'extra'
+    ];
 }

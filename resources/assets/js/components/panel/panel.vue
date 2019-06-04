@@ -2,7 +2,8 @@
     <section class="section">
         <article>
             <p class="title">{{activeSection}}</p>
-            <button class="btn">Add <icon name="+"></icon></button>
+            <button v-if="!addBtn" class="btn" @click="setNew()">Add <icon name="+"></icon></button>
+            <button v-else class="btn" @click="setNew()">Cancel <icon name="-"></icon></button>
         </article>
         <ul class="panel-tabs" v-if="active == 1">
             <li :class="{'active': section == 0}" @click="setSec(0)">Slides</li>
@@ -47,6 +48,7 @@ export default{
         return {
            active: 1,
            section: 0,
+           addBtn: false,
            activeSection: 'Site'
         }
     },
@@ -54,6 +56,10 @@ export default{
        setSec(index){
            this.section = index;
            this.$bus.$emit('setSec', {section: index});
+       },
+       setNew(){
+           this.addBtn ? this.addBtn = false : this.addBtn = true
+           this.$bus.$emit('new', {section: this.section});
        }
     }
 }

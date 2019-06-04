@@ -36,5 +36,8 @@ Route::prefix('panel')->group(function(){
     Route::get('/', 'AdminController@index');
 
     Route::get('/get-slides', 'AdminController@getSlides');
+
+
+    Route::post('/save-slide', 'AdminController@saveSlides');
   
  });

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Slide;
+use App\Slides;
+use Storage;
 
 class AdminController extends Controller
 {
@@ -17,7 +18,17 @@ class AdminController extends Controller
     }
 
     public function getSlides(){
-        $slides = Slide::all();
+        $slides = Slides::all();
         return $slides;
+    }
+
+    public function saveSlides(Request $r){
+        $data = $r->all();
+        if ($r->hasFile('archivo')) {
+            $data['archivo'] = $r->archivo->store('slides');
+        }
+        $slide = Slides::create($data);
+        
+        return $slide;
     }
 }
