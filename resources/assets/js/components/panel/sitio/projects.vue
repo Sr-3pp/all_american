@@ -1,15 +1,30 @@
 <template>
-    <div s-desk="projects">
+<transition-group name="fade" tag="div" s-desk="projects"> 
+    <div :key="0" v-if="addProject" class="new-project">
+        <p class="form-group">
+            <label>Name</label>
+            <input type="text" class="input" v-model="nproy.name">
+        </p>
+        <p class="form-group">
+            <label>Category</label>
+            <select v-model="nproy.category_id" class="input">
+                <option :value="0">Selecciona un acategoría</option>
+                <option v-for="cat in categories" :value="cat.id">{{cat.name}}</option>
+            </select>
+        </p>
+        <button class="btn" @click="saveProject()">Save</button>
+    </div>
+    <div :key="index+1" v-for="(cat, index) in projects">
         <p class="title">
-            Category
+            {{cat.name}}
         </p>
         <div class="cards">
-            <article v-for="card in 2" class="card" @click="showProject(1)">
+            <article v-for="(project, index) in cat.projects" class="card" @click="showProject(1)">
                 <figure class="img">
                     <img src="/img/slides/projects/slide_4.jpg" alt="">
                 </figure> 
                 <div class="card-content">
-                    <p class="subtitle">Proyect</p>
+                    <p class="subtitle">{{project.name}}</p>
                     <div>
                         <button>
                             Change cover
@@ -22,22 +37,52 @@
             </article>
         </div>
     </div>
+</transition-group>
 </template>
 <script>
 export default{
     mounted(){
-        
+        var este = this;
+        axios.get('/panel/get-projects').then((response) => {
+            este.projects = response.data
+        });
+
+        axios.get('/panel/project-cats').then((cats) => {
+            este.categories = cats.data
+        });
+
+         this.$bus.$on('new', ($event) => {
+            if($event.section == 1){
+                this.addProject ? this.addProject = false : this.addProject = true
+            }
+        })
     },
     props: [
        
     ],
     data(){
         return {
-           
+            addProject: false,
+           projects: false,
+           categories: null,
+           nproy: {
+               category_id: 0,
+               name: null,
+           }
         }
     },
     methods: {
-       
+       saveProject(){
+           var este = this;
+           axios.post('/panel/save-project', this.nproy).then((proy) => {
+               este.projects = proy.data
+               este.addProject = false;
+               este.nproy = {
+                    category_id: 0,
+                    name: null,
+                }
+           });
+       }
     }
 }
 </script>

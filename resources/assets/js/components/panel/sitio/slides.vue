@@ -13,9 +13,13 @@
                     </button>
                     <div v-if="nslide.caption" class="form-group">
                         <p class="radio-group">
-                            <span @click="setPos('left')" :class="{'active': nslide.extra.position == 'left'}"><icon name="check"></icon><br>Left</span>
-                            <span @click="setPos('center')" :class="{'active': nslide.extra.position == 'center'}"><icon name="check"></icon><br>Center</span>
-                            <span @click="setPos('right')" :class="{'active': nslide.extra.position == 'right'}"><icon name="check"></icon><br>Right</span>
+                            <span @click="setPos('left')" :class="{'active': nslide.position == 'left'}"><icon name="check"></icon><br>Left</span>
+                            <span @click="setPos('center')" :class="{'active': nslide.position == 'center'}"><icon name="check"></icon><br>Center</span>
+                            <span @click="setPos('right')" :class="{'active': nslide.position == 'right'}"><icon name="check"></icon><br>Right</span>
+                        </p>
+                        <p class="radio-group">
+                            <span @click="setColor('black')" :class="{'active': nslide.color == 'black'}"><icon name="check"></icon><br>Black</span>
+                            <span @click="setColor('white')" :class="{'active': nslide.color == 'white'}"><icon name="check"></icon><br>White</span>
                         </p>
                         <p>
                             <label>Title</label>
@@ -29,7 +33,7 @@
                 </article>
             </ol>
             <ol v-if="slides.length" v-for="(slide, index) in slides">
-                <figure :class="'align-'+slide.extra.position">
+                <figure :class="'align-'+slide.extra.position+' ' + slide.extra.color">
                     <img :src="'/storage/'+slide.archivo" alt="">
                     <p v-if="slide.extra.caption" class="caption">
                         <span class="title">
@@ -49,6 +53,10 @@
                             <span @click="editPos('left', index)" :class="{'active': slide.extra.position == 'left'}"><icon name="check"></icon><br>Left</span>
                             <span @click="editPos('center', index)" :class="{'active': slide.extra.position == 'center'}"><icon name="check"></icon><br>Center</span>
                             <span @click="editPos('right', index)" :class="{'active': slide.extra.position == 'right'}"><icon name="check"></icon><br>Right</span>
+                        </p>
+                         <p class="radio-group">
+                            <span @click="editColor('black', index)" :class="{'active': slide.extra.color == 'black'}"><icon name="check"></icon><br>Black</span>
+                            <span @click="editColor('white', index)" :class="{'active': slide.extra.color == 'white'}"><icon name="check"></icon><br>White</span>
                         </p>
                         <p>
                             <label>Title</label>
@@ -94,7 +102,8 @@ export default{
                title: '',
                description: '',
                archivo: null,
-               position: false
+               position: false,
+               color: null
            }
         }
     },
@@ -125,8 +134,15 @@ export default{
 
            console.log(this.nslide)
        },
+       setColor(color){
+           this.nslide.extra.color = color;
+       },
        editPos(align, index){
            this.slides[index].extra.position = align
+       },
+       editColor(color, index){
+           this.slides[index].extra.color = color
+           
        },
        updateSlide(index, id){
            var este = this,

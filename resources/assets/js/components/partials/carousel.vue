@@ -4,7 +4,7 @@
         <transition-group class="slides" :class="{'reverse': transition === 'prev'}" :name="transition">
             <article :class="{'active': content === index}" :key="slide.id" class="slide" v-for="(slide, index) in slides" v-if="active === index">
                 <img :src="'/storage/'+slide.archivo" alt="slide 1">
-                <div v-if="name === 'main'"  class="content" :s-mode="slide.extra.position">
+                <div v-if="name === 'main'"  class="content" :s-mode="slide.extra.position" :s-color="slide.extra.color">
                     <p class="text">{{slide.extra.title}}</p>
                     <p class="title">
                         {{slide.extra.description}}

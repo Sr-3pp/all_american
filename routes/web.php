@@ -36,10 +36,12 @@ Route::prefix('panel')->group(function(){
     Route::get('/', 'AdminController@index');
 
     Route::get('/get-slides', 'AdminController@getSlides');
-
-
     Route::post('/save-slide', 'AdminController@saveSlides');
     Route::post('/update-slide/{id}', 'AdminController@updateSlide');
     Route::get('/delete-slide/{id}', 'AdminController@deleteSlide');
+
+    Route::get('/get-projects', 'AdminController@getProjects');
+    Route::get('/project-cats', 'AdminController@getProyCats');
+    Route::post('/save-project', 'AdminController@saveProject');
   
  });

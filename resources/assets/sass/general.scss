@@ -768,6 +768,11 @@ body{
                             text-align: right;
                         }
                     }
+                    &.white{
+                        .caption{
+                            color: #FFF;
+                        }
+                    }
                     img{
                         width: auto;
                         height: 100%;

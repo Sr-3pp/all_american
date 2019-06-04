@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Slides;
+use App\Category;
+use App\Project;
 use Storage;
 
 class AdminController extends Controller
@@ -54,5 +56,24 @@ class AdminController extends Controller
         $slide->delete();
 
         return 1;
+    }
+
+    public function getProjects(){
+        $categories = Category::all();
+        foreach ($categories as $key => $c) {
+            $c->projects;
+        }
+        return $categories;
+    }
+
+    public function getProyCats(){
+        $categories = Category::where('kind', 'proyect')->get();
+        return $categories;
+    }
+
+    public function saveProject(Request $r){
+        $data = $r->all();
+        $proy = Project::create($data);
+        return $this->getProjects();
     }
 }
