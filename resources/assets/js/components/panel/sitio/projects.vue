@@ -47,7 +47,7 @@ export default{
             este.projects = response.data
         });
 
-        axios.get('/panel/project-cats').then((cats) => {
+        axios.get('/panel/get-cats/project').then((cats) => {
             este.categories = cats.data
         });
 

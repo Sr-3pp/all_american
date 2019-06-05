@@ -23,6 +23,7 @@ window.Vue = require('vue');
  Vue.component('contact-form', require('./components/form/contactForm.vue'));
  Vue.component('subscribe', require('./components/form/subscribe.vue'));
  Vue.component('wizzard', require('./components/form/wizzard.vue'));
+ Vue.component('valorate', require('./components/form/valorate.vue'));
 
  /*--------partials-----------*/
 Vue.component('navigation', require('./components/partials/navigation.vue'));

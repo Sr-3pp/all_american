@@ -81,20 +81,7 @@
                 </li>
             </ul>
         </div>
-        <div class="full-section separator">
-            <p class="title">Good</p>
-            <span class="stars">
-                <icon name="star"></icon>
-                <icon name="star"></icon>
-                <icon name="star"></icon>
-                <icon name="star"></icon>
-                <icon name="star"></icon>
-            </span>
-            <p class="text">
-                For us, your opinion is the most important, tell us what do you think about our service and how we could improve it.
-            </p>
-            <contact-form></contact-form>
-        </div>
+        <valorate></valorate>
         <div class="full-section" s-desk="why">
             <article>
                 <p class="title">Why choose us?</p>

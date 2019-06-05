@@ -1,13 +1,20 @@
 <template>
     <div s-desk="skills">
         <ul>
-            <li>
-                <select>
-                    <option v-for="val in 10" :value="val+1">{{val+1}}</option>
+            <li v-if="newSkill">
+                <select v-model="nskill.percent">
+                    <option v-for="val in 10" :value="val+1">{{val+1}}0</option>
                 </select>
                 <p>
-                    Name
+                    <label>Name</label>
+                    <input type="text" class="input" v-model="nskill.name">
                 </p>
+                <button class="btn" @click="saveSkill()">Save</button>
+            </li>
+            <li v-for="(s, index) in skills">
+                <p class="subtitle">{{s.name}}</p>
+                <p class="text">{{s.percent}}</p>
+                <button class="btn" @click="deleteSkill(s.id, index)">Delete</button>
             </li>
         </ul>
     </div>
@@ -15,18 +22,50 @@
 <script>
 export default{
     mounted(){
-        
+        this.$bus.$on('new', ($event) => {
+            if($event.section == 6){
+                this.newSkill ? this.newSkill = false : this.newSkill = true
+            }
+        });
+
+        var este = this;
+        axios.get('/get-skills').then((skills) => {
+            este.skills = skills.data
+        });
     },
     props: [
        
     ],
     data(){
         return {
-           
+           newSkill: false,
+           skills: [],
+           nskill: {
+               name: null,
+               percent: null
+           }
         }
     },
     methods: {
-       
+        saveSkill(){
+           var este = this;
+           axios.post('/panel/save-skill', this.nskill).then((skill) => {
+               este.skills.push(skill.data)
+               este.newSkill = false
+               este.nskill= {
+                    name: null,
+                    percent: null
+                }
+           });
+       },
+       deleteSkill(id, index){
+           if (confirm('delete question?')) {
+               var este = this;
+               axios.get('/panel/delete-skill/'+id).then((response) => {
+                   este.skills.splice(index, 1)
+               });
+           }
+       }
     }
 }
 </script>

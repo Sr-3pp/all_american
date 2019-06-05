@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 use App\Slides;
+use App\Material;
+use App\Faqs;
+use App\Skills;
 
 class Controller extends BaseController
 {
@@ -586,6 +589,28 @@ class Controller extends BaseController
     }
     public function panel(){
         return view('auth.panel');
+    }
+
+
+    public function getMaterials(){
+        $materials = Material::all();
+
+        foreach ($materials as $key => $m) {
+            $m->gauges;
+        }
+
+        return $materials;
+    }
+
+    public function getFaqs(){
+        $faqs = Faqs::all();
+
+        return $faqs;
+    }
+    public function getSkills(){
+        $skills = Skills::all();
+
+        return $skills;
     }
     
     public function testing(){

@@ -10,6 +10,7 @@
                     <label>Kind</label>
                     <select class="input" v-model="ncat.kind">
                         <option value="project">Project</option>
+                        <option value="finish">Finish</option>
                     </select>
                 </article>
                 <button @click="saveCat()">Save</button>
