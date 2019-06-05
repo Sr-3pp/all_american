@@ -135,7 +135,7 @@ export default{
            console.log(this.nslide)
        },
        setColor(color){
-           this.nslide.extra.color = color;
+           this.nslide.color = color;
        },
        editPos(align, index){
            this.slides[index].extra.position = align

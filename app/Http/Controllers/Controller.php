@@ -588,4 +588,12 @@ class Controller extends BaseController
         return view('auth.panel');
     }
     
+    public function testing(){
+        $slides = Slides::all();
+        foreach ($slides as $key => $value) {
+            $value->extra = json_decode($value->extra);
+            dd($value->extra);
+        }
+        return $slides;
+    }
 }

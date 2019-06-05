@@ -27,6 +27,7 @@
 export default{
     mounted(){
         this.$bus.$on('setPanel', ($event) => {
+            this.addBtn = false;
             this.active = $event.section;
             if(this.active == 0){
                this.activeSection = 'Inbox'
@@ -55,6 +56,7 @@ export default{
     methods: {
        setSec(index){
            this.section = index;
+           this.addBtn = false;
            this.$bus.$emit('setSec', {section: index});
        },
        setNew(){

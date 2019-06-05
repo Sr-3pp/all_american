@@ -43,5 +43,10 @@ Route::prefix('panel')->group(function(){
     Route::get('/get-projects', 'AdminController@getProjects');
     Route::get('/project-cats', 'AdminController@getProyCats');
     Route::post('/save-project', 'AdminController@saveProject');
+
+    Route::get('/get-categories', 'AdminController@getCategories');
+    Route::post('/save-cat', 'AdminController@saveCat');
   
  });
+
+ Route::get('testing', 'Controller@testing');

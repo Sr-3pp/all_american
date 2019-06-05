@@ -67,13 +67,29 @@ class AdminController extends Controller
     }
 
     public function getProyCats(){
-        $categories = Category::where('kind', 'proyect')->get();
+        $categories = Category::where('kind', 'project')->get();
         return $categories;
+    }
+
+    public function updateProject(Request $r, $id){
+
     }
 
     public function saveProject(Request $r){
         $data = $r->all();
         $proy = Project::create($data);
         return $this->getProjects();
+    }
+
+    public function getCategories(){
+        $cats =Category::all();
+
+        return $cats;
+    }
+    public function saveCat(Request $r){
+        $data = $r->all();
+        $cat = Category::create($data);
+
+        return $cat;
     }
 }
