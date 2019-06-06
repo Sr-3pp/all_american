@@ -11,6 +11,7 @@
                     <select class="input" v-model="ncat.kind">
                         <option value="project">Project</option>
                         <option value="finish">Finish</option>
+                        <option value="mill">Mill</option>
                     </select>
                 </article>
                 <button @click="saveCat()">Save</button>
@@ -37,6 +38,9 @@ export default{
         axios.get('/panel/get-categories').then((cats) => {
             este.categories = cats.data
         });
+        axios.get('/panel/get-cats/mill').then((cats) => {
+            este.cats = cats.data
+        });
     },
     props: [
        
@@ -44,6 +48,7 @@ export default{
     data(){
         return {
             categories: null,
+            cats: null,
            newCat: false,
            ncat: {
                name: null,

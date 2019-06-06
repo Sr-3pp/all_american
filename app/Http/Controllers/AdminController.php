@@ -11,6 +11,7 @@ use App\Calibre;
 use App\Finish;
 use App\Faqs;
 use App\Skills;
+use App\Mills;
 use Storage;
 
 class AdminController extends Controller
@@ -175,6 +176,30 @@ class AdminController extends Controller
         return 1;
     }
     
+    public function getMills(){
+        $categories = Category::where('kind', 'mill')->get();
+        foreach ($categories as $key => $c) {
+            $c->mills;
+        }
+        return $categories;
+    }
+
+    public function saveMill(Request $r){
+        $data = $r->all();
+        if ($r->hasFile('svg')) {
+            $data['svg'] = $r->svg->store('mills');
+        }
+
+        $mill = Mills::create($data);
+
+        return $this->getMills();;
+    }
+    public function deleteMill($id){
+        $m = Mills::find($id);
+        Storage::delete($m->svg);
+        $m->delete();
+        return 1;
+    }
     
     public function saveSkill(Request $r){
         $data = $r->all();

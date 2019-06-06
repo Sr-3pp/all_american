@@ -16,4 +16,7 @@ class Category extends Model
     public function finishes(){
         return $this->hasMany('App\Finish');
     }
+    public function mills(){
+        return $this->hasMany('App\Mills');
+    }
 }
