@@ -12,6 +12,8 @@ use App\Slides;
 use App\Material;
 use App\Faqs;
 use App\Skills;
+use App\Votes;
+use App\Category;
 
 class Controller extends BaseController
 {
@@ -519,22 +521,18 @@ class Controller extends BaseController
                 ]
             ]
         ];
-        $materials = [
-            [
-                'name' => 'Material',
-                'content' => 'full-content',
-                'description' => 'Part of content...',
-                'img' => '/img/slides/projects/slide_4.jpg',
-            ],
-            [
-                'name' => 'Material',
-                'content' => 'full-content',
-                'description' => 'Part of content...',
-                'img' => '/img/slides/projects/slide_3.jpg',
-            ]
-        ];
         $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
-        return view('services', compact('services', 'menu', 'materials'));
+        $materials = Material::all();
+
+        $finishes = Category::where('kind', 'finish')->get();
+        foreach ($finishes as $key => $c) {
+            $c->finishes;
+        }
+        $mills = Category::where('kind', 'mill')->get();
+        foreach ($mills as $key => $c) {
+            $c->mills;
+        }
+        return view('services', compact('services', 'menu', 'materials', 'mills', 'finishes'));
     }
 
     public function projects(){
@@ -581,7 +579,9 @@ class Controller extends BaseController
                 quality in each job, Our main commitment is with our customers.'
             ]
         ];
-        return view('about', compact('list'));
+
+        $skills = Skills::all();
+        return view('about', compact('list', 'skills'));
     }
 
     public function contact(){
@@ -611,6 +611,13 @@ class Controller extends BaseController
         $skills = Skills::all();
 
         return $skills;
+    }
+
+    public function saveValoration(Request $r){
+            $data = $r->all();
+            $valoration = Votes::create($data);
+
+            return 1;
     }
     
     public function testing(){

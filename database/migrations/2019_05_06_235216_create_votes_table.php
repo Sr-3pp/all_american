@@ -19,7 +19,7 @@ class CreateVotesTable extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('email')->unique();
-            $table->longText('review');
+            $table->longText('review')->nullable();
             $table->timestamps();
         });
     }

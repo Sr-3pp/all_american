@@ -2619,13 +2619,33 @@ body{
                             width: 100%;
                             display: flex;
                             align-items: center;
-                            justify-content: center;
-                            svg{
-                                width: 20px;
-                                height: 20px;
-                                margin-right: 10%;
-                                &:last-child{
-                                    margin-right: 0;
+                            justify-content: space-around;
+                            >span{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                cursor: pointer;
+                                flex: {
+                                    grow: 1;
+                                    shrink: 1;
+                                    basis: 20%;
+                                }
+                                svg{
+                                    width: 60%;
+                                    height: auto;
+                                    margin-right: 10%;
+                                    fill: none;
+                                    path{
+                                        stroke: #FFF;
+                                    }
+                                    &:last-child{
+                                        margin-right: 0;
+                                    }
+                                }
+                                &.active{
+                                    svg{
+                                        fill: #FFF;
+                                    }
                                 }
                             }
                         }

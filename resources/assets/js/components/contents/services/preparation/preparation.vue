@@ -49,7 +49,7 @@
                             <p>
                                 We adapt your material so that it fulfills its specific functions, we design, angles, U chanels, panels...
                             </p>
-                            <icon name="break"></icon>
+                            <icon name="Break"></icon>
                         </div>
                     </div>
                 </article>
