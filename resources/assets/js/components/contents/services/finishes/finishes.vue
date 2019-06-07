@@ -167,9 +167,10 @@
 <script>
 export default {
     mounted(){
-
+        console.log(this.finishes);
+        
     },
-    props: ['active'],
+    props: ['active', 'finishes'],
     data(){
         return {
            detail: false,

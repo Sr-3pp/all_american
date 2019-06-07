@@ -25,7 +25,7 @@
                 </p>
                 <p class="text">{{material.description}}</p>   
                 <figure>
-                    <img :src="material.img" alt="">
+                    <img :src="'/storage/'+material.img" alt="">
                 </figure>
             </ol>
         </ul>

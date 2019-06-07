@@ -24,6 +24,8 @@ Route::get('/get-materials', 'Controller@getMaterials');
 Route::get('/get-faqs', 'Controller@getFaqs');
 Route::get('/get-skills', 'Controller@getSkills');
 
+Route::post('/save-valoration', 'Controller@saveValoration');
+
 Route::prefix('services')->group(function(){
     Route::get('/', 'Controller@services');
   

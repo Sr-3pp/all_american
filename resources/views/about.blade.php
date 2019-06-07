@@ -121,18 +121,12 @@
         <div class="full-section skills">
             <div class="title">Skills</div>
             <ul class="skill-list">
-                <li>
-                    <p class="text">Welding</p>
-                    <progress value="80" max="100"></progress>
-                </li>
-                <li>
-                    <p class="text">Planning</p>
-                    <progress value="70" max="100"></progress>
-                </li>
-                <li>
-                    <p class="text">Full Finish</p>
-                    <progress value="90" max="100"></progress>
-                </li>
+                @foreach($skills as $key => $s)
+                    <li>
+                        <p class="text">{{$s->name}}</p>
+                        <progress value="{{$s->percent}}" max="10"></progress>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </section>
