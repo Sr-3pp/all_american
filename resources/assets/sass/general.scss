@@ -171,8 +171,9 @@ body{
             justify-content: center;
             flex: {
                 shrink: 1;
-                basis: 47%;
+                basis: 25vw;
             }
+            height: 25vw;
             margin-bottom: 5%;
             cursor: pointer;
             &:nth-child(odd){
@@ -1767,8 +1768,9 @@ body{
                         flex: {
                             grow: 1;
                             shrink: 1;
-                            basis: 50%;
+                            basis: 48%;
                         }
+                        margin-right: 2%;
                     }
                     img{
                         width: 100%;
