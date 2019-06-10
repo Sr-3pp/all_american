@@ -38,7 +38,7 @@
         </article>
     </header>
     <div id="app" s-layout="secondary">
-        <navigation name="general"></navigation>
+        <navigation section="{{$main}}" name="general"></navigation>
         @yield('content')
     </div>
     <footer>

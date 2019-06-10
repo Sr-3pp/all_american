@@ -1,7 +1,7 @@
 <template>
     <transition-group tag="div" class="content">
         <slides :key="0" v-if="active == 0"></slides>
-        <projects :key="1" v-if="active == 1"></projects>
+        <projects-panel :key="1" v-if="active == 1"></projects-panel>
         <materials :key="2" v-if="active == 2"></materials>
         <finishes-panel :key="3" v-if="active == 3"></finishes-panel>
         <mills :key="4" v-if="active == 4"></mills>

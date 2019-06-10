@@ -22,8 +22,22 @@ export default {
         this.$bus.$on('setTab', ($event) => {
             this.active = $event.section
         });
+        if(this.sec == 'design-and-planning'){
+            this.active = 1
+        }else if(this.sec == 'preparation'){
+            this.active = 2
+        }else if(this.sec == 'welding'){
+            this.active = 3
+        }else if(this.sec == 'finishes'){
+            this.active = 4
+        }else if(this.sec == 'painting'){
+            this.active = 5
+        }else if(this.sec == 'delivery'){
+            this.active = 6
+        }
+        
     },
-    props: ['materials', 'finishes', 'mills'],
+    props: ['materials', 'finishes', 'mills', 'sec'],
     data(){
         return{
             active: false

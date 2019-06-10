@@ -68,6 +68,13 @@ class AdminController extends Controller
         $categories = Category::where('kind', 'project')->get();
         foreach ($categories as $key => $c) {
             $c->projects;
+            foreach ($c->projects as $key => $p) {
+                foreach ($p->gallery as $key => $value) {
+                    if($value->cover == 1){
+                        $p->cover = $value;
+                    }
+                }
+            }
         }
         return $categories;
     }

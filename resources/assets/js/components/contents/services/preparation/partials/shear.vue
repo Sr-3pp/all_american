@@ -39,8 +39,8 @@
                 caliber 18 stainless steel measuring 0.048 "inches is not the same as an 18
                 gauge brass measuring 0.040" this variables are correct.
             </div>
-        <div class="blue-table">
-            <p class="subtitle">Stainless steel</p>
+        <div class="blue-table" v-for="(m, index) in materials">
+            <p class="subtitle">{{m.name}}</p>
             <table>
                 <thead>
                     <tr>
@@ -49,92 +49,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>28</td>
+                    <tr v-for="(g, i) in m.gauges">
+                        <td>{{g.gauge}}</td>
                         <td>
-                            0.015
+                            {{g.thick}}
+                            <p class="line-progress">
+                                <span></span>
+                            </p>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <p class="s-text">
                 3/16” Inch is Plate
-            </p>
-        </div>
-        <div class="blue-table">
-            <p class="subtitle">Aluminium</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Gauge</th>
-                        <th>Thickness</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>28</td>
-                        <td>
-                            0.015
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="s-text">
-               There is no official gauge standard for aluminum.
-            </p>
-            <p class="s-text">
-                .250” Inch is Plate
-            </p>
-        </div>
-        <div class="blue-table">
-            <p class="subtitle">Copper</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ounce</th>
-                        <th>Gauge</th>
-                        <th>Thickness</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            4 oz
-                        </td>
-                        <td>36</td>
-                        <td>
-                            0.0050"
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="s-text">
-               There is no official gauge standard for aluminum.
-            </p>
-            <p class="s-text">
-                .250” Inch is Plate
-            </p>
-        </div>
-        <div class="blue-table">
-            <p class="subtitle">Brass</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Gauge</th>
-                        <th>Thickness</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>28</td>
-                        <td>
-                            0.015
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="s-text">
-                .125” Inch is Plate
             </p>
         </div>
         <figure class="image">
@@ -198,11 +125,14 @@
 <script>
 export default {
     mounted(){
-
+        var este = this;
+        axios.get('/get-shear-gauges').then((materials) => {
+            este.materials = materials.data
+        });
     },
     data(){
         return {
-
+            materials: null
         }
     },
     methods: {

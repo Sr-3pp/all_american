@@ -25,6 +25,7 @@ class Controller extends BaseController
         foreach ($slides as $key => $value) {
             $value->extra = json_decode($value->extra);
         }
+        $main = 'home';
         $testimonials = [
             [
                 'id' => 1,
@@ -215,312 +216,10 @@ class Controller extends BaseController
                 'prev' =>   'We work in a professional and effective way, to meet the expectations of each project.'
             ]
         ];
-            return view('home', compact('slides', 'testimonials', 'projects', 'services', 'news'));
+            return view('home', compact('slides', 'testimonials', 'projects', 'services', 'news', 'main'));
     }
 
     public function services(){
-        $services = [
-            [
-                'id' => 1,
-                'name' => 'Design and Planning',
-                'icon' => 'planning',
-                'img' => '/img/slides/projects/slide_4.jpg',
-                'description' => 'We provide complete custom metal fabrication services, from planning to delivery
-                                in your business or home, we will work and trace from the beginning the best way
-                                to achieve the objectives of your project, anticipating any inconvenience that may
-                                arise, we distinguish ourselves by our reputation and that we are a committed and
-                                responsible company.',
-                'sections' => [
-                    [
-                        'id' => 1,
-                        'name' => 'Concept',
-                        'icon' => 'planning',
-                        'img' => '/img/slides/projects/slide_4.jpg',
-                        'description' => 'Lorem ipsum dolor amet',
-                        'content' => 'I know your deepest secret fear, I know everything',
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 3,
-                        'name' => 'Material',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                        'lists' => [
-                            0 => [
-                                [
-                                    'name' => 'Material',
-                                    'content' => 'full-content',
-                                    'description' => 'Part of content...',
-                                    'img' => '/img/slides/projects/slide_4.jpg',
-                                ],
-                                [
-                                    'name' => 'Material',
-                                    'content' => 'full-content',
-                                    'description' => 'Part of content...',
-                                    'img' => '/img/slides/projects/slide_3.jpg',
-                                ]
-                            ]
-                        ]
-                    ],
-                    [
-                        'id' => 4,
-                        'name' => 'Estimate',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                ]
-            ],
-            [
-                'id' => 2,
-                'name' => 'Preparation',
-                'icon' => 'preparation',
-                'description' => 'Lorem ipsum dolor amet',
-                'sections' => [
-                    [
-                        'id' => 1,
-                        'name' => 'Shear',
-                        'content' => 'Material cutting service, adjusted to the
-                                        specific measures that you need. We offer
-                                        shearing services, since it is a fast and efficient
-                                        way to cut metal sheets, you can get
-                                        custom size cuts either for specific cut only
-                                        or future work of material forming, welding,
-                                        polishing or painting.',
-                        'img' => '/img/slides/projects/slide_4.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                        'subsections' => [
-                            0 => [
-                                'name' => 'sub name',
-                                'content' => 'I know your deepest secret fear, I know everything',
-                                'img' => '/img/slides/projects/slide_4.jpg',
-                                'icon' => 'planning',
-                                'description' => 'Lorem ipsum dolor amet',
-                            ],
-                            1 => [
-                                'name' => 'HOW TO WORK WITH THE “GAUGES” SISTEM?',
-                                'content' => 'I know your deepest secret fear, I know everything',
-                                'img' => '',
-                                'icon' => 'planning',
-                                'description' => 'Lorem ipsum dolor amet',
-                                'table' => [
-                                    [
-                                        'material' => 'STAINLESS STEEL',
-                                        'gauges' => [
-                                            0 => [
-                                                'gauge' => '28',
-                                                'thick' => '0.015'
-                                            ],
-                                            0 => [
-                                                'gauge' => '26',
-                                                'thick' => '0.018'
-                                            ],
-                                        ] 
-                                    ],
-                                    [
-                                        'material' => 'ALuminium',
-                                        'gauges' => [
-                                            0 => [
-                                                'gauge' => '22',
-                                                'thick' => '0.025'
-                                            ],
-                                            0 => [
-                                                'gauge' => '20',
-                                                'thick' => '0.032'
-                                            ],
-                                        ] 
-                                    ]
-                                ]
-                            ],
-                            2 => [
-                                'name' => 'MORE CUT SYSTEM SERVICE',
-                                'content' => 'I know your deepest secret fear, I know everything',
-                                'img' => '/img/slides/projects/slide_4.jpg',
-                                'icon' => 'planning',
-                                'description' => 'Lorem ipsum dolor amet',
-                                'lists' => [
-                                    [
-                                        'name' => 'PLasma',
-                                        'content' => 'Plasma cutting is a process that uses a nozzle, with a hole for the circulation
-                                                        of the ionized gas at high temperatures, in such a way that a beam is obtained
-                                                        that can be used to cut sections of metals such as carbon steel, steel stainless
-                                                        steel, aluminum and other conductive metals of electricity. Through the use of
-                                                        this technique, the plasma arc and the gas eliminate the molten material.',
-                                    ],
-                                    [
-                                        'name' => 'WATERJET',
-                                        'content' => 'Plasma cutting is a process that uses a nozzle, with a hole for the circulation
-                                                        of the ionized gas at high temperatures, in such a way that a beam is obtained
-                                                        that can be used to cut sections of metals such as carbon steel, steel stainless
-                                                        steel, aluminum and other conductive metals of electricity. Through the use of
-                                                        this technique, the plasma arc and the gas eliminate the molten material.',
-                                    ],
-                                ]
-                            ]
-                        ]
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Forming Break',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 3,
-                        'name' => 'Machine Mill',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                        'subsections' => [
-                            [
-                                'name' => 'Benefits',
-                                'content' => 'A milling machine provides many advantages when doing drill or cut milling,
-                                as a computerized system allows cutting or drilling with precision in any
-                                direction, within three dimensions.',
-                                'img' => '/img/slides/projects/slide_4.jpg',
-                                'icon' => 'planning',
-                                'description' => 'Lorem ipsum dolor amet',
-                            ],
-                            [
-                                'name' => 'Categories / Examples',
-                                'content' => 'A milling machine provides many advantages when doing drill or cut milling,
-                                as a computerized system allows cutting or drilling with precision in any
-                                direction, within three dimensions.',
-                                'img' => '/img/slides/projects/slide_4.jpg',
-                                'icon' => 'planning',
-                                'description' => 'Lorem ipsum dolor amet',
-                            ],
-                        ]
-                    ]
-                ]
-            ],
-            [
-                'id' => 3,
-                'name' => 'Welding',
-                'icon' => 'welding',
-                'description' => 'Lorem ipsum dolor amet',
-                'sections' => [
-                    [
-                        'id' => 1,
-                        'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 3,
-                        'name' => 'SI que si',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ]
-                ]
-            ],
-            [
-                'id' => 4,
-                'name' => 'Finishes',
-                'icon' => 'polish',
-                'description' => 'Lorem ipsum dolor amet',
-                'sections' => [
-                    [
-                        'id' => 1,
-                        'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ]
-                ]
-            ],
-            [
-                'id' => 5,
-                'name' => 'Painting',
-                'icon' => 'painting',
-                'description' => 'Lorem ipsum dolor amet',
-                'sections' => [
-                    [
-                        'id' => 1,
-                        'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 3,
-                        'name' => 'SI que si',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ]
-                ]
-            ],
-            [
-                'id' => 6,
-                'name' => 'Delivery',
-                'icon' => 'delivery',
-                'description' => 'Lorem ipsum dolor amet',
-                'sections' => [
-                    [
-                        'id' => 1,
-                        'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg',
-                        'icon' => 'planning',
-                        'description' => 'Lorem ipsum dolor amet',
-                    ]
-                ]
-            ]
-        ];
         $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
         $materials = Material::all();
 
@@ -532,23 +231,26 @@ class Controller extends BaseController
         foreach ($mills as $key => $c) {
             $c->mills;
         }
-        return view('services', compact('services', 'menu', 'materials', 'mills', 'finishes'));
+
+        $section = false;
+        $main = 'services';
+        return view('services', compact('menu', 'materials', 'mills', 'finishes', 'section', 'main'));
     }
 
-    public function projects(){
-        $projects = [
-            [
-                'name' => 'El nombre',
-                'portada' => 'img/default.jpg',
-                'gallery' => [
-                    [
-                        'name' => 'Foto_ 1',
-                        'archivo' => 'img/default.jpg'
-                    ]
-                ]
-            ]
-        ];
-        return view('projects', compact('projects'));
+    public function goService($section){
+        $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
+        $materials = Material::all();
+
+        $finishes = Category::where('kind', 'finish')->get();
+        foreach ($finishes as $key => $c) {
+            $c->finishes;
+        }
+        $mills = Category::where('kind', 'mill')->get();
+        foreach ($mills as $key => $c) {
+            $c->mills;
+        }
+        $main = 'services';
+        return view('services', compact('menu', 'materials', 'mills', 'finishes', 'section', 'main'));
     }
     
     public function subscribe(Request $r){
@@ -581,11 +283,13 @@ class Controller extends BaseController
         ];
 
         $skills = Skills::all();
-        return view('about', compact('list', 'skills'));
+        $main = 'about';
+        return view('about', compact('list', 'skills', 'main'));
     }
 
     public function contact(){
-        return view('contact');
+        $main = 'contact';
+        return view('contact', compact('main'));
     }
     public function panel(){
         return view('auth.panel');
@@ -618,6 +322,16 @@ class Controller extends BaseController
             $valoration = Votes::create($data);
 
             return 1;
+    }
+
+    public function getShearTables(){
+        $materials = Material::all();
+
+        foreach ($materials as $key => $m) {
+            $m->gauges;
+        }
+
+        return $materials;
     }
     
     public function testing(){

@@ -18,18 +18,19 @@
         <p class="title">
             {{cat.name}}
         </p>
-        <div class="cards">
+        <div class="cont">
             <article v-for="(project, index) in cat.projects" class="card" @click="showProject(1)">
                 <figure class="img">
-                    <img src="/img/slides/projects/slide_4.jpg" alt="">
+                    <img v-if="project.cover" :src="'/storage/'+project.cover.archivo" alt="">
+                    <img v-else src="/img/default.jpg" alt="">
                 </figure> 
                 <div class="card-content">
                     <p class="subtitle">{{project.name}}</p>
                     <div>
-                        <button>
+                        <button class="btn">
                             Change cover
                         </button>
-                        <button>
+                        <button class="btn">
                             Watch gallery
                         </button>
                     </div>

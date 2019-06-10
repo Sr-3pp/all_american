@@ -3,7 +3,9 @@
         <article v-if="section === index" v-for="(s, index) in services">
             <drop-list :list="s.list" name="home"></drop-list>
         </article>
-        <img :src="image" alt="">
+        <figure>
+            <img :src="image" alt="">
+        </figure>
     </div>
 </template>
 <script>

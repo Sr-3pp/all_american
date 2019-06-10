@@ -1,9 +1,10 @@
 <template>
-<section s-sec="projects" class="main" :class="{'active': active}">
-        <div  v-if="!project" class="cont" v-for="(p, index) in projects" @click="setProject(p)">
+<section s-sec="projects" class="main">
+        <div v-if="!project" class="cont" v-for="(p, index) in list" @click="setCat(p, index)">
             <article>
                 <figure>
-                    <img src="/img/default.jpg" alt="">
+                    <img v-if="p.cover" :src="'/storage/'+p.cover.archivo" alt="">
+                    <img v-else src="/img/default.jpg" alt="">
                 </figure>
                 <p class="category">
                     {{p.name}}
@@ -13,7 +14,7 @@
         <div v-if="project" class="cont"  v-for="(pic, index) in project.gallery" @click="showGallery(pic.archivo)">
             <article>
                 <figure>
-                    <img :src="pic.archivo" alt="">
+                    <img :src="'/storage/'+pic.archivo" alt="">
                 </figure>
                 <p class="category">
                     imagen
@@ -28,14 +29,22 @@ export default {
     mounted(){
         this.$bus.$on('setTab', ($event) => {
             this.active = $event.section
+            this.list = this.categories[$event.section-1].projects
+            this.full = false;
+            this.project = false;
+            this.picture = false;
+            
         }).$on('close-gallery', () => {
             this.full = false
             this.picture = false;
         });
+        this.list = this.categories;
+              
     },
-    props: ['projects'],
+    props: ['categories'],
     data(){
         return {
+            list: null,
             project: false,
             active:false,
             picture: false,
@@ -43,8 +52,16 @@ export default {
         }
     },
     methods: {
-        setProject(project){
-            this.project = project
+        setProject(project){ 
+            this.project = project                   
+        },
+        setCat(project, index){ 
+            if(!this.active){
+                this.list = this.categories[index].projects;
+                this.$bus.$emit('setTab', {section: index+1})
+            }else{
+                this.setProject(project)
+            }  
         },
         showGallery(file){
             this.picture = file

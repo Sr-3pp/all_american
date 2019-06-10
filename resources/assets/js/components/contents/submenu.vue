@@ -12,8 +12,22 @@ export default {
         this.$bus.$on('setTab', ($event) => {
             this.section = $event.section-1
         });
+         if(this.sec == 'design-and-planning'){
+            this.section = 0
+        }else if(this.sec == 'preparation'){
+            this.section = 1
+        }else if(this.sec == 'welding'){
+            this.section = 2
+        }else if(this.sec == 'finishes'){
+            this.section = 3
+        }else if(this.sec == 'painting'){
+            this.section = 4
+        }else if(this.sec == 'delivery'){
+            this.section = 5
+        }
+        
     },
-    props: ['submenu'],
+    props: ['submenu', 'sec'],
     data(){
         return {
             section: null

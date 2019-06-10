@@ -4,7 +4,7 @@
             <button class="btn close-btn" @click="$bus.$emit('close-gallery')"><icon name="+"></icon></button>
              <button class="btn prev-btn"><icon name="chevron"></icon></button>
              <figure>
-                 <img :src="picture" alt="">
+                 <img :src="'/storage/'+picture" alt="">
              </figure>
              <button class="btn next-btn"><icon name="chevron"></icon></button>
              <div class="social-btns">

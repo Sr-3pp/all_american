@@ -37,11 +37,11 @@
         </article>
     </header>
     <div id="app" s-layout="general">
-        <navigation name="general"></navigation>
+        <navigation section="{{$main}}" name="general"></navigation>
         <div class="content">
                 @yield('content')
                 <section class="section-menu">
-                <submenu :submenu="{{json_encode($menu)}}"></submenu>
+                <submenu :sec="{{json_encode($section)}}" :submenu="{{json_encode($menu)}}"></submenu>
                     <subscribe></subscribe>
                 </section>
         </div>

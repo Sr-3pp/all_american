@@ -3,26 +3,46 @@
         <figure class="brand">
             <img :src="logo" alt="Site Brand">
         </figure>
+        <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="+"></icon></button>
         <ul class="item-list" :class="{'active': active}">
             <li class="close-menu item" @click="active ? active = false : active = true">
                 <a type="button" href="#" class="link"><icon name="chevron"></icon></a>
-            <li class="item">
+            <li class="item" :class="{'active': section == 'home'}">
                 <a class="link" href="/">Home</a>
             </li>
-            <li class="item">
+            <li class="item" :class="{'active': section == 'services'}">
                 <a class="link" href="/services">Services</a>
+                <ul class="sub-nav">
+                   <li>
+                       <a href="/services/design-and-planning">Design and planning</a>
+                    </li> 
+                   <li>
+                       <a href="/services/preparation">Preparation</a>
+                    </li> 
+                   <li>
+                       <a href="/services/welding">Welding</a>
+                    </li> 
+                   <li>
+                       <a href="/services/finishes">Finishes</a>
+                    </li> 
+                   <li>
+                       <a href="/services/painting">Painting</a>
+                    </li> 
+                   <li>
+                       <a href="/services/delivery">Delivery</a>
+                    </li> 
+                </ul>
             </li>
-            <li class="item">
+            <li class="item" :class="{'active': section == 'projects'}">
                 <a class="link" href="/projects">Projects</a>
             </li>
-            <li class="item">
+            <li class="item" :class="{'active': section == 'about'}">
                 <a class="link" href="/about-us">About us</a>
             </li>
-            <li class="item">
+            <li class="item" :class="{'active': section == 'contact'}">
                 <a class="link" href="/contact-us">Contact Us</a>
             </li>
         </ul>
-        <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="+"></icon></button>
     </nav>
 </template>
 
@@ -38,7 +58,7 @@
             
         },
         props: [
-            'name'
+            'name', 'section'
         ],
         data(){
             return {

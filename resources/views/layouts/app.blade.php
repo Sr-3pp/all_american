@@ -38,7 +38,7 @@
         </article>
     </header>
     <div id="app">
-        <navigation name="home"></navigation>
+    <navigation section="{{$main}}" name="home"></navigation>
         @yield('content')
     </div>
     <footer>

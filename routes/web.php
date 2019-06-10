@@ -23,11 +23,13 @@ Route::post('/subscribe', 'Controller@subscribe');
 Route::get('/get-materials', 'Controller@getMaterials');
 Route::get('/get-faqs', 'Controller@getFaqs');
 Route::get('/get-skills', 'Controller@getSkills');
+Route::get('/get-shear-gauges', 'Controller@getShearTables');
 
 Route::post('/save-valoration', 'Controller@saveValoration');
 
 Route::prefix('services')->group(function(){
     Route::get('/', 'Controller@services');
+    Route::get('/{section}', 'Controller@goService');
   
 });
 Route::prefix('projects')->group(function(){

@@ -1,5 +1,5 @@
 @extends('layouts.general')
 
 @section('content')
-<projects :projects="{{json_encode($projects)}}"></projects>
+<projects :categories="{{json_encode($projects)}}"></projects>
 @endsection
