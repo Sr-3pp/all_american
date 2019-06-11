@@ -35,13 +35,8 @@ export default {
     },
     methods: {
         setTab(index){
-            if(this.section == index){
-                this.section = null
-                this.$bus.$emit('setTab', {section: 0});
-            }else{
-                this.section = index
-                this.$bus.$emit('setTab', {section: index+1});
-            }
+            this.section = index
+            this.$bus.$emit('setTab', {section: index+1});
         }
     }
 }

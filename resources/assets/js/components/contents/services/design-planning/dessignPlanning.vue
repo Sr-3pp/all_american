@@ -1,6 +1,6 @@
 <template>
     <transition-group tag="div" class="cont">
-        <article :key="0" v-if="!active" @click="setSection(1)">
+        <article class="card" :key="0" v-if="!active" @click="setSection(1)">
             <figure>
                 <img src="/img/services/planning_card.jpg" alt="">
             </figure>
@@ -144,7 +144,11 @@
 <script>
 export default {
     mounted(){
-
+        this.$bus.$on('setTab', ($event) => {            
+            if($event.section == 1){
+               this.detail = false;
+            }
+        });
     },
     props: ['active', 'materials'],
     data(){

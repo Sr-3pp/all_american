@@ -1,6 +1,6 @@
 <template>
     <div class="cont">
-        <article :key="0" v-if="!active" @click="setSection(4)">
+        <article class="card" :key="0" v-if="!active" @click="setSection(4)">
             <figure>
                 <img src="/img/services/polish_cards.jpg" alt="">
             </figure>
@@ -167,7 +167,11 @@
 <script>
 export default {
     mounted(){
-        console.log(this.finishes);
+        this.$bus.$on('setTab', ($event) => {
+            if($event.section == 4){
+               this.detail = false;
+            }
+        });
         
     },
     props: ['active', 'finishes'],

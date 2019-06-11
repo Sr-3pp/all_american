@@ -19,21 +19,21 @@ body{
         }
         .title{
             font: {
-                size: 1.5rem;
+                size: 1.8rem;
                 style: italic;
                 weight: bold;
             }
         }
         .subtitle{
             font: {
-                size: 1rem;
+                size: 1.5rem;
                 weight: bold;
                 style: italic;
             }
         }
         .category{
             font: {
-                size: .5rem;
+                size: 1.3rem;
                 weight: bold;
                 style: italic;
             }
@@ -162,6 +162,24 @@ body{
                 }
             }
         }
+        .image{
+            width: 100%;
+            position: relative;
+            margin-bottom: 5%;
+            img{
+                width: 100%;
+            }
+            .category{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $Ablue;
+                color: #FFF;
+                width: 100%;
+                margin-bottom: 0;
+                padding: 5%;
+            }
+        }
         .card{
             overflow: hidden;
             border-radius: 10%;
@@ -201,12 +219,12 @@ body{
                     }
                 }
             }
-            .img{
+            figure, .img{
                 width: 100%;
                 height: 100%;
                 img{
-                    width: 100%;
-                    height: auto;
+                    width: auto;
+                    height: 100%;
                 }
             }
             .text, .card-content{
@@ -249,6 +267,41 @@ body{
                             width: 1px;
                             color: $light-gray;
                         }
+                    }
+                }
+            }
+            .label{
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                padding: 3%;
+                height: 30%;
+                background-color: $gray;
+                color: $light-gray;
+                svg{
+                    width: 30%;
+                    height: 100%;
+                    margin-left: 3%;
+                    path{
+                        stroke: $light-gray;
+                        stroke-width: .5px;
+                    }
+                }
+                .text{
+                    padding: 3% 5%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    width: 100%;
+                    font: {
+                        family: 'Aero Matics';
+                        weight: bold;
+                        style: italic;
+                        size: 1.2rem;
                     }
                 }
             }
@@ -394,6 +447,52 @@ body{
                             color: #FFF;
                             font-weight: bold;
                         }
+                    }
+                }
+            }
+        }
+        .section-menu{
+            width: 100%;
+            padding: {
+                top: 0;
+                right: 5vw;
+                bottom: 0;
+                left: 5vw;
+            }
+            >ul{
+                list-style: none;
+                background-color: $light-gray;
+                margin-bottom: 5%;
+                li{
+                    position: relative;
+                    color: #FFF;
+                    padding: 3% 8%;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    border-bottom: {
+                        style: solid;
+                        width: 1px;
+                        color: #FFF;
+                    }
+                    transition: all .2s ease;
+                    &:hover{
+                        background-color: $gray;
+                    }
+                    &.active{
+                        background-color: #FFF;
+                        color: $dark;
+                        border: {
+                            style: solid;
+                            width: 1px;
+                            color: $dark;
+                        }
+                    }
+                    svg{
+                        width: 20px;
+                        position: absolute;
+                        left: 1%;
+                        top: 50%;
+                        transform: translateY(-50%);
                     }
                 }
             }
@@ -1217,6 +1316,10 @@ body{
             }
         }
         .foaming-form{
+            padding: {
+                right: 5vw;
+                left: 5vw;
+            }
             .subtitle{
                 color: $Ablue;
             }
@@ -1282,7 +1385,8 @@ body{
                 }
                 &.gauges{
                     >.text{
-                        min-height: inherit;
+                        min-height: inherit!important;
+                        margin-bottom: 0!important;
                         &:before{
                             display: none;
                         }
@@ -1321,6 +1425,7 @@ body{
                 &.shape{
                     >ul{
                         list-style: none;
+                        margin-bottom: 5%;
                         li{
                             background-color: $Ablue;
                             color: #FFF;
@@ -1397,11 +1502,10 @@ body{
                                 }
                             }
                             >.text{
-                                width: 100%;
+                                width: 100%!important;
                                 background-color: $Ablue;
                                 color: #FFF;
                                 padding: 5%;
-                                margin-bottom: 0;
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
@@ -1410,12 +1514,12 @@ body{
                                     font-weight: bold;
                                 }
                                 svg{
-                                    position: static;
-                                    fill: #FFF;
+                                    position: static!important;
+                                    fill: #FFF!important;
                                     transform: inherit;
                                     margin-right: 5%;
-                                    width: 30px;
-                                    height: auto;
+                                    width: 30px!important;
+                                    height: auto!important;
                                 }
                             }
                         }
@@ -1427,6 +1531,10 @@ body{
                         label{
                             font-weight: bold;
                             color: $Ablue;
+                            display: flex!important;
+                        }
+                        .text{
+                            min-height: inherit!important;
                         }
                         .input{
                             border-style: solid;
@@ -1456,10 +1564,10 @@ body{
                             }
                             &:last-child{
                                 display: flex;
-                                flex-wrap: wrap;
+                                flex-direction: column;
                                 align-items: center;
                                 .text{
-                                    min-height: inherit;
+                                    max-height: 25px;
                                     font-weight: bold;
                                     color: $Ablue;
                                     margin-right: 0;
@@ -1526,7 +1634,7 @@ body{
                 }
                 &.contact{
                     >div{
-                        width: 70%;
+                        width: 100%;
                     }
                 }
             }
@@ -1547,7 +1655,7 @@ body{
             }
         }
         [s-sec=navigation]{
-            position: fixed;
+            position: sticky;
             top: 0;
             z-index: 10;
             display: flex;
@@ -1925,6 +2033,7 @@ body{
             .news{
                 display: flex;
                 justify-content: space-between;
+                flex-direction: column;
             }
         }
         [s-sec=projects]{
@@ -2170,417 +2279,532 @@ body{
                     }
                 }
             }
-            [s-sec=services], [s-sec=projects]{
-                &.full-section{
-                    flex-direction: column;
-                    padding-left: 0;
-                }
-                >.cont{
-                    display: flex;
-                    >div{
-                        &:first-child{
-                            flex: {
-                                shrink: 1;
-                                basis: 100%;
+            >.content{
+                >.main{
+                    &[s-sec=services], &[s-sec=projects]{
+                        &.full-section{
+                            flex-direction: column;
+                            padding-left: 0;
+                        }
+                        >.cont{
+                            display: flex;
+                            >.card{
+                                margin-right: 0;
+                            }
+                            .detail{
+                                >.title{
+                                    padding-left: 5vw;
+                                    padding-bottom: 3%;
+                                    margin-bottom: 0;
+                                    position: relative;
+                                    color: $Ablue;
+                                    height: 25vw;
+                                    display: flex;
+                                    align-items: flex-end;
+                                    &::after{
+                                        content: '';
+                                        width: 55vw;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 5vw;
+                                        height: 3px;
+                                        background-color: $Ablue;
+                                    }
+                                    svg{
+                                        width: auto;
+                                        height: 100%;
+                                        fill: currentColor;
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                    }
+                                }
+                                >.text{
+                                    position: relative;
+                                    padding-left: 5vw;
+                                    padding-right: 15%;
+                                    padding-top: 3%;
+                                    margin-bottom: 5%;
+                                    min-height: 200px;
+                                    width: 75%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    svg{
+                                        position: absolute;
+                                        top: -2px;
+                                        left: 60vw;
+                                        fill: $Ablue;
+                                        height: auto;
+                                        width: 25vw;
+                                    }
+                                    &.full{
+                                        width: 100%;
+                                        min-height: inherit;
+                                    }
+                                    &.empty{
+                                        margin-bottom: -10%;
+                                    }
+                                }
+                                >.header{
+                                    height: 400px;
+                                    width: 100vw;
+                                    top: 0;
+                                    left: 0;
+                                    overflow: hidden;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    margin-bottom: 5%;
+                                    img{
+                                        width: auto;
+                                        height: 100%;
+                                        z-index: 0;
+                                    }
+                                    svg{
+                                        width: 50%;
+                                        position: absolute;
+                                        top: 50%;
+                                        transform: translateY(-80%);
+                                        left: 5%;
+                                        z-index: 1;
+                                        fill: #FFF;
+                                        &:first-child{
+                                            width: auto;
+                                            height: 150%;
+                                            top: 0;
+                                            transform: inherit;
+                                            left: 0;
+                                            fill: $Ablue;
+                                        }
+                                    }
+                                }
                             }
                             >div{
-                                display: flex;
-                                flex-wrap: wrap;
-                                padding-right:  5%;
-                                padding-left: 5vw;
-                                &.no-padd{
-                                    padding-left: 0;
-                                }
-                                .sub{
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    justify-content: space-between;
+                                &:first-child{
                                     flex: {
                                         shrink: 1;
                                         basis: 100%;
                                     }
-                                    .cards{
+                                    >div{
                                         display: flex;
                                         flex-wrap: wrap;
-                                    }
-                                    .headline{
-                                        flex:{
-                                            grow: 1;
-                                            shrink: 1;
-                                            basis: 100%;
+                                        padding-right:  5%;
+                                        padding-left: 5vw;
+                                        &.no-padd{
+                                            padding-left: 0;
                                         }
-                                        display: flex;
-                                        align-items: center;
-                                        margin-bottom: 5%;
-                                        .subtitle{
-                                            margin-bottom: 0;
-                                        }
-                                        svg{
-                                            width: 50px;
-                                            height: 50px;
-                                            margin-right: 3%;
-                                            &:last-child{
-                                                margin-left: auto;
-                                                margin-right: inherit;
-                                                height: 100%;
-                                                width: 30%;
-                                                color: $Ablue;
-                                            }
-                                        }
-                                    }
-                                    .text{
-                                        width: 100%;
-                                        margin-bottom: 5%;
-                                        line-height: 1.3rem;
-                                    }
-                                    .extra{
-                                        display: flex;
-                                        >div{
+                                        .sub{
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            justify-content: space-between;
                                             flex: {
-                                                grow: 1;
                                                 shrink: 1;
-                                                basis: 50%;
+                                                basis: 100%;
                                             }
-                                            >.subtitle{
-                                                border: {
-                                                    style: solid;
-                                                    width: 1px;
-                                                    radius: 5%
+                                            .cards{
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                            }
+                                            .headline{
+                                                flex:{
+                                                    grow: 1;
+                                                    shrink: 1;
+                                                    basis: 100%;
                                                 }
-                                                display: inline-flex;
-                                                text-align: center;
-                                                padding: 3%;
-                                                margin-bottom: 10%;
-                                                &::after{
-                                                    display: none;
+                                                display: flex;
+                                                align-items: center;
+                                                margin-bottom: 5%;
+                                                .subtitle{
+                                                    margin-bottom: 0;
+                                                }
+                                                svg{
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    margin-right: 3%;
+                                                    &:last-child{
+                                                        margin-left: auto;
+                                                        margin-right: inherit;
+                                                        height: 100%;
+                                                        width: 30%;
+                                                        color: $Ablue;
+                                                    }
                                                 }
                                             }
-                                            &:first-child{
-                                                padding-right: 5%;
+                                            .text{
+                                                width: 100%;
+                                                margin-bottom: 5%;
+                                                line-height: 1.3rem;
+                                            }
+                                            .extra{
+                                                display: flex;
+                                                >div{
+                                                    flex: {
+                                                        grow: 1;
+                                                        shrink: 1;
+                                                        basis: 50%;
+                                                    }
+                                                    >.subtitle{
+                                                        border: {
+                                                            style: solid;
+                                                            width: 1px;
+                                                            radius: 5%
+                                                        }
+                                                        display: inline-flex;
+                                                        text-align: center;
+                                                        padding: 3%;
+                                                        margin-bottom: 10%;
+                                                        &::after{
+                                                            display: none;
+                                                        }
+                                                    }
+                                                    &:first-child{
+                                                        padding-right: 5%;
+                                                        .text{
+                                                            width: 100%;
+                                                        }
+                                                        .list{
+                                                            list-style: none;
+                                                            li{
+                                                                padding: {
+                                                                    top: 5%;
+                                                                    bottom: 5%;
+                                                                }
+                                                                font: {
+                                                                    weight: bold;
+                                                                }
+                                                                color: $gray;
+                                                                svg{
+                                                                    width: 20px;
+                                                                    height: 20px;
+                                                                    color: $Ablue;
+                                                                    margin-right: 5%;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    &:last-child{
+                                                        padding-left: 5%;
+                                                        
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .detail{
+                                            width: 100%;
+                                            width: 100%;
+                                            
+                                            >.content{
+                                                padding-left: 5vw;
+                                                .subtitle{
+                                                    position: relative;
+                                                    padding-top: 5%;
+                                                    padding-bottom: 5%;
+                                                    margin-bottom: 0;
+                                                    svg{
+                                                        position: absolute;
+                                                        top: 0;
+                                                        right: 0;
+                                                        color: $Ablue;
+                                                        height: 100%;
+                                                    }
+                                                }
                                                 .text{
-                                                    width: 100%;
+                                                    position: relative;
+                                                    width: 70%;
+                                                    padding-top: 5%;
+                                                    min-height: 150px;
+                                                    &::before{
+                                                        content: '';
+                                                        width: 100%;
+                                                        height: 2px;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        background-color: $Ablue;
+                                                    }
+                                                    svg{
+                                                        height: 150px;
+                                                        color: $Ablue;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        right: 0;
+                                                        transform: translateX(100%);
+                                                    }
                                                 }
                                                 .list{
                                                     list-style: none;
                                                     li{
-                                                        padding: {
-                                                            top: 5%;
-                                                            bottom: 5%;
+                                                        padding: 0;
+                                                        position: relative;
+                                                        border:{
+                                                            top:{
+                                                                style: solid;
+                                                                width: 1px;
+                                                                color: $gray;
+                                                            }
                                                         }
-                                                        font: {
-                                                            weight: bold;
-                                                        }
-                                                        color: $gray;
-                                                        svg{
-                                                            width: 20px;
-                                                            height: 20px;
+                                                        .subtitle{
                                                             color: $Ablue;
-                                                            margin-right: 5%;
+                                                            padding-bottom: 3%;
+                                                            svg{
+                                                                position: static;
+                                                                width: 50px;
+                                                                height: 50px;
+                                                                margin-right: 5%;
+                                                            }
+                                                        }
+                                                        .text{
+                                                            padding-top: 0;
+                                                            padding-bottom: 3%;
+                                                            margin-bottom: 0;
+                                                            width: 80%;
+                                                            &::before{
+                                                                display: none;
+                                                            }
+                                                        }
+                                                        figure{
+                                                            position: absolute;
+                                                            top: 0;
+                                                            right: 0;
+                                                            height: 100%;
+                                                            width: 20%;
+                                                            overflow: hidden;
+                                                            display: flex;
+                                                            align-items: center;
+                                                            justify-content: center;
+                                                            img{
+                                                                height: 100%;
+                                                                width: auto;
+                                                            }
                                                         }
                                                     }
                                                 }
+                                                .tables{
+                                                    background-color: $Ablue;
+                                                    border-radius: 20px;
+                                                    width: 60%;
+                                                    margin-bottom: 5%;
+                                                    padding-bottom: 15%;
+                                                    .category{
+                                                        text-align: center;
+                                                        color: #FFF;
+                                                        padding: {
+                                                            top: 3%;
+                                                            bottom: 3%;
+                                                        }
+                                                    }
+                                                    .gauges{
+                                                        color: #FFF;
+                                                        width: 100%;
+                                                        thead{
+                                                            tr{
+                                                                th{
+                                                                    font-family: 'Aero Matics';
+                                                                    font-weight: bold;
+                                                                    width: 50%;
+                                                                    padding: {
+                                                                        top: 3%;
+                                                                        bottom: 3%;
+                                                                    }
+                                                                    border: {
+                                                                        top: {
+                                                                            style: solid;
+                                                                            width: 1px;
+                                                                            color: #FFF;
+                                                                        }
+                                                                        bottom: {
+                                                                            style: solid;
+                                                                            width: 1px;
+                                                                            color: #FFF;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        tbody{
+                                                            tr{
+                                                                td{
+                                                                    text-align: center;
+                                                                    font-weight: bold;
+                                                                    padding: {
+                                                                        top: 3%;
+                                                                        bottom: 3%;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    .s-text{
+                                                        font-weight: bold;
+                                                        color: #FFF;
+                                                        margin-left: 5%;
+                                                        margin-top: 10%;
+                                                    }
+                                                }
+                                                .lists{
+            
+                                                }
                                             }
-                                            &:last-child{
-                                                padding-left: 5%;
-                                                
+                                            .machine-picture{
+                                                span{
+                                                    background-color: $Ablue;
+                                                    display: flex;
+                                                    width: 100%;
+                                                    margin-top: -5px;
+                                                    color: #FFF;
+                                                    padding: {
+                                                        top: 3%;
+                                                        bottom: 3%;
+                                                        left: 5vw;
+                                                    }
+                                                    font: {
+                                                        weight: bold;
+                                                        size: 1.3rem;
+                                                    }
+                                                }
                                             }
+                                            
                                         }
+                                        
                                     }
                                 }
-                                .detail{
-                                    width: 100%;
-                                    width: 100%;
-                                    .header{
-                                        display: flex;
-                                        position: relative;
-                                        height: 400px;
-                                        overflow: hidden;
-                                        margin-bottom: 0;
-                                        figure{
-                                            height: 100%;
-                                            width: 100%;
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
-                                            z-index: 0;
-
-                                            img{
-                                                width: 100%;
-                                            }
-                                        }
-                                        p{
-                                            width: 50%;
-                                            height: 100%;
-                                            position: relative;
-                                            z-index: 1;
-                                            color: #FFF;
-                                            &::after{
-                                                content: '';
-                                                position: absolute;
-                                                top: 0;
-                                                left: 0;
-                                                border: {
-                                                    top: {
-                                                        style: solid;
-                                                        width: 400px;
-                                                        color: $Ablue;
-                                                    }
-                                                    right: {
-                                                        style: solid;
-                                                        width: 300px;
-                                                        color: transparent;
-                                                    }
-                                                }
-                                                height: 100%;
-                                                width: 20%;
-                                                z-index: -1;      
-                                            }
-                                            svg{
-                                                width: 40%;
-                                                height: 50%;
-                                                position: absolute;
-                                                top: 40%;
-                                                left: 10%;
-                                                transform: translateY(-50%);
-
-                                            }
-                                        }
+                                &:last-child{
+                                    flex: {
+                                        shrink: 2;
+                                        basis: 100%;
                                     }
-                                    >.content{
-                                        padding-left: 5vw;
-                                        .subtitle{
-                                            position: relative;
-                                            padding-top: 5%;
-                                            padding-bottom: 5%;
-                                            margin-bottom: 0;
-                                            svg{
-                                                position: absolute;
-                                                top: 0;
-                                                right: 0;
-                                                color: $Ablue;
-                                                height: 100%;
-                                            }
+                                    height: max-content;
+                                    .tabs{
+                                        border-bottom: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: #000;
                                         }
-                                        .text{
-                                            position: relative;
-                                            width: 70%;
-                                            padding-top: 5%;
-                                            min-height: 150px;
-                                            &::before{
-                                                content: '';
-                                                width: 100%;
-                                                height: 2px;
-                                                position: absolute;
-                                                top: 0;
-                                                left: 0;
-                                                background-color: $Ablue;
-                                            }
-                                            svg{
-                                                height: 150px;
-                                                color: $Ablue;
-                                                position: absolute;
-                                                top: 0;
-                                                right: 0;
-                                                transform: translateX(100%);
-                                            }
+                                        &.full-section{
+                                            padding: 0;
                                         }
-                                        .list{
-                                            list-style: none;
-                                            li{
-                                                padding: 0;
-                                                position: relative;
-                                                border:{
-                                                    top:{
+                                        >ul{
+                                            background-color: $light-gray;
+                                            margin-bottom: 5%;
+                                            ol{
+                                                cursor: pointer;
+                                                color: #FFF;
+                                                padding: {
+                                                    top: 3%;
+                                                    right: 8%;
+                                                    bottom: 3%;
+                                                    left: 8%;
+                                                }
+                                                font-size: 1.2rem;
+                                                border-bottom: {
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color: #FFF; 
+                                                }
+                                                transition: all .2s ease;
+                                                &:last-child{
+                                                    border: none;
+                                                }
+                                                &:hover{
+                                                    background-color: $light-gray;
+                                                    color: $gray;
+                                                }
+                                                &.active{
+                                                    background-color: #FFF;
+                                                    color: $gray;
+                                                    border: {
                                                         style: solid;
                                                         width: 1px;
                                                         color: $gray;
                                                     }
                                                 }
-                                                .subtitle{
-                                                    color: $Ablue;
-                                                    padding-bottom: 3%;
-                                                    svg{
-                                                        position: static;
-                                                        width: 50px;
-                                                        height: 50px;
-                                                        margin-right: 5%;
-                                                    }
+                                                svg{
+                                                    display: none;
                                                 }
-                                                .text{
-                                                    padding-top: 0;
-                                                    padding-bottom: 3%;
-                                                    margin-bottom: 0;
-                                                    width: 80%;
-                                                    &::before{
-                                                        display: none;
-                                                    }
-                                                }
-                                                figure{
-                                                    position: absolute;
-                                                    top: 0;
-                                                    right: 0;
-                                                    height: 100%;
-                                                    width: 20%;
-                                                    overflow: hidden;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    justify-content: center;
-                                                    img{
-                                                        height: 100%;
-                                                        width: auto;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        .tables{
-                                            background-color: $Ablue;
-                                            border-radius: 20px;
-                                            width: 60%;
-                                            margin-bottom: 5%;
-                                            padding-bottom: 15%;
-                                            .category{
-                                                text-align: center;
-                                                color: #FFF;
-                                                padding: {
-                                                    top: 3%;
-                                                    bottom: 3%;
-                                                }
-                                            }
-                                            .gauges{
-                                                color: #FFF;
-                                                width: 100%;
-                                                thead{
-                                                    tr{
-                                                        th{
-                                                            font-family: 'Aero Matics';
-                                                            font-weight: bold;
-                                                            width: 50%;
-                                                            padding: {
-                                                                top: 3%;
-                                                                bottom: 3%;
-                                                            }
-                                                            border: {
-                                                                top: {
-                                                                    style: solid;
-                                                                    width: 1px;
-                                                                    color: #FFF;
-                                                                }
-                                                                bottom: {
-                                                                    style: solid;
-                                                                    width: 1px;
-                                                                    color: #FFF;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                tbody{
-                                                    tr{
-                                                        td{
-                                                            text-align: center;
-                                                            font-weight: bold;
-                                                            padding: {
-                                                                top: 3%;
-                                                                bottom: 3%;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            .s-text{
-                                                font-weight: bold;
-                                                color: #FFF;
-                                                margin-left: 5%;
-                                                margin-top: 10%;
-                                            }
-                                        }
-                                        .lists{
-    
-                                        }
-                                    }
-                                    .machine-picture{
-                                        span{
-                                            background-color: $Ablue;
-                                            display: flex;
-                                            width: 100%;
-                                            margin-top: -5px;
-                                            color: #FFF;
-                                            padding: {
-                                                top: 3%;
-                                                bottom: 3%;
-                                                left: 5vw;
-                                            }
-                                            font: {
-                                                weight: bold;
-                                                size: 1.3rem;
                                             }
                                         }
                                     }
-                                    
+                                    >article{
+                                        .category{
+                                            padding-top: 5%;
+                                            color: $gray;
+                                        }
+                                    }
                                 }
-                                
                             }
                         }
-                        &:last-child{
-                            flex: {
-                                shrink: 2;
-                                basis: 100%;
-                            }
-                            height: max-content;
-                            .tabs{
-                                border-bottom: {
-                                    style: solid;
-                                    width: 1px;
-                                    color: #000;
-                                }
-                                &.full-section{
-                                    padding: 0;
-                                }
-                                >ul{
-                                    background-color: $light-gray;
-                                    margin-bottom: 5%;
-                                    ol{
-                                        cursor: pointer;
-                                        color: #FFF;
-                                        padding: {
-                                            top: 3%;
-                                            right: 8%;
-                                            bottom: 3%;
-                                            left: 8%;
-                                        }
-                                        font-size: 1.2rem;
-                                        border-bottom: {
-                                            style: solid;
-                                            width: 1px;
-                                            color: #FFF; 
-                                        }
-                                        transition: all .2s ease;
-                                        &:last-child{
-                                            border: none;
-                                        }
-                                        &:hover{
-                                            background-color: $light-gray;
-                                            color: $gray;
-                                        }
-                                        &.active{
-                                            background-color: #FFF;
-                                            color: $gray;
-                                            border: {
-                                                style: solid;
-                                                width: 1px;
-                                                color: $gray;
+                        &.active{
+                            padding-left: 0;
+                            >.cont{
+                                width: 100%;
+                                height: auto;
+                                border-radius: 0;
+                                overflow: visible;
+                                >.sub{
+                                    width: 100%;
+                                    cursor: inherit;
+                                    .headline{
+                                        display: flex;
+                                        align-items: center;
+                                        padding-left: 5vw;
+                                        margin-bottom: 3%;
+                                        .subtitle{
+                                            margin-bottom: 0;
+                                            font: {
+                                                weight: bold;
+
                                             }
                                         }
                                         svg{
-                                            display: none;
+                                            &:first-child{
+                                                width: 15%;
+                                                margin-right: 3%;
+                                            }
+                                            &:last-child{
+                                                width: 30%;
+                                                fill: $Ablue;
+                                                margin-left: auto;
+                                            }
+                                        }
+                                    }
+                                    .text{
+                                        padding-left: 5vw;
+                                        padding-right: 5vw;
+                                        margin-bottom: 5%;
+                                    }
+                                    .cards{
+                                        padding-left: 5vw;
+                                        padding-right: 5vw;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-wrap: wrap;
+                                    }
+                                    .content{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-wrap: wrap;
+                                        padding-left: 5vw;
+                                        >article{
+                                            flex: {
+                                                basis: 45%;
+                                            }
+                                            >.title{
+                                                display: inline-block;
+                                                padding: 1% 3%;
+                                                border: {
+                                                    style: solid;
+                                                    width: 1px;
+                                                    color: #000;
+                                                    radius: 10px;
+                                                }
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            >article{
-                                .category{
-                                    padding-top: 5%;
-                                    color: $gray;
+                                >.detail{
+                                    
                                 }
                             }
                         }
@@ -2591,10 +2815,20 @@ body{
                 >.cont{
                     border-radius: 0;
                     >article{
+                        width: 90vw;
+                        height: 90vw;
+                        margin: 0 auto;
                         figure{
                             height: 80%;
                             border-radius: 10px;
                             overflow: hidden;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                height: 100%;
+                                width: auto;
+                            }
                         }
                     }
                 }
