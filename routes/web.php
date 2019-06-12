@@ -30,6 +30,7 @@ Route::post('/save-valoration', 'Controller@saveValoration');
 Route::prefix('services')->group(function(){
     Route::get('/', 'Controller@services');
     Route::get('/{section}', 'Controller@goService');
+    Route::post('/send-forming', 'Controller@sendForming');
   
 });
 Route::prefix('projects')->group(function(){

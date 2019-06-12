@@ -13,7 +13,13 @@
             Material cutting service, adjusted to the specific measures that you need. We offer shearing services...
             <icon name="star_panel2"></icon>
         </p>
-        <forming-form></forming-form>
+        <forming-form v-if="!sent"></forming-form>
+        <div v-else>
+            <p class="title">Thank you</p>
+            <p class="category">
+                We'll, contact yo by email with a response.
+            </p>
+        </div>
             <p class="title">
                         Roll Bending
                         <icon name="star_panel1"></icon>
@@ -33,11 +39,13 @@
 <script>
 export default {
     mounted(){
-
+        this.$bus.$on('sentForming', () => {
+            this.sent = true;
+        })
     },
     data(){
         return {
-
+            sent: false
         }
     },
     methods: {

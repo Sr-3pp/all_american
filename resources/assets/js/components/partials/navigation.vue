@@ -69,14 +69,15 @@
         methods: {
             sticky(){
                 var este = this,
-                navbar = $("nav")[0],
-                sticky = navbar.offsetTop;
-
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("on-top")
+                navbar = $("nav:first"),
+                headerh = $("header:first");
+               
+                
+                 if (navbar.offset().top > headerh.innerHeight()) {
+                    navbar.addClass("on-top")
                     este.logo = '/img/svg/logo.svg'
-                } else {
-                    navbar.classList.remove("on-top");
+                } else {                    
+                    navbar.removeClass("on-top");
                     if(this.name === 'home'){
                         este.logo = '/img/svg/logo_bn.svg';
                     }

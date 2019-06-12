@@ -1,26 +1,7 @@
 @media (min-width: 768px){
     body{
         header{
-            padding: 20px 5vw;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            z-index: 1;
-            font-family: 'Aero Matics';
-        article{
-            display: flex;
-            color: #FFF;
-            p{
-                margin-right: 10px;
-                svg{
-                    width: 10px;
-                    margin-right: 10px;
-                }
-            }
-            svg{
-                width: 20px;
-            }
-        }
+           display: flex;
         }
         #app{
             .title, .subtitle, .category{
@@ -204,6 +185,25 @@
                     }
                     &:last-child{
                         margin-right: 0;
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    >.main{
+                       &[s-sec=services]{
+                            >.cont{
+                                .detail{
+                                    >.header{
+                                        margin-bottom: 0;
+                                        img{
+                                            width: 100%;
+                                            height: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -394,8 +394,11 @@
                         width: 80%;
                         height: 70%;
                         margin-top: 0;
+                        text-align: right;
                         >.title, >.text{
                             margin-bottom: 0;
+                            text-align: right;
+                            width: 100%;
                         }
                         ul{
                             ol{
@@ -827,7 +830,7 @@
                     ul{
                         ol{
                             p{
-                                width: 100%;
+                                width: 55%;
                             }
                         }
                     }

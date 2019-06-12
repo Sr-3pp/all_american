@@ -6,9 +6,7 @@
                 <img :src="'/storage/'+slide.archivo" alt="slide 1">
                 <div v-if="name === 'main'"  class="content" :s-mode="slide.extra.position" :s-color="slide.extra.color">
                     <p class="text">{{slide.extra.title}}</p>
-                    <p class="title">
-                        {{slide.extra.description}}
-                    </p>
+                    <p class="title" v-html="slide.extra.description"></p>
                     <button class="btn cta">Read More</button>
                 </div>
                 <div v-if="name === 'testimonials'" class="content testimonials">

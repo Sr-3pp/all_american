@@ -14,6 +14,8 @@ use App\Faqs;
 use App\Skills;
 use App\Votes;
 use App\Category;
+use App\Forming;
+use App\Shared;
 
 class Controller extends BaseController
 {
@@ -333,9 +335,46 @@ class Controller extends BaseController
 
         return $materials;
     }
+
+    public function SharedProject(Request $r){
+        $data = $r->all();
+        if($r->hasFile('archivo')){
+            $data['archivo'] = $r->archivo->store('shared');
+        }
+
+        $shared = Shared::create($data);
+
+        return $shared;
+        
+    }
+
+    public function sendForming(Request $r){
+        $data = (array) json_decode($r->string);        
+        $object = json_encode($data);
+        $forming = Forming::create([
+            'object' => $object
+        ]); 
+
+        if($r->hasFile('archivo')){
+            $data['archivo'] = $r->archivo->store('shared');
+            foreach ($data['contact'] as $key => $v) {
+                if(isset($v->ref)){
+                    $shared[$v->ref] = $v->value;
+                }
+            }
+            $shared['archivo'] = $data['archivo'];
+            $shared['forming_id'] = $forming->id;
+            $sh = Shared::create($shared);
+
+            $forming->shared;
+        }
+
+        return $forming;
+    }
     
     public function testing(){
-        $slides = Slides::all();
+        $slides = Forming::find(6);
+        dd(json_decode($slides->object));
         foreach ($slides as $key => $value) {
             $value->extra = json_decode($value->extra);
             dd($value->extra);

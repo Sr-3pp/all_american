@@ -3,6 +3,50 @@ body{
     header{
         display: none;
         font-family: 'Aero Matics';
+        padding: 20px 5vw;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        font-family: 'Aero Matics';
+        &.white{
+            background-color: #FFF;
+            article{
+                color: $dark;
+            }
+        }
+        article{
+            display: flex;
+            color: #FFF;
+            flex: {
+                grow: 1;
+                shrink: 1;
+            }
+
+            &:first-child{
+                flex-basis: 80%;
+            }
+            &:last-child{
+                flex-basis: 20%;
+                display: flex;
+                justify-content: space-around;
+            }
+            p{
+                margin-right: 3%;
+                display: flex;
+                align-items: center;
+                svg{
+                    color: currentColor;
+                    fill: currentColor;
+                    margin-right: 10px;
+                }
+            }
+            svg{
+                color: currentColor;
+                fill: currentColor;
+                width: 20px;
+                height: 20px;
+            }
+        }
     }
     #app{
         .title, .subtitle, .category{
@@ -361,8 +405,8 @@ body{
                         }
                     }
                     img{
-                        width: auto;
-                        height: 100%;
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }
@@ -1458,6 +1502,7 @@ body{
                     }
                     >.content{
                         .angles{
+                            margin-bottom: 5%;
                             >ul{
                                 list-style: none;
                                 display: flex;
@@ -2972,21 +3017,6 @@ body{
         &[s-layout=panel]{
             background-color: #FFF;
             min-height: 90vh;
-            header{
-                display: flex;
-                >figure, >article{
-                    flex: {
-                        grow: 1;
-                        shrink: 1;
-                        basis: 50%;
-                    }
-                }
-                >article{
-                    color: #000;
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
             .content{
                 padding-top: 5%;
                 [s-desk=slides]{

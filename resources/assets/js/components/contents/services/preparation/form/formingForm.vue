@@ -128,6 +128,7 @@
                                 </figure>
                             </article>
                             <article v-if="form.shape.value == 1">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A)</label>
@@ -147,6 +148,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 2">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Radius A)</label>
@@ -272,6 +274,7 @@
                                 </figure>
                             </article>
                             <article v-if="form.shape.value == 1">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A</label>
@@ -299,6 +302,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 2">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A</label>
@@ -326,6 +330,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 3">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                         <label>Side A</label>
@@ -361,6 +366,7 @@
                                     </div>
                             </article>
                             <article v-if="form.shape.value == 4">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A</label>
@@ -380,6 +386,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 5">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                 <label>Side A</label>
@@ -431,6 +438,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 6">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                 <label>Side A</label>
@@ -482,6 +490,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 7">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                 <label>Side A</label>
@@ -525,6 +534,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 8">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                 <label>Side A</label>
@@ -626,6 +636,7 @@
                                 </figure>
                             </article>
                             <article v-if="form.shape.value == 1">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A</label>
@@ -649,6 +660,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 2">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Side A</label>
@@ -684,6 +696,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 3">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Radius A</label>
@@ -699,6 +712,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 4">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                     <label>Radius A</label>
@@ -749,12 +763,12 @@
                             <icon v-if="form.shape.value == 0" name="radio_on"></icon> 
                             <icon v-else name="radio_off"></icon> 
                             <span>
-                                Can’t fiand the shape that you need, no problem send us your exact specificationsn we can do it.
+                                Can’t find the shape that you need, no problem send us your exact specificationsn we can do it.
                             </span>
                         </p>
                     </div>
                     <div class="group sizes">
-                        <p class="subtitle">Sizs</p>
+                        <p class="subtitle">Sizes</p>
                         <div>
                             <article class="prevs">
                                 <figure>
@@ -768,6 +782,7 @@
                                 </figure>
                             </article>
                             <article v-if="form.shape.value == 1">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                 <label>Side A</label>
@@ -791,6 +806,7 @@
                                 </div>
                             </article>
                             <article v-if="form.shape.value == 2">
+                                <p style="display: none;" class="must">You must fill all inputs here</p>
                                 <p class="text">Inch Measure</p>
                                 <div class="group">
                                 <label>Radius A</label>
@@ -855,27 +871,34 @@
                 </span>
             </div>
         </div>
-        <div class="group contact">
+        <div v-if="!wizz" class="group contact">
             <p class="subtitle">Contact Information</p>
             <div>
                 <div class="group" v-for="(field, index) in form.contact">
                     <span class="must" v-if="field.alert.status">{{field.alert.text}}</span>
-                    <input v-if="field.type !== 'textarea'" :ref="field.ref" :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value" @keyup.enter="nextStep(index)">
-                    <textarea v-if="field.type === 'textarea'" :ref="field.ref" :placeholder="field.ph" rows="10" class="input"></textarea>
+                    <input v-if="field.type !== 'textarea'" :ref="field.ref" :required="field.required" :type="field.type" class="input" :placeholder="field.ph" v-model="field.value">
+                    <textarea v-if="field.type === 'textarea'" :ref="field.ref" :placeholder="field.ph" rows="10" class="input" v-model="field.value"></textarea>
                 </div>
             </div>
         </div>        
-        <wizzard></wizzard>
+        <wizzard :forming="true"></wizzard>
         <button class="btn" @click="validate()">Send</button>
     </article>
 </template>
 <script>
 export default {
     mounted(){
-
+        this.$bus.$on('useWizzard', () => {
+            this.wizz = true;
+        }).$on('sendInfo', ($event) => {
+            this.form.contact = $event;
+            
+        });
     },
     data(){
         return{
+            wizz: false,
+            sent: false,
             form: {
                 material: 1,
                 gauge: '30',
@@ -883,20 +906,7 @@ export default {
                     section: 1,
                     value: 1
                 },
-                sizes: {
-                    a: {
-                        size: null,
-                        angle: null
-                    },
-                    b: {
-                        size: null,
-                        angle: null,
-                    },
-                    c: {
-                        size: null,
-                    },
-                    length: null
-                },
+                sizes: false,
                 finish: [1],
                 contact: {
                     0: {
@@ -942,7 +952,7 @@ export default {
                         value: null,
                         type: 'textarea',
                         name: 'Instructions',
-                        ref: 'instructions',
+                        ref: 'message',
                         alert: {
                             status: false,
                             text: 'Verify your email'
@@ -958,9 +968,9 @@ export default {
         }
     },
     methods: {
-        validate(){
-            console.log(this.form.shape);
-            
+        testMail(mail){
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(mail).toLowerCase());
         },
         addFinish(index){
             var pos = this.form.finish.indexOf(index);
@@ -969,6 +979,74 @@ export default {
             }else{
                 this.form.finish.push(index);
             }            
+        },
+        validate(){
+            var sizes = $('.sizes').find('input'),
+                s= [];
+                s['sizes'] = []
+                s['q'] = null
+            for (let i = 0; i < sizes.length-1; i++) {
+                const element = sizes[i];
+                if(element.value !== ''){
+                    s['sizes'].push(element.value)
+                    $('.sizes').find('.must:first').css('display', 'none')
+                }else{
+                    $('.sizes').find('.must:first').css('display', 'block')
+                }
+            }
+               if(sizes[sizes.length-1].value !== ''){
+                    s['q'] = sizes[sizes.length-1].value
+                    this.form.sizes = s['sizes'];
+                    this.form.sizes.qty = s['q'];
+                    $('.sizes').find('.must:first').css('display', 'none')
+               }else{
+                   $('.sizes').find('.must:first').css('display', 'block')
+               }
+            
+            if(!this.wizz){               
+                var este = this,
+                    loo = Object.keys(this.form.contact),
+                    alles = true;
+                for (let i = 0; i < loo.length; i++) {
+                    const element = este.form.contact[i];                
+                    if(element.required){
+                        element.alert.status = false;
+                        if(element.value != null){
+                            if(element.type == 'email'){
+                                if(!este.testMail(element.value)){
+                                    element.alert.status = true;
+                                    alles = false;
+                                    break;   
+                                }
+                            }
+                        }else{
+                            element.alert.status = true;
+                            alles = false;
+                            break;
+                        }
+                    }
+                }
+
+                if(alles && this.form.sizes){
+                    this.send();
+                }
+
+            }else{
+                if(this.form.sizes){
+                    this.send();
+                }
+            }            
+        },
+        send(){
+            var este = this,
+                formData = new FormData();
+
+                formData.append('string', JSON.stringify(this.form));
+                formData.append('archivo', this.form.contact.file);
+                console.log(this.form.sizes);
+            axios.post('/services/send-forming', formData).then((response) => {
+                este.$bus.$emit('sentForming');                
+            });
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <transition-group tag="div" class="form wizzard" name="fade">
-        <ul v-if="file && !form.readyToSave" :key="0">
-            <li class="truncate">{{file.name}}</li>
+        <ul v-if="form.file && !form.readyToSave" :key="0">
+            <li class="truncate">{{form.file.name}}</li>
             <li class="truncate" v-for="(field, index) in form" v-if="field.value">
                 {{field.value}}
             </li>
@@ -24,17 +24,17 @@
         </div>
         <div v-if="form.readyToSave && !done.status" :key="98" class="preview">
             <ul>
-                <ol v-if="file" @click="backTo('file')">
+                <ol v-if="form.file" @click="backTo('file')">
                     <icon name="file"></icon>
-                    <span class="truncate">{{file.name}}</span>
+                    <span class="truncate">{{form.file.name}}</span>
                 </ol>
-                <ol v-for="(field, index) in form" v-if="field.name" @click="backTo(index)">
+                <ol v-if="field.ref" v-for="(field, index) in form" @click="backTo(index)">
                     <span class="category">{{field.name}}:</span>
                     {{field.value}}
                 </ol>
             </ul>
         </div>
-        <button v-if="form.readyToSave && !done.status" :key="99" type="button" class="btn" @click="create()">If all is OK, Send it</button>
+        <button v-if="form.readyToSave && !done.status && !forming" :key="99" type="button" class="btn" @click="create()">If all is OK, Send it</button>
         <div :key="100" class="thanks" v-if="done.status">
             <article v-if="!done.error.status">
                 thanks!
@@ -50,6 +50,7 @@ export default{
     mounted(){
 
     },
+    props: ['forming'],
     data(){
         return {
             step: 0,
@@ -60,7 +61,6 @@ export default{
                     message: null
                 }
             },
-            file: null,
             form: {
                 0: {
                     value: null,
@@ -88,6 +88,7 @@ export default{
                     visible: false,
                     required: true,
                 },
+                file: null,
                 readyToSave: false
             }
         }
@@ -112,6 +113,7 @@ export default{
                                     next.visible = true
                                 }else{
                                     this.form.readyToSave = true;
+                                     this.$bus.$emit('sendInfo', this.form);                                     
                                 }
                             }else{
                                 field.alert.status = true
@@ -122,8 +124,8 @@ export default{
                             if (next !== undefined) {
                                     next.visible = true
                                 }else{
-                                    this.form,readyToSave = true;
-                                    console.log(this.form);
+                                    this.form.readyToSave = true;
+                                     this.$bus.$emit('sendInfo', this.form);
                                     
                                 }
                         }
@@ -137,6 +139,7 @@ export default{
                         next.visible = true
                     }else{
                         this.form.readyToSave = true;
+                         this.$bus.$emit('sendInfo', this.form);
                     }
                 }                
             },
@@ -152,11 +155,12 @@ export default{
                 $('#wizzardFile').click()
             },
             setFile(e){
-                this.file = e.target.files[0]
-                if(this.file){
+                this.form.file = e.target.files[0]
+                if(this.form.file){
                     this.step = 1
                     this.form[0].visible = true
                 }
+                this.$bus.$emit('useWizzard');
             },
             backTo(magic){
                 if (isNaN(magic)) {
