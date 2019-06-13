@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'All American Finishing') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -116,10 +116,12 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
     function initMap() {
-      var uluru = {lat: 36.1348678, lng: -115.1842497};
-      var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 9, center: uluru});
-      var marker = new google.maps.Marker({position: uluru, map: map});
+        if(document.getElementById('map')){
+        var uluru = {lat: 36.1348678, lng: -115.1842497},
+            map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 13, center: {lat: 36.1109554, lng: -115.1842497}});
+         var marker = new google.maps.Marker({position: uluru, map: map});
+      }
     }
         </script>
         <script async defer

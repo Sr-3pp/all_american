@@ -1,5 +1,5 @@
 <template>
-    <div class="cont">
+    <div class="cont red">
         <article class="card" :key="0" v-if="!active" @click="setSection(4)">
             <figure>
                 <img src="/img/services/polish_cards.jpg" alt="">

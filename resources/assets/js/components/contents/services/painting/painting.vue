@@ -1,5 +1,5 @@
 <template>
-    <transition-group tag="div" class="cont">
+    <transition-group tag="div" class="cont gray">
         <article class="card" :key="0" v-if="!active" @click="setSection(5)">
             <figure>
                 <img src="/img/services/painting_card.jpg" alt="">

@@ -20,17 +20,27 @@
                     }
                 }
             }
+            .carousel{
+                .slides{
+                    .slide{
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
             .separator, [s-sec=separator]{
                 padding: {
                     top: 3%;
                     bottom: 3%;
                 }
-                flex-direction: row;
                 background-color: $Ared;
                 color: #FFF;
                 padding-right: 5vw;
                 padding-left: 5vw;
                 &.full-section{
+                    flex-direction: row;
                     article{
                         flex: 8;
                         justify-content: flex-start;
@@ -202,6 +212,127 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                [s-sec=about]{
+                    .head{
+                       flex-direction: row; 
+                       flex-wrap: wrap;
+                       display: flex;
+                       >figure, >div{
+                           width: 50%;
+                        }
+                        >figure{
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 400px;
+                            overflow: hidden;
+                            border{
+                                top-right-radius: 20px;
+                                bottom-right-radius: 20px;
+                            }
+                            img{
+                                width: 100%;
+                                height: auto;
+                            }
+                         >div{
+                             position: absolute;
+                             top: 50%;
+                             transform: translateY(-50%);
+                             left: 5vw;
+                             color: #FFF;
+                             width: 80%;
+                         }
+                        }
+                        >div{
+                            padding: 5vw;
+                            >.text{
+                                display: none;
+                            }
+                        }
+                    }
+                    >[class*=section]{
+                        .service-list{
+                            margin-bottom: 10%;
+                        }
+                        .text{
+                            margin-bottom: 5%;
+                        }
+                        &.separator{
+                            flex-direction: column;
+                            >*{
+                                margin-bottom: 5%;
+                                &.title{
+                                    margin-bottom: 1%;
+                                }
+                            }
+                            &.blue{
+                                >ul{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    >li{
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                            .stars{
+                                width: 50%;
+                                svg{
+                                    margin-right: 5%;
+                                    width: 10%;
+                                    height: auto;
+                                }
+                            }
+                            .contact-form{
+                                .form{
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    article{
+                                        height: 50px;
+                                        margin-bottom: 3%;
+                                        flex: {
+                                            grow: 1;
+                                            shrink: 1;
+                                            basis: 47%;
+                                        }
+                                        &:nth-child(odd){
+                                            margin-right: 1.5%;
+                                        }
+                                        &:nth-child(even){
+                                            margin-left: 1.5%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.skills{
+                            padding: 0;
+                            >.title{
+                                padding-left: 5vw;
+                            }
+                        }
+                    }
+                    [s-desk=history], [s-desk=why]{
+                        &.full-section{
+                            flex-direction: row;
+                            >article, >.check-list{
+                                flex-grow: 1;
+                                flex-basis: 50%;
+                                flex-shrink: 1;
+                                display: flex;
+                                align-items: flex-start;
+                                justify-content: center;
+                                flex-direction: column;
+                            }
+                            >.check-list{
+                                padding-left: 5%;
                             }
                         }
                     }
@@ -547,6 +678,12 @@
                                     overflow: hidden;
                                     border-radius: 30px;
                                     margin-bottom: 5%;
+                                >.card{
+                                    margin: {
+                                        right: inherit;
+                                        left: inherit;
+                                    }
+                                }
 
                                 >.detail{
                                     .header{
@@ -600,6 +737,22 @@
                                                 radius: 5px;
                                             }
                                         }
+                                    }
+                                }
+                                >.sub{
+                                    .headline{
+                                        flex-direction: row;
+                                        svg{
+                                            &:first-child{
+                                                margin-right: 3%;
+                                            }
+                                            &:last-child{
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                    .content{
+                                        flex-direction: row;
                                     }
                                 }
                             }
@@ -673,125 +826,6 @@
                                     left: 5vw;
                                     transform: inherit;
                                 }
-                            }
-                        }
-                    }
-                }
-                [s-sec=about]{
-                    .head{
-                       flex-direction: row; 
-                       flex-wrap: wrap;
-                       display: flex;
-                       >figure, >div{
-                           width: 50%;
-                        }
-                        >figure{
-                            position: relative;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 400px;
-                            overflow: hidden;
-                            border{
-                                top-right-radius: 20px;
-                                bottom-right-radius: 20px;
-                            }
-                            img{
-                                width: 100%;
-                                height: auto;
-                            }
-                         >div{
-                             position: absolute;
-                             top: 50%;
-                             transform: translateY(-50%);
-                             left: 5vw;
-                             color: #FFF;
-                             width: 80%;
-                         }
-                        }
-                        >div{
-                            padding: 5vw;
-                            >.text{
-                                display: none;
-                            }
-                        }
-                    }
-                    >[class*=section]{
-                        .service-list{
-                            margin-bottom: 10%;
-                        }
-                        .text{
-                            margin-bottom: 5%;
-                        }
-                        &.separator{
-                            flex-direction: column;
-                            >*{
-                                margin-bottom: 5%;
-                                &.title{
-                                    margin-bottom: 1%;
-                                }
-                            }
-                            &.blue{
-                                >ul{
-                                    display: flex;
-                                    justify-content: space-between;
-                                    width: 100%;
-                                    >li{
-                                        margin-bottom: 0;
-                                    }
-                                }
-                            }
-                            .stars{
-                                width: 50%;
-                                svg{
-                                    margin-right: 5%;
-                                    width: 10%;
-                                    height: auto;
-                                }
-                            }
-                            .contact-form{
-                                .form{
-                                    flex-direction: row;
-                                    flex-wrap: wrap;
-                                    article{
-                                        height: 50px;
-                                        margin-bottom: 3%;
-                                        flex: {
-                                            grow: 1;
-                                            shrink: 1;
-                                            basis: 47%;
-                                        }
-                                        &:nth-child(odd){
-                                            margin-right: 1.5%;
-                                        }
-                                        &:nth-child(even){
-                                            margin-left: 1.5%;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        &.skills{
-                            padding: 0;
-                            >.title{
-                                padding-left: 5vw;
-                            }
-                        }
-                    }
-                    [s-desk=history], [s-desk=why]{
-                        &.full-section{
-                            flex-direction: row;
-                            >article, >.check-list{
-                                flex-grow: 1;
-                                flex-basis: 50%;
-                                flex-shrink: 1;
-                                display: flex;
-                                align-items: flex-start;
-                                justify-content: center;
-                                flex-direction: column;
-                            }
-                            >.check-list{
-                                padding-left: 5%;
                             }
                         }
                     }

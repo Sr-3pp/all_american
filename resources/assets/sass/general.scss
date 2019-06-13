@@ -125,6 +125,8 @@ body{
                 right: 2%;
                 bottom: 2%;
             }
+            display: flex;
+            flex-direction: column;
             background-color: #FFF;
             overflow: hidden;
             border-radius: 10px;
@@ -161,8 +163,8 @@ body{
                 justify-content: center;
                 overflow: hidden;
                 img{
-                    width: auto;
-                    height: 100%;
+                    width: 100%;
+                    height: auto;
                 }
             }
             >.s-text{
@@ -180,6 +182,7 @@ body{
             }
             >.content{
                 padding: 5%;
+                margin-bottom: 15%;
             }
             >.social{
                 display: flex;
@@ -239,30 +242,7 @@ body{
             height: 90vw;
             margin-bottom: 5%;
             cursor: pointer;
-            &:nth-child(1), &:nth-child(2){
-                &:hover{
-                    .text{
-                        background-color: $Ablue;
-                        color: #FFF;
-                    }
-                }
-            }
-            &:nth-child(3), &:nth-child(4){
-                &:hover{
-                    .text{
-                        background-color: $Ared;
-                        color: #FFF;
-                    }
-                }
-            }
-            &:nth-child(5), &:nth-child(6){
-                &:hover{
-                    .text{
-                        background-color: $light-gray;
-                        color: #000;
-                    }
-                }
-            }
+
             figure, .img{
                 width: 100%;
                 height: 100%;
@@ -273,7 +253,6 @@ body{
             }
             .text, .card-content{
                 color: $light-gray;
-                background-color: $gray;
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -294,6 +273,7 @@ body{
             .card-content{
                 padding-bottom: 10%;
                 padding-top: 5%;
+                background-color: $gray;
                 >.subtitle{
                     color: $light-gray;
                 }
@@ -324,6 +304,7 @@ body{
                 height: 30%;
                 background-color: $gray;
                 color: $light-gray;
+                transition: all .2s ease;
                 svg{
                     width: 30%;
                     height: 100%;
@@ -405,8 +386,8 @@ body{
                         }
                     }
                     img{
-                        width: 100%;
-                        height: auto;
+                        width: auto;
+                        height: 100%;
                     }
                 }
             }
@@ -650,6 +631,7 @@ body{
         }
         .separator, [s-sec=separator]{
             &.full-section{
+                flex-direction: column;
                 &.blue{
                     background-color: $Ablue;
                 }
@@ -1057,7 +1039,10 @@ body{
             li{
                 display: flex;
                 position: relative;
-                width: 100%;
+                width: 65%;
+                margin: 0 auto;
+                font-weight: bold;
+                color: $gray;
                 padding: {
                     top: 3%;
                     right: 3%;
@@ -1068,10 +1053,7 @@ body{
                     width: 20;
                     height: 20px;
                     color: $Ablue;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    margin-right: 3%;
                 }
             }
         }
@@ -1081,10 +1063,22 @@ body{
                 padding: 5% 0;
                 .text{
                     padding: 0 5vw;
+                    font-weight: bold;
+                    color: $gray;
                 }
                 progress{
                     width: 100%;
-                    background-color: $Ablue;
+                    background-color: $gray;
+                    &::-webkit-progress-bar {
+                        border-radius:0;
+                        -webkit-border-radius:0;
+                    }
+                    &::-webkit-progress-value {
+                        background: $Ablue;
+                    }
+                    &::-moz-progress-bar {
+                        background: $Ablue;
+                    }
                 }
             }
         }
@@ -2079,6 +2073,7 @@ body{
                 display: flex;
                 justify-content: space-between;
                 flex-direction: column;
+                align-items: center;
             }
         }
         [s-sec=projects]{
@@ -2333,8 +2328,133 @@ body{
                         }
                         >.cont{
                             display: flex;
+                            transition: all .2s ease;
+                            &:nth-child(1), &:nth-child(2){
+                                .card{
+                                    &:hover{
+                                        .label{
+                                            background-color: $Ablue;
+                                            color: #FFF;
+                                            .text{
+                                                color: #FFF;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &:nth-child(3), &:nth-child(4){
+                                .card{
+                                    &:hover{
+                                        .label{
+                                            background-color: $Ared;
+                                            color: #FFF;
+                                            .text{
+                                                color: #FFF;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &:nth-child(5), &:nth-child(6){
+                                .card{
+                                    &:hover{
+                                        .label{
+                                            background-color: $light-gray;
+                                            color: #000;
+                                            .text{
+                                                color: #000;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.red{
+                                >.sub{
+                                    >.headline{
+                                        >svg{
+                                            &:last-child{
+                                                fill: $Ared!important;
+                                            }
+                                        }
+                                    }
+                                    .cards{
+                                        .card{
+                                            &:hover{
+                                                .card-content{
+                                                    background-color: $Ared!important;
+                                                    color: #FFF;
+                                                    .subtitle{
+                                                        color: #FFF;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.gray{
+                                >.sub{
+                                    .headline{
+                                        svg{
+                                            &:last-child{
+                                                fill: $gray!important;
+                                            }
+                                        }
+                                    }
+                                    .cards{
+                                        .card{
+                                            &:hover{
+                                                .card-content{
+                                                    background-color: $gray!important;
+                                                    color: #000;
+                                                    .subtitle{
+                                                        color: #000;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            >.sub{
+                                .headline{
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    svg{
+                                        &:first-child{
+                                            margin-right: 0;
+                                        }
+                                       &:last-child{
+                                        display: none;
+                                       }
+                                    }
+                                }
+                                .content{
+                                    flex-direction: column;
+                                }
+                                .cards{
+                                    .card{
+                                        &:hover{
+                                            .card-content{
+                                                background-color: $Ablue!important;
+                                                color: #FFF;
+                                                .subtitle{
+                                                    color: #FFF;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
                             >.card{
                                 margin-right: 0;
+                                margin: {
+                                    right: 5vw;
+                                    left: 5vw;
+                                }
                             }
                             .detail{
                                 >.title{
@@ -2426,7 +2546,7 @@ body{
                                     }
                                 }
                             }
-                            >div{
+                           /*  >div{
                                 &:first-child{
                                     flex: {
                                         shrink: 1;
@@ -2778,7 +2898,7 @@ body{
                                         }
                                     }
                                 }
-                            }
+                            } */
                         }
                         &.active{
                             padding-left: 0;
@@ -2939,6 +3059,12 @@ body{
                         img{
                             width: auto;
                             height: 100%;
+                        }
+                    }
+                    >div{
+                        padding: {
+                            right: 5vw;
+                            left: 5vw;
                         }
                     }
                 }
