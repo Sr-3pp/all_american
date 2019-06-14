@@ -5,21 +5,14 @@
             <label>Name</label>
             <input type="text" class="input" v-model="nproy.name">
         </p>
-        <p class="form-group">
-            <label>Category</label>
-            <select v-model="nproy.category_id" class="input">
-                <option :value="0">Selecciona un acategoría</option>
-                <option v-for="cat in categories" :value="cat.id">{{cat.name}}</option>
-            </select>
+        <p @click="activeFile()" class="form-group file-input">
+            <span>Click para agregar archivos</span>
+            <input id="uploadPics" type="file" class="hide" @change="setFiles($event)" multiple>
         </p>
         <button class="btn" @click="saveProject()">Save</button>
     </div>
-    <div :key="index+1" v-for="(cat, index) in projects">
-        <p class="title">
-            {{cat.name}}
-        </p>
-        <div class="cont">
-            <article v-for="(project, index) in cat.projects" class="card" @click="showProject(1)">
+    <div :key="1">
+            <article v-for="(project, index) in projects" class="card" @click="showProject(1)">
                 <figure class="img">
                     <img v-if="project.cover" :src="'/storage/'+project.cover.archivo" alt="">
                     <img v-else src="/img/default.jpg" alt="">
@@ -36,7 +29,6 @@
                     </div>
                 </div>
             </article>
-        </div>
     </div>
 </transition-group>
 </template>
@@ -48,11 +40,7 @@ export default{
             este.projects = response.data
         });
 
-        axios.get('/panel/get-cats/project').then((cats) => {
-            este.categories = cats.data
-        });
-
-         this.$bus.$on('new', ($event) => {
+        this.$bus.$on('new', ($event) => {
             if($event.section == 1){
                 this.addProject ? this.addProject = false : this.addProject = true
             }
@@ -67,15 +55,22 @@ export default{
            projects: false,
            categories: null,
            nproy: {
-               category_id: 0,
                name: null,
+               files: null
            }
         }
     },
     methods: {
        saveProject(){
-           var este = this;
-           axios.post('/panel/save-project', this.nproy).then((proy) => {
+           var este = this,
+                formData = new FormData();
+                formData.append('name', this.nproy.name);
+                for( let i = 0; i < this.nproy.files.length; i++ ){
+                    let file = this.nproy.files[i];
+                    formData.append('pics[' + i + ']', file);
+                }
+
+           axios.post('/panel/save-project', formData).then((proy) => {
                este.projects = proy.data
                este.addProject = false;
                este.nproy = {
@@ -83,6 +78,14 @@ export default{
                     name: null,
                 }
            });
+       },
+       setFiles($event){
+           this.nproy.files = $event.target.files
+           console.log(this.nproy);
+           
+       },
+       activeFile(){
+           $('#uploadPics').click()
        }
     }
 }

@@ -65,18 +65,16 @@ class AdminController extends Controller
     }
 
     public function getProjects(){
-        $categories = Category::where('kind', 'project')->get();
-        foreach ($categories as $key => $c) {
-            $c->projects;
-            foreach ($c->projects as $key => $p) {
-                foreach ($p->gallery as $key => $value) {
-                    if($value->cover == 1){
-                        $p->cover = $value;
-                    }
+        $projects = Project::all();
+        foreach ($projects as $key => $p) {
+            foreach ($p->gallery as $key => $g) {
+                if ($g->cover) {
+                    $p->cover = $g;
                 }
             }
+
         }
-        return $categories;
+        return $projects;
     }
 
     public function getCats($key){
@@ -90,6 +88,10 @@ class AdminController extends Controller
 
     public function saveProject(Request $r){
         $data = $r->all();
+        if($r->hasFile('pics')){
+            dd('si file');
+        }
+        dd('no file');
         $proy = Project::create($data);
         return $this->getProjects();
     }

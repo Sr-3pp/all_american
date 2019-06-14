@@ -9,7 +9,6 @@
                 <article>
                     <label>Kind</label>
                     <select class="input" v-model="ncat.kind">
-                        <option value="project">Project</option>
                         <option value="finish">Finish</option>
                         <option value="mill">Mill</option>
                     </select>

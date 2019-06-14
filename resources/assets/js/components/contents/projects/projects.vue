@@ -28,17 +28,16 @@
 export default {
     mounted(){
         this.$bus.$on('setTab', ($event) => {
-            this.active = $event.section
-            this.list = this.categories[$event.section-1].projects
+            this.active = $event.section            
             this.full = false;
-            this.project = false;
+            this.project = this.list[$event.section-1];
             this.picture = false;
             
         }).$on('close-gallery', () => {
             this.full = false
             this.picture = false;
         });
-        this.list = this.categories;
+        this.list = this.categories;        
               
     },
     props: ['categories'],
@@ -56,12 +55,7 @@ export default {
             this.project = project                   
         },
         setCat(project, index){ 
-            if(!this.active){
-                this.list = this.categories[index].projects;
-                this.$bus.$emit('setTab', {section: index+1})
-            }else{
-                this.setProject(project)
-            }  
+            this.setProject(project)
         },
         showGallery(file){
             this.picture = file
