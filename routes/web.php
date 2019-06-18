@@ -50,6 +50,7 @@ Route::prefix('panel')->group(function(){
     Route::get('/get-slides', 'AdminController@getSlides');
     Route::post('/save-slide', 'AdminController@saveSlides');
     Route::post('/update-slide/{id}', 'AdminController@updateSlide');
+    Route::post('/add-slides/{id}', 'AdminController@addSlides');
     Route::get('/delete-slide/{id}', 'AdminController@deleteSlide');
 
     Route::get('/get-projects', 'AdminController@getProjects');

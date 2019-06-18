@@ -7,12 +7,12 @@
         </p>
         <p @click="activeFile()" class="form-group file-input">
             <span>Click para agregar archivos</span>
-            <input id="uploadPics" type="file" class="hide" @change="setFiles($event)" multiple>
+            <input id="uploadPicts" type="file" class="hidden" @change="setFiles($event)" multiple>
         </p>
         <button class="btn" @click="saveProject()">Save</button>
     </div>
     <div :key="1">
-            <article v-for="(project, index) in projects" class="card" @click="showProject(1)">
+            <article v-for="(project, index) in projects" class="card">
                 <figure class="img">
                     <img v-if="project.cover" :src="'/storage/'+project.cover.archivo" alt="">
                     <img v-else src="/img/default.jpg" alt="">
@@ -20,16 +20,14 @@
                 <div class="card-content">
                     <p class="subtitle">{{project.name}}</p>
                     <div>
-                        <button class="btn">
-                            Change cover
-                        </button>
-                        <button class="btn">
+                        <button class="btn" @click="showProject(project)">
                             Watch gallery
                         </button>
                     </div>
                 </div>
             </article>
     </div>
+    <modal :key="2"></modal>
 </transition-group>
 </template>
 <script>
@@ -80,12 +78,14 @@ export default{
            });
        },
        setFiles($event){
-           this.nproy.files = $event.target.files
-           console.log(this.nproy);
-           
+           this.nproy.files = $event.target.files           
        },
        activeFile(){
-           $('#uploadPics').click()
+           $('#uploadPicts').click()
+       },
+       showProject(project){
+           this.$bus.$emit('modal', {project: project})
+           
        }
     }
 }

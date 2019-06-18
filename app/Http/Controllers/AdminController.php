@@ -12,6 +12,7 @@ use App\Finish;
 use App\Faqs;
 use App\Skills;
 use App\Mills;
+use App\Gallery;
 use Storage;
 
 class AdminController extends Controller
@@ -42,6 +43,20 @@ class AdminController extends Controller
         $slide->extra = json_decode($slide->extra);
         
         return $slide;
+    }
+
+    public function addSlides(Request $r, $id){
+        if($r->hasFile('pics')){
+            foreach ($r->pics as $key => $p) {
+                $pic = Gallery::create([
+                    'name' => $id,
+                    'project_id' => $id,
+                    'archivo' => $p->store('projects/'.$id)
+                ]);
+            }
+            $project = Project::find($id);
+            return $project->gallery;
+        }
     }
 
     public function updateSlide(Request $r, $id){
@@ -87,12 +102,25 @@ class AdminController extends Controller
     }
 
     public function saveProject(Request $r){
-        $data = $r->all();
-        if($r->hasFile('pics')){
-            dd('si file');
-        }
-        dd('no file');
+        $data = $r->all();        
         $proy = Project::create($data);
+
+        if($r->hasFile('pics')){
+            foreach ($data['pics'] as $key => $pic) {
+                if($key == 0){
+                    $cover= 1;
+                }else{
+                    $cover = 0;
+                }
+                $picture = $pic->store('projects/'.$proy->id);
+                $pic = Gallery::create([
+                    'project_id' => $proy->id,
+                    'cover' => $cover,
+                    'archivo' => $picture,
+                    'name' => $proy->name
+                ]);
+            }
+        }
         return $this->getProjects();
     }
 

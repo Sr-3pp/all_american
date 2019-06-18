@@ -408,6 +408,61 @@ body{
                     }
                 }
             }
+            &.panel{
+                .slides{
+                    height: 50vh;
+                    .slide{
+                        img{
+                            height: 100%;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .thumbs{
+            display: flex;
+            width: 100%;
+            overflow-x: scroll;
+            .thumb{
+                width: 20%;
+                cursor: pointer
+            }
+        }
+        .modal{
+            position: fixed;
+            width: 80%;
+            top: 0;
+            background-color: #FFF;
+            z-index: 3;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            transition: all .2s ease;
+            &[s-open=true]{
+                transform: translate(-50%, 0);
+            }
+            .modal-header{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                .close-btn{
+                    background-color: transparent;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background-color: transparent;
+                    border: none;
+                    z-index: 5;
+                    cursor: pointer;
+                    svg{
+                        width: 50px;
+                    }
+                }
+            }
+            .modal-body{
+                
+            }
         }
         .panel-tabs{
             list-style: none;
