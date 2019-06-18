@@ -13,6 +13,7 @@ use App\Material;
 use App\Faqs;
 use App\Skills;
 use App\Votes;
+use App\Project;
 use App\Category;
 use App\Forming;
 use App\Shared;
@@ -40,33 +41,6 @@ class Controller extends BaseController
                 'archivo' => '/img/default_slide.jpg'
             ],
         ];
-        $projects = [
-            [
-                'id' => 1,
-                'name' => 'slide 1',
-                'archivo' => '/img/slides/projects/slide_1.jpg'
-            ],
-            [
-                'id' => 2,
-                'name' => 'slide 2',
-                'archivo' => '/img/slides/projects/slide_2.jpg'
-            ],
-            [
-                'id' => 3,
-                'name' => 'slide 3',
-                'archivo' => '/img/slides/projects/slide_3.jpg'
-            ],
-            [
-                'id' => 4,
-                'name' => 'slide 4',
-                'archivo' => '/img/slides/projects/slide_4.jpg'
-            ],
-            [
-                'id' => 5,
-                'name' => 'slide 5',
-                'archivo' => '/img/slides/projects/slide_3.jpg'
-            ],
-        ];
         $services = [
             [
                 'id' => 1,
@@ -77,19 +51,19 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/services/planning_card.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/services/planning_card.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'SI que si',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg'
+                        'img' => '/img/services/planning_card.jpg'
                     ]
                 ]
             ],
@@ -102,13 +76,13 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/services/preparation_card.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/services/preparation_card.jpg'
                     ]
                 ]
             ],
@@ -121,19 +95,19 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/services/welding_card.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/services/welding_card.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'SI que si',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg'
+                        'img' => '/img/services/welding_card.jpg'
                     ]
                 ]
             ],
@@ -146,13 +120,13 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/services/polish_cards.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/services/polish_cards.jpg'
                     ]
                 ]
             ],
@@ -165,19 +139,19 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/services/concept.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/services/concept.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'SI que si',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_1.jpg'
+                        'img' => '/img/services/concept.jpg'
                     ]
                 ]
             ],
@@ -190,13 +164,13 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/slides/projects/slide_4.jpg'
+                        'img' => '/img/services/delivery_card.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/slides/projects/slide_3.jpg'
+                        'img' => '/img/services/delivery_card.jpg'
                     ]
                 ]
             ]
@@ -218,6 +192,16 @@ class Controller extends BaseController
                 'prev' =>   'We work in a professional and effective way, to meet the expectations of each project.'
             ]
         ];
+
+        $p = Project::all()->take(5);
+        $projects = [];
+            foreach ($p as $key => $value) {
+                foreach ($value->gallery as $ke2 => $c) {
+                    if($c->cover == 1){
+                        array_push($projects, $c);
+                    }
+                }
+            }
             return view('home', compact('slides', 'testimonials', 'projects', 'services', 'news', 'main'));
     }
 

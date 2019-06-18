@@ -2,7 +2,7 @@
   <div class="slider" :class="{'prev': this.previus, 'fast': this.nexts}">
     <div class="slide-track">
         <figure class="slide" :class="{'first': index == 0}" v-for="(slide, index) in slides">
-            <img :src="slide.archivo" alt="default slide">
+            <img :src="'/storage/'+slide.archivo" alt="default slide">
             <p>
                 <span class="category">{{slide.name}}</span>
                 <a href="#" class="btn">See More</a>
