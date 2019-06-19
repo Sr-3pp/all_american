@@ -12,7 +12,7 @@
                     </span>
                 </p>
                 <figure>
-                    <img src="/img/default.jpg" alt="">
+                    <img :src="'/storage/'+image" alt="">
                 </figure>
             </div>
         </div>
@@ -872,6 +872,7 @@ export default {
             este.materials = materials.data
             este.form.material = este.materials[0].id
             este.gauges = este.materials[0].gauges
+            este.image = este.materials[0].img
         })
     },
     data(){
@@ -880,6 +881,7 @@ export default {
             sent: false,
             materials: null,
             gauges: null,
+            image: null,
             form: {
                 material: 1,
                 gauge: '30',
@@ -956,6 +958,7 @@ export default {
         setMaterial(mat){
             this.form.material = mat.id
             this.gauges = mat.gauges            
+            this.image = mat.img            
         },
         addFinish(index){
             var pos = this.form.finish.indexOf(index);
