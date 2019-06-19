@@ -145,14 +145,16 @@ class AdminController extends Controller
         
         $material = Material::create($data);
         
-        foreach (json_decode($r->gauges) as $key => $g) {
-            $d = [];
-            $d['gauge'] = $g[0];
-            $d['thick'] = $g[1];
-            $d['material_id'] = $material->id;
-            $calibre = Calibre::create($d);
+        if($r->gauges != 'undefined'){
+            foreach (json_decode($r->gauges) as $key => $g) {
+                $d = [];
+                $d['gauge'] = $g[0];
+                $d['thick'] = $g[1];
+                $d['material_id'] = $material->id;
+                $calibre = Calibre::create($d);
+            }
+            $material->gauges;
         }
-        $material->gauges;
         return $material;
     }
 

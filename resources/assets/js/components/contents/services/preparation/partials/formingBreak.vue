@@ -3,7 +3,7 @@
         <figure class="header">
             <icon name="triangle"></icon>
             <img src="/img/services/forming_break.jpg" alt="">
-            <icon name="Break"></icon>
+            <icon name="break"></icon>
         </figure>
         <p class="title">
             Forming Break

@@ -5,25 +5,10 @@
             <p class="subtitle">Material</p>
             <div>
                 <p>
-                    <span class="radio" @click="form.material = 1">
-                        <icon v-if="form.material == 1" name="radio_on"></icon> 
+                    <span v-for="(m, index) in materials" class="radio" @click="setMaterial(m)">
+                        <icon v-if="form.material == m.id" name="radio_on"></icon> 
                         <icon v-else name="radio_off"></icon> 
-                        Stainless steel
-                    </span>
-                    <span class="radio" @click="form.material = 2">
-                        <icon v-if="form.material == 2" name="radio_on"></icon> 
-                        <icon v-else name="radio_off"></icon> 
-                        Brass
-                    </span>
-                    <span class="radio" @click="form.material = 3">
-                        <icon v-if="form.material == 3" name="radio_on"></icon> 
-                        <icon v-else name="radio_off"></icon> 
-                        Aluminium
-                    </span>
-                    <span class="radio" @click="form.material = 4">
-                        <icon v-if="form.material == 4" name="radio_on"></icon> 
-                        <icon v-else name="radio_off"></icon> 
-                        Copper
+                        {{m.name}}
                     </span>
                 </p>
                 <figure>
@@ -43,28 +28,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr v-for="(g, index) in gauges">
                             <td>
-                                <span class="radio" @click="form.gauge = '30'">
-                                    <icon v-if="form.gauge == '30'" name="radio_on"></icon> 
+                                <span class="radio" @click="form.gauge = g.gauge">
+                                    <icon v-if="form.gauge == g.gauge" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    30
+                                    {{g.gauge}}
                                 </span>
                             </td>
                             <td>
-                                0.010"
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="radio" @click="form.gauge = '28'">
-                                    <icon v-if="form.gauge == '28'" name="radio_on"></icon> 
-                                    <icon v-else name="radio_off"></icon> 
-                                    28
-                                </span>
-                            </td>
-                            <td>
-                                0.013"
+                                {{g.thick}}
                             </td>
                         </tr>
                     </tbody>
@@ -894,11 +867,19 @@ export default {
             this.form.contact = $event;
             
         });
+        var este = this;
+        axios.get('/forming-materials').then((materials) => {
+            este.materials = materials.data
+            este.form.material = este.materials[0].id
+            este.gauges = este.materials[0].gauges
+        })
     },
     data(){
         return{
             wizz: false,
             sent: false,
+            materials: null,
+            gauges: null,
             form: {
                 material: 1,
                 gauge: '30',
@@ -971,6 +952,10 @@ export default {
         testMail(mail){
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(mail).toLowerCase());
+        },
+        setMaterial(mat){
+            this.form.material = mat.id
+            this.gauges = mat.gauges            
         },
         addFinish(index){
             var pos = this.form.finish.indexOf(index);

@@ -355,6 +355,18 @@ class Controller extends BaseController
 
         return $forming;
     }
+
+    public function formingMaterials(){
+        $ma = Material::all();
+        $materials= [];
+        foreach ($ma as $key => $m) {
+            if(count($m->gauges) != 0){
+                array_push($materials, $m);
+            }
+        }
+
+        return $materials;
+    }
     
     public function testing(){
         $slides = Forming::find(6);
