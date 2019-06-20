@@ -3204,6 +3204,24 @@ body{
                 [s-desk=slides]{
                     
                 }
+                [s-desk=materials]{
+                    .material-list{
+                        list-style: none;
+                        >li{
+                            &.add{
+                                ul{
+                                    list-style: none;
+                                    display: flex;
+                                    align-items: stretch;
+                                    justify-content: space-between;
+                                    .gauge-list{
+                                        display: flex;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             .section{
                 >article{

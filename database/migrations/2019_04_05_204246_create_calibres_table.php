@@ -18,6 +18,7 @@ class CreateCalibresTable extends Migration
             $table->integer('material_id');
             $table->string('gauge');
             $table->string('thick');
+            $table->string('archivo')->nullable();
             $table->timestamps();
         });
     }

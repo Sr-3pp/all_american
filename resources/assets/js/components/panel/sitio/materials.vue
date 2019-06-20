@@ -1,7 +1,7 @@
 <template>
     <div s-desk="materials">
         <ul class="material-list">
-            <li v-if="newMat">
+            <li class="add" v-if="newMat">
                 <article>
                     <p>
                         <label>Name</label>
@@ -14,18 +14,31 @@
                     <upload-picture></upload-picture>
                     <ul>
                         <li>
+                            <ul class="gauge-list">
+                                <li v-for="(g, index) in nmaterial.gaugues">
+                                    <p>{{g[0]}} <br> {{g[1]}}</p>
+                                    <button class="btn" @click="removeGauge(index)">remove</button>
+                                </li>
+                            </ul>
                             <label>Gaugue</label>
                             <input v-model="ng.gauge" type="text" class="input">
                             <label>Thick</label>
                             <input v-model="ng.thick" type="text" class="input">
                             <button class="btn" @click="addGauge()">Add</button>
                         </li>
-                        <li v-for="(g, index) in nmaterial.gaugues">
-                            {{g[0]}} <br> {{g[1]}}
-                            <button class="btn" @click="removeGauge(index)">remove</button>
+                        <li v-if="nmaterial.gaugues.length">
+                            <div style="background-color: rgb(206, 206, 206);" class="upload-picture" @click="chooseGaugePic()">
+                                <span style="width: 50px;" class="icon">
+                                    <icon name="+"></icon>
+                                </span>
+                                <p>
+                                    upload channel picture
+                                </p>
+                                <input id="gaugePic" type="file" class="hidden" @change="setGaugePic($event)">
+                            </div>
                         </li>
                     </ul>
-                    <button class="btn" @click="saveMaterial()">Save</button>
+                    <button class="btn" @click="saveMaterial()">Save Material</button>
                 </article>
             </li>
             <li v-for="(m, index) in materials">
@@ -83,7 +96,8 @@ export default{
                 name: null,
                 description: null,
                 archivo: null,
-                gaugues: []
+                gaugues: [],
+                gpic: false
             }
         }
     },
@@ -93,6 +107,11 @@ export default{
                 formData = new FormData();
 
                 formData.append('img', this.nmaterial.archivo);
+                if(this.nmaterial.gpic){
+                    formData.append('archivo', this.nmaterial.gpic);
+                }else{
+                    formData.append('archivo', null);
+                }
                 formData.append('description', this.nmaterial.description);
                 formData.append('name', this.nmaterial.name);
                 formData.append('gauges', JSON.stringify(this.nmaterial.gaugues));
@@ -135,6 +154,12 @@ export default{
            axios.get('/panel/delete-gauge/'+id).then((response) => {
                este.materials[index].gauges.splice(i, 1)
            });
+       },
+       chooseGaugePic(){
+           $('#gaugePic').click()
+       },
+       setGaugePic($e){
+           this.nmaterial.gpic = $e.target.files[0];
        }
     }
 }

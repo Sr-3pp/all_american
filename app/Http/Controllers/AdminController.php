@@ -148,9 +148,19 @@ class AdminController extends Controller
         if($r->gauges != 'undefined'){
             foreach (json_decode($r->gauges) as $key => $g) {
                 $d = [];
+                if($key == 0){
+                    if($r->hasFile('archivo')){
+                        $archivo = $r->archivo->store('gauges/'.$material->id);
+                    }else{
+                        $archivo = null;
+                    }
+                }else{
+                    $archivo = null;
+                }
                 $d['gauge'] = $g[0];
                 $d['thick'] = $g[1];
                 $d['material_id'] = $material->id;
+                $d['archivo'] = $archivo;
                 $calibre = Calibre::create($d);
             }
             $material->gauges;
@@ -162,6 +172,7 @@ class AdminController extends Controller
         $mat = Material::find($id);
         Storage::delete($mat->img);
         foreach ($mat->gauges as $key => $g) {
+            Storage::delete($g->archivo);
             $g->delete();
         }
         $mat->delete();

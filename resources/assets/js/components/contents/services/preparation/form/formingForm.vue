@@ -872,7 +872,7 @@ export default {
             este.materials = materials.data
             este.form.material = este.materials[0].id
             este.gauges = este.materials[0].gauges
-            este.image = este.materials[0].img
+            este.image = este.materials[0].gauges[0].archivo
         })
     },
     data(){
@@ -958,7 +958,7 @@ export default {
         setMaterial(mat){
             this.form.material = mat.id
             this.gauges = mat.gauges            
-            this.image = mat.img            
+            this.image = mat.gauges[0].archivo            
         },
         addFinish(index){
             var pos = this.form.finish.indexOf(index);

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Calibre extends Model
 {
     protected $fillable = [
-        'material_id', 'gauge', 'thick'
+        'material_id', 'gauge', 'thick', 'archivo'
     ];
 
     public function material(){
