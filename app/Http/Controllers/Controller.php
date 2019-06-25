@@ -51,20 +51,38 @@ class Controller extends BaseController
                         'id' => 1,
                         'name' => 'Concept',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/services/planning_card.jpg'
+                        'img' => '/img/services/concept.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/planning_card.jpg'
+                        'img' => '/img/services/preparation_card.jpg'
                     ],
                     [
                         'id' => 3,
-                        'name' => 'SI que si',
+                        'name' => 'Material',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/planning_card.jpg'
-                    ]
+                        'img' => '/img/services/material.jpg'
+                    ],
+                    [
+                        'id' => 4,
+                        'name' => 'Horitentation',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/horientation.jpg'
+                    ],
+                    [
+                        'id' => 5,
+                        'name' => 'Original Design',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/horientation.jpg'
+                    ],
+                    [
+                        'id' => 6,
+                        'name' => 'Estimate',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/estimate.jpg'
+                    ],
                 ]
             ],
             [
@@ -74,16 +92,22 @@ class Controller extends BaseController
                 'list' => [
                     [
                         'id' => 1,
-                        'name' => 'Concept',
+                        'name' => 'Shear',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/services/preparation_card.jpg'
+                        'img' => '/img/services/shear.jpg'
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Planning',
+                        'name' => 'Forming Break',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/preparation_card.jpg'
-                    ]
+                        'img' => '/img/services/forming_break.jpg'
+                    ],
+                    [
+                        'id' => 3,
+                        'name' => 'Machine Mill',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/machine_mill.jpg'
+                    ],
                 ]
             ],
             [
@@ -93,21 +117,21 @@ class Controller extends BaseController
                 'list' => [
                     [
                         'id' => 1,
-                        'name' => 'Concept',
+                        'name' => 'MIG',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/services/welding_card.jpg'
+                        'img' => '/img/services/mig.jpg'
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Planning',
+                        'name' => 'TIG',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/welding_card.jpg'
+                        'img' => '/img/services/tig.jpg'
                     ],
                     [
                         'id' => 3,
-                        'name' => 'SI que si',
+                        'name' => 'Stick',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/welding_card.jpg'
+                        'img' => '/img/services/stick.jpg'
                     ]
                 ]
             ],
@@ -118,16 +142,46 @@ class Controller extends BaseController
                 'list' => [
                     [
                         'id' => 1,
-                        'name' => 'Concept',
+                        'name' => 'Mirror Finish',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/services/polish_cards.jpg'
+                        'img' => '/img/services/finish_8.jpg'
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Planning',
+                        'name' => 'Finish #7',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/polish_cards.jpg'
-                    ]
+                        'img' => '/img/services/finish_8.jpg'
+                    ],
+                    [
+                        'id' => 3,
+                        'name' => 'Finish #6',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/finish_6.jpg'
+                    ],
+                    [
+                        'id' => 4,
+                        'name' => 'Finish #4',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/finish_4.jpg'
+                    ],
+                    [
+                        'id' => 5,
+                        'name' => 'Vibration',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/vibration.jpg'
+                    ],
+                    [
+                        'id' => 6,
+                        'name' => 'Sand Blasted',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/sandblasted.jpg'
+                    ],
+                    [
+                        'id' => 7,
+                        'name' => 'Timesaver',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/timesaver.jpg'
+                    ],
                 ]
             ],
             [
@@ -137,22 +191,28 @@ class Controller extends BaseController
                 'list' => [
                     [
                         'id' => 1,
-                        'name' => 'Concept',
+                        'name' => 'Wet Painting',
                         'content' => 'I know your deepest secret fear, I know everything',
-                        'img' => '/img/services/concept.jpg'
+                        'img' => '/img/services/wet_painting.jpg'
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Planning',
+                        'name' => 'Finish Chart',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/concept.jpg'
+                        'img' => '/img/services/chart.jpg'
                     ],
                     [
                         'id' => 3,
-                        'name' => 'SI que si',
+                        'name' => 'Powder Coat',
                         'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/concept.jpg'
-                    ]
+                        'img' => '/img/services/powder.jpg'
+                    ],
+                    [
+                        'id' => 4,
+                        'name' => 'Powder Coat',
+                        'content' => 'IM a spy, in the house of love',
+                        'img' => '/img/services/patina.jpg'
+                    ],
                 ]
             ],
             [
@@ -162,7 +222,7 @@ class Controller extends BaseController
                 'list' => [
                     [
                         'id' => 1,
-                        'name' => 'Concept',
+                        'name' => 'Delivery',
                         'content' => 'I know your deepest secret fear, I know everything',
                         'img' => '/img/services/delivery_card.jpg'
                     ],

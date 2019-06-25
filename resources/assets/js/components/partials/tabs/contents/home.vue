@@ -21,7 +21,7 @@ export default {
     data(){
         return {
             section: 0,
-            image: '/img/services/planning_card.jpg',
+            image: '/img/services/concept.jpg',
         }
     },
     methods: {

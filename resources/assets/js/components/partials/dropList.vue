@@ -46,7 +46,7 @@ export default{
                 if(this.content !== null && this.name !== 'design'){
                     this.$bus.$emit('setImg', {img: img});
                 }else{
-                    this.$bus.$emit('setImg', {img: '/img/default.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/concept.jpg'});
                 }
             }else{
                 this.show = 'item_'+index
