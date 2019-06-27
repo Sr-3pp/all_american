@@ -64,6 +64,7 @@ Route::prefix('panel')->group(function(){
     Route::get('/delete-material/{id}', 'AdminController@removeMaterial');
     Route::get('/delete-gauge/{id}', 'AdminController@removeGauge');
     Route::post('/update-material/{id}', 'AdminController@updateMaterial');
+    Route::post('/update-gauge', 'AdminController@updateGauge');
 
     Route::get('/get-finishes', 'AdminController@getFinishes');
     Route::post('/save-finish', 'AdminController@saveFinish');

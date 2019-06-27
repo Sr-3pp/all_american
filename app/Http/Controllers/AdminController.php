@@ -168,6 +168,27 @@ class AdminController extends Controller
         return $material;
     }
 
+    public function updateMaterial(Request $r, $id){
+        $mat = Material::find($id);
+        $data = $r->all();
+        if ($r->hasFile('img')) {
+            Storage::delete($mat->img);
+            $data['img'] = $r->img->store('materials');
+        }
+        $mat->update($data);
+
+        return 'saved';
+    }
+
+    public function updateGauge(Request $r){
+        $g = Calibre::find($r->id);
+        $data = $r->all();
+
+        $g->update($data);
+
+        return 'saved';
+    }
+
     public function removeMaterial($id){
         $mat = Material::find($id);
         Storage::delete($mat->img);
