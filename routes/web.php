@@ -69,6 +69,7 @@ Route::prefix('panel')->group(function(){
     Route::get('/get-finishes', 'AdminController@getFinishes');
     Route::post('/save-finish', 'AdminController@saveFinish');
     Route::get('/delete-finish/{id}', 'AdminController@deleteFinish');
+    Route::post('/update-finish/{id}', 'AdminController@updateFinish');
 
     
     Route::post('/save-faq', 'AdminController@saveFaq');

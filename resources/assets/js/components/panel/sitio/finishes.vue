@@ -19,14 +19,36 @@
         </article>
         <ul v-for="(cat, index) in finishes">
             <p class="title">{{cat.name}}</p>
-            <li v-for="(f, i) in cat.finishes">
-                <figure>
-                    <img :src="'/storage/'+f.archivo" width="10%" alt="">
-                </figure>
-                <article>
-                    <p>{{f.name}}</p>
-                </article>
-                <button class="btn" @click="deleteFinish(f.id, index, i)">Delete</button>
+            <li v-for="(f, i) in cat.finishes"  v-if="finishEdit != 'editFinish_' + index">
+                    <figure>
+                        <img :src="'/storage/'+f.archivo" width="10%" alt="">
+                    </figure>
+                    <article>
+                        <p>{{f.name}}</p>
+                    </article>
+                    <button class="btn" @click="editFinish(f, index, i)">Edit</button>
+                    <button class="btn" @click="deleteFinish(f.id, index, i)">Delete</button>
+                
+            </li>
+            <li v-if="finishEdit == 'editFinish_' + index">
+                    <div v-for="(fin, i) in finish">
+                        <article v-if="i == 'name'" class="form-group">
+                            <label>{{i}}</label>
+                            <input type="text" class="input" v-model="finish[i]">
+                        </article>
+                        <article v-if="i == 'category_id'" class="form-group">
+                            <label>{{i}}</label>
+                            <select type="text" class="input" v-model="finish[i]">
+                                <option v-for="cat in categories" :value="cat.id">{{cat.name}}</option>
+                            </select>
+                        </article>
+                        <article v-if="i == 'archivo'" class="form-group">
+                            <label>{{i}}</label>
+                            <input type="file" class="input" @change="setNewPic($event)">
+                        </article>
+                    </div>
+                    <button @click="editFinish()" class="btn">Cancel</button>
+                    <button @click="updateFinish()" class="btn">Save</button>
             </li>
         </ul>
     </div>
@@ -59,6 +81,8 @@ export default{
             finishes: null,
             categories: null,
            newFinish: false,
+           finish: false,
+           finishEdit: false,
            nfinish: {
                name: null,
                category_id: null,
@@ -92,6 +116,29 @@ export default{
                   este.finishes[index].finishes.splice(i, 1)
               });
           }
+      },
+      editFinish(f, index, i){
+          this.finish ? this.finish = false : this.finish = f;
+          this.finishEdit ? this.finishEdit = false : this.finishEdit = 'editFinish_'+index;
+      },
+      updateFinish(){
+          console.log(this.finish);
+          var este = this,
+            formData = new FormData();
+                formData.append('name', this.finish.name);
+                formData.append('category_id', this.finish.category_id);
+                formData.append('archivo', this.finish.archivo);
+
+                axios.post('/panel/update-finish/'+ this.finish.id, formData).then((r) => {
+                    este.finish = false;
+                    este.finishEdit = false;
+                    este.finishes = r.data
+                }).catch((e) => {
+                    console.log(e);
+                });
+      },
+      setNewPic($e){
+          this.finish.archivo = $e.target.files[0];
       }
     }
 }

@@ -78,6 +78,7 @@
                     <button v-if="!matEdit" class="btn" @click="editMaterial(index, m)">Edit</button>
                     <button v-else class="btn" @click="updateMaterial(index, m)">Save</button>
                     <button v-if="!matEdit" class="btn" @click="deleteMaterial(m.id, index)">Delete</button>
+                    <button v-else class="btn" @click="editMaterial(index, m)">Cancel</button>
                 </div>
             </li>
         </ul>
@@ -241,7 +242,10 @@ export default{
              formData.append('description', this.material.description);
              formData.append('name', this.material.name);
 
-            axios.post('/panel/update-material/'+mat.id, formData).catch((e) => {
+            axios.post('/panel/update-material/'+mat.id, formData).then((r) => {
+                este.material = false;
+                este.editMaterial = false;
+            }).catch((e) => {
                console.log(e);
            });
 

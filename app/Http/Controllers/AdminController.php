@@ -233,6 +233,18 @@ class AdminController extends Controller
         $f->delete();
         return 1;
     }
+
+    public function updateFinish(Request $r, $id){
+        $finish = Finish::find($id);
+        $data = $r->all();
+        if($r->hasFile('archivo')){
+            Storage::delete($finish->archivo);
+            $data['archivo'] = $r->archivo->store('/finishes');
+        }
+        $finish->update($data);
+
+        return $this->getFinishes();
+    }
     
     public function saveFaq(Request $r){
         $data = $r->all();
