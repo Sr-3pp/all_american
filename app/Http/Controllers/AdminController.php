@@ -242,7 +242,6 @@ class AdminController extends Controller
             $data['archivo'] = $r->archivo->store('/finishes');
         }
         $finish->update($data);
-
         return $this->getFinishes();
     }
     
