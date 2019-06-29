@@ -11,20 +11,31 @@
         </p>
         <button class="btn" @click="saveProject()">Save</button>
     </div>
-    <div :key="1">
-            <article v-for="(project, index) in projects" class="card">
-                <figure class="img">
-                    <img v-if="project.cover" :src="'/storage/'+project.cover.archivo" alt="">
-                    <img v-else src="/img/default.jpg" alt="">
-                </figure> 
-                <div class="card-content">
-                    <p class="subtitle">{{project.name}}</p>
-                    <div>
-                        <button class="btn" @click="showProject(project)">
-                            Watch gallery
-                        </button>
+    <div class="cards" :key="1">
+            <article v-for="(p, index) in projects" class="card">
+                    <figure class="img">
+                        <img v-if="p.cover" :src="'/storage/'+p.cover.archivo" alt="">
+                        <img v-else src="/img/default.jpg" alt="">
+                    </figure> 
+                    <div class="card-content">
+                        <p v-if="projectEdit != 'editProject_'+index" class="subtitle">{{p.name}}</p>
+                        <div v-if="projectEdit == 'editProject_'+index">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="input" type="text" v-model="p.name">
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn" @click="showProject(p)">
+                                Watch gallery
+                            </button>
+                            <button class="btn" v-if="projectEdit != 'editProject_'+index" @click="editProject(p, index)">Edit</button>
+                            <button class="btn" v-if="projectEdit == 'editProject_'+index" @click="updateProject()">Save</button>
+                            <button class="btn" @click="deleteProject(p.id, index)">
+                                Delete
+                            </button>
+                        </div>
                     </div>
-                </div>
             </article>
     </div>
     <modal :key="2"></modal>
@@ -49,6 +60,8 @@ export default{
     ],
     data(){
         return {
+            project: false,
+            projectEdit: false,
             addProject: false,
            projects: false,
            categories: null,
@@ -86,6 +99,20 @@ export default{
        showProject(project){
            this.$bus.$emit('modal', {project: project})
            
+       },
+       editProject(project, index){
+           this.project ? this.project = false : this.project = project
+           this.projectEdit ? this.projectEdit = false : this.projectEdit = 'editProject_'+index
+       },
+       updateProject(){
+           var este = this;
+           axios.post('/panel/update-project/'+this.project.id, this.project).then((r) => {
+               este.projectEdit = false
+               este.project = false
+           }).catch((e) => {
+               console.log(e);
+               
+           });
        }
     }
 }

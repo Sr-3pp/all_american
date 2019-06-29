@@ -56,6 +56,7 @@ Route::prefix('panel')->group(function(){
 
     Route::get('/get-projects', 'AdminController@getProjects');
     Route::post('/save-project', 'AdminController@saveProject');
+    Route::post('/update-project/{id}', 'AdminController@updateProject');
 
     Route::get('/get-categories', 'AdminController@getCategories');
     Route::post('/save-cat', 'AdminController@saveCat');
@@ -74,14 +75,17 @@ Route::prefix('panel')->group(function(){
     
     Route::post('/save-faq', 'AdminController@saveFaq');
     Route::get('/delete-faq/{id}', 'AdminController@deleteFaq');
+    Route::post('/update-faq/{id}', 'AdminController@updateFaq');
     
     
     Route::post('/save-skill', 'AdminController@saveSkill');
     Route::get('/delete-skill/{id}', 'AdminController@deleteSkill');
+    Route::post('/update-skill/{id}', 'AdminController@updateSkill');
     
     Route::get('/get-mills', 'AdminController@getMills');
     Route::post('/save-mill', 'AdminController@saveMill');
     Route::get('/delete-mill/{id}', 'AdminController@deleteMill');
+    Route::post('/update-mill/{id}', 'AdminController@updateMill');
   
  });
 

@@ -12,9 +12,28 @@
                 <button class="btn" @click="saveSkill()">Save</button>
             </li>
             <li v-for="(s, index) in skills">
-                <p class="subtitle">{{s.name}}</p>
-                <p class="text">{{s.percent}}</p>
-                <button class="btn" @click="deleteSkill(s.id, index)">Delete</button>
+                <div v-if="skillEdit != 'editSkill_' + index">
+                    <p class="subtitle">{{s.name}}</p>
+                    <p class="text">{{s.percent}}</p>
+                    <button class="btn" @click="editSkill(s, index)">Edit</button>
+                    <button class="btn" @click="deleteSkill(s.id, index)">Delete</button>
+                </div>
+                <div v-if="skillEdit == 'editSkill_' + index">
+                        <div v-for="(fin, i) in skill">
+                            <article v-if="i == 'name'" class="form-group">
+                                <label>{{i}}</label>
+                                <input type="text" class="input" v-model="skill[i]">
+                            </article>
+                            <article v-if="i == 'percent'" class="form-group">
+                                <label>{{i}}</label>
+                                <select v-model="skill[i]" class="input">
+                                    <option v-for="val in 10" :value="val+1">{{val+1}}0</option>
+                                </select>
+                            </article>
+                        </div>
+                        <button @click="editSkill()" class="btn">Cancel</button>
+                        <button @click="updateSkill()" class="btn">Save</button>
+                </div>
             </li>
         </ul>
     </div>
@@ -38,6 +57,8 @@ export default{
     ],
     data(){
         return {
+            skill: false,
+            skillEdit: false,
            newSkill: false,
            skills: [],
            nskill: {
@@ -65,7 +86,20 @@ export default{
                    este.skills.splice(index, 1)
                });
            }
-       }
+       },
+       editSkill(f, index, i){
+          this.skill ? this.skill = false : this.skill = f;
+          this.skillEdit ? this.skillEdit = false : this.skillEdit = 'editSkill_'+index;
+        },
+        updateSkill(){
+            var este = this;
+                    axios.post('/panel/update-skill/'+ this.skill.id, this.skill).then((r) => {
+                        este.skill = false;
+                        este.skillEdit = false;
+                    }).catch((e) => {
+                        console.log(e);
+                    });
+        },
     }
 }
 </script>

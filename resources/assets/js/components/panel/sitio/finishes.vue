@@ -122,7 +122,6 @@ export default{
           this.finishEdit ? this.finishEdit = false : this.finishEdit = 'editFinish_'+index;
       },
       updateFinish(){
-          console.log(this.finish);
           var este = this,
             formData = new FormData();
                 formData.append('name', this.finish.name);

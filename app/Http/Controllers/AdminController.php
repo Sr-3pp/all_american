@@ -98,7 +98,12 @@ class AdminController extends Controller
     }
 
     public function updateProject(Request $r, $id){
+        $pro = Project::find($id);
+        $data = $r->all();
 
+        $pro->update($data);
+
+        return 'saved';
     }
 
     public function saveProject(Request $r){
@@ -123,6 +128,7 @@ class AdminController extends Controller
         }
         return $this->getProjects();
     }
+
 
     public function getCategories(){
         $cats =Category::all();
@@ -251,6 +257,14 @@ class AdminController extends Controller
 
         return $faq;
     }
+
+    public function updateFaq(Request $r, $id){
+        $faq = Faqs::find($id);
+        $data = $r->all();
+        $faq->update($data);
+
+        return 'saved';
+    }
     
     public function deleteFaq($id){
         $f = Faqs::find($id);
@@ -282,6 +296,17 @@ class AdminController extends Controller
         $m->delete();
         return 1;
     }
+
+    public function updateMill(Request $r, $id){
+        $mill = Mills::find($id);
+        $data = $r->all();
+        if($r->hasFile('svg')){
+            Storage::delete($mill->svg);
+            $data['svg'] = $r->svg->store('mills');
+        }
+        $mill->update($data);
+        return $this->getMills();
+    }
     
     public function saveSkill(Request $r){
         $data = $r->all();
@@ -294,6 +319,14 @@ class AdminController extends Controller
         $s = Skills::find($id);
         $s->delete();
         return 1;
+    }
+
+    public function updateSkill(Request $r, $id){
+        $skill = Skills::find($id);
+        $data = $r->all();
+        $skill->update($data);
+
+        return 'saved';
     }
 
 
