@@ -28,6 +28,10 @@
                     <input multiple @change="pushPics($event)" type="file" id="addSlide" class="hidden">
                 </div>
                 <figure v-for="(slide, index) in slides" class="thumb" @click="showThumb(index)">
+                    <div class="buttons">
+                        <button :class="{'cover': slide.cover}" class="btn" @click="setAsCover(slide)">Cover</button>
+                        <button class="btn" @click="deleteThumb(slide)">Delete</button>
+                    </div>
                     <img width="100%" :src="'/storage/'+slide.archivo" alt="">
                 </figure>
             </div>
@@ -97,6 +101,21 @@ export default {
                 axios.post('/panel/add-slides/'+this.project.id, formData).then((slides) => {
                     este.slides = slides.data
                 });
+        },
+        deleteThumb(slide){
+            var este = this;
+            if(confirm('delete picture?')){
+                axios.post('/panel/delete-pic', slide).then((slides) => {
+                    este.slides = slides.data
+                });
+            }
+            
+        },
+        setAsCover(slide){
+            var este = this;
+            axios.post('/panel/update-cover', slide).then((slides) => {
+                este.slides = slides.data
+            });
         }
     }
 }

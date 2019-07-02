@@ -45,6 +45,34 @@ class AdminController extends Controller
         return $slide;
     }
 
+    public function updateCover(Request $r){
+        $current = Gallery::where('project_id', $r->project_id)->where('cover', 1)->first();
+        $current->cover = 0;
+        $current->save();
+
+        $new = Gallery::find($r->id);
+        $new->cover = 1;
+        $new->save();
+
+        $slides = Gallery::where('project_id', $r->project_id)->get();
+
+        return $slides;
+    }
+
+    public function deletePic(Request $r){
+        $pic = Gallery::find($r->id);
+        if($pic->cover){
+            $new = Gallery::where('project_id', $r->project_id)->first();
+            $new->cover = 1;
+            $new->save();
+        }
+        Storage::delete($r->archivo);
+        $pic->delete();
+
+        $slides = Gallery::where('project_id', $r->project_id)->get();
+            return $slides;
+    }
+
     public function addSlides(Request $r, $id){
         if($r->hasFile('pics')){
             foreach ($r->pics as $key => $p) {

@@ -53,10 +53,12 @@ Route::prefix('panel')->group(function(){
     Route::post('/update-slide/{id}', 'AdminController@updateSlide');
     Route::post('/add-slides/{id}', 'AdminController@addSlides');
     Route::get('/delete-slide/{id}', 'AdminController@deleteSlide');
-
+    
     Route::get('/get-projects', 'AdminController@getProjects');
     Route::post('/save-project', 'AdminController@saveProject');
     Route::post('/update-project/{id}', 'AdminController@updateProject');
+    Route::post('/update-cover', 'AdminController@updateCover');
+    Route::post('/delete-pic', 'AdminController@deletePic');
 
     Route::get('/get-categories', 'AdminController@getCategories');
     Route::post('/save-cat', 'AdminController@saveCat');
