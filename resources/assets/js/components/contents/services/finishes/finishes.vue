@@ -21,109 +21,49 @@
                 We work with a variety of all type of welding manufactures and we can repair all types of metal parts. We are specialists welding any type of metal alloy, our welders are prepared with many years of experience in the industry. We develop projects of different magnitude such as serial parts and custom manufacturing.
             </p>
             <div class="cards">
-                <article class="card" @click="setDetail(1)">
+                <article v-for="(f, index) in finishes" class="card" @click="setDetail(index)">
                     <figure class="img">
-                        <img src="/img/services/finish_8.jpg" alt="">
+                        <img v-if="index == 0" src="/img/services/finish_8.jpg" alt="">
+                        <img v-if="index == 1" src="/img/services/finish_7.jpg" alt="">
+                        <img v-if="index == 2" src="/img/services/finish_6.jpg" alt="">
+                        <img v-if="index == 3" src="/img/services/finish_4.jpg" alt="">
+                        <img v-if="index == 4" src="/img/services/vibration.jpg" alt="">
+                        <img v-if="index == 5" src="/img/services/sandblasted.jpg" alt="">
+                        <img v-if="index == 6" src="/img/services/timesaver.jpg" alt="">
                     </figure> 
                     <div class="card-content">
-                        <p class="subtitle">MIRROR FINISH #8</p>
+                        <p class="subtitle">{{f.name}}</p>
                         <div>
-                            <p>
+                            <p v-if="index == 0">
                                 Mirror" bright finish or polish, is the
                                 case of the polishing process, the
                                 purpose for this exact process is to
                                 unify the surface..
                             </p>
-                            <icon name="polish"></icon>
-                        </div>
-                    </div>
-                </article>
-                <article class="card" @click="setDetail(2)">
-                    <figure class="img">
-                        <img src="/img/services/finish_7.jpg" alt="">
-                    </figure> 
-                    <div class="card-content">
-                        <p class="subtitle">FINISH #7</p>
-                        <div>
-                            <p>
+                            <p v-if="index == 1">
                                 This finish consists of a highly reflective surface polished and with a slight haze...
                             </p>
-                            <icon name="polish"></icon>
-                        </div>
-                    </div>
-                </article>
-                <article class="card" @click="setDetail(3)">
-                    <figure class="img">
-                        <img src="/img/services/finish_6.jpg" alt="">
-                    </figure> 
-                    <div class="card-content">
-                        <p class="subtitle">FINISH #6</p>
-                        <div>
-                            <p>
+                            <p v-if="index == 2">
                                 Also called sation or hairline is a
                                 smooth finish, it is polished through
                                 fine grain sandpaper...
                             </p>
-                            <icon name="polish"></icon>
-                        </div>
-                    </div>
-                </article>
-                <article class="card" @click="setDetail(4)">
-                    <figure class="img">
-                        <img src="/img/services/finish_4.jpg" alt="">
-                    </figure> 
-                    <div class="card-content">
-                        <p class="subtitle">FINISH #4</p>
-                        <div>
-                            <p>
+                            <p v-if="index == 3">
                                 The short and parallel polishing lines
                                 extend uniformly throughout the
                                 material. This...
                             </p>
-                            <icon name="polish"></icon>
-                        </div>
-                    </div>
-                </article>
-                <article class="card" @click="setDetail(5)">
-                    <figure class="img">
-                        <img src="/img/services/vibration.jpg" alt="">
-                    </figure> 
-                    <div class="card-content">
-                        <p class="subtitle">Vibration</p>
-                        <div>
-                            <p>
+                            <p v-if="index == 4">
                                 This is a multidirectional finish, this
                                 pattern of vibrant grain, uniform
                                 texture random grain...
                             </p>
-                            <icon name="polish"></icon>
-                        </div>
-                    </div>
-                </article>
-                <article class="card" @click="setDetail(6)">
-                    <figure class="img">
-                        <img src="/img/services/sandblasted.jpg" alt="">
-                    </figure> 
-                    <div class="card-content">
-                        <p class="subtitle">Sand Blasted</p>
-                        <div>
-                            <p>
+                            <p v-if="index == 5">
                                 We devise and take the best path to
                                 reach your goals efficiently and as
                                 quickly as possible...
                             </p>
-                            <icon name="polish"></icon>
-                        </div>
-                    </div>
-                </article>
-                <article class="card" @click="setDetail(7)">
-                    <figure class="img">
-                        <img src="/img/services/timesaver.jpg" alt="">
-                    </figure> 
-                    <div class="card-content">
-                        <p class="subtitle">TIMESAVER</p>
-                        <div>
-                            <p>
+                            <p v-if="index == 6">
                                 The machines timesaver is a useful
                                 tool to produce brushed finishes in
                                 straight grain...
@@ -155,7 +95,7 @@
                         </article>
                     </div>
         </article>
-        <mirror :key="2" v-show="active && detail == 1"></mirror>
+        <mirror :finishes="finishes" :key="2" v-show="active && detail == 1"></mirror>
         <finish-seven :key="3" v-show="active && detail == 2"></finish-seven>
         <finish-six :key="4" v-show="active && detail == 3"></finish-six>
         <brush :key="5" v-show="active && detail == 4"></brush>
@@ -169,10 +109,9 @@ export default {
     mounted(){
         this.$bus.$on('setTab', ($event) => {
             if($event.section == 4){
-               this.detail = false;
+               this.detail = null;
             }
-        });
-        
+        });        
     },
     props: ['active', 'finishes'],
     data(){
@@ -199,7 +138,7 @@ export default {
             this.$bus.$emit('setTab', {section: index});
         },
         setDetail(index){
-            this.detail = index
+            this.detail = index+1      
         }
     }
 }

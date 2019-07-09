@@ -21,6 +21,7 @@ Route::post('/subscribe', 'Controller@subscribe');
 
 
 Route::get('/get-materials', 'Controller@getMaterials');
+Route::get('/get-finishes', 'Controller@getFinishes');
 Route::get('/get-faqs', 'Controller@getFaqs');
 Route::get('/get-skills', 'Controller@getSkills');
 Route::get('/get-shear-gauges', 'Controller@getShearTables');
