@@ -34,39 +34,10 @@
                     <div class="card-content">
                         <p class="subtitle">{{f.name}}</p>
                         <div>
-                            <p v-if="index == 0">
-                                Mirror" bright finish or polish, is the
-                                case of the polishing process, the
-                                purpose for this exact process is to
-                                unify the surface..
-                            </p>
-                            <p v-if="index == 1">
-                                This finish consists of a highly reflective surface polished and with a slight haze...
-                            </p>
-                            <p v-if="index == 2">
-                                Also called sation or hairline is a
-                                smooth finish, it is polished through
-                                fine grain sandpaper...
-                            </p>
-                            <p v-if="index == 3">
-                                The short and parallel polishing lines
-                                extend uniformly throughout the
-                                material. This...
-                            </p>
-                            <p v-if="index == 4">
-                                This is a multidirectional finish, this
-                                pattern of vibrant grain, uniform
-                                texture random grain...
-                            </p>
-                            <p v-if="index == 5">
-                                We devise and take the best path to
-                                reach your goals efficiently and as
-                                quickly as possible...
-                            </p>
-                            <p v-if="index == 6">
-                                The machines timesaver is a useful
-                                tool to produce brushed finishes in
-                                straight grain...
+                            <p>
+                                <span v-if="f.finishes.length">
+                                    {{f.finishes[0].description}}
+                                </span>
                             </p>
                             <icon name="polish"></icon>
                         </div>
@@ -95,13 +66,7 @@
                         </article>
                     </div>
         </article>
-        <mirror :finishes="finishes" :key="2" v-show="active && detail == 1"></mirror>
-        <finish-seven :key="3" v-show="active && detail == 2"></finish-seven>
-        <finish-six :key="4" v-show="active && detail == 3"></finish-six>
-        <brush :key="5" v-show="active && detail == 4"></brush>
-        <vibration :key="6" v-show="active && detail == 5"></vibration>
-        <sandblast :key="7" v-show="active && detail == 6"></sandblast>
-        <timesaver :key="8" v-show="active && detail == 7"></timesaver>
+        <finish-detail :finishes="Afinishes" :key="2" v-show="active && detail"></finish-detail>
     </div>
 </template>
 <script>
@@ -116,6 +81,7 @@ export default {
     props: ['active', 'finishes'],
     data(){
         return {
+            Afinishes: false,
            detail: false,
            list: {
                0:{
@@ -138,7 +104,8 @@ export default {
             this.$bus.$emit('setTab', {section: index});
         },
         setDetail(index){
-            this.detail = index+1      
+            this.detail = index+1  
+            this.Afinishes = this.finishes[index]   
         }
     }
 }

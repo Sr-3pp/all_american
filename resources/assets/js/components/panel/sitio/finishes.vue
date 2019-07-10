@@ -6,6 +6,10 @@
                         <label>Name</label>
                         <input type="text" class="input" v-model="nfinish.name">
                     </p>
+                    <p>
+                        <label>Description</label>
+                        <textarea type="text" class="input" v-model="nfinish.description"></textarea>
+                    </p>
                     <p class="form-group">
                         <label>Category</label>
                         <select v-model="nfinish.category_id" class="input">
@@ -35,6 +39,10 @@
                         <article v-if="i == 'name'" class="form-group">
                             <label>{{i}}</label>
                             <input type="text" class="input" v-model="finish[i]">
+                        </article>
+                        <article v-if="i == 'description'" class="form-group">
+                            <label>{{i}}</label>
+                            <textarea type="text" class="input" v-model="finish[i]"></textarea>
                         </article>
                         <article v-if="i == 'category_id'" class="form-group">
                             <label>{{i}}</label>
@@ -85,6 +93,7 @@ export default{
            finishEdit: false,
            nfinish: {
                name: null,
+               description: null,
                category_id: null,
                archivo: null
            }
@@ -97,6 +106,7 @@ export default{
 
                 formData.append('archivo', this.nfinish.archivo);
                 formData.append('name', this.nfinish.name);
+                formData.append('description', this.nfinish.description);
                 formData.append('category_id', this.nfinish.category_id);
 
                 axios.post('/panel/save-finish', formData).then((finish) => {
@@ -125,6 +135,7 @@ export default{
           var este = this,
             formData = new FormData();
                 formData.append('name', this.finish.name);
+                formData.append('description', this.finish.description);
                 formData.append('category_id', this.finish.category_id);
                 formData.append('archivo', this.finish.archivo);
 
