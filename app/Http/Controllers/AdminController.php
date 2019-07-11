@@ -13,6 +13,9 @@ use App\Faqs;
 use App\Skills;
 use App\Mills;
 use App\Gallery;
+use App\FinishChart;
+use App\PowderCoat;
+use App\Patina;
 use Storage;
 
 class AdminController extends Controller
@@ -357,5 +360,18 @@ class AdminController extends Controller
         return 'saved';
     }
 
+    public function getPaints(){
+        $fc = FinishChart::all();
+        $pc = PowderCoat::all();
+        $p = Patina::all();
+
+        $paints = [
+            'finish_chart' => $fc,
+            'powder_coat' => $pc,
+            'patina' => $p
+        ];
+
+        return $paints;
+    }
 
 }

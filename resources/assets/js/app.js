@@ -84,6 +84,7 @@ Vue.component('sitio', require('./components/panel/sitio/sitio.vue'));
 Vue.component('slides', require('./components/panel/sitio/slides.vue'));
 Vue.component('mills', require('./components/panel/sitio/mills.vue'));
 Vue.component('projects-panel', require('./components/panel/sitio/projects.vue'));
+Vue.component('painting-panel', require('./components/panel/sitio/painting.vue'));
 Vue.component('finishes-panel', require('./components/panel/sitio/finishes.vue'));
 Vue.component('faqs', require('./components/panel/sitio/faqs.vue'));
 Vue.component('skills', require('./components/panel/sitio/skills.vue'));

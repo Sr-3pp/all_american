@@ -13,6 +13,7 @@
             <li :class="{'active': section == 4}" @click="setSec(4)">Mills</li>
             <li :class="{'active': section == 5}" @click="setSec(5)">FAQS</li>
             <li :class="{'active': section == 6}" @click="setSec(6)">Skills</li>
+            <li :class="{'active': section == 7}" @click="setSec(7)">Painting</li>
         </ul>
         <transition-group name="fade" tag="div">
             <inbox :key="0" v-if="active == 0"></inbox>

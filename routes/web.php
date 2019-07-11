@@ -89,6 +89,8 @@ Route::prefix('panel')->group(function(){
     Route::post('/save-mill', 'AdminController@saveMill');
     Route::get('/delete-mill/{id}', 'AdminController@deleteMill');
     Route::post('/update-mill/{id}', 'AdminController@updateMill');
+
+    Route::get('/get-paints', 'AdminController@getPaints');
   
  });
 

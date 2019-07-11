@@ -7,6 +7,7 @@
         <mills :key="4" v-if="active == 4"></mills>
         <faqs :key="5" v-if="active == 5"></faqs>
         <skills :key="6" v-if="active == 6"></skills>
+        <painting-panel :key="7" v-if="active == 7"></painting-panel>
     </transition-group>
 </template>
 <script>
