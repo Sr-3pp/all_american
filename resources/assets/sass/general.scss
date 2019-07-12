@@ -2402,6 +2402,9 @@ body{
                         >.cont{
                             display: flex;
                             transition: all .2s ease;
+                            .detail{
+                                width: 100%;
+                            }
                             &:nth-child(1), &:nth-child(2){
                                 .card{
                                     &:hover{

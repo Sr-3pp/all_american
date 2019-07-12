@@ -458,9 +458,10 @@ class Controller extends BaseController
       
 
         $paints = [
-            'finish_chart' => $fc,
-            'powder_coat' => $pc,
-            'patina' => $p
+            'finish Chart' => $fc,
+            'powder coat' => $pc,
+            'patina' => $p,
+            'length' => 3
         ];
 
         return $paints;

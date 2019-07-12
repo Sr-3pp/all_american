@@ -158,7 +158,6 @@ export default{
 
                 axios.post('/panel/save-paint', formData).then((paint) => {
                     este.paintes = paint.data
-                    este.newPaint = false
                     este.npaint= {
                         name: null,
                         attributes: {

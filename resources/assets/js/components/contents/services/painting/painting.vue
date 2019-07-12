@@ -21,7 +21,7 @@
                 Painting service and finishes, we guarantee a high-quality surface, , leaving it reflective and decorative, according to your needs, also allows a better adhesion and protection against oxidation.
             </p>
             <div class="cards">
-                <article class="card" @click="setDetail(1)">
+                <article class="card" @click="setDetail(1, 0)">
                     <figure class="img">
                         <img src="/img/services/wet_painting.jpg" alt="wet painting">
                     </figure> 
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="card" @click="setDetail(2)">
+                <article class="card" @click="setDetail(2, 1)">
                     <figure class="img">
                         <img src="/img/services/chart.jpg" alt="finish chart">
                     </figure> 
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="card" @click="setDetail(3)">
+                <article class="card" @click="setDetail(2, 2)">
                     <figure class="img">
                         <img src="/img/services/powder.jpg" alt="powder coat">
                     </figure> 
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="card" @click="setDetail(4)">
+                <article class="card" @click="setDetail(2, 3)">
                     <figure class="img">
                         <img src="/img/services/patina.jpg" alt="">
                     </figure> 
@@ -101,7 +101,7 @@
             </div>
         </article>
         <wet-painting :key="2" v-show="active && detail == 1"></wet-painting>
-        <paint-detail :key="3" v-show="active && detail == 2"></paint-detail>
+        <paint-detail :category="cat" :paints="paints" :key="3" v-show="active && detail == 2"></paint-detail>
     </transition-group>
 </template>
 <script>
@@ -118,6 +118,7 @@ export default {
     data(){
         return {
             detail: false,
+            cat: false,
             list: {
                0:{
                         name: 'Additional Services',
@@ -138,8 +139,9 @@ export default {
         setSection(index){
             this.$bus.$emit('setTab', {section: index});
         },
-        setDetail(index){
+        setDetail(index, cat){
             this.detail = index
+            this.cat = cat            
         }
     }
 }

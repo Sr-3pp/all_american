@@ -1,18 +1,14 @@
 <template>
     <div class="detail">
-        <figure class="header">
+        <figure class="header" :data-cat="category">
             <icon name="triangle"></icon>
-            <img v-if="paint == 0" src="/img/services/paint_8.jpg" alt="">
-            <img v-if="paint == 1" src="/img/services/paint_7.jpg" alt="">
-            <img v-if="paint == 2" src="/img/services/paint_6.jpg" alt="">
-            <img v-if="paint == 3" src="/img/services/paint_4.jpg" alt="">
-            <img v-if="paint == 4" src="/img/services/vibration.jpg" alt="">
-            <img v-if="paint == 5" src="/img/services/sandblasted.jpg" alt="">
-            <img v-if="paint == 6" src="/img/services/timesaver.jpg" alt="">
-            <icon name="polish"></icon>
+            <img v-if="category == 1" src="/img/services/chart.jpg" alt="">
+            <img v-if="category == 2" src="/img/services/powder.jpg" alt="">
+            <img v-if="category == 3" src="/img/services/patina.jpg" alt="">
+            <icon name="painting"></icon>
         </figure>
         <p class="title">
-            {{paints.name}}
+            {{paint.name}}
             <icon name="star_panel1"></icon>
         </p>  
         <p class="text">
@@ -24,31 +20,41 @@
                 {{paints.paints[paint].description}}
             </p>
         </figure>
-        <article class="paints list info">
-            <figure @click="setPaint(i)" v-for="(f, i) in paints.paints">
-                <img width="100%" :src="'/storage/'+f.archivo" alt="">
+       <!--  <article class="paints list info">
+            <figure @click="setPaint(i)" v-for="(f, i) in paint.attributes">
+                <img v-if="archivo != undefined" width="100%" :src="'/storage/'+f.archivo" alt="">
                 <span class="category">
-                    {{paints.name}}
+                    {{paint.name}}
                 </span>
                 <span class="text">
-                    {{f.name}}
+                    {{i}}
                 </span>
             </figure>
-        </article>
+        </article> -->
     </div>
 </template>
 <script>
 export default {
     mounted(){
-        
+        if(this.paints['finish Chart'][0] && this.paints['finish Chart'][0].attributes.category == 1){
+            this.paint = this.paints['finish Chart'];
+            this.paint.name = 'Finish Chart';
+        }else if(this.paints['powder coat'][0] && this.paints['powder coat'][0].attributes.category == 2){
+            this.paint = this.paints['powder coat'];
+            this.paint.name = 'Powder Coat';
+        }else if(this.paints['patina'][0] && this.paints['patina'][0].attributes.category == 3){
+            this.paint = this.paints['patina'];
+            this.paint.name = 'Patina';
+        }
+        console.log(this.paint);
         
     },
     props: [
-        'paints'
+        'paints', 'category'
     ],
     data(){
         return {
-            paint: 0
+            paint: false,
         }
     },
     methods: {
