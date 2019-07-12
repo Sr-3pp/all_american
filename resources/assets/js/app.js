@@ -68,9 +68,7 @@ Vue.component('finish-detail', require('./components/contents/services/finishes/
 
 Vue.component('painting', require('./components/contents/services/painting/painting.vue'));
 Vue.component('wet-painting', require('./components/contents/services/painting/partials/wetPainting.vue'));
-Vue.component('finish-cart', require('./components/contents/services/painting/partials/finishCart.vue'));
-Vue.component('powder-coat', require('./components/contents/services/painting/partials/powderCoat.vue'));
-Vue.component('patina', require('./components/contents/services/painting/partials/patina.vue'));
+Vue.component('painting-detail', require('./components/contents/services/painting/partials/painting-detail.vue'));
 
 Vue.component('delivery', require('./components/contents/services/delivery/delivery.vue'));
 

@@ -364,6 +364,25 @@ class AdminController extends Controller
         $fc = FinishChart::all();
         $pc = PowderCoat::all();
         $p = Patina::all();
+        
+        if(!$fc->isEmpty()){
+            foreach ($fc as $key => $a) {
+                $a->attributes = json_decode($a->attributes);
+            }
+        }
+       
+        if(!$pc->isEmpty()){
+            foreach ($pc as $key => $a) {
+                $a->attributes = json_decode($a->attributes);
+            }
+        }
+        
+        if(!$p->isEmpty()){
+            foreach ($p as $key => $a) {
+                $a->attributes = json_decode($a->attributes);
+            }
+        }
+      
 
         $paints = [
             'finish_chart' => $fc,
@@ -372,6 +391,29 @@ class AdminController extends Controller
         ];
 
         return $paints;
+    }
+
+    public function addPaint(Request $r){
+        $data = $r->all();
+        $attr = json_decode($data['attributes']);
+        $cat = $attr->category;
+        if ($r->hasFile('archivo')) {
+            $attr->archivo = $r->archivo->store('paints/'.$cat);
+        }
+        $data['attributes'] = json_encode($attr);
+        if($cat == 1){
+            $model = new FinishChart;
+        }else if($cat == 2){
+            $model = new PowderCoat;
+        }else if ($cat == 3) {
+            $model = new Patina;
+        }
+
+        $paint = $model->create($data);
+
+        $paint->attributes = json_decode($paint->attributes);
+
+        return $paint;
     }
 
 }

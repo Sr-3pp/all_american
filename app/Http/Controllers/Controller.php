@@ -16,6 +16,9 @@ use App\Votes;
 use App\Project;
 use App\Category;
 use App\Forming;
+use App\FinishChart;
+use App\PowderCoat;
+use App\Patina;
 use App\Shared;
 
 class Controller extends BaseController
@@ -269,6 +272,8 @@ class Controller extends BaseController
         $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
         $materials = Material::all();
 
+        $paints = $this->getPaints();
+
         $finishes = Category::where('kind', 'finish')->get();
         foreach ($finishes as $key => $c) {
             $c->finishes;
@@ -280,7 +285,7 @@ class Controller extends BaseController
 
         $section = false;
         $main = 'services';
-        return view('services', compact('menu', 'materials', 'mills', 'finishes', 'section', 'main'));
+        return view('services', compact('menu', 'materials', 'mills', 'paints','finishes', 'section', 'main'));
     }
 
     public function goService($section){
@@ -426,6 +431,39 @@ class Controller extends BaseController
         }
 
         return $materials;
+    }
+
+    public function getPaints(){
+        $fc = FinishChart::all();
+        $pc = PowderCoat::all();
+        $p = Patina::all();
+        
+        if(!$fc->isEmpty()){
+            foreach ($fc as $key => $a) {
+                $a->attributes = json_decode($a->attributes);
+            }
+        }
+       
+        if(!$pc->isEmpty()){
+            foreach ($pc as $key => $a) {
+                $a->attributes = json_decode($a->attributes);
+            }
+        }
+        
+        if(!$p->isEmpty()){
+            foreach ($p as $key => $a) {
+                $a->attributes = json_decode($a->attributes);
+            }
+        }
+      
+
+        $paints = [
+            'finish_chart' => $fc,
+            'powder_coat' => $pc,
+            'patina' => $p
+        ];
+
+        return $paints;
     }
     
     public function testing(){

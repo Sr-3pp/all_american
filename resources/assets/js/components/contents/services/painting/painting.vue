@@ -101,9 +101,7 @@
             </div>
         </article>
         <wet-painting :key="2" v-show="active && detail == 1"></wet-painting>
-        <finish-cart :key="3" v-show="active && detail == 2"></finish-cart>
-        <powder-coat :key="4" v-show="active && detail == 3"></powder-coat>
-        <patina :key="5" v-show="active && detail == 4"></patina>
+        <paint-detail :key="3" v-show="active && detail == 2"></paint-detail>
     </transition-group>
 </template>
 <script>
@@ -114,8 +112,9 @@ export default {
                this.detail = false;
             }
         });
+        
     },
-    props: ['active'],
+    props: ['active', 'paints'],
     data(){
         return {
             detail: false,

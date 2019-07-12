@@ -3,7 +3,7 @@
         <article v-if="newPaint">
                 <article>
                     <p>
-                        <label>Name</label>
+                        <label>Color</label>
                         <input type="text" class="input" v-model="npaint.name">
                     </p>
                     <div v-if="npaint.attributes.category == 1">
@@ -21,12 +21,48 @@
                         </p>
                         <p class="form-group">
                             <label>Base Material</label>
-                            <select class="input">
-                                <option :value="0">Select Material</option>
+                             <select class="input" @change="addBase($event)" v-model="npaint.attributes.temp">
+                                <option>Select Material</option>
+                                <option v-for="(m, i) in materials" :value="i">{{m.name}}</option>
                             </select>
                         </p>
+                        <ul v-if="npaint.attributes.bases">
+                            <li v-for="(m, i) in npaint.attributes.bases">
+                                <span>{{m}}</span>
+                                <p class="buttons">
+                                    <button class="btn">Remove</button>
+                                </p>
+                            </li>
+                        </ul>
                     </div>
-                    <upload-picture v-if="npaint.attributes.category == 1"></upload-picture>
+                    <div v-if="npaint.attributes.category == 2">
+                        <p class="form-group">
+                            <label>Hue</label>
+                            <input type="text" class="input" v-model="npaint.attributes.hue">
+                        </p>
+                        <p class="form-group">
+                            <label>Hex</label>
+                            <input type="color" v-model="npaint.attributes.hex">
+                        </p>
+                    </div>
+                    <div v-if="npaint.attributes.category == 3">
+                        <p class="form-group">
+                            <label>Base Material</label>
+                            <select class="input" @change="addBase($event)">
+                                <option>Select Material</option>
+                                <option v-for="(m, i) in materials" :value="i">{{m.name}}</option>
+                            </select>
+                        </p>
+                        <ul v-if="npaint.attributes.bases">
+                            <li v-for="(m, i) in npaint.attributes.bases">
+                                <span>{{m}}</span>
+                                <p class="buttons">
+                                    <button class="btn">Remove</button>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <upload-picture v-if="npaint.attributes.category == 1 || npaint.attributes.category == 3"></upload-picture>
                     <p class="form-group">
                         <label>Category</label>
                         <select v-model="npaint.attributes.category" class="input">
@@ -41,9 +77,9 @@
         </article>
         <ul v-for="(cat, index) in paintes">
             <p class="title">{{index}}</p>
-            <li v-for="(p, i) in cat.paintes"  v-if="paintEdit != 'editPaint_' + index">
-                    <figure>
-                        <img :src="'/storage/'+p.archivo" width="10%" alt="">
+            <li v-for="(p, i) in cat"  v-if="paintEdit != 'editPaint_' + index">
+                    <figure v-if="p.attributes.category == 1 || p.attributes.category == 3">
+                        <img :src="'/storage/'+p.attributes.archivo" width="10%" alt="">
                     </figure>
                     <article>
                         <p>{{p.name}}</p>
@@ -61,12 +97,6 @@
                         <article v-if="i == 'description'" class="form-group">
                             <label>{{i}}</label>
                             <textarea type="text" class="input" v-model="paint[i]"></textarea>
-                        </article>
-                        <article v-if="i == 'category_id'" class="form-group">
-                            <label>{{i}}</label>
-                            <select type="text" class="input" v-model="paint[i]">
-                                <option v-for="cat in categories" :value="cat.id">{{cat.name}}</option>
-                            </select>
                         </article>
                         <article v-if="i == 'archivo'" class="form-group">
                             <label>{{i}}</label>
@@ -93,9 +123,10 @@ export default{
         var este = this;
 
         axios.get('/panel/get-paints').then((paintes) => {
-            este.paintes = paintes.data
-            console.log(este.paintes);
-            
+            este.paintes = paintes.data            
+        });
+        axios.get('/get-materials').then((materials) => {
+            este.materials = materials.data       
         });
     },
     props: [
@@ -107,6 +138,7 @@ export default{
            newPaint: false,
            paint: false,
            paintEdit: false,
+           materials: false,
            npaint: {
                name: null,
                attributes: {
@@ -120,9 +152,9 @@ export default{
           var este = this,
                 formData = new FormData();
 
-                formData.append('name', this.paint.name);
-                formData.append('attributes', JSON.parse(this.paint.attributes));
-                formData.append('archivo', this.paint.attributes.archivo);
+                formData.append('name', this.npaint.name);
+                formData.append('attributes', JSON.stringify(this.npaint.attributes));
+                formData.append('archivo', this.npaint.attributes.archivo);
 
                 axios.post('/panel/save-paint', formData).then((paint) => {
                     este.paintes = paint.data
@@ -164,6 +196,10 @@ export default{
       },
       setNewPic($e){
           this.paint.attributes.archivo = $e.target.files[0];
+      },
+      addBase($event){
+          this.npaint.attributes.bases ?  this.npaint.attributes.bases.push(this.materials[$event.target.value]) : this.npaint.attributes.bases = [this.materials[$event.target.value]];   
+             
       }
     }
 }

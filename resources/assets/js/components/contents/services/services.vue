@@ -4,7 +4,7 @@
         <preparation v-if="!active || active == 2" :active="active == 2 ? true : false"></preparation>
         <welding  v-if="!active || active == 3" :active="active == 3 ? true : false"></welding>
         <finishes :finishes="finishes" v-if="!active || active == 4" :active="active == 4 ? true : false"></finishes>
-        <painting  v-if="!active || active == 5" :active="active == 5 ? true : false"></painting>
+        <painting :paints="paints"  v-if="!active || active == 5" :active="active == 5 ? true : false"></painting>
         <delivery  v-if="!active || active == 6" :active="active == 6 ? true : false"></delivery>
         <article v-if="!active">
             <p class="title">
@@ -37,7 +37,7 @@ export default {
         }
         
     },
-    props: ['materials', 'finishes', 'mills', 'sec'],
+    props: ['materials', 'finishes', 'mills', 'sec', 'paints'],
     data(){
         return{
             active: false
