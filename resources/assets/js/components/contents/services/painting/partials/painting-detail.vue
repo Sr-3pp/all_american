@@ -20,7 +20,7 @@
                 ask for any finish you require. You can che k more finish
                 examples on button below.
                 <br><br>
-                <button class="cta btn">See More</button>
+                <button class="cta btn" @click="allChart()">See More</button>
             </p>
             <icon name="star_panel2"></icon>
         </div>
@@ -42,7 +42,7 @@
         </p>
         <article class="info column" v-if="category == 1">
             <ul>
-                <ol v-for="(p, i) in paint">
+                <ol v-if="p.attributes.archivo != undefined" v-for="(p, i) in paint">
                     <figure>
                         <figcaption>
                             <p class="text">
@@ -61,7 +61,7 @@
                                 </ul>
                             </div>
                         </figcaption>
-                        <img width="100%" src="/img/default.jpg" alt="">
+                        <img width="100%" :src="'/storage/'+p.attributes.archivo" alt="">
                     </figure>
                 </ol>
             </ul>
@@ -121,33 +121,63 @@
             </ul>
         </article>
         <article class="info column" v-if="category == 3">
-            <p class="text">
+            <div>
+                <p class="text">
                 <b>Notice</b> <br>
                 The patina finish may vary or look different on the screen,
                 ask us for a sample. <br><br>
                 The patina finish shown here are just some examples, you
                 can ask for any finish you require.
             </p>
-            <p class="title">
-                TRADITIONAL BLUE AND GREEN PATINA 
-            </p>
-            <ul>
-                <ol v-for="(p, i) in paint">
-                    {{p.name}}
+            <ul class="patina-list">
+                <ol v-if="p.attributes.archivo != undefined" v-for="(p, i) in paint">
+                    <div>
+                        <p class="title">{{p.name}}</p>
+                    </div>
                     <ul>
-                        <p class="text">{{p.attributes.name}}</p>
-                        <li v-for="m in p.attributes.bases">{{m.name}}</li>
+                        <p class="text">{{p.attributes.name}}</p><br>
+                        <li v-for="(b, ind) in p.attributes.bases">{{b.name}}</li>
                     </ul>
-                    <img width="100%" src="/img/default.jpg" alt="">
+                    <img width="100%" :src="'/storage/'+p.attributes.archivo" alt="">
                 </ol>
             </ul>
+            </div>
         </article>
+        <section class="finishchart" :s-active="chart">
+                <article class="chart-table">
+                    <p class="title">
+                        FINISH CHART ANSI/MHMS
+                    </p>
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>US Code</th>
+                            <th>Finish Description</th>
+                            <th>Base Material</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(p, i) in paints['finish Chart']">
+                            <td>{{p.attributes.code}}</td>
+                            <td>{{p.attributes.uscode}}</td>
+                            <td>{{p.attributes.description}}</td>
+                            <td>
+                                <p v-if="b" v-for="(b, ind) in p.attributes.bases">{{b.name}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </article>
+        </section>
     </div>
 </template>
 <script>
 export default {
     mounted(){
-                
+           this.$bus.$on('modal', ($event) => {
+               this.allChart()
+           });     
     },
     props: [
         'paints', 'category'
@@ -156,7 +186,8 @@ export default {
         return {
             paint: false,
             hue: false,
-            color: false
+            color: false,
+            chart: false
         }
     },
     methods: {
@@ -171,6 +202,10 @@ export default {
             if (!this.hue){
                 this.color = false;
             }
+        },
+        allChart(){
+            this.chart ? this.chart = false : this.chart = true;
+            $('.overlay').first().attr('s-active', this.chart);
         }
     },
     watch: {

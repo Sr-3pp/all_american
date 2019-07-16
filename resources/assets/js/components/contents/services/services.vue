@@ -35,6 +35,12 @@ export default {
         }else if(this.sec == 'delivery'){
             this.active = 6
         }
+        var este = this;
+        $('.overlay').click(function(){
+            var self = $(this);
+            self.attr('s-active', false);
+            este.$bus.$emit('modal');
+        });
         
     },
     props: ['materials', 'finishes', 'mills', 'sec', 'paints'],

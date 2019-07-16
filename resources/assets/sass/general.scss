@@ -1,5 +1,19 @@
 body{
     background-color: #000;
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        opacity: .8;
+        width: 100%;
+        height: 100vh;
+        z-index: 9;
+        display: none;
+        &[s-active=true]{
+            display: block;
+        }
+    }
     header{
         display: none;
         font-family: 'Aero Matics';
@@ -645,6 +659,62 @@ body{
                             font-weight: bold;
                         }
                     }
+                }
+            }
+        }
+        .patina-list{
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            >ol{
+                width: 25%;
+            }
+        }
+        .finishchart{
+            position: fixed;
+            z-index: 10;
+            width: 80%;
+            margin: 0 auto;
+            left: -30%;
+            top: 0;
+            transform: translate(50%, -100%);
+            transition: transform .2s ease;
+            &[s-active=true]{
+                transform: translate(50%, 0);
+            }
+            .chart-table{
+                min-height: 80vh;
+                background-color: $gray;
+                color: #FFF;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                border-bottom-left-radius: 5%;
+                border-bottom-right-radius: 5%;
+                overflow: hidden;
+                padding: 3%;
+                .title{
+                    padding: 3%;
+                    text-align: center;
+                    width: 100%;
+                }
+                .table{
+                    color: #fff;
+                    width: 100%;
+                    th, td{
+                        text-align: center;
+                        padding: 1%;
+                        border-bottom: {
+                            style: solid;
+                            color: #FFF;
+                            width: 1px;
+                        }
+                    }
+                    th{
+                        font-weight: bold;
+                    }
+
                 }
             }
         }

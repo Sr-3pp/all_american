@@ -47,6 +47,10 @@
                     </div>
                     <div v-if="npaint.attributes.category == 3">
                         <p class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="input" v-model="npaint.attributes.name">
+                        </p>
+                        <p class="form-group">
                             <label>Base Material</label>
                             <select class="input" @change="addBase($event)">
                                 <option>Select Material</option>
