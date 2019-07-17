@@ -89,24 +89,27 @@
                         <p>{{p.name}}</p>
                     </article>
                     <button class="btn" @click="editPaint(p, index, i)">Edit</button>
-                    <button class="btn" @click="deletePaint(p.id, index, i)">Delete</button>
+                    <button class="btn" @click="deletePaint(p, index, i)">Delete</button>
                 
             </li>
             <li v-if="paintEdit == 'editPaint_' + index">
                     <div v-for="(fin, i) in paint">
                         <article v-if="i == 'name'" class="form-group">
                             <label>{{i}}</label>
+                            <p>{{paint[0]}}</p>
                             <input type="text" class="input" v-model="paint[i]">
                         </article>
-                        <article v-if="i == 'description'" class="form-group">
-                            <label>{{i}}</label>
-                            <textarea type="text" class="input" v-model="paint[i]"></textarea>
-                        </article>
-                        <article v-if="i == 'archivo'" class="form-group">
-                            <label>{{i}}</label>
-                            <input type="file" class="input" @change="setNewPic($event)">
-                        </article>
                     </div>
+                    <div v-for="(at, ind) in paint.attributes">
+                            <article v-if="ind == 'description'" class="form-group">
+                            <label>{{ind}}</label>
+                            <textarea type="text" class="input" v-model="paint.attributes[ind]"></textarea>
+                            </article>
+                            <article v-if="ind == 'archivo'" class="form-group">
+                                <label>{{ind}}</label>
+                                <input type="file" class="input" @change="setNewPic($event)">
+                            </article>
+                        </div>
                     <button @click="editPaint()" class="btn">Cancel</button>
                     <button @click="updatePaint()" class="btn">Save</button>
             </li>
@@ -162,19 +165,23 @@ export default{
 
                 axios.post('/panel/save-paint', formData).then((paint) => {
                     este.paintes = paint.data
-                    este.npaint= {
-                        name: null,
-                        attributes: {
-                            category: 0
-                        }
-                    }
+                    este.npaint= null;
+                    este.npaint.attributes= null;
+                    este.npaint.attributes.category= 0;
                 })
       } ,
-      deletePaint(id, index, i){
+      deletePaint(p, index, i){
           if (confirm('Delete paint?')) {
-              var este = this;
-              axios.get('/panel/delete-paint/'+id).then((response) => {
-                  este.paintes[index].paintes.splice(i, 1)
+              var este = this,
+                 formData = new FormData();
+
+                formData.append('id', JSON.stringify(p.id));
+                formData.append('attributes', JSON.stringify(p.attributes));
+              axios.post('/panel/delete-paint', formData).then((paint) => {
+                  este.paintes = paint.data
+                    este.npaint= null;
+                    este.npaint.attributes= null;
+                    este.npaint.attributes.category= 0;
               });
           }
       },
@@ -186,13 +193,16 @@ export default{
           var este = this,
             formData = new FormData();
                 formData.append('name', this.paint.name);
-                formData.append('attributes', JSON.parse(this.paint.attributes));
+                formData.append('attributes', JSON.stringify(this.paint.attributes));
                 formData.append('archivo', this.paint.attributes.archivo);
 
                 axios.post('/panel/update-paint/'+ this.paint.id, formData).then((r) => {
                     este.paint = false;
                     este.paintEdit = false;
                     este.paintes = r.data
+                    este.npaint= false;
+                    este.npaint.attributes= false;
+                    este.npaint.attributes.category= 0;
                 }).catch((e) => {
                     console.log(e);
                 });

@@ -92,6 +92,8 @@ Route::prefix('panel')->group(function(){
 
     Route::get('/get-paints', 'AdminController@getPaints');
     Route::post('/save-paint', 'AdminController@addPaint');
+    Route::post('/update-paint/{id}', 'AdminController@updatePaint');
+    Route::post('/delete-paint', 'AdminController@deletePaint');
   
  });
 

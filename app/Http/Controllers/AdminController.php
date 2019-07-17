@@ -416,4 +416,50 @@ class AdminController extends Controller
         return $paint;
     }
 
+    public function updatePaint(Request $r, $id){
+        $data = $r->all();
+        $attr = json_decode($data['attributes']);
+        $cat = $attr->category;
+        if ($r->hasFile('archivo')) {
+            Storage::delete($attr->archivo);
+            $attr->archivo = $r->archivo->store('paints/'.$cat);
+        }
+        $data['attributes'] = json_encode($attr);
+        if($cat == 1){
+            $model = FinishChart::find($id);
+        }else if($cat == 2){
+            $model = PowderCoat::find($id);
+        }else if ($cat == 3) {
+            $model = Patina::find($id);
+        }
+
+        $model->update($data);
+        $model->attributes = json_decode($model->attributes);
+
+        return $this->getPaints();
+
+    }
+
+    public function deletePaint(Request $r){
+        $data = $r->all();
+        $attr = json_decode($data['attributes']);
+        $cat = $attr->category;
+        if ($r->hasFile('archivo')) {
+            Storage::delete($attr->archivo);
+            $attr->archivo = $r->archivo->store('paints/'.$cat);
+        }
+        $data['attributes'] = json_encode($attr);
+        if($cat == 1){
+            $model = FinishChart::find($data['id']);
+        }else if($cat == 2){
+            $model = PowderCoat::find($data['id']);
+        }else if ($cat == 3) {
+            $model = Patina::find($data['id']);
+        }
+
+        $model->delete();
+
+        return $this->getPaints(); 
+    }
+
 }
