@@ -33,7 +33,8 @@
 <script>
 export default {
     mounted(){
-
+        console.log(this.news);
+        
     },
     props: [
         'news'

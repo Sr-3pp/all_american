@@ -238,23 +238,8 @@ class Controller extends BaseController
                 ]
             ]
         ];
-        $news = [
-            [
-                'title' => 'WORKING ON NEW RAILS',
-                'fecha' => 'Febraury 05, 2019',
-                'prev' =>   'We work in a professional and effective way, to meet the expectations of each project.'
-            ],
-            [
-                'title' => 'WORKING ON NEW RAILS',
-                'fecha' => 'Febraury 05, 2019',
-                'prev' =>   'We work in a professional and effective way, to meet the expectations of each project.'
-            ],
-            [
-                'title' => 'WORKING ON NEW RAILS',
-                'fecha' => 'Febraury 05, 2019',
-                'prev' =>   'We work in a professional and effective way, to meet the expectations of each project.'
-            ]
-        ];
+    
+        $news = app('App\Http\Controllers\NewsController')->getNews();
 
         $p = Project::all()->take(5);
         $projects = [];

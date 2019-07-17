@@ -29,6 +29,10 @@ Route::get('/forming-materials', 'Controller@formingMaterials');
 
 Route::post('/save-valoration', 'Controller@saveValoration');
 
+Route::get('/get-news', 'NewsController@getNews');
+Route::get('/like-new/{id}', 'NewsController@likeNew');
+Route::get('/comment-new/{id}', 'NewsController@commentNew');
+
 Route::prefix('services')->group(function(){
     Route::get('/', 'Controller@services');
     Route::get('/{section}', 'Controller@goService');
@@ -94,6 +98,10 @@ Route::prefix('panel')->group(function(){
     Route::post('/save-paint', 'AdminController@addPaint');
     Route::post('/update-paint/{id}', 'AdminController@updatePaint');
     Route::post('/delete-paint', 'AdminController@deletePaint');
+
+    Route::get('/delete-new/{id}', 'NewsController@deleteNew');
+    Route::post('/update-new/{id}', 'NewsController@dupdateNew');
+    Route::post('/create-new', 'NewsController@createNew');
   
  });
 

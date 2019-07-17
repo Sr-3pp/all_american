@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Newsletter extends Model
 {
     protected $fillable = [
-        'user'
+        'email', 'status'
     ];
+
+    public function comments(){
+        return $this->hasMany('App\Comments');
+    }
 }

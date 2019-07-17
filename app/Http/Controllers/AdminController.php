@@ -17,6 +17,7 @@ use App\FinishChart;
 use App\PowderCoat;
 use App\Patina;
 use Storage;
+use App\Article;
 
 class AdminController extends Controller
 {
@@ -461,5 +462,4 @@ class AdminController extends Controller
 
         return $this->getPaints(); 
     }
-
 }
