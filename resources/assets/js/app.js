@@ -38,6 +38,7 @@ Vue.component('tabs', require('./components/partials/tabs/tabs.vue'));
 Vue.component('tabs-content-general', require('./components/partials/tabs/contents/general.vue'));
 Vue.component('tabs-content-home', require('./components/partials/tabs/contents/home.vue'));
 Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
+Vue.component('editor', require('./components/partials/editor.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));
 Vue.component('projects', require('./components/contents/projects/projects.vue'));
@@ -105,6 +106,13 @@ Vue.component('icon', Icon);
 
 import Vue from 'vue'
 import VueAnimate from 'vue-animate-scroll'
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'froala-editor/js/froala_editor.pkgd.min.js';
+import 'froala-editor/js/plugins.pkgd.min.js';
+ 
+// Import and use Vue Froala lib.
+import VueFroala from 'vue-froala-wysiwyg'
+Vue.use(VueFroala)
  
 Vue.use(VueAnimate)
 

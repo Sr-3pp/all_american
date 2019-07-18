@@ -1,18 +1,19 @@
 <template>
     <div class="content">
         <article v-if="newnew" class="new-new">
+             <p class="form-group">
+                <label>Portada</label>
+                <upload-picture></upload-picture>
+            </p>
             <p class="form-group">
                 <label>Title</label>
                 <input class="input" type="text" v-model="nnew['title']">
             </p>
-            <p class="form-group">
+            <p id="quill-editor" class="form-group">
                 <label>Content</label>
-                <textarea class="input" type="text" v-model="nnew['content']"></textarea>
+                <editor></editor>
             </p>
-            <p class="form-group">
-                <label>Archivo</label>
-                <input class="input" type="file" @change="setNewPic()">
-            </p>
+            <button class="btn" @click="saveNew()">save</button>
         </article>
         <div class="news">
             <article class="new" v-for="(n, i) in news">
@@ -56,6 +57,10 @@ export default{
         var este = this;
         this.$bus.$on('new', ($event) => {
             this.newnew ? this.newnew = false : this.newnew = true;
+        }).$on('setPic', ($event) => {
+            this.nnew.archivo = $event.picture
+        }).$on('recieve-data', ($event) => {
+            this.nnew.content = $event.content
         });
 
         axios.get('/get-news').then((news) => {
@@ -77,7 +82,22 @@ export default{
         }
     },
     methods: {
-       
+       saveNew(){
+           this.getContent();
+           var este = this,
+                formData = new FormData();
+
+                formData.append('title', this.nnew.title);
+                formData.append('content', JSON.stringify(this.nnew.content));
+                formData.append('archivo', this.nnew.archivo);
+           console.log(this.nnew);
+       },
+       getContent(){
+           this.$bus.$emit('request-data');
+       },
+       setNewPic($event){
+           this.nnew.archivo = $event.target.files[0];
+       }
     }
 }
 </script>
