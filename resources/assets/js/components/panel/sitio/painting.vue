@@ -2,11 +2,11 @@
     <div s-desk="painting">
         <article v-if="newPaint">
                 <article>
-                    <p>
-                        <label>Color</label>
-                        <input type="text" class="input" v-model="npaint.name">
-                    </p>
                     <div v-if="npaint.attributes.category == 1">
+                         <p>
+                            <label>Name</label>
+                            <input type="text" class="input" v-model="npaint.name">
+                         </p>
                         <p class="form-group">
                             <label>Code</label>
                             <input type="text" class="input" v-model="npaint.attributes.code">
@@ -36,6 +36,19 @@
                         </ul>
                     </div>
                     <div v-if="npaint.attributes.category == 2">
+                        <p v-if="!addColor" class="form-group">
+                            <label>Color</label>
+                            <select class="input" v-model="npaint.name">
+                                <option :value="null" selected>Select a color, or create a new one</option>
+                                <option v-for="(p, ind) in colors" :value="p">{{p}}</option>
+                            </select>
+                            <button class="btn" @click="addColor ? addColor = false : addColor = true">Add color</button>
+                         </p>
+                         <p v-else class="form-group">
+                             <label>Color Name</label>
+                             <input type="text" class="input" v-model="npaint.name" placeholder="New Color Name">
+                             <button class="btn" @click="addColor ? addColor = false : addColor = true">Select color</button>
+                         </p>
                         <p class="form-group">
                             <label>Hue</label>
                             <input type="text" class="input" v-model="npaint.attributes.hue">
@@ -46,6 +59,10 @@
                         </p>
                     </div>
                     <div v-if="npaint.attributes.category == 3">
+                        <p>
+                            <label>Color</label>
+                            <input type="text" class="input" v-model="npaint.name">
+                         </p>
                         <p class="form-group">
                             <label>Name</label>
                             <input type="text" class="input" v-model="npaint.attributes.name">
@@ -130,7 +147,17 @@ export default{
         var este = this;
 
         axios.get('/panel/get-paints').then((paintes) => {
-            este.paintes = paintes.data            
+            este.paintes = paintes.data  
+            var colors = [];
+            console.log(este.paintes);
+            
+            for (let i = 0; i < este.paintes['powder_coat'].length; i++) {
+                const element = este.paintes['powder_coat'][i];
+                colors.push(element.name);
+            }      
+                este.colors = colors.filter(function(elem, index, self) {
+                    return index === self.indexOf(elem);
+                });                
         });
         axios.get('/get-materials').then((materials) => {
             este.materials = materials.data       
@@ -143,9 +170,11 @@ export default{
         return {
             paintes: null,
            newPaint: false,
+           colors: [],
            paint: false,
            paintEdit: false,
            materials: false,
+           addColor: false,
            npaint: {
                name: null,
                attributes: {
@@ -165,9 +194,9 @@ export default{
 
                 axios.post('/panel/save-paint', formData).then((paint) => {
                     este.paintes = paint.data
-                    este.npaint= null;
-                    este.npaint.attributes= null;
-                    este.npaint.attributes.category= 0;
+                    este.npaint.name= null;
+                    este.npaint.attributes= {category: 0}
+                    este.newPaint = false
                 })
       } ,
       deletePaint(p, index, i){
@@ -179,7 +208,7 @@ export default{
                 formData.append('attributes', JSON.stringify(p.attributes));
               axios.post('/panel/delete-paint', formData).then((paint) => {
                   este.paintes = paint.data
-                    este.npaint= null;
+                    este.npaint.name= null;
                     este.npaint.attributes= null;
                     este.npaint.attributes.category= 0;
               });
@@ -199,10 +228,6 @@ export default{
                 axios.post('/panel/update-paint/'+ this.paint.id, formData).then((r) => {
                     este.paint = false;
                     este.paintEdit = false;
-                    este.paintes = r.data
-                    este.npaint= false;
-                    este.npaint.attributes= false;
-                    este.npaint.attributes.category= 0;
                 }).catch((e) => {
                     console.log(e);
                 });

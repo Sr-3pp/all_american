@@ -3,13 +3,13 @@
         <h2 class="title">Last News</h2>
         <div class="news">
             <article v-for="(n, index) in news" class="new">
-                <figure class="cover">
+                <figure class="cover" @click="goToNew(n.id)">
                     <img src="/img/default.jpg" alt="">
                 </figure>
-                <p class="s-text">
+                <p class="s-text" @click="goToNew(n.id)">
                     {{n.fecha}}
                 </p>
-                <div class="content">
+                <div class="content" @click="goToNew(n.id)">
                     <h3 class="category">{{n.title}}</h3>
                     <p class="s-text">
                         {{n.prev}}
@@ -19,7 +19,7 @@
                     <button class="btn">
                         <icon name="coment"></icon>
                     </button>
-                    <button class="btn">
+                    <button class="btn" @click="likeNew(n, index)">
                         <icon name="like"></icon>
                     </button>
                     <button class="btn">
@@ -33,7 +33,6 @@
 <script>
 export default {
     mounted(){
-        console.log(this.news);
         
     },
     props: [
@@ -45,7 +44,15 @@ export default {
         }
     },
     methods: {
-
+        likeNew(n, i){
+            var este = this;
+            axios.get('/like-new/'+n.id).then((response) => {
+                este.news[i].likes.push(response.data)
+            });
+        },
+        goToNew(id){
+            window.location.href = '/new/'+id
+        }
     }
 }
 </script>

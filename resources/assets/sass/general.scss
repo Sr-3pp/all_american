@@ -149,6 +149,7 @@ body{
             max-height: 60vh;
             max-width: 500px;
             position: relative;
+            cursor: pointer;
             transition: all .2s ease;
             &:last-child{
                 margin-right: 0;
@@ -460,12 +461,19 @@ body{
                 }
             }
         }
+        .froala-editor{
+            .second-toolbar{
+                #logo{
+                    display: none;
+                }
+            }
+        }
         .modal{
             position: fixed;
             width: 80%;
             top: 0;
             background-color: #FFF;
-            z-index: 3;
+            z-index: 10;
             left: 50%;
             transform: translate(-50%, -100%);
             transition: all .2s ease;
@@ -1890,6 +1898,89 @@ body{
                 }
             }
         }
+        .detail-new{
+            background-color: #FFF;
+            overflow: hidden;
+            min-height: 500px;
+            .close-btn{
+                position: absolute;
+                top: 1.5vw;
+                right: 1.5vw;
+                width: 3vw;
+                height: 3vw;
+                background-color: transparent;
+                padding: 0;
+                border: {
+                    color: #FFF;
+                    style: solid;
+                    radius: 100%;
+                    width: 1px;
+                }
+                z-index: 12;
+                svg{
+                    color: #FFF;
+                    width: 100%;
+                }
+            }
+            .modal-body{
+                >figure{
+                    position: relative;
+                    margin-bottom: 3%;
+                    min-height: 300px;
+                    p{
+                        cursor: pointer;
+                        position: absolute;
+                        transition: opacity .2s ease;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &::before{
+                            content: 'Change Cover';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            font-size: 5vw;
+                            opacity: 0;
+                            transition: opacity .2s ease;
+                        }
+                        &:hover{
+                            &::before{
+                                opacity: 1;
+                            }
+                            p{
+                                opacity: .5;
+                            }
+                        }
+                    }
+                    figcaption{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(#000, .8);
+                        width: 100%;
+                        color: #FFF;
+                        padding: 3%;
+                        height: auto;
+                        max-height: 50%;
+                        .input{
+                            background-color: transparent;
+                            color: #FFF;
+                            font-size: 3rem;
+                        }
+                    }
+                }
+                >ul{
+                    
+                }
+            }
+        }
         [s-sec=navigation]{
             position: sticky;
             top: 0;
@@ -2271,6 +2362,7 @@ body{
                 justify-content: space-between;
                 flex-direction: column;
                 align-items: center;
+                flex-wrap: wrap;
             }
         }
         [s-sec=projects]{
@@ -3475,6 +3567,47 @@ body{
                     }
                 }
             }
+            [s-sec=article]{
+                box-shadow: 0 0 20px rgba(#000, .5);
+                margin-bottom: 5%;
+                .new-info{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: stretch;
+                    padding-top: 5%;
+                    margin-bottom: 5%;
+                    >*{
+                        flex: {
+                            grow: 1;
+                            shrink: 1;
+                            basis: 33%;
+                        }
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: center;
+                        svg{
+                            width: 30px;
+                            margin-right: 2%;
+                        }
+                    }
+                }
+                .header{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 5%;
+                    figcaption{
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(#000, .8);
+                        color: #FFF;
+                        padding: 3%;
+                    }
+                }
+            }
         }
         &[s-layout=panel]{
             background-color: #FFF;
@@ -3504,6 +3637,108 @@ body{
                 }
                 [s-desk=projects]{
 
+                }
+                &[s-desk=news]{
+                    .news{
+                        display: flex;
+                        flex-wrap: wrap;
+                        
+                        .new{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 48%;
+                            }
+                            margin-top: 0;
+                            &:nth-child(odd){
+                                margin-right: 1%;
+                            }
+                            &:nth-child(even){
+                                margin-left: 1%;
+                            }
+                            .cover{
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #FFF;
+                                .buttons{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    padding: 2% 0;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    background-color: rgba(#000, .8);
+                                    >*{
+                                        flex: {
+                                            grow: 1;
+                                            shrink: 1;
+                                            basis: 48%;
+                                        }
+                                    }
+                                    >.btn{
+                                        border-radius: 0;
+                                        &:first-child{
+                                            margin-right: 1%;
+                                        }
+                                        &:last-child{
+                                            margin-left: 1%;
+                                        }
+                                    }
+                                }
+                            }
+                            .social-list{
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: stretch;
+                                list-style: none;
+                                background-color: #FFF;
+                                >*{
+                                    flex: {
+                                        grow: 1;
+                                        shrink: 1;
+                                        basis: 33%;
+                                    }
+                                }
+                                >li{
+                                    padding: 2%;
+                                    text-align: center;
+                                    &:last-child{
+                                        cursor: pointer;
+                                        &:hover{
+                                            background-color: $Ablue;
+                                            color: #FFF;
+                                            >p{
+                                                color: #FFF;
+                                            }
+                                            svg{
+                                                color: #FFF;
+                                                fill: #FFF;
+                                            }
+                                        }
+                                    }
+                                    &:first-child{
+                                        border-right: {
+                                            style: solid;
+                                            width: 1px;
+                                            color: rgba(#000, .5);
+                                        }
+                                    }
+                                    >p{
+                                        color:#000;
+                                    }
+                                    svg{
+                                        width: 25%;
+                                        fill: $Ared;
+                                        stroke: $Ared;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 [s-target=gallery]{
                     .modal-body{

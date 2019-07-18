@@ -9,11 +9,15 @@ export default {
     mounted(){
         var este = this;
         this.$bus.$on('request-data', ($event) => {
-            this.$bus.$emit('recieve-data', {content: este.model});
-        });
+            this.$bus.$emit('recieve-data', {edit: este.editFro, content: este.model});
+        });        
     },
+    props: [
+        'content'
+    ],
     data(){
         return {
+            editFro: false,
             config: {
                 events: {
                     initialized: function () {
@@ -40,6 +44,16 @@ export default {
     },
     methods: {
 
+    },
+    watch: {
+      content: {
+          handler(val, old){
+              
+              this.model = val;
+                  this.editFro = true;                  
+              console.log(val);
+          }
+      }
     }
 }
 </script>

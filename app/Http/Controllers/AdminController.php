@@ -414,7 +414,7 @@ class AdminController extends Controller
 
         $paint->attributes = json_decode($paint->attributes);
 
-        return $paint;
+        return $this->getPaints();
     }
 
     public function updatePaint(Request $r, $id){

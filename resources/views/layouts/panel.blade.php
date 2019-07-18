@@ -27,6 +27,7 @@
         </header>
         @yield('content')
     </div>
+    <div class="overlay" s-active="false"></div>
     <footer>
         
     </footer>
