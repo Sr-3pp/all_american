@@ -430,22 +430,45 @@ class Controller extends BaseController
         }
        
         if(!$pc->isEmpty()){
+            $colors = [];
             foreach ($pc as $key => $a) {
                 $a->attributes = json_decode($a->attributes);
+                array_push($colors, $a->name);
+            }
+            $cols = array_unique($colors);
+            $coats = [];
+            foreach ($cols as $key => $co) {
+                foreach ($pc as $k => $a) {
+                    if($a->name == $co){
+                        $coats[$co][$k] = $a; 
+                    }
+                }
             }
         }
         
         if(!$p->isEmpty()){
+            $groups = [];
             foreach ($p as $key => $a) {
                 $a->attributes = json_decode($a->attributes);
+                array_push($groups, $a->name);
+            }
+            $grps = array_unique($groups);
+            $patinas = [];
+
+            foreach ($grps as $key => $co) {
+                foreach ($p as $k => $a) {
+                    if($a->name == $co){
+                        $patinas[$co][$k] = $a; 
+                    }
+                }
             }
         }
       
 
         $paints = [
             'finish Chart' => $fc,
-            'powder coat' => $pc,
-            'patina' => $p,
+            'powder coat' => $coats,
+            'patina' => $patinas,
             'length' => 3
         ];
 

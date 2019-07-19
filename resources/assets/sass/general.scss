@@ -671,18 +671,21 @@ body{
             }
         }
         .patina-list{
-            display: flex;
-            list-style: none;
-            justify-content: flex-start;
-            >ol{
-                flex: {
-                    grow: 0;
-                    shrink: 1;
-                    basis: 24%;
-                }
-                margin-right: 2%;
-                &:nth-child(4n){
-                    margin-right: 0;
+            >ul{
+                display: flex;
+                list-style: none;
+                justify-content: flex-start;
+                margin-bottom: 5%;
+                >ol{
+                    flex: {
+                        grow: 0;
+                        shrink: 1;
+                        basis: 24%;
+                    }
+                    margin-right: 2%;
+                    &:nth-child(4n){
+                        margin-right: 0;
+                    }
                 }
             }
         }

@@ -59,9 +59,18 @@
                         </p>
                     </div>
                     <div v-if="npaint.attributes.category == 3">
-                        <p>
+                         <p v-if="!addColor" class="form-group">
                             <label>Color</label>
-                            <input type="text" class="input" v-model="npaint.name">
+                            <select class="input" v-model="npaint.name">
+                                <option :value="null" selected>Select a color, or create a new one</option>
+                                <option v-for="(p, ind) in patcolors" :value="p">{{p}}</option>
+                            </select>
+                            <button class="btn" @click="addColor ? addColor = false : addColor = true">Add Group</button>
+                         </p>
+                         <p v-else class="form-group">
+                             <label>Color Name</label>
+                             <input type="text" class="input" v-model="npaint.name" placeholder="New Color Name">
+                             <button class="btn" @click="addColor ? addColor = false : addColor = true">Cancel and select a group</button>
                          </p>
                         <p class="form-group">
                             <label>Name</label>
@@ -98,16 +107,42 @@
         </article>
         <ul v-for="(cat, index) in paintes">
             <p class="title">{{index}}</p>
-            <li v-for="(p, i) in cat"  v-if="paintEdit != 'editPaint_' + index">
-                    <figure v-if="p.attributes.category == 1 || p.attributes.category == 3">
-                        <img :src="'/storage/'+p.attributes.archivo" width="10%" alt="">
-                    </figure>
-                    <article>
+            <li v-for="(p, i) in cat"  v-if="paintEdit != 'editPaint_' + index && i != 'length'">
+                    <article v-if="index == 'finish Chart'">
+                        <img v-if="p.attributes.archivo != undefined" :src="'/storage/'+p.attributes.archivo" alt="">
                         <p>{{p.name}}</p>
+                        <button class="btn" @click="editPaint(p, index, i)">Edit</button>
+                        <button class="btn" @click="deletePaint(p, index, i)">Delete</button>
                     </article>
-                    <button class="btn" @click="editPaint(p, index, i)">Edit</button>
-                    <button class="btn" @click="deletePaint(p, index, i)">Delete</button>
-                
+                    <article v-if="index == 'powder coat'">
+                        <ul>
+                            <ol>
+                                <p class="text">{{i}}</p>
+                                <ul>
+                                    <li v-for="(co, c) in p">
+                                        {{co.attributes.hue}}
+                                        <button class="btn" @click="editPaint(co, index, c)">Edit</button>
+                                        <button class="btn" @click="deletePaint(co, index, c)">Delete</button>
+                                    </li>
+                                </ul>
+                            </ol>
+                        </ul>
+                    </article>
+                    <article v-if="index == 'patina'">
+                        <ul>
+                            <ol>
+                                <p class="text">{{i}}</p>
+                                <ul>
+                                    <li v-if="i != 'length'" v-for="(co, c) in p">
+                                        <img v-if="co.attributes.archivo != undefined" :src="'/storage/'+co.attributes.archivo" alt="">
+                                        {{co.attributes.name}}
+                                        <button class="btn" @click="editPaint(co, index, c)">Edit</button>
+                                        <button class="btn" @click="deletePaint(co, index, c)">Delete</button>
+                                    </li>
+                                </ul>
+                            </ol>
+                        </ul>
+                    </article>
             </li>
             <li v-if="paintEdit == 'editPaint_' + index">
                     <div v-for="(fin, i) in paint">
@@ -119,8 +154,31 @@
                     </div>
                     <div v-for="(at, ind) in paint.attributes">
                             <article v-if="ind == 'description'" class="form-group">
-                            <label>{{ind}}</label>
-                            <textarea type="text" class="input" v-model="paint.attributes[ind]"></textarea>
+                                <label>{{ind}}</label>
+                                <textarea type="text" class="input" v-model="paint.attributes[ind]"></textarea>
+                            </article>
+                            <article v-if="ind == 'hue'" class="form-group">
+                                <label>{{ind}}</label>
+                                <input type="text" class="input" v-model="paint.attributes[ind]" />
+                            </article>
+                            <article v-if="ind == 'hex'" class="form-group">
+                                <label>{{ind}}</label>
+                                <input type="color" v-model="paint.attributes[ind]" />
+                            </article>
+                            <article v-if="ind == 'bases'">
+                                    <p class="form-group">
+                                        <label>Base Material</label>
+                                        <select class="input" @change="editBase($event, 'add')">
+                                            <option>Select Material</option>
+                                            <option v-for="(m, i) in materials" :value="i">{{m.name}}</option>
+                                        </select>
+                                    </p>
+                                    <ul>
+                                        <li v-for="(b, ib) in paint.attributes.bases">
+                                            {{b.name}}
+                                            <button class="btn" @click="editBase($event, 'remove', ib)">Remove base</button>
+                                        </li>
+                                    </ul>
                             </article>
                             <article v-if="ind == 'archivo'" class="form-group">
                                 <label>{{ind}}</label>
@@ -148,16 +206,25 @@ export default{
 
         axios.get('/panel/get-paints').then((paintes) => {
             este.paintes = paintes.data  
-            var colors = [];
-            console.log(este.paintes);
             
-            for (let i = 0; i < este.paintes['powder_coat'].length; i++) {
-                const element = este.paintes['powder_coat'][i];
-                colors.push(element.name);
-            }      
+              var colors = [];
+            var patcolors = [];
+            $.each(este.paintes['powder coat'], function(k, v){
+                colors.push(k);  
+            })
+            $.each(este.paintes['patina'], function(k, v){
+                if(k != 'length'){                                      
+                    patcolors.push(k);  
+                }
+            })
+              
                 este.colors = colors.filter(function(elem, index, self) {
                     return index === self.indexOf(elem);
-                });                
+                });                           
+                este.patcolors = patcolors.filter(function(elem, index, self) {
+                    return index === self.indexOf(elem);
+                });                 
+                                      
         });
         axios.get('/get-materials').then((materials) => {
             este.materials = materials.data       
@@ -171,6 +238,7 @@ export default{
             paintes: null,
            newPaint: false,
            colors: [],
+           patcolors: [],
            paint: false,
            paintEdit: false,
            materials: false,
@@ -207,10 +275,10 @@ export default{
                 formData.append('id', JSON.stringify(p.id));
                 formData.append('attributes', JSON.stringify(p.attributes));
               axios.post('/panel/delete-paint', formData).then((paint) => {
-                  este.paintes = paint.data
+                 este.paintes = paint.data
                     este.npaint.name= null;
-                    este.npaint.attributes= null;
-                    este.npaint.attributes.category= 0;
+                    este.npaint.attributes= {category: 0}
+                    este.newPaint = false
               });
           }
       },
@@ -238,6 +306,13 @@ export default{
       addBase($event){
           this.npaint.attributes.bases ?  this.npaint.attributes.bases.push(this.materials[$event.target.value]) : this.npaint.attributes.bases = [this.materials[$event.target.value]];   
              
+      },
+      editBase($event, action, i){
+        if(action == 'add'){
+            this.paint.attributes.bases.push(this.materials[$event.target.value])
+        }else if(action == 'remove'){
+            this.paint.attributes.bases.splice(i, 1);
+        }
       }
     }
 }

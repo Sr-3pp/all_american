@@ -171,14 +171,14 @@
             <ul class="powder-list">
                 <ol v-for="(p, i) in paint">
                     <div @click="showHues(i)">
-                        <p class="title">{{p.name}}</p>
+                        <p class="title">{{i}}</p>
                         <icon v-if="hue !== 'hue_'+i" name="boton-v"></icon>
                         <icon v-if="hue === 'hue_'+i" name="minus"></icon>
                     </div>
                     <ul :class="{'active': hue == 'hue_'+i}">
-                        <li @click="prevColor(p)">
-                            <span :style="'background-color:' + p.attributes.hex">&nbsp;</span>
-                            <p class="text">{{p.attributes.hue}}</p>
+                        <li v-for="(pa, ind) in p" @click="prevColor(pa)">
+                            <span :style="'background-color:' + pa.attributes.hex">&nbsp;</span>
+                            <p class="text">{{pa.attributes.hue}}</p>
                         </li>
                     </ul>
                 </ol>
@@ -193,19 +193,21 @@
                 The patina finish shown here are just some examples, you
                 can ask for any finish you require.
             </p>
-            <ul class="patina-list">
-                <ol v-if="p.attributes.archivo != undefined" v-for="(p, i) in paint">
+            <article v-for="(p, i) in paint" class="patina-list">
                     <div>
-                        <p class="title">{{p.name}}</p>
+                        <p class="title">{{i}}</p>
                     </div>
+               <ul>
+                    <ol v-for="(pat, ind) in p">
                     <ul>
-                        <p class="text">{{p.attributes.name}}</p><br>
+                        <p class="text">{{pat.attributes.name}}</p><br>
                         <p class="text">Base Material</p>
-                        <li class="text" v-for="(b, ind) in p.attributes.bases">{{b.name}}</li>
+                        <li class="text" v-for="(b, ind) in pat.attributes.bases">{{b.name}}</li>
                     </ul>
-                    <img width="100%" :src="'/storage/'+p.attributes.archivo" alt="">
+                    <img width="100%" :src="'/storage/'+pat.attributes.archivo" alt="">
                 </ol>
-            </ul>
+               </ul>
+            </article>
             </div>
         </article>
         <section class="finishchart" :s-active="chart">
@@ -279,18 +281,18 @@ export default {
     watch: {
         category: {
             handler (val, old){
-                if(this.paints['finish Chart'][0] && this.paints['finish Chart'][0].attributes.category == val){
+                console.log(this.paints['patina']);
+                
+                if(val == 1){
                     this.paint = this.paints['finish Chart'];
                     this.paint.name = 'Finish Chart';
                     this.section = 'finish-chart'
-                }else if(this.paints['powder coat'][0] && this.paints['powder coat'][0].attributes.category == val){
-                    this.paint = this.paints['powder coat'];
-                    this.paint.name = 'Powder Coat';
-                    this.section = 'powder-coat'
-                }else if(this.paints['patina'][0] && this.paints['patina'][0].attributes.category == val){
+                }else if(val == 3){
                     this.paint = this.paints['patina'];
-                    this.paint.name = 'Patina';
                     this.section = 'patina'
+                }else{
+                    this.paint = this.paints['powder coat'];
+                    this.section = 'powder-coat'
                 }
                 
             }

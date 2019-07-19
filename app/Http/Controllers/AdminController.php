@@ -373,24 +373,49 @@ class AdminController extends Controller
         }
        
         if(!$pc->isEmpty()){
+            $colors = [];
             foreach ($pc as $key => $a) {
                 $a->attributes = json_decode($a->attributes);
+                array_push($colors, $a->name);
+            }
+            $cols = array_unique($colors);
+            $coats = [];
+            foreach ($cols as $key => $co) {
+                foreach ($pc as $k => $a) {
+                    if($a->name == $co){
+                        $coats[$co][$k] = $a; 
+                    }
+                }
             }
         }
         
         if(!$p->isEmpty()){
+            $groups = [];
             foreach ($p as $key => $a) {
                 $a->attributes = json_decode($a->attributes);
+                array_push($groups, $a->name);
+            }
+            $grps = array_unique($groups);
+            $patinas = ['length' => 0];
+
+            foreach ($grps as $key => $co) {
+                foreach ($p as $k => $a) {
+                    if($a->name == $co){
+                        $patinas[$co][$k] = $a; 
+                        $patinas['length'] += 1;
+                    }
+                }
             }
         }
       
 
         $paints = [
-            'finish_chart' => $fc,
-            'powder_coat' => $pc,
-            'patina' => $p
+            'finish Chart' => $fc,
+            'powder coat' => $coats,
+            'patina' => $patinas
         ];
 
+    
         return $paints;
     }
 
