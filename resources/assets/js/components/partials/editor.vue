@@ -51,7 +51,7 @@ export default {
               
               this.model = val;
                   this.editFro = true;                  
-              console.log(val);
+             
           }
       }
     }

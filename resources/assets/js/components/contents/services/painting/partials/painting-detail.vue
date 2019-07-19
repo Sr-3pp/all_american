@@ -1,5 +1,5 @@
 <template>
-    <div class="detail">
+    <div  :s-sec="section" class="detail">
         <figure class="header" :data-cat="category">
             <icon name="triangle"></icon>
             <img v-if="category == 1" src="/img/services/chart.jpg" alt="">
@@ -12,16 +12,19 @@
             <icon name="star_panel1"></icon>
         </p>  
         <div class="text column" v-if="category == 1">
-            <p>
-                <span>Notice</span><br>
-                The finish may vary or look different on the screen, ask us
-                for a sample.
-                The finish shown here are just some examples, you can
-                ask for any finish you require. You can che k more finish
-                examples on button below.
+            <div>
+                <strong>Notice</strong><br>
+                <p>
+                    The finish may vary or look different on the screen, ask us for a sample. 
+                </p><br><br>
+                <p>
+                    The finish shown here are just some examples, you can
+                    ask for any finish you require. You can che k more finish
+                    examples on button below.
+                </p>
                 <br><br>
                 <button class="cta btn" @click="allChart()">See More</button>
-            </p>
+            </div>
             <icon name="star_panel2"></icon>
         </div>
         <p class="text" v-if="category == 2">
@@ -52,12 +55,12 @@
                                 <b>US Code</b> <span>{{p.attributes.uscode}}</span>
                             </p>
                             <p class="text">
-                                <b>Description</b> <span>{{p.attributes.description}}</span>
+                                <b>Description</b> <br><span>{{p.attributes.description}}</span>
                             </p>
                             <div>
                                 <p class="text"><b>Base Material</b></p>
                                 <ul>
-                                    <li v-for="(b, ind) in p.attributes.bases">{{b.name}}</li>
+                                    <li class="text" v-for="(b, ind) in p.attributes.bases">{{b.name}}</li>
                                 </ul>
                             </div>
                         </figcaption>
@@ -69,40 +72,101 @@
         <article class="info column" v-if="category == 2">
             <p class="title">Some Advantages</p>
             <ul>
-                <li>Great resistance to corrosion, impact, abrasion and temperature changes</li>
-                <li>Great variety of colors and finishes.</li>
                 <li>
-                    It does not contain solvents, which means that the process is not aggressive
-                    with the environment, and at the same time allows a pore-free coating product
-                    of the evaporation of the solvent.
+                    <icon name="star"></icon>
+                    <p class="text">
+                         Great resistance to corrosion, impact, abrasion and temperature changes
+                    </p>
+                </li>
+                <li>
+                    <icon name="star"></icon>
+                    <p class="text">
+                        Great variety of colors and finishes.
+                    </p>
+                </li>
+                <li>
+                    <icon name="star"></icon>
+                    <p class="text">
+                        It does not contain solvents, which means that the process is not aggressive with the environment, and at the same time allows a pore-free coating product of the evaporation of the solvent.
+                    </p>
                 </li>
             </ul>
             <p class="title">Cure</p>
-            <ul>
-                    <li>Polyester </li>
-                    <li>Polyester TGIC</li>
-                    <li>Polyester TGIC Low Cure</li>
-                    <li>Super Polyester TGIC</li>
-                    <li>Polyurethane</li>
-                    <li>Polyurethane Low Cure</li>
-                    <li>Hybrid</li>
-                    <li>Hybrid Low Cure</li>
-                    <li>Epoxy</li>
-                    <li>Acrylic Polyester Hybrid</li>
+            <ul class="cure-list">
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Polyester
+                        </p>    
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Polyester TGIC
+                        </p>
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Polyester TGIC Low Cure
+                        </p>
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Super Polyester TGIC
+                        </p>    
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Polyurethane
+                        </p>    
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Polyurethane Low Cure
+                        </p>
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Hybrid
+                        </p>    
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Hybrid Low Cure
+                        </p>    
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Epoxy
+                        </p>
+                    </li>
+                    <li>
+                        <icon name="star"></icon>
+                        <p class="category">
+                            Acrylic Polyester Hybrid
+                        </p>
+                    </li>
             </ul>
             <div>
                 <figure class="prev-color">
                     <span v-if="hue && color" :style="'background-color:' + color">&nbsp;</span>
                     <img width="100%" src="/img/block.PNG" alt="">
                 </figure>
-                <p>
+                <div class="text">
                     <strong>Notice</strong>
                     <p>
                         The colors may vary or look different on the screen, ask us for a sample. <br><br>
                         The colors shown here are just some examples, you can ask for any color
                         you require. In addition you can ask for additional effects and textures.
                     </p>
-                </p>
+                </div>
             </div>
             <ul class="powder-list">
                 <ol v-for="(p, i) in paint">
@@ -136,7 +200,8 @@
                     </div>
                     <ul>
                         <p class="text">{{p.attributes.name}}</p><br>
-                        <li v-for="(b, ind) in p.attributes.bases">{{b.name}}</li>
+                        <p class="text">Base Material</p>
+                        <li class="text" v-for="(b, ind) in p.attributes.bases">{{b.name}}</li>
                     </ul>
                     <img width="100%" :src="'/storage/'+p.attributes.archivo" alt="">
                 </ol>
@@ -178,6 +243,8 @@ export default {
            this.$bus.$on('modal', ($event) => {
                this.allChart()
            });     
+           console.log(this.paints);
+           
     },
     props: [
         'paints', 'category'
@@ -187,7 +254,8 @@ export default {
             paint: false,
             hue: false,
             color: false,
-            chart: false
+            chart: false,
+            section: false
         }
     },
     methods: {
@@ -214,12 +282,15 @@ export default {
                 if(this.paints['finish Chart'][0] && this.paints['finish Chart'][0].attributes.category == val){
                     this.paint = this.paints['finish Chart'];
                     this.paint.name = 'Finish Chart';
+                    this.section = 'finish-chart'
                 }else if(this.paints['powder coat'][0] && this.paints['powder coat'][0].attributes.category == val){
                     this.paint = this.paints['powder coat'];
                     this.paint.name = 'Powder Coat';
+                    this.section = 'powder-coat'
                 }else if(this.paints['patina'][0] && this.paints['patina'][0].attributes.category == val){
                     this.paint = this.paints['patina'];
                     this.paint.name = 'Patina';
+                    this.section = 'patina'
                 }
                 
             }
