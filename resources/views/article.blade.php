@@ -3,18 +3,6 @@
 @section('content')
 
     <section s-sec="article" class="section">
-        <article class="new-info">
-            <p>{{$article->fecha}}</p>
-            <p>
-                <icon name="like"></icon>
-                {{count($article->likes)}}
-            </p>
-            <p>
-                <icon name="coment"></icon>
-                {{count($article->comments)}}
-            </p>
-        </article>
-        <hr>
         <figure class="header">
             <img width="100%" src="{{Storage::url($article->archivo)}}" alt="">
             <figcaption>
@@ -26,5 +14,6 @@
         <article class="new-content">
             {!! $article->content !!}
         </article>
+    <social-new fecha="{{$article->fecha}}" :id="{{$article->id}}" :likes="{{json_encode($article->likes)}}" :comments="{{$article->comments}}"></social-new>
     </section>
 @endsection

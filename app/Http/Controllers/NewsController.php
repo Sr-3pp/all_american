@@ -9,6 +9,9 @@ use App\Like;
 use App\Comment;
 use Storage;
 use Carbon\Carbon;
+use Mail;
+use App\Mail\Newnew;
+use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
@@ -27,10 +30,19 @@ class NewsController extends Controller
         return $news;
     }
 
+    public function getSubs(){
+        $subs = Newsletter::all();
+
+        return $subs;
+    }
+
     public function getNew($id){
         $article = Article::find($id);
         $article->likes;
         $article->comments;
+        foreach ($article->comments as $key => $com) {
+            $com->newsletter;
+        }
         $article->content = json_decode($article->content);
         $fecha = Carbon::parse($article->created_at);
 
@@ -49,6 +61,23 @@ class NewsController extends Controller
         return $like;
     }
 
+    public function checkMail(Request $r){
+        $user = Newsletter::where('email', $r->email)->first();
+
+        if($user){
+           return $user;
+        }else{
+            return 0;
+        }
+    }
+
+    public function commentNew(Request $r, $id){
+        $data = $r->all();
+        $comment = Comment::create($data);
+        $comment->newsletter;
+        return $comment;
+    }
+
     public function __construct()
     {
         $this->middleware('admin');
@@ -60,7 +89,18 @@ class NewsController extends Controller
             $data['archivo'] = $r->archivo->store('news');
         }
 
+        $subs = Newsletter::all();
         $new = Article::create($data);
+        $new->likes;
+        $new->comments;
+        $new->content = json_decode($new->content);
+        $fecha = Carbon::parse($new->created_at);
+
+        $new->fecha = $fecha->format('M d Y');
+        
+        foreach ($subs as $key => $s) {
+            Mail::to($s->email)->send(new Newnew($s, $new));
+        }
 
         return $new;
     }

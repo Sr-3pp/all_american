@@ -1,6 +1,6 @@
 <template>
-        <transition-group tag="div" name="fade" class="row contact-form">
-            <form :key="0" v-if="!sent" class="form">
+  <transition-group tag="div" name="fade" class="row contact-form">
+      <form :key="0" v-if="!sent" class="form">
                 <article class="group">
                     <label>Name</label>
                     <span class="must" v-if="alerts.name">you must fill this input</span>
@@ -24,11 +24,11 @@
                 <article class="group">
                     <button type="button" class="btn" @click="validate()">Send</button>
                 </article>
-            </form>
-            <article class="section" v-else>
-                <h2>Thanks for writting us</h2>
-            </article>
-        </transition-group>
+      </form>
+      <article :key="1" class="section" v-else>
+          <h2>Thanks for writting us</h2>
+      </article>
+  </transition-group>
 </template>
 
 <script>
@@ -88,7 +88,7 @@ export default {
           formData.append('name', this.name);
           formData.append('email', this.email);
           formData.append('afair', this.afair);
-          formData.append('content', this.content);
+          formData.append('message', this.content);
 
           axios.post('/send-contact', formData).then(function(response){
             este.sent = true

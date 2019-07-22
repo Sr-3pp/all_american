@@ -18,6 +18,10 @@ use App\PowderCoat;
 use App\Patina;
 use Storage;
 use App\Article;
+use App\Newsletter;
+use App\Inbox;
+use App\Votes;
+use Mail;
 
 class AdminController extends Controller
 {
@@ -486,5 +490,23 @@ class AdminController extends Controller
         $model->delete();
 
         return $this->getPaints(); 
+    }
+
+    public function unsuscribe($id){
+        $sub = Newsletter::find($id);
+        $sub->delete();
+
+        return 1;
+    }
+
+    public function getInbox(){
+        $inbox = Inbox::all();
+        return $inbox;
+    }
+
+    public function getVotes(){
+        $votes = Votes::all();
+
+        return $votes;
     }
 }

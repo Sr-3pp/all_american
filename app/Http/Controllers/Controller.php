@@ -20,6 +20,12 @@ use App\FinishChart;
 use App\PowderCoat;
 use App\Patina;
 use App\Shared;
+use App\Newsletter;
+use App\Inbox;
+
+use Mail;
+use App\Mail\Newnew;
+use App\Mail\ContactMail;
 
 class Controller extends BaseController
 {
@@ -290,6 +296,14 @@ class Controller extends BaseController
     }
     
     public function subscribe(Request $r){
+        try {
+            $sub = Newsletter::create([
+                'email' => $r->email
+            ]);
+            
+        } catch (\Throwable $th) {
+            return $th;
+        }
         return 1;
     }
 
@@ -474,14 +488,20 @@ class Controller extends BaseController
 
         return $paints;
     }
+
+    public function sendContact(Request $r){
+        $data = $r->all();
+
+        $contact = Inbox::create($data);
+
+        Mail::to('lalo@allamericanfinishing.com')->send(new ContactMail($contact));
+
+        return 1;
+    }
     
     public function testing(){
-        $slides = Forming::find(6);
-        dd(json_decode($slides->object));
-        foreach ($slides as $key => $value) {
-            $value->extra = json_decode($value->extra);
-            dd($value->extra);
-        }
-        return $slides;
+        $new = 'popo';
+        $s = 'user';
+        Mail::to('test@mail.com')->send(new Newnew($s, $new));
     }
 }

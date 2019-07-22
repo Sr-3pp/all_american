@@ -31,8 +31,12 @@ Route::post('/save-valoration', 'Controller@saveValoration');
 
 Route::get('/get-news', 'NewsController@getNews');
 Route::get('/like-new/{id}', 'NewsController@likeNew');
-Route::get('/comment-new/{id}', 'NewsController@commentNew');
+Route::post('/comment-new/{id}', 'NewsController@commentNew');
 Route::get('/new/{id}', 'NewsController@getNew');
+
+Route::post('/send-contact', 'Controller@sendContact');
+
+Route::post('check-mail', 'NewsController@checkMail');
 
 Route::prefix('services')->group(function(){
     Route::get('/', 'Controller@services');
@@ -103,6 +107,13 @@ Route::prefix('panel')->group(function(){
     Route::get('/delete-new/{id}', 'NewsController@deleteNew');
     Route::post('/update-new/{id}', 'NewsController@updateNew');
     Route::post('/add-new', 'NewsController@createNew');
+    Route::get('/get-subs', 'NewsController@getSubs');
+
+    Route::get('/unsuscribe/{id}', 'AdminController@unsuscribe');
+
+
+    Route::get('/get-inbox', 'AdminController@getInbox');
+    Route::get('/get-votes', 'AdminController@getVotes');
   
  });
 

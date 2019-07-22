@@ -39,6 +39,7 @@ Vue.component('tabs-content-general', require('./components/partials/tabs/conten
 Vue.component('tabs-content-home', require('./components/partials/tabs/contents/home.vue'));
 Vue.component('content-tabs', require('./components/partials/tabs/content.vue'));
 Vue.component('editor', require('./components/partials/editor.vue'));
+Vue.component('social-new', require('./components/partials/socialNew.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));
 Vue.component('projects', require('./components/contents/projects/projects.vue'));

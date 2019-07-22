@@ -10,10 +10,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>ok</td>
-                    <td>Martin Ruiz<br><strong>martin@mail.com</strong></td>
-                    <td>Lorem ipsum dolor ammet</td>
+                <tr v-for="(m, i) in inbox">
+                    <td>{{m.status}}</td>
+                    <td>{{m.name}}<br><strong>{{m.email}}</strong></td>
+                    <td>{{m.message}}</td>
                     <td>
                         <button class="btn">Rep</button>
                         <button class="btn">Del</button>
@@ -26,14 +26,19 @@
 <script>
 export default{
     mounted(){
-        
+        var este = this;
+        axios.get('/panel/get-inbox').then((inbox) => {
+            este.inbox = inbox.data
+            console.log(este.inbox);
+            
+        });
     },
     props: [
        
     ],
     data(){
         return {
-           
+           inbox: false
         }
     },
     methods: {

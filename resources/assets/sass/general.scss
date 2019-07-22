@@ -1,5 +1,8 @@
 body{
     background-color: #000;
+    .fr-popup{
+        z-index: 1000!important;
+    }
     .overlay{
         position: fixed;
         top: 0;
@@ -500,7 +503,7 @@ body{
                 }
             }
             .modal-body{
-                
+                overflow-y: scroll;
             }
         }
         .panel-tabs{
@@ -3807,10 +3810,37 @@ body{
 
                 }
                 &[s-desk=news]{
+                    .news-menu{
+                        list-style: none;
+                        display: flex;
+                        margin-bottom: 3%;
+                        >li{
+                            padding: 3%;
+                            cursor: pointer;
+                            background-color: $gray;
+                            color: #FFF;
+                            &.active{
+                                background-color: $Ared;
+                            }
+                        }
+                    }
+                    .sub-list{
+                        display: flex;
+                        list-style: none;
+                        flex-direction: column;
+                        >li{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 3%;
+                            &:nth-child(odd){
+                                background-color: $light-gray;
+                            }
+                        }
+                    }
                     .news{
                         display: flex;
                         flex-wrap: wrap;
-                        
                         .new{
                             flex: {
                                 grow: 1;
@@ -3902,6 +3932,25 @@ body{
                                         width: 25%;
                                         fill: $Ared;
                                         stroke: $Ared;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &[s-desk=votes]{
+                    >ul{
+                        list-style: none;
+                        >li{
+                            margin-bottom: 5%;
+                            .starts-container{
+                                display: flex;
+                                justify-content: space-between;
+                                margin-bottom: 3%;
+                                span{
+                                    width: 15%;
+                                    svg{
+                                        width: 100%;
                                     }
                                 }
                             }

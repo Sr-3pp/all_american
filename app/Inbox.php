@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inbox extends Model
 {
-    //
+    protected $fillable = [
+        'name', 'afair', 'email', 'message'
+    ];
 }

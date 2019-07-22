@@ -1,5 +1,13 @@
 <template>
     <div s-desk="news" class="content">
+        <ul class="news-menu">
+            <li :class="{'active': sec == 'news'}" @click="sec = 'news'">
+                News
+            </li>
+            <li :class="{'active': sec == 'subs'}" @click="sec = 'subs'">
+                subscribers
+            </li>
+        </ul>
         <article v-if="newnew" class="new-new">
              <p class="form-group">
                 <label>Portada</label>
@@ -15,7 +23,7 @@
             </p>
             <button class="btn" @click="saveNew()">save</button>
         </article>
-        <div class="news">
+        <div v-if="sec == 'news'" class="news">
             <article class="new" v-for="(n, i) in news">
                 <figure class="cover">
                     <img width="100%" :src="'/storage/'+ n.archivo" alt="">
@@ -49,10 +57,13 @@
                 </div>
             </article>
         </div>
-        <div>
-            <ul>
-                <li>
-                    Subscribers list
+        <div v-if="sec == 'subs'">
+            <ul class="sub-list">
+                <li v-for="(s, i) in subs">
+                    {{s.email}}
+                    <div class="buttons">
+                        <button class="btn" @click="unsuscribe(s.id, i)">Remove</button>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -68,7 +79,7 @@
                     <p @click="changePortada()">
                         <img  width="100%" :src="'/storage/'+enew.archivo" alt="">
                     </p>
-                    <input id="filePortada" type="file" accept="image" class="hidden" @change="setNewPic($e)">  
+                    <input id="filePortada" type="file" accept="image" class="hidden" @change="setNewPic($event)">  
                     <figcaption>
                         <input type="text" class="input" v-model="enew.title">
                     </figcaption>
@@ -106,6 +117,9 @@ export default{
         axios.get('/get-news').then((news) => {
             este.news = news.data
         });
+        axios.get('/panel/get-subs').then((subs) => {
+            este.subs = subs.data
+        });
     },
     props: [
        
@@ -113,6 +127,8 @@ export default{
     data(){
         return {
            news: false,
+           subs: false,
+           sec: 'news',
            enew: false,
            newnew: false,
            newEdit: false,
@@ -181,6 +197,14 @@ export default{
                    este.enew = false;
                });
                 
+       },
+       unsuscribe(id, i){
+           if(confirm('Remove this user form list?')){
+               var este = this;
+               axios.get('/panel/unsuscribe/'+id).then((response) => {
+                   este.susbs.splice(i, 1);
+               });
+           }
        }
     },
     watch: {

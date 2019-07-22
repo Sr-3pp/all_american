@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $fillable = [
-        'article_id', 'newsletter_id'
+        'article_id', 'newsletter_id', 'comment'
     ];
 
     public function article(){
         return $this->belongsTo('App\Article');
     }
-    public function user(){
+    public function newsletter(){
         return $this->belongsTo('App\Newsletter');
     }
 }

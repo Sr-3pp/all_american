@@ -39,6 +39,9 @@ export default {
                 axios.post('/subscribe', {email: this.email}).then(response => {
                     if(response.data == 1){
                         este.done = true
+                    }else{
+                         este.error.status = true;
+                        este.error.message = 'You are already registered';
                     }
                 }).catch(e => {
                     este.error.status = true;
