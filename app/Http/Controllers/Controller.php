@@ -502,6 +502,6 @@ class Controller extends BaseController
     public function testing(){
         $new = 'popo';
         $s = 'user';
-        Mail::to('test@mail.com')->send(new Newnew($s, $new));
+        Mail::to('martin.ru@outlook.com')->send(new Newnew($s, $new));
     }
 }
