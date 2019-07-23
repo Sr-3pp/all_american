@@ -2178,23 +2178,15 @@ body{
             &.full-section{
                 background-color: transparent;
                 margin-bottom: 0;
+                padding: 0;
             }
-            img{
+            >img{
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: auto;
                 height: 100%;
                 transform: translateX(-25%);
-                z-index: 0;
-            }
-            svg{
-                fill: $Ablue;
-                width: auto;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                right: 0;
                 z-index: 0;
             }
             article{
@@ -2205,40 +2197,61 @@ body{
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                div{
+                >div{
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: flex-end;
                     width: 100%;
+                    height: 100%;
                     text-align: center;
-                    margin-top: 60%;
-                    >.title{
+                    position: relative;
+                    .starBG{
+                        fill: $Ablue;
                         width: 100%;
-                        text-align: center;
-                        margin-bottom: 5%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: -1;
                     }
-                    >.text{
-                        width: 60%;
-                        margin: 0 auto;
-                        margin-bottom: 5%;
-                    }
-                    
-
-                    ul{
+                    >div{
+                        width: 70%;
+                        height: 100%;
                         display: flex;
-                        width: 100%;
+                        flex-direction: column;
                         justify-content: space-between;
-                        ol{
+                        align-items: center;
+                        padding-right: 5vw;
+                        padding-top: 3%;
+                        padding-bottom: 3%;
+                        >.title{
+                            width: 100%;
+                            text-align: center;
+                            margin-bottom: 5%;
+                        }
+                        >.text{
+                            width: 90%;
+                            margin: 0 auto;
+                            margin-bottom: 5%;
+                            margin-top: 5%;
+                        }
+                        ul{
                             display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            &.category{
-                                span{
-                                    font-size: 2.5rem;
-                                    font-family: 'Aero Matics';
-                                    font-weight: bold;
+                            width: 100%;
+                            justify-content: space-around;
+                            flex-wrap: wrap;
+                            ol{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                &.category{
+                                    span{
+                                        font-size: 2.5rem;
+                                        font-family: 'Aero Matics';
+                                        font-weight: bold;
+                                    }
                                 }
                             }
                         }

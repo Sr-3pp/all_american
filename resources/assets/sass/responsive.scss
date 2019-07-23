@@ -129,33 +129,19 @@
                 }
             }
             [s-sec=services]{
-                &.full-section{
-                    >div{
-                        flex-direction: row;
-                        align-items: center;
-                        img{
-                            width: 50%;
-                            height: auto;
-                        }
-                    }
-                }
+                
             }
             [s-sec=who]{
                 &.full-section{
                     height: 285px;
                 }
-                img{
+                >img{
                     transform: inherit;
                     width: 100%;
                     height: auto;
                 }
-                svg{
-                    width: 65%;
-                    height: 200%;
-                    top: -50px;
-                }
                 article{
-                    width: 50%;
+                    width: 70%;
                 }
             }
             [s-sec=testimonial]{
@@ -514,16 +500,9 @@
                 &.full-section{
                     height: 350px;
                 }
-                svg{
-                    width: 59%;
-                    height: 100%;
-                    top: 0;
-                }
                 article{
                     width: 50%;
-                    div{
-                        width: 80%;
-                        height: 70%;
+                    >div{
                         margin-top: 0;
                         text-align: right;
                         >.title, >.text{
@@ -652,9 +631,15 @@
                         bottom: 3%;
                     }
                     >div{
+                        flex-direction: row;
+                        align-items: center;
                         figure{
                             height: 25vw;
                             width: 50vw;
+                        }
+                        img{
+                            width: 50%;
+                            height: auto;
                         }
                     }
                 }
@@ -879,9 +864,8 @@
                 }
             }
             [s-sec=who]{
-                svg{
-                    width: 50%;
-                    transform: scale(1.4, 1);
+                &.full-section{
+                    padding-right: 0;
                 }
             }
             [s-sec=testimonial]{
@@ -984,17 +968,7 @@
             [s-sec=who]{
                 &.full-section{
                     height: 450px;
-                }
-                svg{
-                    width: 36%;
-                    -webkit-transform: scale(1.4, 1.5);
-                    transform: scale(1.8, 1.5);
-                }
-                article{
-                    width: 35%;
-                    div{
-                        width: 90%;
-                    }
+                    padding-right: 0;
                 }
             }
             &[s-layout=general]{

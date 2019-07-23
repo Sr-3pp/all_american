@@ -19,31 +19,30 @@
     </button>
 </section>
 <section s-sec="who" class="full-section">
-    <img src="/img/welding_2.jpg" alt="">
-    <svg v-animate.repeat="'slide-left'" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
-        <path class="st0" d="M238.67,0 152.62,145.15 0,145.15 99.43,234.85 13.38,380 180.1,380 603.12,380 603.12,0 z"/>
-    </svg>
-  
+    <img src="/img/welding_2.jpg" alt="">  
     <article v-animate.repeat="'slide-up'"> 
         <div>
-                <h2 class="title">Who we are?</h2>
-                <p class="text">
-                    We've built a reputation in Las Vegas and throughout the Henderson area for delivering striking and beautiful ornamental metal pieces and railings.
-                </p>
-                <ul>
-                    <ol class="category">
-                        Costumers
-                        <span>110</span>
-                    </ol>
-                    <ol class="category">
-                        Projects
-                        <span>220</span>
-                    </ol>
-                    <ol class="category">
-                        Employees
-                        <span>30</span>
-                    </ol>
-                </ul>
+            <img class="starBG" v-animate.repeat="'slide-left'" src="/img/estrellaBg.png" alt="">
+               <div>
+                    <h2 class="title">Who we are?</h2>
+                    <p class="text">
+                        We've built a reputation in Las Vegas and throughout the Henderson area for delivering striking and beautiful ornamental metal pieces and railings.
+                    </p>
+                    <ul>
+                        <ol class="category">
+                            Costumers
+                            <span>110</span>
+                        </ol>
+                        <ol class="category">
+                            Projects
+                            <span>220</span>
+                        </ol>
+                        <ol class="category">
+                            Employees
+                            <span>30</span>
+                        </ol>
+                    </ul>
+               </div>
         </div>
     </article>
 </section>
