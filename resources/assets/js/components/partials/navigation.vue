@@ -3,7 +3,7 @@
         <figure class="brand">
             <img :src="logo" alt="Site Brand">
         </figure>
-        <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="+"></icon></button>
+        <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="burger"></icon></button>
         <ul class="item-list" :class="{'active': active}">
             <li class="close-menu item" @click="active ? active = false : active = true">
                 <a type="button" href="#" class="link"><icon name="chevron"></icon></a>

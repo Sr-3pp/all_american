@@ -35,6 +35,7 @@
     <link href="{{ asset('css/presets.css') }}" rel="stylesheet">
 </head>
 <body>
+        <section s-sec="loader"><img src="{{asset('img/loader.gif')}}" alt=""></section>
     <header class="white">
             <article>
                     <p>
@@ -125,13 +126,14 @@
         </article>
     </header>
     <div id="app" s-layout="general">
+        <loader></loader>
         <navigation section="{{$main}}" name="general"></navigation>
         <div class="content">
-                @yield('content')
-                <section class="section-menu">
+            @yield('content')
+            <section class="section-menu">
                 <submenu :sec="{{json_encode($section)}}" :submenu="{{json_encode($menu)}}"></submenu>
-                    <subscribe></subscribe>
-                </section>
+                <subscribe></subscribe>
+            </section>
         </div>
         <article class="separator full-section">
             <p class="title">

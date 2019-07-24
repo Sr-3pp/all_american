@@ -103,7 +103,14 @@
                     display: block;
                 }
             }
-           
+            [s-sec=navigation]{
+                .toggle-btn{
+                    top: 0;
+                    svg{
+                        width: 3vw;
+                    }
+                }
+            }
             [s-sec=header]{
                 .carousel{
                     .slides{

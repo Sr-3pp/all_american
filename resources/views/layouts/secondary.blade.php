@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
+        <section s-sec="loader"><img src="{{asset('img/loader.gif')}}" alt=""></section>
     <header class="white">
         <article>
             <p>
@@ -126,6 +127,7 @@
         </article>
     </header>
     <div id="app" s-layout="secondary">
+        <loader></loader>
         <navigation section="{{$main}}" name="general"></navigation>
         @yield('content')
     </div>

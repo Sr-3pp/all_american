@@ -17,6 +17,22 @@ body{
             display: block;
         }
     }
+    [s-sec=loader]{
+        position: fixed;
+        z-index: 99999;
+        background-color: #FFF;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity .3s ease;
+        img{
+            width: 25vw;
+        }
+    }
     header{
         display: none;
         font-family: 'Aero Matics';
@@ -136,6 +152,7 @@ body{
                 }
             }
         }
+      
         .new{
             margin:{
                 top: 3%;
@@ -2022,11 +2039,11 @@ body{
                 color: #FFF;
                 padding: 0;
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 5vw;
+                right: 5vw;
                 svg{
                     color: currentColor;
-                    width: 50px;
+                    width: 5vw;
                 }
             }
             .item-list{
