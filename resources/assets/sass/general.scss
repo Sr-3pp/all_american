@@ -262,6 +262,52 @@ body{
                 padding: 5%;
             }
         }
+        .partial-metal{
+            background-color: #EDEDED;
+            padding-bottom: 5vw;
+            padding-top: 5vw;
+            margin-bottom: 5%;
+            >.title{
+                padding-left: 5vw;
+                color: #000;
+                border-bottom: {
+                    style: solid;
+                    color: #000;
+                    width: 1px;
+                }
+            }
+            >.info{
+                padding-left: 5vw;
+                display: flex;
+                >.text{
+                    flex-basis: 50%;
+                    margin-right: 10%;
+                }
+                ul{
+                    list-style: none;
+                    flex: {
+                        grow: 1;
+                        shrink: 1;
+                        basis: 40%;
+                    }
+                    li{
+                        display: flex;
+                        padding: 3%;
+                        .text{
+                            font-weight: bold;
+                        }
+                        svg{
+                            width: 10%;
+                            fill: $Ablue;
+                            margin-right: 5%;
+                        }
+                    }
+                }
+            }
+            >img{
+                width: 100%;
+            }
+        }
         .card{
             overflow: hidden;
             border-radius: 10%;
@@ -2664,6 +2710,12 @@ body{
                             transition: all .2s ease;
                             .detail{
                                 width: 100%;
+                                >figure{
+                                    &.info{
+                                        margin-top: 0;
+                                    padding-top: 0;
+                                    }
+                                }
                                 >.info{
                                    >*{
                                        margin-bottom: 5%;
@@ -3059,6 +3111,7 @@ body{
                                     &.full{
                                         width: 100%;
                                         min-height: inherit;
+                                        display: inline-block;
                                     }
                                     &.empty{
                                         margin-bottom: -10%;

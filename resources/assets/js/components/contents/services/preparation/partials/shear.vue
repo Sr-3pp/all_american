@@ -18,6 +18,9 @@
             polishing or painting.
             <icon name="star_panel2"></icon>
         </p>
+            <figure class="info">
+                <img src="/img/editable.gif" alt="">
+            </figure>
         <p class="title">
                 WHAT IS SHEET METAL<br>THICKNESS “GAUGES”?
             </p>
@@ -75,7 +78,7 @@
         <p class="text empty">
             <icon name="star_panel2"></icon>
         </p>
-        <div class="info">
+        <div class="info column">
             <article>
                 <p class="title">
                     Plasma
