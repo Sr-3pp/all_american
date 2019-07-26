@@ -1098,6 +1098,9 @@ body{
                     .category{
                         margin: 0;
                     }
+                    .text{
+                        padding-left: 0;
+                    }
                     svg{
                         margin-right: 2%;
                         width: 15px;
@@ -1135,7 +1138,9 @@ body{
         .drop-list{
             >li{
                 >article{
-                    
+                    .text{
+                        padding-left: 0!important;
+                    }
                 }
             }
         }
@@ -3038,6 +3043,11 @@ body{
                                 }
                                 .content{
                                     flex-direction: column;
+                                    >article{
+                                        >p{
+                                            padding-left: 0!important;
+                                        }
+                                    }
                                 }
                                 .cards{
                                     .card{
