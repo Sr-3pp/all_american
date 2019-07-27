@@ -14,15 +14,23 @@
             <icon name="star_panel2"></icon>
         </p>
         <figure class="image-list">
-            <span>
-                <icon name="planning"></icon>
-            </span>
+            <figure>
+                <img src="/img/services/mig.svg" alt="">
+            </figure>
             <ul class="welding-list">
                 <p class="category">More Advantages</p>
-                <li>No flux is required</li>
-                <li>No need for cleaning after welding</li>
-                <li>High quality welding in any position</li>
-                <li>No sparks or emanations</li>
+                <li class="category">
+                    <icon name="star"></icon>
+                    No flux is required</li>
+                <li class="category">
+                    <icon name="star"></icon>
+                    No need for cleaning after welding</li>
+                <li class="category">
+                    <icon name="star"></icon>
+                    High quality welding in any position</li>
+                <li class="category">
+                    <icon name="star"></icon>
+                    No sparks or emanations</li>
             </ul>
         </figure>
     </div>

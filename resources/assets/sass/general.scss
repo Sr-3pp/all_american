@@ -264,7 +264,6 @@ body{
         }
         .partial-metal{
             background-color: #EDEDED;
-            padding-bottom: 5vw;
             padding-top: 5vw;
             margin-bottom: 5%;
             >.title{
@@ -279,6 +278,7 @@ body{
             >.info{
                 padding-left: 5vw;
                 display: flex;
+                margin-bottom: 5%;
                 >.text{
                     flex-basis: 50%;
                     margin-right: 10%;
@@ -306,6 +306,61 @@ body{
             }
             >img{
                 width: 100%;
+            }
+        }
+        .image-list{
+            display: flex;
+            >*{
+             flex: {
+                 grow: 1;
+                 shrink: 1;
+                 basis: 50%;
+             }   
+            }
+            >figure{
+                margin-right: 5%;
+                position: relative;
+                padding-right: 5%;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 1px;
+                    background-color: $Ared;
+                    box-shadow: 10px 10px 10px #000;
+                }
+            }
+        }
+        .welding-list{
+            list-style: none;
+            color: $gray;
+            >p{
+                color: $Ared;
+                margin: 3% auto;
+                padding: 3%;
+                width: fit-content;
+                text-align: center;
+                border: {
+                    style: solid;
+                    color: currentColor;
+                    width: 1px;
+                    radius: 5px;
+                }
+            }
+            >li{
+                margin-bottom: 0;
+                font-size: 1.4rem;
+                padding: {
+                    top: 5%;
+                    bottom: 5%;
+                }
+                svg{
+                    width: 5%;
+                    margin-right: 5%;
+                }
+
             }
         }
         .card{
@@ -3048,7 +3103,7 @@ body{
                                             padding-left: 0!important;
                                         }
                                     }
-                                }
+                                }b    
                                 .cards{
                                     .card{
                                         &:hover{

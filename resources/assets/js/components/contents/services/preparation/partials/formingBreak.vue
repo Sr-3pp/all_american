@@ -64,7 +64,7 @@
                     </li>
                 </ul>
             </article>
-            <img src="/img/services/forming_break.jpg" alt="">
+            <img src="/img/partial_metal.jpg" alt="">
         </div>
         <forming-form v-if="!sent"></forming-form>
         <div v-else>
