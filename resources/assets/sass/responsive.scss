@@ -1033,3 +1033,223 @@
         }
     }
 }
+@media (min-width: 2560px){
+    body{
+        #app{
+            font-size: 2rem;
+            .full-section{
+                &.full-section{
+                    padding-left: 10vw;
+                    padding-right: 10vw;
+                    .title{
+                        font-size: 5rem;
+                    }
+                    .subtitle{
+                        font-size: 3.5rem
+                    }
+                    .category{
+                        font-size: 2.5rem
+                    }
+                    .text{
+                        font-size: 2rem
+                    }
+                }
+            }
+            .title{
+                font-size: 5rem
+            }
+            .subtitle{
+                font-size: 3.5rem
+            }
+            .category{
+                font-size: 2.5rem
+            }
+            .section-menu > ul li, .btn,
+            .card .label .text, .text, .input{
+                font-size: 2rem
+            }
+            .s-text{
+                font-size: 1.5rem
+            }
+            .service-list{
+                li{
+                    article{
+                        svg{
+                            width: 60px;
+                            height: 60px;
+                            margin-right: 5%;
+                        }
+                    }
+                    .btn{
+                        svg{
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+            [s-sec=separator]{
+                &.full-section{
+                    .cta{
+                        font-size: 2rem;
+                        padding: 1% 0;
+                        height: auto;
+                    }
+                    article{
+                        svg{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        p{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+            [s-sec=navigation]{
+                .item-list{
+                    .item{
+                        .link{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+            [s-sec=header]{
+                .tabs{
+                    ul{
+                        ol{
+                            height: 120px;
+                            &.active{
+                                height: 150px;
+                            }
+                            p{
+                                font-size: 2rem;
+                                max-width: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=values]{
+                article{
+                    svg{
+                        max-width: inherit;
+                    }
+                }
+            }
+            [s-sec=testimonial]{
+                &.full-section{
+                    padding: 0;
+                    height: 800px;
+                }
+                .carousel{
+                    .slides{
+                        .slide{
+                            .testimonials{
+                                article{
+                                    .text{
+                                        font-size: 2rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=projects]{
+                &.full-section{
+                    padding: {
+                        right: 0;
+                        left: 0;
+                    }
+                }
+            }
+            [s-sec=job]{
+                min-height: 800px;
+            }
+            [s-sec=who]{
+                &.full-section{
+                    height: 650px;
+                    padding-right: 0;
+                }
+            }
+            [s-sec=contact]{
+                >div{
+                    &:last-child{
+                        ul{
+                            ol{
+                                svg{
+                                    max-width: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    >.section-menu{
+                        padding-right: 10vw;
+                    }
+                    >.main{
+                        &[s-sec=services]{
+                            > .cont{
+                                .detail{
+                                    >.header{
+                                        height: 800px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                [s-sec=services],  &[s-sec=projects]{
+                    >.cont{
+                        >div{
+                            &:first-child{
+                                >div{
+                                    padding-left: 10vw;
+                                    .detail{
+                                        >.content{
+                                            padding-left: 10vw;
+                                        }
+                                        .machine-picture{
+                                            span{
+                                                padding-left: 10vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                background-color: #FFF;
+                [s-sec=contact]{
+                    >div{
+                        >article{
+                            &:first-child{
+                                padding: {
+                                    right: 10vw;
+                                    left: 10vw;
+                                }
+                            }
+                        }
+                        &.map-cont{
+                            min-height: 1400px;
+                            >article{
+                                &:last-child{
+                                    padding: 2%;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
