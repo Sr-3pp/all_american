@@ -14,10 +14,10 @@
             <icon name="star_panel2"></icon>
         </p>
         <figure class="info">
-                <img src="/img/break.gif" alt="">
+                <img class="gif" src="/img/break.gif" alt="">
             </figure>
         <figure class="info">
-                <img src="/img/break-2.gif" alt="">
+                <img class="gif" src="/img/break-2.gif" alt="">
             </figure>
         <div class="partial-metal">
             <p class="title">We sell partial metal</p>
@@ -82,7 +82,7 @@
                         <icon name="star_panel2"></icon>
             </p>
             <figure class="info">
-                <img src="/img/rolling.gif" alt="">
+                <img class="gif" src="/img/rolling.gif" alt="">
             </figure>
         <figure class="image">
                 <img src="/img/rolling_machine.jpg" alt="">

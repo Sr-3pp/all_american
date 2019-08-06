@@ -3,9 +3,9 @@
         <article v-if="section === index" v-for="(s, index) in services">
             <drop-list :list="s.list" name="home"></drop-list>
         </article>
-        <figure>
-            <img :src="image" alt="">
-        </figure>
+        <transition-group tag="figure" name="v-fade">
+            <img :key="image" :src="image" alt="">
+        </transition-group>
     </div>
 </template>
 <script>

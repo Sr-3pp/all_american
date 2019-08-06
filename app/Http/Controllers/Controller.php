@@ -59,37 +59,37 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'Concept',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'content' => 'Generating an idea and bringing it to reality is what we do, create and define concepts.',
                         'img' => '/img/services/concept.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'We devise and take the best path to reach your goals efficiently and as quickly as possible.',
                         'img' => '/img/services/preparation_card.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'Material',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Choosing the right material for each project is very important, we care about providing excellence both in the visual aesthetics of the project and the quality of it, therefore you can trust that we will take care of finding and guaranteeing the use of quality materials for your project',
                         'img' => '/img/services/material.jpg'
                     ],
                     [
                         'id' => 4,
                         'name' => 'Horitentation',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'We will be with you from the moment the idea is generated to the completion of your project, we will guide you with useful tips to make your project effective and functional',
                         'img' => '/img/services/horientation.jpg'
                     ],
                     [
                         'id' => 5,
                         'name' => 'Original Design',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Original designs, creative concepts, functional tools. When you look for Custom metal Fabriation we know that you want to find new, fresh and original ideas, We manufacture unique designs adapted to your needs.',
                         'img' => '/img/services/horientation.jpg'
                     ],
                     [
                         'id' => 6,
                         'name' => 'Estimate',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Planificaremos the costs of your project taking into account, allocation of efforts, cost of resources, work time etc.',
                         'img' => '/img/services/estimate.jpg'
                     ],
                 ]
@@ -102,19 +102,19 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'Shear',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'content' => 'Material cutting service, adjusted to the specific measures that you need. We offer shearing services, since it is a fast and efficient way to cut metal sheets, you can get custom size cuts either for specific cut only or future work of material forming, welding, polishing or painting.',
                         'img' => '/img/services/shear.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Forming Break',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Material cutting service, adjusted to the specific measures that you need. We offer shearing services...',
                         'img' => '/img/services/forming_break.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'Machine Mill',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'A milling machine provides many advantages when doing drill or cut milling, as a computerized system allows cutting or drilling with precision in any direction, within three dimensions.',
                         'img' => '/img/services/machine_mill.jpg'
                     ],
                 ]
@@ -127,19 +127,19 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'MIG',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'content' => 'This system, being more versatile, saves time and resources since welding is clean and its application is fast.',
                         'img' => '/img/services/mig.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'TIG',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Gas Tungstan Arc Welding (SMAW) TIG welding techniques offer the possibility of welding in any position and in any type of metal parts such as aluminum, copper, magnesium, nickel and other more specific parts such as Zirconium and titanium as well.',
                         'img' => '/img/services/tig.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'Stick',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Generating an idea and bringing it to reality is what we do, create and define concepts.',
                         'img' => '/img/services/stick.jpg'
                     ]
                 ]
@@ -151,7 +151,7 @@ class Controller extends BaseController
                 'list' => [
                     [
                         'id' => 1,
-                        'name' => 'Mirror Finish',
+                        'name' => 'Mirror Finish #8',
                         'content' => 'I know your deepest secret fear, I know everything',
                         'img' => '/img/services/finish_8.jpg'
                     ],
@@ -169,7 +169,7 @@ class Controller extends BaseController
                     ],
                     [
                         'id' => 4,
-                        'name' => 'Finish #4',
+                        'name' => 'Brush Finish #4',
                         'content' => 'IM a spy, in the house of love',
                         'img' => '/img/services/finish_4.jpg'
                     ],
@@ -181,7 +181,7 @@ class Controller extends BaseController
                     ],
                     [
                         'id' => 6,
-                        'name' => 'Sand Blasted',
+                        'name' => 'Sandblasted',
                         'content' => 'IM a spy, in the house of love',
                         'img' => '/img/services/sandblasted.jpg'
                     ],
@@ -201,25 +201,25 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'Wet Painting',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'content' => 'Generating an idea and bringing it to reality is what we do, create and define concepts.',
                         'img' => '/img/services/wet_painting.jpg'
                     ],
                     [
                         'id' => 2,
-                        'name' => 'Finish Chart',
-                        'content' => 'IM a spy, in the house of love',
+                        'name' => 'Finishes',
+                        'content' => 'The finish shown here are just some examples, you can ask for any finish you require. You can che k more finish examples on button below.',
                         'img' => '/img/services/chart.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'Powder Coat',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'It is a coating with clear benefits in relation to liquid and non-solvent paint. It has proven resistance to chemical agents, impact and corrosion, ensuring the durability of the treated piece.',
                         'img' => '/img/services/powder.jpg'
                     ],
                     [
                         'id' => 4,
-                        'name' => 'Powder Coat',
-                        'content' => 'IM a spy, in the house of love',
+                        'name' => 'Patina',
+                        'content' => 'The patina is aware that forms on the surface of metals, is produced by oxidation or by chemical processes that give the piece of metal a rustic, antique and decorative appearance.',
                         'img' => '/img/services/patina.jpg'
                     ],
                 ]

@@ -19,7 +19,7 @@
             <icon name="star_panel2"></icon>
         </p>
             <figure class="info">
-                <img src="/img/editable.gif" alt="">
+                <img class="gif" src="/img/editable.gif" alt="">
             </figure>
         <p class="title">
                 WHAT IS SHEET METAL<br>THICKNESS “GAUGES”?

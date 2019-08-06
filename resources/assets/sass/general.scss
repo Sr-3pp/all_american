@@ -2404,6 +2404,7 @@ body{
                     }
                     figure{
                         border-radius: 10px;
+                        position: relative;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -3203,6 +3204,10 @@ body{
                                         flex-basis: 38%;
                                         width: 38%;
                                         margin-right: 2%;
+                                        &.gif{
+                                            max-width: 60%;
+                                            margin: 0 auto;
+                                        }
                                     }
                                     >.text{
                                         flex-basis: 60%;
