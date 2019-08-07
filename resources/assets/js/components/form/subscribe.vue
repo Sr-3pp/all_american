@@ -1,6 +1,6 @@
 <template>
     <article class="subscribe form">
-        <h2 class="category">Subscribe to our newsletter</h2>
+        <h2 class="category">SUBSCRIBE TO OUR NEWSLETTER</h2>
         <div v-if="!done && !error.status" class="form-group">
             <span v-if="alert" class="must">{{error.message}}</span>
             <input class="input" type="email" v-model="email" placeholder="Your Email">

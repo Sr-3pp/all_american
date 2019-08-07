@@ -935,10 +935,10 @@
                 font-size: 1.8rem
             }
             .text{
-                font-size: 1.5rem
+                font-size: 1.3rem
             }
             .s-text{
-                font-size: 1.3rem
+                font-size: 1rem
             }
             [s-sec=header]{
                 .tabs{
@@ -976,6 +976,9 @@
                 &.full-section{
                     height: 450px;
                     padding-right: 0;
+                }
+                article{
+                    width: 60%;
                 }
             }
             &[s-layout=general]{

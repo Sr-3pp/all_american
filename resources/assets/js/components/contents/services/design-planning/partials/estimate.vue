@@ -13,7 +13,7 @@
             Planificacremos the costs of your project taking into account, allocation of efforts, cost of resources, work time etc.
             <icon name="star_panel2"></icon>
         </p>
-        <div class="info">
+        <div class="info column">
             <ul class="estimate-list">
                 <li>
                     <icon name="check"></icon>

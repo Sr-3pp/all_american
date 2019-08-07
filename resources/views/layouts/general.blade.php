@@ -139,7 +139,7 @@
             <p class="title">
                 Request for a free estimate
             </p>
-            <button class="cta btn"> Contact Us</button>
+            <a href="/contact-us" class="cta btn"> Contact Us</a>
         </article>
     </div>
     <div class="overlay" s-active="false"></div>

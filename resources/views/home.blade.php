@@ -31,15 +31,15 @@
                     <ul>
                         <ol class="category">
                             Costumers
-                            <span>110</span>
+                            <animated-number :target="110"></animated-number>
                         </ol>
                         <ol class="category">
                             Projects
-                            <span>220</span>
+                            <animated-number :target="220"></animated-number>
                         </ol>
                         <ol class="category">
                             Employees
-                            <span>30</span>
+                            <animated-number :target="30"></animated-number>
                         </ol>
                     </ul>
                </div>

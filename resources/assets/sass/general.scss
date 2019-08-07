@@ -90,11 +90,13 @@ body{
         *{
             font-family: 'Helvetica';
             font-weight: 300;
+            word-break: normal!important;
         }
         b{
             font-weight: bold;
         }
         .title{
+            text-transform: uppercase;
             font: {
                 size: 1.8rem;
                 style: italic;
@@ -382,6 +384,9 @@ body{
             figure, .img{
                 width: 100%;
                 height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 img{
                     width: auto;
                     height: 100%;
@@ -2343,7 +2348,7 @@ body{
                         height: 100%;
                         display: flex;
                         flex-direction: column;
-                        justify-content: space-between;
+                        justify-content: space-around;
                         align-items: center;
                         padding-right: 5vw;
                         padding-top: 3%;
@@ -2760,6 +2765,7 @@ body{
                 }
             }
             >.content{
+                margin-bottom: 5%;
                 >.main{
                     &[s-sec=services], &[s-sec=projects]{
                         &.full-section{
@@ -2823,6 +2829,49 @@ body{
                                 }
                             }
 
+                            &.blue{
+                                >.sub{
+                                    >.headline{
+                                        >svg{
+                                            &:last-child{
+                                                fill: $Ablue!important;
+                                            }
+                                        }
+                                    }
+                                    .cards{
+                                        .card{
+                                            &:hover{
+                                                .card-content{
+                                                    background-color: $Ablue!important;
+                                                    color: #FFF;
+                                                    .subtitle{
+                                                        color: #FFF;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                >.detail{
+                                    >.title{
+                                        color: $Ablue;
+                                        &::after{
+                                            background-color: $Ablue;
+                                        }
+                                    }
+                                    >.text{
+                                        color: $Ablue;
+                                        min-height: inherit;
+
+                                        >svg{
+                                            height: 10vw;
+                                            left: inherit;
+                                            right: -5%;
+                                            fill: $Ablue;
+                                        }
+                                    }
+                                }
+                            }
                             &.red{
                                 >.sub{
                                     >.headline{
@@ -2867,6 +2916,18 @@ body{
                                 }
                             }
                             &.gray{
+                                .card{
+                                    &:hover{
+                                        .label{
+                                            svg{
+                                                path{
+                                                    stroke-width: 0.1px;
+                                                    stroke: #000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                                 >.sub{
                                     >.headline{
                                         >svg{
@@ -3162,7 +3223,7 @@ body{
                                     padding-top: 3%;
                                     margin-bottom: 5%;
                                     min-height: 200px;
-                                    width: 75%;
+                                    width: 90%;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;

@@ -88,7 +88,7 @@
                     </div>
                     <div class="group sizes">
                         <p class="subtitle">Sizes</p>
-                        <div>
+                        <div v-if="form.shape.value > 0">
                             <article class="prevs">
                                 <figure>
                                     <img :src="'/img/forming/sheet_angle_'+form.shape.value+'.jpg'" alt="">
@@ -234,7 +234,7 @@
                     </div>
                     <div class="group sizes">
                         <p class="subtitle">Sizes</p>
-                        <div>
+                        <div v-if="form.shape.value > 0">
                             <article class="prevs">
                                 <figure>
                                     <img :src="'/img/forming/channel_angle_'+form.shape.value+'.jpg'" alt="">
@@ -596,7 +596,7 @@
                     </div>
                     <div class="group sizes">
                         <p class="subtitle">Sizes</p>
-                        <div>
+                        <div v-if="form.shape.value > 0">
                             <article class="prevs">
                                 <figure>
                                     <img :src="'/img/forming/frame_angle_'+form.shape.value+'.jpg'" alt="">
@@ -742,7 +742,7 @@
                     </div>
                     <div class="group sizes">
                         <p class="subtitle">Sizes</p>
-                        <div>
+                        <div v-if="form.shape.value > 0">
                             <article class="prevs">
                                 <figure>
                                     <img :src="'/img/forming/panel_angle_'+form.shape.value+'.jpg'" alt="">
