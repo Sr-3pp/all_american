@@ -6,7 +6,7 @@ export default {
     mounted(){
         var este = this;
         $(window).on('scroll', function($e){
-            var who = $('[s-sec=who]'),
+            var who = $('.animated-numbers'),
                 stop = $(document).scrollTop(),
                 position = who.offset(),
                 h1 = $(window).innerHeight() - who.innerHeight(),

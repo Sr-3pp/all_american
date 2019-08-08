@@ -78,8 +78,6 @@ Vue.component('delivery', require('./components/contents/services/delivery/deliv
 
 Vue.component('panel', require('./components/panel/panel.vue'));
 Vue.component('inbox', require('./components/panel/inbox.vue'));
-Vue.component('categories', require('./components/panel/categories.vue'));
-Vue.component('categories', require('./components/panel/categories.vue'));
 Vue.component('votes', require('./components/panel/votes.vue'));
 
 Vue.component('sitio', require('./components/panel/sitio/sitio.vue'));

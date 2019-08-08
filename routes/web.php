@@ -70,8 +70,6 @@ Route::prefix('panel')->group(function(){
     Route::post('/update-cover', 'AdminController@updateCover');
     Route::post('/delete-pic', 'AdminController@deletePic');
 
-    Route::get('/get-categories', 'AdminController@getCategories');
-    Route::post('/save-cat', 'AdminController@saveCat');
 
     Route::post('/save-material', 'AdminController@saveMaterial');
     Route::get('/delete-material/{id}', 'AdminController@removeMaterial');
@@ -100,6 +98,8 @@ Route::prefix('panel')->group(function(){
     Route::post('/save-mill', 'AdminController@saveMill');
     Route::get('/delete-mill/{id}', 'AdminController@deleteMill');
     Route::post('/update-mill/{id}', 'AdminController@updateMill');
+    Route::post('/add-mill-type', 'AdminController@addMillType');
+    Route::get('/delete-mill-type/{id}', 'AdminController@deleteMillType');
 
     Route::get('/get-paints', 'AdminController@getPaints');
     Route::post('/save-paint', 'AdminController@addPaint');

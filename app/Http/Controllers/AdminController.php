@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Slides;
-use App\Category;
 use App\Project;
 use App\Material;
 use App\Calibre;
@@ -13,6 +12,7 @@ use App\FinishType;
 use App\Faqs;
 use App\Skills;
 use App\Mills;
+use App\MillType;
 use App\Gallery;
 use App\FinishChart;
 use App\PowderCoat;
@@ -179,6 +179,18 @@ class AdminController extends Controller
         return $cat;
     }
 
+    public function deleteCat($id){
+        $cat = Category::find($id);
+        foreach ($cat->mills as $key => $m) {
+            Storage::delete($m->svg);
+            $m->delete();
+        }
+
+        $cat->delete();
+
+        return 1;
+    }
+
 
     public function saveMaterial(Request $r){
         $data = $r->all();
@@ -330,22 +342,38 @@ class AdminController extends Controller
     }
     
     public function getMills(){
-        $categories = Category::where('kind', 'mill')->get();
-        foreach ($categories as $key => $c) {
+        $mills = Mills::all();
+        foreach ($mills as $key => $c) {
             $c->mills;
         }
-        return $categories;
+
+        return $mills;
     }
 
     public function saveMill(Request $r){
         $data = $r->all();
-        if ($r->hasFile('svg')) {
-            $data['svg'] = $r->svg->store('mills');
-        }
 
         $mill = Mills::create($data);
 
-        return $this->getMills();;
+        return $this->getMills();
+    }
+    public function addMillType(Request $r){
+        $data = $r->all();
+        if($r->hasFile('svg')){
+            $data['svg'] = $r->svg->store('mills');
+        }
+        $mtype = MillType::create($data);
+
+        return $mtype;
+    }
+
+    public function deleteMillType($id){
+        $type = MillType::find($id);
+        Storage::delete($type->svg);
+
+        $type->delete();
+
+        return 1;
     }
     public function deleteMill($id){
         $m = Mills::find($id);

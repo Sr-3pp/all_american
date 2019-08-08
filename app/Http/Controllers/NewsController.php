@@ -27,6 +27,7 @@ class NewsController extends Controller
             $n->fecha = $fecha->format('M d Y');
         }
 
+
         return $news;
     }
 

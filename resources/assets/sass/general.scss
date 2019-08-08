@@ -172,6 +172,7 @@ body{
             max-width: 500px;
             position: relative;
             cursor: pointer;
+            flex-grow: 1;
             transition: all .2s ease;
             &:last-child{
                 margin-right: 0;
@@ -708,18 +709,24 @@ body{
                 list-style: none;
                 background-color: $light-gray;
                 margin-bottom: 5%;
-                li{
+               > li{
                     position: relative;
                     color: #FFF;
-                    padding: 3% 8%;
                     font-size: 1.2rem;
+                    min-height: 50px;
                     cursor: pointer;
                     border-bottom: {
                         style: solid;
                         width: 1px;
                         color: #FFF;
                     }
+                    display: flex;
+                    flex-direction: column;
                     transition: all .2s ease;
+                    .text{
+                        padding: 3% 8%;
+                        width: 100%;
+                    }
                     &:hover{
                         background-color: $gray;
                     }
@@ -731,6 +738,13 @@ body{
                             width: 1px;
                             color: $dark;
                         }
+                        .text{
+                            border-bottom: {
+                                style: solid;
+                                color: $light-gray;
+                                width: 1px;
+                            }
+                        }
                     }
                     svg{
                         width: 20px;
@@ -738,6 +752,17 @@ body{
                         left: 1%;
                         top: 50%;
                         transform: translateY(-50%);
+                    }
+                    ul{
+                        list-style: none;
+                        li{
+                            padding: 2% 15%;
+                            transition: all .2s ease;
+                            &:hover{
+                                background-color: $dark;
+                                color: #FFF;
+                            }
+                        }
                     }
                 }
             }
@@ -863,7 +888,33 @@ body{
                 }
             }
         }
-        
+        .drills{
+            margin-top: 0!important;
+            padding-top: 0!important;
+            color: $Ablue;
+            >article{
+                >ul{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    color: $dark;
+                    >ol{
+                        flex: {
+                            grow: 0;
+                            shrink: 1;
+                            basis: 23%
+                        }
+                        margin-right: 2%;
+                        &:nth-child(4n){
+                            margin-right: 0;
+                        }
+                        >img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        } 
     .slider {
         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
         height: auto;
@@ -892,7 +943,8 @@ body{
             left: 0;
             top: 0;
         }
-        
+
+       
         .slide-track {
             animation: scroll $animationSpeed linear infinite;
             display: flex;
@@ -1003,6 +1055,11 @@ body{
                 .cta{
                     flex: 2;
                     background-color: transparent;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
                     color: #FFF;
                     height: 50px;
                     font-size: 1rem;
@@ -1396,6 +1453,9 @@ body{
                     bottom: 3%;
                     left: 5%;
                 }
+                >.text{
+                    font-weight: bold;
+                }
                 svg{
                     width: 20;
                     height: 20px;
@@ -1528,6 +1588,15 @@ body{
                 }
             }
         }
+        .animated-numbers{
+            .category, .title{
+                span{
+                    font-size: 2.5rem;
+                    font-family: 'Aero Matics';
+                    font-weight: bold;
+                }
+            }
+        }
         .contact-form{
             .group{
                 .input{
@@ -1546,6 +1615,8 @@ body{
                     }
                     margin-left: inherit;
                     margin-right: auto;
+                    min-width: 30%;
+                    font-weight: bold;
                 }
             }
         }
@@ -1553,6 +1624,75 @@ body{
             flex-direction: column;
             background-color: $Ablue;
             color: #FFF;
+            width: 100%;
+            >.subtitle{
+                text-align: center;
+                padding: 2%;
+            }
+            table{
+                width: 100%;
+                margin-bottom: 3%;
+                thead{
+                    tr{
+                       th{
+                        border: {
+                            top: {
+                                style: solid;
+                                width: 1px;
+                                color: #FFF;
+                            }
+                            bottom: {
+                                style: solid;
+                                width: 1px;
+                                color: #FFF;
+                            }
+    
+                        }
+                       }
+                    }
+                }
+                th, td{
+                    padding: 2%;
+                    text-align: center;
+                    font-weight: bold;
+                }
+                tbody{
+                    tr{
+                        td{
+                            position: relative;
+                            .line-progress{
+                                position: absolute;
+                                width: 10vw;
+                                height: 100%;
+                                top: 0;
+                                right: -90%;
+                                transform: translate(-50%);
+                                display: flex;
+                                align-items: center;
+                                progress{
+                                    width: 100%;
+                                    appearance: none;
+                                    &::-webkit-progress-bar {
+                                        background: $Ablue;
+                                        border-radius:0;
+                                        -webkit-border-radius:0;
+                                    }
+                                    &::-webkit-progress-value {
+                                        background: #FFF;
+                                    }
+                                    &::-moz-progress-bar {
+                                        background: #FFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            >.s-text{
+                padding: 10%;
+            }
         }
         .wizzard{
             position: relative;
@@ -2374,13 +2514,6 @@ body{
                                 flex-direction: column;
                                 justify-content: center;
                                 align-items: center;
-                                &.category{
-                                    span{
-                                        font-size: 2.5rem;
-                                        font-family: 'Aero Matics';
-                                        font-weight: bold;
-                                    }
-                                }
                             }
                         }
                     }
@@ -2766,6 +2899,7 @@ body{
             }
             >.content{
                 margin-bottom: 5%;
+                min-height: 65vh;
                 >.main{
                     &[s-sec=services], &[s-sec=projects]{
                         &.full-section{
@@ -2860,7 +2994,6 @@ body{
                                         }
                                     }
                                     >.text{
-                                        color: $Ablue;
                                         min-height: inherit;
 
                                         >svg{
@@ -2903,7 +3036,6 @@ body{
                                         }
                                     }
                                     >.text{
-                                        color: $Ared;
                                         min-height: inherit;
 
                                         >svg{
@@ -2958,7 +3090,6 @@ body{
                                         }
                                     }
                                     >.text{
-                                        color: $gray;
                                         min-height: inherit;
 
                                         >svg{
@@ -3350,7 +3481,7 @@ body{
                                         fill: #FFF;
                                         &:first-child{
                                             width: auto;
-                                            height: 150%;
+                                            height: auto;
                                             top: 0;
                                             transform: inherit;
                                             left: 0;
@@ -4001,6 +4132,17 @@ body{
                 padding-top: 5%;
                 [s-desk=slides]{
                     
+                }
+                [s-desk=painting]{
+                    >ul{
+                        >li{
+                            article{
+                                img{
+                                    width: 50%;
+                                }
+                            }
+                        }
+                    }
                 }
                 [s-desk=materials]{
                     .material-list{

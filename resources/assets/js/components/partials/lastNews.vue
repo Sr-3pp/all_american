@@ -4,7 +4,7 @@
         <div class="news">
             <article v-for="(n, index) in news" class="new">
                 <figure class="cover" @click="goToNew(n.id)">
-                    <img src="/img/default.jpg" alt="">
+                    <img :src="'/storage/'+n.archivo" alt="">
                 </figure>
                 <p class="s-text" @click="goToNew(n.id)">
                     {{n.fecha}}

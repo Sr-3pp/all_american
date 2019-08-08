@@ -8,9 +8,6 @@
                 <button @click="setSec(1)" class="btn" :class="{'active': active == 1}">Site <icon name="planning"></icon></button>
             </ol>
             <ol>
-                <button @click="setSec(2)" class="btn" :class="{'active': active == 2}">Categories <icon name="planning"></icon></button>
-            </ol>
-            <ol>
                 <button @click="setSec(3)" class="btn" :class="{'active': active == 3}">Votes <icon name="planning"></icon></button>
             </ol>
             <ol>

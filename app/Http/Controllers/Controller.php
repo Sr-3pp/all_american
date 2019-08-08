@@ -14,7 +14,6 @@ use App\Faqs;
 use App\Skills;
 use App\Votes;
 use App\Project;
-use App\Category;
 use App\Forming;
 use App\FinishChart;
 use App\Finish;
@@ -23,6 +22,8 @@ use App\Patina;
 use App\Shared;
 use App\Newsletter;
 use App\Inbox;
+use App\MillType;
+use App\Mills;
 
 use Mail;
 use App\Mail\Newnew;
@@ -300,11 +301,10 @@ class Controller extends BaseController
         $paints = $this->getPaints();
 
 
-        $mills = Category::where('kind', 'mill')->get();
+        $mills = Mills::all();
         foreach ($mills as $key => $c) {
             $c->mills;
         }
-
         $section = false;
         $main = 'services';
         return view('services', compact('menu', 'materials', 'mills', 'paints','finishes', 'section', 'main'));
@@ -345,10 +345,11 @@ class Controller extends BaseController
         $materials = Material::all();
 
 
-        $mills = Category::where('kind', 'mill')->get();
+        $mills = Mills::all();
         foreach ($mills as $key => $c) {
             $c->mills;
         }
+
         $main = 'services';
         return view('services', compact('menu', 'materials', 'mills', 'finishes', 'section', 'main'));
     }

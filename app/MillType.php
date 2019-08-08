@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mills extends Model
+class MillType extends Model
 {
     protected $fillable = [
-        'name'
+        'name', 'svg', 'mills_id'
     ];
 
     public function mills(){
-        return $this->hasMany('App\MillType');
+        return $this->hasMany('App\Mill');
     }
 }

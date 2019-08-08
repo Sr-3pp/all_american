@@ -42,7 +42,7 @@
                 caliber 18 stainless steel measuring 0.048 "inches is not the same as an 18
                 gauge brass measuring 0.040" this variables are correct.
             </div>
-        <div class="blue-table" v-for="(m, index) in materials">
+        <article v-animate="'slide-right'" class="blue-table" v-for="(m, index) in materials">
             <p class="subtitle">{{m.name}}</p>
             <table>
                 <thead>
@@ -56,9 +56,9 @@
                         <td>{{g.gauge}}</td>
                         <td>
                             {{g.thick}}
-                            <p class="line-progress">
-                                <span></span>
-                            </p>
+                            <article class="line-progress">
+                                <progress max="100" value="25"></progress>
+                            </article>
                         </td>
                     </tr>
                 </tbody>
@@ -66,7 +66,7 @@
             <p class="s-text">
                 3/16” Inch is Plate
             </p>
-        </div>
+        </article>
         <figure class="image">
             <img src="/img/shear_machine.jpg" alt="">
             <p class="category">Shear Machine</p>

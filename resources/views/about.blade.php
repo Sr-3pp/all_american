@@ -37,19 +37,19 @@
                 </p>
             </div>
         </article>
-        <div class="full-section separator blue">
+        <div class="animated-numbers full-section separator blue">
             <ul>
                 <li class="title">
                     customers <br>
-                    110
+                    <animated-number :target="110"></animated-number>
                 </li>
                 <li class="title">
                     Projects <br>
-                    220
+                    <animated-number :target="220"></animated-number>
                 </li>
                 <li class="title">
                     Employes <br>
-                    30
+                    <animated-number :target="30"></animated-number>
                 </li>
             </ul>
         </div>
@@ -69,15 +69,15 @@
             <ul class="check-list">
                 <li>
                     <icon name="check"></icon>
-                    Beautiful Designs
+                    <p class="text">Beautiful Designs</p>
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    Original Concepts
+                    <p class="text"> Original Concepts</p>
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    Innovate Solutions
+                    <p class="text">Innovate Solutions</p>
                 </li>
             </ul>
         </div>

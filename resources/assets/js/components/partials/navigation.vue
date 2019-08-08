@@ -38,6 +38,17 @@
             </li>
             <li class="item" :class="{'active': section == 'about'}">
                 <a class="link" href="/about-us">About us</a>
+                <ul class="sub-nav">
+                   <li>
+                       <a href="/services/design-and-planning">Who we are?</a>
+                    </li> 
+                   <li>
+                       <a href="/services/preparation">Join our team</a>
+                    </li> 
+                   <li>
+                       <a href="/services/last-news">Last news</a>
+                    </li> 
+                </ul>
             </li>
             <li class="item" :class="{'active': section == 'contact'}">
                 <a class="link" href="/contact-us">Contact Us</a>

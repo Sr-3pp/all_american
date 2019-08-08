@@ -22,25 +22,18 @@
             as a computerized system allows cutting or drilling with precision in any
             direction, within three dimensions.
         </p>
-        <div class="drills">
+        <div class="info column drills">
             <div class="title">
                 Categories / Examples
             </div>
-            <article class="category">
-                <div class="subtitle">End Mill</div>
-                <icon name="planning"></icon>
-            </article>
-            <article class="category">
-                <div class="subtitle">Chamfer</div>
-                <icon name="planning"></icon>
-            </article>
-            <article class="category">
-                <div class="subtitle">Burs</div>
-                <icon name="planning"></icon>
-            </article>
-            <article class="category">
-                <div class="subtitle">Drills</div>
-                <icon name="planning"></icon>
+            <article class="category" v-for="(c, index) in mills">
+                <p class="subtitle">{{c.name}}</p>
+                <ul>
+                    <ol v-for="(m, ind) in c.mills">
+                        <img :src="'/storage/'+m.svg" alt="">
+                        <p>{{m.name}}</p>
+                    </ol>
+                </ul>
             </article>
         </div>
     </div>
@@ -48,8 +41,9 @@
 <script>
 export default {
     mounted(){
-
+                
     },
+    props: ['mills'],
     data(){
         return {
 

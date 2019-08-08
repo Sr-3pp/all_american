@@ -92,7 +92,7 @@
         </article>
         <shear :key="2" v-show="active && detail == 1"></shear>
         <forming-break :key="3" v-show="active && detail == 2"></forming-break>
-        <machine-mill :key="4" v-show="active && detail == 3"></machine-mill>
+        <machine-mill :mills="mills" :key="4" v-show="active && detail == 3"></machine-mill>
     </transition-group>
 </template>
 <script>
@@ -102,9 +102,11 @@ export default {
             if($event.section == 2){
                this.detail = false;
             }
+        }).$on('setSub', ($event) => {
+            this.detail = $event.section+1
         });
     },
-    props: ['active'],
+    props: ['active', 'mills'],
     data(){
         return {
            detail: false,

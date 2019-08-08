@@ -709,7 +709,7 @@
                                     }
                                     .blue-table{
                                         margin-left: 5vw;
-                                        width: 70%;
+                                        width: 40%;
                                         border-radius: 5px;
                                         margin-bottom: 5%;
                                     }
@@ -912,6 +912,21 @@
                     }
                 }
             }
+            &[s-layout=general]{
+                >.content{
+                    >.main{
+                        &[s-sec=services]{
+                            >.cont{
+                                >.detail{
+                                    >.text{
+                                        min-height: 250px!important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -941,6 +956,15 @@
                 font-size: 1rem
             }
             [s-sec=header]{
+                .carousel{
+                    .slides{
+                        .slide{
+                            .title{
+                                font-size: 3.5rem;
+                            }
+                        }
+                    }
+                }
                 .tabs{
                     ul{
                         ol{
@@ -985,6 +1009,17 @@
                 >.content{
                     >.section-menu{
                         padding-right: 10vw;
+                    }
+                    >.main{
+                        &[s-sec=services]{
+                            > .cont{
+                                .detail{
+                                    >.header{
+                                        height: 600px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 [s-sec=services],  &[s-sec=projects]{

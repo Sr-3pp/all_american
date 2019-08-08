@@ -1,7 +1,7 @@
 <template>
     <section s-sec="services" class="main" :class="{'active': active}">
         <design-planning :materials="materials" :mills="mills" v-if="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
-        <preparation v-if="!active || active == 2" :active="active == 2 ? true : false"></preparation>
+        <preparation :mills="mills" v-if="!active || active == 2" :active="active == 2 ? true : false"></preparation>
         <welding  v-if="!active || active == 3" :active="active == 3 ? true : false"></welding>
         <finishes :finishes="finishes" v-if="!active || active == 4" :active="active == 4 ? true : false"></finishes>
         <painting :paints="paints"  v-if="!active || active == 5" :active="active == 5 ? true : false"></painting>

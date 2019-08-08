@@ -7,7 +7,7 @@
             <div class="label">
                 <icon name="polish"></icon>
                 <p class="text">
-                    Finishes
+                    Polish
                 </p>
             </div>
         </article>
@@ -76,7 +76,10 @@ export default {
             if($event.section == 4){
                this.detail = null;
             }
-        });                
+        }).$on('setSub', ($event) => {
+             this.detail = $event.section+1  
+             this.Afinishes = this.finishes[$event.section]
+        });;                
     },
     props: ['active', 'finishes'],
     data(){

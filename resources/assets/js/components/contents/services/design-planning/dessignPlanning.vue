@@ -148,7 +148,9 @@ export default {
             if($event.section == 1){
                this.detail = false;
             }
-        });
+        }).$on('setSub', ($event) => {
+            this.detail = $event.section+1
+        });;
     },
     props: ['active', 'materials'],
     data(){

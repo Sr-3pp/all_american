@@ -111,7 +111,9 @@ export default {
             if($event.section == 5){
                this.detail = false;
             }
-        });
+        }).$on('setSub', ($event) => {
+            this.detail = $event.section+1
+        });;
         
     },
     props: ['active', 'paints'],

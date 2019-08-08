@@ -18,7 +18,7 @@
         Contact Us
     </button>
 </section>
-<section s-sec="who" class="full-section">
+<section s-sec="who" class="animated-numbers full-section">
     <img src="/img/welding_2.jpg" alt="">  
     <article v-animate.repeat="'slide-up'"> 
         <div>

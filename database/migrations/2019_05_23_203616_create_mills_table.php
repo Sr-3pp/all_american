@@ -16,8 +16,6 @@ class CreateMillsTable extends Migration
         Schema::create('mills', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('category_id');
-            $table->string('svg');
             $table->timestamps();
         });
     }
