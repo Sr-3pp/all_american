@@ -2,7 +2,10 @@
     <ul>
         <li v-for="(item, index) in submenu" :class="{'active': section == index}" @click="setTab(index)">
             <icon v-if="section == index" name="chevron"></icon>
-            {{item}}
+            {{item.name}}
+            <ul v-if="section == index && item.sub != undefined">
+                <li v-for="(sm, i) in item.sub">{{sm}}</li>
+            </ul>
         </li>
     </ul>
 </template>
@@ -30,7 +33,7 @@ export default {
     props: ['submenu', 'sec'],
     data(){
         return {
-            section: null
+            section: null,
         }
     },
     methods: {

@@ -35,8 +35,8 @@
                         <p class="subtitle">{{f.name}}</p>
                         <div>
                             <p>
-                                <span v-if="f.finishes.length">
-                                    {{f.finishes[0].description}}
+                                <span>
+                                    {{f.description}}
                                 </span>
                             </p>
                             <icon name="polish"></icon>
@@ -76,7 +76,7 @@ export default {
             if($event.section == 4){
                this.detail = null;
             }
-        });        
+        });                
     },
     props: ['active', 'finishes'],
     data(){

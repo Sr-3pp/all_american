@@ -17,6 +17,7 @@ use App\Project;
 use App\Category;
 use App\Forming;
 use App\FinishChart;
+use App\Finish;
 use App\PowderCoat;
 use App\Patina;
 use App\Shared;
@@ -260,15 +261,45 @@ class Controller extends BaseController
     }
 
     public function services(){
-        $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
+        $finishes = Finish::all();
+        $fs = [];
+        foreach ($finishes as $key => $f) {
+            array_push($fs, $f->name);
+            foreach ($f->finishes as $key => $f) {
+                $f->bases = json_decode($f->bases);
+            }
+        }
+        $menu = [
+            [
+                'name' => 'Design and Planning',
+                'sub' => ['Concept', 'Planning', 'Material', 'Horientation', 'Original Design', 'Estimate']
+            ],
+            [
+                'name' => 'Preparation',
+                'sub' => ['Shear', 'Forming Break', 'Machine Mill']
+            ],
+            [
+                'name' => 'Welding',
+                'sub' => ['mig', 'tig', 'stick']
+            ],
+            [
+                'name' => 'Polish',
+                'sub' => $fs
+            ],
+            [
+                'name' => 'Painting',
+                'sub' => ['Wet Painting', 'Finish Chart', 'Powder Coat']
+            ],
+            [
+                'name' => 'Delivery',
+                'sub' => ['test']
+            ]
+        ];
         $materials = Material::all();
 
         $paints = $this->getPaints();
 
-        $finishes = Category::where('kind', 'finish')->get();
-        foreach ($finishes as $key => $c) {
-            $c->finishes;
-        }
+
         $mills = Category::where('kind', 'mill')->get();
         foreach ($mills as $key => $c) {
             $c->mills;
@@ -280,13 +311,40 @@ class Controller extends BaseController
     }
 
     public function goService($section){
-        $menu = ['Design and Planning', 'Preparation', 'Welding', 'Finishes', 'Painting', 'Delivery'];
+        $finishes = Finish::all();
+        $fs = [];
+        foreach ($finishes as $key => $f) {
+            array_push($fs, $f->name);
+        }
+        $menu = [
+            [
+                'name' => 'Design and Planning',
+                'sub' => ['Concept', 'Planning', 'Material', 'Horientation', 'Original Design', 'Estimate']
+            ],
+            [
+                'name' => 'Preparation',
+                'sub' => ['Shear', 'Forming Break', 'Machine Mill']
+            ],
+            [
+                'name' => 'Welding',
+                'sub' => ['mig', 'tig', 'stick']
+            ],
+            [
+                'name' => 'Polish',
+                'sub' => $fs
+            ],
+            [
+                'name' => 'Painting',
+                'sub' => ['Wet Painting', 'Finish Chart', 'Powder Coat']
+            ],
+            [
+                'name' => 'Delivery',
+                'sub' => ['test']
+            ]
+        ];
         $materials = Material::all();
 
-        $finishes = Category::where('kind', 'finish')->get();
-        foreach ($finishes as $key => $c) {
-            $c->finishes;
-        }
+
         $mills = Category::where('kind', 'mill')->get();
         foreach ($mills as $key => $c) {
             $c->mills;

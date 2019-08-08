@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Finish extends Model
 {
     protected $fillable = [
-        'category_id', 'name', 'archivo', 'description'
+        'name', 'description'
     ];
 
-    public function categories(){
-        return $this->belongsTo('App\Ctegory');
+    public function finishes(){
+        return $this->hasMany('App\FinishType');
     }
 }

@@ -9,6 +9,7 @@ use App\Project;
 use App\Material;
 use App\Calibre;
 use App\Finish;
+use App\FinishType;
 use App\Faqs;
 use App\Skills;
 use App\Mills;
@@ -250,28 +251,48 @@ class AdminController extends Controller
     }
 
     public function getFinishes(){
-        $finishes = Category::where('kind', 'finish')->get();
+        $finishes = Finish::all();
         foreach ($finishes as $key => $c) {
-            $c->finishes;
+            foreach ($c->finishes as $key => $t) {
+                $t->bases = json_decode($t->bases);
+            }
         }
         return $finishes;
     }
 
     public function saveFinish(Request $r){
         $data = $r->all();
-
-        if ($r->hasFile('archivo')) {
-            $data['archivo'] = $r->archivo->store('finishes');
-        }
-
         $finish = Finish::create($data);
 
         return  $this->getFinishes();
     }
 
+    public function addType(Request $r){
+        $data = $r->all();
+        if($r->hasFile('archivo')){
+            $data['archivo'] = $r->archivo->store('finishes');
+        }
+
+        $type = FinishType::create($data);
+        $type->bases = json_decode($type->bases);
+
+        return $type;
+    }
+
+    public function deleteType($id){
+        $type = FinishType::find($id);
+        Storage::delete($type->archivo);
+        $type->delete();
+
+        return 1;
+    }
+
     public function deleteFinish($id){
         $f = Finish::find($id);
-        Storage::delete($f->archivo);
+        foreach ($f->finishes as $key => $type) {
+            Storage::delete($type->archivo);
+            $type->delete();
+        }
         $f->delete();
         return 1;
     }

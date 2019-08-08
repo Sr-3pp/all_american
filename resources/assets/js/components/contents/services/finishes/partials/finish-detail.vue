@@ -18,29 +18,28 @@
         <p class="text">
             <icon name="star_panel2"></icon>
         </p>
-        <figure class="info" v-if="finishes.finishes">
-            <img :src="'/storage/'+finishes.finishes[finish].archivo" alt="">
+        <figure class="info" v-if="finishes">
+            <img :src="'/storage/'+ofinish.archivo" alt="">
             <p class="text">
-                {{finishes.finishes[finish].description}}
+                {{finishes.description}}
             </p>
         </figure>
         <article class="finishes list info">
-            <figure @click="setFinish(i)" v-for="(f, i) in finishes.finishes">
+            <figure @click="setFinish(f, i)" v-for="(f, i) in finishes.finishes">
                 <img width="100%" :src="'/storage/'+f.archivo" alt="">
                 <span class="category">
                     {{finishes.name}}
                 </span>
-                <span class="text">
-                    {{f.name}}
-                </span>
+                <ul>
+                    <li v-for="(base) in f.bases">{{base.name}}</li>
+                </ul>
             </figure>
         </article>
     </div>
 </template>
 <script>
 export default {
-    mounted(){
-        
+    mounted(){        
         
     },
     props: [
@@ -48,12 +47,21 @@ export default {
     ],
     data(){
         return {
-            finish: 0
+            finish: 0,
+            ofinish: false
         }
     },
     methods: {
-        setFinish(index){
+        setFinish(f, index){
             this.finish = index
+            this.ofinish = f
+        }
+    },
+    watch: {
+        finishes: {
+            handler(val, old){
+                this.ofinish = val.finishes[0]                
+            }
         }
     }
 }

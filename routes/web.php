@@ -83,6 +83,8 @@ Route::prefix('panel')->group(function(){
     Route::post('/save-finish', 'AdminController@saveFinish');
     Route::get('/delete-finish/{id}', 'AdminController@deleteFinish');
     Route::post('/update-finish/{id}', 'AdminController@updateFinish');
+    Route::post('/add-type', 'AdminController@addType');
+    Route::get('/delete-type/{id}', 'AdminController@deleteType');
 
     
     Route::post('/save-faq', 'AdminController@saveFaq');
@@ -114,6 +116,7 @@ Route::prefix('panel')->group(function(){
 
     Route::get('/get-inbox', 'AdminController@getInbox');
     Route::get('/get-votes', 'AdminController@getVotes');
+
   
  });
 
