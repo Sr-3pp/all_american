@@ -17,36 +17,36 @@
             <ul class="estimate-list">
                 <li>
                     <icon name="check"></icon>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Design and Planning
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Preparation
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Welding
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Polish
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Paint
                 </li>
                 <li>
                     <icon name="check"></icon>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Reparation
                 </li>
             </ul>
-            <wizzard></wizzard>
+            <wizzard v-animate="'slide-left'"></wizzard>
         </div>
     </div>
 </template>

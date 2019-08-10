@@ -68,15 +68,15 @@
             </article>
             <ul class="check-list">
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     <p class="text">Beautiful Designs</p>
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     <p class="text"> Original Concepts</p>
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     <p class="text">Innovate Solutions</p>
                 </li>
             </ul>
@@ -93,38 +93,38 @@
             </article>
             <ul class="check-list">
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Warranty
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Fast service
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Availability
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Expert Team
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Innovate Solutions
                 </li>
                 <li>
-                    <icon name="check"></icon>
+                    <icon name="ok"></icon>
                     Top technology tools
                 </li>
             </ul>
         </div>
-        <div class="full-section skills">
+        <div class="full-section skills animated-progress">
             <div class="title">Skills</div>
             <ul class="skill-list">
                 @foreach($skills as $key => $s)
                     <li>
-                        <p class="text">{{$s->name}}</p>
-                        <progress value="{{$s->percent}}" max="10"></progress>
+                    <p class="text">{{$s->name}} <span>{{$s->percent}}0%</span></p>
+                    <animated-progress target="{{$s->percent}}"></animated-progress>
                     </li>
                 @endforeach
             </ul>

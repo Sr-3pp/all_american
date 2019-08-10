@@ -888,7 +888,7 @@
                         ul{
                             ol{
                                 svg{
-                                    max-width: 90px;
+                                    max-width: 20%;
                                 }
                             }
                         }
@@ -1057,7 +1057,7 @@
                             }
                         }
                         &.map-cont{
-                            min-height: 1400px;
+                            min-height: 90vh;
                             >article{
                                 &:last-child{
                                     padding: 2%;

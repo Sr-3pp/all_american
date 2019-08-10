@@ -18,7 +18,7 @@
             <icon name="star_panel2"></icon>
         </p>
         <figure class="image-list">
-            <figure>
+            <figure v-animate="'slide-right'">
                 <img src="/img/services/tig.svg" alt="">
             </figure>
             <ul class="welding-list">

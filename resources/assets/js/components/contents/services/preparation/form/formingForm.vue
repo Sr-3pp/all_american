@@ -141,7 +141,7 @@
                 </article>
                 <article :key="1" v-if="form.shape.section == 2">
                     <div class="angles">
-                        <p class="subtitle">Channels and Angles</p>
+                        <p class="subtitle">Chanels and Angles</p>
                         <ul>
                             <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
                                 <span>
@@ -150,7 +150,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    U Chanel
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
@@ -160,7 +160,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    J Chanel
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 3}"  @click="form.shape.value = 3">
@@ -170,7 +170,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 3" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    Corner
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 4}" @click="form.shape.value = 4">
@@ -180,7 +180,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 4" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    Angle
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 5}" @click="form.shape.value = 5">
@@ -190,7 +190,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 5" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    Drink Rail
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 6}" @click="form.shape.value = 6">
@@ -210,7 +210,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 7" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    Hat Chanel
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 8}"  @click="form.shape.value = 8">
@@ -220,7 +220,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 8" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Channel w/ Hands
+                                    Z Chanel
                                 </span>
                             </li>
                         </ul>

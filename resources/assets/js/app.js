@@ -42,6 +42,7 @@ Vue.component('editor', require('./components/partials/editor.vue'));
 Vue.component('social-new', require('./components/partials/socialNew.vue'));
 Vue.component('loader', require('./components/partials/loader.vue'));
 Vue.component('animated-number', require('./components/partials/animatedNumber.vue'));
+Vue.component('animated-progress', require('./components/partials/animatedProgress.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));
 Vue.component('projects', require('./components/contents/projects/projects.vue'));
