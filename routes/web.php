@@ -80,7 +80,9 @@ Route::prefix('panel')->group(function(){
     Route::get('/get-finishes', 'AdminController@getFinishes');
     Route::post('/save-finish', 'AdminController@saveFinish');
     Route::get('/delete-finish/{id}', 'AdminController@deleteFinish');
+    Route::get('/delete-finish-category/{id}', 'AdminController@deleteFinishCategory');
     Route::post('/update-finish/{id}', 'AdminController@updateFinish');
+    Route::post('/update-finish-category/{id}', 'AdminController@updateFinishCategory');
     Route::post('/add-type', 'AdminController@addType');
     Route::get('/delete-type/{id}', 'AdminController@deleteType');
 

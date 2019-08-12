@@ -2,6 +2,27 @@
     <div s-desk="finishes">
         <article v-if="newFinish">
                 <article>
+                    <div v-if="!newCat">
+                        <p class="form-group">
+                            <label>Category</label>
+                            <select class="input" v-model="nfinish.finish_category_id">
+                                <option value="">Select a category</option>
+                                <option v-for="cat in categories" :value="cat.id">{{cat.name}}</option>
+                            </select>
+                            <button class="btn" @click="newCat ? newCat = false : newCat = true">Add category</button>
+                        </p>
+                    </div>
+                    <div v-else>
+                        <p class="form-group">
+                            <label>Category</label>
+                            <input type="text" class="input" v-model="ncat.name">
+                        </p>
+                         <p class="form-group">
+                            <label> Category Description</label>
+                            <textarea type="text" class="input" v-model="ncat.description"></textarea>
+                        </p>
+                         <button class="btn" @click="newCat ? newCat = false : newCat = true">Choose existent category</button>
+                    </div>
                     <p class="form-group">
                         <label>Name</label>
                         <input type="text" class="input" v-model="nfinish.name">
@@ -16,11 +37,29 @@
         <ul v-for="(cat, index) in finishes">
             <p class="title">{{cat.name}}</p>
             <p class="text">{{cat.description}}</p>
-             <button class="btn" @click="editFinish(cat, index)">Edit</button>
-            <button class="btn" @click="deleteFinish(cat.id, index)">Delete</button>
-            <h4 class="category">Types</h4>
-            <button class="btn" @click="addBases(cat, index)">Add Type</button>
-            <li v-for="(f, i) in cat.finishes"  v-if="finishEdit != 'editFinish_' + index">
+            <div class="buttons">
+                <button class="btn" @click="editCategory(cat, index)">Edit Category</button>
+                <button class="btn" @click="deleteCategory(cat.id, index)">Delete Category</button>
+            </div>
+            <div v-if="catEdit == 'editCat_'+index">
+                <p class="form-group">
+                    <label>Category Name</label>
+                    <input type="text" class="input" v-model="cate.name">
+                </p>
+                <p class="form-group">
+                    <label>Category Name</label>
+                    <textarea class="input" v-model="cate.description"></textarea>
+                </p>
+                <button class="btn" @click="updateCategory(index)">Update Category</button>
+            </div>
+            <ul v-if="finishEdit != 'editFinish_'+index" v-for="(c, ind) in cat.finishes">
+                    <p class="subtitle">{{c.name}}</p>
+                    <p class="text">{{c.description}}</p>
+                     <button class="btn" @click="editFinish(c, ind)">Edit Finish</button>
+                     <button class="btn" @click="deleteFinish(c.id, ind)">Delete Finish</button>
+                    <button class="btn" @click="addBases(c, ind)">Add Type</button>
+                    <h4 v-if="finishEdit != 'editFinish_' + ind" class="category">Types</h4>
+                <li v-for="(f, i) in c.types"  v-if="finishEdit != 'editFinish_' + ind">
                     <figure>
                         <img :src="'/storage/'+f.archivo" width="10%" alt="">
                     </figure>
@@ -28,38 +67,40 @@
                         <p v-for="(bas, indd) in f.bases">{{bas.name}}</p>
                     </article>
                     <button class="btn" @click="deleteType(f, index, i)">Delete Type</button>
-            </li>
-            <li v-if="moreBases == 'morebase_' +index">
-                 <div class="types">
-                        <p id="prevFinish" class="form-group" @click="clickInput()">
-                            <label>Set preview</label>
-                            <input id="fileFinish" type="file" class="hidden" @change="setBasePic($event)">
-                        </p>
-                        <div class="bases">
-                            <ul>
-                                <li v-for="(b, id) in ntype.bases">{{b.name}}</li>
-                            </ul>
-                            <select class="input" v-model="nbase" @change="addBase()">
-                                <option v-for="m in materials" :value="m">{{m.name}}</option>
-                            </select>
+                </li>
+                <li v-if="moreBases == 'morebase_' +ind">
+                    <div class="types">
+                            <p id="prevFinish" class="form-group" @click="clickInput()">
+                                <label>Set preview</label>
+                                <input id="fileFinish" type="file" class="hidden" @change="setBasePic($event)">
+                            </p>
+                            <div class="bases">
+                                <ul>
+                                    <li v-for="(b, id) in ntype.bases">{{b.name}}</li>
+                                </ul>
+                                <select class="input" v-model="nbase" @change="addBase()">
+                                    <option v-for="m in materials" :value="m">{{m.name}}</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <button class="btn" @click="saveType(index)">Save Type</button>
-            </li>
-            <li v-if="finishEdit == 'editFinish_' + index">
-                    <div v-for="(fin, i) in finish">
-                        <article v-if="i == 'name'" class="form-group">
-                            <label>{{i}}</label>
-                            <input type="text" class="input" v-model="finish[i]">
-                        </article>
-                        <article v-if="i == 'description'" class="form-group">
-                            <label>{{i}}</label>
-                            <textarea type="text" class="input" v-model="finish[i]"></textarea>
-                        </article>
-                    </div>
-                    <button @click="editFinish()" class="btn">Cancel</button>
-                    <button @click="updateFinish()" class="btn">Save</button>
-            </li>
+                        <button class="btn" @click="saveType(index, ind)">Save Type</button>
+                </li>
+                <li v-if="finishEdit == 'editFinish_' + ind">
+                        <div v-for="(fin, i) in finish">
+                            <article v-if="i == 'name'" class="form-group">
+                                <label>{{i}}</label>
+                                <input type="text" class="input" v-model="finish[i]">
+                            </article>
+                            <article v-if="i == 'description'" class="form-group">
+                                <label>{{i}}</label>
+                                <textarea type="text" class="input" v-model="finish[i]"></textarea>
+                            </article>
+                        </div>
+                        <button @click="editFinish()" class="btn">Cancel</button>
+                        <button @click="updateFinish()" class="btn">Save</button>
+                </li>
+            </ul>
+            <hr>
         </ul>
     </div>
 </template>
@@ -75,13 +116,11 @@ export default{
         var este = this;
 
         axios.get('/panel/get-finishes').then((finishes) => {
-            este.finishes = finishes.data
+            este.finishes = finishes.data['finishes']
+            este.categories = finishes.data['categories']
         });
         axios.get('/get-materials').then((materials) => {
             este.materials = materials.data
-        });
-        axios.get('/panel/get-cats/finish').then((cats) => {
-            este.categories = cats.data
         });
     },
     props: [
@@ -96,36 +135,53 @@ export default{
            finish: false,
            finishEdit: false,
            nbase: null,
+           ncat: {
+               name: null,
+               description: null,
+           },
            nfinish: {
                name: null,
                description: null,
+               finish_category_id: 0,
            },
            types: false,
            ntype: {
                archivo: null,
                bases: []
            },
-           moreBases: false
+           moreBases: false,
+           newCat: false,
+           cate: false,
+           catEdit: false
         }
     },
     methods: {
-      saveFinish(){
+      saveFinish(){          
           var este = this,
                 formData = new FormData();
 
                 formData.append('name', this.nfinish.name);
                 formData.append('description', this.nfinish.description);
+                formData.append('finish_category_id', this.nfinish.finish_category_id);
 
-                axios.post('/panel/save-finish', formData).then((finish) => {
-                    este.finishes = finish.data
+                 formData.append('cat_name', this.ncat.name);
+                 formData.append('cat_description', this.ncat.description);
+
+               axios.post('/panel/save-finish', formData).then((finish) => {
+                    este.finishes = finish.data['finishes']
+                    este.categories = finish.data['categories']
                     este.newFinish = false
                     este.nfinish= {
                         name: null,
-                        category_id: null,
-                        archivo: null
+                        description: null,
+                        finish_category_id: 0
+                    }
+                    este.ncat= {
+                        name: null,
+                        description: null
                     }
                 })
-      } ,
+      },
       deleteFinish(id, index){
           if (confirm('Delete finish?')) {
               var este = this;
@@ -137,6 +193,18 @@ export default{
       editFinish(f, index, i){
           this.finish ? this.finish = false : this.finish = f;
           this.finishEdit ? this.finishEdit = false : this.finishEdit = 'editFinish_'+index;
+      },
+      deleteCategory(id, index){
+          if (confirm('Delete finish?')) {
+              var este = this;
+              axios.get('/panel/delete-finish-category/'+id).then((response) => {
+                  este.finishes.splice(index, 1)
+              });
+          }
+      },
+      editCategory(c, index){
+         this.cate ? this.cate = false : this.cate = c;
+          this.catEdit ? this.catEdit = false : this.catEdit = 'editCat_'+index;
       },
       addBases(f, index){
           this.finish ? this.finish = false : this.finish = f;
@@ -154,7 +222,18 @@ export default{
                 axios.post('/panel/update-finish/'+ this.finish.id, formData).then((r) => {
                     este.finish = false;
                     este.finishEdit = false;
-                    este.finishes = r.data
+                    este.finishes = r.data['finishes']
+                }).catch((e) => {
+                    console.log(e);
+                });
+      },
+      updateCategory(){
+          var este = this;
+                axios.post('/panel/update-finish-category/'+ this.cate.id, this.cate).then((r) => {
+                    este.cat = false;
+                    este.catEdit = false;
+                    este.finishes = r.data['finishes']
+                    este.categories = r.data['categories']
                 }).catch((e) => {
                     console.log(e);
                 });
@@ -179,7 +258,7 @@ export default{
       clickInput(){
           $('#fileFinish').click()
       },
-      saveType(index){
+      saveType(index, i){
           var este = this,
               formData = new FormData();
                 
@@ -188,7 +267,7 @@ export default{
               formData.append('bases', JSON.stringify(this.ntype.bases));
 
               axios.post('/panel/add-type', formData).then((type) => {
-                  este.finishes[index].finishes.push(type.data)
+                  este.finishes[index].finishes[i].types.push(type.data)
                   este.moreBases = false
                   este.ntype.bases = [];
                   este.ntype.archivo = false

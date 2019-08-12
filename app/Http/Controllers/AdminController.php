@@ -9,6 +9,7 @@ use App\Material;
 use App\Calibre;
 use App\Finish;
 use App\FinishType;
+use App\FinishCategory;
 use App\Faqs;
 use App\Skills;
 use App\Mills;
@@ -263,17 +264,34 @@ class AdminController extends Controller
     }
 
     public function getFinishes(){
-        $finishes = Finish::all();
-        foreach ($finishes as $key => $c) {
-            foreach ($c->finishes as $key => $t) {
-                $t->bases = json_decode($t->bases);
+        $data = [];
+        $categories = [];
+        $finishes = FinishCategory::all();
+        
+        foreach ($finishes as $key => $f) {
+            array_push($categories, $f);
+            foreach ($f->finishes as $key => $c) {
+                foreach ($c->types as $key => $t) {
+                    $t->bases = json_decode($t->bases);
+                }
             }
         }
-        return $finishes;
+        $data['finishes'] = $finishes;
+        $data['categories'] = $categories;
+        return $data;
     }
 
     public function saveFinish(Request $r){
         $data = $r->all();
+
+        $dat = [];
+        if($r->cat_name != 'null'){
+            $dat['name'] = $r->cat_name;
+            $dat['description'] = $r->cat_description;
+            $cat = FinishCategory::create($dat); 
+            $data['finish_category_id'] = $cat->id;
+        }
+
         $finish = Finish::create($data);
 
         return  $this->getFinishes();
@@ -301,12 +319,33 @@ class AdminController extends Controller
 
     public function deleteFinish($id){
         $f = Finish::find($id);
-        foreach ($f->finishes as $key => $type) {
+        foreach ($f->types as $key => $type) {
             Storage::delete($type->archivo);
             $type->delete();
         }
         $f->delete();
         return 1;
+    }
+
+    public function deleteFinishCategory($id){
+        $f = FinishCategory::find($id);
+        foreach ($f->finishes as $key => $finish) {
+           foreach($finish->types as $k => $type){
+                Storage::delete($type->archivo);
+                $type->delete();
+           }
+           $finish->delete();
+        }
+        $f->delete();
+        return 1;
+    }
+
+    public function updateFinishCategory(Request $r, $id){
+        $finish = FinishCategory::find($id);
+        $data = $r->all();
+
+        $finish->update($data);
+        return $this->getFinishes();
     }
 
     public function updateFinish(Request $r, $id){

@@ -19,13 +19,13 @@
             <icon name="star_panel2"></icon>
         </p>
         <figure class="info" v-if="finishes">
-            <img :src="'/storage/'+ofinish.archivo" alt="">
+            <img :src="'/storage/'+otype.archivo" alt="">
             <p class="text">
                 {{finishes.description}}
             </p>
         </figure>
         <article class="finishes list info">
-            <figure @click="setFinish(f, i)" v-for="(f, i) in finishes.finishes">
+            <figure @click="setType(f, i)" v-for="(f, i) in ofinish.types">
                 <img width="100%" :src="'/storage/'+f.archivo" alt="">
                 <span class="category">
                     {{finishes.name}}
@@ -48,19 +48,25 @@ export default {
     data(){
         return {
             finish: 0,
-            ofinish: false
+            ofinish: false,
+            otype: false
         }
     },
     methods: {
         setFinish(f, index){
             this.finish = index
             this.ofinish = f
+        },
+        setType(t){
+            this.otype = t;
         }
     },
+
     watch: {
         finishes: {
             handler(val, old){
-                this.ofinish = val.finishes[0]                
+                this.ofinish = val.finishes[0]                         
+                this.otype = this.ofinish.types[0]                         
             }
         }
     }

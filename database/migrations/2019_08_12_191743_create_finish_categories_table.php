@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFinishesTable extends Migration
+class CreateFinishCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateFinishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('finishes', function (Blueprint $table) {
+        Schema::create('finish_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('finish_category_id');
             $table->string('name');
             $table->longText('description');
             $table->timestamps();
@@ -29,6 +28,6 @@ class CreateFinishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('finishes');
+        Schema::dropIfExists('finish_categories');
     }
 }

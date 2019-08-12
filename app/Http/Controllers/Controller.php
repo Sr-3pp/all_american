@@ -16,6 +16,7 @@ use App\Votes;
 use App\Project;
 use App\Forming;
 use App\FinishChart;
+use App\FinishCategory;
 use App\Finish;
 use App\PowderCoat;
 use App\Patina;
@@ -262,12 +263,15 @@ class Controller extends BaseController
     }
 
     public function services(){
-        $finishes = Finish::all();
         $fs = [];
+        $finishes = FinishCategory::all();
+        
         foreach ($finishes as $key => $f) {
             array_push($fs, $f->name);
-            foreach ($f->finishes as $key => $f) {
-                $f->bases = json_decode($f->bases);
+            foreach ($f->finishes as $key => $c) {
+                foreach ($c->types as $key => $t) {
+                    $t->bases = json_decode($t->bases);
+                }
             }
         }
         $menu = [
@@ -311,10 +315,16 @@ class Controller extends BaseController
     }
 
     public function goService($section){
-        $finishes = Finish::all();
         $fs = [];
+        $finishes = FinishCategory::all();
+        
         foreach ($finishes as $key => $f) {
             array_push($fs, $f->name);
+            foreach ($f->finishes as $key => $c) {
+                foreach ($c->types as $key => $t) {
+                    $t->bases = json_decode($t->bases);
+                }
+            }
         }
         $menu = [
             [
