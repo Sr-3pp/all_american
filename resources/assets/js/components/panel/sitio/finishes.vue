@@ -56,7 +56,7 @@
                     <p class="subtitle">{{c.name}}</p>
                     <p class="text">{{c.description}}</p>
                      <button class="btn" @click="editFinish(c, ind)">Edit Finish</button>
-                     <button class="btn" @click="deleteFinish(c.id, ind)">Delete Finish</button>
+                     <button class="btn" @click="deleteFinish(c.id, index, ind)">Delete Finish</button>
                     <button class="btn" @click="addBases(c, ind)">Add Type</button>
                     <h4 v-if="finishEdit != 'editFinish_' + ind" class="category">Types</h4>
                 <li v-for="(f, i) in c.types"  v-if="finishEdit != 'editFinish_' + ind">
@@ -117,7 +117,7 @@ export default{
 
         axios.get('/panel/get-finishes').then((finishes) => {
             este.finishes = finishes.data['finishes']
-            este.categories = finishes.data['categories']
+            este.categories = finishes.data['categories']            
         });
         axios.get('/get-materials').then((materials) => {
             este.materials = materials.data
@@ -182,11 +182,11 @@ export default{
                     }
                 })
       },
-      deleteFinish(id, index){
+      deleteFinish(id, index, ind){
           if (confirm('Delete finish?')) {
               var este = this;
               axios.get('/panel/delete-finish/'+id).then((response) => {
-                  este.finishes.splice(index, 1)
+                  este.finishes[index].finishes.splice(ind, 1)
               });
           }
       },
