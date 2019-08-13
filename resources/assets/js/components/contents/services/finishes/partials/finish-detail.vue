@@ -30,6 +30,7 @@
                 <span class="category">
                     {{finishes.name}}
                 </span>
+                <p class="text">{{f.description}}</p>
                 <ul>
                     <li v-for="(base) in f.bases">{{base.name}}</li>
                 </ul>
@@ -56,6 +57,7 @@ export default {
         setFinish(f, index){
             this.finish = index
             this.ofinish = f
+            
         },
         setType(t){
             this.otype = t;
@@ -65,8 +67,11 @@ export default {
     watch: {
         finishes: {
             handler(val, old){
-                this.ofinish = val.finishes[0]                         
-                this.otype = this.ofinish.types[0]                         
+                
+                if(val.finishes.length){
+                    this.ofinish = val.finishes[0]      
+                    this.otype = this.ofinish.types[0]    
+                }                     
             }
         }
     }

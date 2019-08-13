@@ -17,6 +17,7 @@ class CreateFinishTypesTable extends Migration
             $table->increments('id');
             $table->integer('finish_id');
             $table->string('archivo');
+            $table->longText('description');
             $table->longText('bases');
             $table->timestamps();
         });

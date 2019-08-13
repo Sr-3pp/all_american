@@ -118,6 +118,7 @@ Route::prefix('panel')->group(function(){
 
     Route::get('/get-inbox', 'AdminController@getInbox');
     Route::get('/get-votes', 'AdminController@getVotes');
+    Route::get('/get-forms', 'AdminController@getForms');
 
   
  });

@@ -90,6 +90,7 @@ Vue.component('finishes-panel', require('./components/panel/sitio/finishes.vue')
 Vue.component('faqs', require('./components/panel/sitio/faqs.vue'));
 Vue.component('skills', require('./components/panel/sitio/skills.vue'));
 Vue.component('materials', require('./components/panel/sitio/materials.vue'));
+Vue.component('panel-forms', require('./components/panel/sitio/forming.vue'));
 
 Vue.component('news', require('./components/panel/news/news.vue'));
 

@@ -11,6 +11,7 @@ use App\Finish;
 use App\FinishType;
 use App\FinishCategory;
 use App\Faqs;
+use App\Forming;
 use App\Skills;
 use App\Mills;
 use App\MillType;
@@ -596,5 +597,15 @@ class AdminController extends Controller
         $votes = Votes::all();
 
         return $votes;
+    }
+
+    public function getForms(){
+        $forms = Forming::all();
+        foreach ($forms as $key => $f) {
+            $f->shared;
+            $f->object = json_decode($f->object);
+        }
+
+        return $forms;
     }
 }

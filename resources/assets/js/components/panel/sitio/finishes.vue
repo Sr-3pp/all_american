@@ -63,6 +63,7 @@
                     <figure>
                         <img :src="'/storage/'+f.archivo" width="10%" alt="">
                     </figure>
+                    <p class="text">{{f.description}}</p>
                     <article>
                         <p v-for="(bas, indd) in f.bases">{{bas.name}}</p>
                     </article>
@@ -73,6 +74,10 @@
                             <p id="prevFinish" class="form-group" @click="clickInput()">
                                 <label>Set preview</label>
                                 <input id="fileFinish" type="file" class="hidden" @change="setBasePic($event)">
+                            </p>
+                            <p class="form-group">
+                                <label>Type description</label>
+                                <textarea class="input" v-model="ntype.description"></textarea>
                             </p>
                             <div class="bases">
                                 <ul>
@@ -147,7 +152,8 @@ export default{
            types: false,
            ntype: {
                archivo: null,
-               bases: []
+               bases: [],
+               description: null
            },
            moreBases: false,
            newCat: false,
@@ -264,6 +270,7 @@ export default{
                 
               formData.append('finish_id', this.finish.id);
               formData.append('archivo', this.ntype.archivo);
+              formData.append('description', this.ntype.description);
               formData.append('bases', JSON.stringify(this.ntype.bases));
 
               axios.post('/panel/add-type', formData).then((type) => {
@@ -271,6 +278,7 @@ export default{
                   este.moreBases = false
                   este.ntype.bases = [];
                   este.ntype.archivo = false
+                  este.ntype.description = null
               });
       },
       deleteType(type, index, i){

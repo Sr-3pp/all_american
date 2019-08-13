@@ -18,7 +18,7 @@
         <transition-group name="fade" tag="div">
             <inbox :key="0" v-if="active == 0"></inbox>
             <sitio :key="1" v-if="active == 1"></sitio>
-            <categories :key="2" v-if="active == 2"></categories>
+            <panel-forms :key="2" v-if="active == 2"></panel-forms>
             <votes :key="3" v-if="active == 3"></votes>
             <news :key="4" v-if="active == 4"></news>
         </transition-group>
