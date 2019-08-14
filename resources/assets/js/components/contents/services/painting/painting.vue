@@ -112,8 +112,13 @@ export default {
                this.detail = false;
             }
         }).$on('setSub', ($event) => {
-            this.detail = $event.section+1
-        });;
+            if($event.section >= 1){
+                this.detail = 2
+            }else{
+                this.detail = 1;
+            }            
+                this.cat = $event.section                
+        });        
         
     },
     props: ['active', 'paints'],

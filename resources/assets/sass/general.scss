@@ -761,7 +761,7 @@ body{
                         li{
                             padding: 2% 15%;
                             transition: all .2s ease;
-                            &:hover{
+                            &:hover, &.active{
                                 background-color: $dark;
                                 color: #FFF;
                             }
@@ -3158,7 +3158,6 @@ body{
                                         }
                                         .info{
                                             color: $light-gray;
-                                            margin-top: 0;
                                             padding-top: 0;
                                             >ul{
                                                 list-style: none;
@@ -3206,9 +3205,6 @@ body{
                                                     }
                                                 }
                                             }
-                                            &.header-text{
-                                                margin-top: 10%;
-                                            }
                                         }
                                     }
                                     &[s-sec=patina]{
@@ -3216,7 +3212,6 @@ body{
                                             margin-bottom: 0;
                                         }
                                         >.info{
-                                            margin-top: 0;
                                             padding-top: 0;
                                             >div{
                                                 color: $gray;
@@ -3243,9 +3238,6 @@ body{
                                                         }
                                                     }
                                                 }
-                                            }
-                                            &.header-text{
-                                                margin-top: 10%;
                                             }
                                         }
                                     }
@@ -3458,7 +3450,7 @@ body{
                                     }
                                 }
                                 >.header{
-                                    height: 400px;
+                                    height: auto;
                                     width: 100vw;
                                     top: 0;
                                     left: 0;
@@ -3469,8 +3461,8 @@ body{
                                     position: relative;
                                     margin-bottom: 5%;
                                     img{
-                                        width: auto;
-                                        height: 100%;
+                                        width: 100%;
+                                        height: auto;
                                         z-index: 0;
                                     }
                                     svg{

@@ -293,7 +293,7 @@ class Controller extends BaseController
             ],
             [
                 'name' => 'Painting',
-                'sub' => ['Wet Painting', 'Finish Chart', 'Powder Coat']
+                'sub' => ['Wet Painting', 'Finish Chart', 'Powder Coat', 'Patina']
             ],
             [
                 'name' => 'Delivery',

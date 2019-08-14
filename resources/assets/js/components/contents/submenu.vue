@@ -3,7 +3,7 @@
         <li v-for="(item, index) in submenu" :class="{'active': section == index}">
             <span class="text" @click="setTab(index)">{{item.name}}</span>
             <ul v-if="section == index && item.sub != undefined">
-                <li v-for="(sm, i) in item.sub" @click="setSub(i)">{{sm}}</li>
+                <li :class="{'active': sub == i}" v-for="(sm, i) in item.sub" @click="setSub(i)">{{sm}}</li>
             </ul>
         </li>
     </ul>
@@ -33,15 +33,18 @@ export default {
     data(){
         return {
             section: null,
+            sub: null
         }
     },
     methods: {
         setTab(index){
             this.section = index
             this.$bus.$emit('setTab', {section: index+1});
+            this.sub = null
         },
         setSub(index){
              this.$bus.$emit('setSub', {section: index});
+             this.sub = index
         }
     }
 }

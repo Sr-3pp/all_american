@@ -8,9 +8,9 @@
             <icon name="painting"></icon>
         </figure>
         <div class="info column header-text">
-            <p class="title">
-                {{paint.name}}
-            </p>  
+                <p class="title" v-if="category == 1">Finish Chart</p>
+                <p class="title" v-if="category == 2">Powder Coat</p>
+                <p class="title" v-if="category == 3">Patina</p>
                 <icon name="estrella4"></icon>
             <div class="text" v-if="category == 1">
                 <div>
@@ -243,9 +243,7 @@ export default {
     mounted(){
            this.$bus.$on('modal', ($event) => {
                this.allChart()
-           });     
-           console.log(this.paints);
-           
+           });                
     },
     props: [
         'paints', 'category'
@@ -280,7 +278,6 @@ export default {
     watch: {
         category: {
             handler (val, old){
-                console.log(this.paints['patina']);
                 
                 if(val == 1){
                     this.paint = this.paints['finish Chart'];
@@ -293,6 +290,11 @@ export default {
                     this.paint = this.paints['powder coat'];
                     this.section = 'powder-coat'
                 }
+                
+            }
+        },
+        paints: {
+            handler(val, old) {
                 
             }
         }
