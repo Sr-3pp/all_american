@@ -5,14 +5,15 @@
             <img src="/img/services/mig.jpg" alt="">
             <icon name="welding"></icon>
         </figure>
-        <p class="title">
-            MIG
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            This system, being more versatile, saves time and resources since welding is clean and its application is fast.
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                MIG
+            </p>  
+            <icon name="estrella4"></icon>
+            <p class="text">
+                This system, being more versatile, saves time and resources since welding is clean and its application is fast.
+            </p>
+        </div>
         <figure class="image-list">
             <figure v-animate="'slide-right'">
                 <img src="/img/services/mig.svg" alt="">

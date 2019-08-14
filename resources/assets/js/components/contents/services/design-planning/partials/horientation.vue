@@ -5,14 +5,15 @@
             <img src="/img/services/horientation.jpg" alt="">
             <icon name="horientation"></icon>
         </figure>
-        <p class="title">
-            Horientation
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            We will be with you from the moment the idea is generated to the completion of your project, we will guide you with useful tips to make your project effective and functional
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                Horientation
+            </p>  
+                <icon name="estrella4"></icon>
+            <p class="text">
+                We will be with you from the moment the idea is generated to the completion of your project, we will guide you with useful tips to make your project effective and functional
+            </p>
+        </div>
     </div>
 </template>
 <script>

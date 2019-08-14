@@ -5,14 +5,15 @@
             <img src="/img/services/forming_break.jpg" alt="">
             <icon name="break"></icon>
         </figure>
-        <p class="title">
-            Forming Break
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            Material cutting service, adjusted to the specific measures that you need. We offer shearing services...
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                Forming Break
+            </p>  
+                <icon name="estrella4"></icon>
+            <p class="text">
+                Material cutting service, adjusted to the specific measures that you need. We offer shearing services...
+            </p>
+        </div>
         <figure class="info">
                 <img class="gif" src="/img/break.gif" alt="">
             </figure>

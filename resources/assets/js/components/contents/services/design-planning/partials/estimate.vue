@@ -5,14 +5,15 @@
             <img src="/img/services/estimate.jpg" alt="">
             <icon name="estimate"></icon>
         </figure>
-        <p class="title">
-            Estimate
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            Planificacremos the costs of your project taking into account, allocation of efforts, cost of resources, work time etc.
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                Estimate
+            </p>  
+            <icon name="estrella4"></icon>
+            <p class="text">
+                Planificacremos the costs of your project taking into account, allocation of efforts, cost of resources, work time etc.
+            </p>
+        </div>
         <div class="info column">
             <ul class="estimate-list">
                 <li>

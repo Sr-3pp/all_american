@@ -5,17 +5,18 @@
             <img src="/img/services/machine_mill.jpg" alt="">
             <icon name="machine_mill"></icon>
         </figure>
-        <p class="title">
-            Machine Mill
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            CNC millwork, from the production of complex parts to the manufacture of precise
-            parts for components, we have the top
-            tools for your project, in order to transform
-            the production in efficient time.
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                Machine Mill
+            </p>  
+                <icon name="estrella4"></icon>
+            <p class="text">
+                CNC millwork, from the production of complex parts to the manufacture of precise
+                parts for components, we have the top
+                tools for your project, in order to transform
+                the production in efficient time.
+            </p>
+        </div>
         <p class="title">Benefits</p>
         <p class="text full">
             A milling machine provides many advantages when doing drill or cut milling,

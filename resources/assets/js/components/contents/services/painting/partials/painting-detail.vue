@@ -7,42 +7,41 @@
             <img v-if="category == 3" src="/img/services/patina.jpg" alt="">
             <icon name="painting"></icon>
         </figure>
-        <p class="title">
-            {{paint.name}}
-            <icon name="star_panel1"></icon>
-        </p>  
-        <div class="text column" v-if="category == 1">
-            <div>
-                <strong>Notice</strong><br>
-                <p>
-                    The finish may vary or look different on the screen, ask us for a sample. 
-                </p><br><br>
-                <p>
-                    The finish shown here are just some examples, you can
-                    ask for any finish you require. You can che k more finish
-                    examples on button below.
-                </p>
-                <br><br>
-                <button class="cta btn" @click="allChart()">See More</button>
+        <div class="info column header-text">
+            <p class="title">
+                {{paint.name}}
+            </p>  
+                <icon name="estrella4"></icon>
+            <div class="text" v-if="category == 1">
+                <div>
+                    <strong>Notice</strong><br>
+                    <p>
+                        The finish may vary or look different on the screen, ask us for a sample. 
+                    </p><br><br>
+                    <p>
+                        The finish shown here are just some examples, you can
+                        ask for any finish you require. You can che k more finish
+                        examples on button below.
+                    </p>
+                    <br><br>
+                    <button class="cta btn" @click="allChart()">See More</button>
+                </div>
             </div>
-            <icon name="star_panel2"></icon>
+            <p class="text" v-if="category == 2">
+                It is a coating with clear benefits in relation to liquid
+                and non-solvent paint. It has proven resistance to
+                chemical agents, impact and corrosion, ensuring the
+                durability of the treated piece.
+            </p>
+            <p class="text" v-if="category == 3">
+                The patina is aware that forms on the surface of
+                metals, is produced by oxidation or by chemical processes that give the piece of metal a rustic, antique
+                and decorative appearance. <br> <br>
+                Decorative element that provides texture to the surface of the metal, as well as gradations of color and
+                contrasting tones, this method is used extensively to
+                brighten striking effects in the final result.
+            </p>
         </div>
-        <p class="text" v-if="category == 2">
-            It is a coating with clear benefits in relation to liquid
-            and non-solvent paint. It has proven resistance to
-            chemical agents, impact and corrosion, ensuring the
-            durability of the treated piece.
-            <icon name="star_panel2"></icon>
-        </p>
-        <p class="text" v-if="category == 3">
-            The patina is aware that forms on the surface of
-            metals, is produced by oxidation or by chemical processes that give the piece of metal a rustic, antique
-            and decorative appearance. <br> <br>
-            Decorative element that provides texture to the surface of the metal, as well as gradations of color and
-            contrasting tones, this method is used extensively to
-            brighten striking effects in the final result.
-            <icon name="star_panel2"></icon>
-        </p>
         <article class="info column" v-if="category == 1">
             <ul>
                 <ol v-if="p.attributes.archivo != undefined" v-for="(p, i) in paint">

@@ -313,6 +313,7 @@ body{
         }
         .image-list{
             display: flex;
+            margin-top: 10%;
             >*{
              flex: {
                  grow: 1;
@@ -2918,12 +2919,6 @@ body{
                             transition: all .2s ease;
                             .detail{
                                 width: 100%;
-                                >figure{
-                                    &.info{
-                                        margin-top: 0;
-                                    padding-top: 0;
-                                    }
-                                }
                                 >.info{
                                    >*{
                                        margin-bottom: 5%;
@@ -2994,22 +2989,11 @@ body{
                                     }
                                 }
                                 >.detail{
-                                    >.title{
-                                        color: $Ablue;
-                                        &::after{
-                                            background-color: $Ablue;
+                                   .header-text{
+                                        >.title, >.text, >svg{
+                                            color: $Ablue;
                                         }
-                                    }
-                                    >.text{
-                                        min-height: inherit;
-
-                                        >svg{
-                                            height: 10vw;
-                                            left: inherit;
-                                            right: -5%;
-                                            fill: $Ablue;
-                                        }
-                                    }
+                                   }
                                 }
                             }
                             &.red{
@@ -3036,22 +3020,11 @@ body{
                                     }
                                 }
                                 >.detail{
-                                    >.title{
-                                        color: $Ared;
-                                        &::after{
-                                            background-color: $Ared;
+                                    .header-text{
+                                        >.title, >.text, >svg{
+                                            color: $Ared;
                                         }
-                                    }
-                                    >.text{
-                                        min-height: inherit;
-
-                                        >svg{
-                                            height: 10vw;
-                                            left: inherit;
-                                            right: -5%;
-                                            fill: $Ared;
-                                        }
-                                    }
+                                   }
                                 }
                             }
                             &.gray{
@@ -3090,22 +3063,11 @@ body{
                                     }
                                 }
                                 >.detail{
-                                    >.title{
-                                        color: $gray;
-                                        &::after{
-                                            background-color: $gray;
+                                    .header-text{
+                                        >.title, >.text, >svg{
+                                            color: $gray;
                                         }
-                                    }
-                                    >.text{
-                                        min-height: inherit;
-
-                                        >svg{
-                                            height: 10vw;
-                                            left: inherit;
-                                            right: -5%;
-                                            fill: $gray;
-                                        }
-                                    }
+                                   }
                                     >.info{
                                         .prev-color{
                                             position: relative;
@@ -3197,6 +3159,7 @@ body{
                                         .info{
                                             color: $light-gray;
                                             margin-top: 0;
+                                            padding-top: 0;
                                             >ul{
                                                 list-style: none;
                                                 flex-direction: column;
@@ -3243,6 +3206,9 @@ body{
                                                     }
                                                 }
                                             }
+                                            &.header-text{
+                                                margin-top: 10%;
+                                            }
                                         }
                                     }
                                     &[s-sec=patina]{
@@ -3251,6 +3217,7 @@ body{
                                         }
                                         >.info{
                                             margin-top: 0;
+                                            padding-top: 0;
                                             >div{
                                                 color: $gray;
                                                 .text{
@@ -3276,6 +3243,9 @@ body{
                                                         }
                                                     }
                                                 }
+                                            }
+                                            &.header-text{
+                                                margin-top: 10%;
                                             }
                                         }
                                     }
@@ -3461,6 +3431,31 @@ body{
                                            }
                                        } 
                                     }
+                                    &.header-text{
+                                        margin-top: 5%;
+                                        margin-bottom: 5%;
+                                        padding: 0;
+                                        >.title{
+                                            margin-bottom: -11%;
+                                             padding-left: 5vw;
+                                        }
+                                        >svg{
+                                            width: 100%;
+                                        }
+                                        >.text{
+                                            padding-left: 5vw;
+                                            color: $gray;
+                                            width: 70%;
+                                            margin-top: -23%;
+                                            >img{
+                                                width: 40%;
+                                                margin-right: 10%;
+                                            }
+                                            >.text{
+                                                width: 50%;
+                                            }
+                                        }
+                                    }
                                 }
                                 >.header{
                                     height: 400px;
@@ -3496,6 +3491,7 @@ body{
                                         }
                                     }
                                 }
+
                             }
                            /*  >div{
                                 &:first-child{

@@ -5,14 +5,15 @@
             <img src="/img/services/stick.jpg" alt="">
             <icon name="welding"></icon>
         </figure>
-        <p class="title">
-            STICK
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            Generating an idea and bringing it to reality is what we do, create and define concepts.
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                STICK
+            </p>  
+            <icon name="estrella4"></icon>
+            <p class="text">
+                Generating an idea and bringing it to reality is what we do, create and define concepts.
+            </p>
+        </div>
         <figure class="image-list">
             <figure v-animate="'slide-right'">
                 <img src="/img/services/stick.svg" alt="">

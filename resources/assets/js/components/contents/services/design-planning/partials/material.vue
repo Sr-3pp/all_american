@@ -5,18 +5,19 @@
             <img src="/img/services/material.jpg" alt="">
             <icon name="material"></icon>
         </figure>
-        <p class="title">
-            Material
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            Choosing the right material for each project is
-            very important, we care about providing excellence both in the visual aesthetics of the project
-            and the quality of it, therefore you can trust that
-            we will take care of finding and guaranteeing
-            the use of quality materials for your project
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                Material
+            </p>  
+                <icon name="estrella4"></icon>
+            <p class="text">
+                Choosing the right material for each project is
+                very important, we care about providing excellence both in the visual aesthetics of the project
+                and the quality of it, therefore you can trust that
+                we will take care of finding and guaranteeing
+                the use of quality materials for your project
+            </p>
+        </div>
         <ul class="material-list">
             <ol class="material" v-for="(material, index) in materials">
                 <p class="category">

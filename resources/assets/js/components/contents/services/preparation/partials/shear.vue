@@ -5,19 +5,20 @@
             <img src="/img/services/shear.jpg" alt="shear services">
             <icon name="preparation"></icon>
         </figure>
-        <p class="title">
-            Shear
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            Material cutting service, adjusted to the
-            specific measures that you need. We offer
-            shearing services, since it is a fast and efficient way to cut metal sheets, you can get
-            custom size cuts either for specific cut only
-            or future work of material forming, welding,
-            polishing or painting.
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+            <p class="title">
+                Shear
+            </p>  
+                <icon name="estrella4"></icon>
+            <p class="text">
+                Material cutting service, adjusted to the
+                specific measures that you need. We offer
+                shearing services, since it is a fast and efficient way to cut metal sheets, you can get
+                custom size cuts either for specific cut only
+                or future work of material forming, welding,
+                polishing or painting.
+            </p>
+        </div>
             <figure class="info">
                 <img class="gif" src="/img/editable.gif" alt="">
             </figure>

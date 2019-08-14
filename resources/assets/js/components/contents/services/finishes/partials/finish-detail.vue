@@ -11,19 +11,18 @@
             <img v-if="finish == 6" src="/img/services/timesaver.jpg" alt="">
             <icon name="polish"></icon>
         </figure>
-        <p class="title">
-            {{finishes.name}}
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text">
-            <icon name="star_panel2"></icon>
-        </p>
-        <figure class="info" v-if="finishes">
-            <img :src="'/storage/'+otype.archivo" alt="">
-            <p class="text">
-                {{finishes.description}}
-            </p>
-        </figure>
+        <div class="info column header-text">
+            <p class="title">
+                {{finishes.name}}
+            </p>  
+            <icon name="estrella4"></icon>
+            <figure class="text" v-if="finishes">
+                <img :src="'/storage/'+otype.archivo" alt="">
+                <p class="text">
+                    {{finishes.description}}
+                </p>
+            </figure>
+        </div>
         <article class="finishes list info">
             <figure @click="setType(f, i)" v-for="(f, i) in ofinish.types">
                 <img width="100%" :src="'/storage/'+f.archivo" alt="">
