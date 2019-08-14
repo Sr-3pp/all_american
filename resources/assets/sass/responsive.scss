@@ -140,15 +140,19 @@
             }
             [s-sec=who]{
                 &.full-section{
-                    height: 285px;
+                    height: auto;
                 }
                 >img{
                     transform: inherit;
                     width: 100%;
                     height: auto;
+                    position: relative;
                 }
                 article{
                     width: 70%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
                 }
             }
             [s-sec=testimonial]{
@@ -500,9 +504,6 @@
             }
             [s-sec=who]{
                 width: 100%;
-                &.full-section{
-                    height: 350px;
-                }
                 article{
                     width: 50%;
                     >div{
@@ -994,7 +995,6 @@
             }
             [s-sec=who]{
                 &.full-section{
-                    height: 450px;
                     padding-right: 0;
                 }
                 article{
@@ -1202,7 +1202,6 @@
             }
             [s-sec=who]{
                 &.full-section{
-                    height: 650px;
                     padding-right: 0;
                 }
             }
