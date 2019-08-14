@@ -999,6 +999,11 @@
                 }
                 article{
                     width: 60%;
+                    >div{
+                        >div{
+                            padding-right: 10vw;
+                        }
+                    }
                 }
             }
             &[s-layout=general]{
