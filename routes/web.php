@@ -67,6 +67,7 @@ Route::prefix('panel')->group(function(){
     Route::get('/get-projects', 'AdminController@getProjects');
     Route::post('/save-project', 'AdminController@saveProject');
     Route::post('/update-project/{id}', 'AdminController@updateProject');
+    Route::get('/delete-project/{id}', 'AdminController@deleteProject');
     Route::post('/update-cover', 'AdminController@updateCover');
     Route::post('/delete-pic', 'AdminController@deletePic');
 
@@ -85,6 +86,7 @@ Route::prefix('panel')->group(function(){
     Route::post('/update-finish-category/{id}', 'AdminController@updateFinishCategory');
     Route::post('/add-type', 'AdminController@addType');
     Route::get('/delete-type/{id}', 'AdminController@deleteType');
+    Route::post('/update-type/{id}', 'AdminController@updateType');
 
     
     Route::post('/save-faq', 'AdminController@saveFaq');

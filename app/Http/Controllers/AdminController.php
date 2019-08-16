@@ -145,6 +145,16 @@ class AdminController extends Controller
         return 'saved';
     }
 
+    public function deleteProject($id){
+        $project = Project::find($id);
+        foreach ($project->gallery as $key => $g) {
+            Storage::delete($g->archivo);
+        }
+        $project->delete();
+
+        return 1;
+    }
+
     public function saveProject(Request $r){
         $data = $r->all();        
         $proy = Project::create($data);
@@ -314,6 +324,15 @@ class AdminController extends Controller
         $type = FinishType::find($id);
         Storage::delete($type->archivo);
         $type->delete();
+
+        return 1;
+    }
+
+    public function updateType(Request $r, $id){
+        $data = $r->all();
+        $type = FinishType::find($id);
+
+        $type->update($data);
 
         return 1;
     }

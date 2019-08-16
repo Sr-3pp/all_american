@@ -60,13 +60,34 @@
                     <button class="btn" @click="addBases(c, ind)">Add Type</button>
                     <h4 v-if="finishEdit != 'editFinish_' + ind" class="category">Types</h4>
                 <li v-for="(f, i) in c.types"  v-if="finishEdit != 'editFinish_' + ind">
-                    <figure>
-                        <img :src="'/storage/'+f.archivo" width="10%" alt="">
-                    </figure>
-                    <p class="text">{{f.description}}</p>
-                    <article>
-                        <p v-for="(bas, indd) in f.bases">{{bas.name}}</p>
-                    </article>
+                    <div v-if="typeEdit != 'editType_'+ind+i">
+                        <figure>
+                            <img :src="'/storage/'+f.archivo" width="10%" alt="">
+                        </figure>
+                        <p class="text">{{f.description}}</p>
+                        <article>
+                            <p v-for="(bas, indd) in f.bases">{{bas.name}}</p>
+                        </article>
+                    </div>
+                    <div v-if="typeEdit == 'editType_'+ind+i">
+                        <article class="form-group">
+                            <label>Type description</label>
+                            <textarea class="input" v-model="f.description"></textarea>
+                        </article>
+                        <article class="form-group">
+                            <label>Bases</label>
+                            <ul>
+                                <li v-for="(b, id) in f.bases">{{b.name}}
+                                    <button class="btn" @click="deleteTypeBase(index, ind, i, id)">Remove</button>
+                                </li>
+                            </ul>
+                            <select class="input" v-model="nbase" @change="addNewBase(f.bases)">
+                                <option v-for="m in materials" :value="m">{{m.name}}</option>
+                            </select>
+                        </article>
+                        <button class="btn" @click="updateType(f, index, ind, i)">Save changes</button>
+                    </div>
+                    <button class="btn" @click="editType(f, ind, i)">Edit Type</button>
                     <button class="btn" @click="deleteType(f, index, i)">Delete Type</button>
                 </li>
                 <li v-if="moreBases == 'morebase_' +ind">
@@ -158,7 +179,8 @@ export default{
            moreBases: false,
            newCat: false,
            cate: false,
-           catEdit: false
+           catEdit: false,
+           typeEdit: false
         }
     },
     methods: {
@@ -286,6 +308,27 @@ export default{
 
           axios.get('/panel/delete-type/'+type.id).then((response) => {
               este.finishes[index].finishes.splice(i, 1);
+          });
+      },
+      addNewBase(bases){
+          bases.push(this.nbase);
+      },
+      deleteTypeBase(index, ind, i, id){
+          this.finishes[index].finishes[ind].types[i].bases.splice(i, 1);
+      },
+      editType(f, index, i){
+          this.typeEdit = 'editType_'+index+i
+      },
+      updateType(f, index, ind, i){
+          var este = this,
+            type = this.finishes[index].finishes[ind].types[i],
+            formData = new FormData();
+
+            formData.append('description', type.description);
+            formData.append('bases', JSON.stringify(type.bases));
+
+          axios.post('/panel/update-type/'+f.id, formData).then((response) => {
+              este.typeEdit = false;
           });
       }
     }

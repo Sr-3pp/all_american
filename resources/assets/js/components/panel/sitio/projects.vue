@@ -113,6 +113,12 @@ export default{
                console.log(e);
                
            });
+       },
+       deleteProject(id, index){
+           var este = this;
+           axios.get('/panel/delete-project/'+id).then((response) => {
+               este.projects.splice(index, 1);
+           });
        }
     }
 }
