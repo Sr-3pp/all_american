@@ -79,10 +79,10 @@ class NewsController extends Controller
         return $comment;
     }
 
-    public function __construct()
+    /* public function __construct()
     {
         $this->middleware('admin');
-    }
+    } */
 
     public function createNew(Request $r){
         $data = $r->all();
