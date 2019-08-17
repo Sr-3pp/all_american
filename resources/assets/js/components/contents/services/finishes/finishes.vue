@@ -7,7 +7,7 @@
             <div class="label">
                 <icon name="polish"></icon>
                 <p class="text">
-                    Polish
+                    Finish
                 </p>
             </div>
         </article>

@@ -280,7 +280,7 @@ class Controller extends BaseController
                 'sub' => ['Concept', 'Planning', 'Material', 'Horientation', 'Original Design', 'Estimate']
             ],
             [
-                'name' => 'Preparation',
+                'name' => 'Fabrication',
                 'sub' => ['Shear', 'Forming Break', 'Machine Mill']
             ],
             [
@@ -288,7 +288,7 @@ class Controller extends BaseController
                 'sub' => ['mig', 'tig', 'stick']
             ],
             [
-                'name' => 'Polish',
+                'name' => 'Finish',
                 'sub' => $fs
             ],
             [

@@ -820,7 +820,7 @@
                 <span class="check" @click="addFinish(4)">
                     <icon v-if="form.finish.indexOf(4) != -1" name="radio_on"></icon> 
                     <icon v-else name="radio_off"></icon> 
-                    Polish
+                    Finish
                 </span>
                 <span class="check" @click="addFinish(5)">
                     <icon v-if="form.finish.indexOf(5) != -1" name="radio_on"></icon> 

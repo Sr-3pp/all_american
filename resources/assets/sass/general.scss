@@ -797,6 +797,7 @@ body{
                     will-change: height;
                     will-change: padding;
                     transition: all .35s ease;
+                    flex-wrap: wrap;
                     &.active{
                         height: auto;
                         padding: {
@@ -3441,6 +3442,7 @@ body{
                                             margin-top: -23%;
                                             >img{
                                                 width: 40%;
+                                                height: auto;
                                                 margin-right: 10%;
                                             }
                                             >.text{

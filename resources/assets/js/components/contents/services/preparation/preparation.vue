@@ -7,14 +7,14 @@
             <div class="label">
                 <icon name="preparation"></icon>
                 <p class="text">
-                    Preparation
+                    Fabrication
                 </p>
             </div>
         </article>
         <article class="sub" :key="1" v-if="active && !detail">
             <div class="headline">
                 <icon name="preparation"></icon>
-                <h1 class="subtitle">Preparation</h1>
+                <h1 class="subtitle">Fabrication</h1>
                 <icon name="star_bar"></icon>
             </div>
             <p class="text">

@@ -24,7 +24,7 @@
                 <li>
                     <icon name="check"></icon>
                     <icon name="ok"></icon>
-                    Preparation
+                    Fabrication
                 </li>
                 <li>
                     <icon name="check"></icon>
@@ -34,7 +34,7 @@
                 <li>
                     <icon name="check"></icon>
                     <icon name="ok"></icon>
-                    Polish
+                    Finish
                 </li>
                 <li>
                     <icon name="check"></icon>
