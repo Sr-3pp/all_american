@@ -224,7 +224,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(p, i) in paints['finish Chart']">
+                        <tr v-for="(p, i) in sortedCharts">
                             <td>{{p.attributes.code}}</td>
                             <td>{{p.attributes.uscode}}</td>
                             <td>{{p.attributes.description}}</td>
@@ -297,6 +297,19 @@ export default {
             handler(val, old) {
                 
             }
+        }
+    },
+    computed: {
+        sortedCharts: function(){
+            function compare(a, b) {
+                if (a.attributes.code < b.attributes.code)
+                    return -1;
+                if (a.attributes.code > b.attributes.code)
+                    return 1;
+                return 0;
+                }
+
+            return this.paints['finish Chart'].sort(compare);
         }
     }
 }

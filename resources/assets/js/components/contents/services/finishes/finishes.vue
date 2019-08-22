@@ -109,6 +109,7 @@ export default {
         setDetail(index){
             this.detail = index+1  
             this.Afinishes = this.finishes[index]   
+            this.$bus.$emit('setSub', {section: index});
         }
     }
 }
