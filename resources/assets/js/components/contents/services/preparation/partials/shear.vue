@@ -72,13 +72,15 @@
             <img src="/img/shear_machine.jpg" alt="">
             <p class="category">Shear Machine</p>
         </figure>
-        <p class="title">
-            MORE CUT SYSTEM SERVICE
-            <icon name="star_panel1"></icon>
-        </p>  
-        <p class="text empty">
-            <icon name="star_panel2"></icon>
-        </p>
+        <div class="info column header-text">
+                <p class="title">
+                    MORE CUT SYSTEM SERVICE
+                </p>  
+                <icon name="estrella4"></icon>
+                    <p class="text">
+                       &nbsp;
+                    </p>
+            </div>
         <div class="info column">
             <article>
                 <p class="title">

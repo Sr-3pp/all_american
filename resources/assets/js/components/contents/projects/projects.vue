@@ -17,7 +17,7 @@
                     <img :src="'/storage/'+pic.archivo" alt="">
                 </figure>
                 <p class="category">
-                    imagen
+                    {{pic.name}}
                 </p>
             </article>
         </div>

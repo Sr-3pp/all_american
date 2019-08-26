@@ -74,14 +74,15 @@
                 We'll, contact yo by email with a response.
             </p>
         </div>
-            <p class="title">
-                        Roll Bending
-                        <icon name="star_panel1"></icon>
-            </p>  
-            <p class="text">
+        <div class="info column header-text">
+                <p class="title">
+                      Roll Bending
+                </p>  
+                <icon name="estrella4"></icon>
+                    <p class="text">
                         Roll-bending or cuving belding, is the manufacture or development of metal sheets that are worked to acquire cylindrical shapes, curves or radios depending on the needs of the project.
-                        <icon name="star_panel2"></icon>
-            </p>
+                    </p>
+            </div>
             <figure class="info">
                 <img class="gif" src="/img/rolling.gif" alt="">
             </figure>

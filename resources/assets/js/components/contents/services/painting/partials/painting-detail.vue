@@ -14,7 +14,7 @@
                 <icon name="estrella4"></icon>
             <div class="text" v-if="category == 1">
                 <div>
-                    <strong>Notice</strong><br>
+                    <strong>Notice</strong><br><br>
                     <p>
                         The finish may vary or look different on the screen, ask us for a sample. 
                     </p><br><br>
@@ -159,7 +159,7 @@
                     <img width="100%" src="/img/block.PNG" alt="">
                 </figure>
                 <div class="text">
-                    <strong>Notice</strong>
+                    <strong>Notice</strong><br><br>
                     <p>
                         The colors may vary or look different on the screen, ask us for a sample. <br><br>
                         The colors shown here are just some examples, you can ask for any color
@@ -186,7 +186,7 @@
         <article class="info column" v-if="category == 3">
             <div>
                 <p class="text">
-                <b>Notice</b> <br>
+                <b>Notice</b> <br><br>
                 The patina finish may vary or look different on the screen,
                 ask us for a sample. <br><br>
                 The patina finish shown here are just some examples, you
