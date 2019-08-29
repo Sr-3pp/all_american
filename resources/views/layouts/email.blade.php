@@ -44,7 +44,7 @@
                 }
             </style>
     <table style="width: 100%; margin-bottom: 0; border-collapse: collapse; background-color: #1E4380; color : #FFF; position: relative;">
-        <thead style="background-color: #FFFFFF;">
+        <thead style="background-color: #fefefe;">
             <tr>
                 <td style=" position: relative;
                             width: 100%;">
