@@ -30,7 +30,7 @@ body{
         justify-content: center;
         transition: opacity .3s ease;
         img{
-            width: 25vw;
+            width: 80vw;
         }
     }
     header{
@@ -281,10 +281,12 @@ body{
             >.info{
                 padding-left: 5vw;
                 display: flex;
+                flex-direction: column;
                 margin-bottom: 5%;
                 >.text{
                     flex-basis: 50%;
                     margin-right: 10%;
+                    margin-bottom: 5%;
                 }
                 ul{
                     list-style: none;
@@ -300,7 +302,7 @@ body{
                             font-weight: bold;
                         }
                         svg{
-                            width: 10%;
+                            width: 5%;
                             fill: $Ablue;
                             margin-right: 5%;
                         }
@@ -313,6 +315,7 @@ body{
         }
         .image-list{
             display: flex;
+            flex-direction: column;
             margin-top: 10%;
             >*{
              flex: {
@@ -325,21 +328,15 @@ body{
                 margin-right: 5%;
                 position: relative;
                 padding-right: 5%;
-                &::after{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    height: 100%;
-                    width: 1px;
-                    background-color: $Ared;
-                    box-shadow: 10px 10px 10px #000;
-                }
             }
         }
         .welding-list{
             list-style: none;
             color: $gray;
+            padding: {
+                right: 5vw;
+                left: 5vw;
+            }
             >p{
                 color: $Ared;
                 margin: 3% auto;
@@ -421,6 +418,7 @@ body{
                 overflow: hidden;
                 >.subtitle{
                     color: $light-gray;
+                    text-transform: uppercase;
                 }
                 >div{
                     display: flex;
@@ -808,7 +806,7 @@ body{
                     >li{
                         display: flex;
                         flex-direction: column;
-                        max-width: 20%;
+                        max-width: 25%;
                         width: 100%;
                         align-items: center;
                         justify-content: space-between;
@@ -829,13 +827,17 @@ body{
             >ul{
                 display: flex;
                 list-style: none;
-                justify-content: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
                 margin-bottom: 5%;
                 >ol{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     flex: {
                         grow: 0;
                         shrink: 1;
-                        basis: 24%;
+                        basis: 45%;
                     }
                     margin-right: 2%;
                     &:nth-child(4n){
@@ -858,6 +860,8 @@ body{
             }
             .chart-table{
                 min-height: 80vh;
+                height: 90vh;
+                overflow-y: scroll;
                 background-color: $gray;
                 color: #FFF;
                 width: 100%;
@@ -866,7 +870,6 @@ body{
                 flex-direction: column;
                 border-bottom-left-radius: 5%;
                 border-bottom-right-radius: 5%;
-                overflow: hidden;
                 padding: 3%;
                 .title{
                     padding: 3%;
@@ -1082,6 +1085,10 @@ body{
             ul{
                 list-style: none;
             }
+            >.title{
+                width: 70%;
+                text-align: center;
+            }
         }
         .service-list{
             width: 100%;
@@ -1257,7 +1264,9 @@ body{
         }
         .drop-list{
             >li{
+                padding: 0;
                 >article{
+                    padding: 3%;
                     .text{
                         padding-left: 0!important;
                     }
@@ -1383,7 +1392,7 @@ body{
                     justify-content: center;
                     overflow: hidden;
                     img{
-                        width: auto;
+                        width: 100%;
                         height: 100%;
                     }
                 }
@@ -1408,11 +1417,22 @@ body{
                     display: flex;
                     flex-direction: column;
                     width: 100%;
+                    a{
+                        color: #FFF;
+                        text-decoration: none;
+                    }
                 }
             }
         }
         .schedule-list{
             padding: 3%;
+            >ol{
+                >article{
+                    >.subtitle{
+                        text-transform: uppercase;
+                    }
+                }
+            }
         }
         .estimate-list{
             list-style: none;
@@ -1531,8 +1551,8 @@ body{
                     justify-content: center;
                     align-items: center;
                     img{
-                        height: auto;
-                        width: 100%;
+                        height: 100%;
+                        width: auto;
                     }
                 }
             }
@@ -1540,8 +1560,8 @@ body{
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 5vw;
-                height: 5vw;
+                width: 10vw;
+                height: 10vw;
                 z-index: 11;
                 padding: 1%;
                 background-color: rgba($Ablue, .8);
@@ -1549,10 +1569,10 @@ body{
                 color: #FFF;
             }
             .prev-btn{
-                left: 5%;
+                left: -5%;
             }
             .next-btn{
-                right: 5%;
+                right: -5%;
                 svg{
                     transform: rotate(180deg);
                     color: currentColor;
@@ -1562,8 +1582,8 @@ body{
                 position: absolute;
                 top: 1.5vw;
                 right: 1.5vw;
-                width: 3vw;
-                height: 3vw;
+                width: 10vw;
+                height: 10vw;
                 background-color: transparent;
                 padding: 0;
                 border: {
@@ -1583,7 +1603,7 @@ body{
                 position: absolute;
                 bottom: 0;
                 right: 0;
-                width: 250px;
+                width: 100%;
                 padding: 1%;
                 display: flex;
                 align-items: center;
@@ -1634,6 +1654,7 @@ body{
             background-color: $Ablue;
             color: #FFF;
             width: 100%;
+            margin-bottom: 10%;
             >.subtitle{
                 text-align: center;
                 padding: 2%;
@@ -2006,7 +2027,7 @@ body{
                                     flex: {
                                         grow: 1;
                                         shrink: 1;
-                                        basis: 25%;
+                                        basis: 30%;
                                     }
                                     border-radius: 5%;
                                     margin-bottom: 5%;
@@ -2089,7 +2110,7 @@ body{
                                 align-items: center;
                                 justify-content: space-around;
                                 figure{
-                                    width: 50%;
+                                    width: 100%;
                                     max-width: 130px;
                                     margin-bottom: 5%;
                                     img{
@@ -2162,7 +2183,7 @@ body{
                             flex: {
                                 grow: 1;
                                 shrink: 1;
-                                basis: 25%;
+                                basis: 50%;
                             }
                         }
                     }
@@ -2321,6 +2342,7 @@ body{
                 }
                 .item{
                     overflow: hidden;
+                    text-align: right;
                     &.close-menu{
                         svg{
                             color: currentColor;
@@ -2339,7 +2361,7 @@ body{
                         text-decoration: none;
                         font-size: 1.4rem;
                         padding: 10px;
-                        display: flex;
+                        display: inline-block;
                         justify-content: flex-end;
                     }
 
@@ -2347,7 +2369,6 @@ body{
                         list-style: none;
                         height: 0;
                         opacity: 0;
-                        position: absolute;
                         overflow: hidden;
                         background-color: #FFF;
                         transition: all .2s ease;
@@ -2898,6 +2919,9 @@ body{
             [s-sec=navigation]{
                 background-color: #FFF;
                 margin-bottom: 3%;
+                .toggle-btn{
+                    color: $dark;
+                }
                 .item-list{
                     .item{
                         .link{
@@ -2994,6 +3018,9 @@ body{
                                         >.title, >.text, >svg{
                                             color: $Ablue;
                                         }
+                                        >.title{
+                                            padding-right: 5%;
+                                        }
                                    }
                                 }
                             }
@@ -3021,6 +3048,13 @@ body{
                                     }
                                 }
                                 >.detail{
+                                    .header{
+                                        svg{
+                                            &:first-child{
+                                                fill: $Ared;
+                                            }
+                                        }
+                                    }
                                     .header-text{
                                         >.title, >.text, >svg{
                                             color: $Ared;
@@ -3064,6 +3098,13 @@ body{
                                     }
                                 }
                                 >.detail{
+                                    .header{
+                                        svg{
+                                            &:first-child{
+                                                fill: $gray;
+                                            }
+                                        }
+                                    }
                                     .header-text{
                                         >.title, >.text, >svg{
                                             color: $gray;
@@ -3094,6 +3135,7 @@ body{
                                                  strong{
                                                      color: $Ared;
                                                      font-weight: bold;
+                                                     margin-bottom: 5%;
                                                  }
                                                  .btn{
                                                      background-color: transparent;
@@ -3258,6 +3300,9 @@ body{
                                         display: none;
                                        }
                                     }
+                                    >.subtitle{
+                                        text-transform: uppercase;
+                                    }
                                 }
                                 .content{
                                     flex-direction: column;
@@ -3266,7 +3311,7 @@ body{
                                             padding-left: 0!important;
                                         }
                                     }
-                                }b    
+                                }
                                 .cards{
                                     .card{
                                         &:hover{
@@ -3354,7 +3399,8 @@ body{
                                     padding: {
                                         top: 10%;
                                         bottom: 5%;
-                                        right: 10%;
+                                        right: 5vw;
+                                        left: 5vw;
                                     }
                                     >*{
                                         flex: {
@@ -3408,6 +3454,7 @@ body{
                                                .category{
                                                 color: $Ared;
                                                 font-family: inherit;
+                                                text-align: center;
                                                 font-style: normal;
                                                 padding: 3%;
                                                 border: {
@@ -3468,7 +3515,7 @@ body{
                                         z-index: 0;
                                     }
                                     svg{
-                                        width: 50%;
+                                        width: 20%;
                                         position: absolute;
                                         top: 50%;
                                         transform: translateY(-80%);
@@ -3841,6 +3888,13 @@ body{
                                 }
                             } */
                         }
+                        >.text{
+                            padding: {
+                                right: 5vw;
+                                left: 5vw;
+                            }
+                            margin-bottom: 10%;
+                        }
                         &.active{
                             padding-left: 0;
                             >.cont{
@@ -3896,6 +3950,7 @@ body{
                                             flex: {
                                                 basis: 45%;
                                             }
+                                            margin-bottom: 10%;
                                             >.title{
                                                 display: inline-block;
                                                 padding: 5%!important;
@@ -3945,6 +4000,12 @@ body{
             background-color: #FFF;
             [class*=section]{
                 margin-bottom: 5%;
+            }
+            [s-sec=navigation]{
+                background-color: #fff;
+                .toggle-btn{
+                    color: $dark;
+                }
             }
             [s-sec=contact]{
                 >div{
@@ -3998,6 +4059,7 @@ body{
                         display: flex;
                         justify-content: center;
                         overflow: hidden;
+                        margin-bottom: 10%;
                         img{
                             width: auto;
                             height: 100%;
@@ -4007,6 +4069,9 @@ body{
                         padding: {
                             right: 5vw;
                             left: 5vw;
+                        }
+                        .drop-list{
+                            margin-bottom: 10%;
                         }
                     }
                 }
@@ -4018,6 +4083,9 @@ body{
                         margin-bottom: 5%;
                     }
                     &.separator{
+                        >.title{
+                            text-align: center;
+                        }
                         >*{
                             margin-bottom: 10%;
                             &:last-child{
@@ -4080,6 +4148,9 @@ body{
                             margin-bottom: 0!important;
                         }
                     }
+                }
+                >*{
+                    margin-bottom: 10%;
                 }
             }
             [s-sec=article]{

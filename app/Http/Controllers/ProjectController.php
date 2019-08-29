@@ -11,7 +11,7 @@ class ProjectController extends Controller
         $menu = [];
         $projects = Project::all();
         foreach ($projects as $key => $p) {
-            array_push($menu, $p->name);
+            $menu[$key]['name'] = $p->name;
             foreach ($p->gallery as $key => $g) {
                 if ($g->cover) {
                     $p->cover = $g;

@@ -6,7 +6,7 @@
         <finishes :finishes="finishes" v-if="!active || active == 4" :active="active == 4 ? true : false"></finishes>
         <painting :paints="paints"  v-if="!active || active == 5" :active="active == 5 ? true : false"></painting>
         <delivery  v-if="!active || active == 6" :active="active == 6 ? true : false"></delivery>
-        <article v-if="!active">
+        <article class="text" v-if="!active">
             <p class="title">
                 SERVICES OVERVIEW
             </p>

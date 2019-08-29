@@ -3,6 +3,11 @@
         header{
            display: flex;
         }
+        [s-sec=loader]{
+            img{
+                width: 25vw;
+            }
+        }
         #app{
             .title, .subtitle, .category{
                 margin-bottom: 3%;
@@ -63,6 +68,25 @@
                         height: 50px;
                     }
                 }
+                >.title{
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+            .image-list{
+                flex-direction: row;
+                >figure{
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 100%;
+                        width: 1px;
+                        background-color: $Ared;
+                        box-shadow: 10px 10px 10px #000;
+                    }
+                }
             }
             .carousel{
                 margin-bottom: 0;
@@ -101,6 +125,51 @@
                 }
                 .control{
                     display: block;
+                }
+            }
+            .powder-list{
+                >ol{
+                    >ul{
+                        >li{
+                            max-width: 20%;
+                        }
+                    }
+                }
+            }
+            .patina-list{
+                >ul{
+                    >ol{
+                        flex: {
+                            basis: 24%;
+                        }
+                    }
+                }
+            }
+            .gallery{
+                .close-btn{
+                    width: 3vw;
+                    height: 3vw;
+                }
+                .prev-btn, .next-btn{
+                    width: 5vw;
+                    height: 5vw;
+                }
+                .prev-btn{
+                    left: 5%;
+                }
+                .next-btn{
+                    right: 5%;
+                }
+                .frame{
+                    figure{
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+                .social-btns{
+                    width: 250px;
                 }
             }
             [s-sec=navigation]{
@@ -199,6 +268,12 @@
                 >.content{
                     >.main{
                        &[s-sec=services]{
+                           >.text{
+                               padding: {
+                                   right: 0;
+                                   left: 0;
+                               }
+                           }
                             >.cont{
                                 .detail{
                                     >.header{
@@ -225,6 +300,7 @@
                             justify-content: center;
                             align-items: center;
                             height: 400px;
+                            margin-bottom: 0;
                             overflow: hidden;
                             border{
                                 top-right-radius: 20px;
@@ -241,6 +317,9 @@
                              left: 5vw;
                              color: #FFF;
                              width: 80%;
+                             .drop-list{
+                                 margin-bottom: 0;
+                             }
                          }
                         }
                         >div{
@@ -328,6 +407,9 @@
                                 padding-left: 5%;
                             }
                         }
+                    }
+                    >*{
+                        margin-bottom: 5%;
                     }
                 }
             }
@@ -433,9 +515,11 @@
                     background-color: transparent;
                     .item{
                         overflow: visible;
+                        text-align: inherit;
                         .link{
                             color: #FFF;
                             text-decoration: none;
+                            display: flex;
                             font-size: 1.4rem
                         }
                         &.active{
@@ -449,6 +533,9 @@
                             .link{
                                 color: $dark;
                             }
+                        }
+                        .sub-nav{
+                            position: absolute;
                         }
                     }
                 }
@@ -678,7 +765,6 @@
                                     .header{
                                         width: 100%;
                                         svg{
-                                            width: 20%;
                                             transform: translateY(-90%);
                                         }
                                     }
@@ -696,7 +782,12 @@
                                     }
                                     
                                     .info{
-                                        padding-left: 5vw;
+                                        padding: {
+                                            top: 10%;
+                                            bottom: 5%;
+                                            right: 10%;
+                                            left: 10vw;
+                                        }
                                         .title, .text{
                                             padding-left: 0;
                                             &::after{
@@ -755,6 +846,11 @@
                                                 }
                                             }
                                         }
+                                        >.content{
+                                            >article{
+                                                margin-bottom: 0;
+                                            }
+                                        }
                                         .text{
                                             padding-right: inherit;
                                         }
@@ -785,6 +881,15 @@
             }
             &[s-layout=secondary]{
                 background-color: #FFF;
+                [s-sec=navigation]{
+                    .item-list{
+                        .item{
+                            .link{
+                                color: $dark;
+                            }
+                        }
+                    }
+                }
                 [s-sec=contact]{
                     >div{
                         padding: {
@@ -951,6 +1056,38 @@
             }
             .s-text{
                 font-size: 1rem
+            }
+            .welding-list{
+                padding: {
+                    right: 5vw;
+                    left: 0;
+                }
+            }
+            .foaming-form{
+                .group{
+                    &.finish{
+                        >div{
+                            .check{
+                                flex-basis: 25%;
+                            }
+                        }
+                    }
+                }
+            }
+            .partial-metal{
+                >.info{
+                    flex-direction: row;
+                    >.text{
+                        margin-bottom: 0;
+                    }
+                    ul{
+                        li{
+                            svg{
+                                width: 10%;
+                            }
+                        }
+                    }
+                }
             }
             [s-sec=header]{
                 .carousel{

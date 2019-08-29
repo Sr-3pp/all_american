@@ -40,7 +40,9 @@
 <script>
 export default {
     mounted(){        
-        
+        this.$bus.$on('setSub', ($event) => {
+             this.finish = $event.section
+        });
     },
     props: [
         'finishes'
@@ -54,11 +56,10 @@ export default {
     },
     methods: {
         setFinish(f, index){
-            this.finish = index
             this.ofinish = f
             
         },
-        setType(t){
+        setType(t, index){
             this.otype = t;
         }
     },
