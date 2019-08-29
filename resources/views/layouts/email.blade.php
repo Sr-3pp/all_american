@@ -44,13 +44,9 @@
                 }
             </style>
     <table style="width: 100%; margin-bottom: 0; border-collapse: collapse; background-color: #1E4380; color : #FFF;">
-        <thead style="background-color: #FFF;">
+        <thead style="background-color: #FFFFFF;">
             <tr>
-                <td style=" display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: #FFF;
-                            position: relative;
+                <td style=" position: relative;
                             width: 100%;">
                     <figure style=" width: 40%;
                             margin-top: 40px;
@@ -58,11 +54,11 @@
                         <img src="{{asset('img/svg/logo.svg')}}" alt="">
                     </figure>
                     <span style="width: 100%;
+                        position: absolute;
                         height: 10px;
                         background-color: #A11E2D;
                         left: 0;
-                        bottom: 10px;
-                        position: absolute;"></span>
+                        bottom: 10px;"></span>
                 </td>
             </tr>
         </thead>
@@ -81,8 +77,8 @@
                     </p>
                 </td>
             </tr>
-            <tr style="position: relative;">
-                <td style="padding-top: 0;">
+            <tr>
+                <td style="padding-top: 0; position: relative;">
                     <article style=" border-bottom: solid thin #FFF; padding-bottom: 5%;">
                             <p>Follow us on: </p>
                             <figure style=" width: 100%; margin: 0;">
@@ -124,24 +120,26 @@
                                 </a>
                             </figure>
                     </article>
-                </td>
-                <img style="position: absolute;
+                    <img style="position: absolute;
                             bottom: 0;
                             right: 0;
                             width: 30%;
                             height: auto;
+                            z-index: 0;
                             margin-bottom: 0;" src="{{asset('img/mailing/transtar.png')}}" alt="">
-            </tr>
-            @yield('unsuscribe')
-            <tr>
-                <td style="background-color: #A11E2D;
-                    width: 100%;
-                    padding-right: 20%;
-                    padding-left: 20%;">
-                        Please don't reply to this email.
                 </td>
             </tr>
+            @yield('unsuscribe')
         </tbody>
+    </table>
+    <table style="width: 100%; margin-bottom: 0; border-collapse: collapse; background-color: #A11E2D; color : #FFF;">
+        <tr>
+            <td style="width: 100%;
+                padding-right: 20%;
+                padding-left: 20%;">
+                    Please don't reply to this email.
+            </td>
+        </tr>
     </table>
 </body>
 </html>
