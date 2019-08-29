@@ -8,11 +8,13 @@
       <br><br>
       We are very pleased that you subscribe to our newsletter, remember that we publish content every month, which may be of your interest, we will keep you updated with new offers and services that may be of your interest, start using our online services.      
   </p>
-  <a href="http://allamericanfinishing.com" target="_blank" class="cta">Go to AAF</a>
+  <a href="http://allamericanfinishing.com" target="_blank" style="border: solid 1px #FFF; padding: 1% 3%; display: inline-block;">Go to AAF</a>
 @endsection
 
 @section('unsuscribe')
-  <section>
-    <a href="http://allamericanfinishing.com/unsuscribe/{{$user}}" target="_blank">Unsuscribe if you don’t want to recieve more mails.</a>
-  </section>
+  <tr>
+    <td>
+      <a href="http://allamericanfinishing.com/unsuscribe/{{$user}}" target="_blank">Unsuscribe if you don’t want to recieve more mails.</a>
+    </td>
+  </tr>
 @endsection
