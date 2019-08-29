@@ -43,7 +43,7 @@
                     margin-bottom: 5%;
                 }
             </style>
-    <table style="width: 100%; margin-bottom: 0; border-collapse: collapse; background-color: #1E4380; color : #FFF;">
+    <table style="width: 100%; margin-bottom: 0; border-collapse: collapse; background-color: #1E4380; color : #FFF; position: relative;">
         <thead style="background-color: #FFFFFF;">
             <tr>
                 <td style=" position: relative;
