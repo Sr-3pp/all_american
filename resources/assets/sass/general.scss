@@ -4338,5 +4338,34 @@ body{
                 }
             }
         }
+        &[s-layout=extra]{
+            background-color: #fff;
+            height: 90vh;
+            min-height: 500px;
+            >.section{
+                margin: 0 auto;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: bold;
+                flex-direction: column;
+                >*{
+                    margin-bottom: 5%;
+                }
+                .cta{
+                    padding: 2% 4%;
+                    background-color: transparent;
+                    color: $Ablue;
+                    text-decoration: none;
+                    border: {
+                        style: solid;
+                        width: 1px;
+                        color: currentColor;
+                    }    
+                }
+            }
+        }
     }
 }

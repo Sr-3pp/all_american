@@ -29,6 +29,7 @@ use App\Mills;
 use Mail;
 use App\Mail\Newnew;
 use App\Mail\ContactMail;
+use App\Mail\WelcomeMail;
 
 class Controller extends BaseController
 {
@@ -369,11 +370,19 @@ class Controller extends BaseController
             $sub = Newsletter::create([
                 'email' => $r->email
             ]);
+            Mail::to($r->email)->send(new WelcomeMail($r->email));
             
         } catch (\Throwable $th) {
             return $th;
         }
         return 1;
+    }
+
+    public function unsuscribe($user){
+        $user = Newsletter::where('email', $user)->first();
+        $user->delete();
+
+        return view('unsuscribed');
     }
 
     public function about(){
