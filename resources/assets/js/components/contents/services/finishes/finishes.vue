@@ -93,11 +93,11 @@ export default {
                     },
                     1:{
                         name: 'Daily report',
-                        content: 'El contenido chilo'
+                        content: 'You will be <b>informed</b> of the <b>situation</b> and the <b>progress</b> of your project such as figures, achievements, results, events, activities carried out and even incidence. At All American Finishing we believe that this is important information for decision making.'
                     },
                     2:{
                         name: 'Prefabrication Inspection',
-                        content: 'El contenido chilo'
+                        content: 'We consider it important to make a <b>meticulous inspection</b> of all the details of each project before its release, this way we can anticipate possible obstacles or difficulties that may arise, so you can acquire your <b>product faster</b>.'
                     }
             }
         }

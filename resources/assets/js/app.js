@@ -23,6 +23,7 @@ window.Vue = require('vue');
  Vue.component('contact-form', require('./components/form/contactForm.vue'));
  Vue.component('subscribe', require('./components/form/subscribe.vue'));
  Vue.component('wizzard', require('./components/form/wizzard.vue'));
+ Vue.component('faq-wizzard', require('./components/form/faqWizzard.vue'));
  Vue.component('valorate', require('./components/form/valorate.vue'));
 
  /*--------partials-----------*/
@@ -43,6 +44,7 @@ Vue.component('social-new', require('./components/partials/socialNew.vue'));
 Vue.component('loader', require('./components/partials/loader.vue'));
 Vue.component('animated-number', require('./components/partials/animatedNumber.vue'));
 Vue.component('animated-progress', require('./components/partials/animatedProgress.vue'));
+Vue.component('faq-list', require('./components/partials/faqList.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));
 Vue.component('projects', require('./components/contents/projects/projects.vue'));

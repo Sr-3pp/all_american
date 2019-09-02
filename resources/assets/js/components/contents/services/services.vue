@@ -1,12 +1,12 @@
 <template>
-    <section s-sec="services" class="main" :class="{'active': active}">
-        <design-planning :materials="materials" :mills="mills" v-if="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
-        <preparation :mills="mills" v-if="!active || active == 2" :active="active == 2 ? true : false"></preparation>
-        <welding  v-if="!active || active == 3" :active="active == 3 ? true : false"></welding>
-        <finishes :finishes="finishes" v-if="!active || active == 4" :active="active == 4 ? true : false"></finishes>
-        <painting :paints="paints"  v-if="!active || active == 5" :active="active == 5 ? true : false"></painting>
-        <delivery  v-if="!active || active == 6" :active="active == 6 ? true : false"></delivery>
-        <article class="text" v-if="!active">
+    <transition-group tag="section" name="v-fade" s-sec="services" class="main" :class="{'active': active}">
+        <design-planning :key="0" :materials="materials" :mills="mills" v-show="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
+        <preparation :key="1" :mills="mills" v-show="!active || active == 2" :active="active == 2 ? true : false"></preparation>
+        <welding  :key="2" v-show="!active || active == 3" :active="active == 3 ? true : false"></welding>
+        <finishes :key="3" :finishes="finishes" v-show="!active || active == 4" :active="active == 4 ? true : false"></finishes>
+        <painting :key="4" :paints="paints"  v-show="!active || active == 5" :active="active == 5 ? true : false"></painting>
+        <delivery :key="5"  v-show="!active || active == 6" :active="active == 6 ? true : false"></delivery>
+        <article :key="6" class="text" v-show="!active">
             <p class="title">
                 SERVICES OVERVIEW
             </p>
@@ -14,7 +14,7 @@
                 We offer a wide array of <b>metal fabrication</b> services to meet your needs. From customized ornamental pieces, to home or deck metal trim and railings, <b>no job is too big or too small</b>. We work with a large inventory of different materials and can customize them with ease. Whether you're looking for cast iron friezes and valances or decorative sheet metal, we'll meet your needs and exceed your expectations
             </p>
         </article>
-    </section>
+    </transition-group>
 </template>
 <script>
 export default {

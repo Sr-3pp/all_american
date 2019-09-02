@@ -414,7 +414,7 @@ body{
                 padding-bottom: 10%;
                 padding-top: 5%;
                 background-color: $gray;
-                max-height: 45%;
+                height: 50%;
                 overflow: hidden;
                 >.subtitle{
                     color: $light-gray;
@@ -423,12 +423,17 @@ body{
                 >div{
                     display: flex;
                     justify-content: space-between;
+                    height: 50%;
                     p{
                         display: flex;
-                        align-items: center;
+                        align-items: flex-start;
+                        height: 100%;
                         width: 65%;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
                     }
                     svg{
+                        height: auto;
                         border: {
                             style: solid;
                             width: 1px;
@@ -1724,6 +1729,49 @@ body{
                 padding: 10%;
             }
         }
+        .faq-list{
+            list-style: none;
+            >li{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 2% 0;
+                border-bottom: {
+                    style: solid;
+                    color: $gray;
+                    width: 1px;
+                }
+                >svg{
+                    width: 20px;
+                    fill: $gray;
+                }
+                >article{
+                    >p{
+                        margin-bottom: 0!important;
+                        padding-right: 0!important;
+                        transition: all .35s ease;
+                        &:last-child{
+                            height: auto;
+                            max-height: 0;
+                            overflow: hidden;
+    
+                        }
+                    }
+                }
+                &.active{
+                    >article{
+                        >p{
+                            &:first-child{
+                                margin-bottom: 5%!important;
+                            }
+                            &:last-child{
+                                max-height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .wizzard{
             position: relative;
             background-color: $Ablue;
@@ -2587,6 +2635,49 @@ body{
                 }
             }
         }
+        [s-sec=about]{
+            >.cont{
+                >.sub{
+                    >.headline{
+                        flex-direction: row!important;
+                        svg{
+                            display: inline-block!important;
+                        }
+                    }
+                    >.info{
+                        flex-direction: row;
+                        display: flex;
+                        padding-left: 5vw;
+                        >*{
+                            margin-bottom: 5%;
+                            >.text{
+                                padding: inherit!important;
+                            }
+                        }
+                        &.column{
+                            flex-direction: column;
+                        }
+                        >figure{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        >.text{
+                            margin-bottom: 0!important;
+                            display: flex;
+                            align-items: center;
+                        }
+                        >*{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         [s-sec=testimonial]{
             height: 354px;
@@ -2934,7 +3025,7 @@ body{
                 margin-bottom: 5%;
                 min-height: 65vh;
                 >.main{
-                    &[s-sec=services], &[s-sec=projects]{
+                    &[s-sec=services], &[s-sec=projects], &[s-sec=about]{
                         &.full-section{
                             flex-direction: column;
                             padding-left: 0;

@@ -415,6 +415,55 @@ class Controller extends BaseController
         return view('about', compact('list', 'skills', 'main'));
     }
 
+    public function join(){
+        $menu = [
+            [
+                'name' => 'Who we are?',
+                'sub' => []
+            ],
+            [
+                'name' => 'Join our team',
+                'sub' => []
+            ],
+            [
+                'name' => 'FAQ list',
+                'sub' => []
+            ],
+            [
+                'name' => 'Last News',
+                'sub' => []
+            ],
+        ];
+        $main = 'about';
+        $section = false;
+        return view('join', compact('menu', 'main', 'section'));
+    }
+    public function faqs(){
+        $menu = [
+            [
+                'name' => 'Who we are?',
+                'sub' => []
+            ],
+            [
+                'name' => 'Join our team',
+                'sub' => []
+            ],
+            [
+                'name' => 'FAQ list',
+                'sub' => []
+            ],
+            [
+                'name' => 'Last News',
+                'sub' => []
+            ],
+        ];
+        $main = 'about';
+        $section = false;
+
+        $faqs = Faqs::all();
+        return view('faqs', compact('menu', 'main', 'section', 'faqs'));
+    }
+
     public function contact(){
         $main = 'contact';
         return view('contact', compact('main'));

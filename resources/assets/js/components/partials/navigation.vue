@@ -40,13 +40,13 @@
                 <a class="link" href="/about-us">About us</a>
                 <ul class="sub-nav">
                    <li>
-                       <a href="/services/design-and-planning">Who we are?</a>
+                       <a href="/about-us">Who we are?</a>
                     </li> 
                    <li>
-                       <a href="/services/preparation">Join our team</a>
+                       <a href="/about-us/join-us">Join our team</a>
                     </li> 
                    <li>
-                       <a href="/services/last-news">Last news</a>
+                       <a href="/last-news">Last news</a>
                     </li> 
                 </ul>
             </li>

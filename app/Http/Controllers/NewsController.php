@@ -15,6 +15,31 @@ use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
+
+    public function index(){
+        $menu = [
+            [
+                'name' => 'Who we are?',
+                'sub' => []
+            ],
+            [
+                'name' => 'Join our team',
+                'sub' => []
+            ],
+            [
+                'name' => 'FAQ list',
+                'sub' => []
+            ],
+            [
+                'name' => 'Last News',
+                'sub' => []
+            ],
+        ];
+        $main = 'about';
+        $section = false;
+        return view('news', compact('menu', 'main', 'section'));
+    }
+
     public function getNews(){
         $news = Article::all();
 

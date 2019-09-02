@@ -51,8 +51,11 @@ Route::prefix('projects')->group(function(){
 });
 Route::prefix('about-us')->group(function(){
     Route::get('/', 'Controller@about');
-  
+    Route::get('/join-us', 'Controller@join');
+    Route::get('/faqs', 'Controller@faqs');
 });
+Route::get('/last-news', 'NewsController@index');
+
 Route::get('/contact-us', 'Controller@contact');
 Route::prefix('panel')->group(function(){
     Route::get('/', 'AdminController@index');
