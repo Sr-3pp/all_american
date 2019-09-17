@@ -264,7 +264,7 @@
 </table>
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 30px; padding-bottom: 30px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#FFFFFF;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:30px;padding-right:10px;padding-bottom:30px;padding-left:10px;">
-<p style="font-size: 12px; line-height: 14px; color: #FFFFFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0;"><span style="font-size: 18px;">Need help, contact us.</span><br/><span style="font-size: 12px;"><span style="color: #ffffff; font-size: 18px; line-height: 21px;"><a href="Need help, contact us. http://allamericanfinishing.com/contact-us" rel="noopener" style="text-decoration: underline; color: #ffffff;" target="_blank">http://allamericanfinishing.com/contact-us</a></span></span></p>
+<p style="font-size: 12px; line-height: 14px; color: #FFFFFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0;"><span style="font-size: 18px;">Need help, contact us.</span><br/><span style="font-size: 12px;"><span style="color: #ffffff; font-size: 18px; line-height: 21px;"><a href="http://allamericanfinishing.com/contact-us" rel="noopener" style="color: #ffffff;" target="_blank">http://allamericanfinishing.com/contact-us</a></span></span></p>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
 <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">
@@ -307,19 +307,16 @@
                                     </svg>
 </a></td>
 <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 10px; padding-left: 0px;" valign="top"><a href="https://instagram.com/" target="_blank">
-    <svg style="width: 25%;
-                                            height: auto;
-                                            fill: #FFF;
-                                            margin-right: 5%;" class="instagram" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve">
-                                        <path d="M35.3,50H14.7C6.6,50,0,43.6,0,35.7V14.3C0,6.4,6.6,0,14.7,0h20.6C43.4,0,50,6.4,50,14.3v21.4
-                                            C50,43.6,43.4,50,35.3,50z M14.7,3.7c-6,0-10.9,4.8-10.9,10.6v21.4c0,5.9,4.9,10.6,10.9,10.6h20.6c6,0,10.9-4.8,10.9-10.6V14.3
-                                            c0-5.9-4.9-10.6-10.9-10.6H14.7z"/>
-                                        <path d="M25,38.2c-7.5,0-13.7-6-13.7-13.3c0-3.6,1.5-7.1,4.2-9.6c2.6-2.5,6-3.7,9.5-3.6c4.3,0.1,7.8,1.5,10.2,4
-                                            c2.3,2.4,3.5,5.6,3.4,9.3c-0.1,3.5-1.5,6.9-4,9.3C32,36.8,28.6,38.2,25,38.2z M24.7,16.1c-2.2,0-4.3,0.8-5.9,2.4
-                                            c-1.8,1.7-2.8,4-2.8,6.4c0,4.9,4.1,8.8,9.1,8.8c5,0,8.9-3.9,9.1-8.9l0,0c0.1-2.5-0.7-4.6-2.1-6.1c-1.6-1.6-4-2.5-7-2.6
-                                            C24.9,16.1,24.8,16.1,24.7,16.1z"/>
-                                        <path d="M35.8,11.3a3.2,3.1 0 1,0 6.4,0a3.2,3.1 0 1,0 -6.4,0" />
-                                    </svg>  
+    <svg style="width: 25%; height: auto; fill: #FFF; margin-right: 5%;" class="instagram" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve">
+        <path d="M35.3,50H14.7C6.6,50,0,43.6,0,35.7V14.3C0,6.4,6.6,0,14.7,0h20.6C43.4,0,50,6.4,50,14.3v21.4
+            C50,43.6,43.4,50,35.3,50z M14.7,3.7c-6,0-10.9,4.8-10.9,10.6v21.4c0,5.9,4.9,10.6,10.9,10.6h20.6c6,0,10.9-4.8,10.9-10.6V14.3
+            c0-5.9-4.9-10.6-10.9-10.6H14.7z"/>
+        <path d="M25,38.2c-7.5,0-13.7-6-13.7-13.3c0-3.6,1.5-7.1,4.2-9.6c2.6-2.5,6-3.7,9.5-3.6c4.3,0.1,7.8,1.5,10.2,4
+            c2.3,2.4,3.5,5.6,3.4,9.3c-0.1,3.5-1.5,6.9-4,9.3C32,36.8,28.6,38.2,25,38.2z M24.7,16.1c-2.2,0-4.3,0.8-5.9,2.4
+            c-1.8,1.7-2.8,4-2.8,6.4c0,4.9,4.1,8.8,9.1,8.8c5,0,8.9-3.9,9.1-8.9l0,0c0.1-2.5-0.7-4.6-2.1-6.1c-1.6-1.6-4-2.5-7-2.6
+            C24.9,16.1,24.8,16.1,24.7,16.1z"/>
+        <path d="M35.8,11.3a3.2,3.1 0 1,0 6.4,0a3.2,3.1 0 1,0 -6.4,0" />
+    </svg>  
 </a></td>
 <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 10px; padding-left: 0px;" valign="top"><a href="https://www.linkedin.com/" target="_blank">
     <svg style="width: 25%;
