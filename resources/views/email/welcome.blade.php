@@ -18,7 +18,7 @@
 <div style="color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
   <div style="font-size: 12px; line-height: 14px; color: #555555; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
   <p style="font-size: 12px; line-height: 14px; margin: 0;"><span style="color: #ffffff; font-size: 12px; line-height: 14px;">
-    <a href="http://allamericanfinishing.com/unsuscribe/{{$user}}" target="_blank">Unsuscribe if you don’t want to recieve more mails.</a>
+    <a href="http://allamericanfinishing.com/unsuscribe/{{$user}}" target="_blank" style="color:#FFFFFF; text-decoration: none;">Unsuscribe if you don’t want to recieve more mails.</a>
   </span></p>
   </div>
   </div>  

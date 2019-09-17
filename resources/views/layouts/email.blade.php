@@ -264,7 +264,7 @@
 </table>
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 30px; padding-bottom: 30px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#FFFFFF;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:30px;padding-right:10px;padding-bottom:30px;padding-left:10px;">
-<p style="font-size: 12px; line-height: 14px; color: #FFFFFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0;"><span style="font-size: 18px;">Need help, contact us.</span><br/><span style="font-size: 12px;"><span style="color: #ffffff; font-size: 18px; line-height: 21px;"><a href="http://allamericanfinishing.com/contact-us" rel="noopener" style="color: #ffffff;" target="_blank">http://allamericanfinishing.com/contact-us</a></span></span></p>
+<p style="font-size: 12px; line-height: 14px; color: #FFFFFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0;"><span style="font-size: 18px;">Need help, contact us.</span><br/><span style="font-size: 12px;"><span style="color: #ffffff; font-size: 18px; line-height: 21px; text-decoration: none"><a href="http://allamericanfinishing.com/contact-us" rel="noopener" style="color: #ffffff;" target="_blank">http://allamericanfinishing.com/contact-us</a></span></span></p>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
 <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">

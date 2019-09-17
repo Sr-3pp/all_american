@@ -22,7 +22,7 @@
     <img src="/img/welding_2.jpg" alt="">  
     <article v-animate.repeat="'slide-up'"> 
         <div>
-            <img class="starBG" v-animate.repeat="'slide-left'" src="/img/estrellaBg.png" alt="">
+            <img class="starBG" v-animate.repeat="'slide-left'" src="/img/svg/estrellaBg.svg" alt="">
                <div>
                     <h2 class="title">Who we are?</h2>
                     <p class="text">

@@ -222,6 +222,38 @@
                     position: absolute;
                     top: 0;
                     right: 0;
+                    >div{
+                        .starBG{
+                            height: 100%;
+                            width: auto;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            z-index: -1;
+                        }
+                        >div{
+                            width: 70%;
+                            padding-right: 5vw;
+                            padding-top: 3%;
+                            padding-bottom: 3%;
+                            margin-top: 0;
+                            >.text{
+                                padding: 0;
+                                position: static;
+                            }
+                            >.title{
+                                position: static;
+                            }
+                            >ul{
+                                flex-direction: row;
+                                background-color: transparent;
+                                padding: {
+                                    top: 0;
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             [s-sec=testimonial]{
