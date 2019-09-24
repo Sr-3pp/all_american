@@ -8,9 +8,6 @@
                         <span v-if="!nslide.caption">Add caption <icon name="+"></icon></span>
                         <span v-else>Cancel <icon name="-"></icon></span>
                     </button>
-                    <button class="btn" @click="saveSlide()">
-                        Save
-                    </button>
                     <div v-if="nslide.caption" class="form-group">
                         <p class="radio-group">
                             <span @click="setPos('left')" :class="{'active': nslide.position == 'left'}"><icon name="check"></icon><br>Left</span>
@@ -30,6 +27,9 @@
                             <input class="input" type="text" v-model="nslide.description">
                         </p>
                     </div>
+                    <button class="btn" @click="saveSlide()">
+                        Save
+                    </button>
                 </article>
             </ol>
             <ol v-if="slides.length" v-for="(slide, index) in slides">
@@ -45,7 +45,7 @@
                     </p>
                 </figure>
                 <article v-if="editSlide !== 'editSlide_'+index">
-                    <button class="btn" @click="deleteSlide(index, slide.id)">Delete</button>
+                    <button class="btn close" @click="deleteSlide(index, slide.id)"><icon name="+"></icon></button>
                     <button class="btn" @click="editSlide = 'editSlide_'+index">Edit</button>
                 </article>
                 <div v-if="editSlide == 'editSlide_'+index" class="form-group">
@@ -67,6 +67,7 @@
                             <textarea class="input" type="text" v-model="slide.extra.description"/>
                         </p>
                         <button class="btn" @click="updateSlide(index, slide.id)">Update</button>
+                        <button class="btn" @click="editSlide = false">Cancel</button>
                 </div>
             </ol>
             <ol  v-if="!slides.length">

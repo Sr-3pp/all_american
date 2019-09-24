@@ -4301,7 +4301,39 @@ body{
             .content{
                 padding-top: 5%;
                 [s-desk=slides]{
-                    
+                   .slide-list{
+                       >ol{
+                           margin-bottom: 3%;
+                           border-bottom: solid thin #000;
+                           >article{
+                               .btn{
+                                   width: 30%;
+                                   &.close{
+                                       background-color: transparent;
+                                       svg{
+                                        transform: rotate(45deg);
+                                        width: 50%;
+                                        fill: $Ared;
+                                       }
+                                   }
+                                   svg{
+                                       width: 10%;
+                                   }
+                               }
+                               .form-group{
+                                   padding: 3%;
+                                   width: 100%;
+                                   svg{
+                                       width: 10%;
+                                   }
+                                   .radio-group{
+                                       display: flex;
+                                       margin-bottom: 5%;
+                                   }
+                               }
+                           }
+                       }
+                   } 
                 }
                 [s-desk=painting]{
                     >ul{
@@ -4483,11 +4515,6 @@ body{
                         }
                     }
                 }
-                [s-target=gallery]{
-                    .modal-body{
-                        
-                    }
-                }
             }
             .section{
                 >article{
@@ -4504,6 +4531,31 @@ body{
                         svg{
                             width: 20px;
                             height: 20px;
+                        }
+                    }
+                }
+                [s-sec=forming-form]{
+
+                    >*{
+                        background-color: #FFFFFF;
+                        &:nth-child(2n){
+                            background-color: #e9e9e9;
+                        }
+                    }
+                    >article{
+                        >ul{
+                            display: flex;
+                            justify-content: space-between;
+                            >ol{
+                                display: flex;
+                                align-items: center;
+                                max-width: 30%;
+                                padding: 3%;
+                                ul{
+                                    list-style: none;
+                                    height: 100%;
+                                }
+                            }
                         }
                     }
                 }

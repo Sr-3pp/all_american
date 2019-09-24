@@ -2,8 +2,8 @@
     <section class="section">
         <article>
             <p class="title">{{activeSection}}</p>
-            <button v-if="!addBtn" class="btn" @click="setNew()">Add <icon name="+"></icon></button>
-            <button v-else class="btn" @click="setNew()">Cancel <icon name="-"></icon></button>
+            <button v-if="!addBtn && active != 2" class="btn" @click="setNew()">Add <icon name="+"></icon></button>
+            <button v-if="addBtn && active != 2" class="btn" @click="setNew()">Cancel <icon name="-"></icon></button>
         </article>
         <ul class="panel-tabs" v-if="active == 1">
             <li :class="{'active': section == 0}" @click="setSec(0)">Slides</li>
@@ -35,7 +35,7 @@ export default{
            }else if(this.active == 1){
                this.activeSection = 'Site'
            }else if(this.active == 2){
-               this.activeSection = 'Categories'
+               this.activeSection = 'Forming Forms'
            }else if(this.active == 3){
                this.activeSection = 'Votes'
            }else if(this.active == 4){

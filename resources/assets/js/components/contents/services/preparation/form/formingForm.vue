@@ -6,7 +6,7 @@
             <div>
                 <p>
                     <span v-for="(m, index) in materials" class="radio" @click="setMaterial(m)">
-                        <icon v-if="form.material == m.id" name="radio_on"></icon> 
+                        <icon v-if="form.material == m.name" name="radio_on"></icon> 
                         <icon v-else name="radio_off"></icon> 
                         {{m.name}}
                     </span>
@@ -543,7 +543,7 @@
                 </article>
                 <article :key="2" v-if="form.shape.section == 3">
                     <div class="angles">
-                        <p class="subtitle">Sheet</p>
+                        <p class="subtitle">Frames</p>
                         <ul>
                             <li :class="{'active': form.shape.value == 1}" @click="form.shape.value = 1">
                                 <span>
@@ -718,7 +718,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 1" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Welded Frame
+                                    Panel
                                 </span>
                             </li>
                             <li :class="{'active': form.shape.value == 2}" @click="form.shape.value = 2">
@@ -728,7 +728,7 @@
                                 <span class="radio">
                                     <icon v-if="form.shape.value == 2" name="radio_on"></icon> 
                                     <icon v-else name="radio_off"></icon> 
-                                    Sheet Frame
+                                    Circle Panel
                                 </span>
                             </li>
                         </ul>
@@ -956,7 +956,7 @@ export default {
                 return re.test(String(mail).toLowerCase());
         },
         setMaterial(mat){
-            this.form.material = mat.id
+            this.form.material = mat.name
             this.gauges = mat.gauges            
             this.image = mat.gauges[0].archivo            
         },
