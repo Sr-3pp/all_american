@@ -4279,6 +4279,7 @@ body{
                 }
                 .header{
                     position: relative;
+                    overflow: hidden;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -4292,6 +4293,11 @@ body{
                         background-color: rgba(#000, .8);
                         color: #FFF;
                         padding: 3%;
+                    }
+                }
+                .new-content{
+                    [data-f-id]{
+                        display: none;
                     }
                 }
             }
