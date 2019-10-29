@@ -1,8 +1,8 @@
 <template>
     <nav class="full-section" s-sec="navigation">
-        <figure class="brand">
+        <a href="/" class="brand">
             <img :src="logo" alt="Site Brand">
-        </figure>
+        </a>
         <button @click="active ? active = false : active = true" class="toggle-btn btn"><icon name="burger"></icon></button>
         <ul class="item-list" :class="{'active': active}">
             <li class="close-menu item" @click="active ? active = false : active = true">
