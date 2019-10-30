@@ -221,6 +221,8 @@ body{
             >.content{
                 padding: 5%;
                 margin-bottom: 15%;
+                max-height: 500px;
+                overflow: auto;
             }
             >.social{
                 display: flex;
@@ -4408,7 +4410,7 @@ body{
                         flex-wrap: wrap;
                         .new{
                             flex: {
-                                grow: 1;
+                                grow: 0;
                                 shrink: 1;
                                 basis: 48%;
                             }
