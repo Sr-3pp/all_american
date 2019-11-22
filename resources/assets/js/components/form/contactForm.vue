@@ -22,7 +22,7 @@
                     <textarea name="name" rows="8" class="input" placeholder="Message*" v-model="content"></textarea>
                 </article>
                 <article class="group">
-                    <button type="button" class="btn" @click="validate()">Send</button>
+                    <button type="button" class="btn cta" @click="validate()">Send</button>
                 </article>
       </form>
       <article :key="1" class="section" v-else>

@@ -23,6 +23,7 @@
         "babel-runtime": "^6.26.0",
         "jquery": "^3.3.1",
         "vue-animate-scroll": "^0.1.5",
-        "vue-froala-wysiwyg": "^3.0.3"
+        "vue-froala-wysiwyg": "^3.0.3",
+        "vue-slick": "^1.1.15"
     }
 }

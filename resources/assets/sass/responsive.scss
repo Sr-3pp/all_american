@@ -120,6 +120,10 @@
                                 right: 12%;
                                 left: inherit;
                             }
+                            &[s-mode~=center]{
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
                         }
                     }
                 }
@@ -450,6 +454,7 @@
 }
 @media (min-width: 1024px){
     body{
+        line-height: 1.5rem;
         #app{
             font-size: .9rem;
             .title, .subtitle, .category{
@@ -628,10 +633,12 @@
                     >div{
                         margin-top: 0;
                         text-align: right;
-                        >.title, >.text{
-                            margin-bottom: 0;
-                            text-align: right;
-                            width: 100%;
+                        >div{
+                            >.title, >.text{
+                                margin-bottom: 0;
+                                text-align: right;
+                                width: 100%;
+                            }
                         }
                         ul{
                             ol{
@@ -652,7 +659,7 @@
             [s-sec=values]{
                 article{
                     flex: 1;
-                    margin-right: 3%;
+                    margin-right: 2%;
                     svg{
                         padding-right: 20px;
                         max-width: 90px;
@@ -684,11 +691,6 @@
             }
             [s-sec=contact]{
                 flex-direction: row;
-                &.full-section{
-                    &.full-section{
-                        padding-right: 0;
-                    }
-                }
                 >div{
                     flex: 1;
                     padding: 3%;
@@ -924,10 +926,6 @@
                 }
                 [s-sec=contact]{
                     >div{
-                        padding: {
-                            right: 0;
-                            left: 0;
-                        }
                         flex-direction: row;
                         >article{
                             flex: {
@@ -963,6 +961,13 @@
 
 @media (min-width: 1280px){
     body{
+        line-height: 2rem;
+        header{
+            padding: {
+                right: 5vw;
+                left: 5vw;
+            }
+        }
         #app{
             .full-section{
                 &.full-section{
@@ -1067,6 +1072,12 @@
 
 @media (min-width: 1440px){
     body{
+        header{
+            padding: {
+                right: 10vw;
+                left: 10vw;
+            }
+        }
         #app{
             .full-section{
                 &.full-section{
@@ -1403,6 +1414,17 @@
                                 .detail{
                                     >.header{
                                         height: 800px;
+                                    }
+                                }
+                            }
+                        }
+                        &[s-sec=about]{
+                            &.active{
+                                >.cont{
+                                    >.sub{
+                                        .headline, .info{
+                                            padding-left: 10vw;
+                                        }
                                     }
                                 }
                             }

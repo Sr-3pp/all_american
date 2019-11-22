@@ -14,7 +14,7 @@ export default {
         this.$bus.$on('setTab', ($event) => {
             this.section = $event.index
         }).$on('setImg', ($event) => {
-            this.image = $event.img
+                this.image = $event.img
         });
     },
     props: ['services'],

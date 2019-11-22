@@ -1,4 +1,35 @@
 body{
+    .slick-dots{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        >li{
+            width: 1.5vw;
+            height: 1.5vw;
+            background-color: $Ared;
+            transition: all .2s ease;
+            border: {
+                style: solid;
+                color: $light-gray;
+                width: 2px;
+                radius: 100%;
+            }
+            margin-right: 5%;
+            &:last-child{
+                margin-right: 0;
+            }
+            button{
+                display: none;
+            }
+            &.slick-active{
+                background-color: $gray;
+                border-color: $Ared;
+                width: 2vw;
+            }
+        }
+    }
     background-color: #000;
     .fr-popup{
         z-index: 1000!important;
@@ -157,9 +188,8 @@ body{
       
         .new{
             margin:{
-                top: 3%;
-                right: 2%;
-                bottom: 2%;
+                right: 1%;
+                bottom: 1%;
             }
             display: flex;
             flex-direction: column;
@@ -179,7 +209,7 @@ body{
             }
             &:hover{
                 background-color: $Ablue;
-                margin-top: 5%;
+                margin-top: -.5%;
                 .s-text, .category{
                     color: #FFF;
                     &:after{
@@ -2661,8 +2691,8 @@ body{
                         padding-left: 5vw;
                         >*{
                             margin-bottom: 5%;
-                            >.text{
-                                padding: inherit!important;
+                            &.text{
+                                padding-left: 0!important;
                             }
                         }
                         &.column{
@@ -2684,6 +2714,15 @@ body{
                                 shrink: 1;
                                 basis: 50%;
                             }
+                        }
+                    }
+                }
+            }
+            &.active{
+                >.cont{
+                    >.sub{
+                        .text{
+                            padding-left: 0;
                         }
                     }
                 }
@@ -2767,16 +2806,16 @@ body{
             }
         }
         [s-sec=last-news]{
-            &.full-section{
                 background-color: $Ablue;
                 padding: {
                     top: 5%;
                     bottom: 5%;
                 }
-            }
+                width: 100%;
             .title{
                 color: #FFF;
                 text-align: center;
+                margin-bottom: 0;
             }
             .news{
                 display: flex;
@@ -2784,6 +2823,16 @@ body{
                 flex-direction: column;
                 align-items: center;
                 flex-wrap: wrap;
+                .slick-list{
+                    padding-left: 3%;
+                    .slick-track{
+                        display: flex;
+                        padding-top: 5%;
+                        .slick-slide{
+                            height: auto;
+                        }
+                    }
+                }
             }
         }
         [s-sec=projects]{
@@ -2802,59 +2851,50 @@ body{
                     padding: 3%;
                     margin-bottom: 0;
                 }
-                .slider{
-                    .slider--inner{
-                        width: auto;
+                .project-slider{
+                    .slide{
+                        position: relative;
+                        overflow: hidden;
+                        width: 25vh;
+                        height: 25vh;
                         &:hover{
-                            .slide-inner{
-                                .item{
-                                    img{
-                                        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-                                        filter: grayscale(100%);
-                                    }
-                                }
+                            img{
+                                -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+                                filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+                                height: 105%;
+                            }
+                            p{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
                             }
                         }
-                        .slide-inner{
-                            .item{
-                                position: relative;
-                                overflow: hidden;
-                                width: 25vh;
-                                height: 25vh;
-                                &:hover{
-                                    img{
-                                        -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
-                                        filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
-                                    }
-                                    p{
-                                        display: flex;
-                                        flex-direction: column;
-                                        align-items: center;
-                                        justify-content: center;
-                                    }
-                                }
-                                img{
-                                    height: 100%;
-                                    width: auto;
-                                }
-                                p{
-                                    display: none;
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
+                        img{
+                            height: 100%;
+                            width: auto;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            transition: all .2s ease;
+                        }
+                        p{
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            color: #FFF;
+                            .btn{
+                                background-color: transparent;
+                                color: #FFF;
+                                font-size: 1.5rem;
+                                text-decoration: none;
+                                border: {
+                                    style: solid;
                                     color: #FFF;
-                                    .btn{
-                                        background-color: transparent;
-                                        color: #FFF;
-                                        font-size: 1.5rem;
-                                        text-decoration: none;
-                                        border: {
-                                            style: solid;
-                                            color: #FFF;
-                                        }
-                                    }
                                 }
                             }
                         }
@@ -2887,6 +2927,7 @@ body{
                 .subtitle{
                     text-align: center;
                     padding: 2%;
+                    text-transform: uppercase;
                     margin-bottom: 0;
                     border: {
                         style: solid;
@@ -2900,11 +2941,6 @@ body{
         [s-sec=contact]{
             overflow: hidden;
             background-color: #FFF;
-            &.full-section{
-                padding-top: 0;
-                padding-right: 0;
-                padding-left: 0;
-            }
             >div{
                 flex: 1;
                 padding: 3%;
@@ -2957,6 +2993,7 @@ body{
                 }
                 &:last-child{
                     background-color: $Ared;
+                    border-radius: 2vw;
                     color: #FFF;
                     padding: 5%;
                     ul{
@@ -4234,7 +4271,16 @@ body{
                         .contact-form{
                             width: 100%;
                             label{
-                                display: none;
+                                position: absolute;
+                                color: $light-gray;
+                                top: 50%;
+                                left: 5%;
+                                font-weight: normal;
+                                transform: translateY(-50%);
+                                transition: all .2s ease;
+                                &.active{
+                                    opacity: 0;
+                                }
                             }
                             .btn{
                                 color: #FFF;

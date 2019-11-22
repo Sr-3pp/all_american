@@ -46,18 +46,18 @@ class Controller extends BaseController
             [
                 'id' => 1,
                 'name' => 'slide 1',
-                'archivo' => '/img/default_slide.jpg'
+                'archivo' => 'img/default_slide.jpg'
             ],
             [
                 'id' => 2,
                 'name' => 'slide 2',
-                'archivo' => '/img/default_slide.jpg'
+                'archivo' => 'img/default_slide.jpg'
             ],
         ];
         $services = [
             [
                 'id' => 1,
-                'name' => 'Design and Planning',
+                'name' => 'Design & Planning',
                 'icon' => 'planning',
                 'list' => [
                     [
@@ -156,43 +156,43 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'Mirror Finish #8',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'content' => '"Mirror" bright finish or polish, is the case of the polishing process, the purpose for this exact process is to unify the surface, leave it smooth with a shine. In the polishing process we have already achieved that the sanded surface is unified, reinforced and brightened to a great extent.',
                         'img' => '/img/services/finish_8.jpg'
                     ],
                     [
                         'id' => 2,
                         'name' => 'Finish #7',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'This finish consists of a highly reflective surface polished and with a slight haze, where the lines are still visible. The piece is polished with a belt of grain 280 -320, this is achieved by constant polishing operations to get that glossy finish similar to the finish # 8 without getting to the final finish of it.',
                         'img' => '/img/services/finish_8.jpg'
                     ],
                     [
                         'id' => 3,
                         'name' => 'Finish #6',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'Also called satin or hairline is a smooth finish, it is polished through fine grain sandpaper, (240 - 320) this has fine grain lines but a lower reflectivity lower than a # 7 finish for example.',
                         'img' => '/img/services/finish_6.jpg'
                     ],
                     [
                         'id' => 4,
                         'name' => 'Brush Finish #4',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'The short and parallel polishing lines extend uniformly throughout the material. This surface is obtained by using belts or abrasive belts, it is one of the most popular finishes in the industry for its aesthetic appearance.',
                         'img' => '/img/services/finish_4.jpg'
                     ],
                     [
                         'id' => 5,
                         'name' => 'Vibration',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'This is a multidirectional finish, this pattern of vibrant grain, uniform texture, random grain lines and little reflective.',
                         'img' => '/img/services/vibration.jpg'
                     ],
                     [
                         'id' => 6,
                         'name' => 'Sandblasted',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'It consists of the projection of abrasive particles on the piece to be treated. The sandblasting process is an effective way to clean and remove unwanted layers of material.',
                         'img' => '/img/services/sandblasted.jpg'
                     ],
                     [
                         'id' => 7,
                         'name' => 'Timesaver',
-                        'content' => 'IM a spy, in the house of love',
+                        'content' => 'It consists of the projection of abrasive particles on the piece to be treated. The sandblasting process is an effective way to clean and remove unwanted layers of material.',
                         'img' => '/img/services/timesaver.jpg'
                     ],
                 ]
@@ -238,12 +238,6 @@ class Controller extends BaseController
                         'name' => 'Delivery',
                         'content' => 'I know your deepest secret fear, I know everything',
                         'img' => '/img/services/delivery_card.jpg'
-                    ],
-                    [
-                        'id' => 2,
-                        'name' => 'Planning',
-                        'content' => 'IM a spy, in the house of love',
-                        'img' => '/img/services/delivery_card.jpg'
                     ]
                 ]
             ]
@@ -251,7 +245,7 @@ class Controller extends BaseController
     
         $news = app('App\Http\Controllers\NewsController')->getNews();
 
-        $p = Project::all()->take(5);
+        $p = Project::all()->take(7);
         $projects = [];
             foreach ($p as $key => $value) {
                 foreach ($value->gallery as $ke2 => $c) {

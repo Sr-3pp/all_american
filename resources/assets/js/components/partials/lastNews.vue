@@ -1,7 +1,7 @@
 <template>
-    <section s-sec="last-news" class="full-section">
+    <section s-sec="last-news">
         <h2 class="title">Last News</h2>
-        <div class="news">
+        <slick class="news" ref="slick"  :options="slickOptions">
             <article v-for="(n, index) in news" class="new">
                 <figure class="cover" @click="goToNew(n.id)">
                     <img :src="'/storage/'+n.archivo" alt="">
@@ -27,11 +27,14 @@
                     </button>
                 </div>
             </article>
-        </div>
+        </slick>
     </section>
 </template>
 <script>
+import '../../../../../node_modules/slick-carousel/slick/slick.css';
+import Slick from 'vue-slick';
 export default {
+    components: { Slick },
     mounted(){
         
     },
@@ -40,7 +43,12 @@ export default {
     ],
     data(){
         return {
-
+            slickOptions: {
+                slidesToShow: 3,
+                rows: 0,
+                arrows: false,
+                dots: true
+            },
         }
     },
     methods: {

@@ -32,19 +32,20 @@ export default {
     methods: {
         setTab(index){
             this.section = index
-            this.$bus.$emit('setTab', {index: index});
-            if(this.section == 0){
-                this.$bus.$emit('setImg', {img: '/img/services/concept.jpg'});
-            }else if(this.section == 1){
-                this.$bus.$emit('setImg', {img: '/img/services/preparation_card.jpg'});
-            }else if(this.section == 2){
-                this.$bus.$emit('setImg', {img: '/img/services/welding_card.jpg'});
-            }else if(this.section == 3){
-                this.$bus.$emit('setImg', {img: '/img/services/polish_cards.jpg'});
-            }else if(this.section == 4){
-                this.$bus.$emit('setImg', {img: '/img/services/painting_card.jpg'});
-            }else if(this.section == 5){
-                this.$bus.$emit('setImg', {img: '/img/services/delivery_card.jpg'});
+            if(this.name == 'home'){
+                if(this.section == 0){
+                    this.$bus.$emit('setImg', {img: '/img/services/concept.jpg'});
+                }else if(this.section == 1){
+                    this.$bus.$emit('setImg', {img: '/img/services/preparation_card.jpg'});
+                }else if(this.section == 2){
+                    this.$bus.$emit('setImg', {img: '/img/services/welding_card.jpg'});
+                }else if(this.section == 3){
+                    this.$bus.$emit('setImg', {img: '/img/services/polish_cards.jpg'});
+                }else if(this.section == 4){
+                    this.$bus.$emit('setImg', {img: '/img/services/painting_card.jpg'});
+                }else if(this.section == 5){
+                    this.$bus.$emit('setImg', {img: '/img/services/delivery_card.jpg'});
+                }
             }
             $([document.documentElement, document.body]).animate({
                 scrollTop: ($("[s-sec=services]").offset().top / 2)

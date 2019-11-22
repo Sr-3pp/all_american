@@ -15,27 +15,27 @@
             <div class="row contact-form">
             <form v-if="!sent" class="form">
                 <article class="group">
-                    <label>Name</label>
+                    <label :class="{'active': valoration.name != ''}">Name*</label>
                     <span class="must" v-if="alerts.name">you must fill this input</span>
-                    <input type="text" class="input" placeholder="Name*" v-model="valoration.name">
+                    <input type="text" class="input" v-model="valoration.name">
                 </article>
                 <article class="group">
-                    <label>Title</label>
+                    <label :class="{'active': valoration.title != ''}">Affair*</label>
                     <span class="must" v-if="alerts.title">you must fill this input</span>
-                    <input type="text" class="input" placeholder="Afair" v-model="valoration.title">
+                    <input type="text" class="input" v-model="valoration.title">
                 </article>
                 <article class="group">
-                    <label>Email</label>
+                    <label :class="{'active': valoration.email != ''}">Email*</label>
                     <span class="must" v-if="alerts.email.status">{{alerts.email.text}}</span>
-                    <input type="email" class="input" placeholder="Email*" v-model="valoration.email">
+                    <input type="email" class="input" v-model="valoration.email">
                 </article>
                 <article class="group">
-                    <label>Message</label>
+                    <label :class="{'active': valoration.review != ''}">Message*</label>
                     <span class="must" v-if="alerts.review">you must fill this input</span>
-                    <textarea name="name" rows="8" class="input" placeholder="Message*" v-model="valoration.review"></textarea>
+                    <textarea name="name" rows="8" class="input" v-model="valoration.review"></textarea>
                 </article>
                 <article class="group">
-                    <button type="button" class="btn" @click="validate()">Send</button>
+                    <button type="button" class="btn cta" @click="validate()">Send</button>
                 </article>
             </form>
             <article class="section" v-else>
