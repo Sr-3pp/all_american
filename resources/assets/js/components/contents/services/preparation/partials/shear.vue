@@ -19,7 +19,7 @@
                 polishing or painting.
             </p>
         </div>
-            <figure class="info">
+            <figure class="info header-text">
                 <img class="gif" src="/img/editable.gif" alt="">
             </figure>
         <p class="title">

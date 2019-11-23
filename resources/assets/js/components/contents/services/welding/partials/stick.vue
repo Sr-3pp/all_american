@@ -22,16 +22,16 @@
                 <p class="category">More Advantages</p>
                 <li class="category">
                     <icon name="star"></icon>
-                    No flux is required</li>
+                    It can be welded in any position</li>
                 <li class="category">
                     <icon name="star"></icon>
-                    No need for cleaning after welding</li>
+                    Good finish and appearance</li>
                 <li class="category">
                     <icon name="star"></icon>
-                    High quality welding in any position</li>
+                    Semi-automatic processes</li>
                 <li class="category">
                     <icon name="star"></icon>
-                    No sparks or emanations</li>
+                    High productivity</li>
             </ul>
         </figure>
     </div>

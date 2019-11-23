@@ -11,14 +11,11 @@
                 </p> 
             </article>
         </div>
-        <div v-if="project" class="cont"  v-for="(pic, index) in project.gallery" @click="showGallery(pic.archivo)">
+        <div v-if="project" class="cont"  v-for="(pic, index) in project.gallery" @click="showGallery(pic.archivo, index)">
             <article>
                 <figure>
                     <img :src="'/storage/'+pic.archivo" alt="">
                 </figure>
-                <p class="category">
-                    {{pic.name}}
-                </p>
             </article>
         </div>
         <gallery-overlay :active="full" :picture="picture"></gallery-overlay>
@@ -36,6 +33,16 @@ export default {
         }).$on('close-gallery', () => {
             this.full = false
             this.picture = false;
+        }).$on('nextPic', ($event) => {            
+            if(this.current+1 < this.project.gallery.length){   
+                this.current += 1;             
+                this.picture = this.project.gallery[this.current].archivo;
+            }
+        }).$on('prevPic', ($event) => {
+            if (this.current-1 > 0) {
+                this.current -= 1;
+                this.picture = this.project.gallery[this.current].archivo;
+            }
         });
         this.list = this.categories;        
               
@@ -45,6 +52,7 @@ export default {
         return {
             list: null,
             project: false,
+            current: false,
             active:false,
             picture: false,
             full: false,
@@ -57,7 +65,8 @@ export default {
         setCat(project, index){ 
             this.setProject(project)
         },
-        showGallery(file){
+        showGallery(file, index){
+            this.current = index
             this.picture = file
             this.full = true
         }

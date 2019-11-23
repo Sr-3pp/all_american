@@ -348,6 +348,7 @@ class Controller extends BaseController
             ]
         ];
         $materials = Material::all();
+        $paints = $this->getPaints();
 
 
         $mills = Mills::all();
@@ -356,7 +357,7 @@ class Controller extends BaseController
         }
 
         $main = 'services';
-        return view('services', compact('menu', 'materials', 'mills', 'finishes', 'section', 'main'));
+        return view('services', compact('menu', 'materials', 'mills', 'paints', 'finishes', 'section', 'main'));
     }
     
     public function subscribe(Request $r){

@@ -1,11 +1,11 @@
 <template>
     <transition-group tag="section" name="v-fade" s-sec="services" class="main" :class="{'active': active}">
-        <design-planning :key="0" :materials="materials" :mills="mills" v-show="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
-        <preparation :key="1" :mills="mills" v-show="!active || active == 2" :active="active == 2 ? true : false"></preparation>
-        <welding  :key="2" v-show="!active || active == 3" :active="active == 3 ? true : false"></welding>
-        <finishes :key="3" :finishes="finishes" v-show="!active || active == 4" :active="active == 4 ? true : false"></finishes>
-        <painting :key="4" :paints="paints"  v-show="!active || active == 5" :active="active == 5 ? true : false"></painting>
-        <delivery :key="5"  v-show="!active || active == 6" :active="active == 6 ? true : false"></delivery>
+        <design-planning :class="{'active': active == 1}" :key="0" :materials="materials" :mills="mills" v-show="!active || active == 1" :active="active == 1 ? true : false"></design-planning>
+        <preparation :class="{'active': active == 2}" :key="1" :mills="mills" v-show="!active || active == 2" :active="active == 2 ? true : false"></preparation>
+        <welding :class="{'active': active == 3}"  :key="2" v-show="!active || active == 3" :active="active == 3 ? true : false"></welding>
+        <finishes :class="{'active': active == 4}" :key="3" :finishes="finishes" v-show="!active || active == 4" :active="active == 4 ? true : false"></finishes>
+        <painting :class="{'active': active == 5}" :key="4" :paints="paints"  v-show="!active || active == 5" :active="active == 5 ? true : false"></painting>
+        <delivery :class="{'active': active == 6}" :key="5"  v-show="!active || active == 6" :active="active == 6 ? true : false"></delivery>
         <article :key="6" class="text" v-show="!active">
             <p class="title">
                 SERVICES OVERVIEW

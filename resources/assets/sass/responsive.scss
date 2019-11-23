@@ -1,6 +1,6 @@
 @media (min-width: 768px){
     body{
-        header{
+        header, footer{
            display: flex;
         }
         [s-sec=loader]{
@@ -76,7 +76,7 @@
             .image-list{
                 flex-direction: row;
                 >figure{
-                    &::after{
+                    &::before{
                         content: '';
                         position: absolute;
                         top: 0;
@@ -84,7 +84,6 @@
                         height: 100%;
                         width: 1px;
                         background-color: $Ared;
-                        box-shadow: 10px 10px 10px #000;
                     }
                 }
             }
@@ -163,14 +162,6 @@
                 }
                 .next-btn{
                     right: 5%;
-                }
-                .frame{
-                    figure{
-                        img{
-                            width: 100%;
-                            height: auto;
-                        }
-                    }
                 }
                 .social-btns{
                     width: 250px;
@@ -335,7 +326,7 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            height: 400px;
+                            height: 500px;
                             margin-bottom: 0;
                             overflow: hidden;
                             border{
@@ -343,8 +334,8 @@
                                 bottom-right-radius: 20px;
                             }
                             img{
-                                width: 100%;
-                                height: auto;
+                                width: auto;
+                                height: 100%;
                             }
                          >div{
                              position: absolute;
@@ -359,7 +350,10 @@
                          }
                         }
                         >div{
-                            padding: 5vw;
+                            padding-left: 5vw;
+                            padding-right: 0;
+                            display: flex;
+                            align-items: center;
                             >.text{
                                 display: none;
                             }
@@ -461,13 +455,15 @@
                 margin-bottom: 3%;
             }
             .title{
-                font-size: 2.5rem
+                font-size: 2.5rem;
+                line-height: 3rem;
             }
             .subtitle{
-                font-size: 2rem
+                font-size: 1.8rem;
+                line-height: 2.5rem;
             }
             .category{
-                font-size: 1.5rem
+                font-size: 1.3rem
             }
             .text{
                 font-size: .9rem
@@ -483,7 +479,6 @@
                 }
             }
             .section-menu{
-                position: fixed;
                 right: 0;
                 width: 38%;
                 padding: {
@@ -531,6 +526,12 @@
                             }
                         }
                     }
+                    ~.content{
+                        .section-menu{
+                            position: fixed;
+                            top: 12vw;
+                        }
+                    }
                 }
                 .toggle-btn, .close-menu{
                     display: none;
@@ -573,6 +574,8 @@
                         }
                         .sub-nav{
                             position: absolute;
+                            width: 40%;
+                            transition: all .2s ease;
                         }
                     }
                 }
@@ -814,13 +817,38 @@
                                             width: 8vw;
                                         }
                                     }
-                                    
+                                    .partial-metal{
+                                        .info{
+                                            padding-left: 5vw;
+                                            flex-direction: row;
+                                        }
+                                    }
                                     .info{
                                         padding: {
-                                            top: 10%;
-                                            bottom: 5%;
-                                            right: 10%;
-                                            left: 10vw;
+                                            top: 5%;
+                                            bottom: 0%;
+                                            right: 0;
+                                            left: 0;
+                                        }
+                                        &.finishes{
+                                        padding-left: 5vw;
+                                        }
+                                        &.drills{
+                                            padding-left: 5vw;
+                                            >article{
+                                                >ul{
+                                                    >ol{
+                                                        flex-basis: 20%;
+                                                        height: 10vw;
+                                                        margin-right: 5%;
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        align-items: center;
+                                                        justify-content: space-between;
+                                                        margin-bottom: 10%;
+                                                    }
+                                                }
+                                            }
                                         }
                                         .title, .text{
                                             padding-left: 0;
@@ -962,7 +990,7 @@
 @media (min-width: 1280px){
     body{
         line-height: 2rem;
-        header{
+        header, footer{
             padding: {
                 right: 5vw;
                 left: 5vw;
@@ -976,13 +1004,15 @@
                 }
             }
             .title{
-                font-size: 3rem
+                font-size: 3rem;
+                line-height: 4rem;
             }
             .subtitle{
-                font-size: 2.5rem
+                font-size: 2.5rem;
+                line-height: 3rem;
             }
             .category{
-                font-size: 2rem
+                font-size: 1.5rem
             }
             .text{
                 font-size: 1.3rem
@@ -1092,7 +1122,7 @@
                 font-size: 2.5rem
             }
             .category{
-                font-size: 1.8rem
+                font-size: 1.5rem
             }
             .text{
                 font-size: 1.3rem
@@ -1128,6 +1158,15 @@
                             svg{
                                 width: 10%;
                             }
+                        }
+                    }
+                }
+            }
+            [s-sec=navigation]{
+                &.on-top{
+                    ~.content{
+                        .section-menu{
+                            top: 7vw;
                         }
                     }
                 }
@@ -1192,39 +1231,86 @@
                         padding-right: 10vw;
                     }
                     >.main{
-                        &[s-sec=services]{
-                            > .cont{
-                                .detail{
-                               
+                        &[s-sec=services], &[s-sec=projects]{
+                            padding-left: 10vw;
+                            &.active{
+                                >.cont{
+                                    padding-left: 10vw;
+                                    .sub{
+                                        .text, .headline{
+                                            padding: 0;
+                                        }
+                                        .cards{
+                                            padding-left: 0;
+                                        }
+                                        .content{
+                                            padding-left: 0;
+                                        }
+                                    }
                                 }
                             }
-                        }
-                    }
-                }
-                [s-sec=services],  &[s-sec=projects]{
-                    >.cont{
-                        >div{
-                            &:first-child{
-                                >div{
-                                    padding-left: 10vw;
-                                    .detail{
-                                        >.content{
-                                            padding-left: 10vw;
+                            > .cont{
+                                &:not(.active), .card, >article:not(.sub){
+                                    width: 23vw;
+                                    height: 23vw;
+                                    flex-basis: 23vw;
+                                }
+                                .detail{
+                                    .material-list, >.title, >.text, .foaming-form{
+                                        padding-left: 0;
+                                    }
+                                    .blue-table{
+                                        margin-left: 0;
+                                    }
+                                    .info{
+                                        padding: 0;
+                                        &.finishes{
+                                            padding-left: 0;
                                         }
-                                        .machine-picture{
-                                            span{
-                                                padding-left: 10vw;
+                                        &.column{
+                                            padding: 0;
+                                        }
+                                        >img{
+                                            &.gif{
+                                                margin-left: 0;
+                                            }
+                                        }
+                                        &.header-text{
+                                            >.title, >.text, .estimate-list{
+                                                padding-left: 0;
+                                            }
+                                            .wizzard{
+                                                margin-left: 0;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
+                        &[s-sec=about].active{
+                            padding-left: 5vw;
+                        }
                     }
                 }
             }
             &[s-layout=secondary]{
                 background-color: #FFF;
+                [s-sec*=about]{
+                    >[class*=section]{
+                        &.skills{
+                            >.title{
+                                padding-left: 10vw;
+                            }
+                            .skill-list{
+                                li{
+                                    .text{
+                                        padding: 0 10vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 [s-sec=contact]{
                     >div{
                         >article{
@@ -1331,6 +1417,13 @@
                         }
                     }
                 }
+                &.on-top{
+                    ~.content{
+                        .section-menu{
+                            top: 6vw;
+                        }
+                    }
+                }
             }
             [s-sec=header]{
                 .tabs{
@@ -1414,6 +1507,23 @@
                                 .detail{
                                     >.header{
                                         height: 800px;
+                                        svg{
+                                            left: 15%;
+                                        }
+                                    }
+                                    >.info{
+
+                                        &.header-text{
+                                            >.title, >.text{
+                                                padding-left: 10vw;
+                                            }
+                                            .estimate-list{
+                                                padding-left: 10vw;
+                                            }
+                                            .wizzard{
+                                                margin-left: 10vw;
+                                            }
+                                        }
                                     }
                                 }
                             }

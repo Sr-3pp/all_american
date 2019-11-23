@@ -20,7 +20,7 @@
                             benefit everyone in this company.
                     </p>
                     <figure>
-                        <img src="/img/default.jpg" alt="">
+                        <img src="/img/services/join_our_team.jpg" alt="">
                     </figure>
                 </div>
                 <div class="headline">

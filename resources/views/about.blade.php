@@ -2,9 +2,9 @@
 
 @section('content')
     <section s-sec="about">
-        <article class="head">
+        <article class="head full-section">
             <figure>
-                <img src="/img/default.jpg" alt="">
+                <img src="/img/about.jpg" alt="">
                 <div>
                     <p class="title">
                         Who we are?
