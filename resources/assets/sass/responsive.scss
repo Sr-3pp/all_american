@@ -140,7 +140,7 @@
                 }
             }
             .patina-list{
-                >ul{
+                >ul, [tag=ul]{
                     >ol{
                         flex: {
                             basis: 24%;
@@ -455,7 +455,7 @@
                 margin-bottom: 3%;
             }
             .title{
-                font-size: 2.5rem;
+                font-size: 2.3rem;
                 line-height: 3rem;
             }
             .subtitle{
@@ -516,16 +516,6 @@
                     height: 110px;
                 }
                 &.on-top{
-                    background: #FFF;
-                    color: $dark;
-                    padding: 20px 5vw;
-                    .item-list{
-                        .item{
-                            a{
-                                color: $dark
-                            }
-                        }
-                    }
                     ~.content{
                         .section-menu{
                             position: fixed;
@@ -771,6 +761,33 @@
                         }
                     }
                 }
+                >.cont{
+                    &.gray{
+                        >.detail{
+                            &[s-sec=finish-chart]{
+                                .info{
+                                    [tag=ul]{
+                                        padding-left: 5vw;
+                                    }
+                                }
+                            }
+                            &[s-sec=patina]{
+                                .info{
+                                    &:not(.header-text){
+                                        >div{
+                                           .patina-list .title{
+                                                padding-left: 0!important;
+                                            }
+                                            .patina-list{
+                                                padding-left: 5vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &[s-layout=general]{
                 >.content{
@@ -823,6 +840,15 @@
                                             flex-direction: row;
                                         }
                                     }
+                                    >.info{
+                                        &.list{
+                                            &.finishes{
+                                                figure{
+                                                    max-width: 25%;
+                                                }
+                                            }
+                                        }
+                                    }
                                     .info{
                                         padding: {
                                             top: 5%;
@@ -847,6 +873,14 @@
                                                         justify-content: space-between;
                                                         margin-bottom: 10%;
                                                     }
+                                                }
+                                            }
+                                        }
+                                        &.header-text{
+                                            >.text{
+                                                flex-direction: row;
+                                                >.text{
+                                                    width: 50%;
                                                 }
                                             }
                                         }

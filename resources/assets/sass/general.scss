@@ -145,7 +145,7 @@ body{
         }
         .category{
             font: {
-                size: 1.3rem;
+                size: 1.2rem;
                 weight: bold;
                 style: italic;
             }
@@ -864,7 +864,7 @@ body{
             }
         }
         .patina-list{
-            >ul{
+            >ul, [tag=ul]{
                 display: flex;
                 list-style: none;
                 justify-content: space-between;
@@ -1095,8 +1095,13 @@ body{
                     }
                     p{
                         font-size: 1rem;
-                        .title{
+                        .title, a{
                             display: flex;
+                        }
+                        a{
+                            text-decoration: none;
+                            font-family: 'Aero Matics';
+                            font-weight: bold;
                         }
                     }
                 }
@@ -1586,7 +1591,9 @@ body{
                 }
                 >.next-btn, .prev-btn{
                     width: 4vw;
+                    min-width: 30px;
                     height: 4vw;
+                    min-height: 30px;
                 }
                 figure{
                     width: 100%;
@@ -1633,7 +1640,9 @@ body{
                 top: 1.5vw;
                 right: 1.5vw;
                 width: 10vw;
+                max-width: 30px;
                 height: 10vw;
+                max-height: 30px;
                 background-color: transparent;
                 padding: 0;
                 border: {
@@ -1650,7 +1659,8 @@ body{
                 }
             }
             .social-btns{
-                position: absolute;
+                position: fixed;
+                background-color: #FFF;
                 bottom: 0;
                 right: 0;
                 width: 100%;
@@ -1663,7 +1673,8 @@ body{
                 }
                 svg{
                     width: 50%;
-                    color: #FFF;
+                    max-width: 50px;
+                    color: $dark;
                 }
             }
         }
@@ -2397,10 +2408,25 @@ body{
             color: #FFF;
             transition: all .3s ease;
             &.full-section{
-                height: 50px;
+                height: auto;
                 margin: 0;
                 flex-direction: column;
                 background-color: transparent;
+            }
+            &.on-top{
+                background: #FFF;
+                color: $dark;
+                padding: 20px 5vw;
+                .toggle-btn{
+                    color: $dark;
+                }
+                .item-list{
+                    .item{
+                        a{
+                            color: $dark
+                        }
+                    }
+                }
             }
             .brand{
                 width: 80px;
@@ -2418,7 +2444,7 @@ body{
                 right: 5vw;
                 svg{
                     color: currentColor;
-                    width: 5vw;
+                    width: 7vw;
                 }
             }
             .item-list{
@@ -2832,11 +2858,6 @@ body{
                 margin-bottom: 0;
             }
             .news{
-                display: flex;
-                justify-content: space-between;
-                flex-direction: column;
-                align-items: center;
-                flex-wrap: wrap;
                 .slick-list{
                     padding-left: 3%;
                     .slick-track{
@@ -3295,7 +3316,7 @@ body{
                                                      color: $light-gray;
                                                      padding: 2%;
                                                      width: 50%;
-                                                     font-size: 2rem;
+                                                     font-size: 1rem;
                                                      border: {
                                                          color: $light-gray;
                                                          style: solid;
@@ -3306,7 +3327,7 @@ body{
                                         }
                                         .info{
                                             padding-top: 0;
-                                            >ul{
+                                            >ul, [tag=ul]{
                                                 display: flex;
                                                 justify-content: flex-start;
                                                 align-items: center;
@@ -3343,6 +3364,16 @@ body{
                                                             }
                                                         }
                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:not(.header-text){
+                                                padding-left: 0;
+                                                padding-right: 0;
+                                                .slick-slide{
+                                                    padding: {
+                                                        right: 5vw;
+                                                        left: 5vw;
                                                     }
                                                 }
                                             }
@@ -3409,6 +3440,21 @@ body{
                                         }
                                         >.info{
                                             padding-top: 0;
+                                            &:not(.header-text){
+                                                padding-left: 0;
+                                                padding-right: 0;
+                                                >div{
+                                                    >.text, .patina-list .title{
+                                                        padding-left: 5vw;
+                                                    }
+                                                }
+                                                .slick-slide{
+                                                    padding: {
+                                                        right: 5vw;
+                                                        left: 5vw;
+                                                    }
+                                                }
+                                            }
                                             >div{
                                                 color: $gray;
                                                 .text{
@@ -3419,6 +3465,7 @@ body{
                                                     }
                                                 }
                                                 .patina-list{
+                                                    margin-bottom: 10%;
                                                     ol{
                                                         div{
                                                             .title{
@@ -3588,7 +3635,7 @@ body{
                                            figure{
                                                display: flex;
                                                flex-direction: column;
-                                               max-width: 20%;
+                                               max-width: 45%;
                                                margin: {
                                                    right: 2.5%;
                                                    left: 2.5%;
@@ -3649,13 +3696,15 @@ body{
                                             color: $gray;
                                             width: 70%;
                                             margin-top: -23%;
+                                            display: flex;
+                                            flex-direction: column;
                                             >img{
                                                 width: 40%;
                                                 height: auto;
                                                 margin-right: 10%;
                                             }
                                             >.text{
-                                                width: 50%;
+                                                width: 100%;
                                             }
                                         }
                                     }
@@ -4671,6 +4720,7 @@ body{
     }
     footer{
         padding: 20px 5vw;
+        position: relative;
         .logo{
             width: 25%;
             img{

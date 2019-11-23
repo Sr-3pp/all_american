@@ -29,7 +29,7 @@
                 <span class="category">
                     {{finishes.name}}
                 </span>
-                <p class="text">{{f.description}}</p>
+                <!-- <p class="text">{{f.description}}</p> -->
                 <ul>
                     <li v-for="(base) in f.bases">{{base.name}}</li>
                 </ul>
@@ -38,7 +38,11 @@
     </div>
 </template>
 <script>
+import Slick from 'vue-slick';
 export default {
+    components: {
+        Slick
+    },
     mounted(){        
         this.$bus.$on('setSub', ($event) => {
              this.finish = $event.section
@@ -51,7 +55,29 @@ export default {
         return {
             finish: 0,
             ofinish: false,
-            otype: false
+            otype: false,
+            slickOptions: {
+                    dots: true,
+                    arrows: false,
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    rows: 0,
+                    responsive: [
+                        {
+                        breakpoint: 9999,
+                        settings: "unslick"
+                        },
+                        {
+                        breakpoint: 1025,
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: true,
+                            centerPadding: "80px",
+                            slidesToScroll: 1
+                        }
+                        }
+                    ]
+            }
         }
     },
     methods: {

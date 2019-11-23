@@ -43,7 +43,7 @@
             </p>
         </div>
         <article class="info column" v-if="category == 1">
-            <ul>
+            <slick tag="ul" ref="slick"  :options="slickOptions">
                 <ol v-if="p.attributes.archivo != undefined" v-for="(p, i) in paint">
                     <figure>
                         <figcaption>
@@ -66,7 +66,7 @@
                         <img width="100%" :src="'/storage/'+p.attributes.archivo" alt="">
                     </figure>
                 </ol>
-            </ul>
+            </slick>
         </article>
         <article class="info column" v-if="category == 2">
             <p class="title">Some Advantages</p>
@@ -193,19 +193,19 @@
                 can ask for any finish you require.
             </p>
             <article v-for="(p, i) in paint" class="patina-list">
-                    <div>
-                        <p class="title">{{i}}</p>
-                    </div>
-               <ul>
+                <div>
+                    <p class="title">{{i}}</p>
+                </div>
+                <slick tag="ul" ref="slick" :options="slickOptions">
                     <ol v-for="(pat, ind) in p">
-                    <ul>
-                        <p class="text">{{pat.attributes.name}}</p><br>
-                        <p class="text">Base Material</p>
-                        <li class="text" v-for="(b, ind) in pat.attributes.bases">{{b.name}}</li>
-                    </ul>
-                    <img width="100%" :src="'/storage/'+pat.attributes.archivo" alt="">
-                </ol>
-               </ul>
+                        <ul>
+                            <p class="text">{{pat.attributes.name}}</p><br>
+                            <p class="text">Base Material</p>
+                            <li class="text" v-for="(b, ind) in pat.attributes.bases">{{b.name}}</li>
+                        </ul>
+                        <img width="100%" :src="'/storage/'+pat.attributes.archivo" alt="">
+                    </ol>
+                </slick>
             </article>
             </div>
         </article>
@@ -239,7 +239,11 @@
     </div>
 </template>
 <script>
+import Slick from 'vue-slick';
 export default {
+    components : {
+        Slick
+    },
     mounted(){
            this.$bus.$on('modal', ($event) => {
                this.allChart()
@@ -254,7 +258,29 @@ export default {
             hue: false,
             color: false,
             chart: false,
-            section: false
+            section: false,
+            slickOptions: {
+                    dots: true,
+                    arrows: false,
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    rows: 0,
+                    responsive: [
+                        {
+                        breakpoint: 9999,
+                        settings: "unslick"
+                        },
+                        {
+                        breakpoint: 1025,
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: true,
+                            centerPadding: "80px",
+                            slidesToScroll: 1
+                        }
+                        }
+                    ]
+                }
         }
     },
     methods: {
