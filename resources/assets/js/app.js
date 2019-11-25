@@ -45,6 +45,8 @@ Vue.component('loader', require('./components/partials/loader.vue'));
 Vue.component('animated-number', require('./components/partials/animatedNumber.vue'));
 Vue.component('animated-progress', require('./components/partials/animatedProgress.vue'));
 Vue.component('faq-list', require('./components/partials/faqList.vue'));
+Vue.component('comment-modal', require('./components/partials/commentModal.vue'));
+Vue.component('overlay', require('./components/partials/overlay.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));
 Vue.component('projects', require('./components/contents/projects/projects.vue'));

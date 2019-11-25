@@ -13,4 +13,7 @@ class Like extends Model
     public function article(){
         return $this->belongsTo('App\Article');
     }
+    public function gallery(){
+        return $this->belongsTo('App\Gallery');
+    }
 }

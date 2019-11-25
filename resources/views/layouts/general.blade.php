@@ -129,6 +129,7 @@
     </header>
     <div id="app" s-layout="general">
         <loader></loader>
+        <overlay></overlay>
         <navigation section="{{$main}}" name="general"></navigation>
         <div class="content">
             @yield('content')

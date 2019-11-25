@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Slides;
 use App\Material;
+use App\Comment;
 use App\Faqs;
 use App\Skills;
 use App\Votes;
@@ -619,6 +620,13 @@ class Controller extends BaseController
         Mail::to('lalo@allamericanfinishing.com')->send(new ContactMail($contact));
 
         return 1;
+    }
+
+    public function setComment(Request $r){
+        $data = $r->all();
+        $comment = Comment::create($data);
+        $comment->comment = json_decode($comment->comment);
+        return $comment;
     }
     
     public function testing(){

@@ -1,5 +1,6 @@
 <template>
     <section s-sec="last-news">
+        <comment-modal></comment-modal>
         <h2 class="title">Last News</h2>
         <slick class="news" ref="slick"  :options="slickOptions">
             <article v-for="(n, index) in news" class="new">
@@ -11,15 +12,13 @@
                 </p>
                 <div class="content" @click="goToNew(n.id)">
                     <h3 class="category">{{n.title}}</h3>
-                    <p class="s-text">
-                        {{n.prev}}
-                    </p>
+                    <p class="s-text" v-html="n.content"></p>
                 </div>
                 <div class="social">
-                    <button class="btn">
+                    <button class="btn" @click="$bus.$emit('comment-article', {article: n})">
                         <icon name="coment"></icon>
                     </button>
-                    <button class="btn" @click="likeNew(n, index)">
+                    <button :class="{'liked': liked == 'new_'+index}" class="btn like" @click="likeNew(n, index)">
                         <icon name="like"></icon>
                     </button>
                     <button class="btn">
@@ -43,12 +42,15 @@ export default {
     ],
     data(){
         return {
+            liked: false,
             slickOptions: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 rows: 0,
                 arrows: false,
-                dots: true,
+                dots: false,
+                centerMode: true,
+                centerPadding: '40px',
                 responsive: [
                         {
                         breakpoint: 1024,
@@ -59,7 +61,7 @@ export default {
                         {
                         breakpoint: 480,
                         settings: {
-                            slidesToShow: 1,
+                            slidesToShow: 1
                         }
                         }
                         // You can unslick at a given breakpoint now by adding:
@@ -72,9 +74,12 @@ export default {
     methods: {
         likeNew(n, i){
             var este = this;
-            axios.get('/like-new/'+n.id).then((response) => {
-                este.news[i].likes.push(response.data)
-            });
+            if (this.liked !== 'new_'+i) {
+                axios.get('/like-new/'+n.id).then((response) => {
+                    este.news[i].likes.push(response.data)
+                    este.liked = 'new_'+i
+                });
+            }
         },
         goToNew(id){
             window.location.href = '/new/'+id

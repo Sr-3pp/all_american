@@ -27,6 +27,7 @@ Route::get('/get-faqs', 'Controller@getFaqs');
 Route::get('/get-skills', 'Controller@getSkills');
 Route::get('/get-shear-gauges', 'Controller@getShearTables');
 Route::get('/forming-materials', 'Controller@formingMaterials');
+Route::post('/set-comment', 'Controller@setComment');
 
 Route::post('/save-valoration', 'Controller@saveValoration');
 

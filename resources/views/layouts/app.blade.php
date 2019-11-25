@@ -130,6 +130,7 @@
     </header>
     <div id="app">
     <loader></loader>
+    <overlay></overlay>
     <navigation section="{{$main}}" name="home"></navigation>
         @yield('content')
     </div>
