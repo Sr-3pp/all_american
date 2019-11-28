@@ -2326,10 +2326,12 @@ body{
                 }
             }
             .modal-body{
+                overflow: visible;
                 >figure{
                     position: relative;
                     margin-bottom: 3%;
                     min-height: 300px;
+                    max-height: 50vh;
                     p{
                         cursor: pointer;
                         position: absolute;
@@ -2377,6 +2379,12 @@ body{
                             color: #FFF;
                             font-size: 3rem;
                         }
+                    }
+                }
+                .froala-editor{
+                    .fr-view{
+                        height: 45vh;
+                        overflow-y: auto;
                     }
                 }
                 >ul{
