@@ -3,7 +3,6 @@
      <figure class="slide" v-for="(slide, index) in slides">
             <img :src="'/storage/'+slide.archivo" alt="default slide">
             <p>
-                <span class="category">{{slide.name}}</span>
                 <a href="#" class="btn">See More</a>
             </p>
         </figure>

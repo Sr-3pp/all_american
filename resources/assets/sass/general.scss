@@ -2955,7 +2955,9 @@ body{
                 margin: 0;
                 .subtitle{
                     text-align: center;
-                    padding: 2%;
+                    padding: 5%;
+                    width: 80%;
+                    margin: 0 auto;
                     text-transform: uppercase;
                     margin-bottom: 0;
                     border: {
@@ -3608,8 +3610,8 @@ body{
                                         margin-right: 2%;
                                         &.gif{
                                             max-width: 60%;
-                                            margin-left: 5vw;
-                                            margin-bottom: 5%;
+                                            margin-bottom: 0;
+                                            height: auto;
                                         }
                                     }
                                     >.text{
