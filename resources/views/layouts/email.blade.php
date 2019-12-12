@@ -165,7 +165,7 @@
 <!--[if (!mso)&(!IE)]><!-->
 <div style="border-top:0px solid transparent; border-left:8px solid #F1F3F3; border-bottom:0px solid transparent; border-right:8px solid #F1F3F3; padding-top:50px; padding-bottom:5px; padding-right: 50px; padding-left: 50px;">
 <!--<![endif]-->
-<div align="center" class="img-container center autowidth fullwidth" style="padding-right: 0px;padding-left: 0px;">
+<div align="center" class="img-container center autowidth fullwidth" style="background-color: #FFF; padding-right: 0px;padding-left: 0px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Image" border="0" class="center autowidth" src="{{asset('img/svg/logo.svg')}}" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 50%; max-width: 534px; display: block;" title="Image" width="50%"/>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
@@ -222,7 +222,7 @@
 <div class="col num12" style="min-width: 320px; max-width: 650px; display: table-cell; vertical-align: top; width: 634px;">
 <div style="background-color:#1E4380;width:100% !important;">
 <!--[if (!mso)&(!IE)]><!-->
-<div style="border-top:0px solid transparent; border-left:8px solid #F1F3F3; border-bottom:0px solid transparent; border-right:8px solid #F1F3F3; padding-top:35px; padding-bottom:5px; padding-right: 50px; padding-left: 50px;">
+<div style="color: #FFF; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-top:0px solid transparent; border-left:8px solid #F1F3F3; border-bottom:0px solid transparent; border-right:8px solid #F1F3F3; padding-top:35px; padding-bottom:5px; padding-right: 50px; padding-left: 50px;">
 <!--<![endif]-->
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
 @yield('content')

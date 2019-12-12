@@ -2,6 +2,9 @@
     <ul>
         <li v-for="(item, index) in submenu" :class="{'active': section == index}">
             <span class="text" @click="setTab(index)">{{item.name}}</span>
+            <span @click="showSub(index)">
+                <icon name="chevron"></icon>
+            </span>
             <ul v-if="section == index && item.sub != undefined">
                 <li :class="{'active': sub == i}" v-for="(sm, i) in item.sub" @click="setSub(i)">{{sm}}</li>
             </ul>
@@ -45,6 +48,9 @@ export default {
         setSub(index){
              this.$bus.$emit('setSub', {section: index});
              this.sub = index
+        },
+        showSub(i){
+            this.section ? this.section = null : this.section = i;
         }
     }
 }

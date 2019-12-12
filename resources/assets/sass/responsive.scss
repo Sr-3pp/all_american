@@ -806,6 +806,15 @@
                             }
                         }
                     }
+                    .detail{
+                        >.info{
+                            >img{
+                                &.gif{
+                                    margin-left: 10%;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             &[s-layout=general]{
@@ -897,9 +906,9 @@
                                         }
                                         &.header-text{
                                             >.text{
-                                                flex-direction: row;
+                                                flex-direction: column;
                                                 >.text{
-                                                    width: 50%;
+                                                    width: 100%;
                                                 }
                                             }
                                         }

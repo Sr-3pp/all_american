@@ -43,7 +43,7 @@
                 caliber 18 stainless steel measuring 0.048 "inches is not the same as an 18
                 gauge brass measuring 0.040" this variables are correct.
             </div>
-        <article v-animate="'slide-right'" class="blue-table" v-for="(m, index) in materials">
+        <article v-if="m.gauges.length" v-animate="'slide-right'" class="blue-table" v-for="(m, index) in materials">
             <p class="subtitle">{{m.name}}</p>
             <table>
                 <thead>
@@ -58,14 +58,27 @@
                         <td>
                             {{g.thick}}
                             <article class="line-progress">
-                                <progress max="100" value="25"></progress>
+                                <progress max="100" value="25" :style="'height: calc(50% / '+(m.gauges.length - i)+')'"></progress>
                             </article>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <p class="s-text">
-                3/16” Inch is Plate
+                <span v-if="m.name == 'Stainless Steel'">
+                    3/16” Inch is Plate
+                </span>
+                <span v-if="m.name == 'Copper'">
+                    .188” Inch is Plate
+                </span>
+                <span v-if="m.name == 'Brass'">
+                    .125” Inch is Plate
+                </span>
+                <span v-if="m.name == 'Aluminum'">
+                    There is no official gauge standard for aluminum. <br>
+                    <br>
+                    .250” Inch is Plate
+                </span>
             </p>
         </article>
         <figure class="image">
