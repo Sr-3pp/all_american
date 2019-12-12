@@ -44,6 +44,20 @@
                             {{n.likes.length}}
                         </p>
                     </li>
+                    <li>
+                        <social-sharing class="s-text" :url="'https://allamericanfinishing.com/new/'+n.id"
+                                                :title="n.title"
+                                                :description="n.content"
+                                                :quote="n.content"
+                                                hashtags="allamericanfinishing, building, finishes, polish, angles"
+                                                inline-template>
+                            <div>
+                                <network network="facebook">
+                                    <icon name="share"></icon>
+                                </network>
+                            </div>
+                        </social-sharing>
+                    </li>
                     <li  @click="socialNew(n, i, 'comments')">
                         <p class="s-text">
                             <icon name="coment"></icon>
