@@ -29,7 +29,7 @@ export default {
         }
     },
     mounted(){
-        this.$bus.$on('overlay', ($event) => {            
+        this.$bus.$on('overlay', ($event) => {
             this.active = $event.sw
         });
     },

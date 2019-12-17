@@ -91,14 +91,14 @@ export default{
            });
        },
        setFiles($event){
-           this.nproy.files = $event.target.files           
+           this.nproy.files = $event.target.files          
        },
        activeFile(){
            $('#uploadPicts').click()
        },
        showProject(project){
            this.$bus.$emit('modal', {project: project})
-           
+           this.$bus.$emit('overlay', {sw: true}); 
        },
        editProject(project, index){
            this.project ? this.project = false : this.project = project

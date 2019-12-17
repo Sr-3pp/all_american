@@ -48,6 +48,8 @@ export default {
                 this.project = $event.project
                 this.slides = this.project.gallery                                
             }
+        }).$on('closeOverlay', ($event) => {
+            this.active ? this.active = false : this.active = true
         })
     },
     data(){
@@ -100,6 +102,7 @@ export default {
 
                 axios.post('/panel/add-slides/'+this.project.id, formData).then((slides) => {
                     este.slides = slides.data
+                    este.nslides = false
                 });
         },
         deleteThumb(slide){

@@ -7,6 +7,7 @@
     <meta name="description" content="All American Finishing is a superior metal fabrication in Las Vegas, NV 89102. Do not hesitate to contact us today: (702) 213-3635">
     <link rel="canonical" href="https://allamericanfinishing.com/">
     <meta property="og:locale" content="en_US" />
+    <link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Professional Metal Fabrication in Las Vegas, NV 89102" />
 <meta property="og:description" content="All American Finishing is a superior metal fabrication in Las Vegas, NV 89102. Do not hesitate to contact us today: (702) 213-3635" />

@@ -87,14 +87,20 @@ class AdminController extends Controller
     public function addSlides(Request $r, $id){
         if($r->hasFile('pics')){
             foreach ($r->pics as $key => $p) {
-                $pic = Gallery::create([
-                    'name' => $id,
-                    'project_id' => $id,
-                    'archivo' => $p->store('projects/'.$id)
-                ]);
+                try {
+                    $pic = Gallery::create([
+                        'name' => $id,
+                        'project_id' => $id,
+                        'archivo' => $p->store('projects/'.$id)
+                    ]);
+                } catch (\Throwable $th) {
+                    throw $th;
+                }
             }
             $project = Project::find($id);
             return $project->gallery;
+        }else{
+            dd($r->all());
         }
     }
 

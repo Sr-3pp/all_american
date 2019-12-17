@@ -29,6 +29,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'All American Finishing') }}</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
