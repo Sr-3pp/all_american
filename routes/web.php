@@ -130,4 +130,4 @@ Route::prefix('panel')->group(function(){
   
  });
 
- Route::get('testing/{to}', 'Controller@testing');
+ Route::get('testing', 'Controller@testing');

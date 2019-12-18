@@ -629,16 +629,11 @@ class Controller extends BaseController
         return $comment;
     }
     
-    public function testing($mail){
+    public function testing(){
         $new = 'popo';
         $s = 'user';
-        if(isset($mail)){
-            $m = $mail;
-        }else{
-            $m = 'martin.ru@outlook.com';
-        }
         try {
-            Mail::to($m)->send(new Newnew($s, $new));
+            Mail::to('martin.ru@outlook.com')->send(new Newnew($s, $new));
             echo 'sent';
         } catch (\Throwable $th) {
             throw $th;
