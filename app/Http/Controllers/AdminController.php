@@ -99,8 +99,6 @@ class AdminController extends Controller
             }
             $project = Project::find($id);
             return $project->gallery;
-        }else{
-            dd($r->all());
         }
     }
 

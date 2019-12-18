@@ -4,7 +4,7 @@
             <p class="modal-title">
                 {{modal.title}}
             </p>
-            <button class="close-btn" @click="active = false">
+            <button class="close-btn" @click="closeModal()">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512" xml:space="preserve">
                     <path fill="#E04F5F" d="M504.1,256C504.1,119,393,7.9,256,7.9C119,7.9,7.9,119,7.9,256C7.9,393,119,504.1,256,504.1          C393,504.1,504.1,393,504.1,256z"/>
                     <path fill="#FFFFFF" d="M285,256l72.5-84.2c7.9-9.2,6.9-23-2.3-31c-9.2-7.9-23-6.9-30.9,2.3L256,222.4l-68.2-79.2    c-7.9-9.2-21.8-10.2-31-2.3c-9.2,7.9-10.2,21.8-2.3,31L227,256l-72.5,84.2c-7.9,9.2-6.9,23,2.3,31c4.1,3.6,9.2,5.3,14.3,5.3    c6.2,0,12.3-2.6,16.6-7.6l68.2-79.2l68.2,79.2c4.3,5,10.5,7.6,16.6,7.6c5.1,0,10.2-1.7,14.3-5.3c9.2-7.9,10.2-21.8,2.3-31L285,256    z"/>
@@ -30,7 +30,7 @@
                 <figure v-for="(slide, index) in slides" class="thumb" @click="showThumb(index)">
                     <div class="buttons">
                         <button :class="{'cover': slide.cover}" class="btn" @click="setAsCover(slide)">Cover</button>
-                        <button class="btn" @click="deleteThumb(slide)">Delete</button>
+                        <button class="btn" @click="deleteThumb(slide, index)">Delete</button>
                     </div>
                     <img width="100%" :src="'/storage/'+slide.archivo" alt="">
                 </figure>
@@ -49,7 +49,7 @@ export default {
                 this.slides = this.project.gallery                                
             }
         }).$on('closeOverlay', ($event) => {
-            this.active ? this.active = false : this.active = true
+            this.active =  false;
         })
     },
     data(){
@@ -68,6 +68,10 @@ export default {
         }
     },
     methods: {
+        closeModal(){
+            this.active = false;
+            this.$bus.$emit('overlay', {sw: false});
+        },
         prev(){
             if(this.pic.active != 0){
                 this.pic.active -= 1
@@ -105,11 +109,17 @@ export default {
                     este.nslides = false
                 });
         },
-        deleteThumb(slide){
+        deleteThumb(slide, index){
             var este = this;
             if(confirm('delete picture?')){
                 axios.post('/panel/delete-pic', slide).then((slides) => {
                     este.slides = slides.data
+                    if (index >=este.slides.length) {
+                        var act = index - 1
+                    } else {
+                        var act = index + 1
+                    }
+                    este.pic.active = act
                 });
             }
             
