@@ -503,6 +503,7 @@ body{
         .carousel{
             margin-bottom: 0;
             .slides{
+                order: 2;
                 .slide{
                     max-height: 100vh;
                     height: 90vh;

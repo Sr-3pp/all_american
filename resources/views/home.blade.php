@@ -2,7 +2,7 @@
 
 @section('content')
 <section s-sec="header">
-    <carousel name="main" :slides="{{json_encode($slides)}}"></carousel>
+    <slickSlider :slides="{{json_encode($slides)}}"></slickSlider>
     <tabs name="home" :services="{{json_encode($services)}}"></tabs>
 </section>
 <content-tabs name="home" :services="{{json_encode($services)}}"></content-tabs>
