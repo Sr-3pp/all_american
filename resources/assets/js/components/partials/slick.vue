@@ -157,7 +157,7 @@ export default {
     data(){
         return{
             slickOptions: {
-                autoplay: false,
+                autoplay: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 rows: 0,
