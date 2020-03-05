@@ -4276,6 +4276,10 @@ body{
                                 width: calc(100% - 10vw);
                                 padding: 3% 5%;
                                 border-radius: 10px;
+                                @media (min-width: 768px){
+                                    bottom: inherit;
+                                    top: 5%;
+                                }
                             }
                         }
                     }
