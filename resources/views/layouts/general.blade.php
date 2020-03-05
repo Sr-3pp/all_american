@@ -130,7 +130,6 @@
     </header>
     <div id="app" s-layout="general">
         <loader></loader>
-        <overlay></overlay>
         <navigation section="{{$main}}" name="general"></navigation>
         <div class="content">
             @yield('content')
@@ -146,7 +145,7 @@
             <a href="/contact-us" class="cta btn"> Contact Us</a>
         </article>
     </div>
-    <div class="overlay" s-active="false"></div>
+    <overlay></overlay>
     <footer>
         <figure class="logo">    
         <img src="{{asset('img/svg/logo_bn.svg')}}" alt="">

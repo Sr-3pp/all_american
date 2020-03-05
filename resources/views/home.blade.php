@@ -14,9 +14,9 @@
             Ask for <b>free estimate</b>, No job<br>is to big or small to us.                
         </p>
     </article>
-    <button class="btn cta" type="button">
+    <a href="/contact-us" class="btn cta" type="button">
         Contact Us
-    </button>
+    </a>
 </section>
 <section s-sec="who" class="animated-numbers full-section">
     <img src="/img/welding_2.jpg" alt="">  

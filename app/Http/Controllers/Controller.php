@@ -415,20 +415,20 @@ class Controller extends BaseController
         $menu = [
             [
                 'name' => 'Who we are?',
-                'sub' => []
+                'link' => '/about-us'
             ],
             [
                 'name' => 'Join our team',
-                'sub' => []
+                'link' => '/about-us/join-us'
             ],
             [
                 'name' => 'FAQ list',
-                'sub' => []
+                'link' => '/about-us/faqs'
             ],
             [
                 'name' => 'Last News',
-                'sub' => []
-            ],
+                'link' => '/last-news'
+            ]
         ];
         $main = 'about';
         $section = false;
@@ -438,20 +438,20 @@ class Controller extends BaseController
         $menu = [
             [
                 'name' => 'Who we are?',
-                'sub' => []
+                'link' => '/about-us'
             ],
             [
                 'name' => 'Join our team',
-                'sub' => []
+                'link' => '/about-us/join-us'
             ],
             [
                 'name' => 'FAQ list',
-                'sub' => []
+                'link' => '/about-us/faqs'
             ],
             [
                 'name' => 'Last News',
-                'sub' => []
-            ],
+                'link' => '/last-news'
+            ]
         ];
         $main = 'about';
         $section = false;

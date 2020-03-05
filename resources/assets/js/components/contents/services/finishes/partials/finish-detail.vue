@@ -24,7 +24,7 @@
             </figure>
         </div>
         <article class="finishes list info">
-            <figure @click="setType(f, i)" v-for="(f, i) in ofinish.types">
+            <figure @click="setType(f, i)" v-if="f.archivo" v-for="(f, i) in ofinish.types">
                 <img width="100%" :src="'/storage/'+f.archivo" alt="">
                 <span class="category">
                     {{finishes.name}}

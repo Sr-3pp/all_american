@@ -787,6 +787,14 @@
                                 .info{
                                     [tag=ul]{
                                         padding-left: 5vw;
+                                        ol{
+                                            figure{
+                                                >img{
+                                                    height: 250px;
+                                                    width: auto;
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1574,7 +1582,9 @@
                                         }
                                     }
                                     >.info{
-
+                                        &.column{
+                                            padding-left: 5%;
+                                        }
                                         &.header-text{
                                             >.title, >.text{
                                                 padding-left: 10vw;

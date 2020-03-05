@@ -1,13 +1,17 @@
 <template>
     <ul>
-        <li v-for="(item, index) in submenu" :class="{'active': section == index}">
-            <span class="text" @click="setTab(index)">{{item.name}}</span>
-            <span @click="showSub(index)">
-                <icon name="chevron"></icon>
-            </span>
-            <ul v-if="section == index && item.sub != undefined">
-                <li :class="{'active': sub == i}" v-for="(sm, i) in item.sub" @click="setSub(i)">{{sm}}</li>
-            </ul>
+        <li v-for="(item, index) in submenu" :key="index+1" :class="{'active': section == index}">
+            <article v-if="item.sub">
+                <span class="text" @click="setTab(index)">{{item.name}}</span>
+                    <icon @click="showSub(index)" name="chevron"></icon>
+                <ul v-if="section == index && item.sub != undefined">
+                    <li :class="{'active': sub == i}" v-for="(sm, i) in item.sub" @click="setSub(i)">{{sm}}</li>
+                </ul>
+            </article>
+            <a v-else :href="item.link">
+                <span class="text">{{item.name}}</span>
+                    <icon name="star"></icon>
+            </a>
         </li>
     </ul>
 </template>

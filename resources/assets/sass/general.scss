@@ -353,12 +353,9 @@ body{
         .welding-list{
             list-style: none;
             color: $gray;
-            padding: {
-                left: 5vw;
-            }
             >p{
                 color: $Ared;
-                margin: 3% auto;
+                margin: 3% 0;
                 padding: 3%;
                 width: fit-content;
                 text-align: center;
@@ -753,6 +750,12 @@ body{
                         width: 1px;
                         color: #FFF;
                     }
+                    >a{
+                        color: #FFF;
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                    }
                     display: flex;
                     flex-direction: column;
                     transition: all .2s ease;
@@ -780,7 +783,7 @@ body{
                         }
                         svg{
                             top: 15%;
-                            transform: translateY(-50%) rotate(90deg);
+                            transform: translateY(50%) rotate(90deg);
                         }
                     }
                     svg{
@@ -3296,6 +3299,9 @@ body{
                                         .prev-color{
                                             position: relative;
                                             margin-bottom: 5%;
+                                            width: 50%;
+                                            margin-right: 0;
+                                            margin-left: 0;
                                             >span{
                                                 width: 100%;
                                                 height: 95%;
@@ -3338,7 +3344,6 @@ body{
                                             >ul, [tag=ul]{
                                                 display: flex;
                                                 justify-content: flex-start;
-                                                align-items: center;
                                                 flex-wrap: wrap;
                                                 >ol{
                                                     margin-bottom: 3%;
@@ -3352,6 +3357,10 @@ body{
                                                         basis: 24%;
                                                     }
                                                     figure{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: space-between;
+                                                        height: 100%;
                                                        figcaption{
                                                            margin-bottom: 8%;
                                                            color: $gray;
@@ -3665,6 +3674,7 @@ body{
                                                 font-family: inherit;
                                                 text-align: center;
                                                 font-style: normal;
+                                                font-size: 100%;
                                                 padding: 3%;
                                                 border: {
                                                     radius: 5%;
@@ -3672,6 +3682,9 @@ body{
                                                     width: 1px;
                                                     color: currentColor;
                                                 }
+                                               }
+                                               ul{
+                                                   list-style: none;
                                                }
                                                .text{
                                                 color: $Ared;
