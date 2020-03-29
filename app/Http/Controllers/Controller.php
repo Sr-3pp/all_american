@@ -237,7 +237,7 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'Delivery',
-                        'content' => 'I know your deepest secret fear, I know everything',
+                        'content' => '"Mirror" bright finish or polish, in the case of the polishing process, what we achieve is to unify the surface...',
                         'img' => '/img/services/delivery_card.jpg'
                     ]
                 ]
@@ -629,11 +629,11 @@ class Controller extends BaseController
         return $comment;
     }
     
-    public function testing(){
+    public function testing($mail){
         $new = 'popo';
         $s = 'user';
         try {
-            Mail::to('martin.ru@outlook.com')->send(new Newnew($s, $new));
+            Mail::to($mail)->send(new Newnew($s, $new));
             echo 'sent';
         } catch (\Throwable $th) {
             throw $th;
