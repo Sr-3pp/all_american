@@ -132,8 +132,6 @@ export default{
        },
        setPos(align){
            this.nslide.position = align;
-
-           console.log(this.nslide)
        },
        setColor(color){
            this.nslide.color = color;
