@@ -3,7 +3,7 @@
      <figure class="slide" v-for="(slide, index) in slides">
             <img :src="'/storage/'+slide.archivo" alt="default slide">
             <p>
-                <a href="#" class="btn">See More</a>
+                <a :href="'projects?index='+index" class="btn">See More</a>
             </p>
         </figure>
 </slick>
@@ -13,9 +13,7 @@ import '../../../../../node_modules/slick-carousel/slick/slick.css';
 import Slick from 'vue-slick';
     export default {
         components: { Slick },
-        mounted() {
-            console.log(this.slides);
-            
+        mounted() {            
                 
         },
         props: [

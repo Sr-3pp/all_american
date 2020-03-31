@@ -44,7 +44,16 @@ export default {
                 this.picture = this.project.gallery[this.current].archivo;
             }
         });
-        this.list = this.categories;        
+        this.list = this.categories;    
+        var params=[];
+            window.location.search
+            .replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str,key,value) {
+                params[key] = value;
+            }
+        );    
+        if(params.length){
+            this.setCat(this.list[params[index]])
+        }
               
     },
     props: ['categories'],
