@@ -51,9 +51,8 @@ export default {
                 params[key] = value;
             }
         );    
+        if(params[index]){
             console.log(params);
-        if(params.length){
-            
             this.setCat(this.list[params[index]])
         }
               
