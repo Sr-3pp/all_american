@@ -61,7 +61,7 @@ export default {
         this.alerts.email.text = 'You must fill this input'
          this.alerts.afair = false
         this.alerts.content = false
-        if (this.name && this.afair &&  this.email && this.content.length > 100) {
+        if (this.name && this.afair &&  this.email && this.content.length > 80) {
           var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           if (re.test(String(this.email).toLowerCase())) {
             this.create()
