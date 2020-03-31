@@ -52,7 +52,6 @@ export default {
             }
         );    
         if(params['index']){
-            console.log(params);
             this.setCat(this.list[params['index']])
         }
               
