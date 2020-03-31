@@ -18,7 +18,7 @@
                 </article>
                 <article class="group">
                     <label>Message</label>
-                    <span class="must" v-if="alerts.content">you must fill this input <small>(min 100 char)</small></span>
+                    <span class="must" v-if="alerts.content">you must fill this input <small>(min 80 char)</small></span>
                     <textarea name="name" rows="8" class="input" placeholder="Message*" v-model="content"></textarea>
                 </article>
                 <article class="group">
@@ -76,7 +76,7 @@ export default {
             this.alerts.afair = true
             }else if (!this.email) {
             this.alerts.email.status = true
-          }else if(this.content.length < 80){
+          }else if(this.content.length < 80 && !this.content){
             this.alerts.content = true
           }
         }
