@@ -76,7 +76,7 @@ export default {
             this.alerts.afair = true
             }else if (!this.email) {
             this.alerts.email.status = true
-          }else if(!this.content){
+          }else if(this.content.length < 80){
             this.alerts.content = true
           }
         }
