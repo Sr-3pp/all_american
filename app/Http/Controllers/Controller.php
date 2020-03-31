@@ -617,7 +617,7 @@ class Controller extends BaseController
 
         $contact = Inbox::create($data);
 
-        Mail::to('lalo@allamericanfinishing.com')->send(new ContactMail($contact));
+        Mail::to(['lalo@allamericanfinishing.com', 'no_reply@allamericanfinishing.com'])->send(new ContactMail($contact));
 
         return 1;
     }
@@ -633,7 +633,7 @@ class Controller extends BaseController
         $new = 'popo';
         $s = 'user';
         try {
-            Mail::to($mail)->send(new Newnew($s, $new));
+            Mail::to([$mail, 'no_reply@allamericanfinishing.com'])->send(new Newnew($s, $new));
             echo 'sent';
         } catch (\Throwable $th) {
             throw $th;

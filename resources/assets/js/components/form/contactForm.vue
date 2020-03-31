@@ -18,7 +18,7 @@
                 </article>
                 <article class="group">
                     <label>Message</label>
-                    <span class="must" v-if="alerts.content">you must fill this input</span>
+                    <span class="must" v-if="alerts.content">you must fill this input <small>(min 100 char)</small></span>
                     <textarea name="name" rows="8" class="input" placeholder="Message*" v-model="content"></textarea>
                 </article>
                 <article class="group">
@@ -61,7 +61,7 @@ export default {
         this.alerts.email.text = 'You must fill this input'
          this.alerts.afair = false
         this.alerts.content = false
-        if (this.name && this.afair &&  this.email && this.content) {
+        if (this.name && this.afair &&  this.email && this.content.length > 100) {
           var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           if (re.test(String(this.email).toLowerCase())) {
             this.create()
