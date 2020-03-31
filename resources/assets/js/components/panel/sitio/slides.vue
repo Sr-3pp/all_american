@@ -26,13 +26,6 @@
                             <label>Description</label>
                             <input class="input" type="text" v-model="nslide.description">
                         </p>
-                        <p>
-                           <label>Project</label>
-                           <select v-model="nslide.extra.project" class="input">
-                            <option value="">Select a project</option>
-                            <option v-for="(p, index) in projects" :value="index" :key="index+1">{{p.name}}</option>
-                            </select> 
-                        </p>
                     </div>
                     <button class="btn" @click="saveSlide()">
                         Save
@@ -73,13 +66,6 @@
                             <label>Description</label>
                             <textarea class="input" type="text" v-model="slide.extra.description"/>
                         </p>
-                        <p>
-                           <label>Project</label>
-                           <select v-model="slide.extra.project" class="input">
-                            <option value="">Select a project</option>
-                            <option v-for="(p, index) in projects" :value="index" :key="index+1">{{p.name}}</option>
-                            </select> 
-                        </p>
                         <button class="btn" @click="updateSlide(index, slide.id)">Update</button>
                         <button class="btn" @click="editSlide = false">Cancel</button>
                 </div>
@@ -96,9 +82,6 @@ export default{
         axios.get('/panel/get-slides').then((slides) => {
             this.slides = slides.data                        
         });
-        axios.get('/panel/get-projects').then((projects) => {
-            this.projects = projects.data                        
-        });
         this.$bus.$on('new', ($event) => {
             if($event.section == 0){
                 this.newSlide ? this.newSlide = false : this.newSlide = true
@@ -113,7 +96,6 @@ export default{
     data(){
         return {
            slides: false,
-           projects: false,
            newSlide: false,
            editSlide: false,
            nslide: {
@@ -130,7 +112,6 @@ export default{
        saveSlide(){
            var este = this,
                 formData = new FormData();
-                this.nslide.extra.project = this.projects[this.nslide.extra.project];
 
                 formData.append('extra', JSON.stringify(this.nslide));
                 formData.append('archivo', this.nslide.archivo);
@@ -169,7 +150,6 @@ export default{
                 slide = this.slides[index],
                 formData = new FormData();
 
-                this.nslide.extra.project = this.projects[this.nslide.extra.project];
                 if(this.nslide.archivo){
                      formData.append('archivo', this.nslide.archivo);
                 }

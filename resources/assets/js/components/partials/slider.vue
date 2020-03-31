@@ -14,7 +14,8 @@ import Slick from 'vue-slick';
     export default {
         components: { Slick },
         mounted() {
-
+            console.log(this.slides);
+            
                 
         },
         props: [
