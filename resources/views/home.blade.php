@@ -86,7 +86,7 @@
 <section s-sec="job" class="full-section">
     <img src="/img/welding_3.jpg" alt="no big or small jobs">
     <div class="section">
-        <h2 v-animate.repeat="'fade'" class="subtitle">No job is to big or to small for us</h2>
+        <h2 v-animate.repeat="'fade'" class="subtitle">No job is to big or small for us</h2>
     </div>
 </section>
 <section s-sec="contact" class="full-section">

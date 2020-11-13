@@ -136,7 +136,16 @@
         @yield('content')
     </div>
     <footer>
-        
+        <div class="wrapper row col-2">
+            <figure class="img">
+                <img src="img/svg/logo.svg" alt="">
+            </figure>
+            <ul>
+                <li>
+                    <a href="documents/terms_of_use.pdf" target="_blank" class="link">Terms and Conditions</a>
+                </li>
+            </ul>
+        </div>
     </footer>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
