@@ -1,7 +1,7 @@
 <template>
     <div>
-        <article v-if="section === index" v-for="(s, index) in services">
-            <drop-list :list="s.list" name="home"></drop-list>
+        <article>
+            <drop-list :list="list" name="home"></drop-list>
         </article>
         <transition-group tag="figure" name="v-fade">
             <img :key="image" :src="image" alt="">
@@ -11,17 +11,18 @@
 <script>
 export default {
     mounted(){
-        this.$bus.$on('setTab', ($event) => {
-            this.section = $event.index
-        }).$on('setImg', ($event) => {
+        this.$bus.$on('setImg', ($event) => {
                 this.image = $event.img
+		this.list = $event.list || this.list
         });
+	this.list = this.services[0].list
     },
     props: ['services'],
     data(){
         return {
             section: 0,
             image: '/img/services/concept.jpg',
+	    list: false
         }
     },
     methods: {

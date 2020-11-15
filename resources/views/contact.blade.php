@@ -55,13 +55,19 @@
             </article>
         </div>
         <div class="map-cont">
-            <article class="map" id="map">Insertar mapa aqui</article>
+	    <article class="map mapouter">
+		<div class="gmap_canvas">
+			<iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=all%20american%20finishing&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			</div>
+		</article>
             <article v-animate.repeat="'slide-left'">
-                <ul class="schedule-list">
+		<ul class="schedule-list">
+			<ol>
+				<icon name="clock"></icon>
+				<span class="subtitle">Opening Hours</span>
+			</ol>
                     <ol>
-                        <icon name="clock"></icon>
                         <article>
-                            <span class="subtitle">Opening Hours</span>
                             <ul class="text">
                                 <li>
                                     Monday

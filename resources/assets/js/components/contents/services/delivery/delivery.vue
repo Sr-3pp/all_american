@@ -18,7 +18,7 @@
                 <icon name="star_bar"></icon>
             </div>
             <p class="text">
-                "Mirror" bright finish or polish, in the case of the polishing process, what we achieve is to unify the surface...
+	    	We pride ourselves on being a company that In addition to our quality products, we have services delivered to
             </p>
             <div class="cards">
                 <article class="card" @click="setDetail(1)">
@@ -26,10 +26,10 @@
                         <img src="/img/services/delivery_card.jpg" alt="">
                     </figure> 
                     <div class="card-content">
-                        <p class="subtitle">Mirror Finish #8</p>
+                        <p class="subtitle">Delivery</p>
                         <div>
                             <p>
-                              "Mirror" bright finish or polish, in the case of the polishing process, what we achieve is to unify the surface...
+                              We pride ourselves on being a company that In addition to our quality products, we have services delivered to
                             </p>
                             <icon name="delivery"></icon>
                         </div>

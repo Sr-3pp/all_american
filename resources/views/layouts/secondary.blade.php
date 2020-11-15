@@ -141,18 +141,5 @@
     </footer>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script>
-    function initMap() {
-        if(document.getElementById('map')){
-        var uluru = {lat: 36.1348678, lng: -115.1842497},
-            map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 13, center: {lat: 36.1109554, lng: -115.1842497}});
-         var marker = new google.maps.Marker({position: uluru, map: map});
-      }
-    }
-        </script>
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8EY_pBJgh2R8YCba9_O6C_t0D3PQ71i0&callback=initMap">
-        </script>
 </body>
 </html>

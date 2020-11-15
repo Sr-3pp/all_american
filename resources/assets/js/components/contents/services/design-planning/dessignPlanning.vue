@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="card" @click="setDetail(4)">
+                <!-- article class="card" @click="setDetail(4)">
                     <figure class="img">
                         <img src="/img/services/horientation.jpg" alt="">
                     </figure> 
@@ -80,7 +80,7 @@
                             <icon name="horientation"></icon>
                         </div>
                     </div>
-                </article>
+                </article -->
                 <article class="card" @click="setDetail(5)">
                     <figure class="img">
                         <img src="/img/services/horientation.jpg" alt="">

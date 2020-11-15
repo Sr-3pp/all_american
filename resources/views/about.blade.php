@@ -45,7 +45,7 @@
                 </li>
                 <li class="title">
                     Projects <br>
-                    <animated-number :target="220"></animated-number>
+                    <animated-number :target="2200"></animated-number>
                 </li>
                 <li class="title">
                     Employes <br>
@@ -134,6 +134,6 @@
         <p class="title">
             Request for a free estimate
         </p>
-        <button class="btn cta">Contact us</button>
+        <a href="contact-us" class="btn cta">Contact us</a>
     </section>
 @endsection

@@ -35,7 +35,7 @@
                         </ol>
                         <ol class="category">
                             Projects
-                            <animated-number :target="220"></animated-number>
+                            <animated-number :target="2200"></animated-number>
                         </ol>
                         <ol class="category">
                             Employees
@@ -89,6 +89,7 @@
         <h2 v-animate.repeat="'fade'" class="subtitle">No job is to big or small for us</h2>
     </div>
 </section>
+
 <section s-sec="contact" class="full-section">
     <div>
         <h2 class="title">Send us a message</h2>

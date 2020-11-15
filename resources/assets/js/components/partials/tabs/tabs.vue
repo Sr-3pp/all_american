@@ -1,7 +1,7 @@
 <template>
     <article class="tabs full-section">
         <ul>
-            <ol v-for="(s, index) in services" :class="{'active': section === index}" @click="setTab(index)">
+            <ol v-for="(s, index) in services" :class="{'active': section === index}" @click="setTab(s, index)">
                 <icon :name="s.icon"></icon>
                 <p>
                     {{s.name}}
@@ -30,21 +30,21 @@ export default {
         }
     },
     methods: {
-        setTab(index){
-            this.section = index
-            if(this.name == 'home'){
+        setTab(s, i){
+            this.section = i
+            if(this.name == 'home'){  	
                 if(this.section == 0){
-                    this.$bus.$emit('setImg', {img: '/img/services/concept.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/concept.jpg', list: s.list});
                 }else if(this.section == 1){
-                    this.$bus.$emit('setImg', {img: '/img/services/preparation_card.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/preparation_card.jpg', list: s.list});
                 }else if(this.section == 2){
-                    this.$bus.$emit('setImg', {img: '/img/services/welding_card.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/welding_card.jpg', list: s.list});
                 }else if(this.section == 3){
-                    this.$bus.$emit('setImg', {img: '/img/services/polish_cards.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/polish_cards.jpg', list: s.list});
                 }else if(this.section == 4){
-                    this.$bus.$emit('setImg', {img: '/img/services/painting_card.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/painting_card.jpg', list: s.list});
                 }else if(this.section == 5){
-                    this.$bus.$emit('setImg', {img: '/img/services/delivery_card.jpg'});
+                    this.$bus.$emit('setImg', {img: '/img/services/delivery_card.jpg', list: s.list});
                 }
             }
             $([document.documentElement, document.body]).animate({

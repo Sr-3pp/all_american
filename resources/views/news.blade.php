@@ -7,8 +7,11 @@
                 <div class="headline">
                     <h1 class="subtitle">Last News</h1>
                     <icon name="star_bar"></icon>
-                </div>
-            </article>
+		</div>
+		<div class="info">
+			aqui las news
+		</div>
+	    </article>
         </div>
     </section>
 @endsection

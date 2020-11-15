@@ -80,12 +80,6 @@ class Controller extends BaseController
                         'img' => '/img/services/material.jpg'
                     ],
                     [
-                        'id' => 4,
-                        'name' => 'Horitentation',
-                        'content' => 'We will be with you from the moment the idea is generated to the completion of your project, we will guide you with useful tips to make your project effective and functional',
-                        'img' => '/img/services/horientation.jpg'
-                    ],
-                    [
                         'id' => 5,
                         'name' => 'Original Design',
                         'content' => 'Original designs, creative concepts, functional tools. When you look for Custom metal Fabriation we know that you want to find new, fresh and original ideas, We manufacture unique designs adapted to your needs.',
@@ -237,7 +231,7 @@ class Controller extends BaseController
                     [
                         'id' => 1,
                         'name' => 'Delivery',
-                        'content' => '"Mirror" bright finish or polish, in the case of the polishing process, what we achieve is to unify the surface...',
+                        'content' => 'We pride ourselves on being a company that In addition to our quality products, we have services delivered to',
                         'img' => '/img/services/delivery_card.jpg'
                     ]
                 ]
@@ -273,7 +267,7 @@ class Controller extends BaseController
         $menu = [
             [
                 'name' => 'Design and Planning',
-                'sub' => ['Concept', 'Planning', 'Material', 'Horientation', 'Original Design', 'Estimate']
+                'sub' => ['Concept', 'Planning', 'Material', 'Original Design', 'Estimate']
             ],
             [
                 'name' => 'Fabrication',
@@ -293,7 +287,7 @@ class Controller extends BaseController
             ],
             [
                 'name' => 'Delivery',
-                'sub' => ['test']
+                'sub' => []
             ]
         ];
         $materials = Material::all();
