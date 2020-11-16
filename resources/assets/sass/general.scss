@@ -370,11 +370,17 @@ body{
             >li{
                 margin-bottom: 0;
                 font-size: 1.4rem;
+		position: relative;
                 padding: {
                     top: 5%;
                     bottom: 5%;
+		    left: 5%;
                 }
                 svg{
+			position: absolute;
+			top: 50%;
+			left:-10px;
+			transform: translateY(-50%);
                     width: 5%;
                     margin-right: 5%;
                 }
@@ -2129,7 +2135,6 @@ body{
                                 li{
                                     display: flex;
                                     flex-direction: column;
-                                    align-items: center;
                                     cursor: pointer;
                                     flex: {
                                         grow: 1;
@@ -2138,9 +2143,14 @@ body{
                                     }
                                     border-radius: 5%;
                                     margin-bottom: 5%;
+				    @media (min-width: 1024px){
+					max-width: 33.33%
+				    }
                                     span{
                                         color: $Ablue;
                                         width: auto;
+					justify-content: center;
+					display: flex;
                                         &:first-child{
                                             margin-bottom: 15%;
                                             padding: 10%;
@@ -3121,7 +3131,7 @@ body{
                 margin-bottom: 5%;
                 min-height: 65vh;
                 >.main{
-                    &[s-sec=services], &[s-sec=projects], &[s-sec=about]{
+                    &[s-sec=services], &[s-sec=projects], &[s-sec=about], &[s-sec=news]{
                         &.full-section{
                             flex-direction: column;
                             padding-left: 0;
@@ -4222,7 +4232,8 @@ body{
                             justify-content: center;
                             img{
                                 height: 100%;
-                                width: auto;
+                                width: 100%;
+				object-fit: cover;
                             }
                         }
                     }
@@ -4754,11 +4765,51 @@ body{
     footer{
         padding: 20px 5vw;
         position: relative;
+	background-color: black;
+	z-index: 2;
         .logo{
             width: 25%;
             img{
                 width: 100%;
             }
         }
+    }
+
+    .info.news{
+	padding-top: 0;
+	.flex-news{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		.new{
+			flex-basis: 45%;
+			flex-grow: 0!important;
+			text-decoration: none;
+			.content{
+				padding-left: 5%!important;
+				margin-bottom: 0!important;
+				overflow: hidden!important;
+				max-height: 200px!important;
+				margin-bottom: 5%!important;
+				padding-bottom: 0!important;
+				*{
+					color: black;
+					text-decoration: none;
+				}
+				>.s-text{
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: pre;
+					>*{
+						white-space: break-spaces;
+					}
+				}
+			}
+		}
+		[data-f-id]{
+			display: none;
+		}
+	}
     }
 }

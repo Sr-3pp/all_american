@@ -36,8 +36,9 @@ class NewsController extends Controller
             ]
         ];
         $main = 'about';
-        $section = false;
-        return view('news', compact('menu', 'main', 'section'));
+	$section = false;
+	$news = $this->getNews();
+        return view('news', compact('menu', 'main', 'section', 'news'));
     }
 
     public function getNews(){
