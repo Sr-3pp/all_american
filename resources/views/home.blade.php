@@ -109,38 +109,40 @@
             </ol>
             <ol>
                 <icon name="phone"></icon>
-                <p>
+                <div>
                     <span class="subtitle">Phone</span>
-                    <b>(702)</b> 722 3197
-                </p>
+                    <a href="tel:7027223197" class="link"><b>(702)</b> 722 3197</a>
+                </div>
             </ol>
             <ol>
                 <icon name="fax"></icon>
-                <p>
+                <div>
                     <span class="subtitle">Fax</span>
-                    <b>(702)</b> 891 0556
-                </p>
+                    <a href="tel:7028910556" class="link"><b>(702)</b> 891 0556</a>
+                </div>
             </ol>
             <ol>
                 <icon name="cell"></icon>
-                <p>
+                <div>
                     <span class="subtitle">Cell</span>
-                    <b>(702)</b> 401 0941
-                </p>
+                    <a href="tel:7024010941" class="link"><b>(702)</b> 401 0941</a>
+                </div>
             </ol>
             <ol>
                 <icon name="email"></icon>
-                <p>
+                <div>
                     <span class="subtitle">E Mail</span>
-                    allamericanfinishingfab@gmail.com <br>
-                    allamericanfinishingfab@yahoo.com <br>
-                    lalo@allamericanfinishing.com
-                </p>
-            </ol>
+                    <a href="mail:allamericanfinishingfab@gmail.com" class="link">allamericanfinishingfab@gmail.com</a> <br>
+                    <a href="mail:allamericanfinishingfab@yahoo.com" class="link">allamericanfinishingfab@yahoo.com</a><br>
+                    <a href="mail:lalo@allamericanfinishing.com" class="link">lalo@allamericanfinishing.com</a>
+                </div>
+	    </ol>
+		<ol>
+			<icon name="clock"></icon>
+			<span class="subtitle">Opening Hours</span>
+		</ol>
             <ol>
-                <icon name="clock"></icon>
-                <article>
-                    <span class="subtitle">Opening Hours</span>
+                <article> 
                     <ul>
                         <li>
                             Monday

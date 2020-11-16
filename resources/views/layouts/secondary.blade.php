@@ -8,6 +8,7 @@
     <link rel="canonical" href="https://allamericanfinishing.com/">
     <meta property="og:locale" content="en_US" />
     <link rel="icon" type="image/png" href="favicon.png">
+<meta name="keywords" content="Citibanamex, banco nacional de mexico,  tarjetas de credito, creditos hipotecarios, creditos personales, creditos de nomina, cuentas de ahorro, pagare, inversión, banco">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Professional Metal Fabrication in Las Vegas, NV 89102" />
 <meta property="og:description" content="All American Finishing is a superior metal fabrication in Las Vegas, NV 89102. Do not hesitate to contact us today: (702) 213-3635" />
@@ -141,5 +142,15 @@
     </footer>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script>
+if(window.matchMedia('(min-width: 768px)').matches){
+	var url = 'https://maps.google.com/maps?q=all%20american%20finishing&t=&z=13&ie=UTF8&iwloc=&output=embed&ll=36.0988166,-115.1982';
+	var map = document.getElementById('gmap_canvas') || false;
+
+	if (map) {
+		map.setAttribute('src', url)
+	}
+}
+</script>
 </body>
 </html>

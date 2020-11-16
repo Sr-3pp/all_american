@@ -57,7 +57,7 @@
         <div class="map-cont">
 	    <article class="map mapouter">
 		<div class="gmap_canvas">
-			<iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=all%20american%20finishing&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			<iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=all%20american%20finishing&t=&z=13&ie=UTF8&iwloc=&output=embed&ll=36.1039966,-115.1822" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 			</div>
 		</article>
             <article v-animate.repeat="'slide-left'">
@@ -116,6 +116,6 @@
                     </ol>
                 </ul>
             </article>
-        </div>
+	</div>
     </section>
 @endsection

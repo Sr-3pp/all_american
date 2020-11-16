@@ -353,6 +353,9 @@ body{
         .welding-list{
             list-style: none;
             color: $gray;
+	    @media (max-width: 767px){
+		padding-left: 5%;
+	    }
             >p{
                 color: $Ared;
                 margin: 3% 0;
@@ -374,12 +377,13 @@ body{
                 padding: {
                     top: 5%;
                     bottom: 5%;
-		    left: 5%;
+		    left: 8%;
+		    right: 5%;
                 }
                 svg{
 			position: absolute;
 			top: 50%;
-			left:-10px;
+			left:0px;
 			transform: translateY(-50%);
                     width: 5%;
                     margin-right: 5%;
@@ -3076,7 +3080,7 @@ body{
                                     stroke: #FFF;
                                 }
                             }
-                            p{
+                            p, div{
                                 flex: 4;
                                 .subtitle{
                                     display: flex;
@@ -3645,6 +3649,7 @@ body{
                                             max-width: 60%;
                                             margin-bottom: 0;
                                             height: auto;
+					    object-fit: cover;
                                         }
                                     }
                                     >.text{
@@ -4775,17 +4780,31 @@ body{
         }
     }
 
+    .link{
+	text-decoration: none;
+	color: currentColor;
+    }
+
     .info.news{
-	padding-top: 0;
+	padding-top: 0!important;
+	margin-top: 0!important;
+	padding-right: 0!important; 
 	.flex-news{
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
-
+		justify-content: space-around;
 		.new{
 			flex-basis: 45%;
 			flex-grow: 0!important;
 			text-decoration: none;
+			margin-right: 0!important;
+			box-shadow: none!important;
+			border: solid thin black;
+			@media (max-width: 767px){
+				flex-basis: 100%;
+				margin-right: 5%!important;
+			}
 			.content{
 				padding-left: 5%!important;
 				margin-bottom: 0!important;
@@ -4793,6 +4812,7 @@ body{
 				max-height: 200px!important;
 				margin-bottom: 5%!important;
 				padding-bottom: 0!important;
+				display: inline-block!important;
 				*{
 					color: black;
 					text-decoration: none;
