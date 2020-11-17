@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://allamericanfinishing.com/">
     <meta property="og:locale" content="en_US" />
 
-<meta name="keywords" content="All American Finishing, Finishing, painting, welding, vevada, Las Vegas, polish, delivery, design, fabrication">
+<meta name="keywords" content="All American Finishing, Finishing, painting, welding, vevada, Las Vegas, polish, delivery, design, fabrication, Iron, steel, stainless, copper, custom, metal, fabrication, welding, fence, gate, trim, doors, countertops, sheet, handrail, rail, brass, ornamental">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Professional Metal Fabrication in Las Vegas, NV 89102" />
 <meta property="og:description" content="All American Finishing is a superior metal fabrication in Las Vegas, NV 89102. Do not hesitate to contact us today: (702) 213-3635" />
@@ -139,10 +139,10 @@
     </div>
     <footer>
         <div class="wrapper row col-2">
-            <figure class="img">
+            <figure class="img logo">
                 <img src="img/svg/logo.svg" alt="">
             </figure>
-            <ul>
+            <ul class="footer-list">
                 <li>
                     <a href="documents/terms_of_use.pdf" target="_blank" class="link">Terms and Conditions</a>
                 </li>

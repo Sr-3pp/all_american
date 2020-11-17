@@ -4772,12 +4772,29 @@ body{
         position: relative;
 	background-color: black;
 	z-index: 2;
-        .logo{
-            width: 25%;
+        .logo, .img{
+            width: 20%;
+	    @media ("min-width: 768px"){
+		margin-right: 5%;
+	    }
             img{
                 width: 100%;
             }
         }
+	.wrapper{
+		display: flex;
+		align-items: center;
+		width:  100%;
+		*{
+			color: white;
+			font-family: sans-serif;
+
+		}
+
+		.footer-list{
+			list-style: none;
+		}
+	}
     }
 
     .link{

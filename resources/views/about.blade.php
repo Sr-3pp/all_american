@@ -4,7 +4,6 @@
     <section s-sec="about">
         <article class="head full-section">
             <figure>
-                <img src="/img/about.jpg" alt="">
                 <div>
                     <p class="title">
                         Who we are?
