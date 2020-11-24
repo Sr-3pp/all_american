@@ -1,0 +1,1664 @@
+@media (min-width: 768px){
+    body{
+        header, footer{
+           display: flex;
+        }
+        [s-sec=loader]{
+            img{
+                width: 25vw;
+            }
+        }
+        #app{
+            .title, .subtitle, .category{
+                margin-bottom: 3%;
+            }
+            .full-section{
+                &.full-section{
+                    .title{
+                        font-size: 2.2rem
+                    }
+                    .subtitle{
+                        font-size: 1.7rem
+                    }
+                    .category{
+                        font-size: 1.2rem
+                    }
+                }
+            }
+            .carousel{
+                .slides{
+                    .slide{
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            .separator, [s-sec=separator]{
+                padding: {
+                    top: 3%;
+                    bottom: 3%;
+                }
+                background-color: $Ared;
+                color: #FFF;
+                padding-right: 5vw;
+                padding-left: 5vw;
+                &.full-section{
+                    flex-direction: row;
+                    article{
+                        flex: 8;
+                        justify-content: flex-start;
+                        margin-bottom: 0;
+                        svg{
+                            display: inline-block;
+                            width: 40px;
+                            height: 40px;
+                            margin-right: 30px;
+                        }
+                        p{
+                            font-size: 1rem;
+                        }
+                    }
+                    .title{
+                        margin-bottom: 0;
+                    }
+                    .cta{
+                        max-width: 20%;
+                        height: 50px;
+                    }
+                }
+                >.title{
+                    width: 80%;
+                    text-align: left;
+                }
+            }
+            .image-list{
+                flex-direction: row;
+                >figure{
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 100%;
+                        width: 1px;
+                        background-color: $Ared;
+                    }
+                }
+            }
+            .carousel{
+                margin-bottom: 0;
+                .slides{
+                    .slide{
+                        height: 100%;
+                        .content{
+                            color: #FFF;
+                            text-align: center;
+                            transform: translateY(-50%);
+                            width: auto;
+                            .text{
+                                font-size: 1.5rem
+                            }
+                            .title{
+                                padding: {
+                                    top: 3%;
+                                    bottom: 3%;
+                                }
+                                margin-bottom: 5%;
+                            }
+                            .cta{
+                                background-color: transparent;
+                                width: 40%;
+                                color: #FFF;
+                                font: {
+                                    size: 1.5rem;
+                                }
+                            }
+                            &[s-mode~=right]{
+                                right: 12%;
+                                left: inherit;
+                            }
+                            &[s-mode~=center]{
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+                .control{
+                    display: block;
+                }
+            }
+            .powder-list{
+                >ol{
+                    >ul{
+                        >li{
+                            max-width: 20%;
+                        }
+                    }
+                }
+            }
+            .patina-list{
+                >ul, [tag=ul]{
+                    >ol{
+                        flex: {
+                            basis: 24%;
+                        }
+                    }
+                }
+            }
+            .gallery{
+                .close-btn{
+                    width: 3vw;
+                    height: 3vw;
+                }
+                .prev-btn, .next-btn{
+                    width: 5vw;
+                    height: 5vw;
+                }
+                .prev-btn{
+                    left: 5%;
+                }
+                .next-btn{
+                    right: 5%;
+                }
+                .social-btns{
+                    width: 250px;
+                }
+            }
+            [s-sec=navigation]{
+                .toggle-btn{
+                    top: 0;
+                    svg{
+                        width: 3vw;
+                    }
+                }
+            }
+            [s-sec=header]{
+                .carousel{
+                    .slides{
+                        .slide{
+                            .title{
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+                .tabs{
+                    ul{
+                        button{
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 1%;
+                            p{
+                                width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=services]{
+                
+            }
+            [s-sec=who]{
+                &.full-section{
+                    height: auto;
+                }
+                >img{
+                    transform: inherit;
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                }
+                article{
+                    width: 70%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    >div{
+                        .starBG{
+                            height: 100%;
+                            width: auto;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            z-index: -1;
+                        }
+                        >div{
+                            width: 70%;
+                            padding-right: 5vw;
+                            padding-top: 3%;
+                            padding-bottom: 3%;
+                            margin-top: 0;
+                            >.text{
+                                padding: 0;
+                                position: static;
+                            }
+                            >.title{
+                                position: static;
+                            }
+                            >ul{
+                                flex-direction: row;
+                                background-color: transparent;
+                                padding: {
+                                    top: 0;
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=testimonial]{
+                &.full-section{
+                    height: 500px;
+                }
+                .carousel{
+                    .slides{
+                        .slide{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 90vh;
+                            img{
+                                height: 100%;
+                                width: auto;
+                            }
+                            .testimonials{
+                                article{
+                                    width: 60%;
+                                    .text{
+                                        width: 60%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=values]{
+                flex-direction: row;
+                article{
+                    margin:{
+                        top: inherit;
+                        bottom: inherit;
+                        left: inherit
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    >.main{
+                       &[s-sec=services]{
+                           >.text{
+                               padding: {
+                                   right: 0;
+                                   left: 0;
+                               }
+                           }
+                            >.cont{
+                                .detail{
+                                    >.header{
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                [s-sec=about]{
+                    .head{
+                       flex-direction: row; 
+                       flex-wrap: wrap;
+                       display: flex;
+                       >figure, >div{
+                           width: 50%;
+                        }
+                        >figure{
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 500px;
+                            margin-bottom: 0;
+                            overflow: hidden;
+                            border{
+                                top-right-radius: 20px;
+                                bottom-right-radius: 20px;
+                            }
+                            img{
+                                width: auto;
+                                height: 100%;
+                            }
+                         >div{
+                             position: absolute;
+                             top: 50%;
+                             transform: translateY(-50%);
+                             left: 5vw;
+                             width: 80%;
+                             .drop-list{
+                                 margin-bottom: 0;
+                             }
+                         }
+                        }
+                        >div{
+                            padding-left: 5vw;
+                            padding-right: 0;
+                            display: flex;
+                            align-items: center;
+                            >.text{
+                                display: none;
+                            }
+                        }
+                    }
+                    >[class*=section]{
+                        .service-list{
+                            margin-bottom: 10%;
+                        }
+                        .text{
+                            margin-bottom: 5%;
+                        }
+                        &.separator{
+                            flex-direction: column;
+                            >*{
+                                margin-bottom: 5%;
+                                &.title{
+                                    margin-bottom: 1%;
+                                }
+                            }
+                            &.blue{
+                                >ul{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    >li{
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                            .stars{
+                                width: 50%;
+                                svg{
+                                    margin-right: 5%;
+                                    width: 10%;
+                                    height: auto;
+                                }
+                            }
+                            .contact-form{
+                                .form{
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    article{
+                                        height: 50px;
+                                        margin-bottom: 3%;
+                                        flex: {
+                                            grow: 1;
+                                            shrink: 1;
+                                            basis: 47%;
+                                        }
+                                        &:nth-child(odd){
+                                            margin-right: 1.5%;
+                                        }
+                                        &:nth-child(even){
+                                            margin-left: 1.5%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.skills{
+                            padding: 0;
+                            >.title{
+                                padding-left: 5vw;
+                            }
+                        }
+                    }
+                    [s-desk=history], [s-desk=why]{
+                        &.full-section{
+                            flex-direction: row;
+                            >article, >.check-list{
+                                flex-grow: 1;
+                                flex-basis: 50%;
+                                flex-shrink: 1;
+                                display: flex;
+                                align-items: flex-start;
+                                justify-content: center;
+                                flex-direction: column;
+                            }
+                            >.check-list{
+                                padding-left: 5%;
+                            }
+                        }
+                    }
+                    >*{
+                        margin-bottom: 5%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1024px){
+    body{
+        line-height: 1.5rem;
+        #app{
+            font-size: .9rem;
+            .title, .subtitle, .category{
+                margin-bottom: 3%;
+            }
+            .title{
+                font-size: 2.3rem;
+                line-height: 3rem;
+            }
+            .subtitle{
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+            }
+            .category{
+                font-size: 1.3rem
+            }
+            .text{
+                font-size: .9rem
+            }
+            .s-text{
+                font-size: .7rem
+            }
+            .new{
+                &:hover{
+                    background-color: $Ablue;
+                    margin-top: -.5%;
+                    .s-text, .category{
+                        color: #FFF;
+                        &:after{
+                            background-color: #FFF;
+                        }
+                    }
+                    >.social{
+                        .btn{
+                            svg{
+                                color: #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+            .card{
+                flex-basis: 25vw;
+                height: 25vw;
+                &:nth-child(odd){
+                    margin-right: 5%;
+                }
+            }
+            .section-menu{
+                right: 0;
+                width: 38%;
+                padding: {
+                    left: 1%;
+                }
+            }
+            .foaming-form{
+                .group{
+                    &.sizes{
+                        >div{
+                            >article{
+                                &:last-child{
+                                    flex-wrap: wrap;
+                                    flex-direction: row;
+                                    .text{
+                                        max-height: inherit;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.contact{
+                        >div{
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+            [s-sec=navigation]{
+                top: 0;
+                width: 100%;
+                background-color: transparent;
+                &.full-section{
+                    flex-direction: row;
+                    height: 110px;
+                }
+                &.on-top{
+                    ~.content{
+                        .section-menu{
+                            position: fixed;
+                            top: 12vw;
+                        }
+                    }
+                }
+                .toggle-btn, .close-menu{
+                    display: none;
+                }
+                .brand{
+                    width: 150px;
+                }
+                .item-list{
+                    align-items: center;
+                    width: 70%;
+                    position: relative;
+                    height: auto;
+                    display: flex;
+                    list-style: none;
+                    color: #FFF;
+                    justify-content: space-between;
+                    top: 0;
+                    left: inherit;
+                    background-color: transparent;
+                    .item{
+                        overflow: visible;
+                        text-align: inherit;
+                        .link{
+                            color: #FFF;
+                            text-decoration: none;
+                            display: flex;
+                            font-size: 1.4rem
+                        }
+                        &.active{
+                            background-color: inherit;
+                            border: {
+                                style: solid;
+                                color: $dark;
+                                width: 1px;
+                                radius: 5px;
+                            }
+                            .link{
+                                color: $dark;
+                            }
+                        }
+                        .sub-nav{
+                            position: absolute;
+                            width: 40%;
+                            transition: all .2s ease;
+                        }
+                    }
+                }
+    
+            }
+            [s-sec=header]{
+                margin-top: -185px;
+                .carousel{
+                    .slides{
+                        .slide{
+                            .title{
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+                .tabs{
+                    width: 100%;
+                    ul{
+                        width: 100%;
+                        button{
+                            height: 80px;
+                            border-radius: 5px;
+                            margin-right: .5%;
+                            padding: 15px;
+                            flex-direction: row;
+                            &:nth-child(2){
+                                svg{
+                                    width: 25%;
+                                    margin-right: 5px;
+                                }
+                                p{
+                                    width: 90%;
+                                }
+                            }
+                            &:hover{
+                                height: 110px;
+                            }
+                            &.active{
+                                height: 120px;
+                            }
+                            svg{
+                                width: 35%;
+                            }
+                            p{
+                                width: 70%;
+                                display: block;
+                            }
+                        }
+                    }
+            
+                }
+            }
+            [s-sec=who]{
+                width: 100%;
+                article{
+                    width: 50%;
+                    >div{
+                        margin-top: 0;
+                        text-align: right;
+                        >div{
+                            >.title, >.text{
+                                margin-bottom: 0;
+                                text-align: right;
+                                width: 100%;
+                            }
+                        }
+                        ul{
+                            ol{
+                                &.category{
+                                    span{
+                                        font-size: 2.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            [s-sec=testimonial]{
+                height: 354px;
+            }
+            [s-sec=values]{
+                article{
+                    flex: 1;
+                    margin-right: 2%;
+                    svg{
+                        padding-right: 20px;
+                        max-width: 90px;
+                    }
+                    p{
+                        flex: 3;
+                    }
+                }
+            }
+            [s-sec=projects]{
+                &.full-section{
+                    .title{
+                        padding: 3%;
+                    }
+                }
+            }
+            [s-sec=job]{
+                min-height: 310px;
+                img{
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                }
+                .section{
+                    .subtitle{
+                        padding: 2%;
+                    }
+                }
+            }
+            [s-sec=contact]{
+                flex-direction: row;
+                >div{
+                    flex: 1;
+                    padding: 3%;
+                    &:first-child{
+                        padding-right: 5%;
+                        p{
+                            margin-bottom: 20px;
+                        }
+                        .form{
+                            .group{
+                                .btn{
+                                    width: 40%;
+                                }
+                            }
+                        }
+                    }
+                    &:last-child{
+                        padding:{
+                            top: 5%;
+                            right: 11%;
+                            bottom: 5%;
+                            left: 5%;
+                        }
+                        ul{
+                            ol{
+                                padding:{
+                                    top: 5%;
+                                    bottom: 5%;
+                                }
+                                svg{
+                                    padding-right: 8%;
+                                    max-width: 60px;
+                                }
+                                p{
+                                    flex: 4;
+                                }
+                                article{
+                                    flex: 4;
+                                    ul{
+                                        li{
+                                            padding: {
+                                                top: 5%;
+                                                bottom: 5%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=last-news]{
+                .news{
+                    flex-direction: row;
+                }
+            }
+            [s-sec=services]{
+                &.full-section{
+                    background-color: #FFF;
+                    padding: {
+                        top: 3%;
+                        bottom: 3%;
+                    }
+                    >div{
+                        flex-direction: row;
+                        align-items: center;
+                        figure{
+                            height: 25vw;
+                            width: 50vw;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+                >.cont{
+                    &.gray{
+                        >.detail{
+                            &[s-sec=finish-chart]{
+                                .info{
+                                    [tag=ul]{
+                                        padding-left: 5vw;
+                                        ol{
+                                            figure{
+                                                >img{
+                                                    height: 250px;
+                                                    width: auto;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &[s-sec=patina]{
+                                .info{
+                                    &:not(.header-text){
+                                        >div{
+                                           .patina-list .title{
+                                                padding-left: 0!important;
+                                            }
+                                            .patina-list{
+                                                padding-left: 5vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .detail{
+                        >.info{
+                            >img{
+                                &.gif{
+                                    margin-left: 10%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    display: flex;
+                    >.main{
+                        width: 62%;
+                        &[s-sec=services],  &[s-sec=projects]{
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding-left: 5vw;
+                            padding-right: 3%;
+                            >.cont{
+                                position: relative;
+                                    width: 25vw;
+                                    height: 25vw;
+                                    overflow: hidden;
+                                    border-radius: 30px;
+                                    margin-bottom: 5%;
+                                >.card{
+                                    margin: {
+                                        right: inherit;
+                                        left: inherit;
+                                    }
+                                }
+
+                                >.detail{
+                                    .header{
+                                        width: 100%;
+                                        svg{
+                                            transform: translateY(-90%);
+                                        }
+                                    }
+                                    >.title{
+                                        height: 10vw;
+                                        &::after{
+                                            width: 35vw;
+                                        }
+                                    }
+                                    >.text{
+                                        svg{
+                                            left: 40vw;
+                                            width: 8vw;
+                                        }
+                                    }
+                                    .partial-metal{
+                                        .info{
+                                            padding-left: 5vw;
+                                            flex-direction: row;
+                                        }
+                                    }
+                                    >.info{
+                                        &.list{
+                                            &.finishes{
+                                                figure{
+                                                    max-width: 25%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .info{
+                                        padding: {
+                                            top: 5%;
+                                            bottom: 0%;
+                                            right: 0;
+                                            left: 0;
+                                        }
+                                        &.finishes{
+                                        padding-left: 5vw;
+                                        }
+                                        &.drills{
+                                            padding-left: 5vw;
+                                            >article{
+                                                >ul{
+                                                    >ol{
+                                                        flex-basis: 20%;
+                                                        height: 10vw;
+                                                        margin-right: 5%;
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        align-items: center;
+                                                        justify-content: space-between;
+                                                        margin-bottom: 10%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.header-text{
+                                            >.text{
+                                                flex-direction: column;
+                                                >.text{
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                        .title, .text{
+                                            padding-left: 0;
+                                            &::after{
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    .blue-table{
+                                        margin-left: 5vw;
+                                        width: 40%;
+                                        border-radius: 5px;
+                                        margin-bottom: 5%;
+                                    }
+                                    .foaming-form{
+                                        padding-left: 5vw;
+                                    }
+                                    .form{
+                                        label{
+                                            display: none;
+                                        }
+                                        .input{
+                                            padding: 2%;
+                                            border: {
+                                                style: solid;
+                                                width: 1px;
+                                                color: $gray;
+                                                radius: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                                >.sub{
+                                    .headline{
+                                        flex-direction: row;
+                                        svg{
+                                            &:first-child{
+                                                margin-right: 3%;
+                                            }
+                                            &:last-child{
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                    .content{
+                                        flex-direction: row;
+                                    }
+                                }
+                            }
+                            &.active{
+                                >.cont{
+                                    >.sub{
+                                        .headline{
+                                            svg{
+                                                &:first-child{
+                                                    width: 7%;
+                                                }
+                                            }
+                                        }
+                                        >.content{
+                                            >article{
+                                                margin-bottom: 0;
+                                            }
+                                        }
+                                        .text{
+                                            padding-right: inherit;
+                                        }
+                                        .cards{
+                                            padding-right: inherit;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &[s-sec=projects]{
+                            >.cont{
+                                border-radius: 0;
+                                >article{
+                                    width: 25vw;
+                                    height: 25vw;
+                                    figure{
+                                        height: 80%;
+                                    }
+                                    .text{
+                                        padding-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                background-color: #FFF;
+                [s-sec=navigation]{
+                    .item-list{
+                        .item{
+                            .link{
+                                color: $dark;
+                            }
+                        }
+                    }
+                }
+                [s-sec=contact]{
+                    >div{
+                        flex-direction: row;
+                        >article{
+                            flex: {
+                                grow: 1;
+                                shrink: 1;
+                                basis: 50%;
+                            }
+                            &:first-child{
+                                padding: {
+                                    right: 5vw;
+                                    left: 5vw;
+                                }
+                            }
+                        }
+                        &.map-cont{
+                            min-height: 1100px;
+                            >article{
+                                &:last-child{
+                                    width: 50%;
+                                    padding: 3% 5%;
+                                    border-radius: 10px;
+                                    left: 5vw;
+                                    transform: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px){
+    body{
+        line-height: 2rem;
+        header, footer{
+            padding: {
+                right: 5vw;
+                left: 5vw;
+            }
+        }
+        #app{
+            .full-section{
+                &.full-section{
+                    padding-left: 5vw;
+                    padding-right: 5vw;
+                }
+            }
+            .title{
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+            .subtitle{
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+            .category{
+                font-size: 1.5rem
+            }
+            .text{
+                font-size: 1.3rem
+            }
+            .s-text{
+                font-size: 1rem
+            }
+            [s-sec=header]{
+                .tabs{
+                    ul{
+                        button{
+                            p{
+                                width: 55%;
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=projects]{
+                &.full-section{
+                    padding: {
+                        right: 0;
+                        left: 0;
+                    }
+                }
+            }
+            [s-sec=who]{
+                &.full-section{
+                    padding-right: 0;
+                }
+            }
+            [s-sec=testimonial]{
+                height: 354px;
+                &.full-section{
+                    padding: 0;
+                }
+            }
+            [s-sec=contact]{
+                >div{
+                    &:last-child{
+
+                        ul{
+                            ol{
+                                svg{
+                                    max-width: 20%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                [s-sec=contact]{
+                    >div{
+                        &.map-cont{
+                            >article{
+                                &:last-child{
+                                    width: 30%;
+                                    padding: 1%;
+                                    border-radius: 10px;
+                                    left: 5vw;
+                                    transform: inherit;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    >.main{
+                        &[s-sec=services]{
+                            >.cont{
+                                >.detail{
+                                    >.text{
+                                        min-height: 250px!important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px){
+    body{
+        header{
+            padding: {
+                right: 10vw;
+                left: 10vw;
+            }
+        }
+        #app{
+            .full-section{
+                &.full-section{
+                    padding-left: 10vw;
+                    padding-right: 10vw;
+                }
+            }
+            .title{
+                font-size: 2.8rem
+            }
+            .subtitle{
+                font-size: 2.5rem
+            }
+            .category{
+                font-size: 1.5rem
+            }
+            .text{
+                font-size: 1.3rem
+            }
+            .s-text{
+                font-size: 1rem
+            }
+            .welding-list{
+                padding: {
+                    right: 5vw;
+                    left: 0;
+                }
+            }
+            .foaming-form{
+                .group{
+                    &.finish{
+                        >div{
+                            .check{
+                                flex-basis: 25%;
+                            }
+                        }
+                    }
+                }
+            }
+            .partial-metal{
+                >.info{
+                    flex-direction: row;
+                    >.text{
+                        margin-bottom: 0;
+                    }
+                    ul{
+                        li{
+                            svg{
+                                width: 10%;
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=navigation]{
+                &.on-top{
+                    ~.content{
+                        .section-menu{
+                            top: 7vw;
+                        }
+                    }
+                }
+            }
+            [s-sec=header]{
+                .carousel{
+                    .slides{
+                        .slide{
+                            .title{
+                                font-size: 3.5rem;
+                            }
+                        }
+                    }
+                }
+                .tabs{
+                    ul{
+                        button{
+                            height: 120px;
+                            &.active{
+                                height: 150px;
+                            }
+                            p{
+                                font-size: 1.2rem;
+                                max-width: 105px;
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=testimonial]{
+                &.full-section{
+                    padding: 0;
+                }
+            }
+            [s-sec=projects]{
+                &.full-section{
+                    padding: {
+                        right: 0;
+                        left: 0;
+                    }
+                }
+            }
+            [s-sec=job]{
+                min-height: 500px;
+            }
+            [s-sec=who]{
+                &.full-section{
+                    padding-right: 0;
+                }
+                article{
+                    width: 60%;
+                    >div{
+                        >div{
+                            padding-right: 10vw;
+                        }
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    >.section-menu{
+                        padding-right: 10vw;
+                    }
+                    >.main{
+                        &[s-sec=services], &[s-sec=projects]{
+                            padding-left: 10vw;
+                            &.active{
+                                >.cont{
+                                    padding-left: 10vw;
+                                    .sub{
+                                        .text, .headline{
+                                            padding: 0;
+                                        }
+                                        .cards{
+                                            padding-left: 0;
+                                        }
+                                        .content{
+                                            padding-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            > .cont{
+                                &:not(.active), .card, >article:not(.sub){
+                                    width: 23vw;
+                                    height: 23vw;
+                                    flex-basis: 23vw;
+                                }
+                                .detail{
+                                    .material-list, >.title, >.text, .foaming-form{
+                                        padding-left: 0;
+                                    }
+                                    .blue-table{
+                                        margin-left: 0;
+                                    }
+                                    .info{
+                                        padding: 0;
+                                        &.finishes{
+                                            padding-left: 0;
+                                        }
+                                        &.column{
+                                            padding: 0;
+                                        }
+                                        >img{
+                                            &.gif{
+                                                margin-left: 0;
+                                            }
+                                        }
+                                        &.header-text{
+                                            >.title, >.text, .estimate-list{
+                                                padding-left: 0;
+                                            }
+                                            .wizzard{
+                                                margin-left: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &[s-sec=about].active{
+                            padding-left: 5vw;
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                background-color: #FFF;
+                [s-sec*=about]{
+                    >[class*=section]{
+                        &.skills{
+                            >.title{
+                                padding-left: 10vw;
+                            }
+                            .skill-list{
+                                li{
+                                    .text{
+                                        padding: 0 10vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                [s-sec=contact]{
+                    >div{
+                        >article{
+                            &:first-child{
+                                padding: {
+                                    right: 10vw;
+                                    left: 10vw;
+                                }
+                            }
+                        }
+                        &.map-cont{
+                            min-height: 90vh;
+                            >article{
+                                &:last-child{
+                                    padding: 2%;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 2560px){
+    body{
+        #app{
+            font-size: 2rem;
+            .full-section{
+                &.full-section{
+                    padding-left: 10vw;
+                    padding-right: 10vw;
+                    .title{
+                        font-size: 5rem;
+                    }
+                    .subtitle{
+                        font-size: 3.5rem
+                    }
+                    .category{
+                        font-size: 2.5rem
+                    }
+                    .text{
+                        font-size: 2rem
+                    }
+                }
+            }
+            .title{
+                font-size: 5rem
+            }
+            .subtitle{
+                font-size: 3.5rem
+            }
+            .category{
+                font-size: 2.5rem
+            }
+            .section-menu > ul li, .btn,
+            .card .label .text, .text, .input{
+                font-size: 2rem
+            }
+            .s-text{
+                font-size: 1.5rem
+            }
+            .service-list{
+                li{
+                    article{
+                        svg{
+                            width: 60px;
+                            height: 60px;
+                            margin-right: 5%;
+                        }
+                    }
+                    .btn{
+                        svg{
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+            [s-sec=separator]{
+                &.full-section{
+                    .cta{
+                        font-size: 2rem;
+                        padding: 1% 0;
+                        height: auto;
+                    }
+                    article{
+                        svg{
+                            width: 80px;
+                            height: 80px;
+                        }
+                        p{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+            [s-sec=navigation]{
+                .item-list{
+                    .item{
+                        .link{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+                &.on-top{
+                    ~.content{
+                        .section-menu{
+                            top: 6vw;
+                        }
+                    }
+                }
+            }
+            [s-sec=header]{
+                .tabs{
+                    ul{
+                        button{
+                            height: 120px;
+                            &.active{
+                                height: 150px;
+                            }
+                            p{
+                                font-size: 2rem;
+                                max-width: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=values]{
+                article{
+                    svg{
+                        max-width: inherit;
+                    }
+                }
+            }
+            [s-sec=testimonial]{
+                &.full-section{
+                    padding: 0;
+                    height: 800px;
+                }
+                .carousel{
+                    .slides{
+                        .slide{
+                            .testimonials{
+                                article{
+                                    .text{
+                                        font-size: 2rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            [s-sec=projects]{
+                &.full-section{
+                    padding: {
+                        right: 0;
+                        left: 0;
+                    }
+                }
+            }
+            [s-sec=job]{
+                min-height: 800px;
+            }
+            [s-sec=who]{
+                &.full-section{
+                    padding-right: 0;
+                }
+            }
+            [s-sec=contact]{
+                >div{
+                    &:last-child{
+                        ul{
+                            ol{
+                                svg{
+                                    max-width: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=general]{
+                >.content{
+                    >.section-menu{
+                        padding-right: 10vw;
+                    }
+                    >.main{
+                        &[s-sec=services]{
+                            > .cont{
+                                .detail{
+                                    >.header{
+                                        height: 800px;
+                                        svg{
+                                            left: 15%;
+                                        }
+                                    }
+                                    >.info{
+                                        &.column{
+                                            padding-left: 5%;
+                                        }
+                                        &.header-text{
+                                            >.title, >.text{
+                                                padding-left: 10vw;
+                                            }
+                                            .estimate-list{
+                                                padding-left: 10vw;
+                                            }
+                                            .wizzard{
+                                                margin-left: 10vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &[s-sec=about]{
+                            &.active{
+                                >.cont{
+                                    >.sub{
+                                        .headline, .info{
+                                            padding-left: 10vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                [s-sec=services],  &[s-sec=projects]{
+                    >.cont{
+                        >div{
+                            &:first-child{
+                                >div{
+                                    padding-left: 10vw;
+                                    .detail{
+                                        >.content{
+                                            padding-left: 10vw;
+                                        }
+                                        .machine-picture{
+                                            span{
+                                                padding-left: 10vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &[s-layout=secondary]{
+                background-color: #FFF;
+                [s-sec=contact]{
+                    >div{
+                        >article{
+                            &:first-child{
+                                padding: {
+                                    right: 10vw;
+                                    left: 10vw;
+                                }
+                            }
+                        }
+                        &.map-cont{
+                            min-height: 1400px;
+                            >article{
+                                &:last-child{
+                                    padding: 2%;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
