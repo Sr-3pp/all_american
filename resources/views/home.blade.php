@@ -35,7 +35,7 @@
 <c-tabs s-sec="services" class="tab-content full-section no-buttons">
     <template slot="contents" slot-scope="{active}">
             @foreach($services as $key => $s)
-            <div v-if="active == 'item_{{$key}}'">
+            <div v-show="active == 'item_{{$key}}'">
                     <article>
                     <droplist class="service-list">
                             <template slot="items" slot-scope="scope">
