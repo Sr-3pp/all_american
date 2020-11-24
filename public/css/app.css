@@ -290,8 +290,6 @@ body #app .inbox thead th {
 }
 
 body #app .new {
-  margin-right: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   background-color: #FFF;
@@ -305,6 +303,11 @@ body #app .new {
   cursor: pointer;
   flex-grow: 1;
   transition: all 0.2s ease;
+}
+
+body #app .new margin {
+  right: 2rem;
+  bottom: 2rem;
 }
 
 body #app .new:last-child {

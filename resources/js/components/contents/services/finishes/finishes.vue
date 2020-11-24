@@ -21,7 +21,7 @@
                 We work with a variety of all type of welding manufactures and we can repair all types of metal parts. We are specialists welding any type of metal alloy, our welders are prepared with many years of experience in the industry. We develop projects of different magnitude such as serial parts and custom manufacturing.
             </p>
             <div class="cards">
-                <article v-for="(f, index) in finishes" class="card" @click="setDetail(index)">
+                <article v-for="(f, index) in finishes" class="card" @click="setDetail(index)" :key="index+1">
                     <figure class="img">
                         <img v-if="index == 0" src="/img/services/finish_8.jpg" alt="">
                         <img v-if="index == 1" src="/img/services/finish_7.jpg" alt="">

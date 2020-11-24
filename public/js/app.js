@@ -97319,6 +97319,7 @@ var render = function() {
                 return _c(
                   "article",
                   {
+                    key: index + 1,
                     staticClass: "card",
                     on: {
                       click: function($event) {
