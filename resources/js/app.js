@@ -36,8 +36,15 @@ Vue.use(SocialSharing);
 /* new components starts  */
 Vue.component('emmitbutton', require('./n_components/partials/emmitButton.vue').default);
 Vue.component('serviceimg', require('./n_components/partials/serviceImg.vue').default);
+Vue.component('lazyimg', require('./n_components/partials/lazyImg.vue').default);
+Vue.component('comment-form', require('./n_components/partials/comment-form.vue').default);
+Vue.component('comments', require('./n_components/partials/comments.vue').default);
+Vue.component('like-button', require('./n_components/partials/likeBtn.vue').default);
+Vue.component('comment-button', require('./n_components/partials/commentBtn.vue').default);
+Vue.component('new-entry', require('./n_components/partials/newEntry.vue').default);
 Vue.component('slickslider', require('./n_components/slick.vue').default);
 Vue.component('c-tabs', require('./n_components/tabs.vue').default);
+Vue.component('c-modal', require('./n_components/modal.vue').default);
 Vue.component('droplist', require('./n_components/droplist.vue').default);
 /* new components ends  */
 

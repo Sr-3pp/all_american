@@ -48,7 +48,9 @@ class NewsController extends Controller
             $n->likes;
             $n->comments;
             foreach ($n->comments as $key => $c) {
-                $c->comment = json_decode($c->comment);
+                if (json_decode($c->comment) !== null) {
+                    $c->comment = json_decode($c->comment);
+                }
             }
             $n->content = json_decode($n->content);
             $fecha = Carbon::parse($n->created_at);

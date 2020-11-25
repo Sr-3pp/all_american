@@ -8,23 +8,24 @@
     <link rel="canonical" href="https://allamericanfinishing.com/">
     <meta property="og:locale" content="en_US" />
     <link rel="icon" type="image/png" href="favicon.png">
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Professional Metal Fabrication in Las Vegas, NV 89102" />
-<meta property="og:description" content="All American Finishing is a superior metal fabrication in Las Vegas, NV 89102. Do not hesitate to contact us today: (702) 213-3635" />
-<meta property="og:url" content="https://allamericanfinishing.com/" />
-<meta property="og:site_name" content="All American Finishing" />
-<script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://allamericanfinishing.com/#website","url":"https://allamericanfinishing.com/","name":"All American Finishing","potentialAction":{"@type":"SearchAction","target":"https://allamericanfinishing.com/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="alternate" type="application/rss+xml" title="All American Finishing &raquo; Feed" href="https://allamericanfinishing.com/news/" />
+    <meta property="og:img" content="website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Professional Metal Fabrication in Las Vegas, NV 89102" />
+    <meta property="og:description" content="All American Finishing is a superior metal fabrication in Las Vegas, NV 89102. Do not hesitate to contact us today: (702) 213-3635" />
+    <meta property="og:url" content="https://allamericanfinishing.com/" />
+    <meta property="og:site_name" content="All American Finishing" />
+    <script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://allamericanfinishing.com/#website","url":"https://allamericanfinishing.com/","name":"All American Finishing","potentialAction":{"@type":"SearchAction","target":"https://allamericanfinishing.com/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <link rel="alternate" type="application/rss+xml" title="All American Finishing &raquo; Feed" href="https://allamericanfinishing.com/news/" />
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142695227-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142695227-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-142695227-1');
-</script>
+    gtag('config', 'UA-142695227-1');
+    </script>
 
 <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

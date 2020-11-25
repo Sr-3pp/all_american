@@ -1,7 +1,5 @@
-@extends('layouts.secondary')
-@section('og-img')
-<meta property="og:image" content="{{Storage::url($article->archivo)}}" />
-@endsection
+@extends('layouts.entry')
+
 @section('content')
 
     <section s-sec="article" class="section">

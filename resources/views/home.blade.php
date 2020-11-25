@@ -4,7 +4,7 @@
 <section s-sec="header">
     <slickSlider>
         @foreach($slides as $s)
-        <figure>
+        <figure class="hero">
             <img src="{{Storage::url($s->archivo)}}">
             @if($s->extra)
                 <figcaption s-color="{{$s->extra->color}}" s-mode="{{$s->extra->position}}" class="content">
@@ -82,7 +82,13 @@
     </a>
 </section>
 <section s-sec="who" class="animated-numbers full-section">
-    <img src="/img/welding_2.jpg" alt="">  
+    <lazyimg
+        initial-image="/img/default.jpg" 
+        final-image="/img/welding_2.jpg"
+        alt="We are All American Finishing"
+        :blur-amount="2"
+        class="img-responsive1"
+     ></lazyimg>
     <article v-animate.repeat="'slide-up'"> 
         <div>
             <img class="starBG" v-animate.repeat="'slide-left'" src="/img/svg/estrellaBg.svg" alt="">
@@ -141,10 +147,76 @@
         </p>
     </article>
 </section>
-<last-news :news="{{json_encode($news)}}"></last-news>
+
+<slickSlider s-sec="last-news" config="{{json_encode($newsConfig)}}">
+    @foreach($news as $key => $n)
+        <new-entry>
+            <a href="/new/{{$n->id}}">
+                <figure class="cover">
+                    <lazyimg
+                            initial-image="/img/default.jpg" 
+                            final-image="{{ Storage::url($n->archivo) }}"
+                            alt="{{$n->title}}"
+                            :blur-amount="2"
+                    ></lazyimg>
+                </figure>
+                <p class="s-text">
+                    {{$n->fecha}}
+                </p>
+                <div class="content">
+                    <h3 class="category">{{$n->title}}</h3>
+                    <div class="s-text">
+                        {!! $n->content !!}
+                    </div>
+                </div>
+            </a>
+            <div class="social">
+                <comment-button modal="newModal_{{$key}}"></comment-button>
+                <like-button nid="{{$n->id}}"></like-button>
+                    <a class="btn"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://allamericanfinishing.com/new/{{$n->id}}"
+                        target="_blank">
+                        <icon name="share"></icon>
+                    </a>
+            </div>
+            <c-modal name="newModal_{{$key}}">
+                <div slot="header">
+                <figure class="cover">
+                        <lazyimg
+                                initial-image="/img/default.jpg" 
+                                final-image="{{ Storage::url($n->archivo) }}"
+                                alt="{{$n->title}}"
+                                :blur-amount="2"
+                        ></lazyimg>
+                    </figure>
+                    <figcaption>
+                        <p class="title">
+                            {{$n->title}}
+                        </p>
+                    </figcaption>
+                </div>
+                <div slot="body" class="c-modal-body">
+                    <comment-form nid="{{$n->id}}"></comment-form>
+                    <comments list="{{json_encode($n->comments)}}"></comments>
+                </div>
+            </c-modal>
+        </new-entry>
+    @endforeach
+</slickSlider>
+
 <section s-sec="projects" class="full-section">
     <h2 class="title">Projects</h2>
-    <slider name="projects" :slides="{{json_encode($projects)}}"></slider>
+    <slickSlider name="projects" config="{{json_encode($projectsConfig)}}">
+        @foreach($projects as $key => $p)
+        <figure class="slide">
+            <img src="{{ Storage::url($p->archivo) }}" alt="">
+            <p>
+                <a href="/projects?index={{$key}}" class="btn">See More</a>
+            </p>
+        </figure>
+        @endforeach
+    </slickSlider>
+
 </section>
 <section s-sec="job" class="full-section">
     <img src="/img/welding_3.jpg" alt="no big or small jobs">

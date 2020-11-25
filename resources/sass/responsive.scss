@@ -470,25 +470,6 @@
             .s-text{
                 font-size: .7rem
             }
-            .new{
-                &:hover{
-                    background-color: $Ablue;
-                    margin-top: -.5%;
-                    .s-text, .category{
-                        color: #FFF;
-                        &:after{
-                            background-color: #FFF;
-                        }
-                    }
-                    >.social{
-                        .btn{
-                            svg{
-                                color: #FFF;
-                            }
-                        }
-                    }
-                }
-            }
             .card{
                 flex-basis: 25vw;
                 height: 25vw;

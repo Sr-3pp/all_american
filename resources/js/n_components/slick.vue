@@ -1,5 +1,5 @@
 <template>
-    <slick class="triplider carousel" ref="slick"  :options="slickOptions">
+    <slick v-if="conf" class="triplider carousel" ref="slick"  :options="conf">
         <slot></slot>
     </slick>
 </template>
@@ -48,7 +48,7 @@
             .slick-list{
                 width: 100%;
                 .slick-track{
-                    .slick-slide{
+                    .hero{
                         height: 90vh;
                         display: flex;
                         align-items: center;
@@ -140,8 +140,17 @@ import '../../../node_modules/slick-carousel/slick/slick.css';
 import Slick from 'vue-slick';
 export default {
     components: {Slick},
+    props: [
+        'config'
+    ],
+    mounted() {
+        this.config ? this.conf = JSON.parse(this.config) : this.conf = this.slickOptions;
+
+        console.log(this.conf);
+    },
     data(){
         return{
+            conf: false,
             slickOptions: {
                 autoplay: true,
                 slidesToShow: 1,

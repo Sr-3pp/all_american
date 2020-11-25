@@ -240,6 +240,67 @@ class Controller extends BaseController
     
         $news = app('App\Http\Controllers\NewsController')->getNews();
 
+        $newsConfig = [
+            'slidesToShow' =>  3,
+            'slidesToScroll' =>  1,
+            'rows' =>  0,
+            'arrows' =>  false,
+            'dots' =>  false,
+            'centerMode' =>  false,
+            'infinite' => false,
+            'centerPadding' =>  '40px',
+            'responsive' =>  [
+                    0 => [
+                            'breakpoint' =>  1024,
+                            'settings' =>  [
+                                'slidesToShow' =>  2,
+                            ]
+                    ],
+                    1 => [
+                        'breakpoint' =>  480,
+                        'settings' =>  [
+                            'slidesToShow' =>  1
+                        ]
+                    ]
+                ]
+        ];
+
+        $projectsConfig = [
+            'slidesToShow' => 5,
+            'infinite' =>  true,
+            'autoplay' =>  true,
+            'dots' =>  false,
+            'arrows' =>  false,
+            'variableWidth' =>  true,
+            'centerMode' =>  true,
+            'rows' =>  0,
+            'responsive' =>  [
+                0 =>[
+                    'breakpoint' =>  1024,
+                    'settings' =>  [
+                        'slidesToShow' =>  3,
+                        'slidesToScroll' =>  3,
+                        'infinite' =>  true,
+                        'dots' =>  true
+                    ]
+                ],
+                1 => [
+                    'breakpoint' =>  600,
+                    'settings' =>  [
+                        'slidesToShow' =>  2,
+                        'slidesToScroll' =>  2
+                    ]
+                ],
+                2=> [
+                    'breakpoint' =>  480,
+                    'settings' =>  [
+                        'slidesToShow' =>  1,
+                        'slidesToScroll' =>  1
+                    ]
+                ]
+            ]
+        ];
+
         $p = Project::all()->take(7);
         $projects = [];
             foreach ($p as $key => $value) {
@@ -249,7 +310,7 @@ class Controller extends BaseController
                     }
                 }
             }
-            return view('home', compact('slides', 'testimonials', 'projects', 'services', 'news', 'main'));
+            return view('home', compact('slides', 'testimonials', 'projects', 'services', 'news', 'newsConfig', 'projectsConfig', 'main'));
     }
 
     public function services(){

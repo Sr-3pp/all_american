@@ -169,7 +169,6 @@ export default {
         this.$bus.$on('comment-article', ($event) => {
             this.article = $event.article;
             this.comments = this.article.comments;
-            console.log(this.comments);
             
             this.com.article_id = this.article.id;
             this.$bus.$emit('overlay', {sw: true});

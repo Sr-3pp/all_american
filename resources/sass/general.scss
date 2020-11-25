@@ -31,6 +31,10 @@ body{
         }
     }
     background-color: #000;
+    fieldset{
+        outline: none;
+        border: none;
+    }
     .fr-popup{
         z-index: 1000!important;
     }
@@ -170,99 +174,6 @@ body{
                     background-color: $gray;
                     color: #FFF;
                     font-weight: bold;
-                }
-            }
-        }
-      
-        .new{
-            margin{
-                right: 2rem;
-                bottom: 2rem;
-            }
-            display: flex;
-            flex-direction: column;
-            background-color: #FFF;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 1vw 1vw 3vw rgba(#000, .8);
-            min-height: 400px;
-            max-height: 60vh;
-            max-width: 500px;
-            position: relative;
-            cursor: pointer;
-            flex-grow: 1;
-            transition: all .2s ease;
-            &:last-child{
-                margin-right: 0;
-            }
-            >.cover{
-                height: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden;
-                img{
-                    width: 100%;
-                    height: auto;
-                }
-            }
-            >.s-text{
-                padding: 5%;
-                position: relative;
-                &::after{
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    background-color: #000;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                }
-            }
-            >.content{
-                padding: 5%;
-                margin-bottom: 15%;
-                max-height: 500px;
-                overflow: auto;
-                [data-f-id]{
-                    display: none;
-                }
-            }
-            >.social{
-                display: flex;
-                justify-content: flex-end;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                padding: 5%;
-                width: 100%;
-                .btn{
-                    width: 8%;
-                    background-color: transparent;
-                    border: none;
-                    padding: 0;
-                    margin-right: 5%;
-                    &.like{
-                        svg{
-                            fill: transparent;
-                            stroke: $dark;
-                            stroke-width: 2px;
-                        }
-                        &.liked{
-                            svg{
-                                stroke: transparent;
-                                fill: $Ared;
-                            }
-                        }
-                    }
-                    &:last-child{
-                        margin-right: 0;
-                    }
-                    svg{
-                        path{
-                            stroke: currentColor;
-                        }
-                    }
                 }
             }
         }
@@ -2874,26 +2785,52 @@ body{
         }
         [s-sec=last-news]{
                 background-color: $Ablue;
-                padding: {
-                    top: 5%;
-                }
                 width: 100%;
             .title{
                 color: #FFF;
                 text-align: center;
                 margin-bottom: 0;
             }
-            .news{
-                .slick-list{
-                    padding-left: 3%;
-                    padding-bottom: 5%!important;
-                    .slick-track{
-                        display: flex;
-                        padding-top: 5%;
-                        .slick-slide{
-                            height: auto;
-                            margin-right: 2rem;
+            .slick-list{
+                .slick-track{
+                    display: flex;
+                    padding-top: 5rem;
+                    padding-bottom: 5rem;
+                    .slick-slide{
+                        height: auto;
+                        margin-right: 2rem;
+                    }
+                }
+            }
+            .c-modal{
+                &-header{
+                    max-height: 10rem;
+                    .cover{
+                        height: 100%;
+                    }
+                }
+                &-body{
+                    padding: 1rem 3rem;
+                    flex-direction: column;
+                    max-height: 100%;
+                    overflow-y: auto;
+                    form{
+                        margin-bottom: 2rem;
+                        fieldset{
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            .form-group{
+                                margin-bottom: 0;
+                                label{
+                                    margin-bottom: 0;
+                                }
+                            }
                         }
+                    }
+                    *{
+                        color: $dark!important;
                     }
                 }
             }
@@ -2914,7 +2851,7 @@ body{
                     padding: 3%;
                     margin-bottom: 0;
                 }
-                .project-slider{
+                [name=projects]{
                     .slide{
                         position: relative;
                         overflow: hidden;
@@ -4428,6 +4365,8 @@ body{
             [s-sec=article]{
                 box-shadow: 0 0 20px rgba(#000, .5);
                 margin-bottom: 5%;
+                padding-right: 0;
+                padding-left: 0;
                 .new-info{
                     display: flex;
                     justify-content: space-between;
@@ -4468,6 +4407,8 @@ body{
                     }
                 }
                 .new-content{
+                    padding-right: 2rem;
+                    padding-left: 2rem;
                     [data-f-id]{
                         display: none;
                     }
@@ -4578,101 +4519,6 @@ body{
                     .news{
                         display: flex;
                         flex-wrap: wrap;
-                        .new{
-                            flex: {
-                                grow: 0;
-                                shrink: 1;
-                                basis: 48%;
-                            }
-                            margin-top: 0;
-                            &:nth-child(odd){
-                                margin-right: 1%;
-                            }
-                            &:nth-child(even){
-                                margin-left: 1%;
-                            }
-                            .cover{
-                                position: relative;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                background-color: #FFF;
-                                .buttons{
-                                    position: absolute;
-                                    bottom: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    padding: 2% 0;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    background-color: rgba(#000, .8);
-                                    >*{
-                                        flex: {
-                                            grow: 1;
-                                            shrink: 1;
-                                            basis: 48%;
-                                        }
-                                    }
-                                    >.btn{
-                                        border-radius: 0;
-                                        &:first-child{
-                                            margin-right: 1%;
-                                        }
-                                        &:last-child{
-                                            margin-left: 1%;
-                                        }
-                                    }
-                                }
-                            }
-                            .social-list{
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: stretch;
-                                list-style: none;
-                                background-color: #FFF;
-                                >*{
-                                    flex: {
-                                        grow: 1;
-                                        shrink: 1;
-                                        basis: 33%;
-                                    }
-                                }
-                                >li{
-                                    padding: 2%;
-                                    text-align: center;
-                                    &:last-child{
-                                        cursor: pointer;
-                                        &:hover{
-                                            background-color: $Ablue;
-                                            color: #FFF;
-                                            >p{
-                                                color: #FFF;
-                                            }
-                                            svg{
-                                                color: #FFF;
-                                                fill: #FFF;
-                                            }
-                                        }
-                                    }
-                                    &:first-child{
-                                        border-right: {
-                                            style: solid;
-                                            width: 1px;
-                                            color: rgba(#000, .5);
-                                        }
-                                    }
-                                    >p{
-                                        color:#000;
-                                    }
-                                    svg{
-                                        width: 25%;
-                                        fill: $Ared;
-                                        stroke: $Ared;
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
                 &[s-desk=votes]{
