@@ -71,7 +71,8 @@
             }
             a{
                 max-height: 50%;
-                .cover{
+            }
+             .cover{
                     height: 75%;
                     display: flex;
                     align-items: center;
@@ -138,7 +139,6 @@
                         display: none;
                     }
                 }
-            }
             >.social{
                 display: flex;
                 justify-content: flex-end;
