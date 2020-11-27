@@ -147,6 +147,9 @@
                     <a href="documents/terms_of_use.pdf" target="_blank" class="link">Terms and Conditions</a>
                 </li>
                 <li>
+                    <a href="documents/privacy_policy.pdf" target="_blank" class="link">Privacy policy</a>
+                </li>
+                <li>
                     <a href="/" class="link">Home</a>
                 </li>
                 <li>

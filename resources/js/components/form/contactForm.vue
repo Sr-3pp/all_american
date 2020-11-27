@@ -22,7 +22,7 @@
                     <textarea name="name" rows="8" class="input" placeholder="Message*" v-model="content"></textarea>
                 </article>
                 <article class="group">
-                    <p class="legal">By sending this message, you are accepting the <a href="documents/terms_of_use.pdf" target="_blank" class="link">Privacy policy</a>.</p>
+                    <p class="legal">By sending this message, you are accepting the <a href="documents/privacy_policy.pdf" target="_blank" class="link">Privacy policy</a>.</p>
                 </article>
                 <article class="group">
                     <button type="button" class="btn cta" @click="validate()">Send</button>
