@@ -34,6 +34,15 @@
   </transition-group>
 </template>
 
+<style lang="scss">
+  @import '../../../sass/_variables.scss';
+  .contact-form{
+    .link{
+      color: $Ablue;
+    }
+  }
+</style>
+
 <script>
 export default {
   mounted(){
