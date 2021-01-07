@@ -15,7 +15,7 @@
 					@foreach($news as $n)
 						<a href="/new/{{$n->id}}" class="new">
 							<figure class="cover">
-								<img src="{{$n->archivo}}" alt="">
+								<img src="{{ Storage::url($n->archivo) }}" alt="">
 							</figure>
 							<span class="s-text">
 								{{$n->date}}
