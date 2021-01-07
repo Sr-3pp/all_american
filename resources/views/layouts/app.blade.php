@@ -216,14 +216,14 @@
                             <a href="/about-us/join-us">Join Our Team</a>
                         </li>
                         <li>
-                            <a href="/about-us/faqs">FAQ Lisr</a>
+                            <a href="/about-us/faqs">FAQ List</a>
                         </li>
                         <li>
-                            <a href="/last-news">last-news</a>
+                            <a href="/last-news">Last News</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="mt-10">
                     <a href="/contact" class="link">Contact us</a>
                     <ul class="footer-list-submenu">
                         <li>
