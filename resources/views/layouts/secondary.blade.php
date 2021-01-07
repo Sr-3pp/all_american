@@ -141,7 +141,7 @@
     <footer>
         <div class="wrapper row col-2">
             <figure class="img logo">
-                <img src="img/svg/logo_bn.svg" alt="">
+                <img src="/img/svg/logo_bn.svg" alt="">
                 <figcaption>
                     <small>
                         We offer a wide array of <b>metal fabrication</b> services to meet your needs. From customized ornamental pieces, to home or deck metal trim and railings, nojob is too big or too small.
