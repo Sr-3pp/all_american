@@ -4640,6 +4640,9 @@ body{
 			font-family: sans-serif;
 
         }
+        .logo{
+            align-self: flex-start;
+        }
         flex-direction: column-reverse;
         @media (min-width: 768px){
             justify-content: space-between;
@@ -4657,6 +4660,9 @@ body{
             display: flex;
             justify-content: space-between;
             flex-direction: row;
+            .mt-10{
+                margin-top: 10px;
+            }
             a{
                 text-decoration: none;
             }
