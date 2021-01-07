@@ -136011,8 +136011,8 @@ webpackContext.id = "./src/assets/svg sync recursive ./!./node_modules/xml-loade
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /srv/http/AFF/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /srv/http/AFF/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /srv/http/php/AFF/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /srv/http/php/AFF/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

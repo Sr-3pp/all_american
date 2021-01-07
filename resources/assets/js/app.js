@@ -51,6 +51,7 @@ Vue.component('animated-number', require('./components/partials/animatedNumber.v
 Vue.component('animated-progress', require('./components/partials/animatedProgress.vue'));
 Vue.component('faq-list', require('./components/partials/faqList.vue'));
 Vue.component('comment-modal', require('./components/partials/commentModal.vue'));
+Vue.component('footer-comp', require('./components/partials/footer.vue'));
 Vue.component('overlay', require('./components/partials/overlay.vue'));
 
 Vue.component('submenu', require('./components/contents/submenu.vue'));

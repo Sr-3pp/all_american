@@ -4619,6 +4619,7 @@ body{
     footer{
         padding: 20px 5vw;
         position: relative;
+        flex-direction: column;
 	background-color: black;
 	z-index: 2;
         .logo, .img{
@@ -4645,26 +4646,67 @@ body{
             flex-direction: row;
         }
 
+        @media (max-width: 1023px){
+            .logo{
+                display: none;
+            }
+        }
 		.footer-list{
             list-style: none;
             width: 100%;
             display: flex;
-            flex-direction: column;
-            align-items:center;
-            li{
-                padding-top: 10px;
-                padding-bottom: 10px;
+            justify-content: space-between;
+            flex-direction: row;
+            a{
+                text-decoration: none;
+            }
+            >li{
+                list-style: none;
+                padding: 0;
                 svg{
                     width: 2rem;
                     height: 2rem;
                     fill: #FFFFFF;
                 }
+                @media (min-width: 768px){
+                    >a{
+                        font-weight: bold;
+                    }
+                }
             }
-            @media (min-width: 768px){
-                justify-content: space-between;
-                flex-direction: row;
+            
+            &-submenu{
+                >li{
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        margin-right: 20px;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    @media (max-width: 1023px){
+                        display: none;
+                    }
+                }
             }
-		}
+        }
+        
+        .legal-list{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            li{
+                list-style: none;
+            }
+            @media (max-width: 1023px){
+                flex-direction: column;
+                li{
+                    margin-bottom: 10px;
+                }
+            }
+
+        }
 	}
     }
 

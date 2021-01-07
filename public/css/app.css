@@ -5282,6 +5282,7 @@ body #app[s-layout=extra] > .section .cta {
 body footer {
   padding: 20px 5vw;
   position: relative;
+  flex-direction: column;
   background-color: black;
   z-index: 2;
 }
@@ -5322,29 +5323,76 @@ body footer .wrapper * {
   }
 }
 
+@media (max-width: 1023px) {
+  body footer .wrapper .logo {
+    display: none;
+  }
+}
+
 body footer .wrapper .footer-list {
   list-style: none;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-body footer .wrapper .footer-list li {
-  padding-top: 10px;
-  padding-bottom: 10px;
+body footer .wrapper .footer-list a {
+  text-decoration: none;
 }
 
-body footer .wrapper .footer-list li svg {
+body footer .wrapper .footer-list > li {
+  list-style: none;
+  padding: 0;
+}
+
+body footer .wrapper .footer-list > li svg {
   width: 2rem;
   height: 2rem;
   fill: #FFFFFF;
 }
 
 @media (min-width: 768px) {
-  body footer .wrapper .footer-list {
-    justify-content: space-between;
-    flex-direction: row;
+  body footer .wrapper .footer-list > li > a {
+    font-weight: bold;
+  }
+}
+
+body footer .wrapper .footer-list-submenu > li {
+  display: flex;
+  align-items: center;
+}
+
+body footer .wrapper .footer-list-submenu > li svg {
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 1023px) {
+  body footer .wrapper .footer-list-submenu > li {
+    display: none;
+  }
+}
+
+body footer .wrapper .legal-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+body footer .wrapper .legal-list li {
+  list-style: none;
+}
+
+@media (max-width: 1023px) {
+  body footer .wrapper .legal-list {
+    flex-direction: column;
+  }
+
+  body footer .wrapper .legal-list li {
+    margin-bottom: 10px;
   }
 }
 

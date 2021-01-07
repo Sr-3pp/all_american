@@ -151,8 +151,8 @@
 <slickSlider s-sec="last-news" config="{{json_encode($newsConfig)}}">
     @foreach($news as $key => $n)
         <new-entry>
-            <a href="/new/{{$n->id}}">
-                <figure class="cover">
+            <a href="/new/{{$n->id}}" class="cover">
+                <figure>
                     <lazyimg
                             initial-image="/img/default.jpg" 
                             final-image="{{ Storage::url($n->archivo) }}"
@@ -160,16 +160,16 @@
                             :blur-amount="2"
                     ></lazyimg>
                 </figure>
-                <p class="s-text">
-                    {{$n->fecha}}
-                </p>
-                <div class="content">
+            </a>
+            <p class="s-text">
+                {{$n->fecha}}
+            </p>
+            <div class="content">
                     <h3 class="category">{{$n->title}}</h3>
                     <div class="s-text">
                         {!! $n->content !!}
                     </div>
-                </div>
-            </a>
+            </div>
             <div class="social">
                 <comment-button modal="newModal_{{$key}}"></comment-button>
                 <like-button nid="{{$n->id}}"></like-button>
