@@ -2716,38 +2716,57 @@ body{
             .carousel{
                 height: 100%;
                 .slides{
-                    .slide{
-                        height: 50vh;
-                        .testimonials{
-                            left: 0;
-                            width: 100%;
-                            color: $gray;
-                            transform: translateY(-50%);
-                            article{
-                                width: 90%;
-                                margin: 0 auto;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-direction: column;
-                                .title{
-                                    margin-bottom: 0;
-                                    padding-top: 10%;
-                                    padding-bottom: 0;
-                                    border: none;
-                                    &:first-child{
-                                        padding-top: 0;
-                                        color: #000;
+                    .slick-list{
+                        height: 100%;
+                        .slick-track{
+                            display: flex;
+                            height: 100%;
+                            align-items: center;
+                            max-width: 100%;
+                            .slide{
+                                height: 50vh;
+                                &.slick-active{
+                                    .testimonials{
+                                        opacity: 1;
                                     }
                                 }
-                                .text{
-                                    font-size: 1.2rem;
+                                img{
                                     width: 100%;
+                                    height: auto;
+                                    opacity: .4;
                                 }
-                                hr{
-                                    margin-top: 2%;
-                                    margin-bottom: 5%;
+                                .testimonials{
+                                    left: 0;
                                     width: 100%;
+                                    color: $gray;
+                                    transform: translateY(-50%);
+                                    article{
+                                        width: 90%;
+                                        margin: 0 auto;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex-direction: column;
+                                        .title{
+                                            margin-bottom: 0;
+                                            padding-top: 10%;
+                                            padding-bottom: 0;
+                                            border: none;
+                                            &:first-child{
+                                                padding-top: 0;
+                                                color: #000;
+                                            }
+                                        }
+                                        .text{
+                                            font-size: 1.2rem;
+                                            width: 100%;
+                                        }
+                                        hr{
+                                            margin-top: 2%;
+                                            margin-bottom: 5%;
+                                            width: 100%;
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -115,9 +115,26 @@
         </div>
     </article>
 </section>
+
 <section s-sec="testimonial" class="full-section">
-    <carousel name="testimonials" :slides="{{json_encode($testimonials)}}"></carousel>
+<div class="carousel">
+<slickSlider class="slides">
+        @foreach($testimonials as $t)
+        <figure class="slide">
+            <img src="{{Storage::url($t->archivo)}}">
+            <div class="testimonials content">
+                <article>
+                    <p class="title">{{$t->name}}</p>
+                    <hr>
+                    <p class="text">{{ $t->description }}</p>
+                </article>
+            </div>
+        </figure>
+        @endforeach
+</slickSlider>
+</div>
 </section>
+
 <section s-sec="values" class="full-section">
     <article v-animate.repeat="'slide-up'">
         <icon name="efficiency"></icon>

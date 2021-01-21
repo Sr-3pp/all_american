@@ -12228,6 +12228,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -13770,6 +13771,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -14076,6 +14078,179 @@ __webpack_require__.r(__webpack_exports__);
           este.slides.splice(index, 1);
         });
       }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/panel/sitio/testimonials.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      testimonials: [],
+      newTestimonial: false,
+      url: '/img/default_slide.jpg',
+      testimonial: {
+        name: '',
+        description: '',
+        archivo: false
+      },
+      edit: false,
+      nfile: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$bus.$on('new', function ($event) {
+      if ($event.section == 8) {
+        _this.newTestimonial ? _this.newTestimonial = false : _this.newTestimonial = true;
+      }
+    });
+    var este = this;
+    axios.get('/get-testimonials').then(function (testimonials) {
+      este.testimonials = testimonials.data;
+      console.log(este.testimonials);
+    });
+  },
+  methods: {
+    setPicture: function setPicture($event) {
+      this.testimonial.archivo = $event.target.files[0];
+      this.url = URL.createObjectURL(this.testimonial.archivo);
+    },
+    setNewPicture: function setNewPicture($event) {
+      this.nfile = $event.target.files[0];
+      this.url = URL.createObjectURL(this.nfile);
+    },
+    editTestimonial: function editTestimonial(t, i) {
+      this.edit ? this.edit = false : this.edit = 'testimonial_' + i;
+      this.url = '/storage/' + t.archivo;
+    },
+    saveTestimonial: function saveTestimonial() {
+      var _this2 = this;
+
+      if (this.testimonial.name == '') {
+        return false;
+      } else if (this.testimonial.description == '') {
+        return false;
+      }
+
+      var formData = new FormData();
+      var keys = Object.keys(this.testimonial);
+      keys.forEach(function (k) {
+        var $it = _this2.testimonial[k];
+        formData.append(k, $it);
+      });
+      var este = this;
+      axios.post('/save-testimonial', formData).then(function (testimonial) {
+        este.testimonials.unshift(testimonial.data);
+        este.newTestimonial = false;
+        este.testimonial.name = '';
+        este.testimonial.description = '';
+        este.testimonial.archivo = false;
+      });
+    },
+    deleteTestimonial: function deleteTestimonial(t, i) {
+      var _this3 = this;
+
+      if (confirm('Delete Testimonial?')) {
+        var este = this;
+        axios.post('/delete-testimonial', {
+          id: t.id
+        }).then(function (response) {
+          _this3.testimonials.splice(i, 1);
+        });
+      }
+    },
+    updateTestimonial: function updateTestimonial(t, i) {
+      var este = this;
+      var formData = new FormData();
+      formData.append('id', t.id);
+      formData.append('name', t.name);
+      formData.append('description', t.description);
+
+      if (this.nfile) {
+        formData.append('archivo', this.nfile);
+      }
+
+      axios.post('/update-testimonial', formData).then(function (response) {
+        este.edit = false;
+      });
     }
   }
 });
@@ -33428,6 +33603,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".contact-form .link {\n  color: #1E4380;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".testimonials-new .testimonials-img {\n  cursor: pointer;\n}\n.testimonials-new .testimonials-img img {\n  width: 100%;\n}\n.testimonials-new .testimonials-img input {\n  display: none;\n}\n.testimonials-list-item {\n  position: relative;\n  list-style: none;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  margin-bottom: 20px;\n}\n.testimonials-list-item .actions {\n  margin-left: auto;\n  position: relative;\n  z-index: 2;\n}\n.testimonials-list-item .testimonial-img {\n  position: absolute;\n  z-index: 0;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  opacity: 0.4;\n  width: 100%;\n  height: 100%;\n}\n.testimonials-list-item .testimonial-img img {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -95201,6 +95395,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./testimonials.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/commentModal.vue?vue&type=style&index=0&lang=scss&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/partials/commentModal.vue?vue&type=style&index=0&lang=scss& ***!
@@ -105738,6 +105962,19 @@ var render = function() {
                 }
               },
               [_vm._v("Painting")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.section == 8 },
+                on: {
+                  click: function($event) {
+                    return _vm.setSec(8)
+                  }
+                }
+              },
+              [_vm._v("Testimonials")]
             )
           ])
         : _vm._e(),
@@ -109294,7 +109531,9 @@ var render = function() {
       _vm._v(" "),
       _vm.active == 6 ? _c("skills", { key: 6 }) : _vm._e(),
       _vm._v(" "),
-      _vm.active == 7 ? _c("painting-panel", { key: 7 }) : _vm._e()
+      _vm.active == 7 ? _c("painting-panel", { key: 7 }) : _vm._e(),
+      _vm._v(" "),
+      _vm.active == 8 ? _c("testimonials", { key: 8 }) : _vm._e()
     ],
     1
   )
@@ -110073,6 +110312,291 @@ var render = function() {
       ],
       2
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=template&id=30abd4d6&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/panel/sitio/testimonials.vue?vue&type=template&id=30abd4d6& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { attrs: { "s-desk": "testimonials" } }, [
+    _vm.newTestimonial
+      ? _c("div", { staticClass: "testimonials-new" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Title")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.testimonial.name,
+                  expression: "testimonial.name"
+                }
+              ],
+              attrs: { type: "text" },
+              domProps: { value: _vm.testimonial.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.testimonial, "name", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Description")]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.testimonial.description,
+                  expression: "testimonial.description"
+                }
+              ],
+              domProps: { value: _vm.testimonial.description },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.testimonial, "description", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "testimonials-img",
+              attrs: { for: "testimonial-file" }
+            },
+            [
+              _c("img", { attrs: { src: _vm.url, alt: "" } }),
+              _vm._v(" "),
+              _c("input", {
+                attrs: {
+                  id: "testimonial-file",
+                  type: "file",
+                  accept: "image/*"
+                },
+                on: {
+                  change: function($event) {
+                    return _vm.setPicture($event)
+                  }
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn",
+              on: {
+                click: function($event) {
+                  return _vm.saveTestimonial()
+                }
+              }
+            },
+            [_vm._v("\n            Save\n        ")]
+          )
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.testimonials.length
+      ? _c(
+          "ul",
+          { staticClass: "testimonials-list" },
+          _vm._l(_vm.testimonials, function(t, i) {
+            return _c(
+              "li",
+              { key: i + 1, staticClass: "testimonials-list-item" },
+              [
+                _c("div", { staticClass: "actions" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn",
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteTestimonial(t, i)
+                        }
+                      }
+                    },
+                    [_vm._v("\n                    Delete\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn",
+                      on: {
+                        click: function($event) {
+                          return _vm.editTestimonial(t, i)
+                        }
+                      }
+                    },
+                    [
+                      _vm.edit !== "testimonial_" + i
+                        ? _c("span", [_vm._v("Edit")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.edit == "testimonial_" + i
+                        ? _c("span", [_vm._v("Cancel")])
+                        : _vm._e()
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.edit !== "testimonial_" + i
+                  ? _c("article", { staticClass: "testimonial" }, [
+                      _c("figure", { staticClass: "testimonial-img" }, [
+                        _c("img", {
+                          attrs: { src: "/storage/" + t.archivo, alt: "" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "title" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(t.name) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(t.description) +
+                            "\n                "
+                        )
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.edit == "testimonial_" + i
+                  ? _c("article", [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { attrs: { for: "name" } }, [
+                          _vm._v("Title")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: t.name,
+                              expression: "t.name"
+                            }
+                          ],
+                          attrs: { type: "text" },
+                          domProps: { value: t.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(t, "name", $event.target.value)
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { attrs: { for: "name" } }, [
+                          _vm._v("Description")
+                        ]),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: t.description,
+                              expression: "t.description"
+                            }
+                          ],
+                          domProps: { value: t.description },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(t, "description", $event.target.value)
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "testimonials-img",
+                          attrs: { for: "testimonial-file-update" }
+                        },
+                        [
+                          _c("img", { attrs: { src: _vm.url, alt: "" } }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: {
+                              id: "testimonial-file-update",
+                              type: "file",
+                              accept: "image/*"
+                            },
+                            on: {
+                              change: function($event) {
+                                return _vm.setNewPicture($event)
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn",
+                          on: {
+                            click: function($event) {
+                              return _vm.updateTestimonial(t, i)
+                            }
+                          }
+                        },
+                        [_vm._v("\n                    Save\n                ")]
+                      )
+                    ])
+                  : _vm._e()
+              ]
+            )
+          }),
+          0
+        )
+      : _c("p", [_vm._v("\n        No testimonials yet.\n    ")])
   ])
 }
 var staticRenderFns = []
@@ -130144,6 +130668,7 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('votes', __webpack_require_
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('sitio', __webpack_require__(/*! ./components/panel/sitio/sitio.vue */ "./resources/js/components/panel/sitio/sitio.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('slides', __webpack_require__(/*! ./components/panel/sitio/slides.vue */ "./resources/js/components/panel/sitio/slides.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('mills', __webpack_require__(/*! ./components/panel/sitio/mills.vue */ "./resources/js/components/panel/sitio/mills.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('testimonials', __webpack_require__(/*! ./components/panel/sitio/testimonials.vue */ "./resources/js/components/panel/sitio/testimonials.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('projects-panel', __webpack_require__(/*! ./components/panel/sitio/projects.vue */ "./resources/js/components/panel/sitio/projects.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('painting-panel', __webpack_require__(/*! ./components/panel/sitio/painting.vue */ "./resources/js/components/panel/sitio/painting.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('finishes-panel', __webpack_require__(/*! ./components/panel/sitio/finishes.vue */ "./resources/js/components/panel/sitio/finishes.vue")["default"]);
@@ -133476,6 +134001,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slides_vue_vue_type_template_id_9aea7afa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slides_vue_vue_type_template_id_9aea7afa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/panel/sitio/testimonials.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/panel/sitio/testimonials.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _testimonials_vue_vue_type_template_id_30abd4d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./testimonials.vue?vue&type=template&id=30abd4d6& */ "./resources/js/components/panel/sitio/testimonials.vue?vue&type=template&id=30abd4d6&");
+/* harmony import */ var _testimonials_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./testimonials.vue?vue&type=script&lang=js& */ "./resources/js/components/panel/sitio/testimonials.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _testimonials_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./testimonials.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _testimonials_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _testimonials_vue_vue_type_template_id_30abd4d6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _testimonials_vue_vue_type_template_id_30abd4d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/panel/sitio/testimonials.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/panel/sitio/testimonials.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/panel/sitio/testimonials.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./testimonials.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./testimonials.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/panel/sitio/testimonials.vue?vue&type=template&id=30abd4d6&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/panel/sitio/testimonials.vue?vue&type=template&id=30abd4d6& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_template_id_30abd4d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./testimonials.vue?vue&type=template&id=30abd4d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/panel/sitio/testimonials.vue?vue&type=template&id=30abd4d6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_template_id_30abd4d6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonials_vue_vue_type_template_id_30abd4d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

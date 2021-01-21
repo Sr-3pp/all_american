@@ -24,6 +24,7 @@ use App\Article;
 use App\Newsletter;
 use App\Inbox;
 use App\Votes;
+use App\Models\Testimonial;
 use Mail;
 
 class AdminController extends Controller
@@ -82,6 +83,41 @@ class AdminController extends Controller
 
         $slides = Gallery::where('project_id', $r->project_id)->get();
             return $slides;
+    }
+
+    public function saveTestimonial(Request $r){
+        $data = $r->all();
+        if($r->hasFile('archivo')){
+            $data['archivo'] = $r->archivo->store('testimonials');
+        }
+        $testimonial = Testimonial::create($data);
+
+        return $testimonial;
+    }
+
+    public function updateTestimonial(Request $r){
+        $data = $r->all();
+        $testimonial = Testimonial::find($data['id']);
+        if($r->hasFile('archivo')){
+            Storage::delete($testimonial->archivo);
+            $data['archivo'] = $r->archivo->store('testimonials');
+        }
+
+        $testimonial->update($data);
+
+        return $testimonial;
+    }
+
+    public function deleteTestimonial(Request $r){
+        $id = $r->id;
+        $testimonial = Testimonial::find($id);
+
+        Storage::delete($testimonial->archivo);
+
+        $testimonial->delete();
+
+        return 1;
+
     }
 
     public function addSlides(Request $r, $id){

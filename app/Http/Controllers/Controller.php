@@ -27,6 +27,8 @@ use App\Inbox;
 use App\MillType;
 use App\Mills;
 
+use App\Models\Testimonial;
+
 use Mail;
 use App\Mail\Newnew;
 use App\Mail\ContactMail;
@@ -43,18 +45,7 @@ class Controller extends BaseController
             $value->extra = json_decode($value->extra);
         }
         $main = 'home';
-        $testimonials = [
-            [
-                'id' => 1,
-                'name' => 'slide 1',
-                'archivo' => 'img/default_slide.jpg'
-            ],
-            [
-                'id' => 2,
-                'name' => 'slide 2',
-                'archivo' => 'img/default_slide.jpg'
-            ],
-        ];
+        $testimonials = Testimonial::all();
         $services = [
             [
                 'id' => 1,
@@ -543,6 +534,10 @@ class Controller extends BaseController
         $skills = Skills::all();
 
         return $skills;
+    }
+    public function getTestimonials(){
+        $testimonials = Testimonial::all();
+        return $testimonials;
     }
 
     public function saveValoration(Request $r){

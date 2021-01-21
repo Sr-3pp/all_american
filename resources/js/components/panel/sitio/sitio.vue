@@ -8,6 +8,7 @@
         <faqs :key="5" v-if="active == 5"></faqs>
         <skills :key="6" v-if="active == 6"></skills>
         <painting-panel :key="7" v-if="active == 7"></painting-panel>
+        <testimonials :key="8" v-if="active == 8"></testimonials>
     </transition-group>
 </template>
 <script>

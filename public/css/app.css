@@ -2947,18 +2947,39 @@ body #app [s-sec=testimonial] .carousel {
   height: 100%;
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide {
+body #app [s-sec=testimonial] .carousel .slides .slick-list {
+  height: 100%;
+}
+
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  max-width: 100%;
+}
+
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide {
   height: 50vh;
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide .testimonials {
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide.slick-active .testimonials {
+  opacity: 1;
+}
+
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide img {
+  width: 100%;
+  height: auto;
+  opacity: 0.4;
+}
+
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide .testimonials {
   left: 0;
   width: 100%;
   color: #595A5C;
   transform: translateY(-50%);
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide .testimonials article {
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide .testimonials article {
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -2967,24 +2988,24 @@ body #app [s-sec=testimonial] .carousel .slides .slide .testimonials article {
   flex-direction: column;
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide .testimonials article .title {
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide .testimonials article .title {
   margin-bottom: 0;
   padding-top: 10%;
   padding-bottom: 0;
   border: none;
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide .testimonials article .title:first-child {
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide .testimonials article .title:first-child {
   padding-top: 0;
   color: #000;
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide .testimonials article .text {
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide .testimonials article .text {
   font-size: 1.2rem;
   width: 100%;
 }
 
-body #app [s-sec=testimonial] .carousel .slides .slide .testimonials article hr {
+body #app [s-sec=testimonial] .carousel .slides .slick-list .slick-track .slide .testimonials article hr {
   margin-top: 2%;
   margin-bottom: 5%;
   width: 100%;
@@ -5316,6 +5337,10 @@ body footer .wrapper * {
   font-family: sans-serif;
 }
 
+body footer .wrapper .logo {
+  align-self: flex-start;
+}
+
 @media (min-width: 768px) {
   body footer .wrapper {
     justify-content: space-between;
@@ -5337,6 +5362,10 @@ body footer .wrapper .footer-list {
   flex-direction: row;
 }
 
+body footer .wrapper .footer-list .mt-10 {
+  margin-top: 10px;
+}
+
 body footer .wrapper .footer-list a {
   text-decoration: none;
 }
@@ -5344,6 +5373,7 @@ body footer .wrapper .footer-list a {
 body footer .wrapper .footer-list > li {
   list-style: none;
   padding: 0;
+  font-size: 14px;
 }
 
 body footer .wrapper .footer-list > li svg {
@@ -5384,6 +5414,7 @@ body footer .wrapper .legal-list {
 
 body footer .wrapper .legal-list li {
   list-style: none;
+  font-size: 12px;
 }
 
 @media (max-width: 1023px) {

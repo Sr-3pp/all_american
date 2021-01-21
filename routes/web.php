@@ -32,11 +32,16 @@ Route::get('/get-materials', 'Controller@getMaterials');
 Route::get('/get-finishes', 'Controller@getFinishes');
 Route::get('/get-faqs', 'Controller@getFaqs');
 Route::get('/get-skills', 'Controller@getSkills');
+Route::get('/get-testimonials', 'Controller@getTestimonials');
 Route::get('/get-shear-gauges', 'Controller@getShearTables');
 Route::get('/forming-materials', 'Controller@formingMaterials');
 Route::post('/set-comment', 'Controller@setComment');
 
 Route::post('/save-valoration', 'Controller@saveValoration');
+Route::post('/save-testimonial', 'AdminController@saveTestimonial');
+Route::post('/delete-testimonial', 'AdminController@deleteTestimonial');
+Route::post('/update-testimonial', 'AdminController@updateTestimonial');
+
 
 Route::get('/get-news', 'NewsController@getNews');
 Route::get('/like-new/{id}', 'NewsController@likeNew');

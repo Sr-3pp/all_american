@@ -122,6 +122,7 @@ Vue.component('votes', require('./components/panel/votes.vue').default);
 Vue.component('sitio', require('./components/panel/sitio/sitio.vue').default);
 Vue.component('slides', require('./components/panel/sitio/slides.vue').default);
 Vue.component('mills', require('./components/panel/sitio/mills.vue').default);
+Vue.component('testimonials', require('./components/panel/sitio/testimonials.vue').default);
 Vue.component('projects-panel', require('./components/panel/sitio/projects.vue').default);
 Vue.component('painting-panel', require('./components/panel/sitio/painting.vue').default);
 Vue.component('finishes-panel', require('./components/panel/sitio/finishes.vue').default);
