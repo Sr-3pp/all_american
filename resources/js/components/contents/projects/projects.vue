@@ -43,6 +43,8 @@ export default {
                 this.current -= 1;
                 this.picture = this.project.gallery[this.current].archivo;
             }
+        }).$on('setSumbenuSection', $e => {
+            this.setCat($e.cat, $e.index)
         });
         this.list = this.categories;    
         var params=[];

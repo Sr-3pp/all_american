@@ -671,16 +671,50 @@ body{
                         width: 1px;
                         color: #FFF;
                     }
-                    >a{
+                    >article{
+                        min-height: 50px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        >span{
+                            width: 100%;
+                            display: flex;
+
+                            svg{
+                                margin-left: auto;
+                            }
+                        }
+                    }
+                    >a, >button{
+                        height: 50px;
                         color: #FFF;
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
                         display: flex;
                         align-items: center;
                         text-decoration: none;
+                        margin: auto;
+                        width: 100%;
+                        
+                        >span{
+                            width: 100%;
+                            display: flex;
+
+                            svg{
+                                margin-left: auto;
+                            }
+                        }
+
+                        &.active{
+                            background-color: #fff;
+                            color: $light-gray
+                        }
                     }
-                    display: flex;
-                    flex-direction: column;
-		    justify-content: center;
-		    text-align: center;
+
+            text-align: center;
+            display: flex;
+            flex-direction: column;
                     transition: all .2s ease;
                     .text{
                         padding: 0 8%;
@@ -706,16 +740,13 @@ body{
                         }
                         svg{
                             top: 15%;
-                            transform: translateY(50%) rotate(90deg);
+                            transform: rotate(90deg);
                         }
                     }
                     svg{
                         width: 20px;
-                        position: absolute;
-                        right: 5%;
-                        top: 50%;
                         transition: all .35s ease;
-                        transform: translateY(-50%) rotate(-90deg);
+                        transform: rotate(-90deg);
                     }
                     ul{
                         list-style: none;

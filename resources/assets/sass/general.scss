@@ -760,8 +760,10 @@ body{
                         width: 1px;
                         color: #FFF;
                     }
-                    >a{
+                    >a, button{
                         color: #FFF;
+                        background-color: transparent;
+                        border: none;
                         display: flex;
                         align-items: center;
                         text-decoration: none;
@@ -800,9 +802,6 @@ body{
                     }
                     svg{
                         width: 20px;
-                        position: absolute;
-                        right: 5%;
-                        top: 50%;
                         transition: all .35s ease;
                         transform: translateY(-50%) rotate(-90deg);
                     }
