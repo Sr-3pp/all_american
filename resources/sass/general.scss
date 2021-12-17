@@ -719,6 +719,7 @@ body{
                     .text{
                         padding: 0 8%;
                         width: 100%;
+                        align-items: center;
                     }
                     &:hover{
                         background-color: $gray;
@@ -4190,7 +4191,7 @@ body{
                                             }
                                             margin-bottom: 10%;
                                             >.title{
-                                                display: inline-block;
+                                                display: inline-flex;
                                                 padding: 5%!important;
                                                 margin-bottom: 8%;
                                                 border: {

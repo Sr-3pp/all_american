@@ -17,7 +17,7 @@
             </p>  
             <icon name="estrella4"></icon>
             <figure class="text" v-if="finishes">
-                <img :src="'/storage/'+otype.archivo" alt="">
+                <img v-if="otype" :src="'/storage/'+otype.archivo" alt="">
                 <p class="text">
                     {{finishes.description}}
                 </p>

@@ -371,7 +371,7 @@ class Controller extends BaseController
         $menu = [
             [
                 'name' => 'Design and Planning',
-                'sub' => ['Concept', 'Planning', 'Material', 'Horientation', 'Original Design', 'Estimate']
+                'sub' => ['Concept', 'Planning', 'Material', 'Original Design', 'Estimate']
             ],
             [
                 'name' => 'Preparation',
