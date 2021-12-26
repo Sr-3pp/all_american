@@ -17,17 +17,11 @@
 							<figure class="cover">
 								<img src="{{ Storage::url($n->archivo) }}" alt="">
 							</figure>
-							<span class="s-text">
-								{{$n->date}}
-	    						</span> 
-							<span class="content">
+							<div class="content">
 								<h3 class="category">
 									{{$n->title}}
 								</h3>
-								<span class="s-text">
-									{!! $n->content !!}
-								</span>
-							</span> 
+							</div> 
 						</a>
 					@endforeach
 					</div>

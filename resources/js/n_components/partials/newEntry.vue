@@ -36,9 +36,10 @@
             flex: {
                 grow: 0;
                 shrink: 1;
-                basis: 48%;
+                basis: 100%;
             }
             margin-top: 0;
+            margin-bottom: 20px;
             transition: all .2s ease;
             /* &:nth-child(odd){
                 margin-right: 1%;
@@ -48,6 +49,9 @@
             } */
 
             @media #{$small-desktop} {
+                flex: {
+                    basis: 48%;
+                }
                 &:hover{
                     background-color: $Ablue;
                     margin-top: -.5%;
@@ -73,7 +77,7 @@
                 max-height: 50%;
             }
              .cover{
-                    height: 75%;
+                    height: 300px;
                     display: flex;
                     align-items: center;
                     justify-content: center;

@@ -9,6 +9,11 @@
                     <li :class="{'active': sub == i}" v-for="(sm, i) in item.sub" @click="setSub(i)">{{sm}}</li>
                 </ul>
             </article>
+            <a v-else-if="item.link" :href="item.link" :class="{active: current == index}" @click="setCurrent(item, index)">
+                <span class="text">{{item.name}}
+                    <icon name="star"></icon>
+                </span>
+            </a>
             <button :class="{active: current == index}" @click="setCurrent(item, index)" v-else>
                 <span class="text">{{item.name}}
                     <icon name="star"></icon>
@@ -46,6 +51,9 @@ export default {
             sub: null,
             current: null
         }
+    },
+    mounted(){
+        console.log(this.submenu);
     },
     methods: {
         setTab(index){

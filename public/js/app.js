@@ -10947,6 +10947,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var _mounted$props$data$m;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -10967,7 +10971,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = (_mounted$props$data$m = {
   mounted: function mounted() {
     var _this = this;
 
@@ -10996,33 +11005,34 @@ __webpack_require__.r(__webpack_exports__);
       sub: null,
       current: null
     };
-  },
-  methods: {
-    setTab: function setTab(index) {
-      this.section = index;
-      this.$bus.$emit('setTab', {
-        section: index + 1
-      });
-      this.sub = null;
-    },
-    setSub: function setSub(index) {
-      this.$bus.$emit('setSub', {
-        section: index
-      });
-      this.sub = index;
-    },
-    showSub: function showSub(i) {
-      this.section ? this.section = null : this.section = i;
-    },
-    setCurrent: function setCurrent(item, index) {
-      this.current = index;
-      this.$bus.$emit('setSumbenuSection', {
-        cat: item,
-        index: index
-      });
-    }
   }
-});
+}, _defineProperty(_mounted$props$data$m, "mounted", function mounted() {
+  console.log(this.submenu);
+}), _defineProperty(_mounted$props$data$m, "methods", {
+  setTab: function setTab(index) {
+    this.section = index;
+    this.$bus.$emit('setTab', {
+      section: index + 1
+    });
+    this.sub = null;
+  },
+  setSub: function setSub(index) {
+    this.$bus.$emit('setSub', {
+      section: index
+    });
+    this.sub = index;
+  },
+  showSub: function showSub(i) {
+    this.section ? this.section = null : this.section = i;
+  },
+  setCurrent: function setCurrent(item, index) {
+    this.current = index;
+    this.$bus.$emit('setSumbenuSection', {
+      cat: item,
+      index: index
+    });
+  }
+}), _mounted$props$data$m);
 
 /***/ }),
 
@@ -33747,7 +33757,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#app .new {\n  display: flex;\n  flex-direction: column;\n  background-color: #FFF;\n  overflow: hidden;\n  border-radius: 10px;\n  box-shadow: 1vw 1vw 3vw rgba(0, 0, 0, 0.8);\n  min-height: 400px;\n  max-height: 60vh;\n  max-width: 500px;\n  position: relative;\n  cursor: pointer;\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 48%;\n  margin-top: 0;\n  transition: all 0.2s ease;\n  /* &:nth-child(odd){\n      margin-right: 1%;\n  }\n  &:nth-child(even){\n      margin-left: 1%;\n  } */\n}\n#app .new.slick-slide:not(:last-child) {\n  margin-right: 1.5rem;\n}\n#app .new.slick-slide:first-child {\n  margin-left: 1.5rem;\n}\n#app .new margin {\n  right: 2rem;\n  bottom: 2rem;\n}\n#app .new * {\n  color: #333333;\n  text-decoration: none;\n}\n@media (min-width: 1024px) {\n#app .new:hover {\n    background-color: #1E4380;\n    margin-top: -0.5%;\n}\n#app .new:hover *:not(label):not(input):not(textarea):not(.btn):not(.first) {\n    color: #FFF;\n}\n#app .new:hover *:not(label):not(input):not(textarea):not(.btn):not(.first):after {\n    background-color: #FFF;\n}\n#app .new:hover > .social .btn svg {\n    color: #FFF;\n}\n}\n#app .new:last-child {\n  margin-right: 0;\n}\n#app .new a {\n  max-height: 50%;\n}\n#app .new .cover {\n  height: 75%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  position: relative;\n  align-items: center;\n  flex-shrink: 0;\n  color: #333333;\n  background-color: #FFF;\n}\n#app .new .cover .buttons {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  padding: 2% 0;\n  display: flex;\n  justify-content: space-between;\n  background-color: rgba(0, 0, 0, 0.8);\n}\n#app .new .cover .buttons > * {\n  flex-grow: 1;\n  flex-shrink: 1;\n  flex-basis: 48%;\n}\n#app .new .cover .buttons > .btn {\n  border-radius: 0;\n}\n#app .new .cover .buttons > .btn:first-child {\n  margin-right: 1%;\n}\n#app .new .cover .buttons > .btn:last-child {\n  margin-left: 1%;\n}\n#app .new .cover img {\n  width: 100%;\n  height: auto;\n}\n#app .new .s-text {\n  padding: 5%;\n  position: relative;\n}\n#app .new .s-text::after {\n  content: \"\";\n  width: 100%;\n  height: 1px;\n  background-color: #000;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n}\n#app .new .content {\n  padding: 5%;\n  margin-bottom: 15%;\n  max-height: 500px;\n  overflow: auto;\n}\n#app .new .content::-webkit-scrollbar {\n  display: none;\n}\n#app .new .content [data-f-id] {\n  display: none;\n}\n#app .new > .social {\n  display: flex;\n  justify-content: flex-end;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  padding: 5%;\n  width: 100%;\n}\n#app .new > .social .btn {\n  width: 8%;\n  background-color: transparent;\n  border: none;\n  padding: 0;\n  margin-right: 5%;\n  color: currentColor;\n}\n#app .new > .social .btn.like svg {\n  fill: transparent;\n  stroke: #333333;\n  stroke-width: 2px;\n}\n#app .new > .social .btn.like.liked svg {\n  stroke: transparent;\n  fill: #8B181A;\n}\n#app .new > .social .btn:last-child {\n  margin-right: 0;\n}\n#app .new > .social .btn svg path {\n  stroke: currentColor;\n}", ""]);
+exports.push([module.i, "#app .new {\n  display: flex;\n  flex-direction: column;\n  background-color: #FFF;\n  overflow: hidden;\n  border-radius: 10px;\n  box-shadow: 1vw 1vw 3vw rgba(0, 0, 0, 0.8);\n  min-height: 400px;\n  max-height: 60vh;\n  max-width: 500px;\n  position: relative;\n  cursor: pointer;\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  margin-top: 0;\n  margin-bottom: 20px;\n  transition: all 0.2s ease;\n  /* &:nth-child(odd){\n      margin-right: 1%;\n  }\n  &:nth-child(even){\n      margin-left: 1%;\n  } */\n}\n#app .new.slick-slide:not(:last-child) {\n  margin-right: 1.5rem;\n}\n#app .new.slick-slide:first-child {\n  margin-left: 1.5rem;\n}\n#app .new margin {\n  right: 2rem;\n  bottom: 2rem;\n}\n#app .new * {\n  color: #333333;\n  text-decoration: none;\n}\n@media (min-width: 1024px) {\n#app .new {\n    flex-basis: 48%;\n}\n#app .new:hover {\n    background-color: #1E4380;\n    margin-top: -0.5%;\n}\n#app .new:hover *:not(label):not(input):not(textarea):not(.btn):not(.first) {\n    color: #FFF;\n}\n#app .new:hover *:not(label):not(input):not(textarea):not(.btn):not(.first):after {\n    background-color: #FFF;\n}\n#app .new:hover > .social .btn svg {\n    color: #FFF;\n}\n}\n#app .new:last-child {\n  margin-right: 0;\n}\n#app .new a {\n  max-height: 50%;\n}\n#app .new .cover {\n  height: 300px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  position: relative;\n  align-items: center;\n  flex-shrink: 0;\n  color: #333333;\n  background-color: #FFF;\n}\n#app .new .cover .buttons {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  padding: 2% 0;\n  display: flex;\n  justify-content: space-between;\n  background-color: rgba(0, 0, 0, 0.8);\n}\n#app .new .cover .buttons > * {\n  flex-grow: 1;\n  flex-shrink: 1;\n  flex-basis: 48%;\n}\n#app .new .cover .buttons > .btn {\n  border-radius: 0;\n}\n#app .new .cover .buttons > .btn:first-child {\n  margin-right: 1%;\n}\n#app .new .cover .buttons > .btn:last-child {\n  margin-left: 1%;\n}\n#app .new .cover img {\n  width: 100%;\n  height: auto;\n}\n#app .new .s-text {\n  padding: 5%;\n  position: relative;\n}\n#app .new .s-text::after {\n  content: \"\";\n  width: 100%;\n  height: 1px;\n  background-color: #000;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n}\n#app .new .content {\n  padding: 5%;\n  margin-bottom: 15%;\n  max-height: 500px;\n  overflow: auto;\n}\n#app .new .content::-webkit-scrollbar {\n  display: none;\n}\n#app .new .content [data-f-id] {\n  display: none;\n}\n#app .new > .social {\n  display: flex;\n  justify-content: flex-end;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  padding: 5%;\n  width: 100%;\n}\n#app .new > .social .btn {\n  width: 8%;\n  background-color: transparent;\n  border: none;\n  padding: 0;\n  margin-right: 5%;\n  color: currentColor;\n}\n#app .new > .social .btn.like svg {\n  fill: transparent;\n  stroke: #333333;\n  stroke-width: 2px;\n}\n#app .new > .social .btn.like.liked svg {\n  stroke: transparent;\n  fill: #8B181A;\n}\n#app .new > .social .btn:last-child {\n  margin-right: 0;\n}\n#app .new > .social .btn svg path {\n  stroke: currentColor;\n}", ""]);
 
 // exports
 
@@ -103818,6 +103828,30 @@ var render = function() {
                     )
                   : _vm._e()
               ])
+            : item.link
+            ? _c(
+                "a",
+                {
+                  class: { active: _vm.current == index },
+                  attrs: { href: item.link },
+                  on: {
+                    click: function($event) {
+                      return _vm.setCurrent(item, index)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "span",
+                    { staticClass: "text" },
+                    [
+                      _vm._v(_vm._s(item.name) + "\n                "),
+                      _c("icon", { attrs: { name: "star" } })
+                    ],
+                    1
+                  )
+                ]
+              )
             : _c(
                 "button",
                 {

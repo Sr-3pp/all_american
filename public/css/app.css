@@ -5483,18 +5483,18 @@ body .info.news .flex-news {
 }
 
 body .info.news .flex-news .new {
-  flex-basis: 45%;
+  flex-basis: 100%;
   flex-grow: 0 !important;
   text-decoration: none;
-  margin-right: 0 !important;
+  margin-right: 5% !important;
   box-shadow: none !important;
   border: solid thin black;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   body .info.news .flex-news .new {
-    flex-basis: 100%;
-    margin-right: 5% !important;
+    flex-basis: 45%;
+    margin-right: 0 !important;
   }
 }
 
