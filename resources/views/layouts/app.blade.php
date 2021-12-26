@@ -17,15 +17,16 @@
     <script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://allamericanfinishing.com/#website","url":"https://allamericanfinishing.com/","name":"All American Finishing","potentialAction":{"@type":"SearchAction","target":"https://allamericanfinishing.com/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
     <link rel="alternate" type="application/rss+xml" title="All American Finishing &raquo; Feed" href="https://allamericanfinishing.com/news/" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142695227-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215817007-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-142695227-1');
-    </script>
+  gtag('config', 'UA-215817007-1');
+</script>
 
 <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
