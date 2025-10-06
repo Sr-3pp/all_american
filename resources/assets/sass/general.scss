@@ -52,12 +52,12 @@ body{
     }
     header{
         display: none;
-        font-family: 'Aero Matics';
+        font-family: 'Arial Black', Arial, sans-serif;
         padding: 20px 5vw;
         justify-content: space-between;
         position: relative;
         z-index: 1;
-        font-family: 'Aero Matics';
+        font-family: 'Arial Black', Arial, sans-serif;
         &.white{
             background-color: #FFF;
             article a{
@@ -102,7 +102,7 @@ body{
     }
     #app{
         .title, .subtitle, .category{
-            font-family: 'Aero Matics';
+            font-family: 'Arial Black', Arial, sans-serif;
             margin-bottom: 3%;
             text-transform: capitalize;
         }
@@ -499,7 +499,7 @@ body{
                     text-align: center;
                     width: 100%;
                     font: {
-                        family: 'Aero Matics';
+                        family: 'Arial Black', Arial, sans-serif;
                         weight: bold;
                         style: italic;
                         size: 1.2rem;
@@ -529,7 +529,7 @@ body{
                         .title{
                             white-space: pre-line;
                             font:{
-                                family: 'Aero Matics';
+                                family: 'Arial Black', Arial, sans-serif;
                                 weight: bold;
                                 style: italic;
                             }
@@ -1111,7 +1111,7 @@ body{
                         }
                         a{
                             text-decoration: none;
-                            font-family: 'Aero Matics';
+                            font-family: 'Arial Black', Arial, sans-serif;
                             font-weight: bold;
                             color: #FFF;
                         }
@@ -1694,7 +1694,7 @@ body{
             .category, .title{
                 span{
                     font-size: 2.5rem;
-                    font-family: 'Aero Matics';
+                    font-family: 'Arial Black', Arial, sans-serif;
                     font-weight: bold;
                 }
             }
@@ -1888,7 +1888,7 @@ body{
                     text-align: center;
                     padding-top: 1%;
                     font: {
-                        family: 'Aero Matics';
+                        family: 'Arial Black', Arial, sans-serif;
                         weight: bold;
                         style: italic;
                         size: 1rem
@@ -1911,7 +1911,7 @@ body{
                 label{
                     text-align: right;
                     font: {
-                        family: 'Aero Matics';
+                        family: 'Arial Black', Arial, sans-serif;
                         weight: bold;
                         style: italic;
                         size: 2rem
@@ -2600,7 +2600,7 @@ body{
                         p{
                             width: 70%;
                             font-size: 1rem;
-                            font-family: 'Aero Matics';
+                            font-family: 'Arial Black', Arial, sans-serif;
                             font-weight: bold;
                             display: none;
                         }
@@ -4001,7 +4001,7 @@ body{
                                                         thead{
                                                             tr{
                                                                 th{
-                                                                    font-family: 'Aero Matics';
+                                                                    font-family: 'Arial Black', Arial, sans-serif;
                                                                     font-weight: bold;
                                                                     width: 50%;
                                                                     padding: {

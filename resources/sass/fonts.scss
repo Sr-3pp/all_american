@@ -1,50 +1,8 @@
-@font-face {
-    font-family: 'Aero Matics';
-    src: url('./resources/fonts/AeroMaticsLightItalic.woff2') format('woff2'),
-        url('./resources/fonts/AeroMaticsLightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-}
+// Font faces removed for Aero Matics - using Arial Black instead
 
-@font-face {
-    font-family: 'Aero Matics';
-    src: url('./resources/fonts/AeroMaticsBoldItalic.woff2') format('woff2'),
-        url('./resources/fonts/AeroMaticsBoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-}
+// Since Arial Black is a system font, no @font-face declarations needed
 
-@font-face {
-    font-family: 'Aero Matics';
-    src: url('./resources/fonts/AeroMaticsItalic.woff2') format('woff2'),
-        url('./resources/fonts/AeroMaticsItalic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Aero Matics';
-    src: url('./resources/fonts/AeroMaticsRegular.woff2') format('woff2'),
-        url('./resources/fonts/AeroMaticsRegular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aero Matics';
-    src: url('./resources/fonts/AeroMaticsLightRegular.woff2') format('woff2'),
-        url('./resources/fonts/AeroMaticsLightRegular.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aero Matics';
-    src: url('./resources/fonts/AeroMaticsBold.woff2') format('woff2'),
-        url('./resources/fonts/AeroMaticsBold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
+// Helvetica font faces remain as they were
 
 
 
